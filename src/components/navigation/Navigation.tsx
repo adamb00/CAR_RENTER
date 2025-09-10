@@ -7,13 +7,9 @@ import { useTranslations } from 'next-intl';
 
 type Item = { href: string; label: string; prefix?: string };
 
-export function Navigation({
-  items,
-}: {
-  items?: Item[];
-}) {
+export function Navigation({ items }: { items?: Item[] }) {
   const t = useTranslations('Navigation');
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const ctrlId = useId();
 
   // Body scroll lock nyitáskor
@@ -119,13 +115,15 @@ export function Navigation({
             'grid place-items-center h-dvh w-dvw text-center px-6'
           )}
         >
-          {(items || [
-            { href: '#about', label: t('items.about'), prefix: '01' },
-            { href: '#benefits', label: t('items.benefits'), prefix: '02' },
-            { href: '#popular', label: t('items.popular'), prefix: '03' },
-            { href: '#stories', label: t('items.stories'), prefix: '04' },
-            { href: '#book', label: t('items.book'), prefix: '05' },
-          ]).map((it, i) => (
+          {(
+            items || [
+              { href: '#about', label: t('items.about'), prefix: '01' },
+              { href: '#benefits', label: t('items.benefits'), prefix: '02' },
+              { href: '#popular', label: t('items.popular'), prefix: '03' },
+              { href: '#stories', label: t('items.stories'), prefix: '04' },
+              { href: '#book', label: t('items.book'), prefix: '05' },
+            ]
+          ).map((it, i) => (
             <li key={it.href + i} className='my-3 sm:my-4'>
               <a
                 href={it.href}

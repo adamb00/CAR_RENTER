@@ -11,7 +11,7 @@ export function ThemeToggle() {
   const { setTheme } = useTheme();
   const { settings, updateSettings } = useSettings();
   const { startTransition } = useThemeTransition();
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
   useEffect(() => {
     setMounted(true);
   }, []);

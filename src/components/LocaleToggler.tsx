@@ -49,7 +49,7 @@ export function LocaleToggle({ current }: { current?: string }) {
   const router = useRouter();
   const pathname = usePathname() || '/hu';
   const search = useSearchParams();
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
   const [pending, startTransition] = useTransition();
 
   useEffect(() => setMounted(true), []);
