@@ -21,9 +21,16 @@ export default async function LocaleLayout({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
+
+  // (opcionális) ha szeretnéd “szűrni” a locale-t a saját uniódra:
+  const safeLocale: Locale = (
+    LOCALES.includes(locale as Locale) ? locale : LOCALES[0]
+  ) as Locale;
+
   const messages = await getMessages();
+
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={safeLocale} suppressHydrationWarning>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className='antialiased '>
           <div className='app-shell p-2 md:p-8 lg:p-12'>
