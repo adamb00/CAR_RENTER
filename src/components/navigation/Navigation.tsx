@@ -3,20 +3,16 @@
 
 import { useEffect, useId, useState } from 'react';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 
 type Item = { href: string; label: string; prefix?: string };
 
 export function Navigation({
-  items = [
-    { href: '#', label: 'About Natours', prefix: '01' },
-    { href: '#', label: 'Your benefits', prefix: '02' },
-    { href: '#', label: 'Popular tours', prefix: '03' },
-    { href: '#', label: 'Stories', prefix: '04' },
-    { href: '#', label: 'Book now', prefix: '05' },
-  ],
+  items,
 }: {
   items?: Item[];
 }) {
+  const t = useTranslations('Navigation');
   const [open, setOpen] = useState(false);
   const ctrlId = useId();
 
@@ -34,7 +30,7 @@ export function Navigation({
     <>
       {/* FIXED WRAPPER: a gomb és a kör közös referenciában */}
       <div
-        className='fixed z-[2000]'
+        className='fixed z-[2000] '
         style={{
           top: 'calc(env(safe-area-inset-top, 0px) + 1rem)',
           right: 'calc(env(safe-area-inset-right, 0px) + 1rem)',
@@ -102,7 +98,7 @@ export function Navigation({
               )}
             />
           </span>
-          <span className='sr-only'>Menü</span>
+          <span className='sr-only'>{t('menu_sr')}</span>
         </button>
       </div>
 
@@ -123,7 +119,13 @@ export function Navigation({
             'grid place-items-center h-dvh w-dvw text-center px-6'
           )}
         >
-          {items.map((it, i) => (
+          {(items || [
+            { href: '#about', label: t('items.about'), prefix: '01' },
+            { href: '#benefits', label: t('items.benefits'), prefix: '02' },
+            { href: '#popular', label: t('items.popular'), prefix: '03' },
+            { href: '#stories', label: t('items.stories'), prefix: '04' },
+            { href: '#book', label: t('items.book'), prefix: '05' },
+          ]).map((it, i) => (
             <li key={it.href + i} className='my-3 sm:my-4'>
               <a
                 href={it.href}

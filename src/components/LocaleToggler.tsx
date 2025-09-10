@@ -12,6 +12,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState, useTransition } from 'react';
 
 import { LOCALES, Locale } from '@/i18n/config';
+import { useTranslations } from 'next-intl';
 
 const FLAGS: Record<Locale, string> = {
   hu: '🇭🇺',
@@ -44,6 +45,7 @@ function replaceLocaleInPath(pathname: string, next: Locale) {
 }
 
 export function LocaleToggle({ current }: { current?: string }) {
+  const t = useTranslations('LocaleToggle');
   const router = useRouter();
   const pathname = usePathname() || '/hu';
   const search = useSearchParams();
@@ -95,7 +97,7 @@ export function LocaleToggle({ current }: { current?: string }) {
           variant='outline'
           size='sm'
           disabled={pending}
-          aria-label='Nyelvválasztó'
+          aria-label={t('ariaLabel')}
           className='gap-2 rounded-full shadow-lg !bg-background !text-foreground z-[2100]'
         >
           <span className='text-base leading-none'>{FLAGS[active]}</span>

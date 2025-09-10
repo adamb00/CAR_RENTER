@@ -1,0 +1,30 @@
+{
+  "Header": {
+    "header": "Alege și rezervă în câteva minute",
+    "cars": "Mașinile noastre"
+  },
+  "AboutSection": {
+    "title": "Nu rata nicio experiență",
+    "pickup_title": "Preluare acolo unde îți este convenabil",
+    "pickup_text": "Preia mașina acolo unde îți este cel mai comod: chiar în fața hotelului, apartamentului sau la adresa indicată. Astfel poți porni liber în explorare din primul moment.",
+    "transfer_title": "Transfer convenabil la cerere",
+    "transfer_text": "Dacă dorești serviciu de transfer, indică acest lucru în formularul de cerere de ofertă – ne ocupăm noi ca totul să decurgă fără probleme.",
+    "learn_more": "Află mai multe →",
+    "alt1": "Mașina 1",
+    "alt2": "Mașina 2",
+    "alt3": "Mașina 3"
+  },
+  "Navigation": {
+    "menu_sr": "Meniu",
+    "items": {
+      "about": "Despre noi",
+      "benefits": "Beneficii",
+      "popular": "Popular",
+      "stories": "Povești",
+      "book": "Rezervă acum"
+    }
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Selector de limbă"
+  }
+}

@@ -100,7 +100,7 @@ export function Header() {
 
         <a
           href={'/'}
-          className='mt-8 inline-block rounded-full text-grey-dark-2 bg-white/90 px-8 py-3 text-sm font-medium uppercase tracking-wide shadow-lg transition hover:bg-white'
+          className='mt-8 inline-block rounded-full dark:text-sky-dark text-sky-dark bg-white/90 px-8 py-3 text-sm font-medium uppercase tracking-wide shadow-lg transition hover:bg-white'
         >
           {t('cars')}
         </a>

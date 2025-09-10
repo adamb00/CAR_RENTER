@@ -2,5 +2,29 @@
   "Header": {
     "header": "Pick and book in minutes",
     "cars": "Our cars"
+  },
+  "AboutSection": {
+    "title": "Don't miss a single experience",
+    "pickup_title": "Pickup where it's convenient",
+    "pickup_text": "Pick up your car wherever suits you best: right in front of your hotel, apartment or the address you specify. Set off to explore freely from the very first moment.",
+    "transfer_title": "Convenient transfer on request",
+    "transfer_text": "If you'd like to use a transfer service, simply indicate it on our quote request form and we'll make sure everything goes smoothly.",
+    "learn_more": "Learn more →",
+    "alt1": "Car 1",
+    "alt2": "Car 2",
+    "alt3": "Car 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "items": {
+      "about": "About",
+      "benefits": "Benefits",
+      "popular": "Popular",
+      "stories": "Stories",
+      "book": "Book now"
+    }
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Language selector"
   }
 }

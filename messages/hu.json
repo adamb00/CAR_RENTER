@@ -2,5 +2,29 @@
   "Header": {
     "header": "Válassz és foglalj percek alatt",
     "cars": "Autóink"
+  },
+  "AboutSection": {
+    "title": "Ne maradj le egyetlen élményről sem",
+    "pickup_title": "Átvétel, ahol neked kényelmes",
+    "pickup_text": "Vedd át autódat ott, ahol a legkényelmesebb: közvetlenül a szállodád, apartmanod vagy a megadott cím előtt. Így már az első perctől szabadon indulhatsz felfedezni.",
+    "transfer_title": "Kényelmes transzfer igény szerint",
+    "transfer_text": "Ha szeretnél transzfer szolgáltatást is igénybe venni, jelezd egyszerűen ajánlatkérő adatlapunkon – mi pedig gondoskodunk róla, hogy minden gördülékenyen menjen.",
+    "learn_more": "Tudj meg többet →",
+    "alt1": "Autó 1",
+    "alt2": "Autó 2",
+    "alt3": "Autó 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menü",
+    "items": {
+      "about": "Rólunk",
+      "benefits": "Előnyök",
+      "popular": "Népszerű",
+      "stories": "Történetek",
+      "book": "Foglalj most"
+    }
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Nyelvválasztó"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "Header": {
+    "header": "Vyberte a rezervujte během pár minut",
+    "cars": "Naše auta"
+  },
+  "AboutSection": {
+    "title": "Nezmeškejte jediný zážitek",
+    "pickup_title": "Převzetí tam, kde vám to vyhovuje",
+    "pickup_text": "Převezměte si auto tam, kde je to nejpohodlnější: přímo před hotelem, bytem nebo na uvedené adrese. Od první chvíle se můžete svobodně vydat objevovat.",
+    "transfer_title": "Pohodlný transfer na vyžádání",
+    "transfer_text": "Pokud chcete využít transfer, jednoduše to uveďte v našem poptávkovém formuláři – postaráme se, aby vše proběhlo hladce.",
+    "learn_more": "Zjistit více →",
+    "alt1": "Auto 1",
+    "alt2": "Auto 2",
+    "alt3": "Auto 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "items": {
+      "about": "O nás",
+      "benefits": "Výhody",
+      "popular": "Oblíbené",
+      "stories": "Příběhy",
+      "book": "Rezervovat nyní"
+    }
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Výběr jazyka"
+  }
+}

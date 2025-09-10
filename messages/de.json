@@ -1,0 +1,30 @@
+{
+  "Header": {
+    "header": "Wählen und buchen in Minuten",
+    "cars": "Unsere Autos"
+  },
+  "AboutSection": {
+    "title": "Verpasse kein einziges Erlebnis",
+    "pickup_title": "Abholung, wo es dir passt",
+    "pickup_text": "Hol dein Auto dort ab, wo es am bequemsten ist: direkt vor deinem Hotel, Apartment oder der angegebenen Adresse. So kannst du vom ersten Moment an frei losziehen und entdecken.",
+    "transfer_title": "Bequemer Transfer auf Wunsch",
+    "transfer_text": "Wenn du einen Transferservice nutzen möchtest, gib dies einfach in unserem Angebotsformular an – wir sorgen dafür, dass alles reibungslos läuft.",
+    "learn_more": "Mehr erfahren →",
+    "alt1": "Auto 1",
+    "alt2": "Auto 2",
+    "alt3": "Auto 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menü",
+    "items": {
+      "about": "Über uns",
+      "benefits": "Ihre Vorteile",
+      "popular": "Beliebt",
+      "stories": "Geschichten",
+      "book": "Jetzt buchen"
+    }
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Sprachauswahl"
+  }
+}
