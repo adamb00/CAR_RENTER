@@ -4,30 +4,6 @@ import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { SplittingText } from '@/components/ui/shadcn-io/splitting-text';
 
-<SplittingText
-  text='Smooth text reveals that actually work'
-  type='words'
-  inView={true}
-  motionVariants={{
-    initial: { opacity: 0, x: 100 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5 },
-    stagger: 0.1,
-  }}
-/>;
-
-<SplittingText
-  text='Smooth text reveals that actually work'
-  type='words'
-  inView={true}
-  motionVariants={{
-    initial: { opacity: 0, x: 100 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5 },
-    stagger: 0.1,
-  }}
-/>;
-
 export function Header() {
   // Clip-path az eredetihez igazítva
   const clip = 'polygon(0 0, 100% 0, 100% 75vh, 0 90%)';
@@ -45,8 +21,8 @@ export function Header() {
           url('/header_image.webp')
         `,
         // clip-path (webkit is támogatva)
-        clipPath: clip as any,
-        WebkitClipPath: clip as any,
+        clipPath: clip,
+        WebkitClipPath: clip,
       }}
     >
       {/* Nagy felbontású/desktop háttér (media query alapú csere) */}
