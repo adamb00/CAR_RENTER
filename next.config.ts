@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const withNextIntl = createNextIntlPlugin(); // alapbeállítás: gyökérben keresi a next-intl.config.ts-t
 
-export default nextConfig;
+export default withNextIntl({
+  // ide jöhet más Next config is
+});
