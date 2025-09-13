@@ -12,7 +12,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { SocialIcon } from 'react-social-icons';
-import 'react-social-icons/wa.me';
 import { useTranslations } from 'next-intl';
 
 type Option = { id: string; label: string; text: string };
