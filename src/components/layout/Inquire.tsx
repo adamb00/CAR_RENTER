@@ -21,14 +21,17 @@ export default function Inquire() {
   };
 
   return (
-    <div className='p-[2rem] flex items-center justify-center md:p-[4rem] xl:p-[8rem] bg-gradient-to-br from-[var(--sky-dark)]/70 to-[var(--amber-light)]/70'>
+    <section
+      id='inquire_section'
+      className='p-[2rem] flex items-center justify-center md:p-[4rem] xl:p-[4rem] bg-gradient-to-br from-[var(--sky-dark)]/70 to-[var(--amber-light)]/70'
+    >
       <div className='w-full h-full md:w-2xl lg:w-7xl md:bg-white/80 rounded-md items-stretch overflow-hidden'>
         {/* GRID layout: mobilon 1 oszlop, nagyobb kijelzőn 2 oszlop */}
-        <div className='relative grid grid-cols-1 md:grid-cols-2 w-full gap-8 items-center min-h-[26rem]'>
+        <div className='relative grid grid-cols-1 md:grid-cols-2 w-full gap-8 items-center min-h-[26rem] xl:min-h-[40rem]'>
           {/* Form */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className='relative z-[20] space-y-6 p-6 bg-white/80 md:bg-transparent rounded-md md:rounded-none h-full md:m-0 flex items-center flex-col justify-center'
+            className='relative z-[20] space-y-6  p-6 bg-white/80 md:bg-transparent rounded-md md:rounded-none h-full md:m-0 flex items-center flex-col justify-center'
           >
             <h3 className='text-3xl leading-tight tracking-[0.1em] font-bold text-sky-dark uppercase'>
               Foglald le most!
@@ -103,8 +106,6 @@ export default function Inquire() {
             <Image
               src='/cars.webp'
               fill
-              // srcSet='cars_sm.webp 300w, cars.webp 1000w'
-              // sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px'
               sizes='(min-width: 1024px) 50vw, 100vw'
               alt='Autóbérlés illusztráció'
               className='h-full w-full object-cover md:rounded-r-md md:shadow-lg'
@@ -112,6 +113,6 @@ export default function Inquire() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
