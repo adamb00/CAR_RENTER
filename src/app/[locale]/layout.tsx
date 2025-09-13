@@ -1,5 +1,6 @@
 'use server';
 import '@/app/_style/globals.css';
+import Footer from '@/components/layout/Footer';
 import { LocaleToggle } from '@/components/LocaleToggler';
 import { Navigation } from '@/components/navigation/Navigation';
 import { ThemeToggle } from '@/components/ThemeToggler';
@@ -22,7 +23,6 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  // (opcionális) ha szeretnéd “szűrni” a locale-t a saját uniódra:
   const safeLocale: Locale = (
     LOCALES.includes(locale as Locale) ? locale : LOCALES[0]
   ) as Locale;
@@ -43,11 +43,11 @@ export default async function LocaleLayout({
                 }}
               >
                 <Navigation />
-
                 <LocaleToggle />
                 <ThemeToggle />
               </div>
               {children}
+              <Footer />
             </ThemeProvider>
           </div>
         </body>

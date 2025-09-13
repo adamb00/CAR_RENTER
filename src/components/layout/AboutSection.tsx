@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { PhotoComposition } from '../ui/photo-composition';
 import { useTranslations } from 'next-intl';
 
@@ -15,22 +15,22 @@ export default function AboutSection() {
       <div className='row mx-auto max-w-[114rem] px-4 md:px-12'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-12'>
           <div>
-            <h3 className='uppercase font-extrabold text-grey-dark-3 text-start mb-2'>
+            <h3 className='uppercase font-extrabold text-lg text-grey-dark-3 text-start mb-2'>
               {t('pickup_title')}
             </h3>
-            <p className='text-base text-start md:text-lg text-gray-dark-1 leading-relaxed mb-6'>
+            <p className='text-base text-start md:text-lg text-grey-dark-3 leading-relaxed mb-6'>
               {t('pickup_text')}
             </p>
 
-            <h3 className='uppercase font-extrabold text-grey-dark-3 text-start mb-2'>
+            <h3 className='uppercase font-extrabold text-lg text-grey-dark-3 text-start mb-2'>
               {t('transfer_title')}
             </h3>
-            <p className='text-base text-start md:text-lg text-gray-dark-1 leading-relaxed'>
+            <p className='text-base text-start md:text-lg text-grey-dark-3 leading-relaxed'>
               {t('transfer_text')}
             </p>
 
             <a
-              href='#'
+              href='/'
               className='btn-text inline-block font-semibold border-b border-current hover:translate-x-1 transition mt-4 text-amber-dark dark:text-amber-light'
             >
               {t('learn_more')}

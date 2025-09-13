@@ -98,12 +98,12 @@ export function LocaleToggle({ current }: { current?: string }) {
           size='sm'
           disabled={pending}
           aria-label={t('ariaLabel')}
-          className='gap-2 rounded-full shadow-lg !bg-background !text-foreground z-[2100]'
+          className='gap-2 rounded-full shadow-lg !bg-background !text-foreground z-[2400]'
         >
           <span className='text-base leading-none'>{FLAGS[active]}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align='end' className='w-44'>
+      <DropdownMenuContent align='end' className='w-44 z-[2400]'>
         {LOCALES.map((l) => (
           <DropdownMenuItem
             key={l}

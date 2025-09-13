@@ -4,13 +4,24 @@
 import { useEffect, useId, useState } from 'react';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
-type Item = { href: string; label: string; prefix?: string };
+// type Item = { href: string; label: string; prefix?: string };
 
-export function Navigation({ items }: { items?: Item[] }) {
+export function Navigation() {
   const t = useTranslations('Navigation');
   const [open, setOpen] = useState<boolean>(false);
+  const pathname = usePathname() || '/hu';
+
   const ctrlId = useId();
+  const locale = pathname.split('/')[1];
+
+  const itemsMap = [
+    { href: `/${locale}`, label: t('home'), prefix: '01' },
+    { href: '/about-us', label: t('about'), prefix: '02' },
+    { href: '/popular', label: t('offices'), prefix: '03' },
+    { href: '/contact', label: t('contact'), prefix: '04' },
+  ];
 
   // Body scroll lock nyitáskor
   useEffect(() => {
@@ -26,7 +37,7 @@ export function Navigation({ items }: { items?: Item[] }) {
     <>
       {/* FIXED WRAPPER: a gomb és a kör közös referenciában */}
       <div
-        className='fixed z-[2000] '
+        className='fixed z-[2400] '
         style={{
           top: 'calc(env(safe-area-inset-top, 0px) + 1rem)',
           right: 'calc(env(safe-area-inset-right, 0px) + 1rem)',
@@ -49,7 +60,7 @@ export function Navigation({ items }: { items?: Item[] }) {
             )}
             style={{
               backgroundImage:
-                'radial-gradient(var(--color-primary), var(--primary))',
+                'radial-gradient(var(--color-sky-dark), var(--color-sky-light))',
             }}
           />
         </div>
@@ -61,7 +72,7 @@ export function Navigation({ items }: { items?: Item[] }) {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className={clsx(
-            'relative z-[2100] h-14 w-14 sm:h-16 sm:w-16 rounded-full',
+            'relative z-[2400] h-14 w-14 sm:h-16 sm:w-16 rounded-full',
             'flex items-center justify-center',
             'border border-border shadow-lg',
             'bg-card text-card-foreground'
@@ -94,7 +105,15 @@ export function Navigation({ items }: { items?: Item[] }) {
               )}
             />
           </span>
-          <span className='sr-only'>{t('menu_sr')}</span>
+          <span className='sr-only'>
+            {(() => {
+              try {
+                return t('menu_sr');
+              } catch {
+                return 'Menu';
+              }
+            })()}
+          </span>
         </button>
       </div>
 
@@ -103,44 +122,22 @@ export function Navigation({ items }: { items?: Item[] }) {
         id={ctrlId}
         aria-hidden={!open}
         className={clsx(
-          'fixed inset-0 z-[1500] transition-opacity duration-500',
+          'fixed inset-0 z-[2400] transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
           open
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
         )}
       >
         <div className='absolute inset-0' aria-hidden />
-        <ul
-          className={clsx(
-            'grid place-items-center h-dvh w-dvw text-center px-6'
-          )}
-        >
-          {(
-            items || [
-              { href: '#about', label: t('items.about'), prefix: '01' },
-              { href: '#benefits', label: t('items.benefits'), prefix: '02' },
-              { href: '#popular', label: t('items.popular'), prefix: '03' },
-              { href: '#stories', label: t('items.stories'), prefix: '04' },
-              { href: '#book', label: t('items.book'), prefix: '05' },
-            ]
-          ).map((it, i) => (
-            <li key={it.href + i} className='my-3 sm:my-4'>
+        <ul className={'flex flex-col items-center justify-center text-center'}>
+          {itemsMap.map((it, i) => (
+            <li key={it.href + i} className='my-3 sm:my-4 z-[2500]'>
               <a
                 href={it.href}
                 onClick={() => setOpen(false)}
-                className={clsx(
-                  'inline-block uppercase no-underline',
-                  'text-2xl sm:text-4xl font-light',
-                  'px-4 py-3',
-                  'text-white',
-                  'transition-[color,background-position,transform] duration-300',
-                  'bg-[length:220%_100%] bg-right',
-                  'hover:bg-left hover:text-primary'
-                )}
-                style={{
-                  backgroundImage:
-                    'linear-gradient(120deg, transparent 0%, transparent 50%, rgba(255,255,255,1) 50%)',
-                }}
+                className={
+                  'inline-block uppercase no-underline text-2xl sm:text-4xl font-light px-4 py-3 text-white transition-colors duration-300 hover:bg-white hover:text-sky-dark'
+                }
               >
                 {it.prefix && (
                   <span className='mr-4 inline-block opacity-80'>

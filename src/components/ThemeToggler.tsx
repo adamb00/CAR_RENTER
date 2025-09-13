@@ -44,7 +44,7 @@ export function ThemeToggle() {
     <ThemeToggleButton
       theme={currentTheme}
       onClick={handleThemeToggle}
-      className='shadow-lg !bg-background !text-foreground z-[2100]'
+      className='shadow-lg !bg-background !text-foreground z-[2400]'
       variant='polygon'
       start='center'
     />
