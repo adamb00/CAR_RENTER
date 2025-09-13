@@ -1,7 +1,7 @@
 {
   "Header": {
     "header": "Válassz és foglalj percek alatt",
-    "cars": "Autóink"
+    "book_now": "Foglald le az autódat most"
   },
   "AboutSection": {
     "title": "Ne maradj le egyetlen élményről sem",
@@ -16,15 +16,43 @@
   },
   "Navigation": {
     "menu_sr": "Menü",
-    "items": {
-      "about": "Rólunk",
-      "benefits": "Előnyök",
-      "popular": "Népszerű",
-      "stories": "Történetek",
-      "book": "Foglalj most"
-    }
+    "about": "Rólunk",
+    "offices": "Irodáink",
+    "contact": "Kapcsolat",
+    "home": "Kezdőlap"
   },
   "LocaleToggle": {
     "ariaLabel": "Nyelvválasztó"
+  },
+  "Footer": {
+    "about": "Rólunk",
+    "offices": "Irodáink",
+    "contact": "Kapcsolat",
+    "home": "Kezdőlap",
+    "fleet": "Flotta",
+    "fuerte_car_rental": "Fuerte Autókölcsönző",
+    "logo_placeholder": "Ide kerül a logó"
+  },
+  "WhatsApp": {
+    "aria_label": "WhatsApp üzenet",
+    "choose_option": "Válassz a lehetőségek közül",
+    "options": {
+      "transfer_quote": {
+        "label": "Transzfer ajánlatot kérek",
+        "text": "Szia! Transzfer szolgáltatásra kérnék ajánlatot."
+      },
+      "car_availability": {
+        "label": "Autó elérhetőség",
+        "text": "Szia! Érdeklődöm az autók elérhetőségéről a megadott dátumra."
+      },
+      "interested_in": {
+        "label": "Érdeklődni szeretnék",
+        "text": "Szia! Érdeklődöm az autóbérlés folyamatáról."
+      },
+      "custom_message": {
+        "label": "Egyedi üzenet",
+        "text": ""
+      }
+    }
   }
 }

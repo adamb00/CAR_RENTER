@@ -1,7 +1,8 @@
 {
   "Header": {
     "header": "Pick and book in minutes",
-    "cars": "Our cars"
+    "cars": "Our cars",
+    "book_now": "Book your car now"
   },
   "AboutSection": {
     "title": "Don't miss a single experience",
@@ -16,6 +17,10 @@
   },
   "Navigation": {
     "menu_sr": "Menu",
+    "home": "Home",
+    "about": "About",
+    "offices": "Offices",
+    "contact": "Contact",
     "items": {
       "about": "About",
       "benefits": "Benefits",
@@ -26,5 +31,36 @@
   },
   "LocaleToggle": {
     "ariaLabel": "Language selector"
+  },
+  "Footer": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "offices": "Offices",
+    "fleet": "Fleet",
+    "fuerte_car_rental": "Fuerte Car Rental",
+    "logo_placeholder": "Logo comes here"
+  },
+  "WhatsApp": {
+    "aria_label": "Send WhatsApp message",
+    "choose_option": "Choose an option",
+    "options": {
+      "transfer_quote": {
+        "label": "Request transfer quote",
+        "text": "Hi! I'd like a quote for a transfer service."
+      },
+      "car_availability": {
+        "label": "Car availability",
+        "text": "Hi! I’d like to ask about car availability for the given date."
+      },
+      "interested_in": {
+        "label": "I’m interested",
+        "text": "Hi! I’d like to ask about the car rental process."
+      },
+      "custom_message": {
+        "label": "Custom message",
+        "text": ""
+      }
+    }
   }
 }

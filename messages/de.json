@@ -1,7 +1,8 @@
 {
   "Header": {
     "header": "Wählen und buchen in Minuten",
-    "cars": "Unsere Autos"
+    "cars": "Unsere Autos",
+    "book_now": "Jetzt Auto buchen"
   },
   "AboutSection": {
     "title": "Verpasse kein einziges Erlebnis",
@@ -16,6 +17,10 @@
   },
   "Navigation": {
     "menu_sr": "Menü",
+    "home": "Startseite",
+    "about": "Über uns",
+    "offices": "Standorte",
+    "contact": "Kontakt",
     "items": {
       "about": "Über uns",
       "benefits": "Ihre Vorteile",
@@ -26,5 +31,36 @@
   },
   "LocaleToggle": {
     "ariaLabel": "Sprachauswahl"
+  },
+  "Footer": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "offices": "Standorte",
+    "fleet": "Flotte",
+    "fuerte_car_rental": "Fuerte Autovermietung",
+    "logo_placeholder": "Logo kommt hierhin"
+  },
+  "WhatsApp": {
+    "aria_label": "WhatsApp-Nachricht senden",
+    "choose_option": "Wähle eine Option",
+    "options": {
+      "transfer_quote": {
+        "label": "Transferangebot anfordern",
+        "text": "Hallo! Ich hätte gern ein Angebot für einen Transferservice."
+      },
+      "car_availability": {
+        "label": "Verfügbarkeit von Autos",
+        "text": "Hallo! Ich möchte nach der Verfügbarkeit der Autos für das angegebene Datum fragen."
+      },
+      "interested_in": {
+        "label": "Ich interessiere mich",
+        "text": "Hallo! Ich möchte mich über den Ablauf der Autovermietung erkundigen."
+      },
+      "custom_message": {
+        "label": "Eigene Nachricht",
+        "text": ""
+      }
+    }
   }
 }

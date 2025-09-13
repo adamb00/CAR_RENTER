@@ -1,7 +1,8 @@
 {
   "Header": {
     "header": "Alege și rezervă în câteva minute",
-    "cars": "Mașinile noastre"
+    "cars": "Mașinile noastre",
+    "book_now": "Rezervă-ți mașina acum"
   },
   "AboutSection": {
     "title": "Nu rata nicio experiență",
@@ -16,6 +17,10 @@
   },
   "Navigation": {
     "menu_sr": "Meniu",
+    "home": "Acasă",
+    "about": "Despre noi",
+    "offices": "Agenții",
+    "contact": "Contact",
     "items": {
       "about": "Despre noi",
       "benefits": "Beneficii",
@@ -26,5 +31,36 @@
   },
   "LocaleToggle": {
     "ariaLabel": "Selector de limbă"
+  },
+  "Footer": {
+    "home": "Acasă",
+    "about": "Despre noi",
+    "contact": "Contact",
+    "offices": "Agenții",
+    "fleet": "Flotă",
+    "fuerte_car_rental": "Fuerte Închiriere Auto",
+    "logo_placeholder": "Logo aici"
+  },
+  "WhatsApp": {
+    "aria_label": "Trimite mesaj pe WhatsApp",
+    "choose_option": "Alege o opțiune",
+    "options": {
+      "transfer_quote": {
+        "label": "Solicit ofertă transfer",
+        "text": "Salut! Aș dori o ofertă pentru un serviciu de transfer."
+      },
+      "car_availability": {
+        "label": "Disponibilitate mașini",
+        "text": "Salut! Aș dori să întreb despre disponibilitatea mașinilor pentru data indicată."
+      },
+      "interested_in": {
+        "label": "Sunt interesat(ă)",
+        "text": "Salut! Aș dori informații despre procesul de închiriere auto."
+      },
+      "custom_message": {
+        "label": "Mesaj personalizat",
+        "text": ""
+      }
+    }
   }
 }

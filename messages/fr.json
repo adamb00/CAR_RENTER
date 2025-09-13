@@ -1,7 +1,8 @@
 {
   "Header": {
     "header": "Choisissez et réservez en quelques minutes",
-    "cars": "Nos voitures"
+    "cars": "Nos voitures",
+    "book_now": "Réservez votre voiture maintenant"
   },
   "AboutSection": {
     "title": "Ne manquez aucune expérience",
@@ -16,6 +17,10 @@
   },
   "Navigation": {
     "menu_sr": "Menu",
+    "home": "Accueil",
+    "about": "À propos",
+    "offices": "Agences",
+    "contact": "Contact",
     "items": {
       "about": "À propos",
       "benefits": "Vos avantages",
@@ -26,5 +31,36 @@
   },
   "LocaleToggle": {
     "ariaLabel": "Sélecteur de langue"
+  },
+  "Footer": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "offices": "Agences",
+    "fleet": "Flotte",
+    "fuerte_car_rental": "Fuerte Location de Voitures",
+    "logo_placeholder": "Le logo ici"
+  },
+  "WhatsApp": {
+    "aria_label": "Envoyer un message WhatsApp",
+    "choose_option": "Choisissez une option",
+    "options": {
+      "transfer_quote": {
+        "label": "Demander un devis de transfert",
+        "text": "Bonjour ! Je souhaiterais un devis pour un service de transfert."
+      },
+      "car_availability": {
+        "label": "Disponibilité des voitures",
+        "text": "Bonjour ! Je souhaite me renseigner sur la disponibilité des voitures à la date indiquée."
+      },
+      "interested_in": {
+        "label": "Je suis intéressé(e)",
+        "text": "Bonjour ! Je souhaite me renseigner sur le processus de location de voiture."
+      },
+      "custom_message": {
+        "label": "Message personnalisé",
+        "text": ""
+      }
+    }
   }
 }

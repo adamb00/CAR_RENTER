@@ -1,7 +1,8 @@
 {
   "Header": {
     "header": "Vyberte a rezervujte během pár minut",
-    "cars": "Naše auta"
+    "cars": "Naše auta",
+    "book_now": "Rezervujte si auto nyní"
   },
   "AboutSection": {
     "title": "Nezmeškejte jediný zážitek",
@@ -16,6 +17,10 @@
   },
   "Navigation": {
     "menu_sr": "Menu",
+    "home": "Domů",
+    "about": "O nás",
+    "offices": "Pobočky",
+    "contact": "Kontakt",
     "items": {
       "about": "O nás",
       "benefits": "Výhody",
@@ -26,5 +31,36 @@
   },
   "LocaleToggle": {
     "ariaLabel": "Výběr jazyka"
+  },
+  "Footer": {
+    "home": "Domů",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "offices": "Pobočky",
+    "fleet": "Flotila",
+    "fuerte_car_rental": "Fuerte Půjčovna aut",
+    "logo_placeholder": "Sem přijde logo"
+  },
+  "WhatsApp": {
+    "aria_label": "Odeslat zprávu na WhatsApp",
+    "choose_option": "Vyberte možnost",
+    "options": {
+      "transfer_quote": {
+        "label": "Požádat o nabídku na transfer",
+        "text": "Ahoj! Chtěl(a) bych nabídku na transferovou službu."
+      },
+      "car_availability": {
+        "label": "Dostupnost aut",
+        "text": "Ahoj! Rád(a) bych se zeptal(a) na dostupnost aut na uvedené datum."
+      },
+      "interested_in": {
+        "label": "Mám zájem",
+        "text": "Ahoj! Zajímám se o proces pronájmu auta."
+      },
+      "custom_message": {
+        "label": "Vlastní zpráva",
+        "text": ""
+      }
+    }
   }
 }
