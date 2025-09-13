@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { PhotoComposition } from '../ui/photo-composition';
 import { useTranslations } from 'next-intl';
 
@@ -29,37 +30,21 @@ export default function AboutSection() {
               {t('transfer_text')}
             </p>
 
-            <a
+            <Link
               href='/'
               className='btn-text inline-block font-semibold border-b border-current hover:translate-x-1 transition mt-4 text-amber-dark dark:text-amber-light'
             >
               {t('learn_more')}
-            </a>
+            </Link>
           </div>
 
           <div>
             <PhotoComposition
-              p1={{
-                src: 'car_1_sm.webp',
-                srcSet: 'car_1_sm.webp 300w, car_1.webp 1000w',
-                sizes:
-                  '(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px',
-                alt: t('alt1'),
-              }}
-              p2={{
-                src: 'car_2_sm.webp',
-                srcSet: 'car_2_sm.webp, 300w, car_2.webp 1000w',
-                sizes:
-                  '(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px',
-                alt: t('alt2'),
-              }}
-              p3={{
-                src: 'car_3_sm.webp',
-                srcSet: 'car_3_sm.webp, 300w, car_3.webp 1000w',
-                sizes:
-                  '(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px',
-                alt: t('alt3'),
-              }}
+              photos={[
+                { src: '/car_1.webp', alt: 'Car 1' },
+                { src: '/car_2.webp', alt: 'Car 2' },
+                { src: '/car_3.webp', alt: 'Car 3' },
+              ]}
             />
           </div>
         </div>

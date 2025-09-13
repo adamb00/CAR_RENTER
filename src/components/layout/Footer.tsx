@@ -3,6 +3,7 @@ import React from 'react';
 import { Copyright } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -17,19 +18,19 @@ export default function Footer() {
         <div className='border-t pt-2 inline-block w-[100%] text-center'>
           <ul className='list-none flex gap-x-2 p-0 items-center justify-evenly'>
             <li className='footer__list'>
-              <a href={`/${locale}`}>{t('home')}</a>
+              <Link href={`/${locale}`}>{t('home')}</Link>
             </li>
             <li className='footer__list'>
-              <a href='/about-us'>{t('about')}</a>
+              <Link href='/about-us'>{t('about')}</Link>
             </li>
             <li className='footer__list'>
-              <a href='/contact'>{t('contact')}</a>
+              <Link href='/contact'>{t('contact')}</Link>
             </li>
             <li className='footer__list'>
-              <a href='/offices'>{t('offices')}</a>
+              <Link href='/offices'>{t('offices')}</Link>
             </li>
             <li className='footer__list'>
-              <a href='/fleet'>{t('fleet')}</a>
+              <Link href='/fleet'>{t('fleet')}</Link>
             </li>
           </ul>
         </div>

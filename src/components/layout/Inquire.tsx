@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -99,10 +100,12 @@ export default function Inquire() {
 
           {/* Kép */}
           <div className='absolute inset-0 z-[10] pointer-events-none md:pointer-events-auto md:static md:inset-auto md:h-full md:w-full md:flex md:justify-end clip-path opacity-70'>
-            <img
-              src='cars_sm.webp'
-              srcSet='cars_sm.webp 300w, cars.webp 1000w'
-              sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px'
+            <Image
+              src='/cars.webp'
+              fill
+              // srcSet='cars_sm.webp 300w, cars.webp 1000w'
+              // sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px'
+              sizes='(min-width: 1024px) 50vw, 100vw'
               alt='Autóbérlés illusztráció'
               className='h-full w-full object-cover md:rounded-r-md md:shadow-lg'
             />
