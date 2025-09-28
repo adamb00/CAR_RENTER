@@ -20,8 +20,14 @@ const FLAGS: Record<Locale, string> = {
   de: '🇩🇪',
   ro: '🇷🇴',
   sk: '🇸🇰',
-  cz: '🇨🇿', // tudom, ISO szerint 'cs', de a kérés 'cz'
+  cz: '🇨🇿',
   fr: '🇫🇷',
+  se: '🇸🇪',
+  no: '🇳🇴',
+  dk: '🇩🇰',
+  es: '🇪🇸',
+  it: '🇮🇹',
+  pl: '🇵🇱',
 };
 
 const LABELS: Record<Locale, string> = {
@@ -32,6 +38,12 @@ const LABELS: Record<Locale, string> = {
   sk: 'Slovenčina',
   cz: 'Čeština',
   fr: 'Français',
+  se: 'Svenska',
+  no: 'Norsk',
+  dk: 'Dansk',
+  es: 'Español',
+  it: 'Italiano',
+  pl: 'Polski',
 };
 
 function replaceLocaleInPath(pathname: string, next: Locale) {

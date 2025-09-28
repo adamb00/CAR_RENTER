@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Copyright } from 'lucide-react';
+import logo from '../../../public/logo_white.png';
+import Logo from '../Logo';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -31,10 +33,14 @@ export default function Footer() {
       <div className='mx-auto max-w-screen-xl px-4 py-10 sm:px-6 md:py-12 lg:px-8'>
         {/* Felső sor: logó / márka */}
         <div className='flex items-center justify-center'>
-          {/* Ide jöhet a valódi logó komponens */}
-          <div className='text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase'>
-            {t('logo_placeholder')}
-          </div>
+          <Logo logo={logo} />
+          {/* <Image
+            src={Logo}
+            alt='Logo'
+            className='h-24 w-auto sm:h-28 md:h-32 lg:h-44'
+            sizes='(min-width: 1280px) 256px, (min-width: 1024px) 224px, (min-width: 768px) 192px, (min-width: 640px) 160px, 128px'
+            priority={false}
+          /> */}
         </div>
 
         <div className='grid grid-cols-1 items-start justify-center place-items-center md:grid-cols-2 md:gap-10'>
@@ -85,7 +91,7 @@ export default function Footer() {
             <p className='flex items-center gap-2 text-xs sm:text-sm'>
               <Copyright className='h-4 w-4' aria-hidden='true' />
               <span>
-                {year} • {t('fuerte_car_rental')}
+                {year} • {t('zodiac_car_rental')}
               </span>
             </p>
 

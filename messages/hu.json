@@ -1,7 +1,7 @@
 {
   "Header": {
-    "header": "Válassz és foglalj percek alatt",
-    "book_now": "Foglald le az autódat most"
+    "header": "Autóbérlés Fuerteventura-n és Lanzarote-n, kényelmesen, gyorsan",
+    "book_now": "Bérelj autót most"
   },
   "AboutSection": {
     "title": "Ne maradj le egyetlen élményről sem",
@@ -17,7 +17,7 @@
   "Navigation": {
     "menu_sr": "Menü",
     "about": "Rólunk",
-    "offices": "Irodáink",
+    "blog": "Blog",
     "contact": "Kapcsolat",
     "home": "Kezdőlap"
   },
@@ -30,8 +30,42 @@
     "contact": "Kapcsolat",
     "home": "Kezdőlap",
     "fleet": "Flotta",
-    "fuerte_car_rental": "Fuerte Autókölcsönző",
+    "zodiac_car_rental": "Zodiac Autókölcsönző",
     "logo_placeholder": "Ide kerül a logó"
+  },
+  "Explore": {
+    "title": "Fedezd fel a Kanári-szigetek szépségeit bérautóval!",
+    "subtitle": "Online foglalás, rugalmas átvétel és kiszállítás szállásodra vagy reptérre.",
+    "cards": {
+      "map": "A Zodiacs Rent a Car Fuerteventura-n, Costa Calma-n és Lanzarote-n kínál megbízható autóbérlési lehetőséget.",
+      "globe": "Akár tengerparti pihenést, akár kalandos kirándulást tervezel, flottánkban megtalálod a számodra ideális autót.",
+      "heart": "Foglalj online, és vedd át bérautódat közvetlenül a reptéren vagy szálláshelyeden!"
+    }
+  },
+  "Inquire": {
+    "title": "Foglald le most!",
+    "description_1": "Ne hagyd az utolsó pillanatra az autóbérlést!",
+    "description_2": "Előfoglalással kedvezményes árakon biztosíthatod magadnak a legjobb autót Fuerteventura-n és Lanzarote-n.",
+    "fields": {
+      "fullName": {
+        "label": "Teljes név",
+        "placeholder": "Teljes név",
+        "required": "Kérlek add meg a neved"
+      },
+      "email": {
+        "label": "E-mail cím",
+        "placeholder": "Email cím",
+        "required": "Kérlek add meg az email címed",
+        "invalid": "Érvényes email címet adj meg"
+      }
+    },
+    "submit": {
+      "idle": "Tovább →",
+      "submitting": "Küldés..."
+    },
+    "alt": {
+      "image": "Autóbérlés illusztráció"
+    }
   },
   "WhatsApp": {
     "aria_label": "WhatsApp üzenet",

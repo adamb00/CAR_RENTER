@@ -5,6 +5,8 @@ import { useEffect, useId, useState } from 'react';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import logo from '../../../public/logo_white.png';
+import Logo from '../Logo';
 
 // type Item = { href: string; label: string; prefix?: string };
 
@@ -19,7 +21,7 @@ export function Navigation() {
   const itemsMap = [
     { href: `/${locale}`, label: t('home'), prefix: '01' },
     { href: '/about-us', label: t('about'), prefix: '02' },
-    { href: '/popular', label: t('offices'), prefix: '03' },
+    { href: '/blog', label: t('blog'), prefix: '03' },
     { href: '/contact', label: t('contact'), prefix: '04' },
   ];
 
@@ -130,6 +132,7 @@ export function Navigation() {
       >
         <div className='absolute inset-0' aria-hidden />
         <ul className={'flex flex-col items-center justify-center text-center'}>
+          <Logo logo={logo} size='lg' />
           {itemsMap.map((it, i) => (
             <li key={it.href + i} className='my-3 sm:my-4 z-[2500]'>
               <a
