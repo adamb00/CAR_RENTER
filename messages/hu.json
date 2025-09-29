@@ -89,4 +89,19 @@
       }
     }
   }
+  ,
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "A <strong>Zodiacs Rent a Car</strong> egy <strong>magyar családi vállalkozás</strong>, amelynek szíve és otthona <strong>Fuerteventura</strong>. Nemzetközi környezetben élünk és dolgozunk, de pontosan tudjuk, hogy mi fontos az ide érkező utazóknak: biztonság, megbízhatóság és barátságos hozzáállás.",
+    "why_title": "Miért Fuerteventura?",
+    "why_text": "Számunkra ez a sziget nem csupán egy turisztikai célpont, hanem az otthonunk. Imádjuk a napsütést, az óceánt, a nyugodt életstílust és a végtelen szabadság érzését. Ezeket az élményeket szeretnénk átadni neked is, amikor nálunk bérelsz autót.",
+    "fleet_title": "Autóink – kényelmes, megbízható, elérhető",
+    "fleet_text": "Flottánkban megtalálod a <strong>praktikus kisautókat</strong>, a <strong>családi modelleket</strong>, de akár a <strong>tágasabb járműveket</strong> is. Mindegyik autónkat rendszeresen karbantartjuk és tisztán adjuk át, hogy gondtalanul fedezhesd fel a szigetet.",
+    "delivery_title": "Kiszállítás és rugalmasság",
+    "delivery_text": "Bérautódat nemcsak Fuerteventurán, hanem <strong>Lanzarotén</strong> is átveheted. Akár a reptérre érkezel, akár szállodában szállsz meg, mi rugalmasan kiszállítjuk neked az autót, hogy az utazásod kényelmesen induljon.",
+    "more_title": "Több, mint autóbérlés",
+    "more_text": "Nálunk az autóbérlés nem csak a kulcs átadását jelenti. Igény esetén segítünk útitervvel, helyi tippekkel, és megmutatjuk, hova érdemes ellátogatnod, hogy átélhesd a valódi <strong>Fuerteventurai életérzést</strong>: a rejtett öblöket, a homokos strandokat, a különleges tájakat és a gasztronómiai élményeket.",
+    "mission_title": "Küldetésünk",
+    "mission_text": "Célunk, hogy minden utasunk <strong>szabadon, kényelmesen és biztonságban</strong> élhesse át a sziget élményeit. Családként, és helyi vállalkozóként szívvel-lélekkel dolgozunk azért, hogy te is hazavihesd magaddal a Fuerteventura különleges hangulatát."
+  }
 }
