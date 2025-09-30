@@ -16,6 +16,7 @@
   },
   "Navigation": {
     "menu_sr": "Menü",
+    "cars": "Autóink",
     "about": "Rólunk",
     "blog": "Blog",
     "contact": "Kapcsolat",
@@ -88,8 +89,7 @@
         "text": ""
       }
     }
-  }
-  ,
+  },
   "AboutUs": {
     "headline": "Zodiacs Rent a Car",
     "intro": "A <strong>Zodiacs Rent a Car</strong> egy <strong>magyar családi vállalkozás</strong>, amelynek szíve és otthona <strong>Fuerteventura</strong>. Nemzetközi környezetben élünk és dolgozunk, de pontosan tudjuk, hogy mi fontos az ide érkező utazóknak: biztonság, megbízhatóság és barátságos hozzáállás.",
@@ -103,5 +103,22 @@
     "more_text": "Nálunk az autóbérlés nem csak a kulcs átadását jelenti. Igény esetén segítünk útitervvel, helyi tippekkel, és megmutatjuk, hova érdemes ellátogatnod, hogy átélhesd a valódi <strong>Fuerteventurai életérzést</strong>: a rejtett öblöket, a homokos strandokat, a különleges tájakat és a gasztronómiai élményeket.",
     "mission_title": "Küldetésünk",
     "mission_text": "Célunk, hogy minden utasunk <strong>szabadon, kényelmesen és biztonságban</strong> élhesse át a sziget élményeit. Családként, és helyi vállalkozóként szívvel-lélekkel dolgozunk azért, hogy te is hazavihesd magaddal a Fuerteventura különleges hangulatát."
+  },
+  "Contact": {
+    "title": "Kérdésed van az autóbérléssel kapcsolatban Fuerteventurán vagy Lanzarotén?",
+    "p1": "Vedd fel velünk a kapcsolatot, és segítünk megtalálni <strong>a számodra legjobb megoldást!</strong> Legyen szó előfoglalásról, reptéri kiszállításról vagy szállodához történő autóátadásról, ügyfélszolgálatunk <strong>gyorsan és rugalmasan</strong> válaszol.",
+    "p2": "Töltsd ki az alábbi űrlapot, írj nekünk e-mailt, Messenger, WhatsApp vagy Viber üzenetet, vagy hívj telefonon! <strong>Örömmel állunk rendelkezésedre</strong>, hogy nyaralásod gondtalanul teljen."
+  },
+  "Cars": {
+    "title": "Fedezd fel Fuerteventurát és Lanzarotét teljes szabadságban autóinkkal!",
+    "p1": "Nálunk az autóbérlés egyszerű és gyors: kiválasztod a számodra megfelelő járművet, és mi kiszállítjuk a reptérre vagy közvetlenül a szállodádhoz. Rugalmas autókölcsönzési lehetőségeinknek köszönhetően <strong>gondtalanul élvezheted nyaralásod</strong>, akár rövid, akár hosszabb tartózkodásra van szükséged autóra.",
+    "p2": "<strong>Érdemes előre lefoglalni a kiválasztott autót</strong>, így biztosan rendelkezésedre áll az érkezésedkor. Válogass az alábbi autóink közül, kattints a részletekért és foglald le online kényelmesen!",
+    "labels": {
+      "seats": "személy",
+      "manual": "Manuális",
+      "automatic": "Automata",
+      "per_day": "/ nap",
+      "from_price": "€{price}-tól"
+    }
   }
 }

@@ -1,0 +1,124 @@
+{
+  "Header": {
+    "header": "Location de voiture à Fuerteventura et Lanzarote, simple et rapide",
+    "book_now": "Réserver une voiture"
+  },
+  "AboutSection": {
+    "title": "Ne ratez aucune expérience",
+    "pickup_title": "Retrait où cela vous convient",
+    "pickup_text": "Récupérez votre voiture là où c’est le plus pratique : devant votre hôtel, appartement ou l’adresse indiquée. Partez explorer dès la première minute.",
+    "transfer_title": "Transfert confortable sur demande",
+    "transfer_text": "Si vous souhaitez un service de transfert, indiquez‑le dans le formulaire – nous veillons au bon déroulement.",
+    "learn_more": "En savoir plus →",
+    "alt1": "Voiture 1",
+    "alt2": "Voiture 2",
+    "alt3": "Voiture 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Voitures",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Accueil"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Sélecteur de langue"
+  },
+  "Footer": {
+    "about": "À propos",
+    "offices": "Bureaux",
+    "contact": "Contact",
+    "home": "Accueil",
+    "fleet": "Flotte",
+    "zodiac_car_rental": "Zodiac Location de Voitures",
+    "logo_placeholder": "Logo ici"
+  },
+  "Explore": {
+    "title": "Découvrez les Canaries en voiture de location !",
+    "subtitle": "Réservation en ligne, retrait flexible et livraison à l’hôtel ou à l’aéroport.",
+    "cards": {
+      "map": "Zodiacs Rent a Car propose une location fiable à Fuerteventura, Costa Calma et Lanzarote.",
+      "globe": "Plage ou aventure – trouvez la voiture idéale dans notre flotte.",
+      "heart": "Réservez en ligne et récupérez votre voiture à l’aéroport ou à votre hébergement !"
+    }
+  },
+  "Inquire": {
+    "title": "Réservez maintenant !",
+    "description_1": "Ne remettez pas la location à la dernière minute !",
+    "description_2": "Avec une réservation anticipée, assurez‑vous la meilleure voiture à Fuerteventura et Lanzarote à bon prix.",
+    "fields": {
+      "fullName": {
+        "label": "Nom complet",
+        "placeholder": "Nom complet",
+        "required": "Veuillez indiquer votre nom"
+      },
+      "email": {
+        "label": "E‑mail",
+        "placeholder": "Adresse e‑mail",
+        "required": "Veuillez indiquer votre e‑mail",
+        "invalid": "Veuillez indiquer un e‑mail valide"
+      }
+    },
+    "submit": {
+      "idle": "Suivant →",
+      "submitting": "Envoi..."
+    },
+    "alt": {
+      "image": "Illustration location de voiture"
+    }
+  },
+  "WhatsApp": {
+    "aria_label": "Message WhatsApp",
+    "choose_option": "Choisissez une option",
+    "options": {
+      "transfer_quote": {
+        "label": "Demander un devis transfert",
+        "text": "Bonjour ! Je souhaite un devis pour un service de transfert."
+      },
+      "car_availability": {
+        "label": "Disponibilité des voitures",
+        "text": "Bonjour ! Je me renseigne sur la disponibilité pour la date indiquée."
+      },
+      "interested_in": {
+        "label": "Je souhaite me renseigner",
+        "text": "Bonjour ! Je suis intéressé par le processus de location."
+      },
+      "custom_message": {
+        "label": "Message personnalisé",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> est une <strong>entreprise familiale hongroise</strong> dont le cœur et la maison sont à <strong>Fuerteventura</strong>. Nous savons ce qui compte pour les voyageurs : sécurité, fiabilité et accueil chaleureux.",
+    "why_title": "Pourquoi Fuerteventura ?",
+    "why_text": "Pour nous, l’île n’est pas qu’une destination, c’est notre maison. Nous aimons le soleil, l’océan, le rythme paisible et la liberté – c’est ce que nous souhaitons partager avec vous.",
+    "fleet_title": "Nos voitures – confortables et fiables",
+    "fleet_text": "Notre flotte comprend <strong>de petites voitures pratiques</strong>, des <strong>modèles familiaux</strong> et des <strong>véhicules plus spacieux</strong>. Nous entretenons et nettoyons régulièrement chaque voiture pour une découverte sereine.",
+    "delivery_title": "Livraison et flexibilité",
+    "delivery_text": "Retrait possible non seulement à Fuerteventura mais aussi à <strong>Lanzarote</strong>. Aéroport ou hôtel – nous livrons de manière flexible.",
+    "more_title": "Plus que de la location",
+    "more_text": "La location, c’est plus que la remise des clés. Au besoin, nous aidons avec des itinéraires, des conseils locaux et des lieux pour ressentir la vraie <strong>ambiance de Fuerteventura</strong>.",
+    "mission_title": "Notre mission",
+    "mission_text": "Notre objectif : que chacun vive l’île <strong>librement, confortablement et en sécurité</strong>. En tant qu’entreprise locale et familiale, nous mettons du cœur pour que vous emportiez l’atmosphère unique de Fuerteventura."
+  },
+  "Contact": {
+    "title": "Des questions sur la location à Fuerteventura ou Lanzarote ?",
+    "p1": "Contactez‑nous : nous vous aidons à trouver <strong>la meilleure solution</strong>. Réservation, livraison à l’aéroport ou à l’hôtel – réponse <strong>rapide et flexible</strong>.",
+    "p2": "Remplissez le formulaire, écrivez‑nous par e‑mail, Messenger, WhatsApp ou Viber, ou appelez‑nous ! <strong>Nous serons ravis de vous aider</strong> pour des vacances sereines."
+  },
+  "Cars": {
+    "title": "Découvrez Fuerteventura et Lanzarote en toute liberté avec nos voitures !",
+    "p1": "Louer chez nous est simple et rapide : choisissez votre voiture et nous la livrons à l’aéroport ou directement à l’hôtel. Grâce à nos options flexibles, <strong>profitez de vacances sans souci</strong>.",
+    "p2": "<strong>Mieux vaut réserver à l’avance</strong> pour garantir la disponibilité à l’arrivée. Explorez nos voitures ci‑dessous, voyez les détails et réservez en ligne !",
+    "labels": {
+      "seats": "places",
+      "manual": "Manuelle",
+      "automatic": "Automatique",
+      "per_day": "/ jour",
+      "from_price": "à partir de €{price}"
+    }
+  }
+}

@@ -31,7 +31,7 @@ export default function AboutSection() {
             </p>
 
             <Link
-              href='/'
+              href='/about-us'
               className='btn-text inline-block font-semibold border-b border-current hover:translate-x-1 transition mt-4 text-amber-dark dark:text-amber-light'
             >
               {t('learn_more')}

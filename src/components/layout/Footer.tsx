@@ -19,7 +19,7 @@ export default function Footer() {
     { href: `/${locale}/about-us`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },
     { href: `/${locale}/offices`, label: t('offices') },
-    { href: `/${locale}/fleet`, label: t('fleet') },
+    { href: `/${locale}/cars`, label: t('fleet') },
   ];
 
   return (
@@ -34,13 +34,6 @@ export default function Footer() {
         {/* Felső sor: logó / márka */}
         <div className='flex items-center justify-center'>
           <Logo logo={logo} />
-          {/* <Image
-            src={Logo}
-            alt='Logo'
-            className='h-24 w-auto sm:h-28 md:h-32 lg:h-44'
-            sizes='(min-width: 1280px) 256px, (min-width: 1024px) 224px, (min-width: 768px) 192px, (min-width: 640px) 160px, 128px'
-            priority={false}
-          /> */}
         </div>
 
         <div className='grid grid-cols-1 items-start justify-center place-items-center md:grid-cols-2 md:gap-10'>

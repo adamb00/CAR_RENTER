@@ -1,0 +1,124 @@
+{
+  "Header": {
+    "header": "Închiriere auto în Fuerteventura și Lanzarote – simplu și rapid",
+    "book_now": "Închiriază acum"
+  },
+  "AboutSection": {
+    "title": "Nu rata nicio experiență",
+    "pickup_title": "Preluare unde îți este comod",
+    "pickup_text": "Ia mașina de unde e cel mai comod: în fața hotelului, apartamentului sau la adresa indicată. Pornește la explorat din prima clipă.",
+    "transfer_title": "Transfer confortabil la cerere",
+    "transfer_text": "Dacă dorești serviciu de transfer, menționează în formular – ne ocupăm să meargă totul lin.",
+    "learn_more": "Află mai multe →",
+    "alt1": "Mașină 1",
+    "alt2": "Mașină 2",
+    "alt3": "Mașină 3"
+  },
+  "Navigation": {
+    "menu_sr": "Meniu",
+    "cars": "Mașini",
+    "about": "Despre noi",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Acasă"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Selector limbă"
+  },
+  "Footer": {
+    "about": "Despre noi",
+    "offices": "Birouri",
+    "contact": "Contact",
+    "home": "Acasă",
+    "fleet": "Flotă",
+    "zodiac_car_rental": "Zodiac Închirieri Auto",
+    "logo_placeholder": "Logo aici"
+  },
+  "Explore": {
+    "title": "Descoperă Insulele Canare cu mașină închiriată!",
+    "subtitle": "Rezervare online, preluare flexibilă și livrare la hotel sau aeroport.",
+    "cards": {
+      "map": "Zodiacs Rent a Car oferă închirieri de încredere în Fuerteventura, Costa Calma și Lanzarote.",
+      "globe": "Plajă sau aventură – în flota noastră găsești mașina potrivită.",
+      "heart": "Rezervă online și preia mașina la aeroport sau la cazare!"
+    }
+  },
+  "Inquire": {
+    "title": "Rezervă acum!",
+    "description_1": "Nu lăsa închirierea pe ultima sută de metri!",
+    "description_2": "Cu rezervare în avans îți asiguri cea mai bună mașină în Fuerteventura și Lanzarote la prețuri avantajoase.",
+    "fields": {
+      "fullName": {
+        "label": "Nume complet",
+        "placeholder": "Nume complet",
+        "required": "Te rugăm să introduci numele"
+      },
+      "email": {
+        "label": "E‑mail",
+        "placeholder": "Adresă e‑mail",
+        "required": "Te rugăm să introduci adresa de e‑mail",
+        "invalid": "Te rugăm să introduci un e‑mail valid"
+      }
+    },
+    "submit": {
+      "idle": "Înainte →",
+      "submitting": "Se trimite..."
+    },
+    "alt": {
+      "image": "Ilustrație închirieri auto"
+    }
+  },
+  "WhatsApp": {
+    "aria_label": "Mesaj WhatsApp",
+    "choose_option": "Alege o opțiune",
+    "options": {
+      "transfer_quote": {
+        "label": "Cere ofertă transfer",
+        "text": "Bună! Aș dori o ofertă pentru serviciul de transfer."
+      },
+      "car_availability": {
+        "label": "Disponibilitate mașini",
+        "text": "Bună! Întreb despre disponibilitatea mașinilor pentru data indicată."
+      },
+      "interested_in": {
+        "label": "Aș dori informații",
+        "text": "Bună! Sunt interesat de procesul de închiriere."
+      },
+      "custom_message": {
+        "label": "Mesaj personalizat",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> este o <strong>afacere de familie din Ungaria</strong>, cu inima și casa în <strong>Fuerteventura</strong>. Știm ce contează pentru călători: siguranță, fiabilitate și atitudine prietenoasă.",
+    "why_title": "De ce Fuerteventura?",
+    "why_text": "Pentru noi, insula nu e doar o destinație, ci acasă. Iubim soarele, oceanul, stilul relaxat și sentimentul de libertate – pe care vrem să ți‑l oferim când închiriezi la noi.",
+    "fleet_title": "Mașinile noastre – confortabile și fiabile",
+    "fleet_text": "În flotă găsești <strong>mașini mici practice</strong>, <strong>modele de familie</strong> și <strong>vehicule mai spațioase</strong>. Le întreținem și curățăm regulat pentru o explorare fără griji.",
+    "delivery_title": "Livrare și flexibilitate",
+    "delivery_text": "Poți prelua mașina nu doar în Fuerteventura, ci și în <strong>Lanzarote</strong>. Aeroport sau hotel – livrăm flexibil pentru un început confortabil.",
+    "more_title": "Mai mult decât închiriere",
+    "more_text": "La noi, închirierea înseamnă mai mult decât predarea cheilor. La cerere, te ajutăm cu trasee, sfaturi locale și locuri pentru a simți adevărata <strong>atmosferă din Fuerteventura</strong>.",
+    "mission_title": "Misiunea noastră",
+    "mission_text": "Ne dorim ca fiecare oaspete să trăiască insula <strong>liber, confortabil și în siguranță</strong>. Ca afacere locală de familie, punem suflet pentru ca tu să duci acasă atmosfera unică a Fuerteventurii."
+  },
+  "Contact": {
+    "title": "Întrebări despre închiriere în Fuerteventura sau Lanzarote?",
+    "p1": "Contactează‑ne – te ajutăm să găsești <strong>cea mai bună soluție</strong>. Rezervare, livrare la aeroport sau hotel – răspundem <strong>rapid și flexibil</strong>.",
+    "p2": "Completează formularul, scrie‑ne pe e‑mail, Messenger, WhatsApp sau Viber, ori sună‑ne! <strong>Suntem bucuroși să ajutăm</strong> pentru o vacanță fără griji."
+  },
+  "Cars": {
+    "title": "Descoperă Fuerteventura și Lanzarote în deplină libertate cu mașinile noastre!",
+    "p1": "La noi închirierea e simplă și rapidă: alege mașina potrivită, iar noi o livrăm la aeroport sau direct la hotel. Datorită opțiunilor flexibile, <strong>te bucuri de vacanță fără griji</strong>.",
+    "p2": "<strong>Merită să rezervi în avans</strong>, ca mașina să fie disponibilă la sosire. Vezi mașinile, verifică detaliile și rezervă online!",
+    "labels": {
+      "seats": "locuri",
+      "manual": "Manuală",
+      "automatic": "Automată",
+      "per_day": "/ zi",
+      "from_price": "de la €{price}"
+    }
+  }
+}

@@ -4,7 +4,6 @@ import AboutSection from '@/components/layout/AboutSection';
 import Explore from '@/components/layout/Explore';
 import { Header } from '@/components/layout/Header';
 import Inquire from '@/components/layout/InquireSection';
-import WhatsAppContainer from '@/components/WhatsAppContainer';
 
 export default function HomePage() {
   return (
@@ -13,7 +12,6 @@ export default function HomePage() {
       <AboutSection />
       <Explore />
       <Inquire />
-      <WhatsAppContainer />
     </div>
   );
 }

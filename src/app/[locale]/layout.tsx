@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import { LocaleToggle } from '@/components/LocaleToggler';
 import { Navigation } from '@/components/navigation/Navigation';
 import { ThemeToggle } from '@/components/ThemeToggler';
+import WhatsAppContainer from '@/components/WhatsAppContainer';
 import { Locale, LOCALES } from '@/i18n/config';
 import { ThemeProvider } from '@/providers/theme';
 import { NextIntlClientProvider } from 'next-intl';
@@ -47,6 +48,8 @@ export default async function LocaleLayout({
                 <ThemeToggle />
               </div>
               {children}
+              <WhatsAppContainer />
+
               <Footer />
             </ThemeProvider>
           </div>

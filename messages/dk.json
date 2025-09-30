@@ -1,0 +1,124 @@
+{
+  "Header": {
+    "header": "Biludlejning på Fuerteventura og Lanzarote – nemt og hurtigt",
+    "book_now": "Book bil"
+  },
+  "AboutSection": {
+    "title": "Gå ikke glip af noget",
+    "pickup_title": "Afhentning hvor det passer dig",
+    "pickup_text": "Hent bilen dér, hvor det er mest bekvemt: ved hotellet, lejligheden eller den angivne adresse. Begynd at udforske med det samme.",
+    "transfer_title": "Komfortabel transfer på forespørgsel",
+    "transfer_text": "Ønsker du transfer, så angiv det i formularen – vi sørger for en gnidningsfri oplevelse.",
+    "learn_more": "Læs mere →",
+    "alt1": "Bil 1",
+    "alt2": "Bil 2",
+    "alt3": "Bil 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Biler",
+    "about": "Om os",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "home": "Hjem"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Sprogvælger"
+  },
+  "Footer": {
+    "about": "Om os",
+    "offices": "Kontorer",
+    "contact": "Kontakt",
+    "home": "Hjem",
+    "fleet": "Flåde",
+    "zodiac_car_rental": "Zodiac Biludlejning",
+    "logo_placeholder": "Logo her"
+  },
+  "Explore": {
+    "title": "Oplev De Kanariske Øer i lejebil!",
+    "subtitle": "Book online, fleksibel afhentning og levering til hotel eller lufthavn.",
+    "cards": {
+      "map": "Zodiacs Rent a Car tilbyder pålidelig udlejning på Fuerteventura, Costa Calma og Lanzarote.",
+      "globe": "Strand eller eventyr – i vores flåde findes den rigtige bil.",
+      "heart": "Book online og hent bilen i lufthavnen eller ved indkvarteringen!"
+    }
+  },
+  "Inquire": {
+    "title": "Book nu!",
+    "description_1": "Vent ikke til sidste øjeblik med at leje bilen!",
+    "description_2": "Med forudbestilling sikrer du den bedste bil på Fuerteventura og Lanzarote til en god pris.",
+    "fields": {
+      "fullName": {
+        "label": "Fulde navn",
+        "placeholder": "Fulde navn",
+        "required": "Angiv dit navn"
+      },
+      "email": {
+        "label": "E‑mail",
+        "placeholder": "E‑mailadresse",
+        "required": "Angiv din e‑mail",
+        "invalid": "Angiv en gyldig e‑mail"
+      }
+    },
+    "submit": {
+      "idle": "Næste →",
+      "submitting": "Sender..."
+    },
+    "alt": {
+      "image": "Illustration – biludlejning"
+    }
+  },
+  "WhatsApp": {
+    "aria_label": "WhatsApp‑besked",
+    "choose_option": "Vælg en mulighed",
+    "options": {
+      "transfer_quote": {
+        "label": "Anmod om transfertilbud",
+        "text": "Hej! Jeg ønsker et tilbud på transfer."
+      },
+      "car_availability": {
+        "label": "Tilgængelighed af biler",
+        "text": "Hej! Jeg spørger til tilgængelighed for den angivne dato."
+      },
+      "interested_in": {
+        "label": "Jeg vil gerne høre nærmere",
+        "text": "Hej! Jeg er interesseret i lejeprocessen."
+      },
+      "custom_message": {
+        "label": "Egen besked",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> er en <strong>ungarsk familievirksomhed</strong> med hjerte og hjem på <strong>Fuerteventura</strong>. Vi ved, hvad rejsende værdsætter: sikkerhed, pålidelighed og venlighed.",
+    "why_title": "Hvorfor Fuerteventura?",
+    "why_text": "For os er øen ikke kun en destination, men et hjem. Vi elsker solen, havet, det rolige tempo og følelsen af frihed – det vil vi gerne give videre.",
+    "fleet_title": "Vores biler – komfortable og pålidelige",
+    "fleet_text": "I flåden findes <strong>praktiske små biler</strong>, <strong>familiebiler</strong> og <strong>mere rummelige køretøjer</strong>. Vi servicerer og rengør regelmæssigt for en bekymringsfri oplevelse.",
+    "delivery_title": "Levering og fleksibilitet",
+    "delivery_text": "Afhentning er mulig ikke kun på Fuerteventura, men også på <strong>Lanzarote</strong>. Lufthavn eller hotel – vi leverer fleksibelt, så starten bliver behagelig.",
+    "more_title": "Mere end udlejning",
+    "more_text": "Hos os er leje mere end nøgleoverdragelse. Vi hjælper gerne med ruter, lokale tips og steder for den ægte <strong>Fuerteventura‑stemning</strong>.",
+    "mission_title": "Vores mission",
+    "mission_text": "Målet er, at hver gæst oplever øen <strong>frit, komfortabelt og sikkert</strong>. Som lokalt familieforetagende gør vi vores bedste, så du tager øens særlige atmosfære med hjem."
+  },
+  "Contact": {
+    "title": "Spørgsmål om leje på Fuerteventura eller Lanzarote?",
+    "p1": "Kontakt os – vi hjælper dig med at finde <strong>den bedste løsning</strong>. Forudbestilling, levering til lufthavn eller hotel – vi svarer <strong>hurtigt og fleksibelt</strong>.",
+    "p2": "Udfyld formularen, skriv e‑mail, Messenger, WhatsApp eller Viber, eller ring! <strong>Vi hjælper gerne</strong> for en bekymringsfri ferie."
+  },
+  "Cars": {
+    "title": "Oplev Fuerteventura og Lanzarote i fuld frihed!",
+    "p1": "At leje hos os er nemt og hurtigt: vælg bilen, så leverer vi den til lufthavnen eller direkte til hotellet. Med fleksible muligheder <strong>nyder du ferien uden bekymringer</strong>.",
+    "p2": "<strong>Det kan betale sig at booke i forvejen</strong>, så bilen er klar ved ankomst. Se bilerne herunder, detaljer og book online!",
+    "labels": {
+      "seats": "pladser",
+      "manual": "Manuel",
+      "automatic": "Automatisk",
+      "per_day": "/ dag",
+      "from_price": "fra €{price}"
+    }
+  }
+}

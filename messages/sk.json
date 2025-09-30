@@ -1,0 +1,124 @@
+{
+  "Header": {
+    "header": "Požičanie áut na Fuerteventure a Lanzarote – jednoducho a rýchlo",
+    "book_now": "Rezervovať auto"
+  },
+  "AboutSection": {
+    "title": "Nezmeškaj žiadny zážitok",
+    "pickup_title": "Prevzatie tam, kde ti vyhovuje",
+    "pickup_text": "Auto si prevezmeš tam, kde je to najpohodlnejšie: pri hoteli, apartmáne alebo na zadanej adrese. Objavuj od prvej minúty.",
+    "transfer_title": "Komfortný transfer na požiadanie",
+    "transfer_text": "Ak chceš aj transfer, uveď to vo formulári – postaráme sa o hladký priebeh.",
+    "learn_more": "Zisti viac →",
+    "alt1": "Auto 1",
+    "alt2": "Auto 2",
+    "alt3": "Auto 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Autá",
+    "about": "O nás",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "home": "Domov"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Prepínač jazyka"
+  },
+  "Footer": {
+    "about": "O nás",
+    "offices": "Kancelárie",
+    "contact": "Kontakt",
+    "home": "Domov",
+    "fleet": "Flotila",
+    "zodiac_car_rental": "Zodiac Požičovňa Áut",
+    "logo_placeholder": "Tu bude logo"
+  },
+  "Explore": {
+    "title": "Objav Kanárske ostrovy s požičaným autom!",
+    "subtitle": "Online rezervácia, flexibilné prevzatie a doručenie na hotel alebo letisko.",
+    "cards": {
+      "map": "Zodiacs Rent a Car ponúka spoľahlivý prenájom na Fuerteventure, v Costa Calma a na Lanzarote.",
+      "globe": "Pláž alebo dobrodružstvo – vo flotile nájdeš ideálne auto.",
+      "heart": "Rezervuj online a prevezmi auto na letisku alebo ubytovaní!"
+    }
+  },
+  "Inquire": {
+    "title": "Rezervuj teraz!",
+    "description_1": "Nenechávaj prenájom na poslednú chvíľu!",
+    "description_2": "Vďaka skoršej rezervácii získaš najlepšie auto na Fuerteventure a Lanzarote za výhodnú cenu.",
+    "fields": {
+      "fullName": {
+        "label": "Celé meno",
+        "placeholder": "Celé meno",
+        "required": "Zadaj svoje meno"
+      },
+      "email": {
+        "label": "E‑mail",
+        "placeholder": "E‑mailová adresa",
+        "required": "Zadaj e‑mail",
+        "invalid": "Zadaj platný e‑mail"
+      }
+    },
+    "submit": {
+      "idle": "Ďalej →",
+      "submitting": "Odosiela sa..."
+    },
+    "alt": {
+      "image": "Ilustrácia prenájmu auta"
+    }
+  },
+  "WhatsApp": {
+    "aria_label": "Správa WhatsApp",
+    "choose_option": "Vyber možnosť",
+    "options": {
+      "transfer_quote": {
+        "label": "Požiadať o ponuku transferu",
+        "text": "Ahoj! Prosím o cenovú ponuku na transfer."
+      },
+      "car_availability": {
+        "label": "Dostupnosť áut",
+        "text": "Ahoj! Zaujímam sa o dostupnosť áut na uvedený dátum."
+      },
+      "interested_in": {
+        "label": "Chcem sa informovať",
+        "text": "Ahoj! Zaujíma ma proces prenájmu auta."
+      },
+      "custom_message": {
+        "label": "Vlastná správa",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> je <strong>rodinná maďarská firma</strong> so srdcom a domovom na <strong>Fuerteventure</strong>. Vieme, čo je dôležité pre cestovateľov: bezpečnosť, spoľahlivosť a priateľský prístup.",
+    "why_title": "Prečo Fuerteventura?",
+    "why_text": "Pre nás to nie je len destinácia, ale domov. Milujeme slnko, oceán, pokojný životný štýl a pocit slobody – to chceme preniesť aj na teba.",
+    "fleet_title": "Naše autá – pohodlné a spoľahlivé",
+    "fleet_text": "Vo flotile nájdeš <strong>praktické malé autá</strong>, <strong>rodinné modely</strong> aj <strong>priestrannejšie vozidlá</strong>. Pravidelne ich servisujeme a čistíme pre bezstarostné spoznávanie ostrova.",
+    "delivery_title": "Doručenie a flexibilita",
+    "delivery_text": "Auto si môžeš prevziať nielen na Fuerteventure, ale aj na <strong>Lanzarote</strong>. Letisko či hotel – doručíme flexibilne, aby si začal pohodlne.",
+    "more_title": "Viac než prenájom",
+    "more_text": "Prenájom u nás nie je len odovzdanie kľúčov. Pomôžeme s itinerárom, tipmi a miestami pre pravú <strong>atmosféru Fuerteventury</strong>.",
+    "mission_title": "Naše poslanie",
+    "mission_text": "Našim cieľom je, aby každý hosť zažil ostrov <strong>slobodne, pohodlne a bezpečne</strong>. Ako rodinná lokálna firma pracujeme s nasadením, aby si domov odniesol jedinečnú atmosféru Fuerteventury."
+  },
+  "Contact": {
+    "title": "Otázky k prenájmu na Fuerteventure alebo Lanzarote?",
+    "p1": "Kontaktuj nás – pomôžeme nájsť <strong>najlepšie riešenie</strong>. Rezervácia, doručenie na letisko či hotel – odpovedáme <strong>rýchlo a flexibilne</strong>.",
+    "p2": "Vyplň formulár, napíš e‑mail, Messenger/WhatsApp/Viber alebo zavolaj! <strong>Radi pomôžeme</strong> pre bezstarostnú dovolenku."
+  },
+  "Cars": {
+    "title": "Objav Fuerteventuru a Lanzarote v plnej slobode s našimi autami!",
+    "p1": "U nás je prenájom jednoduchý a rýchly: vyber si auto a my ho doručíme na letisko alebo priamo do hotela. Vďaka flexibilným možnostiam si <strong>užiješ dovolenku bez starostí</strong>.",
+    "p2": "<strong>Oplatí sa rezervovať vopred</strong>, aby bolo auto isté pri tvojom príchode. Prezri si autá nižšie, detaily a rezervuj online!",
+    "labels": {
+      "seats": "miesta",
+      "manual": "Manuál",
+      "automatic": "Automat",
+      "per_day": "/ deň",
+      "from_price": "od €{price}"
+    }
+  }
+}

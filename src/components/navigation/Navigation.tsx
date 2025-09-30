@@ -1,4 +1,3 @@
-// src/components/HamburgerMenu.tsx
 'use client';
 
 import { useEffect, useId, useState } from 'react';
@@ -7,8 +6,6 @@ import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import logo from '../../../public/logo_white.png';
 import Logo from '../Logo';
-
-// type Item = { href: string; label: string; prefix?: string };
 
 export function Navigation() {
   const t = useTranslations('Navigation');
@@ -20,9 +17,10 @@ export function Navigation() {
 
   const itemsMap = [
     { href: `/${locale}`, label: t('home'), prefix: '01' },
-    { href: '/about-us', label: t('about'), prefix: '02' },
-    { href: '/blog', label: t('blog'), prefix: '03' },
-    { href: '/contact', label: t('contact'), prefix: '04' },
+    { href: `/cars`, label: t('cars'), prefix: '02' },
+    { href: '/about-us', label: t('about'), prefix: '03' },
+    { href: '/blog', label: t('blog'), prefix: '04' },
+    { href: '/contact', label: t('contact'), prefix: '05' },
   ];
 
   // Body scroll lock nyitáskor

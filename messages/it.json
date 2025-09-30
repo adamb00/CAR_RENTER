@@ -1,0 +1,124 @@
+{
+  "Header": {
+    "header": "Noleggio auto a Fuerteventura e Lanzarote, facile e veloce",
+    "book_now": "Noleggia ora"
+  },
+  "AboutSection": {
+    "title": "Non perdere nessuna esperienza",
+    "pickup_title": "Ritiro dove ti è comodo",
+    "pickup_text": "Ritira l'auto dove preferisci: davanti all'hotel, all'appartamento o all'indirizzo indicato. Inizia subito a esplorare.",
+    "transfer_title": "Transfer confortevole su richiesta",
+    "transfer_text": "Se desideri anche un transfer, indicalo nel modulo: pensiamo noi a tutto.",
+    "learn_more": "Scopri di più →",
+    "alt1": "Auto 1",
+    "alt2": "Auto 2",
+    "alt3": "Auto 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Auto",
+    "about": "Chi siamo",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "home": "Home"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Selettore lingua"
+  },
+  "Footer": {
+    "about": "Chi siamo",
+    "offices": "Uffici",
+    "contact": "Contatti",
+    "home": "Home",
+    "fleet": "Flotta",
+    "zodiac_car_rental": "Zodiac Noleggio Auto",
+    "logo_placeholder": "Logo qui"
+  },
+  "Explore": {
+    "title": "Scopri le Isole Canarie in auto a noleggio!",
+    "subtitle": "Prenotazione online, ritiro flessibile e consegna in hotel o in aeroporto.",
+    "cards": {
+      "map": "Zodiacs Rent a Car offre noleggio affidabile a Fuerteventura, Costa Calma e Lanzarote.",
+      "globe": "Mare o avventura, nella nostra flotta trovi l’auto ideale.",
+      "heart": "Prenota online e ritira l’auto in aeroporto o in struttura!"
+    }
+  },
+  "Inquire": {
+    "title": "Prenota ora!",
+    "description_1": "Non rimandare all’ultimo il noleggio!",
+    "description_2": "Con la prenotazione anticipata assicuri l’auto migliore a Fuerteventura e Lanzarote a prezzi vantaggiosi.",
+    "fields": {
+      "fullName": {
+        "label": "Nome e cognome",
+        "placeholder": "Nome e cognome",
+        "required": "Inserisci il nome"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Indirizzo email",
+        "required": "Inserisci l'email",
+        "invalid": "Inserisci un'email valida"
+      }
+    },
+    "submit": {
+      "idle": "Avanti →",
+      "submitting": "Invio..."
+    },
+    "alt": {
+      "image": "Illustrazione noleggio auto"
+    }
+  },
+  "WhatsApp": {
+    "aria_label": "Messaggio WhatsApp",
+    "choose_option": "Scegli un’opzione",
+    "options": {
+      "transfer_quote": {
+        "label": "Richiedi preventivo transfer",
+        "text": "Ciao! Vorrei un preventivo per il servizio transfer."
+      },
+      "car_availability": {
+        "label": "Disponibilità auto",
+        "text": "Ciao! Vorrei informazioni sulla disponibilità auto per la data indicata."
+      },
+      "interested_in": {
+        "label": "Vorrei informarmi",
+        "text": "Ciao! Sono interessato al processo di noleggio."
+      },
+      "custom_message": {
+        "label": "Messaggio personalizzato",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> è un <strong>azienda familiare ungherese</strong> con cuore e casa a <strong>Fuerteventura</strong>. Viviamo e lavoriamo in un contesto internazionale e sappiamo cosa conta per i viaggiatori: sicurezza, affidabilità e cordialità.",
+    "why_title": "Perché Fuerteventura?",
+    "why_text": "Per noi l’isola non è solo una meta: è casa. Amiamo il sole, l’oceano, lo stile di vita rilassato e il senso di libertà – ed è ciò che vogliamo trasmetterti quando noleggi da noi.",
+    "fleet_title": "Le nostre auto – comode e affidabili",
+    "fleet_text": "Nella nostra flotta trovi <strong>utilitarie pratiche</strong>, <strong>modelli per famiglie</strong> e <strong>veicoli più spaziosi</strong>. Tutte le auto sono manutenute e pulite regolarmente per un’esperienza senza pensieri.",
+    "delivery_title": "Consegna e flessibilità",
+    "delivery_text": "Puoi ritirare l’auto non solo a Fuerteventura, ma anche a <strong>Lanzarote</strong>. Aeroporto o hotel: consegniamo in modo flessibile per partire comodi.",
+    "more_title": "Più del semplice noleggio",
+    "more_text": "Per noi il noleggio è più della consegna chiavi. All’occorrenza aiutiamo con itinerari, consigli locali e luoghi per vivere la vera <strong>atmosfera di Fuerteventura</strong>.",
+    "mission_title": "La nostra missione",
+    "mission_text": "Vogliamo che ogni ospite viva l’isola <strong>liberamente, comodamente e in sicurezza</strong>. Come famiglia e impresa locale, lavoriamo con passione perché porti a casa l’atmosfera speciale di Fuerteventura."
+  },
+  "Contact": {
+    "title": "Domande sul noleggio a Fuerteventura o Lanzarote?",
+    "p1": "Contattaci: ti aiutiamo a trovare <strong>la soluzione migliore per te</strong>. Prenotazioni, consegna in aeroporto o in hotel – rispondiamo <strong>rapidamente e con flessibilità</strong>.",
+    "p2": "Compila il modulo, scrivici via email, Messenger, WhatsApp o Viber, oppure chiamaci! <strong>Siamo felici di aiutarti</strong> per una vacanza senza pensieri."
+  },
+  "Cars": {
+    "title": "Scopri Fuerteventura e Lanzarote in piena libertà con le nostre auto!",
+    "p1": "Noleggiare con noi è semplice e veloce: scegli l’auto adatta a te e la consegniamo in aeroporto o direttamente in hotel. Grazie alle opzioni flessibili <strong>ti godi la vacanza senza pensieri</strong>.",
+    "p2": "<strong>Conviene prenotare in anticipo</strong> per avere l’auto garantita all’arrivo. Scopri la flotta, guarda i dettagli e prenota online!",
+    "labels": {
+      "seats": "posti",
+      "manual": "Manuale",
+      "automatic": "Automatico",
+      "per_day": "/ giorno",
+      "from_price": "da €{price}"
+    }
+  }
+}
