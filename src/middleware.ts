@@ -8,5 +8,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!_next|.*\\..*).*)'],
+  // Exclude Next.js internals, files, and API routes from locale handling
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
 };

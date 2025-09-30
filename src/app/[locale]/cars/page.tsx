@@ -1,6 +1,7 @@
 import Logo from '@/components/Logo';
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 
 type Car = {
   id: string;
@@ -23,12 +24,12 @@ export default async function CarsPage() {
   }));
   return (
     <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'>
-      <a
+      <Link
         href='/'
         className='absolute -left-8 sm:left-0 md:-left-8 -top-4 sm:top-0 md:-top-8 z-[1200]'
       >
         <Logo size='sm' />
-      </a>
+      </Link>
       <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
         {t('title')}
       </h2>
