@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { Copyright } from 'lucide-react';
 import logo from '../../../public/logo_white.png';
 import Logo from '../Logo';
+import { SocialIcon } from 'react-social-icons';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -18,8 +19,17 @@ export default function Footer() {
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/about-us`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },
-    { href: `/${locale}/offices`, label: t('offices') },
+    { href: `/${locale}/blog`, label: t('blog') },
     { href: `/${locale}/cars`, label: t('fleet') },
+  ];
+
+  const nav_1 = [
+    {
+      href: `/${locale}/general-rental-conditions`,
+      label: t('general_rental_conditions'),
+    },
+    { href: `/${locale}/insurance`, label: t('insurance') },
+    { href: `/${locale}/rental-requirements`, label: t('rental_requirements') },
   ];
 
   return (
@@ -72,13 +82,47 @@ export default function Footer() {
             </ul>
           </nav>
 
+          <nav
+            aria-label='Footer'
+            className='
+              mt-6 md:mt-8
+              border-t border-grey-light-2/50 dark:border-grey-dark-2/30
+              pt-4 md:pt-6 w-full 
+            '
+          >
+            <ul
+              className='
+              flex flex-wrap items-center justify-center
+              text-xs sm:text-[0.95rem] md:text-base md:gap-4
+            '
+            >
+              {nav_1.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className='
+                    inline-block rounded-md px-2 py-1
+                    transition-colors
+                    hover:text-amber-dark dark:hover:text-amber-light
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+                    focus-visible:ring-amber-dark/50 dark:focus-visible:ring-amber-light/50
+                    focus-visible:ring-offset-transparent
+                  '
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           {/* Alsó sor: jogi / copyright */}
           <div
             className='
-              mt-6 md:mt-8
+              mt-6 md:mt-8 self-center
               flex flex-col-reverse items-center justify-center gap-4
               border-t border-grey-light-2/50 dark:border-grey-dark-2/30 pt-4 md:pt-6
-              md:flex-row w-full 
+              md:flex-col w-full md:w-1/2 md:col-span-2 justify-self-center mx-auto
             '
           >
             <p className='flex items-center gap-2 text-xs sm:text-sm'>
@@ -87,17 +131,25 @@ export default function Footer() {
                 {year} • {t('zodiac_car_rental')}
               </span>
             </p>
-
-            {/* (Opció) közösségi ikonok helye – később könnyen bővíthető */}
             <div className='flex items-center gap-3 sm:gap-4'>
-              {/* Példák placeholder linkekre:
-            <Link href="https://facebook.com" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
-              <Facebook className="h-5 w-5" />
-            </Link>
-            <Link href="https://instagram.com" aria-label="Instagram" className="hover:opacity-80 transition-opacity">
-              <Instagram className="h-5 w-5" />
-            </Link>
-            */}
+              <span
+                aria-label='Facebook'
+                className='hover:opacity-80 transition-opacity cursor-pointer'
+              >
+                <SocialIcon
+                  network='facebook'
+                  style={{ height: 30, width: 30 }}
+                />
+              </span>
+              <span
+                aria-label='Instagram'
+                className='hover:opacity-80 transition-opacity cursor-pointer'
+              >
+                <SocialIcon
+                  network='instagram'
+                  style={{ height: 30, width: 30 }}
+                />
+              </span>
             </div>
           </div>
         </div>

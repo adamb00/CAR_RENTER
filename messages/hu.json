@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "Rólunk",
-    "offices": "Irodáink",
+    "blog": "Blog",
     "contact": "Kapcsolat",
     "home": "Kezdőlap",
-    "fleet": "Flotta",
+    "fleet": "Autóink",
+    "general_rental_conditions": "Általános bérleti feltételek",
+    "insurance": "Biztosítás",
+    "rental_requirements": "Bérleti követelmények",
     "zodiac_car_rental": "Zodiac Autókölcsönző",
     "logo_placeholder": "Ide kerül a logó"
   },

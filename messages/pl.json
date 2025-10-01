@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "O nas",
-    "offices": "Biura",
+    "blog": "Blog",
     "contact": "Kontakt",
     "home": "Start",
-    "fleet": "Flota",
+    "fleet": "Auta",
+    "general_rental_conditions": "Ogólne warunki najmu",
+    "insurance": "Ubezpieczenie",
+    "rental_requirements": "Wymagania wynajmu",
     "zodiac_car_rental": "Zodiac Wynajem Aut",
     "logo_placeholder": "Tu logo"
   },

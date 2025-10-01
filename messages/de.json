@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "Über uns",
-    "offices": "Büros",
+    "blog": "Blog",
     "contact": "Kontakt",
     "home": "Start",
-    "fleet": "Flotte",
+    "fleet": "Autos",
+    "general_rental_conditions": "Allgemeine Mietbedingungen",
+    "insurance": "Versicherung",
+    "rental_requirements": "Mietvoraussetzungen",
     "zodiac_car_rental": "Zodiac Autovermietung",
     "logo_placeholder": "Logo hier"
   },

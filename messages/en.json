@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "About",
-    "offices": "Offices",
+    "blog": "Blog",
     "contact": "Contact",
     "home": "Home",
-    "fleet": "Fleet",
+    "fleet": "Cars",
+    "general_rental_conditions": "General rental conditions",
+    "insurance": "Insurance",
+    "rental_requirements": "Rental requirements",
     "zodiac_car_rental": "Zodiac Car Rental",
     "logo_placeholder": "Logo goes here"
   },

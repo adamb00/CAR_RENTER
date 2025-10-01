@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "O nás",
-    "offices": "Kanceláře",
+    "blog": "Blog",
     "contact": "Kontakt",
     "home": "Domů",
-    "fleet": "Flotila",
+    "fleet": "Auta",
+    "general_rental_conditions": "Všeobecné podmínky pronájmu",
+    "insurance": "Pojištění",
+    "rental_requirements": "Požadavky na pronájem",
     "zodiac_car_rental": "Zodiac Půjčovna Aut",
     "logo_placeholder": "Zde logo"
   },

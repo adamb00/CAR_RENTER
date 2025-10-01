@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "Om os",
-    "offices": "Kontorer",
+    "blog": "Blog",
     "contact": "Kontakt",
     "home": "Hjem",
-    "fleet": "Flåde",
+    "fleet": "Biler",
+    "general_rental_conditions": "Generelle lejebetingelser",
+    "insurance": "Forsikring",
+    "rental_requirements": "Lejekrav",
     "zodiac_car_rental": "Zodiac Biludlejning",
     "logo_placeholder": "Logo her"
   },

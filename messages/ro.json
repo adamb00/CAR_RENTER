@@ -27,10 +27,13 @@
   },
   "Footer": {
     "about": "Despre noi",
-    "offices": "Birouri",
+    "blog": "Blog",
     "contact": "Contact",
     "home": "Acasă",
-    "fleet": "Flotă",
+    "fleet": "Mașini",
+    "general_rental_conditions": "Condiții generale de închiriere",
+    "insurance": "Asigurare",
+    "rental_requirements": "Cerințe de închiriere",
     "zodiac_car_rental": "Zodiac Închirieri Auto",
     "logo_placeholder": "Logo aici"
   },
