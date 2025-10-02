@@ -123,5 +123,231 @@
       "per_day": "/ nap",
       "from_price": "€{price}-tól"
     }
+  },
+  "Insurance": {
+    "title": "Biztosítás (SSCP)",
+    "igic_note": "+15% IGIC nem tartalmazza. Maximum +30 € bérlésenként.",
+    "sscp_title": "Super Comfort Plus Insurance (SSCP)",
+    "sscp_intro": "Nagyon kevés pénzért meghosszabbítható a mellékelt biztosítás. Az SSCP a bérleti díjban foglalt kiterjedt fedezet mellett a következő kivételeket szünteti meg:",
+    "table": {
+      "header_event": "Esemény",
+      "header_desc": "Leírás",
+      "header_cost": "Kb. költség (biztosítás nélkül)",
+      "rows": {
+        "lost_keys": {
+          "event": "Kulcsok elvesztése",
+          "desc": "Pótlás és programozás",
+          "cost": "100 €"
+        },
+        "tyre_damage": {
+          "event": "Gumiabroncs sérülés",
+          "desc": "Csere/javítás",
+          "cost": "150 €"
+        },
+        "rim_flat": {
+          "event": "Felnisérülés / defekt javítás",
+          "desc": "Javítás",
+          "cost": "60 €"
+        },
+        "wrong_fuel": {
+          "event": "Rossz tankolás",
+          "desc": "Leeresztés, tisztítás",
+          "cost": "110 €"
+        },
+        "battery": {
+          "event": "Akkumulátor gondatlan lemerülése",
+          "desc": "Segítségnyújtás/indítás",
+          "cost": "90 €"
+        },
+        "dru": {
+          "event": "Plusz DRU szerviz*",
+          "desc": "Helyszíni segítség",
+          "cost": "40 € / 100 €"
+        }
+      }
+    },
+    "coverage_note": "Ezzel a biztosítással a biztosításunk összes kivételére kiterjed a fedezet (kivéve azokat, amelyeket egyetlen biztosító sem fedez).",
+    "footnote": "* +15% IGIC nem tartalmazza. Maximum +30 € bérlésenként.",
+    "pricing_title": "Ár és ajánlat",
+    "pricing_text": "Bérelje most csak napi 2 €‑ért, maximum 30 €‑ig bármilyen modellben, és élvezze a kölcsönzést gond nélkül.",
+    "closing": "A legjobb élvezni teljes fedés mellett.",
+    "related": {
+      "title": "Kapcsolódó oldalak",
+      "details": "További részletek:"
+    }
+  },
+  "GeneralRental": {
+    "title": "Általános bérleti feltételek",
+    "general": {
+      "title": "Általános rendelkezések",
+      "p1": "Szükséges, hogy a bérlő mindig vigyen magával egy <strong>érvényes fizikai bérleti szerződést</strong> a járművön, mivel ennek hiányában a spanyol hatóságok pénzbírságot szabhatnak ki.",
+      "p2": "A bérbeadás során felmerülő minden szabálysértés és kapcsolódó költség az esetleges jogi lépések sérelme nélkül <strong>a bérlőt terheli</strong>.",
+      "p3": "A jármű <strong>megfelelő tankolásáért</strong> a Bérlő felel.",
+      "p4": "A szolgáltató fenntartja a jogot, hogy megtagadja a bérletet a bérlő korábbi eseményei vagy az Általános Feltételek be nem tartása alapján. Ha a kiválasztott modell nem elérhető, <strong>hasonló vagy magasabb kategóriájú</strong> modellt szállítunk."
+    },
+    "services": {
+      "title": "Tartalmazott szolgáltatások",
+      "kanary": {
+        "title": "Kanári-szigetek",
+        "i1": "<strong>Minden kockázati biztosítás</strong> többlet nélkül",
+        "i2": "Adók, repülőtéri/vasúti/kikötői díjak: benne",
+        "i3": "<strong>Korlátlan</strong> futásteljesítmény",
+        "i4": "Székek és felvonók: benne",
+        "i5": "Tető: benne",
+        "i6": "GPS: egyes modelleken alapfelszereltség",
+        "i7": "Kiegészítő sofőr: benne",
+        "i8": "Irodán kívüli szállítás: benne",
+        "i9": "Visszaszállítás irodába: benne",
+        "i10": "Órákkal későbbi visszaadás: benne",
+        "i11": "Fiatal sofőr (21–25): benne"
+      },
+      "peninsula": {
+        "title": "Félsziget / Baleár-szigetek",
+        "i1": "A biztosítás a <strong>feltételekkel</strong> együtt jár*",
+        "i2": "Adók és illetékek: benne",
+        "i3": "Korlátlan futásteljesítmény: <strong>max. 28 napig</strong>**",
+        "i4": "Székek és felvonók: 13,99 €/nap (max. 97,93 €)",
+        "i5": "Tető: 54 €",
+        "i6": "GPS: 14 €/nap (max. 98 €)",
+        "i7": "Egyéb kiegészítők (láncok, síléctartók…): 54 €",
+        "i8": "Kiegészítő sofőr: 12,50 €/nap (max. 125 €)",
+        "i9": "Irodán kívüli szállítás: <strong>nem</strong> tartalmazza",
+        "i10": "Visszaszállítás irodába: <strong>nem</strong> tartalmazza",
+        "i11": "Órákkal későbbi visszaadás: 50 €",
+        "i12": "Külföldi segélybiztosítás: 55 €"
+      },
+      "foot1": "(*) Minden kockázati biztosítás többlet nélkül – kivételekkel (karosszéria felső rész, alváz, beltér, nem rendeltetésszerű használat stb.). Részletek: Biztosítás.",
+      "foot2": "(**) Futásteljesítmény korlátlan, max. 28 napig."
+    },
+    "canary": {
+      "title": "Bérleti feltételek – Kanári-szigetek",
+      "i1": "<strong>Azonnali</strong> foglalás-visszaigazolás; modellegyezés hiányában hasonló vagy jobb modell.",
+      "i2": "<strong>100% teljes körű biztosítás</strong> többlet nélkül; korlátlan futásteljesítmény; adók és repülőtéri illetékek benne.",
+      "i3": "Audio guide-ok elérhetők a kölcsönzőben.",
+      "i4": "Gyerekülések, ülésmagasítók, csomagtartók <strong>ingyenesek</strong>.",
+      "i5": "További sofőr(ök) ingyenes(ek) – igénylés a kölcsönzőnél.",
+      "i6": "<strong>Üzemanyag-szabályzat</strong>: kiadáskori szint után kaució kérhető.",
+      "i7": "<strong>Módosítás/lemondás</strong>: ingyenes; online vagy e‑mail/telefon útján.",
+      "i8": "Repülőtéri foglalásnál a foglalás <strong>max. 60 percig</strong> kerül fenntartásra a tényleges érkezési időhöz igazodva.",
+      "i9": "<strong>Gyerekülések/ülésmagasítók</strong> díjmentesek; 0–18 kg ülés a hátsó ülésre, a menetiránnyal megegyezően vagy ellentétesen; ülésmagasító 15–36 kg; az eszközök felszerelése az ügyfél feladata."
+    },
+    "peninsula": {
+      "title": "Bérleti feltételek – Félsziget és Baleár-szigetek",
+      "i1": "Minden ár euróban értendő. Minimum bérleti idő: <strong>24 óra</strong>. +29 perc türelmi idő; afelett teljes nap díja.",
+      "i2": "Külföldre utazás esetén <strong>Nemzetközi Segítségbiztosítás</strong> szükséges; engedélyezett országok listája a szerződésben.",
+      "i3": "Fizetés: <strong>csak</strong> fizikai hitelkártyával, a szerződés tulajdonosának nevére. Készpénz/utazási csekk nem elfogadott.",
+      "i4": "Kaució: kisebb kategóriák 200 €, nagyobb/prémium/MPV 400 €; egyes kategóriáknál érvényes nemzetközi kártya zárolás szükséges.",
+      "i5": "Visszatöltés hiányában üzemanyag ára + 18 € kezelési díj kerül számlázásra.",
+      "i6": "25 év alatti vezető: 21,99 €/nap, max. 219,90 €.",
+      "i7": "További sofőr: 12,50 €/nap, max. 125 €.",
+      "i8": "Életkor/jogosítvány feltételek csoportonként (részletek a szerződésben); minimum 2 év érvényes jogosítvány.",
+      "i9": "Repülőtéri bérlés Madrid/Barcelona esetén repülőjegy nélkül <strong>nem</strong> elfogadott (érkezés és visszaút adatai szükségesek).",
+      "i10": "<strong>Külföldre utazás</strong>: engedélyezett országok – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; más ország nem engedélyezett; külföldi befejezés előzetes engedélyhez kötött; ipari járművek nem zárhatók le külföldön.",
+      "i11": "<strong>Tartozékok megőrzése</strong> (gyerekülés, tetőcsomagtartó, kulcsok, dokumentáció) a bérlő felelőssége; elvesztés/sérülés esetén kötbér számítható fel."
+    },
+    "schedule": {
+      "title": "Nyitvatartás és kézbesítések",
+      "i1": "Városi irodák: H–P 9:30–13:30 és 16:30–19:00; Szo 10:00–13:00.",
+      "i2": "Repülőtéri irodák: minden nap 08:00–23:00 (szezonálisan eltérhet).",
+      "i3": "Pultnál kedvezményes kézbesítés: akár 36,3 €-ig, elérhetőség függvényében.",
+      "i4": "Irodán kívüli szállítás/átvétel: 27 €/50 €/100 € (5 km / 50 km / 100 km), 48 órával előre egyeztetve.",
+      "i5": "Nyitvatartáson kívüli saját irodás kézbesítés/átvétel: +50 €.",
+      "i6": "Iroda nélküli városokban: 0,84 €/km (min. 57 €) a legközelebbi irodáig (oda‑vissza km).",
+      "i7": "Visszaszállítás irodába nyitvatartási időben; azon kívül a bérlő felelőssége fennáll az átvételig.",
+      "i8": "Foglalások tartása: max. 120 perc a szerződés szerinti időponttól (irodai nyitvatartáson belül); repülőjáratoknál a tényleges érkezés az irányadó."
+    },
+    "liability": {
+      "title": "Felelősségi nyilatkozat",
+      "p1": "A szolgáltató nem felel a hibás teljesítményből, mulasztásból, megszakításból, törlésből, késedelemből, számítógépes vírusból, lopásból, megsemmisülésből, jogosulatlan hozzáférésből, illetve adatok vagy információk felhasználásából eredő károkért.",
+      "p2": "A felhasználó kifejezetten elfogadja, hogy a weboldal használata <strong>saját felelősségére</strong> történik, beleértve a rendszer működéséhez szükséges szolgáltatások és javítások teljes költségét is.",
+      "p3": "A szolgáltatóhoz kapcsolódó szervezetek és munkatársaik sem felelősek semmilyen veszteségért vagy kárért, amely a weboldal használatából vagy használatának kísérletéből ered."
+    },
+    "related": {
+      "title": "Kapcsolódó oldalak",
+      "details": "További részletek:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Bérleti követelmények",
+    "general": {
+      "title": "Általános feltételek (Fuerteventura / Lanzarote)",
+      "i1": "23 év alatti vezetőknek alapvetően nem bérlünk, csak felár ellenében.",
+      "i2": "A foglalás visszaigazolása után az alábbi esetekben törölhető:",
+      "i2a": "az ügyfél által megadott adatok nem pontosak/valósak/naprakészek",
+      "i2b": "a bérleti feltételek megsértése",
+      "i3": "Szükséges: érvényes jogosítvány, személyi igazolvány/útlevél, lakcím és működő telefonszám."
+    },
+    "vehicle": {
+      "title": "Járműre vonatkozó feltételek",
+      "i1": "A lefoglalt járműmodell tájékoztató jellegű; hasonló, azonos kategóriájú modellel helyettesíthető.",
+      "i2": "GPS‑szel felszerelt járműveknél a helymeghatározás védelmi célú, a jogszabályoknak megfelelően.",
+      "i3": "A jármű nem hagyhatja el a bérlés szigetét.",
+      "i4": "Használat: jogszabálykövetés, csak közúton; tilos tiltott/illegális célokra; nem reklámcélokra.",
+      "i5": "Ajánlott üzemanyag használata kötelező; parkoláskor a járművet minden esetben zárni kell.",
+      "i6": "Gyermekülést átvételkor biztosítunk; helyes rögzítés kötelező.",
+      "i7": "Csomagok/szörfdeszkák tetőcsomagtartón való rögzítése kötelező.",
+      "i8": "Meghibásodás esetén állítsa le, parkolja biztonságosan, és <strong>azonnal</strong> értesítsen.",
+      "i9": "A bérlő felel a járműért átvételtől a szabályszerű visszaadásig."
+    },
+    "handover": {
+      "title": "Átadás és visszavétel",
+      "i1": "Átadás és visszavétel: a foglalásban szereplő, visszaigazolt repülőtéren és időpontban.",
+      "i2": "A jármű nem vihető vissza másik szigetre. Kivétel: Lanzarote felár ellenében (40 €).",
+      "i3": "Visszaadáskor a jármű állapota az átvételnek megfelelő legyen (normál kopás kivételével).",
+      "i4": "Esemény/kár esetén dokumentáció/jegyzőkönyv benyújtása kötelező.",
+      "i5": "Extrém szennyezettség esetén takarítási pótdíj: 70 €.",
+      "i6": "Korai visszahozatal esetén díjvisszatérítés nincs.",
+      "i7": "Visszaadáskor ne hagyjon a járműben tárgyakat; elvesztésükért nem vállalunk felelősséget."
+    },
+    "price": {
+      "title": "A foglalás ára tartalmazza",
+      "i1": "Adók (IGIC/IVA)",
+      "i2": "Korlátlan futásteljesítmény",
+      "i3": "Második sofőr ingyenes",
+      "i4": "Átvétel és leadás a repülőtéren",
+      "i5": "Ingyenes foglalás lemondása",
+      "i6": "Babaülések és gyermekmagasítók ingyenesek (nem ISOFIX; ISOFIX opcionálisan bérelhető)",
+      "i7": "Alapbiztosítás 300–500 € kaucióval (önrész káresemény esetén)"
+    },
+    "base_excludes": {
+      "title": "Mire nem terjed ki az alapbiztosítás",
+      "i1": "Tető",
+      "i2": "Üvegfelületek (ablakok, lámpák, tükrök)",
+      "i3": "Gumiabroncsok és kerekek",
+      "i4": "Lemerült akkumulátor",
+      "i5": "Belső kárpitok (ülések, szőnyegek stb.)",
+      "i6": "Futómű",
+      "i9": "Váltó",
+      "i7": "Személyes holmik az autóban (csomagtartó, kesztyűtartó)",
+      "i8": "Elveszett kulcsok",
+      "note": "E sérülések költsége a bérlőt terheli."
+    },
+    "deposit": {
+      "title": "Kaució és visszatartás",
+      "i1": "Készpénzes letét: 300–500 € (hitelkártya letét nem szükséges).",
+      "i2": "A kaució max. 15 napig visszatartásra kerül; banki visszautalás történik (pl. Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Teljes körű biztosítás (opció)",
+      "p1": "Teljes körű biztosítással nincs 300–500 € kaució, és a sérülések túlnyomó része fedezett.",
+      "note": "Kivételek: hanyagságból vagy a szerződési feltételek megszegéséből eredő károk (példák alább)."
+    },
+    "exceptions": {
+      "title": "Kivételek – példa",
+      "i1": "Burkolatlan vagy tiltott útvonalon vezetés (pl. Cofete)",
+      "i2": "Vezetés alkohol/pszichoaktív szerek hatása alatt",
+      "i3": "Mobilhasználat kihangosító nélkül vezetés közben",
+      "i4": "Műszerfalon jelzett meghibásodás figyelmen kívül hagyása és továbbhaladás",
+      "i5": "Veszélyes/gyúlékony anyagok, állatok, engedély nélküli rakomány szállítása",
+      "i6": "Illegális/jogosulatlan tevékenység, bérbeadás harmadik félnek",
+      "i7": "Tárgyak a tetőn engedélyezett tartó nélkül",
+      "i8": "Ésszerű gondosságot meghaladó vizesedés/belső kár",
+      "i9": "Nyitva hagyott járműben okozott kár, vagy nem engedélyezett vezető",
+      "i10": "Szerződésben rögzített idő túllépése"
+    },
+    "related": {
+      "title": "Kapcsolódó oldalak",
+      "details": "További részletek:"
+    }
   }
 }
