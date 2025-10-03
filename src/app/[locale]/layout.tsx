@@ -10,6 +10,7 @@ import { ThemeProvider } from '@/providers/theme';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 
 export async function generateStaticParams() {
   return LOCALES.map((l) => ({ locale: l }));
@@ -62,6 +63,7 @@ export default async function LocaleLayout({
             </ThemeProvider>
           </div>
         </body>
+        <Analytics />
       </NextIntlClientProvider>
     </html>
   );
