@@ -110,7 +110,7 @@ export function LocaleToggle({ current }: { current?: string }) {
           size='sm'
           disabled={pending}
           aria-label={t('ariaLabel')}
-          className='gap-2 rounded-full shadow-lg !bg-background !text-foreground z-[2400]'
+          className='gap-2 rounded-full shadow-lg !bg-background xl:!bg-sky-light/70 !text-foreground z-[2400] lg:!cursor-pointer'
         >
           <span className='text-base leading-none'>{FLAGS[active]}</span>
         </Button>

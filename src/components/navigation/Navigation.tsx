@@ -1,19 +1,30 @@
 'use client';
 
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import logo from '../../../public/logo_white.png';
 import Logo from '../Logo';
+import { LocaleToggle } from '@/components/LocaleToggler';
+import { ThemeToggle } from '@/components/ThemeToggler';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
+import logo_black from '../../../public/logo_black.png';
+import logo_white from '../../../public/logoo.png';
 
 export function Navigation() {
   const t = useTranslations('Navigation');
   const [open, setOpen] = useState<boolean>(false);
   const pathname = usePathname() || '/hu';
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const ctrlId = useId();
   const locale = pathname.split('/')[1];
+
+  const image = mounted && resolvedTheme === 'light' ? logo_black : logo_white;
 
   const itemsMap = [
     { href: `/${locale}`, label: t('home'), prefix: '01' },
@@ -33,11 +44,86 @@ export function Navigation() {
     };
   }, [open]);
 
+  // Desktop navbar: hide on scroll down, show on slight scroll up (only lg+)
+  const [navHidden, setNavHidden] = useState(false);
+  const lastYRef = useRef<number>(0);
+  const mqRef = useRef<MediaQueryList | null>(null);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    mqRef.current = window.matchMedia('(min-width: 1024px)');
+    lastYRef.current = window.scrollY || 0;
+    const onScroll = () => {
+      if (!mqRef.current?.matches) return;
+      const y = window.scrollY || 0;
+      const delta = y - lastYRef.current;
+      if (delta > 6 && y > 80) {
+        setNavHidden(true);
+      } else if (delta < -6) {
+        setNavHidden(false);
+      }
+      lastYRef.current = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
-      {/* FIXED WRAPPER: a gomb és a kör közös referenciában */}
+      {/* DESKTOP NAVBAR (md and up) */}
+      <nav
+        suppressHydrationWarning
+        className={clsx(
+          'hidden xl:flex fixed z-[2400] left-1/2 -translate-x-1/2',
+          'transition-all duration-300 max-h-[5rem]',
+          navHidden
+            ? '-top-24 opacity-0 pointer-events-none'
+            : 'top-4 opacity-100 max-h-[5rem]',
+          'w-[92%] max-w-6xl items-center justify-between rounded-full',
+          'bg-sky-light/80 backdrop-blur supports-[backdrop-filter]:bg-sky-light/70',
+          'px-4 shadow-lg max-h-[5rem]'
+        )}
+      >
+        <a href={`/${locale}`} className='flex items-center gap-2 px-2 py-1'>
+          {mounted ? (
+            <Image
+              src={image}
+              alt='Logo'
+              width={150}
+              height={150}
+              priority={false}
+            />
+          ) : (
+            <span
+              aria-hidden
+              style={{ width: 150, height: 150, display: 'inline-block' }}
+            />
+          )}
+        </a>
+        <div className='flex items-center gap-2 lg:gap-4 pr-2'>
+          <ul className='flex items-center gap-2 lg:gap-4'>
+            {itemsMap.map((it, i) => (
+              <li key={it.href + i}>
+                <a
+                  href={it.href}
+                  className={clsx(
+                    'inline-block rounded-full px-3 py-2 text-grey-dark-3 tracking-wide dark:text-white text-sm lg:text-lg uppercase transition-colors',
+                    'hover:bg-white/60 dark:hover:bg-sky-dark/30'
+                  )}
+                >
+                  {it.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className='h-6 w-px bg-border mx-1 lg:mx-2' aria-hidden />
+          <LocaleToggle />
+          <ThemeToggle />
+        </div>
+      </nav>
+
+      {/* MOBILE: hamburger trigger + expanding circle (md hidden) */}
       <div
-        className='fixed z-[2400] '
+        className='fixed z-[2400] xl:hidden'
         style={{
           top: 'calc(env(safe-area-inset-top, 0px) + 1rem)',
           right: 'calc(env(safe-area-inset-right, 0px) + 1rem)',
@@ -117,12 +203,13 @@ export function Navigation() {
         </button>
       </div>
 
-      {/* TELJES KÉPERNYŐS MENÜ – középre igazítva, nem csúszik */}
+      {/* TELJES KÉPERNYŐS MENÜ – középre igazítva, nem csúszik (md hidden) */}
       <nav
+        suppressHydrationWarning
         id={ctrlId}
         aria-hidden={!open}
         className={clsx(
-          'fixed inset-0 z-[2400] transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
+          'md:hidden fixed inset-0 z-[2400] transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
           open
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'

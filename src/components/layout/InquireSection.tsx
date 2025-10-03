@@ -29,11 +29,11 @@ export default function Inquire() {
     >
       <div className='w-full h-full md:w-2xl lg:w-7xl rounded-xl items-stretch overflow-hidden transition-colors bg-white/70 dark:bg-white/5 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-lg'>
         {/* GRID layout: mobilon 1 oszlop, nagyobb kijelzőn 2 oszlop */}
-        <div className='relative grid grid-cols-1 lg:grid-cols-2 w-full gap-8 items-center min-h-[26rem] xl:min-h-[40rem]'>
+        <div className='relative grid grid-cols-1 lg:grid-cols-2 w-full gap-8  items-center min-h-[26rem] xl:min-h-[40rem]'>
           {/* Form */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className='relative z-[20] space-y-6 p-6 md:p-10 bg-transparent rounded-md h-full m-0 flex items-center md:items-start flex-col justify-center w-full transition-colors'
+            className='relative z-[20] space-y-6 p-6 md:p-10 bg-transparent  rounded-md h-full m-0 flex items-center md:items-start flex-col justify-center w-full transition-colors'
           >
             <h3 className='text-2xl md:text-3xl leading-tight tracking-[0.1em] font-bold text-sky-dark dark:text-sky-light uppercase'>
               {t('title')}
@@ -118,6 +118,8 @@ export default function Inquire() {
               alt={t('alt.image')}
               className='h-full w-full object-cover md:rounded-r-md md:shadow-lg'
             />
+            {/* Mobile overlay: subtle whitish tint over image */}
+            <div className='absolute inset-0 md:hidden bg-white/90 dark:bg-white/20' />
             <div className='absolute inset-0 hidden md:block bg-gradient-to-tr from-transparent to-black/10 dark:to-black/30' />
           </div>
         </div>

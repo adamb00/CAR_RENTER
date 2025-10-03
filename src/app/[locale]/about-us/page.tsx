@@ -9,12 +9,12 @@ export default async function AboutUsPage() {
   return (
     <>
       <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40'>
-        <Link
+        {/* <Link
           href='/'
           className='absolute -left-8 sm:left-0 md:-left-8 -top-4 sm:top-0 md:-top-8 z-[1200]'
         >
           <Logo size='sm' />
-        </Link>
+        </Link> */}
         <h1 className='block text-5xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-widest lg:tracking-[0.3em] text-center my-10 bg-gradient-to-r from-sky-light/90 to-sky-dark/80 bg-clip-text text-transparent'>
           {t('headline')}
         </h1>
