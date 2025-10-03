@@ -33,6 +33,12 @@ export default async function LocaleLayout({
   return (
     <html lang={safeLocale} suppressHydrationWarning>
       <NextIntlClientProvider locale={locale} messages={messages}>
+        <head>
+          <meta
+            name='apple-mobile-web-app-title'
+            content='Zodiacs Rent a Car'
+          />
+        </head>
         <body className='antialiased '>
           <div className='app-shell p-2 md:p-8 lg:p-12'>
             <ThemeProvider>
