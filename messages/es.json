@@ -1,0 +1,313 @@
+{
+  "Header": {
+    "header": "Alquiler de coches en Fuerteventura y Lanzarote, fácil y rápido",
+    "book_now": "Reserva tu coche ahora"
+  },
+  "AboutSection": {
+    "title": "No te pierdas ninguna experiencia",
+    "pickup_title": "Entrega donde te resulte más cómodo",
+    "pickup_text": "Recoge tu coche donde te venga mejor: delante de tu hotel, apartamento o en la dirección indicada. Así podrás empezar a explorar desde el primer minuto.",
+    "transfer_title": "Traslado cómodo bajo demanda",
+    "transfer_text": "Si deseas servicio de traslado, indícalo fácilmente en nuestro formulario de solicitud y nos encargamos de que todo vaya sobre ruedas.",
+    "learn_more": "Más información →",
+    "alt1": "Coche 1",
+    "alt2": "Coche 2",
+    "alt3": "Coche 3"
+  },
+  "Navigation": {
+    "menu_sr": "Menú",
+    "cars": "Coches",
+    "about": "Sobre nosotros",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "home": "Inicio"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Selector de idioma"
+  },
+  "Footer": {
+    "about": "Sobre nosotros",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "home": "Inicio",
+    "fleet": "Nuestra flota",
+    "general_rental_conditions": "Condiciones generales de alquiler",
+    "insurance": "Seguro",
+    "rental_requirements": "Requisitos de alquiler",
+    "zodiac_car_rental": "Zodiac Rent a Car",
+    "logo_placeholder": "Aquí va el logotipo"
+  },
+  "Explore": {
+    "title": "¡Descubre las Islas Canarias con coche de alquiler!",
+    "subtitle": "Reserva online, entrega flexible en tu alojamiento o en el aeropuerto.",
+    "cards": {
+      "map": "Zodiacs Rent a Car ofrece alquiler fiable en Fuerteventura (Costa Calma) y Lanzarote.",
+      "globe": "Tanto si buscas relax en la playa como aventuras, en nuestra flota encontrarás el coche ideal.",
+      "heart": "¡Reserva online y recoge tu coche directamente en el aeropuerto o en tu alojamiento!"
+    }
+  },
+  "Inquire": {
+    "title": "¡Reserva ahora!",
+    "description_1": "¡No lo dejes para el último momento!",
+    "description_2": "Con la reserva anticipada aseguras el mejor coche en Fuerteventura y Lanzarote a precios ventajosos.",
+    "fields": {
+      "fullName": {
+        "label": "Nombre completo",
+        "placeholder": "Nombre completo",
+        "required": "Por favor, indica tu nombre"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "Correo electrónico",
+        "required": "Por favor, indica tu correo",
+        "invalid": "Introduce un correo válido"
+      }
+    },
+    "submit": {
+      "idle": "Continuar →",
+      "submitting": "Enviando..."
+    },
+    "alt": {
+      "image": "Ilustración de alquiler de coches"
+    }
+  },
+  "WhatsApp": {
+    "aria_label": "Mensaje de WhatsApp",
+    "choose_option": "Elige una opción",
+    "options": {
+      "transfer_quote": {
+        "label": "Solicitar presupuesto de traslado",
+        "text": "¡Hola! Me gustaría solicitar un presupuesto para un servicio de traslado."
+      },
+      "car_availability": {
+        "label": "Disponibilidad de coches",
+        "text": "¡Hola! Quisiera consultar la disponibilidad de coches para las fechas indicadas."
+      },
+      "interested_in": {
+        "label": "Quiero informarme",
+        "text": "¡Hola! Me gustaría informarme sobre el proceso de alquiler."
+      },
+      "custom_message": {
+        "label": "Mensaje personalizado",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> es una <strong>empresa familiar húngara</strong> con corazón y hogar en <strong>Fuerteventura</strong>. Vivimos y trabajamos en un entorno internacional, y sabemos qué es importante para quienes nos visitan: seguridad, fiabilidad y un trato cercano.",
+    "why_title": "¿Por qué Fuerteventura?",
+    "why_text": "Para nosotros la isla no es solo un destino turístico, es nuestro hogar. Amamos el sol, el océano, el estilo de vida tranquilo y la sensación de libertad. Eso es lo que queremos transmitirte cuando alquilas con nosotros.",
+    "fleet_title": "Nuestra flota: cómoda, fiable y accesible",
+    "fleet_text": "En nuestra flota encontrarás <strong>coches prácticos</strong>, <strong>modelos familiares</strong> e incluso <strong>vehículos espaciosos</strong>. Mantenemos y entregamos todos los coches limpios y a punto para que explores sin preocupaciones.",
+    "delivery_title": "Entrega y flexibilidad",
+    "delivery_text": "Puedes recoger tu coche no solo en Fuerteventura, sino también en <strong>Lanzarote</strong>. Tanto si llegas al aeropuerto como si te alojas en un hotel, te entregamos el coche de forma flexible para que tu viaje empiece cómodo.",
+    "more_title": "Más que un alquiler",
+    "more_text": "Para nosotros, el alquiler no es solo entregar una llave. Si lo necesitas, también te ayudamos con recomendaciones y consejos locales para que aproveches al máximo tu estancia."
+  },
+  "Insurance": {
+    "title": "Seguro",
+    "summary": {
+      "title": "Resumen",
+      "p1": "Nuestros coches incluyen seguro a todo riesgo sin franquicia en Canarias. En Península y Baleares se aplican condiciones específicas.",
+      "p2": "Consulta los detalles para conocer coberturas, exclusiones y opciones adicionales."
+    },
+    "canary": {
+      "title": "Coberturas en Canarias",
+      "i1": "Seguro a todo riesgo <strong>sin franquicia</strong>",
+      "i2": "Impuestos y tasas incluidos",
+      "i3": "<strong>Kilometraje ilimitado</strong>",
+      "i4": "Sillas infantiles y alzadores incluidos",
+      "i5": "Techo: incluido",
+      "i6": "GPS: de serie en algunos modelos",
+      "i7": "Conductor adicional: incluido",
+      "i8": "Entrega fuera de oficina: incluida",
+      "i9": "Devolución en oficina: incluida",
+      "i10": "Devolución con retraso de horas: incluida",
+      "i11": "Conductor joven (21–25): incluido"
+    },
+    "full_cover": {
+      "title": "Cobertura total (opcional)",
+      "p1": "La cobertura total elimina la fianza de 300–500 € y cubre la mayoría de daños.",
+      "note": "Excepciones: daños por negligencia o incumplimiento de condiciones."
+    },
+    "related": {
+      "title": "Páginas relacionadas",
+      "details": "Más detalles:"
+    }
+  },
+  "GeneralRental": {
+    "title": "Condiciones generales de alquiler",
+    "general": {
+      "title": "Disposiciones generales",
+      "p1": "Es obligatorio llevar siempre un <strong>contrato físico de alquiler válido</strong> en el vehículo; de lo contrario, las autoridades españolas pueden imponer una multa.",
+      "p2": "Todas las infracciones durante el alquiler y los costes asociados corren a cargo del <strong>arrendatario</strong>.",
+      "p3": "El <strong>repostaje correcto</strong> es responsabilidad del arrendatario.",
+      "p4": "El proveedor se reserva el derecho de rechazar el alquiler por antecedentes del arrendatario o incumplimiento de las condiciones. Si el modelo elegido no está disponible, se entregará un modelo <strong>similar o de categoría superior</strong>."
+    },
+    "services": {
+      "title": "Servicios incluidos",
+      "kanary": {
+        "title": "Islas Canarias",
+        "i1": "Seguro a todo riesgo <strong>sin franquicia</strong>",
+        "i2": "Impuestos y tasas incluidos",
+        "i3": "<strong>Kilometraje ilimitado</strong>",
+        "i4": "Sillas y alzadores: incluidos",
+        "i5": "Techo: incluido",
+        "i6": "GPS: de serie en algunos modelos",
+        "i7": "Conductor adicional: incluido",
+        "i8": "Entrega fuera de oficina: incluida",
+        "i9": "Devolución en oficina: incluida",
+        "i10": "Devolución con retraso de horas: incluida",
+        "i11": "Conductor joven (21–25): incluido"
+      },
+      "peninsula": {
+        "title": "Península / Baleares",
+        "i1": "El seguro se ofrece con <strong>condiciones</strong>*",
+        "i2": "Impuestos y tasas incluidos",
+        "i3": "Kilometraje ilimitado: <strong>máx. 28 días</strong>**",
+        "i4": "Sillas/alzadores: 13,99 €/día (máx. 97,93 €)",
+        "i5": "Techo: 54 €",
+        "i6": "GPS: 14 €/día (máx. 98 €)",
+        "i7": "Otros accesorios (cadenas, portaesquís…): 54 €",
+        "i8": "Conductor adicional: 12,50 €/día (máx. 125 €)",
+        "i9": "Entrega fuera de oficina: <strong>no</strong> incluida",
+        "i10": "Devolución en oficina: <strong>no</strong> incluida",
+        "i11": "Devolución con retraso de horas: 50 €",
+        "i12": "Asistencia en el extranjero: 55 €"
+      },
+      "foot1": "(*) Seguro a todo riesgo sin franquicia con excepciones (parte alta de carrocería, bajos, interior, uso indebido, etc.). Ver: Seguro.",
+      "foot2": "(**) Kilometraje ilimitado, máx. 28 días."
+    },
+    "canary": {
+      "title": "Condiciones – Islas Canarias",
+      "i1": "<strong>Confirmación</strong> inmediata; en caso de no disponer del modelo, se entrega uno similar o superior.",
+      "i2": "<strong>Seguro a todo riesgo</strong> sin franquicia; kilometraje ilimitado; impuestos y tasas incluidos.",
+      "i3": "Audioguías disponibles en la oficina.",
+      "i4": "Sillas y alzadores <strong>gratuitos</strong>.",
+      "i5": "Conductor(es) adicional(es) gratis – solicitar en la oficina.",
+      "i6": "<strong>Política de combustible</strong>: puede solicitarse depósito según nivel a la entrega.",
+      "i7": "<strong>Modificación/cancelación</strong>: gratis; online o por email/teléfono.",
+      "i8": "Reservas en aeropuerto: se mantiene la reserva <strong>máx. 60 min</strong> respecto a la hora real de llegada.",
+      "i9": "<strong>Sillas/alzadores</strong> gratuitos; instalación a cargo del cliente."
+    },
+    "peninsula": {
+      "title": "Condiciones – Península y Baleares",
+      "i1": "Todos los precios en euros. Mínimo de alquiler: <strong>24 horas</strong>. +29 min de cortesía; después se factura día completo.",
+      "i2": "Viajar al extranjero requiere <strong>Seguro de Asistencia Internacional</strong>; países permitidos listados en el contrato.",
+      "i3": "Pago: <strong>solo</strong> tarjeta de crédito física a nombre del titular del contrato. No se acepta efectivo/cheque de viaje.",
+      "i4": "Depósito: categorías pequeñas 200 €, grandes/premium/MPV 400 €; algunas categorías requieren bloqueo en tarjeta internacional válida.",
+      "i5": "Si no se reposta, se cobra el combustible + 18 € de gestión.",
+      "i6": "Menores de 25: 21,99 €/día, máx. 219,90 €.",
+      "i7": "Conductor adicional: 12,50 €/día, máx. 125 €.",
+      "i8": "Requisitos de edad/permiso por grupo (ver contrato); mínimo 2 años de carnet.",
+      "i9": "En Madrid/Barcelona aeropuerto no se acepta alquiler sin billete (se requieren datos de llegada y regreso).",
+      "i10": "<strong>Viajes al extranjero</strong>: países permitidos – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; otros no permitidos; finalización en el extranjero sujeta a autorización; vehículos industriales no se pueden cerrar fuera.",
+      "i11": "<strong>Conservación de accesorios</strong> (sillas, barras de techo, llaves, documentación) bajo responsabilidad del arrendatario; pérdida/daño puede conllevar penalización."
+    },
+    "schedule": {
+      "title": "Horarios y entregas",
+      "i1": "Oficinas ciudad: L–V 9:30–13:30 y 16:30–19:00; Sáb 10:00–13:00.",
+      "i2": "Oficinas aeropuerto: todos los días 08:00–23:00 (puede variar por temporada).",
+      "i3": "Entrega preferente en mostrador: hasta 36,3 €, según disponibilidad.",
+      "i4": "Entrega/recogida fuera de oficina: 27 €/50 €/100 € (5 km / 50 km / 100 km), con 48 h de antelación.",
+      "i5": "Entrega/recogida en oficina fuera de horario: +50 €.",
+      "i6": "En ciudades sin oficina: 0,84 €/km (mín. 57 €) hasta la oficina más cercana (km ida y vuelta).",
+      "i7": "Devolución en oficina en horario; fuera de horario la responsabilidad continúa hasta la recepción.",
+      "i8": "Se mantiene la reserva máx. 120 min desde la hora contractual (dentro de horario); en vuelos cuenta la llegada real."
+    },
+    "liability": {
+      "title": "Exención de responsabilidad",
+      "p1": "El proveedor no se hace responsable de daños derivados de fallos, omisiones, interrupciones, cancelaciones, retrasos, virus, robo, destrucción, acceso no autorizado o uso de datos o información.",
+      "p2": "El usuario acepta expresamente que el uso del sitio web es <strong>bajo su propia responsabilidad</strong>, incluidos los costes de servicios y reparaciones necesarios.",
+      "p3": "Las entidades asociadas y su personal no serán responsables de pérdidas o daños derivados del uso o intento de uso del sitio."
+    },
+    "related": {
+      "title": "Páginas relacionadas",
+      "details": "Más detalles:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Requisitos de alquiler",
+    "general": {
+      "title": "Condiciones generales (Fuerteventura / Lanzarote)",
+      "i1": "Menores de 23 años: en general no alquilamos, salvo con recargo.",
+      "i2": "Tras la confirmación, la reserva puede cancelarse en estos casos:",
+      "i2a": "los datos facilitados por el cliente no son exactos/reales/actualizados",
+      "i2b": "incumplimiento de las condiciones de alquiler",
+      "i3": "Necesario: carnet de conducir válido, DNI/pasaporte, domicilio y teléfono operativo."
+    },
+    "vehicle": {
+      "title": "Condiciones del vehículo",
+      "i1": "El modelo reservado es orientativo; puede sustituirse por otro similar de la misma categoría.",
+      "i2": "En vehículos con GPS, la localización es con fines de seguridad y conforme a la ley.",
+      "i3": "El vehículo no puede salir de la isla del alquiler.",
+      "i4": "Uso: cumpliendo la normativa, solo por vías públicas; prohibido uso ilícito; no para fines publicitarios.",
+      "i5": "Es obligatorio usar el combustible recomendado; el vehículo debe cerrarse siempre al aparcar.",
+      "i6": "Sillita infantil se facilita en la entrega; su correcta instalación es obligatoria.",
+      "i7": "Equipaje/tablas deben fijarse en el portaequipajes del techo si corresponde.",
+      "i8": "En caso de avería, detenga y estacione con seguridad y avise <strong>de inmediato</strong>.",
+      "i9": "El arrendatario es responsable del vehículo desde la entrega hasta la devolución correcta."
+    },
+    "handover": {
+      "title": "Entrega y devolución",
+      "i1": "La entrega y devolución se realiza en el aeropuerto y horario confirmados en la reserva.",
+      "i2": "No se puede devolver el vehículo en otra isla. Excepción: Lanzarote con recargo (40 €).",
+      "i3": "A la devolución, el estado debe ser equivalente al de la entrega (desgaste normal exceptuado).",
+      "i4": "En caso de incidente/daño es obligatoria la documentación/parte.",
+      "i5": "Suciedad extrema: recargo de limpieza 70 €.",
+      "i6": "Devolución anticipada: sin reembolso.",
+      "i7": "No deje objetos en el coche al devolverlo; no nos responsabilizamos por pérdidas."
+    },
+    "price": {
+      "title": "El precio incluye",
+      "i1": "Impuestos (IGIC/IVA)",
+      "i2": "Kilometraje ilimitado",
+      "i3": "Segundo conductor gratis",
+      "i4": "Entrega y devolución en aeropuerto",
+      "i5": "Cancelación gratuita",
+      "i6": "Sillitas y alzadores gratis (no ISOFIX; ISOFIX opcional)",
+      "i7": "Seguro básico con fianza de 300–500 € (franquicia en caso de daño)"
+    },
+    "base_excludes": {
+      "title": "Qué no cubre el seguro básico",
+      "i1": "Techo",
+      "i2": "Superficies de vidrio (ventanas, faros, retrovisores)",
+      "i3": "Neumáticos y ruedas",
+      "i4": "Batería descargada",
+      "i5": "Interior (asientos, alfombrillas, etc.)",
+      "i6": "Suspensión",
+      "i9": "Caja de cambios",
+      "i7": "Objetos personales en el coche (maletero/guantera)",
+      "i8": "Llaves perdidas",
+      "note": "Estos daños corren a cargo del arrendatario."
+    },
+    "deposit": {
+      "title": "Fianza y retención",
+      "i1": "Depósito en efectivo: 300–500 € (no se requiere depósito con tarjeta).",
+      "i2": "La fianza puede retenerse hasta 15 días; se realiza devolución bancaria (p. ej., Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Cobertura total (opción)",
+      "p1": "Con la cobertura total no hay fianza de 300–500 € y la mayoría de daños quedan cubiertos.",
+      "note": "Excepciones: daños por negligencia o por incumplir condiciones (ejemplos abajo)."
+    },
+    "exceptions": {
+      "title": "Excepciones – ejemplos",
+      "i1": "Conducir por vías sin asfaltar o prohibidas (p. ej., Cofete)",
+      "i2": "Conducir bajo los efectos del alcohol/drogas",
+      "i3": "Uso del móvil sin manos libres al conducir",
+      "i4": "Ignorar avisos de avería en el tablero y continuar",
+      "i5": "Transporte de materiales peligrosos/inflamables, animales o carga sin permiso",
+      "i6": "Actividad ilegal/no autorizada, subarriendo a terceros",
+      "i7": "Objetos en el techo sin portaequipajes autorizado",
+      "i8": "Daños por humedad excesiva/interior más allá del uso razonable",
+      "i9": "Daños con el vehículo abierto o con conductor no autorizado",
+      "i10": "Superar el tiempo fijado en contrato"
+    },
+    "related": {
+      "title": "Páginas relacionadas",
+      "details": "Más detalles:"
+    }
+  }
+}
