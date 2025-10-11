@@ -29,6 +29,7 @@
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
     "react-social-icons": "^6.25.0",
+    "request-ip": "^3.3.0",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.1.5",
     "zustand": "^5.0.8"
@@ -40,6 +41,7 @@
     "@types/node": "^20.19.13",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "@types/request-ip": "^0.0.41",
     "eslint": "^9.35.0",
     "eslint-config-next": "15.5.2",
     "realfavicon": "^0.4.18",

@@ -1,18 +1,4 @@
-// import createMiddleware from 'next-intl/middleware';
-// import { LOCALES, DEFAULT_LOCALE } from '@/i18n/config';
-
-// export default createMiddleware({
-//   locales: LOCALES,
-//   defaultLocale: DEFAULT_LOCALE,
-//   localeDetection: true,
-// });
-
-// export const config = {
-//   // Exclude Next.js internals, files, and API routes from locale handling
-//   matcher: ['/((?!api|_next|.*\\..*).*)'],
-// };
-
-// src/middleware.ts
+import requestIp from 'request-ip';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   LOCALES,
@@ -22,14 +8,24 @@ import {
   matchLocaleFromAccept,
 } from '@/i18n/config';
 
+type NextRequestWithGeo = NextRequest & {
+  geo?: {
+    country?: string | null;
+  };
+};
+
 function hasLocalePrefix(pathname: string): boolean {
   const seg = pathname.split('/')[1]?.toLowerCase();
   return LOCALES.includes(seg as Locale);
 }
 
-function getCountryFromHeaders(req: NextRequest): string {
-  // Vercel edge header – pl. "HU"
-  return (req.headers.get('x-vercel-ip-country') || '').toUpperCase();
+function getCountryFromRequest(req: NextRequest): string | null {
+  const { geo } = req as NextRequestWithGeo;
+  const geoCountry = geo?.country?.toUpperCase();
+  if (geoCountry) return geoCountry;
+
+  const headerCountry = req.headers.get('x-vercel-ip-country');
+  return headerCountry ? headerCountry.toUpperCase() : null;
 }
 
 export function middleware(req: NextRequest) {
@@ -54,17 +50,17 @@ export function middleware(req: NextRequest) {
   let locale: Locale | null =
     cookieLocale && LOCALES.includes(cookieLocale) ? cookieLocale : null;
 
-  // 2) Accept-Language
+  // 2) Geo location (country → locale mapping)
+  if (!locale) {
+    const country = getCountryFromRequest(req);
+    const mapped = country ? LANG_BY_COUNTRY[country] : null;
+    if (mapped && LOCALES.includes(mapped)) locale = mapped;
+  }
+
+  // 3) Accept-Language
   if (!locale) {
     const accept = req.headers.get('accept-language') || '';
     locale = matchLocaleFromAccept(accept);
-  }
-
-  // 3) Geo header
-  if (!locale) {
-    const country = getCountryFromHeaders(req);
-    const mapped = country && LANG_BY_COUNTRY[country];
-    if (mapped && LOCALES.includes(mapped)) locale = mapped;
   }
 
   // 4) Fallback
@@ -77,6 +73,7 @@ export function middleware(req: NextRequest) {
     path: '/',
     maxAge: 60 * 60 * 24 * 365,
   });
+
   return res;
 }
 
