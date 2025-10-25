@@ -8,42 +8,42 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState, useTransition } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
 import { LOCALES, Locale } from '@/i18n/config';
 import { useTranslations } from 'next-intl';
 
 const FLAGS: Record<Locale, string> = {
   hu: '🇭🇺',
-  en: '🇬🇧',
-  de: '🇩🇪',
-  ro: '🇷🇴',
-  sk: '🇸🇰',
-  cz: '🇨🇿',
-  fr: '🇫🇷',
-  se: '🇸🇪',
-  no: '🇳🇴',
-  dk: '🇩🇰',
+  // en: '🇬🇧',
+  // de: '🇩🇪',
+  // ro: '🇷🇴',
+  // sk: '🇸🇰',
+  // cz: '🇨🇿',
+  // fr: '🇫🇷',
+  // se: '🇸🇪',
+  // no: '🇳🇴',
+  // dk: '🇩🇰',
   es: '🇪🇸',
-  it: '🇮🇹',
-  pl: '🇵🇱',
+  // it: '🇮🇹',
+  // pl: '🇵🇱',
 };
 
 const LABELS: Record<Locale, string> = {
   hu: 'Magyar',
-  en: 'English',
-  de: 'Deutsch',
-  ro: 'Română',
-  sk: 'Slovenčina',
-  cz: 'Čeština',
-  fr: 'Français',
-  se: 'Svenska',
-  no: 'Norsk',
-  dk: 'Dansk',
+  // en: 'English',
+  // de: 'Deutsch',
+  // ro: 'Română',
+  // sk: 'Slovenčina',
+  // cz: 'Čeština',
+  // fr: 'Français',
+  // se: 'Svenska',
+  // no: 'Norsk',
+  // dk: 'Dansk',
+  // it: 'Italiano',
+  // pl: 'Polski',
   es: 'Español',
-  it: 'Italiano',
-  pl: 'Polski',
 };
 
 function replaceLocaleInPath(pathname: string, next: Locale) {
@@ -58,11 +58,10 @@ function replaceLocaleInPath(pathname: string, next: Locale) {
 
 export function LocaleToggle({ current }: { current?: string }) {
   const t = useTranslations('LocaleToggle');
-  const router = useRouter();
   const pathname = usePathname() || '/hu';
   const search = useSearchParams();
   const [mounted, setMounted] = useState<boolean>(false);
-  const [pending, startTransition] = useTransition();
+  const [pending, setPending] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -92,12 +91,12 @@ export function LocaleToggle({ current }: { current?: string }) {
   }
 
   function change(next: Locale) {
+    if (pending) return;
+    if (next === active) return;
     const href = buildUrl(next);
-    startTransition(() => {
-      void persistLocale(next);
-      router.replace(href);
-      router.refresh();
-    });
+    setPending(true);
+    void persistLocale(next);
+    window.location.assign(href);
   }
 
   if (!mounted) return null; // elkerüli a hydration eltérést

@@ -1,12 +1,11 @@
-import requestIp from 'request-ip';
-import { NextRequest, NextResponse } from 'next/server';
 import {
-  LOCALES,
   DEFAULT_LOCALE,
-  Locale,
   LANG_BY_COUNTRY,
+  Locale,
+  LOCALES,
   matchLocaleFromAccept,
 } from '@/i18n/config';
+import { NextRequest, NextResponse } from 'next/server';
 
 type NextRequestWithGeo = NextRequest & {
   geo?: {

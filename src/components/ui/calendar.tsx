@@ -14,20 +14,36 @@ import { Button, buttonVariants } from "@/components/ui/button"
 function Calendar({
   className,
   classNames,
-  showOutsideDays = true,
+  showOutsideDays = false,
   captionLayout = "label",
   buttonVariant = "ghost",
   formatters,
   components,
+  fixedWeeks = true,
   ...props
 }: React.ComponentProps<typeof DayPicker> & {
   buttonVariant?: React.ComponentProps<typeof Button>["variant"]
 }) {
   const defaultClassNames = getDefaultClassNames()
+  const localeCode =
+    (props.locale && "code" in props.locale
+      ? // date-fns locales expose their ISO code on the `code` property
+        props.locale.code
+      : undefined) ??
+    (typeof navigator !== "undefined" ? navigator.language : "en-US")
+  const defaultFormatters = {
+    formatMonthCaption: (date: Date) =>
+      date.toLocaleString(localeCode, { month: "long" }),
+    formatMonthDropdown: (date: Date) =>
+      date.toLocaleString(localeCode, { month: "long" }),
+    formatWeekdayName: (date: Date) =>
+      date.toLocaleString(localeCode, { weekday: "short" }),
+  }
 
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      fixedWeeks={fixedWeeks}
       className={cn(
         "bg-background group/calendar p-3 [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent",
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
@@ -36,8 +52,7 @@ function Calendar({
       )}
       captionLayout={captionLayout}
       formatters={{
-        formatMonthDropdown: (date) =>
-          date.toLocaleString("default", { month: "short" }),
+        ...defaultFormatters,
         ...formatters,
       }}
       classNames={{

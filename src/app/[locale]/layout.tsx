@@ -5,7 +5,8 @@ import { LocaleToggle } from '@/components/LocaleToggler';
 import { Navigation } from '@/components/navigation/Navigation';
 import { ThemeToggle } from '@/components/ThemeToggler';
 import WhatsAppContainer from '@/components/WhatsAppContainer';
-import { Locale, LOCALES } from '@/i18n/config';
+import { GoogleMapsScript } from '@/components/GoogleMapsScript';
+import { Locale, LOCALES, DEFAULT_LOCALE } from '@/i18n/config';
 import { ThemeProvider } from '@/providers/theme';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -16,24 +17,25 @@ export async function generateStaticParams() {
   return LOCALES.map((l) => ({ locale: l }));
 }
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
-  children: ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
+export default async function LocaleLayout(
+  props: {
+    children: ReactNode;
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const { children } = props;
+  const params = await props.params;
+  const { locale } = params;
 
-  const safeLocale: Locale = (
-    LOCALES.includes(locale as Locale) ? locale : LOCALES[0]
-  ) as Locale;
+  const safeLocale: Locale = LOCALES.includes(locale as Locale)
+    ? (locale as Locale)
+    : DEFAULT_LOCALE;
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale: safeLocale });
 
   return (
     <html lang={safeLocale} suppressHydrationWarning>
-      <NextIntlClientProvider locale={locale} messages={messages}>
+      <NextIntlClientProvider locale={safeLocale} messages={messages}>
         <head>
           <meta
             name='apple-mobile-web-app-title'
@@ -41,6 +43,7 @@ export default async function LocaleLayout({
           />
         </head>
         <body className='antialiased '>
+          <GoogleMapsScript locale={safeLocale} />
           <div className='app-shell p-2 md:p-8 lg:p-12'>
             <ThemeProvider>
               {/* Navigation is responsible for desktop navbar + mobile hamburger */}

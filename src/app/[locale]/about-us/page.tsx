@@ -1,10 +1,14 @@
-import Logo from '@/components/Logo';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function AboutUsPage() {
-  const t = await getTranslations('AboutUs');
+export default async function AboutUsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = params?.locale ?? 'hu';
+  const t = await getTranslations({ locale, namespace: 'AboutUs' });
 
   return (
     <>
@@ -100,8 +104,7 @@ export default async function AboutUsPage() {
         </div>
         <div className='text-center text-lg !my-8 text-sky-dark hover:scale-110 duration-200'>
           <Link href={'/'} className='hover:border-b pb-2 px-4 leading-snug'>
-            Bérelj autót nálunk, és tapasztald meg Fuerteventurát úgy, ahogy mi
-            is szeretjük!
+            {t('cta')}
           </Link>
         </div>
       </div>

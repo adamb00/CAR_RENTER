@@ -1,35 +1,19 @@
-import Logo from '@/components/Logo';
-import React from 'react';
 import { getTranslations } from 'next-intl/server';
+import { Luggage, User } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { CARS } from '@/lib/cars';
 
-type Car = {
-  id: string;
-  name: string;
-  image: string;
-  pricePerDay: number;
-  seats: number;
-  transmission: 'manual' | 'automatic';
-};
-
-export default async function CarsPage() {
-  const t = await getTranslations('Cars');
-  const cars: Car[] = Array.from({ length: 8 }).map((_, i) => ({
-    id: `car-${i + 1}`,
-    name: `Autó ${i + 1}`,
-    image: '/cars.webp',
-    pricePerDay: 35 + i * 5,
-    seats: i % 3 === 0 ? 7 : 5,
-    transmission: i % 2 === 0 ? 'manual' : 'automatic',
-  }));
+export default async function CarsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = params?.locale ?? 'hu';
+  const t = await getTranslations({ locale, namespace: 'Cars' });
   return (
     <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'>
-      {/* <Link
-        href='/'
-        className='absolute -left-8 sm:left-0 md:-left-8 -top-4 sm:top-0 md:-top-8 z-[1200]'
-      >
-        <Logo size='sm' />
-      </Link> */}
       <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
         {t('title')}
       </h2>
@@ -41,8 +25,8 @@ export default async function CarsPage() {
           {t.rich('p2', { strong: (c) => <strong>{c}</strong> })}
         </p>
       </div>
-      <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 mb-20'>
-        {cars.map((car) => (
+      <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-20'>
+        {CARS.map((car) => (
           <div
             key={car.id}
             className='group rounded-lg border border-border/60 bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200'
@@ -56,18 +40,57 @@ export default async function CarsPage() {
                 loading='lazy'
               />
             </div>
-            <div className='p-4 sm:p-5 border shadow-xl'>
-              <h3 className='text-lg font-semibold mb-1'>{car.name}</h3>
-              <p className='text-sm text-muted-foreground mb-3'>
-                {car.seats} {t('labels.seats')} •{' '}
-                {car.transmission === 'manual'
-                  ? t('labels.manual')
-                  : t('labels.automatic')}
-              </p>
-              <div className='flex items-center justify-end'>
-                <span className='text-xl font-bold'>
+            <div className='flex h-full flex-col border p-4 shadow-xl sm:p-5'>
+              <div className='flex items-start justify-between gap-4'>
+                <h3 className='text-lg font-semibold'>{car.name}</h3>
+                <span className='text-xl font-bold shrink-0'>
                   {t('labels.from_price', { price: car.pricePerDay })}
                 </span>
+              </div>
+              <div className='mt-4 flex flex-col gap-3 text-sm text-muted-foreground'>
+                <div className='flex flex-wrap items-center gap-1'>
+                  {Array.from({ length: car.seats }).map((_, i) => (
+                    <User key={`${car.id}-seat-${i}`} className='h-5 w-5' />
+                  ))}
+                </div>
+                <div className='flex flex-col items-start gap-2 text-xs sm:flex-row sm:items-center sm:gap-3 sm:text-sm'>
+                  <span className='flex items-center gap-1'>
+                    {Array.from({ length: car.largeLuggage }).map((_, i) => (
+                      <Luggage
+                        key={`large-${car.id}-${i}`}
+                        className='h-6 w-6'
+                      />
+                    ))}
+                  </span>
+                  <span className='text-muted-foreground hidden sm:block'>
+                    /
+                  </span>
+                  <span className='flex items-center gap-1'>
+                    {Array.from({ length: car.smallLuggage }).map((_, i) => (
+                      <Luggage
+                        key={`small-${car.id}-${i}`}
+                        className='h-4 w-4'
+                      />
+                    ))}
+                  </span>
+                </div>
+              </div>
+              <div className='mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+                <div className='flex flex-wrap gap-2 text-xs uppercase tracking-wide text-muted-foreground'>
+                  {car.colors.map((colorKey) => (
+                    <Badge key={`${car.id}-${colorKey}`} variant={'outline'}>
+                      {t(`colors.${colorKey}`)}
+                    </Badge>
+                  ))}
+                </div>
+                <Button
+                  asChild
+                  className='w-full sm:w-auto bg-sky-light uppercase text-grey-dark-3 transition-all duration-300 hover:bg-sky-dark lg:pointer-events-none lg:opacity-0 lg:group-hover:pointer-events-auto lg:group-hover:opacity-100 lg:group-hover:cursor-pointer'
+                >
+                  <Link href={`/${locale}/cars/${car.id}`}>
+                    {t('buttons.interested')}
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

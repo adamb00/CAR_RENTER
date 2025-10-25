@@ -1,10 +1,14 @@
 import Link from 'next/link';
-import Logo from '@/components/Logo';
 import { getTranslations } from 'next-intl/server';
 
-export default async function GeneralRentalConditionsPage() {
-  const t = await getTranslations('GeneralRental');
-  const tf = await getTranslations('Footer');
+export default async function GeneralRentalConditionsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = params?.locale ?? 'hu';
+  const t = await getTranslations({ locale, namespace: 'GeneralRental' });
+  const tf = await getTranslations({ locale, namespace: 'Footer' });
   const title = t('title');
 
   return (

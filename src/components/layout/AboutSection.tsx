@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 
 export default function AboutSection() {
   const t = useTranslations('AboutSection');
+
   return (
     <section id='about_section' className='section-about py-20 2xl:mb-32'>
       <div className='u-center-text u-margin-bottom-big text-center mb-16'>

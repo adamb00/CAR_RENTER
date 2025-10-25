@@ -1,13 +1,14 @@
 'use client';
-import * as React from 'react';
+import { SplittingText } from '@/components/ui/shadcn-io/splitting-text';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
-import { SplittingText } from '@/components/ui/shadcn-io/splitting-text';
+import { useParams } from 'next/navigation';
 
 export function Header() {
   // Clip-path az eredetihez igazítva
   const clip = 'polygon(0 0, 100% 0, 100% 75vh, 0 90%)';
   const t = useTranslations('Header');
+  const { locale } = useParams();
 
   return (
     <header
@@ -75,7 +76,7 @@ export function Header() {
         </h1>
 
         <a
-          href={'/'}
+          href={`/${locale}/cars`}
           className='mt-8 inline-block rounded-full dark:text-sky-dark text-sky-dark bg-white/90 px-8 py-3 text-sm font-medium uppercase tracking-wide shadow-lg transition hover:bg-white'
         >
           {t('book_now')}

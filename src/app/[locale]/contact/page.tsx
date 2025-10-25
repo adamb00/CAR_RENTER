@@ -1,7 +1,13 @@
-import Logo from '@/components/Logo';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 
-export default function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = params?.locale ?? 'hu';
+  const t = await getTranslations({ locale, namespace: 'Contact' });
+
   return (
     <>
       <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40'>
@@ -12,21 +18,14 @@ export default function ContactPage() {
           <Logo size='sm' />
         </Link> */}
         <h2 className='text-3xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-wide md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
-          Kérdésed van az autóbérléssel kapcsolatban Fuerteventurán vagy
-          Lanzarotén?
+          {t('title')}
         </h2>
         <div className='mt-10 text-grey-dark-3 text-base md:text-lg tracking-wider'>
           <p className='mb-4'>
-            Vedd fel velünk a kapcsolatot, és segítünk megtalálni{' '}
-            <strong>a számodra legjobb megoldást!</strong> Legyen szó
-            előfoglalásról, reptéri kiszállításról vagy szállodához történő
-            autóátadásról, ügyfélszolgálatunk{' '}
-            <strong>gyorsan és rugalmasan</strong> válaszol.
+            {t.rich('p1', { strong: (chunks) => <strong>{chunks}</strong> })}
           </p>
           <p className='mb-6'>
-            Töltsd ki az alábbi űrlapot, írj nekünk e-mailt, messenger, whatsapp
-            vagy viber üzenetet, vagy hívj telefonon! strong Örömmel állunk
-            rendelkezésedre, hogy nyaralásod gondtalanul teljen.
+            {t.rich('p2', { strong: (chunks) => <strong>{chunks}</strong> })}
           </p>
         </div>
       </div>

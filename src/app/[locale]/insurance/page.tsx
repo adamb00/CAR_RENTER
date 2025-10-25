@@ -1,11 +1,15 @@
-import Logo from '@/components/Logo';
 import Link from 'next/link';
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 
-export default async function Insurance() {
-  const t = await getTranslations('Insurance');
-  const tf = await getTranslations('Footer');
+export default async function Insurance({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = params?.locale ?? 'hu';
+  const t = await getTranslations({ locale, namespace: 'Insurance' });
+  const tf = await getTranslations({ locale, namespace: 'Footer' });
   return (
     <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40 mb-10'>
       {/* <Link

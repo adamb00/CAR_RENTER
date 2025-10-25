@@ -71,6 +71,44 @@
       "image": "Ilustración de alquiler de coches"
     }
   },
+  "Cars": {
+    "title": "Descubre Fuerteventura y Lanzarote con total libertad con nuestros coches",
+    "p1": "Alquila fácil y rápido: elige el vehículo que mejor se adapte a ti y te lo entregamos en el aeropuerto o directamente en tu alojamiento. Con nuestras opciones flexibles de alquiler podrás disfrutar sin preocupaciones, tanto para escapadas cortas como para estancias más largas.",
+    "p2": "Te recomendamos reservar con antelación para asegurarte de que el coche elegido esté disponible a tu llegada. Explora nuestra flota, descubre los detalles de cada modelo y reserva online cómodamente.",
+    "labels": {
+      "seats": "plazas",
+      "manual": "Manual",
+      "automatic": "Automático",
+      "per_day": "/ día",
+      "from_price": "Desde €{price}"
+    },
+    "colors": {
+      "silver_metallic": "Plata metalizada",
+      "milky_beige": "Beige marfil",
+      "white": "Blanco",
+      "metallic_blue": "Azul metalizado"
+    },
+    "categories": {
+      "small": "Compacto",
+      "medium": "Mediano",
+      "large": "Familiar"
+    },
+    "details": {
+      "back": "Volver a la flota",
+      "title": "Detalles del vehículo",
+      "category": "Categoría",
+      "luggage_large": "Maletas grandes: {count}",
+      "luggage_small": "Maletas pequeñas: {count}",
+      "colors": "Colores disponibles"
+    },
+    "buttons": {
+      "interested": "Me interesa"
+    },
+    "transmissions": {
+      "manual": "Manual",
+      "automatic": "Automática"
+    }
+  },
   "WhatsApp": {
     "aria_label": "Mensaje de WhatsApp",
     "choose_option": "Elige una opción",
@@ -103,7 +141,10 @@
     "delivery_title": "Entrega y flexibilidad",
     "delivery_text": "Puedes recoger tu coche no solo en Fuerteventura, sino también en <strong>Lanzarote</strong>. Tanto si llegas al aeropuerto como si te alojas en un hotel, te entregamos el coche de forma flexible para que tu viaje empiece cómodo.",
     "more_title": "Más que un alquiler",
-    "more_text": "Para nosotros, el alquiler no es solo entregar una llave. Si lo necesitas, también te ayudamos con recomendaciones y consejos locales para que aproveches al máximo tu estancia."
+    "more_text": "Para nosotros, el alquiler no es solo entregar una llave. Si lo necesitas, también te ayudamos con recomendaciones y consejos locales para que aproveches al máximo tu estancia.",
+    "mission_title": "Nuestra misión",
+    "mission_text": "Nuestro objetivo es que cada viajero disfrute de la isla con <strong>libertad, comodidad y seguridad</strong>. Como familia y como empresa local trabajamos con el corazón para que regreses a casa con la magia especial de Fuerteventura.",
+    "cta": "Alquila con nosotros y vive Fuerteventura tal y como la vivimos nosotros."
   },
   "Insurance": {
     "title": "Seguro",
@@ -134,6 +175,51 @@
     "related": {
       "title": "Páginas relacionadas",
       "details": "Más detalles:"
+    },
+    "pricing_title": "Precio y oferta",
+    "pricing_text": "Contrátalo ahora por solo 2 € al día (máx. 30 € por alquiler) y conduce sin preocupaciones.",
+    "coverage_note": "Con este seguro amplías la cobertura a todas las exclusiones de nuestra póliza (excepto los casos que ninguna aseguradora cubre).",
+    "igic_note": "+15% de IGIC no incluido. Máximo +30 € por alquiler.",
+    "footnote": "* No incluye +15% de IGIC. Máximo +30 € por alquiler.",
+    "sscp_title": "Seguro Super Comfort Plus (SSCP)",
+    "sscp_intro": "Por muy poco más puedes ampliar el seguro incluido. El SSCP elimina las siguientes exclusiones de la cobertura estándar:",
+    "closing": "La mejor forma de disfrutar es con cobertura total.",
+    "table": {
+      "header_event": "Incidencia",
+      "header_desc": "Descripción",
+      "header_cost": "Coste aprox. (sin seguro)",
+      "rows": {
+        "battery": {
+          "event": "Descarga accidental de la batería",
+          "desc": "Asistencia / puesta en marcha",
+          "cost": "90 €"
+        },
+        "lost_keys": {
+          "event": "Pérdida de llaves",
+          "desc": "Reposición y programación",
+          "cost": "100 €"
+        },
+        "wrong_fuel": {
+          "event": "Repostaje incorrecto",
+          "desc": "Vaciado y limpieza",
+          "cost": "110 €"
+        },
+        "rim_flat": {
+          "event": "Daño en llanta / pinchazo",
+          "desc": "Reparación",
+          "cost": "60 €"
+        },
+        "tyre_damage": {
+          "event": "Daño en neumáticos",
+          "desc": "Sustitución / reparación",
+          "cost": "150 €"
+        },
+        "dru": {
+          "event": "Servicio adicional DRU*",
+          "desc": "Asistencia in situ",
+          "cost": "40 € / 100 €"
+        }
+      }
     }
   },
   "GeneralRental": {
@@ -308,6 +394,461 @@
     "related": {
       "title": "Páginas relacionadas",
       "details": "Más detalles:"
+    }
+  },
+  "Contact": {
+    "title": "¿Tienes dudas sobre el alquiler de coches en Fuerteventura o Lanzarote?",
+    "p1": "Ponte en contacto con nosotros y te ayudaremos a encontrar <strong>la solución que mejor se adapte a ti</strong>. Ya sea una reserva anticipada, la entrega en el aeropuerto o en tu alojamiento, nuestro equipo <strong>responde rápido y con flexibilidad</strong>.",
+    "p2": "Rellena el formulario, envíanos un correo electrónico, un mensaje por Messenger, WhatsApp o Viber, o llámanos. <strong>Estaremos encantados de ayudarte</strong> para que tus vacaciones sean perfectas."
+  },
+  "MultiSelect": {
+    "placeholder": "Selecciona una opción",
+    "selectAll": "Seleccionar todo",
+    "close": "Cerrar",
+    "clear": "Borrar"
+  },
+  "RentForm": {
+    "title": "Rellena el siguiente formulario para completar tu reserva",
+    "buttons": {
+      "addChild": "Añadir menor",
+      "removeChild": "Eliminar",
+      "addDriver": "Añadir conductor",
+      "removeDriver": "Eliminar conductor",
+      "submit": "Enviar solicitud"
+    },
+    "searching": "Buscando...",
+    "extras": {
+      "label": "Servicios extra",
+      "options": {
+        "szorfo_deszka_rogzito": "Porta tablas de surf",
+        "gyerekules": "Silla infantil",
+        "kiszallitas": "Entrega a domicilio",
+        "alap_csomag": "Paquete básico *",
+        "energia_csomag": "Paquete energético **",
+        "esti_erkezes_csomag": "Paquete llegada tarde ***"
+      },
+      "packages": {
+        "base": "* Paquete básico: 0,5 l de agua y 0,33 l de Fuze Tea por persona",
+        "energy": "** Paquete energético: paquete básico más 2-3 tipos de chocolate o snacks a petición",
+        "lateArrival": "*** Paquete llegada tarde: paquete básico más agua de 1,5 l y 2 cruasanes por persona, ideal para vuelos nocturnos"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Periodo de alquiler"
+    },
+    "dateRangePicker": {
+      "cancel": "Cancelar",
+      "apply": "Aplicar"
+    },
+    "adults": {
+      "label": "Número de adultos",
+      "placeholder": "Número de adultos"
+    },
+    "sections": {
+      "booking": {
+        "title": "Datos de la reserva",
+        "description": "Elige los extras, define la duración del alquiler y cuántos adultos viajarán."
+      },
+      "children": {
+        "title": "Pasajeros menores",
+        "description": "Si viaja algún menor, indica su edad (y opcionalmente su altura) para preparar el equipamiento adecuado.",
+        "empty": "Por ahora no hay menores añadidos.",
+        "ageLabel": "Edad del menor #{index} (años)",
+        "heightLabel": "Altura (cm) - opcional"
+      },
+      "drivers": {
+        "title": "Datos de los conductores",
+        "description": "Indica los datos personales del conductor principal y, si hace falta, de los conductores adicionales, además de los detalles del permiso de conducir.",
+        "primaryInfo": "Si marcas las casillas, rellenaremos automáticamente los datos de contacto y facturación con la información del conductor principal.",
+        "primaryTitle": "Datos del conductor principal",
+        "secondaryTitle": "Datos del conductor {index}",
+        "fields": {
+          "lastName1": {
+            "label": "Apellido del conductor",
+            "placeholder": "Apellido"
+          },
+          "lastName2": {
+            "label": "Segundo apellido del conductor (opcional)",
+            "placeholder": "Segundo apellido (opcional)"
+          },
+          "firstName1": {
+            "label": "Nombre del conductor",
+            "placeholder": "Nombre"
+          },
+          "firstName2": {
+            "label": "Segundo nombre del conductor (opcional)",
+            "placeholder": "Segundo nombre (opcional)"
+          },
+          "postalCode": {
+            "label": "Código postal",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Ciudad",
+            "placeholder": "Ciudad"
+          },
+          "country": {
+            "label": "País",
+            "placeholder": "País"
+          },
+          "street": {
+            "label": "Calle",
+            "placeholder": "Calle"
+          },
+          "doorNumber": {
+            "label": "Número",
+            "placeholder": "Número"
+          },
+          "dateOfBirth": {
+            "label": "Fecha de nacimiento",
+            "placeholder": "Selecciona una fecha"
+          },
+          "placeOfBirth": {
+            "label": "Lugar de nacimiento",
+            "placeholder": "Lugar de nacimiento"
+          },
+          "nameOfMother": {
+            "label": "Nombre de la madre",
+            "placeholder": "Nombre de la madre"
+          },
+          "phoneNumber": {
+            "label": "Teléfono",
+            "placeholder": "+34 600 123 456"
+          },
+          "email": {
+            "label": "Correo electrónico",
+            "placeholder": "ejemplo@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Tipo de documento",
+            "placeholder": "Selecciona un documento",
+            "passport": "Pasaporte",
+            "id_card": "Documento de identidad"
+          },
+          "number": {
+            "label": "Número de documento",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Fecha de expedición",
+            "placeholder": "Selecciona una fecha"
+          },
+          "validUntil": {
+            "label": "Fecha de caducidad",
+            "placeholder": "Selecciona una fecha"
+          },
+          "drivingLicenceNumber": {
+            "label": "Número del permiso de conducir",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Categoría más alta",
+            "placeholder": "Selecciona la categoría"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Expedición del permiso",
+            "placeholder": "Selecciona una fecha"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Caducidad del permiso",
+            "placeholder": "Selecciona una fecha"
+          },
+          "drivingLicenceIsOlderThan3": "Declaro que mi permiso tiene más de 3 años"
+        }
+      },
+      "contact": {
+        "title": "Datos de contacto",
+        "description": "Si la persona de contacto es distinta del conductor principal, indica aquí sus datos.",
+        "toggle": "Coincide con los datos del conductor principal",
+        "fields": {
+          "name": {
+            "label": "Nombre de la persona de contacto",
+            "placeholder": "Nombre de la persona de contacto"
+          },
+          "email": {
+            "label": "Correo electrónico de contacto",
+            "placeholder": "Correo electrónico de contacto"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Datos de facturación",
+        "description": "Indica a quién y a qué dirección debemos emitir la factura. Si coincide con el conductor principal, marca la opción.",
+        "toggle": "Coincide con los datos del conductor principal",
+        "fields": {
+          "name": {
+            "label": "Nombre de facturación",
+            "placeholder": "Nombre de facturación"
+          },
+          "email": {
+            "label": "Correo electrónico de facturación",
+            "placeholder": "Correo electrónico de facturación"
+          },
+          "phoneNumber": {
+            "label": "Teléfono de facturación",
+            "placeholder": "+34 600 123 456"
+          },
+          "taxId": {
+            "label": "Número fiscal (opcional)",
+            "placeholder": "Número fiscal"
+          },
+          "address": {
+            "country": {
+              "label": "País",
+              "placeholder": "País"
+            },
+            "postalCode": {
+              "label": "Código postal",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Ciudad",
+              "placeholder": "Ciudad"
+            },
+            "street": {
+              "label": "Calle",
+              "placeholder": "Calle"
+            },
+            "doorNumber": {
+              "label": "Número",
+              "placeholder": "Número"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Dirección exacta de la entrega",
+        "description": "Indica la dirección completa del alojamiento o del aeropuerto para la entrega.",
+        "locationName": {
+          "label": "Nombre del alojamiento / aeropuerto (opcional)",
+          "placeholder": "Ej. Hotel Marina o Aeropuerto de Madrid-Barajas"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Tipo de lugar",
+            "placeholder": "Selecciona el tipo de lugar",
+            "accommodation": "Alojamiento",
+            "airport": "Aeropuerto"
+          },
+          "country": {
+            "label": "País",
+            "placeholder": "País"
+          },
+          "postalCode": {
+            "label": "Código postal",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Ciudad",
+            "placeholder": "Ciudad"
+          },
+          "street": {
+            "label": "Calle",
+            "placeholder": "Calle"
+          },
+          "doorNumber": {
+            "label": "Número",
+            "placeholder": "Número"
+          }
+        }
+      }
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Fecha de inicio no válida",
+      "invalidEndDate": "Fecha de fin no válida",
+      "adultsMin": "Se requiere al menos un adulto",
+      "childAgeMin": "La edad no puede ser negativa",
+      "childAgeMax": "La edad del menor no puede superar los 17 años",
+      "childHeightMin": "La altura no puede ser negativa",
+      "firstNameRequired": "El nombre es obligatorio",
+      "lastNameRequired": "El apellido es obligatorio",
+      "countryRequired": "El país es obligatorio",
+      "postalCodeRequired": "El código postal es obligatorio",
+      "cityRequired": "La ciudad es obligatoria",
+      "streetRequired": "La calle es obligatoria",
+      "doorNumberRequired": "El número es obligatorio",
+      "invalidDateOfBirth": "Fecha de nacimiento no válida",
+      "placeOfBirthRequired": "El lugar de nacimiento es obligatorio",
+      "motherNameRequired": "El nombre de la madre es obligatorio",
+      "phoneRequired": "El teléfono es obligatorio",
+      "phoneInvalid": "Introduce un teléfono válido",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "Introduce un correo electrónico válido",
+      "documentNumberRequired": "El número de documento es obligatorio",
+      "documentIssueInvalid": "Fecha de expedición del documento no válida",
+      "documentExpiryInvalid": "Fecha de caducidad del documento no válida",
+      "drivingLicenceNumberRequired": "El número del permiso es obligatorio",
+      "drivingLicenceIssueInvalid": "Fecha de expedición del permiso no válida",
+      "drivingLicenceExpiryInvalid": "Fecha de caducidad del permiso no válida",
+      "contactNameRequired": "El nombre de la persona de contacto es obligatorio",
+      "contactEmailRequired": "El correo de contacto es obligatorio",
+      "contactEmailInvalid": "Introduce un correo de contacto válido",
+      "invoiceNameRequired": "El nombre de facturación es obligatorio",
+      "invoicePhoneRequired": "El teléfono de facturación es obligatorio",
+      "invoiceEmailRequired": "El correo de facturación es obligatorio",
+      "invoiceEmailInvalid": "Introduce un correo de facturación válido",
+      "startPast": "La fecha de inicio no puede estar en el pasado",
+      "startTooLate": "La fecha de inicio debe ser dentro de un año",
+      "endBeforeStart": "La fecha de fin no puede ser anterior a la de inicio",
+      "endTooLate": "La fecha de fin debe ser dentro de un año",
+      "deliveryPlaceTypeRequired": "Selecciona si indicas una dirección de alojamiento o de aeropuerto",
+      "deliveryFieldRequired": "Campo obligatorio",
+      "invalidAdults": "Se requiere al menos un adulto",
+      "adultsInvalid": "Por favor, indica cuántos adultos viajan"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Fecha de inicio no válida",
+          "past": "La fecha de inicio no puede estar en el pasado",
+          "tooLate": "La fecha de inicio debe ser dentro de un año"
+        },
+        "endDate": {
+          "invalid": "Fecha de fin no válida",
+          "beforeStart": "La fecha de fin no puede ser anterior a la de inicio",
+          "tooLate": "La fecha de fin debe ser dentro de un año"
+        }
+      },
+      "adults": {
+        "min": "Se requiere al menos un adulto"
+      },
+      "children": {
+        "age": {
+          "min": "La edad no puede ser negativa",
+          "max": "La edad del menor no puede superar los 17 años"
+        },
+        "height": {
+          "min": "La altura no puede ser negativa"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "El nombre es obligatorio"
+        },
+        "lastName_1": {
+          "required": "El apellido es obligatorio"
+        },
+        "location": {
+          "country": {
+            "required": "El país es obligatorio"
+          },
+          "postalCode": {
+            "required": "El código postal es obligatorio"
+          },
+          "city": {
+            "required": "La ciudad es obligatoria"
+          },
+          "street": {
+            "required": "La calle es obligatoria"
+          },
+          "doorNumber": {
+            "required": "El número es obligatorio"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Fecha de nacimiento no válida"
+        },
+        "placeOfBirth": {
+          "required": "El lugar de nacimiento es obligatorio"
+        },
+        "nameOfMother": {
+          "required": "El nombre de la madre es obligatorio"
+        },
+        "phoneNumber": {
+          "required": "El teléfono es obligatorio",
+          "invalid": "Introduce un teléfono válido"
+        },
+        "email": {
+          "required": "El correo electrónico es obligatorio",
+          "invalid": "Introduce un correo electrónico válido"
+        },
+        "document": {
+          "number": {
+            "required": "El número de documento es obligatorio"
+          },
+          "validFrom": {
+            "invalid": "Fecha de expedición del documento no válida"
+          },
+          "validUntil": {
+            "invalid": "Fecha de caducidad del documento no válida"
+          },
+          "drivingLicenceNumber": {
+            "required": "El número del permiso es obligatorio"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Fecha de expedición del permiso no válida",
+            "minAge": "El permiso debe tener al menos 3 años"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Fecha de caducidad del permiso no válida"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "El nombre de la persona de contacto es obligatorio"
+        },
+        "email": {
+          "required": "El correo de contacto es obligatorio",
+          "invalid": "Introduce un correo de contacto válido"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "El nombre de facturación es obligatorio"
+        },
+        "phoneNumber": {
+          "required": "El teléfono de facturación es obligatorio",
+          "invalid": "Introduce un teléfono válido"
+        },
+        "email": {
+          "required": "El correo de facturación es obligatorio",
+          "invalid": "Introduce un correo de facturación válido"
+        },
+        "location": {
+          "country": {
+            "required": "El país es obligatorio"
+          },
+          "postalCode": {
+            "required": "El código postal es obligatorio"
+          },
+          "city": {
+            "required": "La ciudad es obligatoria"
+          },
+          "street": {
+            "required": "La calle es obligatoria"
+          },
+          "doorNumber": {
+            "required": "El número es obligatorio"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Selecciona si indicas una dirección de alojamiento o de aeropuerto"
+        },
+        "address": {
+          "country": {
+            "required": "Campo obligatorio"
+          },
+          "postalCode": {
+            "required": "Campo obligatorio"
+          },
+          "city": {
+            "required": "Campo obligatorio"
+          },
+          "street": {
+            "required": "Campo obligatorio"
+          },
+          "doorNumber": {
+            "required": "Campo obligatorio"
+          }
+        }
+      }
     }
   }
 }

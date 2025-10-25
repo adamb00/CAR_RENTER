@@ -26,12 +26,17 @@ export function Navigation() {
 
   const image = mounted && resolvedTheme === 'light' ? logo_black : logo_white;
 
+  const normalizeHref = (path: string) => {
+    if (path === '/' || path === '') return `/${locale}`;
+    return `/${locale}${path.startsWith('/') ? path : `/${path}`}`;
+  };
+
   const itemsMap = [
-    { href: `/${locale}`, label: t('home'), prefix: '01' },
-    { href: `/cars`, label: t('cars'), prefix: '02' },
-    { href: '/about-us', label: t('about'), prefix: '03' },
-    { href: '/blog', label: t('blog'), prefix: '04' },
-    { href: '/contact', label: t('contact'), prefix: '05' },
+    { href: normalizeHref('/'), label: t('home'), prefix: '01' },
+    { href: normalizeHref('/cars'), label: t('cars'), prefix: '02' },
+    { href: normalizeHref('/about-us'), label: t('about'), prefix: '03' },
+    { href: normalizeHref('/blog'), label: t('blog'), prefix: '04' },
+    { href: normalizeHref('/contact'), label: t('contact'), prefix: '05' },
   ];
 
   // Body scroll lock nyitáskor
@@ -83,7 +88,10 @@ export function Navigation() {
           'px-4 shadow-lg max-h-[5rem]'
         )}
       >
-        <a href={`/${locale}`} className='flex items-center gap-2 px-2 py-1'>
+        <a
+          href={normalizeHref('/')}
+          className='flex items-center gap-2 px-2 py-1'
+        >
           {mounted ? (
             <Image
               src={image}
@@ -91,6 +99,7 @@ export function Navigation() {
               width={150}
               height={150}
               priority={false}
+              style={{ width: 'auto', height: 'auto' }}
             />
           ) : (
             <span
@@ -209,7 +218,7 @@ export function Navigation() {
         id={ctrlId}
         aria-hidden={!open}
         className={clsx(
-          'md:hidden fixed inset-0 z-[2400] transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
+          'xl:hidden fixed inset-0 z-[2400] transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
           open
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'

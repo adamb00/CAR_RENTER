@@ -105,7 +105,8 @@
     "more_title": "Több, mint autóbérlés",
     "more_text": "Nálunk az autóbérlés nem csak a kulcs átadását jelenti. Igény esetén segítünk útitervvel, helyi tippekkel, és megmutatjuk, hova érdemes ellátogatnod, hogy átélhesd a valódi <strong>Fuerteventurai életérzést</strong>: a rejtett öblöket, a homokos strandokat, a különleges tájakat és a gasztronómiai élményeket.",
     "mission_title": "Küldetésünk",
-    "mission_text": "Célunk, hogy minden utasunk <strong>szabadon, kényelmesen és biztonságban</strong> élhesse át a sziget élményeit. Családként, és helyi vállalkozóként szívvel-lélekkel dolgozunk azért, hogy te is hazavihesd magaddal a Fuerteventura különleges hangulatát."
+    "mission_text": "Célunk, hogy minden utasunk <strong>szabadon, kényelmesen és biztonságban</strong> élhesse át a sziget élményeit. Családként, és helyi vállalkozóként szívvel-lélekkel dolgozunk azért, hogy te is hazavihesd magaddal a Fuerteventura különleges hangulatát.",
+    "cta": "Bérelj autót nálunk, és tapasztald meg Fuerteventurát úgy, ahogy mi is szeretjük!"
   },
   "Contact": {
     "title": "Kérdésed van az autóbérléssel kapcsolatban Fuerteventurán vagy Lanzarotén?",
@@ -122,6 +123,32 @@
       "automatic": "Automata",
       "per_day": "/ nap",
       "from_price": "€{price}-tól"
+    },
+    "colors": {
+      "silver_metallic": "Ezüstmetál",
+      "milky_beige": "Milky Beige",
+      "white": "Fehér",
+      "metallic_blue": "Metálkék"
+    },
+    "categories": {
+      "small": "Kisautó",
+      "medium": "Középkategória",
+      "large": "Családi"
+    },
+    "transmissions": {
+      "manual": "Manuális",
+      "automatic": "Automata"
+    },
+    "details": {
+      "back": "Vissza a flottához",
+      "title": "Autó részletei",
+      "category": "Kategória",
+      "luggage_large": "Nagy bőrönd: {count}",
+      "luggage_small": "Kis bőrönd: {count}",
+      "colors": "Elérhető színek"
+    },
+    "buttons": {
+      "interested": "Érdekel"
     }
   },
   "Insurance": {
@@ -349,5 +376,455 @@
       "title": "Kapcsolódó oldalak",
       "details": "További részletek:"
     }
+  },
+  "RentForm": {
+    "title": "Kérjük töltse ki az alábbi űrlapot a sikeres foglaláshoz",
+    "buttons": {
+      "addChild": "Gyermek hozzáadása",
+      "removeChild": "Eltávolítás",
+      "addDriver": "Sofőr hozzáadása",
+      "removeDriver": "Sofőr eltávolítása",
+      "submit": "Foglalás elküldése"
+    },
+    "searching": "Keresés...",
+    "extras": {
+      "label": "Extra szolgáltatások",
+      "options": {
+        "szorfo_deszka_rogzito": "Szörfdeszka rögzítő",
+        "gyerekules": "Gyerekülés",
+        "kiszallitas": "Kiszállítás",
+        "alap_csomag": "Alap csomag *",
+        "energia_csomag": "Energia csomag **",
+        "esti_erkezes_csomag": "Esti érkezés csomag ***"
+      },
+      "packages": {
+        "base": "* Alapcsomag: fejenként 0,5 l víz és 0,33 l Fuze Tea",
+        "energy": "** Energia csomag: az alapcsomagon felül 2-3 féle csoki vagy rágcsa igény szerint",
+        "lateArrival": "*** Esti érkezés csomag: az alapcsomagon felül 1,5 l víz és fejenként 2 kroaszon, késői érkezéshez"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Bérlési időszak"
+    },
+    "dateRangePicker": {
+      "cancel": "Mégse",
+      "apply": "Mentés"
+    },
+    "adults": {
+      "label": "Felnőttek száma",
+      "placeholder": "Felnőttek száma"
+    },
+    "sections": {
+      "booking": {
+        "title": "Foglalási adatok",
+        "description": "Válaszd ki a kívánt extra szolgáltatásokat, határozd meg a bérlés időtartamát és a felnőtt utasok számát."
+      },
+      "children": {
+        "title": "Gyermek utasok",
+        "description": "Ha gyermek is utazik, kérjük add meg az életkorát (és opcionálisan a magasságát), hogy megfelelő felszerelést biztosíthassunk.",
+        "empty": "Jelenleg nincs hozzáadott gyermek.",
+        "ageLabel": "Gyermek #{index} életkora (év)",
+        "heightLabel": "Magasság (cm) - opcionális"
+      },
+      "drivers": {
+        "title": "Sofőr adatai",
+        "description": "Kérjük add meg az elsődleges és szükség esetén további sofőrök személyes adatait, valamint a vezetői engedély részleteit.",
+        "primaryInfo": "Az első vezető adatai alapján töltjük ki automatikusan a kapcsolattartó és számlázási mezőket, ha a jelölőnégyzeteket aktiválod.",
+        "primaryTitle": "Elsődleges sofőr adatai",
+        "secondaryTitle": "Sofőr {index} adatai",
+        "fields": {
+          "lastName1": {
+            "label": "Sofőr vezetékneve",
+            "placeholder": "Vezetéknév"
+          },
+          "lastName2": {
+            "label": "Sofőr vezetékneve (Opcionális)",
+            "placeholder": "Vezetéknév (Opcionális)"
+          },
+          "firstName1": {
+            "label": "Sofőr keresztneve",
+            "placeholder": "Keresztnév"
+          },
+          "firstName2": {
+            "label": "Sofőr keresztneve (Opcionális)",
+            "placeholder": "Keresztnév (Opcionális)"
+          },
+          "postalCode": {
+            "label": "Irányítószám",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Település",
+            "placeholder": "Település"
+          },
+          "country": {
+            "label": "Ország",
+            "placeholder": "Ország"
+          },
+          "street": {
+            "label": "Utca",
+            "placeholder": "Utca"
+          },
+          "doorNumber": {
+            "label": "Házszám",
+            "placeholder": "Házszám"
+          },
+          "dateOfBirth": {
+            "label": "Születési dátum",
+            "placeholder": "Válassz dátumot"
+          },
+          "placeOfBirth": {
+            "label": "Születési hely",
+            "placeholder": "Születési hely"
+          },
+          "nameOfMother": {
+            "label": "Anyja neve",
+            "placeholder": "Anyja neve"
+          },
+          "phoneNumber": {
+            "label": "Telefonszám",
+            "placeholder": "+36 30 123 4567"
+          },
+          "email": {
+            "label": "Email cím",
+            "placeholder": "pelda@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Okmány típusa",
+            "placeholder": "Dokumentum kiválasztása",
+            "passport": "Útlevél",
+            "id_card": "Személyi igazolvány"
+          },
+          "number": {
+            "label": "Okmány száma",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Kibocsátás dátuma",
+            "placeholder": "Válassz dátumot"
+          },
+          "validUntil": {
+            "label": "Lejárat dátuma",
+            "placeholder": "Válassz dátumot"
+          },
+          "drivingLicenceNumber": {
+            "label": "Jogosítvány száma",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Legmagasabb kategória",
+            "placeholder": "Kategória kiválasztása"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Jogosítvány kiállítás",
+            "placeholder": "Válassz dátumot"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Jogosítvány lejárat",
+            "placeholder": "Válassz dátumot"
+          },
+          "drivingLicenceIsOlderThan3": "Nyilatkozom, hogy a jogosítványom több mint 3 éves"
+        }
+      },
+      "contact": {
+        "title": "Kapcsolattartó adatai",
+        "description": "Amennyiben a kapcsolattartó személy eltér az elsődleges sofőrtől, itt tudod megadni az elérhetőségeit.",
+        "toggle": "Megegyezik az elsődleges sofőr adataival",
+        "fields": {
+          "name": {
+            "label": "Kapcsolattartó neve",
+            "placeholder": "Kapcsolattartó neve"
+          },
+          "email": {
+            "label": "Kapcsolattartó email címe",
+            "placeholder": "Kapcsolattartó email címe"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Számlázási adatok",
+        "description": "Állítsd be, milyen névre és címre készüljön a számla. Ha megegyezik a sofőr adataival, jelöld be az alábbi opciót.",
+        "toggle": "Megegyezik az elsődleges sofőr adataival",
+        "fields": {
+          "name": {
+            "label": "Számlázási név",
+            "placeholder": "Számlázási név"
+          },
+          "email": {
+            "label": "Számlázási email cím",
+            "placeholder": "Számlázási email cím"
+          },
+          "phoneNumber": {
+            "label": "Számlázási telefonszám",
+            "placeholder": "+36 20 123 4567"
+          },
+          "taxId": {
+            "label": "Adószám (opcionális)",
+            "placeholder": "Adószám"
+          },
+          "address": {
+            "country": {
+              "label": "Ország",
+              "placeholder": "Ország"
+            },
+            "postalCode": {
+              "label": "Irányítószám",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Település",
+              "placeholder": "Település"
+            },
+            "street": {
+              "label": "Utca",
+              "placeholder": "Utca"
+            },
+            "doorNumber": {
+              "label": "Házszám",
+              "placeholder": "Házszám"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Kiszállítás pontos címe",
+        "description": "Kérjük add meg a szállás vagy repülőtér részletes címét a kiszállításhoz.",
+        "locationName": {
+          "label": "Szállás / repülőtér neve (opcionális)",
+          "placeholder": "Pl. Hotel Marina vagy Budapest Liszt Ferenc"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Helyszín típusa",
+            "placeholder": "Válassz helyszínt",
+            "accommodation": "Szállás",
+            "airport": "Repülőtér"
+          },
+          "country": {
+            "label": "Ország",
+            "placeholder": "Ország"
+          },
+          "postalCode": {
+            "label": "Irányítószám",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Település",
+            "placeholder": "Település"
+          },
+          "street": {
+            "label": "Utca",
+            "placeholder": "Utca"
+          },
+          "doorNumber": {
+            "label": "Házszám",
+            "placeholder": "Házszám"
+          }
+        }
+      }
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Érvénytelen kezdődátum",
+      "invalidEndDate": "Érvénytelen záródátum",
+      "adultsMin": "Legalább egy felnőtt szükséges",
+      "childAgeMin": "Az életkor nem lehet negatív",
+      "childAgeMax": "A gyermek életkora legfeljebb 17 év lehet",
+      "childHeightMin": "A magasság nem lehet negatív",
+      "firstNameRequired": "A keresztnév megadása kötelező",
+      "lastNameRequired": "A vezetéknév megadása kötelező",
+      "countryRequired": "Az ország megadása kötelező",
+      "postalCodeRequired": "Az irányítószám megadása kötelező",
+      "cityRequired": "A település megadása kötelező",
+      "streetRequired": "Az utca megadása kötelező",
+      "doorNumberRequired": "A házszám megadása kötelező",
+      "invalidDateOfBirth": "Érvénytelen születési dátum",
+      "placeOfBirthRequired": "A születési hely megadása kötelező",
+      "motherNameRequired": "Az anyja nevének megadása kötelező",
+      "phoneRequired": "A telefonszám megadása kötelező",
+      "phoneInvalid": "Adj meg érvényes telefonszámot",
+      "emailRequired": "Az email cím megadása kötelező",
+      "emailInvalid": "Érvényes email címet adj meg",
+      "documentNumberRequired": "Az okmány számának megadása kötelező",
+      "documentIssueInvalid": "Érvénytelen okmány kiállítási dátum",
+      "documentExpiryInvalid": "Érvénytelen okmány lejárati dátum",
+      "drivingLicenceNumberRequired": "A jogosítvány számát kötelező megadni",
+      "drivingLicenceIssueInvalid": "Érvénytelen jogosítvány kiállítási dátum",
+      "drivingLicenceExpiryInvalid": "Érvénytelen jogosítvány lejárati dátum",
+      "contactNameRequired": "A kapcsolattartó neve kötelező",
+      "contactEmailRequired": "A kapcsolattartó email címe kötelező",
+      "contactEmailInvalid": "Érvényes kapcsolattartó email címet adj meg",
+      "invoiceNameRequired": "A számlázási név megadása kötelező",
+      "invoicePhoneRequired": "A számlázási telefonszám megadása kötelező",
+      "invoiceEmailRequired": "A számlázási email cím megadása kötelező",
+      "invoiceEmailInvalid": "Érvényes számlázási email címet adj meg",
+      "startPast": "A kezdődátum nem lehet múltbeli",
+      "startTooLate": "A kezdődátum legfeljebb egy éven belül lehet",
+      "endBeforeStart": "A záródátum nem lehet a kezdődátum előtt",
+      "endTooLate": "A záródátum legfeljebb egy éven belül lehet",
+      "deliveryPlaceTypeRequired": "Válaszd ki, hogy szállás vagy repülőtér címét adod meg",
+      "deliveryFieldRequired": "Kötelező mező",
+      "invalidAdults": "Legalább egy felnőtt szükséges",
+      "adultsInvalid": "Kérjük add meg a felnőtt utasok számát"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Érvénytelen kezdődátum",
+          "past": "A kezdődátum nem lehet múltbeli",
+          "tooLate": "A kezdődátum legfeljebb egy éven belül lehet"
+        },
+        "endDate": {
+          "invalid": "Érvénytelen záródátum",
+          "beforeStart": "A záródátum nem lehet a kezdődátum előtt",
+          "tooLate": "A záródátum legfeljebb egy éven belül lehet"
+        }
+      },
+      "adults": {
+        "min": "Legalább egy felnőtt szükséges"
+      },
+      "children": {
+        "age": {
+          "min": "Az életkor nem lehet negatív",
+          "max": "A gyermek életkora legfeljebb 17 év lehet"
+        },
+        "height": {
+          "min": "A magasság nem lehet negatív"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "A keresztnév megadása kötelező"
+        },
+        "lastName_1": {
+          "required": "A vezetéknév megadása kötelező"
+        },
+        "location": {
+          "country": {
+            "required": "Az ország megadása kötelező"
+          },
+          "postalCode": {
+            "required": "Az irányítószám megadása kötelező"
+          },
+          "city": {
+            "required": "A település megadása kötelező"
+          },
+          "street": {
+            "required": "Az utca megadása kötelező"
+          },
+          "doorNumber": {
+            "required": "A házszám megadása kötelező"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Érvénytelen születési dátum"
+        },
+        "placeOfBirth": {
+          "required": "A születési hely megadása kötelező"
+        },
+        "nameOfMother": {
+          "required": "Az anyja nevének megadása kötelező"
+        },
+        "phoneNumber": {
+          "required": "A telefonszám megadása kötelező",
+          "invalid": "Adj meg érvényes telefonszámot"
+        },
+        "email": {
+          "required": "Az email cím megadása kötelező",
+          "invalid": "Érvényes email címet adj meg"
+        },
+        "document": {
+          "number": {
+            "required": "Az okmány számának megadása kötelező"
+          },
+          "validFrom": {
+            "invalid": "Érvénytelen okmány kiállítási dátum"
+          },
+          "validUntil": {
+            "invalid": "Érvénytelen okmány lejárati dátum"
+          },
+          "drivingLicenceNumber": {
+            "required": "A jogosítvány számát kötelező megadni"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Érvénytelen jogosítvány kiállítási dátum",
+            "minAge": "A jogosítványnak legalább 3 évesnek kell lennie"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Érvénytelen jogosítvány lejárati dátum"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "A kapcsolattartó neve kötelező"
+        },
+        "email": {
+          "required": "A kapcsolattartó email címe kötelező",
+          "invalid": "Érvényes kapcsolattartó email címet adj meg"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "A számlázási név megadása kötelező"
+        },
+        "phoneNumber": {
+          "required": "A számlázási telefonszám megadása kötelező",
+          "invalid": "Adj meg érvényes telefonszámot"
+        },
+        "email": {
+          "required": "A számlázási email cím megadása kötelező",
+          "invalid": "Érvényes számlázási email címet adj meg"
+        },
+        "location": {
+          "country": {
+            "required": "Az ország megadása kötelező"
+          },
+          "postalCode": {
+            "required": "Az irányítószám megadása kötelező"
+          },
+          "city": {
+            "required": "A település megadása kötelező"
+          },
+          "street": {
+            "required": "Az utca megadása kötelező"
+          },
+          "doorNumber": {
+            "required": "A házszám megadása kötelező"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Válaszd ki, hogy szállás vagy repülőtér címét adod meg"
+        },
+        "address": {
+          "country": {
+            "required": "Kötelező mező"
+          },
+          "postalCode": {
+            "required": "Kötelező mező"
+          },
+          "city": {
+            "required": "Kötelező mező"
+          },
+          "street": {
+            "required": "Kötelező mező"
+          },
+          "doorNumber": {
+            "required": "Kötelező mező"
+          }
+        }
+      }
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Kérjük válasszon",
+    "selectAll": "Kiválasztom mind",
+    "close": "Bezár",
+    "clear": "Törlés"
   }
 }
