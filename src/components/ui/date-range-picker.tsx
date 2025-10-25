@@ -193,6 +193,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
   // Refs to store the values of range and rangeCompare when the date picker is opened
   const openedRangeRef = useRef<DateRange | undefined>(undefined);
   const openedRangeCompareRef = useRef<DateRange | undefined>(undefined);
+  const skipResetRef = useRef(false);
 
   const [isSmallScreen, setIsSmallScreen] = useState(
     typeof window !== 'undefined' ? window.innerWidth < 960 : false
@@ -380,7 +381,11 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       open={isOpen}
       onOpenChange={(open: boolean) => {
         if (!open) {
-          resetValues();
+          if (!skipResetRef.current) {
+            resetValues();
+          } else {
+            skipResetRef.current = false;
+          }
         }
         setIsOpen(open);
       }}
@@ -484,6 +489,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
         <div className='flex justify-end gap-2 py-2 pr-4'>
           <Button
             onClick={() => {
+              skipResetRef.current = false;
               setIsOpen(false);
               resetValues();
             }}
@@ -493,6 +499,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
           </Button>
           <Button
             onClick={() => {
+              skipResetRef.current = true;
               setIsOpen(false);
               if (
                 !areRangesEqual(range, openedRangeRef.current) ||
