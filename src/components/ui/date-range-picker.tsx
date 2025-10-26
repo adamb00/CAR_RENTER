@@ -4,7 +4,14 @@ import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import type { Locale as DateFnsLocale } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import type { JSX } from 'react';
-import { type FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  type FC,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import type { Matcher } from 'react-day-picker';
 import { Button } from './button';
 import { Calendar } from './calendar';
@@ -167,6 +174,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const hasInternalRangeUpdateRef = useRef(false);
   const [range, setRange] = useState<DateRange>(() => {
     const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
     const fromBase = resolveDateInput(initialDateFrom, fallbackStart);
@@ -213,21 +221,32 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
   }, []);
 
   const resetValues = (): void => {
-    const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
-    const baseFrom = resolveDateInput(initialDateFrom, fallbackStart);
-    const baseTo =
-      initialDateTo != null
-        ? resolveDateInput(initialDateTo, baseFrom)
-        : new Date(baseFrom);
-    setRange(clampRange({ from: baseFrom, to: baseTo }));
+    if (openedRangeRef.current) {
+      setRange(openedRangeRef.current);
+    } else {
+      const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
+      const baseFrom = resolveDateInput(initialDateFrom, fallbackStart);
+      const baseTo =
+        initialDateTo != null
+          ? resolveDateInput(initialDateTo, baseFrom)
+          : new Date(baseFrom);
+      setRange(clampRange({ from: baseFrom, to: baseTo }));
+    }
 
-    if (showCompare && initialCompareFrom) {
-      const compareFrom = resolveDateInput(initialCompareFrom, fallbackStart);
-      const compareTo =
-        initialCompareTo != null
-          ? resolveDateInput(initialCompareTo, compareFrom)
-          : new Date(compareFrom);
-      setRangeCompare(clampRange({ from: compareFrom, to: compareTo }));
+    if (showCompare) {
+      if (openedRangeCompareRef.current) {
+        setRangeCompare(openedRangeCompareRef.current);
+      } else if (initialCompareFrom) {
+        const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
+        const compareFrom = resolveDateInput(initialCompareFrom, fallbackStart);
+        const compareTo =
+          initialCompareTo != null
+            ? resolveDateInput(initialCompareTo, compareFrom)
+            : new Date(compareFrom);
+        setRangeCompare(clampRange({ from: compareFrom, to: compareTo }));
+      } else {
+        setRangeCompare(undefined);
+      }
     } else {
       setRangeCompare(undefined);
     }
@@ -271,6 +290,15 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
   useEffect(() => {
     if (isOpen) return;
+    if (skipResetRef.current) {
+      skipResetRef.current = false;
+      return;
+    }
+    if (hasInternalRangeUpdateRef.current) {
+      hasInternalRangeUpdateRef.current = false;
+      return;
+    }
+    if (initialDateFrom == null && initialDateTo == null) return;
 
     const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
     const fromBase = resolveDateInput(initialDateFrom, fallbackStart);
@@ -312,12 +340,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
     areRangesEqual,
   ]);
 
-  useEffect(() => {
-    if (isOpen) {
-      openedRangeRef.current = range;
-      openedRangeCompareRef.current = rangeCompare;
-    }
-  }, [isOpen, range, rangeCompare]);
 
   const disabledDays = useMemo(() => {
     const matchers: Matcher[] = [];
@@ -380,14 +402,27 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       modal={true}
       open={isOpen}
       onOpenChange={(open: boolean) => {
-        if (!open) {
-          if (!skipResetRef.current) {
-            resetValues();
-          } else {
-            skipResetRef.current = false;
-          }
+        if (open) {
+          openedRangeRef.current = {
+            from: new Date(range.from),
+            to: range.to ? new Date(range.to) : undefined,
+          };
+          openedRangeCompareRef.current = rangeCompare
+            ? {
+                from: new Date(rangeCompare.from),
+                to: rangeCompare.to ? new Date(rangeCompare.to) : undefined,
+              }
+            : undefined;
+          setIsOpen(true);
+          return;
         }
-        setIsOpen(open);
+
+        if (!skipResetRef.current) {
+          resetValues();
+        } else {
+          skipResetRef.current = false;
+        }
+        setIsOpen(false);
       }}
     >
       <PopoverTrigger asChild>
@@ -472,6 +507,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                       const nextTo = value?.to
                         ? clampDate(value.to)
                         : undefined;
+                      hasInternalRangeUpdateRef.current = true;
                       setRange({
                         from: nextFrom,
                         to: nextTo && nextTo < nextFrom ? nextFrom : nextTo,

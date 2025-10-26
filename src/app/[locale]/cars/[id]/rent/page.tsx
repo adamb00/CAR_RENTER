@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
+import React, { useTransition } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useForm, type Resolver } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -33,6 +33,8 @@ import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
 import { RentSchema, createRentSchema } from '@/schemas/RentSchema';
 import { useWatchForm } from '@/hooks/useWatchForm';
 import { usePersistRentForm } from '@/hooks/usePersistRentForm';
+import { RentAction } from '@/actions/RentAction';
+import toast from 'react-hot-toast';
 
 type RentFormValues = z.input<typeof RentSchema>;
 type RentFormResolvedValues = z.output<typeof RentSchema>;
@@ -41,6 +43,8 @@ export default function RentPage() {
   const t = useTranslations('RentForm');
   const tSchema = useTranslations('RentSchema');
   const { locale, id } = useParams<{ locale: string; id: string }>();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
 
@@ -115,12 +119,21 @@ export default function RentPage() {
   useSetInvoice(form, { enabled: isHydrated });
 
   useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
-  console.log(form.formState.errors);
 
   const onSubmit = (data: RentFormValues) => {
     const parsed: RentFormResolvedValues = rentSchema.parse(data);
-    console.log(parsed);
-    clearStoredValues();
+    startTransition(async () => {
+      const res = await RentAction(parsed);
+      if (res.success) {
+        toast.success(t('toast.success'));
+        clearStoredValues();
+        setTimeout(() => {
+          router.push(`/${locale}`);
+        }, 2000);
+      } else {
+        toast.error(t('toast.error'));
+      }
+    });
   };
   return (
     <Form {...form}>
@@ -170,6 +183,7 @@ export default function RentPage() {
         </section>
 
         <Button
+          disabled={isPending}
           type='submit'
           className='self-end m-8 bg-sky-light text-sky-dark cursor-pointer hover:bg-sky-dark hover:border hover:text-white'
         >

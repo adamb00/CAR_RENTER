@@ -9,6 +9,8 @@ type StoredRentForm = {
   version: number;
   timestamp: number;
   values: RentFormValues;
+  car: string;
+  locale: string;
 };
 
 const isBrowser = () => typeof window !== 'undefined';
@@ -53,6 +55,8 @@ export function usePersistRentForm(
 
   const [hydrated, setHydrated] = React.useState(false);
   const writeTimeoutRef = React.useRef<number | null>(null);
+  const immediateFlushRef = React.useRef<number | null>(null);
+  const suppressNextSaveRef = React.useRef(false);
 
   React.useEffect(() => {
     if (!isBrowser()) return;
@@ -93,6 +97,8 @@ export function usePersistRentForm(
         version: STORAGE_VERSION,
         timestamp: Date.now(),
         values: ensureAdultsNumber(values),
+        car: carId,
+        locale,
       };
 
       try {
@@ -104,16 +110,20 @@ export function usePersistRentForm(
 
     const getCurrentValues = () => form.getValues();
 
-    const flushValues = () => {
-      saveValues(getCurrentValues());
+    const flushValues = (values?: RentFormValues) => {
+      if (writeTimeoutRef.current) {
+        window.clearTimeout(writeTimeoutRef.current);
+        writeTimeoutRef.current = null;
+      }
+      saveValues(values ?? getCurrentValues());
     };
 
-    const scheduleSave = (values: RentFormValues) => {
+    const scheduleSave = () => {
       if (writeTimeoutRef.current) {
         window.clearTimeout(writeTimeoutRef.current);
       }
       writeTimeoutRef.current = window.setTimeout(() => {
-        saveValues(values);
+        saveValues(getCurrentValues());
         writeTimeoutRef.current = null;
       }, 250);
     };
@@ -124,36 +134,99 @@ export function usePersistRentForm(
       }
     };
 
-    const handlePageHide = () => {
-      flushValues();
-    };
-
-    window.addEventListener('beforeunload', handlePageHide);
-    window.addEventListener('pagehide', handlePageHide);
+    window.addEventListener('beforeunload', handleVisibilityChange);
+    window.addEventListener('pagehide', handleVisibilityChange);
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    const subscription = form.watch(() => {
-      const currentValues = getCurrentValues();
-      scheduleSave(currentValues);
+    const subscription = form.watch((value, { name }) => {
+      if (suppressNextSaveRef.current) {
+        suppressNextSaveRef.current = false;
+        return;
+      }
+
+      const runImmediateFlush = (override?: RentFormValues) => {
+        if (immediateFlushRef.current) {
+          window.clearTimeout(immediateFlushRef.current);
+        }
+        immediateFlushRef.current = window.setTimeout(() => {
+          flushValues(override ?? form.getValues());
+          immediateFlushRef.current = null;
+        }, 0);
+      };
+
+      if (!name) {
+        scheduleSave();
+        return;
+      }
+
+      if (
+        name === 'rentalPeriod' ||
+        name === 'rentalPeriod.startDate' ||
+        name === 'rentalPeriod.endDate'
+      ) {
+        const snapshot = form.getValues();
+        const nextRentalPeriod: RentFormValues['rentalPeriod'] = {
+          startDate: snapshot.rentalPeriod?.startDate ?? '',
+          endDate: snapshot.rentalPeriod?.endDate ?? '',
+        };
+
+        if (name === 'rentalPeriod') {
+          if (
+            value &&
+            typeof value === 'object' &&
+            'startDate' in (value as Record<string, unknown>) &&
+            'endDate' in (value as Record<string, unknown>)
+          ) {
+            const { startDate, endDate } =
+              value as RentFormValues['rentalPeriod'];
+            nextRentalPeriod.startDate = startDate ?? '';
+            nextRentalPeriod.endDate = endDate ?? '';
+          }
+        } else if (name === 'rentalPeriod.startDate') {
+          nextRentalPeriod.startDate =
+            typeof value === 'string' ? value : '';
+        } else if (name === 'rentalPeriod.endDate') {
+          nextRentalPeriod.endDate =
+            typeof value === 'string' ? value : '';
+        }
+
+        const patchedValues: RentFormValues = {
+          ...snapshot,
+          rentalPeriod: nextRentalPeriod,
+        };
+
+        runImmediateFlush(patchedValues);
+        return;
+      }
+
+      scheduleSave();
     });
 
     return () => {
       subscription.unsubscribe();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('pagehide', handlePageHide);
-      window.removeEventListener('beforeunload', handlePageHide);
+      window.removeEventListener('pagehide', handleVisibilityChange);
+      window.removeEventListener('beforeunload', handleVisibilityChange);
 
+      const latestValues = getCurrentValues();
       if (writeTimeoutRef.current !== null) {
         window.clearTimeout(writeTimeoutRef.current);
-        flushValues();
-      } else {
-        flushValues();
       }
+      if (immediateFlushRef.current !== null) {
+        window.clearTimeout(immediateFlushRef.current);
+        immediateFlushRef.current = null;
+      }
+      if (suppressNextSaveRef.current) {
+        suppressNextSaveRef.current = false;
+        return;
+      }
+      flushValues(latestValues);
     };
   }, [form, hydrated, storageKey]);
 
   const clearStoredValues = React.useCallback(() => {
     if (!isBrowser()) return;
+    suppressNextSaveRef.current = true;
     window.localStorage.removeItem(storageKey);
   }, [storageKey]);
 

@@ -99,10 +99,9 @@ export default function BaseDetails({
 
   if (!car) return notFound();
 
-  const dateRangePickerMessages = (messages?.RentForm as Record<
-    string,
-    unknown
-  > | null)?.dateRangePicker as
+  const dateRangePickerMessages = (
+    messages?.RentForm as Record<string, unknown> | null
+  )?.dateRangePicker as
     | {
         apply?: string;
         cancel?: string;

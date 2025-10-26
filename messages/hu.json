@@ -624,6 +624,10 @@
           }
         }
       }
+    },
+    "toast": {
+      "success": "Köszönjük! Hamarosan felvesszük veled a kapcsolatot.",
+      "error": "Hoppá, valami hiba történt. Kérjük próbáld meg később."
     }
   },
   "RentSchema": {

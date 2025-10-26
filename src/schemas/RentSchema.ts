@@ -204,7 +204,7 @@ type DotNestedKeys<T> = T extends string
   : {
       [K in Extract<keyof T, string>]: T[K] extends string
         ? `${K}`
-        : `${K}.${DotNestedKeys<T[K]>}`
+        : `${K}.${DotNestedKeys<T[K]>}`;
     }[Extract<keyof T, string>];
 
 type RentSchemaMessagePath = DotNestedKeys<RentSchemaMessages>;
@@ -235,21 +235,28 @@ function lookupMessage(
 const defaultTranslate: RentSchemaTranslate = (path) =>
   lookupMessage(DEFAULT_RENT_SCHEMA_MESSAGES, path);
 
-type DeliveryAddressKey = 'country' | 'postalCode' | 'city' | 'street' | 'doorNumber';
+type DeliveryAddressKey =
+  | 'country'
+  | 'postalCode'
+  | 'city'
+  | 'street'
+  | 'doorNumber';
 
 export function createRentSchema(
   translate: RentSchemaTranslate = defaultTranslate
 ) {
   const message = (path: RentSchemaMessagePath) => translate(path);
 
-  const deliveryAddressMessages: Record<DeliveryAddressKey, RentSchemaMessagePath> =
-    {
-      country: 'fields.delivery.address.country.required',
-      postalCode: 'fields.delivery.address.postalCode.required',
-      city: 'fields.delivery.address.city.required',
-      street: 'fields.delivery.address.street.required',
-      doorNumber: 'fields.delivery.address.doorNumber.required',
-    };
+  const deliveryAddressMessages: Record<
+    DeliveryAddressKey,
+    RentSchemaMessagePath
+  > = {
+    country: 'fields.delivery.address.country.required',
+    postalCode: 'fields.delivery.address.postalCode.required',
+    city: 'fields.delivery.address.city.required',
+    street: 'fields.delivery.address.street.required',
+    doorNumber: 'fields.delivery.address.doorNumber.required',
+  };
 
   return z
     .object({
@@ -263,7 +270,7 @@ export function createRentSchema(
         }),
       }),
       adults: z.coerce
-        .number()
+        .number({ message: message('errors.adultsInvalid') })
         .refine((value) => Number.isFinite(value), {
           message: message('errors.adultsInvalid'),
         })
@@ -355,19 +362,22 @@ export function createRentSchema(
                   'fields.driver.document.drivingLicenceValidFrom.invalid'
                 ),
               })
-              .refine((date) => {
-                if (!date) return false;
-                const parsed = new Date(date);
-                if (Number.isNaN(parsed.getTime())) return false;
-                const cutoff = new Date();
-                cutoff.setFullYear(cutoff.getFullYear() - 3);
-                cutoff.setHours(0, 0, 0, 0);
-                return parsed <= cutoff;
-              }, {
-                message: message(
-                  'fields.driver.document.drivingLicenceValidFrom.minAge'
-                ),
-              }),
+              .refine(
+                (date) => {
+                  if (!date) return false;
+                  const parsed = new Date(date);
+                  if (Number.isNaN(parsed.getTime())) return false;
+                  const cutoff = new Date();
+                  cutoff.setFullYear(cutoff.getFullYear() - 3);
+                  cutoff.setHours(0, 0, 0, 0);
+                  return parsed <= cutoff;
+                },
+                {
+                  message: message(
+                    'fields.driver.document.drivingLicenceValidFrom.minAge'
+                  ),
+                }
+              ),
             drivingLicenceValidUntil: z
               .string()
               .refine((date) => !isNaN(Date.parse(date)), {
@@ -475,8 +485,8 @@ export function createRentSchema(
           code: z.ZodIssueCode.custom,
           message: message('fields.rentalPeriod.startDate.past'),
           path: ['rentalPeriod', 'startDate'],
-  });
-}
+        });
+      }
 
       if (start > maxDate) {
         ctx.addIssue({
