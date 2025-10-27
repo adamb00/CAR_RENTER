@@ -7,4 +7,7 @@ export default withNextIntl({
   images: {
     qualities: [75, 85],
   },
+  experimental: {
+    globalNotFound: true,
+  },
 });

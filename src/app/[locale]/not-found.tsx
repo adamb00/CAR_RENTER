@@ -6,10 +6,10 @@ export default function NotFound() {
 
   return (
     <main className='min-h-screen bg-gradient-to-br from-sky-dark/80 via-amber-dark/70 to-sky-dark/80 text-slate-100 flex items-center justify-center px-4 py-16'>
-      <div className='w-full max-w-4xl rounded-3xl bg-white/10 backdrop-blur-md shadow-2xl ring-1 ring-white/10 overflow-hidden'>
+      <div className='w-full max-w-6xl rounded-3xl bg-white/10 backdrop-blur-md shadow-2xl ring-1 ring-white/10 overflow-hidden'>
         <div className='grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center'>
           <section className='px-8 py-12 lg:px-14 lg:py-16 flex flex-col gap-6'>
-            <span className='text-sm uppercase tracking-[0.35em] text-amber-light/80'>
+            <span className='text-sm uppercase tracking-[0.35em] text-amber-dark/90'>
               {t('label')}
             </span>
             <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold uppercase leading-tight tracking-[0.1em] text-white'>
@@ -19,7 +19,7 @@ export default function NotFound() {
               {t('description')}
             </p>
 
-          <div className='flex flex-col sm:flex-row gap-4 pt-4'>
+            <div className='flex flex-col sm:flex-row gap-4 pt-4'>
               <Link
                 href={`/${t('cta.home.href')}`}
                 className='inline-flex items-center justify-center rounded-full bg-white text-sky-dark px-6 py-3 text-sm font-semibold tracking-wide transition hover:bg-amber-light hover:text-sky-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/60'

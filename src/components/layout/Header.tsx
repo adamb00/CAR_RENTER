@@ -36,7 +36,6 @@ export function Header() {
         <img
           src={'/header_image.webp'}
           alt=''
-          aria-hidden
           className='absolute inset-0 h-full w-full object-cover'
         />
       </picture>
