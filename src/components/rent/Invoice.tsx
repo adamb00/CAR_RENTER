@@ -34,6 +34,56 @@ export default function Invoice({
       description={t('sections.invoice.description')}
       contentClassName='space-y-4 '
     >
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        <FormField
+          control={form.control}
+          name={'tax.id'}
+          render={({ field }) => {
+            const taxValue = typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem className='md:col-span-1'>
+                <FormLabel>
+                  {t('sections.invoice.fields.taxId.label')}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={t('sections.invoice.fields.taxId.placeholder')}
+                    value={taxValue}
+                    onChange={(event) => field.onChange(event.target.value)}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <FormField
+          control={form.control}
+          name={'tax.companyName'}
+          render={({ field }) => {
+            const companyNameValue =
+              typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem className='md:col-span-1'>
+                <FormLabel>
+                  {t('sections.invoice.fields.companyName.label')}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={t(
+                      'sections.invoice.fields.companyName.placeholder'
+                    )}
+                    value={companyNameValue}
+                    onChange={(event) => field.onChange(event.target.value)}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+      </div>
+
       <FormField
         control={form.control}
         name={'invoice.same'}

@@ -615,6 +615,10 @@
               "label": "Número",
               "placeholder": "Número"
             }
+          },
+          "companyName": {
+            "label": "Nombre de la empresa (opcional)",
+            "placeholder": "Nombre de la empresa"
           }
         }
       },
@@ -852,6 +856,22 @@
             "required": "Campo obligatorio"
           }
         }
+      }
+    }
+  },
+  "NotFound": {
+    "label": "¿Te has perdido?",
+    "title": "La página que buscas no existe",
+    "description": "Puede que la página haya sido movida o que la dirección esté mal escrita. Vuelve a la página principal o ponte en contacto con nosotros para seguir explorando.",
+    "badge": "Nueva aventura",
+    "cta": {
+      "home": {
+        "href": "es",
+        "label": "Volver al inicio"
+      },
+      "contact": {
+        "href": "es/contact",
+        "label": "Contactar con nosotros"
       }
     }
   }

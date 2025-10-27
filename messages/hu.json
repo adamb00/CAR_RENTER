@@ -564,6 +564,10 @@
             "label": "Adószám (opcionális)",
             "placeholder": "Adószám"
           },
+          "companyName": {
+            "label": "Cégnév (opcionális)",
+            "placeholder": "Cégnév"
+          },
           "address": {
             "country": {
               "label": "Ország",
@@ -830,5 +834,21 @@
     "selectAll": "Kiválasztom mind",
     "close": "Bezár",
     "clear": "Törlés"
+  },
+  "NotFound": {
+    "label": "Elvesztél?",
+    "title": "A keresett oldal sajnos nem található",
+    "description": "Lehet, hogy az oldal már nem létezik, vagy elgépelés történt. A főoldalon folytathatod a felfedezést, vagy felveheted velünk a kapcsolatot.",
+    "badge": "Új kaland vár",
+    "cta": {
+      "home": {
+        "href": "hu",
+        "label": "Vissza a főoldalra"
+      },
+      "contact": {
+        "href": "hu/contact",
+        "label": "Lépj velünk kapcsolatba"
+      }
+    }
   }
 }

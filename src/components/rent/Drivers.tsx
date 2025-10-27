@@ -46,11 +46,14 @@ export default function Drivers({
   const t = useTranslations('RentForm');
 
   const calendarLocale = CALENDAR_LOCALE_MAP[locale] ?? enUS;
-  const {
-    driverLocationPath,
-    driverDocumentPath,
-    driverScalarPath,
-  } = React.useMemo(() => createDriverHelpers(form), [form]);
+  const maxExpiryDate = React.useMemo(() => {
+    const date = new Date();
+    date.setFullYear(date.getFullYear() + 20);
+    date.setHours(23, 59, 59, 999);
+    return date;
+  }, []);
+  const { driverLocationPath, driverDocumentPath, driverScalarPath } =
+    React.useMemo(() => createDriverHelpers(form), [form]);
 
   const handlePostalSelect = useDriverPostalSelect(form);
 
@@ -61,6 +64,9 @@ export default function Drivers({
   } = useFieldArray({
     control: form.control,
     name: 'driver',
+    rules: {
+      maxLength: 2,
+    },
   });
 
   const handleAddDriver = () => {
@@ -76,6 +82,7 @@ export default function Drivers({
           type='button'
           variant='outline'
           onClick={handleAddDriver}
+          disabled={driverFields.length >= 2}
           className='hover:bg-foreground hover:text-background cursor-pointer'
         >
           {t('buttons.addDriver')}
@@ -109,7 +116,8 @@ export default function Drivers({
             {driverIndex > 0 && (
               <Button
                 type='button'
-                variant='ghost'
+                variant='outline'
+                className='cursor-pointer'
                 onClick={() => removeDriver(driverIndex)}
               >
                 {t('buttons.removeDriver')}
@@ -498,6 +506,8 @@ export default function Drivers({
                           mode='single'
                           selected={selectedDate}
                           locale={calendarLocale}
+                          fromYear={1900}
+                          toYear={maxExpiryDate.getFullYear()}
                           onSelect={(date) =>
                             field.onChange(
                               date ? format(date, 'yyyy-MM-dd') : ''
@@ -515,7 +525,7 @@ export default function Drivers({
                 );
               }}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name={driverScalarPath(driverIndex, 'nameOfMother')}
               render={({ field }) => {
@@ -539,7 +549,7 @@ export default function Drivers({
                   </FormItem>
                 );
               }}
-            />
+            /> */}
           </section>
 
           <section id='contact' className='flex flex-col gap-4 md:flex-row'>
@@ -712,9 +722,7 @@ export default function Drivers({
                               date ? format(date, 'yyyy-MM-dd') : ''
                             )
                           }
-                          disabled={(date) =>
-                            date > new Date() || date < new Date('1900-01-01')
-                          }
+                          disabled={(date) => date < new Date('1900-01-01')}
                           captionLayout='dropdown'
                         />
                       </PopoverContent>
@@ -775,15 +783,21 @@ export default function Drivers({
                           mode='single'
                           selected={selectedDate}
                           locale={calendarLocale}
+                          fromYear={1900}
+                          toYear={maxExpiryDate.getFullYear()}
                           onSelect={(date) =>
                             field.onChange(
                               date ? format(date, 'yyyy-MM-dd') : ''
                             )
                           }
-                          disabled={(date) =>
-                            date < new Date('1900-01-01') ||
-                            (issuedDate != null && date < issuedDate)
-                          }
+                          disabled={(date) => {
+                            const earliest = date < new Date('1900-01-01');
+                            const beforeIssued =
+                              issuedDate != null && date < issuedDate;
+                            const beyondMax =
+                              maxExpiryDate != null && date > maxExpiryDate;
+                            return earliest || beforeIssued || beyondMax;
+                          }}
                           captionLayout='dropdown'
                         />
                       </PopoverContent>
@@ -999,15 +1013,21 @@ export default function Drivers({
                           mode='single'
                           selected={selectedDate}
                           locale={calendarLocale}
+                          fromYear={1900}
+                          toYear={maxExpiryDate.getFullYear()}
                           onSelect={(date) =>
                             field.onChange(
                               date ? format(date, 'yyyy-MM-dd') : ''
                             )
                           }
-                          disabled={(date) =>
-                            date < new Date('1900-01-01') ||
-                            (licenceFromDate != null && date < licenceFromDate)
-                          }
+                          disabled={(date) => {
+                            const earliest = date < new Date('1900-01-01');
+                            const beforeIssued =
+                              licenceFromDate != null && date < licenceFromDate;
+                            const beyondMax =
+                              maxExpiryDate != null && date > maxExpiryDate;
+                            return earliest || beforeIssued || beyondMax;
+                          }}
                           captionLayout='dropdown'
                         />
                       </PopoverContent>

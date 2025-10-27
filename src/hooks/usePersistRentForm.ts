@@ -183,11 +183,9 @@ export function usePersistRentForm(
             nextRentalPeriod.endDate = endDate ?? '';
           }
         } else if (name === 'rentalPeriod.startDate') {
-          nextRentalPeriod.startDate =
-            typeof value === 'string' ? value : '';
+          nextRentalPeriod.startDate = typeof value === 'string' ? value : '';
         } else if (name === 'rentalPeriod.endDate') {
-          nextRentalPeriod.endDate =
-            typeof value === 'string' ? value : '';
+          nextRentalPeriod.endDate = typeof value === 'string' ? value : '';
         }
 
         const patchedValues: RentFormValues = {
@@ -222,7 +220,7 @@ export function usePersistRentForm(
       }
       flushValues(latestValues);
     };
-  }, [form, hydrated, storageKey]);
+  }, [form, hydrated, storageKey, carId, locale]);
 
   const clearStoredValues = React.useCallback(() => {
     if (!isBrowser()) return;

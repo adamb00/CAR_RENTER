@@ -324,7 +324,8 @@ export function createRentSchema(
             .min(1, message('fields.driver.placeOfBirth.required')),
           nameOfMother: z
             .string()
-            .min(1, message('fields.driver.nameOfMother.required')),
+            .min(1, message('fields.driver.nameOfMother.required'))
+            .optional(),
           phoneNumber: z
             .string()
             .min(1, message('fields.driver.phoneNumber.required'))
@@ -468,6 +469,7 @@ export function createRentSchema(
         .optional(),
       tax: z.object({
         id: z.string().optional(),
+        companyName: z.string().optional(),
       }),
     })
     .superRefine(({ rentalPeriod, extras, delivery }, ctx) => {

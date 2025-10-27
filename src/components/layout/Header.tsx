@@ -49,7 +49,7 @@ export function Header() {
         <h1 className='font-light uppercase text-white drop-shadow text-center'>
           <span className='block text-5xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-[0.3em] text-center'>
             <SplittingText
-              text='ZODIAC'
+              text='ZODIACS'
               type='words'
               inView={true}
               motionVariants={{
