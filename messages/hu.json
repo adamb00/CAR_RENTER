@@ -32,6 +32,7 @@
     "home": "Kezdőlap",
     "fleet": "Autóink",
     "general_rental_conditions": "Általános bérleti feltételek",
+    "gtc": "Általános szerződési feltételek",
     "insurance": "Biztosítás",
     "rental_requirements": "Bérleti követelmények",
     "zodiac_car_rental": "Zodiac Autókölcsönző",
@@ -850,5 +851,221 @@
         "label": "Lépj velünk kapcsolatba"
       }
     }
+  },
+  "GTC": {
+    "title": "Bérleti szerződés",
+    "sections": [
+      {
+        "heading": "1. A Szerződő Felek és a Szerződés Létrejötte",
+        "paragraphs": [
+          "Jelen szerződés létrejön a ZODIACSRENTACAR Thomy Fuerteventura SL. (továbbiakban: Bérbeadó) és az ajánlatot elfogadó természetes vagy jogi személy (továbbiakban: Bérlő) között.",
+          "A Felek a Szerződésben foglaltakat a bérleti idő teljes időtartama alatt, a jármű visszavételének végleges lezárásáig, magukra nézve kötelezőnek és érvényesnek fogadják el.",
+          "Az ajánlatkérés és a foglalás a www.zodiacsrentacar.com weboldalon, valamint a fent rögzített kapcsolattartási csatornákon keresztül lehetséges.",
+          "Az ajánlatkérést, annak elfogadását követő foglalás visszaigazolását vagy esetleges visszautasítását az adatközlő űrlapon megadott e-mail címre küldjük.",
+          "A Bérbeadó fenntartja a jogot, hogy működési okokból – különösen a kért járművek nem elérhetősége esetén – elutasítson vagy megtagadjon egy adott foglalási kérelmet, ha az hiányos, pontatlan vagy nem felel meg a hatályos feltételeknek.",
+          "A Szerződésen megnevezett személynek, a foglalás jogosultjának és az elsődleges sofőrnek ugyanannak a személynek kell lennie; a szerződés harmadik félre nem ruházható át.",
+          "Biztonsági okokból a platformon keresztül nem kérünk banki vagy pénzügyi információkat, de a Bérlő köteles azokat (különösen a hitelkártyáját) bemutatni a bérelt jármű irodai átvételekor.",
+          "A hitelkártyának a Bérlő tulajdonában kell lennie, és a bérlet időtartama alatt, valamint azt követően további három (3) hónapig érvényesnek kell maradnia a Kanári-szigeteken az esetlegesen felmerülő utólagos költségek fedezésére.",
+          "Elfogadjuk a főbb hitelkártyákat (Visa/MC/Amex/Diners) és a pénzintézetek által kibocsátott bankkártyákat; betéti kártyákat (debit) nem fogadunk el.",
+          "A Bérbeadó a bérlés időtartamára 500 € kauciót fogad el, amelyet a jármű visszaszolgáltatását követő 15 naptári napon belül utal vissza, amennyiben a jármű állapota megfelel a szerződésben foglaltaknak.",
+          "Személyes adatainak feldolgozásáról és a platform működésével kapcsolatos egyéb jogi feltételekről a Bérbeadó weboldalán található GDPR adatkezelési szabályzat tájékoztat, melynek megismerését és elfogadását a Bérlő jelen szerződés aláírásával nyilatkozza."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "A Bérbeadó adatai:",
+            "items": [
+              "Cégnév: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Székhely: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Spanyolország",
+              "Adóazonosító szám (CIF): B13702493",
+              "E-mail cím: info@zodiacsrentacar.es",
+              "Központi telefonszám: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Bérleti feltételek és sofőr követelmények",
+        "paragraphs": [
+          "A Bérbeadó nem ad bérbe járműveket 25 év alatti sofőröknek.",
+          "A felhasználók csak akkor bérelhetnek járművet a Bérbeadótól, ha megfelelnek az alábbi feltételeknek.",
+          "Fenti feltételek teljesítése kötelező, azoktól eltérni nem lehetséges.",
+          "A Bérbeadó nem számít fel díjat azoknak a felhasználóknak, akik a feltételek hiánya miatt nem köthetnek szerződést, mivel a foglalás ilyen esetben nem jöhet létre.",
+          "Ugyanezek a feltételek vonatkoznak a Bérlő által megjelölt további sofőrökre is.",
+          "A foglalás megerősítése után a Bérbeadó az alábbi esetekben jogosult törölni azt."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "A bérlés feltételei:",
+            "items": [
+              "Legalább huszonöt (25) évesek.",
+              "Az Európai Unióban érvényes, legalább B kategóriás vezetői engedéllyel rendelkeznek.",
+              "A vezetői engedély megszerzésétől számítva legalább két (2) év igazolt vezetési tapasztalattal rendelkeznek a foglalás időpontjában."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "A foglalás törlésre kerülhet, ha:",
+            "items": [
+              "kiderül, hogy az ügyfél által megadott információk nem helyesek, nem igazak vagy nem naprakészek.",
+              "a bérlet ideje alatt valamely szükséges dokumentum érvényessége lejár.",
+              "a Bérlő megszegi a bérleti feltételeket."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) A spanyol jognak megfelelően... (itt a szöveg a spanyol jogszabályokról szóló bekezdést tartalmazza, melyet jogi ellenőrzöttsége miatt változatlanul hagyunk)."
+        ]
+      },
+      {
+        "heading": "3. A bérelt járműre vonatkozó feltételek",
+        "paragraphs": [
+          "A lefoglalt jármű modellje tájékoztató jellegű, és a Bérbeadó flottájában elérhető, azonos vagy magasabb kategóriájú járműre cserélhető.",
+          "GPS-nyomkövetés: a bérleti szerződés aláírásával a Bérlő hozzájárul a jármű nyomon követéséhez; a geolokációs adatokat a Bérbeadó kizárólag a jármű biztonságának és a bérleti feltételek betartásának ellenőrzéséhez használja.",
+          "Használat korlátozása: a jármű nem hagyhatja el azt a szigetet, ahol a bérlés történt, kivéve, ha erről külön megállapodás születik, amely a foglalási rendszerben rögzítésre kerül.",
+          "Amennyiben a bérleti szerződés Lanzarote szigetre is kiterjed, vagy a jármű leadásának helyszíne Lanzarote, a Felek a jelen feltételeket ezen körülmények között is magukra nézve kötelezőnek tekintik.",
+          "Meghibásodás észlelése esetén a járművet a közlekedési szabályoknak megfelelően biztonságosan meg kell állítani, és haladéktalanul értesíteni kell a Bérbeadót.",
+          "A kötelező tartozékok meglétéről a Bérlő a bérlet megkezdése előtt köteles meggyőződni.",
+          "A Bérlő a jármű átvételétől annak igazolt visszaadásáig felelős a jogszerű és műszakilag megfelelő üzemeltetésért, valamint a jármű állapotának megóvásáért.",
+          "Amennyiben a visszaadás nem a Bérbeadó által megadott módon történik (például nem személyes átvétel), a Bérlő felelőssége meghosszabbodik a jármű tényleges átvételének regisztrációjáig és állapotának ellenőrzéséig.",
+          "A feltárt hibák és sérülések javításának költségei a Bérlőt terhelik."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Egyéb használati szabályok:",
+            "items": [
+              "A Bérlő magára nézve hatályosnak és kötelező érvényűnek fogadja el a vonatkozó nemzeti előírásokat, jogszabályokat, ideértve a közlekedési szabályokat is.",
+              "A gépjármű nem használható jogellenes célokra vagy azok elkövetésének eszközeként.",
+              "A jármű csak közutakon (szilárd burkolatú) közlekedhet.",
+              "Figyelem: amennyiben a járművet nem burkolt úton használták, az ebből eredő defektek, mentési, szállítási és helyszíni javítási költségek a Bérlőt terhelik.",
+              "A jármű nem használható kereskedelmi vagy reklámcélokra.",
+              "A járműhöz kizárólag a gyártó által ajánlott üzemanyagot szabad használni; nem kompatibilis üzemanyag tankolása esetén azonnal értesíteni kell a Bérbeadót, és tilos elindítani a járművet.",
+              "A Bérlő köteles meggyőződni arról, hogy a jármű elhagyásakor vagy parkolásakor teljesen zárt, és mindent megtett az illetéktelen használat megakadályozásáért.",
+              "Parkoláskor a rögzítőféket és a megfelelő sebességi fokozatot kell használni; lejtőn a kormányzott kerekeket a padka felé kell fordítani.",
+              "Gyermeküléseket a Bérbeadó az átvételkor biztosít, de azok helyes rögzítése és használata minden esetben a Bérlő felelőssége.",
+              "Sporteszközöket (például szörfdeszkát) a jármű utasterében tilos szállítani vagy tárolni.",
+              "A Bérlő köteles gondoskodni arról, hogy a poggyász vagy a szörfdeszkák megfelelően rögzítve legyenek a tetőcsomagtartóhoz, amennyiben ilyet bérelt."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. A jármű átadási és visszavételi szabályzata",
+        "paragraphs": [
+          "A bérelt jármű átadása és visszavétele a foglalásban meghatározott irodában, a Bérbeadó által megerősített dátumokon és időpontokban történik.",
+          "A járművet semmilyen körülmények között sem lehet a szerződésben rögzítettől eltérő szigeten visszaadni.",
+          "A jármű átvétele kizárólag nyitvatartási időben lehetséges; a visszaadás a foglalási folyamatban rögzített feltételek mellett nyitvatartási időn kívül is megszervezhető.",
+          "Nyitvatartási időn túl vagy azt megelőzően a reptéren a visszaadás ingyenes, más helyszínre történő szállítás esetén külön díj kerülhet felszámításra; az egyeztetett eseteket a foglalási rendszer rögzíti.",
+          "Az iroda nyitvatartási ideje általában 10:00–13:00 és 16:00–20:00 között van; pontos információ e-mailben, WhatsApp-on vagy telefonon kérhető.",
+          "Késés vagy járattörlés esetén a Bérlő köteles időben értesíteni a Bérbeadót; ennek elmulasztása esetén a Bérbeadó nem tudja garantálni a foglalás fenntartását.",
+          "Ha a fenntartás nem lehetséges, a Bérbeadó fenntartja a jogot a foglalás törlésére, és kártérítési igény nélkül jogosult a jármű felett rendelkezni.",
+          "A járművet az átvételkor rögzített állapotban kell visszaadni; eltérés esetén a Bérlő köteles a bekövetkezett eseményeket dokumentummal igazolni.",
+          "A jármű idő előtti visszaszolgáltatásáért nem jár visszatérítés.",
+          "Üzemanyag: a járművet az átvételkor rögzített üzemanyagszinttel kell visszaadni; hiány esetén a Bérlő viseli a póttankolás és szolgáltatási díj költségét.",
+          "Többlet üzemanyag esetén nem áll módunkban a különbözetet visszatéríteni.",
+          "A visszaadáskor a járműben nem maradhat személyes tárgy; a Bérbeadó nem vállal felelősséget a bent hagyott értékekért, és azok megőrzésére vagy továbbítására nincs lehetőség."
+        ]
+      },
+      {
+        "heading": "5. Szolgáltatások és biztosítás",
+        "paragraphs": [
+          "A járműfoglalás végső ára a következő tételeket tartalmazza.",
+          "Nem szükséges önrész (letét, készpénzes vagy kártya-előengedélyezés), kivéve az 1. pontban rögzített 500 €-s kauciót.",
+          "Fontos megjegyezni, hogy a spanyol közlekedési szabályok szerint a 135 cm-nél alacsonyabb kiskorúak számára jóváhagyott gyermekülés használata kötelező."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Adók (IGIC/IVA benne).",
+              "Korlátlan kilométer.",
+              "Ingyenes második sofőr.",
+              "Szolgáltatás irodánkban (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Ingyenes foglalás lemondása (lásd a 9. pontot).",
+              "Ingyenesen biztosított babaülések és gyermekülés-magasítók (nem ISOFIX).",
+              "Az alábbi, önrész nélküli biztosítások: töréskár-biztosítás (CDW), lopás elleni védelem (TP), harmadik félnek okozott károk (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. A biztosítás által nem fedezett helyzetek",
+        "paragraphs": [
+          "Fontos! A fenti, nulla önrészes biztosítás nem fedezi az alábbi helyzeteket vagy eseményeket; az ezekből eredő károkért és költségekért a Bérlő teljes anyagi felelősséggel tartozik."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Gumiabroncsok és kerekek nem aszfaltozott úton történt sérülése.",
+              "A gépkocsi kulcsainak elvesztése, törése vagy rongálása.",
+              "Rossz üzemanyaggal történő feltöltés (minden autón külön jelölve van az üzemanyag típusa).",
+              "Felelőtlen vezetés, illetve alkohol, kábítószer vagy bármilyen mérgező vagy pszichotróp anyag hatása alatti baleset.",
+              "Terepvezetés során (nem szilárd burkolaton) bekövetkező balesetek és/vagy káresemények.",
+              "Bírságok (parkolás, gyorshajtás, közlekedési szabálysértés)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Opcionális extrák",
+        "paragraphs": [
+          "Opcionális vagy kiegészítő szolgáltatásként a Bérlők az alábbi extrákat bérelhetik, amelyek nem részei a jármű foglalási árának.",
+          "A tetőcsomagtartók megfelelő rögzítés mellett akár két szörfdeszka szállítására is alkalmasak.",
+          "A Bérbeadó semmilyen esetben sem vállal felelősséget a jármű tetején szállított tárgyak vagy a harmadik személyeknek okozott károk miatt; az ilyen károkért a Bérlő felel.",
+          "Minden alap- és opcionális szolgáltatás a Bérlő rendelkezésére áll, és a Bérbeadóval kötött általános feltételek szerint garantált."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Tetőcsomagtartó poggyász szállítására, a weboldalon feltüntetett áron; nem tartalmazza a kötélzetet, csak a járműhöz rögzítő síneket és rudakat."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Üzemanyag-politika",
+        "paragraphs": [
+          "A járművet a Bérlőnek ugyanannyi üzemanyaggal kell visszaadnia, amennyivel átvette.",
+          "Ha a Bérlő nem a megfelelő típusú üzemanyaggal tankolja a járművet, a szükséges javítások és költségek őt terhelik."
+        ]
+      },
+      {
+        "heading": "9. Fizetési és visszatérítési szabályzat",
+        "paragraphs": [
+          "A Bérbeadó online fizetési lehetőséget kínál a bérleti díj weboldalon történő rendezéséhez.",
+          "A foglalás akkor tekintendő teljesítettnek, amikor a fizetés hitelkártyával, betéti kártyával vagy bankkártyával megtörtént.",
+          "Az online fizetés szolgáltatója: CAIXABANK (bankszámlaszám: ES60 2100 1512 2602 0067 6927).",
+          "Visszatérítési szabályzat.",
+          "A visszatérítéshez a Bérlőnek az info@zodiacsrentacar.es e-mail címen vagy a +34 683 192 422 telefonszámon kell felvennie a kapcsolatot, és meg kell adnia az IBAN számot és a teljes nevét.",
+          "A Bérbeadó 15 munkanapon belül végrehajtja az átutalást."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Teljes visszatérítésre csak a bérleti időszak kezdete előtt legalább 3 naptári nappal (72 órával) történő lemondás esetén van lehetőség.",
+              "A Bérbeadó nem téríti vissza a bérleti díj részét, ha a járművet a szerződésben meghatározottnál korábban hozzák vissza.",
+              "A visszatérítés – amennyiben alkalmazandó – banki átutalással történik."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Ezen általános feltételek módosítása",
+        "paragraphs": [
+          "A Bérbeadó jogosult az Általános Feltételeket bármikor módosítani, különösen szabályozási változásokhoz vagy az alkalmazott kereskedelmi politika igazításához."
+        ]
+      },
+      {
+        "heading": "11. Alkalmazandó jog és joghatóság",
+        "paragraphs": [
+          "A jelen feltételekből eredő vitás ügyekben a Felek lemondanak minden más joghatóságról, és elfogadják a Santa Cruz de Tenerife illetékes bíróságainak kizárólagos illetőségét a vonatkozó spanyol jogszabályoknak megfelelően."
+        ]
+      }
+    ]
   }
 }

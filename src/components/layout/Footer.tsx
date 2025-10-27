@@ -30,6 +30,7 @@ export default function Footer() {
     },
     { href: `/${locale}/insurance`, label: t('insurance') },
     { href: `/${locale}/rental-requirements`, label: t('rental_requirements') },
+    { href: `/${locale}/gtc`, label: t('gtc') },
   ];
 
   return (

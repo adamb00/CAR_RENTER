@@ -32,6 +32,7 @@
     "home": "Inicio",
     "fleet": "Nuestra flota",
     "general_rental_conditions": "Condiciones generales de alquiler",
+    "gtc": "Condiciones generales del contrato",
     "insurance": "Seguro",
     "rental_requirements": "Requisitos de alquiler",
     "zodiac_car_rental": "Zodiac Rent a Car",
@@ -874,5 +875,221 @@
         "label": "Contactar con nosotros"
       }
     }
+  },
+  "GTC": {
+    "title": "Contrato de alquiler",
+    "sections": [
+      {
+        "heading": "1. Partes contratantes y perfeccionamiento del contrato",
+        "paragraphs": [
+          "El presente contrato se celebra entre ZODIACSRENTACAR Thomy Fuerteventura SL (en adelante, el Arrendador) y la persona física o jurídica que acepta la oferta (en adelante, el Arrendatario).",
+          "Las Partes aceptan las disposiciones del Contrato como obligatorias y válidas durante toda la vigencia del alquiler, hasta la finalización documentada de la devolución del vehículo.",
+          "Las solicitudes y reservas pueden realizarse a través de www.zodiacsrentacar.com y por los canales de contacto indicados.",
+          "La confirmación de la reserva o, en su caso, la posible denegación se envía a la dirección de correo electrónico facilitada en el formulario.",
+          "El Arrendador se reserva el derecho de rechazar o denegar una solicitud de reserva cuando existan motivos operativos —especialmente si el vehículo solicitado no está disponible—, o cuando la solicitud sea incompleta, inexacta o no cumpla las condiciones vigentes.",
+          "La persona indicada en el Contrato, el titular de la reserva y el conductor principal deben ser la misma persona; el contrato no puede transferirse a terceros.",
+          "Por motivos de seguridad, la plataforma no solicita información bancaria o financiera, pero el Arrendatario debe presentar dichos datos (en especial la tarjeta de crédito) al recoger el vehículo en la oficina.",
+          "La tarjeta de crédito debe pertenecer al Arrendatario y mantener su validez durante todo el alquiler y tres (3) meses adicionales en las Islas Canarias para cubrir posibles cargos posteriores.",
+          "Se aceptan las principales tarjetas de crédito (Visa/MC/Amex/Diners) y las tarjetas emitidas por entidades bancarias; no se aceptan tarjetas de débito.",
+          "El Arrendador exige un depósito de 500 € durante el alquiler, que será devuelto al Arrendatario en un plazo de 15 días naturales tras la devolución del vehículo, siempre que su estado sea conforme al contrato.",
+          "El tratamiento de datos personales y las demás condiciones legales relativas al funcionamiento de la plataforma se detallan en la política de privacidad (GDPR) disponible en la web del Arrendador; el Arrendatario declara conocerla y aceptarla al firmar este contrato."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Datos del Arrendador:",
+            "items": [
+              "Nombre de la empresa: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Domicilio social: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, España",
+              "NIF (CIF): B13702493",
+              "Correo electrónico: info@zodiacsrentacar.es",
+              "Teléfono central: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Condiciones de alquiler y requisitos para los conductores",
+        "paragraphs": [
+          "El Arrendador no alquila vehículos a conductores menores de 25 años.",
+          "Los usuarios solo pueden alquilar un vehículo al Arrendador si cumplen los requisitos que se indican a continuación.",
+          "El cumplimiento de estas condiciones es obligatorio y no admite excepciones.",
+          "El Arrendador no cobrará ninguna cantidad a los usuarios que no puedan contratar por no cumplir los requisitos, ya que en ese caso la reserva no llega a perfeccionarse.",
+          "Los mismos requisitos se aplican a los conductores adicionales designados por el Arrendatario.",
+          "Una vez confirmada la reserva, el Arrendador podrá cancelarla en los siguientes supuestos."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Requisitos del alquiler:",
+            "items": [
+              "Tener al menos veinticinco (25) años.",
+              "Disponer de un permiso de conducir válido dentro de la Unión Europea, como mínimo de categoría B.",
+              "Acreditar al menos dos (2) años de experiencia de conducción con el permiso citado en el momento de la solicitud."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "La reserva podrá cancelarse si:",
+            "items": [
+              "se comprueba que la información facilitada por el cliente es incorrecta, falsa o no está actualizada.",
+              "durante el periodo de alquiler caduca alguno de los documentos requeridos.",
+              "el Arrendatario incumple las condiciones de alquiler."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) De conformidad con la legislación española... (el párrafo relativo a la normativa española se mantiene inalterado por haber sido revisado legalmente)."
+        ]
+      },
+      {
+        "heading": "3. Condiciones aplicables al vehículo alquilado",
+        "paragraphs": [
+          "El modelo reservado es orientativo y puede sustituirse por otro vehículo de la misma o superior categoría disponible en la flota del Arrendador.",
+          "Seguimiento GPS: al firmar el contrato, el Arrendatario consiente el seguimiento del vehículo; los datos de geolocalización se utilizan exclusivamente para la seguridad del vehículo y el control del cumplimiento de las condiciones de alquiler.",
+          "Limitación de uso: el vehículo no puede abandonar la isla donde se formalizó el alquiler, salvo acuerdo específico registrado en el sistema de reservas.",
+          "Si el contrato se extiende a la isla de Lanzarote o la devolución está prevista en Lanzarote, las Partes reconocen como válidas las presentes condiciones en tales circunstancias.",
+          "En caso de avería, el vehículo debe detenerse y estacionarse de forma segura conforme a la normativa de tráfico y el Arrendador debe ser avisado de inmediato.",
+          "El Arrendatario debe comprobar antes de iniciar el alquiler que el vehículo dispone de los accesorios obligatorios.",
+          "El Arrendatario es responsable del uso legal y del buen estado del vehículo desde su recogida hasta su devolución acreditada al Arrendador.",
+          "Si la devolución no se realiza en la forma indicada por el Arrendador (por ejemplo, sin entrega personal), la responsabilidad del Arrendatario se extiende hasta que el Arrendador registre la recepción y verifique el estado del vehículo.",
+          "Los costes derivados de daños o deficiencias detectados corren a cargo del Arrendatario."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Otras normas de uso:",
+            "items": [
+              "El Arrendatario acepta como obligatorias las normas y disposiciones nacionales aplicables, incluidas las normas de circulación.",
+              "El vehículo no puede utilizarse con fines ilícitos ni como herramienta para la comisión de delitos.",
+              "El vehículo solo puede circular por vías públicas pavimentadas.",
+              "Atención: si el vehículo circula por caminos no pavimentados, el Arrendatario asume los costes derivados de pinchazos, rescate, transporte o reparaciones in situ.",
+              "El vehículo no puede emplearse con fines comerciales ni publicitarios.",
+              "Solo puede utilizarse el combustible recomendado por el fabricante; en caso de repostar un combustible no compatible, debe avisarse inmediatamente al Arrendador y está prohibido poner en marcha el vehículo.",
+              "El Arrendatario debe asegurarse de que, al abandonar o estacionar el vehículo, quede completamente cerrado y protegido frente a usos no autorizados.",
+              "Al estacionar se debe accionar el freno de mano y seleccionar la marcha adecuada; en pendiente se recomienda girar las ruedas hacia el bordillo.",
+              "Los asientos infantiles, cuando proceda, se entregan en el momento de la recogida, pero su correcta instalación y uso son responsabilidad exclusiva del Arrendatario.",
+              "Está prohibido transportar o almacenar material deportivo (por ejemplo, tablas de surf) en el interior del vehículo.",
+              "Si se alquila un portaequipajes de techo, el Arrendatario debe asegurarse de que el equipaje o las tablas de surf quedan correctamente sujetos."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Entrega y devolución del vehículo",
+        "paragraphs": [
+          "La entrega y devolución del vehículo se realizan en la oficina indicada en la reserva, en las fechas y horarios confirmados por el Arrendador.",
+          "En ningún caso puede devolverse el vehículo en una isla distinta a la estipulada en el contrato.",
+          "La recogida solo es posible durante el horario de apertura; la devolución puede organizarse fuera de horario según lo registrado durante el proceso de reserva.",
+          "Fuera del horario de oficina, la devolución en el aeropuerto es gratuita; el traslado a otros puntos puede conllevar un coste adicional registrado en el sistema de reservas.",
+          "El horario habitual de la oficina es de 10:00 a 13:00 y de 16:00 a 20:00; puede solicitarse confirmación por correo electrónico, WhatsApp o teléfono.",
+          "En caso de retraso o cancelación del vuelo, el Arrendatario debe avisar con antelación; de lo contrario, el Arrendador no puede garantizar la disponibilidad del vehículo.",
+          "Si la reserva no puede mantenerse, el Arrendador se reserva el derecho a cancelarla y disponer del vehículo sin obligación de indemnizar.",
+          "El vehículo debe devolverse en el mismo estado en que se entregó; si se ha producido algún incidente o daño, el Arrendatario debe aportar la documentación acreditativa.",
+          "La devolución anticipada del vehículo no da derecho a reembolso.",
+          "Combustible: el vehículo debe devolverse con el mismo nivel de combustible registrado en la recogida; de lo contrario, el Arrendatario abonará el combustible faltante y el servicio de repostaje.",
+          "Si se devuelve con más combustible, no es posible reembolsar la diferencia.",
+          "Debe comprobarse que no queden objetos personales en el vehículo; el Arrendador no se hace responsable de los bienes olvidados ni puede custodiar o enviar dichos efectos."
+        ]
+      },
+      {
+        "heading": "5. Servicios y seguros incluidos",
+        "paragraphs": [
+          "El precio final de la reserva incluye los siguientes conceptos.",
+          "No se requiere franquicia (depósito, efectivo ni preautorización), salvo el depósito de 500 € indicado en el punto 1.",
+          "Es importante recordar que, según la normativa de tráfico española, los menores de 135 cm deben utilizar un sistema de retención infantil homologado."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Impuestos (IGIC/IVA incluidos).",
+              "Kilometraje ilimitado.",
+              "Segundo conductor gratuito.",
+              "Atención en nuestra oficina (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Cancelación gratuita de la reserva (ver punto 9).",
+              "Sillas de bebé y alzadores homologados sin coste adicional (no ISOFIX).",
+              "Los siguientes seguros sin franquicia: cobertura de daños (CDW), protección contra robo (TP) y responsabilidad civil a terceros (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. Supuestos no cubiertos por el seguro",
+        "paragraphs": [
+          "Importante: los seguros anteriores sin franquicia no cubren las siguientes situaciones o incidentes; el Arrendatario asume íntegramente los daños y costes derivados."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Daños en neumáticos o llantas ocasionados en vías no asfaltadas.",
+              "Pérdida, rotura o deterioro de las llaves del vehículo.",
+              "Repostaje con combustible incorrecto (el tipo de combustible se indica en cada vehículo).",
+              "Accidentes causados por conducción negligente o bajo los efectos del alcohol, drogas o cualquier sustancia tóxica o psicotrópica.",
+              "Accidentes y/o daños ocurridos durante la conducción off-road (sobre superficies no pavimentadas).",
+              "Multas (estacionamiento, exceso de velocidad u otras infracciones de tráfico)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Extras opcionales",
+        "paragraphs": [
+          "Como servicios opcionales o complementarios, los Arrendatarios pueden contratar los siguientes extras, que no están incluidos en el precio de la reserva.",
+          "Los portaequipajes, correctamente sujetos, permiten transportar hasta dos tablas de surf.",
+          "El Arrendador no se hace responsable de los daños causados por los objetos transportados sobre el vehículo ni de los perjuicios a terceros; dichos daños son responsabilidad del Arrendatario.",
+          "Todos los servicios básicos y opcionales están a disposición del Arrendatario y se garantizan conforme a las condiciones generales acordadas con el Arrendador."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Portaequipajes de techo para el transporte de equipaje, al precio publicado en la web; incluye las barras y anclajes, pero no el material de amarre."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Política de combustible",
+        "paragraphs": [
+          "El Arrendatario debe devolver el vehículo con la misma cantidad de combustible con la que lo recibió.",
+          "Si se reposta un combustible distinto al indicado, los daños y reparaciones necesarios correrán a cargo del Arrendatario."
+        ]
+      },
+      {
+        "heading": "9. Política de pago y reembolso",
+        "paragraphs": [
+          "El Arrendador ofrece la posibilidad de abonar el precio del alquiler en línea a través de nuestra web.",
+          "La reserva se considera completada cuando el pago se realiza mediante tarjeta de crédito, débito o bancaria.",
+          "El proveedor del servicio de pago en línea es CAIXABANK (número de cuenta: ES60 2100 1512 2602 0067 6927).",
+          "Política de reembolso:",
+          "Para la devolución, el Arrendatario debe contactar en info@zodiacsrentacar.es o en el teléfono +34 683 192 422 y facilitar su IBAN y nombre completo.",
+          "El Arrendador efectuará la transferencia en un plazo máximo de 15 días laborables."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Solo se realizará el reembolso íntegro si la cancelación se solicita como mínimo 3 días naturales (72 horas) antes del inicio del periodo de alquiler.",
+              "No se reembolsará ninguna parte del precio si el vehículo se devuelve antes de la fecha indicada en el contrato.",
+              "Cuando proceda, el reembolso se efectuará mediante transferencia bancaria."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Modificación de estas Condiciones Generales",
+        "paragraphs": [
+          "El Arrendador podrá modificar estas condiciones en cualquier momento, especialmente para adaptarse a cambios normativos o a la política comercial aplicable."
+        ]
+      },
+      {
+        "heading": "11. Legislación aplicable y jurisdicción",
+        "paragraphs": [
+          "En caso de disputa derivada de estas condiciones, las Partes renuncian a cualquier otro fuero y se someten a la jurisdicción exclusiva de los juzgados y tribunales competentes de Santa Cruz de Tenerife, conforme a la legislación española aplicable."
+        ]
+      }
+    ]
   }
 }
