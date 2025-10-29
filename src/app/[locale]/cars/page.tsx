@@ -1,17 +1,37 @@
 import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
 import { Luggage, User } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { CARS } from '@/lib/cars';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+
+type PageParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  return buildPageMetadata({
+    locale: resolvedLocale,
+    pageKey: 'cars',
+    path: '/cars',
+    imagePath: '/cars.webp',
+  });
+}
 
 export default async function CarsPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<PageParams>;
 }) {
-  const locale = params?.locale ?? 'hu';
-  const t = await getTranslations({ locale, namespace: 'Cars' });
+  const { locale = 'hu' } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'Cars' });
   return (
     <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'>
       <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
@@ -87,7 +107,7 @@ export default async function CarsPage({
                   asChild
                   className='w-full sm:w-auto bg-sky-light uppercase text-grey-dark-3 transition-all duration-300 hover:bg-sky-dark lg:pointer-events-none lg:opacity-0 lg:group-hover:pointer-events-auto lg:group-hover:opacity-100 lg:group-hover:cursor-pointer'
                 >
-                  <Link href={`/${locale}/cars/${car.id}`}>
+                  <Link href={`/${resolvedLocale}/cars/${car.id}`}>
                     {t('buttons.interested')}
                   </Link>
                 </Button>

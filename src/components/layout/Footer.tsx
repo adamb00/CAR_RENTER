@@ -18,6 +18,7 @@ export default function Footer() {
   const nav = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/about-us`, label: t('about') },
+    { href: `/${locale}/faq`, label: t('faq') },
     { href: `/${locale}/contact`, label: t('contact') },
     { href: `/${locale}/blog`, label: t('blog') },
     { href: `/${locale}/cars`, label: t('fleet') },
@@ -133,24 +134,24 @@ export default function Footer() {
               </span>
             </p>
             <div className='flex items-center gap-3 sm:gap-4'>
-              <span
+              <SocialIcon
+                url='https://www.facebook.com/'
+                network='facebook'
                 aria-label='Facebook'
-                className='hover:opacity-80 transition-opacity cursor-pointer'
-              >
-                <SocialIcon
-                  network='facebook'
-                  style={{ height: 30, width: 30 }}
-                />
-              </span>
-              <span
+                className='hover:opacity-80 transition-opacity cursor-pointer inline-flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-light focus-visible:ring-offset-2'
+                style={{ height: 36, width: 36 }}
+                target='_blank'
+                rel='noopener noreferrer'
+              />
+              <SocialIcon
+                url='https://www.instagram.com/'
+                network='instagram'
                 aria-label='Instagram'
-                className='hover:opacity-80 transition-opacity cursor-pointer'
-              >
-                <SocialIcon
-                  network='instagram'
-                  style={{ height: 30, width: 30 }}
-                />
-              </span>
+                className='hover:opacity-80 transition-opacity cursor-pointer inline-flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-light focus-visible:ring-offset-2'
+                style={{ height: 36, width: 36 }}
+                target='_blank'
+                rel='noopener noreferrer'
+              />
             </div>
           </div>
         </div>

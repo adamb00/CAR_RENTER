@@ -2,25 +2,97 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { ArrowLeft, Car, Luggage, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CARS } from '@/lib/cars';
+import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { LOCALES } from '@/i18n/config';
 
 type CarPageParams = {
   locale: string;
   id: string;
 };
 
-export default async function CarPage({ params }: { params: CarPageParams }) {
-  const { locale, id } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<CarPageParams>;
+}): Promise<Metadata> {
+  const { locale, id } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const car = CARS.find((item) => item.id === id);
+
+  if (!car) {
+    return {};
+  }
+
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'CarDetail' });
+  const title = t('meta.title', { carName: car.name });
+  const description = t('meta.description', { carName: car.name });
+  const siteUrl = getSiteUrl();
+  const url = `${siteUrl}/${resolvedLocale}/cars/${car.id}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: Object.fromEntries(
+        LOCALES.map((loc) => [
+          loc,
+          `${siteUrl}/${loc}/cars/${car.id}`,
+        ])
+      ),
+    },
+    openGraph: {
+      type: 'website',
+      locale: resolvedLocale,
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: `${siteUrl}${car.image}`,
+          width: 1200,
+          height: 630,
+          alt: t('meta.imageAlt', { carName: car.name }),
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${siteUrl}${car.image}`],
+    },
+  };
+}
+
+export async function generateStaticParams(): Promise<CarPageParams[]> {
+  return LOCALES.flatMap((locale) =>
+    CARS.map((car) => ({
+      locale,
+      id: car.id,
+    }))
+  );
+}
+
+export default async function CarPage({
+  params,
+}: {
+  params: Promise<CarPageParams>;
+}) {
+  const { locale, id } = await params;
+  const resolvedLocale = resolveLocale(locale);
   const car = CARS.find((item) => item.id === id);
 
   if (!car) {
     notFound();
   }
 
-  const t = await getTranslations({ locale, namespace: 'Cars' });
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'Cars' });
 
   const detailItems = [
     {
@@ -44,7 +116,7 @@ export default async function CarPage({ params }: { params: CarPageParams }) {
   return (
     <div className='relative mx-auto flex max-w-6xl flex-col px-4 pt-18 pb-16 sm:px-6 md:pt-22 lg:px-8 lg:pt-24'>
       <Link
-        href={`/${locale}/cars`}
+        href={`/${resolvedLocale}/cars`}
         className='inline-flex w-fit items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground'
       >
         <ArrowLeft className='h-4 w-4' />
@@ -112,7 +184,7 @@ export default async function CarPage({ params }: { params: CarPageParams }) {
           </div>
 
           <Button asChild className='mt-2 w-full sm:w-auto'>
-            <Link href={`/${locale}/cars/${car.id}/rent`}>
+            <Link href={`/${resolvedLocale}/cars/${car.id}/rent`}>
               {t('buttons.interested')}
             </Link>
           </Button>

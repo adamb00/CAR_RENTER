@@ -3,6 +3,31 @@
     "header": "Alquiler de coches en Fuerteventura y Lanzarote, fácil y rápido",
     "book_now": "Reserva tu coche ahora"
   },
+  "SEO": {
+    "brand": "Zodiac Rent a Car",
+    "defaultTitle": "Alquiler de coches en Fuerteventura y Lanzarote",
+    "titleTemplate": "%s | Zodiac Rent a Car",
+    "siteDescription": "Reserva tu coche en Fuerteventura y Lanzarote con entrega flexible, cobertura total y atención multilingüe.",
+    "ogTitle": "Zodiac Rent a Car – Alquiler de coches en Fuerteventura y Lanzarote",
+    "ogDescription": "Kilometraje ilimitado, segundo conductor gratis y entrega en alojamiento o aeropuerto.",
+    "ogImageAlt": "Vehículos de la flota de Zodiac Rent a Car en Fuerteventura",
+    "twitterTitle": "Zodiac Rent a Car – Rent a car en las Islas Canarias",
+    "twitterDescription": "Alquila con comodidad en Fuerteventura y Lanzarote con cobertura completa y soporte local."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "Alquila un {carName} en Fuerteventura | Zodiac Rent a Car",
+      "description": "Reserva un {carName} en Fuerteventura o Lanzarote con entrega flexible, kilometraje ilimitado y cobertura total.",
+      "imageAlt": "{carName} de la flota de Zodiac Rent a Car"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "{carName} – Detalles y alquiler | Zodiac Rent a Car",
+      "description": "Descubre el equipamiento, la capacidad de maletero y el precio de alquiler del {carName} en Fuerteventura y Lanzarote.",
+      "imageAlt": "{carName} en la flota de Zodiac Rent a Car"
+    }
+  },
   "AboutSection": {
     "title": "No te pierdas ninguna experiencia",
     "pickup_title": "Entrega donde te resulte más cómodo",
@@ -20,7 +45,8 @@
     "about": "Sobre nosotros",
     "blog": "Blog",
     "contact": "Contacto",
-    "home": "Inicio"
+    "home": "Inicio",
+    "faq": "Preguntas frecuentes"
   },
   "LocaleToggle": {
     "ariaLabel": "Selector de idioma"
@@ -36,7 +62,8 @@
     "insurance": "Seguro",
     "rental_requirements": "Requisitos de alquiler",
     "zodiac_car_rental": "Zodiac Rent a Car",
-    "logo_placeholder": "Aquí va el logotipo"
+    "logo_placeholder": "Aquí va el logotipo",
+    "faq": "Preguntas frecuentes"
   },
   "Explore": {
     "title": "¡Descubre las Islas Canarias con coche de alquiler!",
@@ -1089,6 +1116,94 @@
         "paragraphs": [
           "En caso de disputa derivada de estas condiciones, las Partes renuncian a cualquier otro fuero y se someten a la jurisdicción exclusiva de los juzgados y tribunales competentes de Santa Cruz de Tenerife, conforme a la legislación española aplicable."
         ]
+      }
+    ]
+  },
+  "Pages": {
+    "home": {
+      "title": "Alquiler de coches en Fuerteventura y Lanzarote | Zodiac Rent a Car",
+      "description": "Descubre las Islas Canarias con nuestra flota: coches modernos, entrega flexible, kilometraje ilimitado y cobertura total.",
+      "ogImageAlt": "Coche de alquiler de Zodiac Rent a Car en Fuerteventura"
+    },
+    "cars": {
+      "title": "Nuestra flota – coches de alquiler en Fuerteventura y Lanzarote",
+      "description": "Coches compactos, familiares y automáticos con entrega flexible, segundo conductor gratis y kilometraje ilimitado.",
+      "ogImageAlt": "Flota de vehículos de Zodiac Rent a Car"
+    },
+    "about": {
+      "title": "Sobre nosotros – Zodiac Rent a Car",
+      "description": "Conoce al equipo de Zodiac Rent a Car y nuestra misión en Fuerteventura y Lanzarote.",
+      "ogImageAlt": "Equipo de Zodiac Rent a Car"
+    },
+    "contact": {
+      "title": "Contacto – Zodiac Rent a Car Fuerteventura",
+      "description": "Contacta con nosotros para alquiler de coches, entrega o solicitudes especiales. Respondemos rápido y en tu idioma.",
+      "ogImageAlt": "Servicio de atención al cliente de Zodiac Rent a Car"
+    },
+    "insurance": {
+      "title": "Seguro y cobertura – Paquete SSCP",
+      "description": "Descubre el seguro Super Comfort Plus: cobertura completa, cero franquicia y protección ampliada.",
+      "ogImageAlt": "Información del seguro de Zodiac Rent a Car"
+    },
+    "generalRental": {
+      "title": "Condiciones generales de alquiler – Zodiac Rent a Car",
+      "description": "Condiciones de alquiler, normas contractuales y responsabilidades del cliente en Fuerteventura y Lanzarote.",
+      "ogImageAlt": "Documento de condiciones de alquiler"
+    },
+    "gtc": {
+      "title": "Contrato de alquiler – Zodiac Rent a Car",
+      "description": "Contrato de alquiler detallado y condiciones legales para los clientes de Zodiac Rent a Car.",
+      "ogImageAlt": "Documento del contrato de alquiler"
+    },
+    "rentalRequirements": {
+      "title": "Requisitos para alquilar un coche en las Islas Canarias",
+      "description": "Edad mínima, permiso de conducir, depósito: todo lo que necesitas saber para alquilar con Zodiac Rent a Car.",
+      "ogImageAlt": "Lista de requisitos para alquilar un coche"
+    },
+    "offices": {
+      "title": "Puntos de entrega y oficinas – Zodiac Rent a Car",
+      "description": "Puntos de recogida en Fuerteventura y Lanzarote, con horarios y datos de contacto.",
+      "ogImageAlt": "Exterior de la oficina de Zodiac Rent a Car"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Zodiac Rent a Car",
+      "description": "Resolvemos las dudas más habituales sobre reservas, coberturas y recogida del vehículo en Fuerteventura y Lanzarote.",
+      "ogImageAlt": "Equipo de atención al cliente de Zodiac Rent a Car ayudando a un cliente",
+      "keywords": [
+        "alquiler de coches preguntas frecuentes",
+        "Zodiac Rent a Car preguntas frecuentes",
+        "alquiler coche Fuerteventura dudas",
+        "alquiler coche Lanzarote información"
+      ]
+    }
+  },
+  "FAQ": {
+    "title": "Preguntas frecuentes",
+    "intro": "Aquí tienes las respuestas a las dudas más comunes para que tu alquiler en Fuerteventura y Lanzarote sea sencillo desde el primer minuto.",
+    "items": [
+      {
+        "question": "¿Cómo puedo reservar un coche?",
+        "answer": "Completa el formulario de solicitud en la web y nuestro equipo confirmará la reserva en un máximo de 24 horas. Si lo necesitas con urgencia, también puedes llamarnos o escribirnos por WhatsApp."
+      },
+      {
+        "question": "¿Qué documentos necesito al recoger el coche?",
+        "answer": "Necesitas un permiso de conducir válido con al menos 3 años de antigüedad y tu documento de identidad o pasaporte. Cada conductor autorizado debe presentar esta documentación en el momento de la entrega."
+      },
+      {
+        "question": "¿Se requiere depósito?",
+        "answer": "Con la cobertura SSCP sin franquicia no solicitamos depósito. Con la cobertura básica la fianza es de 300 a 500 €, y algunos extras (como el portaequipajes) pueden requerir garantías adicionales."
+      },
+      {
+        "question": "¿Dónde puedo recoger el vehículo?",
+        "answer": "Podemos entregarte el coche en el aeropuerto, en nuestra oficina de Puerto del Rosario o en tu alojamiento de Fuerteventura o Lanzarote. Confirmamos el punto exacto en la reserva."
+      },
+      {
+        "question": "¿Puedo cancelar mi reserva gratis?",
+        "answer": "Sí, puedes modificar o cancelar sin coste hasta 72 horas antes del inicio del alquiler. Si surge algún cambio más tarde, contáctanos cuanto antes para ayudarte."
+      },
+      {
+        "question": "¿Cuál es la edad mínima para alquilar?",
+        "answer": "En la mayoría de los casos alquilamos a partir de los 23 años. Para conductores más jóvenes necesitamos una evaluación individual y puede aplicarse un recargo."
       }
     ]
   }

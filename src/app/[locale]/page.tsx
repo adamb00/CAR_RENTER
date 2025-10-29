@@ -1,17 +1,24 @@
-'use client';
+import type { Metadata } from 'next';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import HomeClient from './HomeClient';
 
-import AboutSection from '@/components/layout/AboutSection';
-import Explore from '@/components/layout/Explore';
-import { Header } from '@/components/layout/Header';
-import Inquire from '@/components/layout/InquireSection';
+type PageParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  return buildPageMetadata({
+    locale: resolvedLocale,
+    pageKey: 'home',
+    path: '',
+    imagePath: '/header_image.webp',
+  });
+}
 
 export default function HomePage() {
-  return (
-    <div className='flex flex-col gap-y-0 md:gap-y-[5rem]'>
-      <Header />
-      <AboutSection />
-      <Explore />
-      <Inquire />
-    </div>
-  );
+  return <HomeClient />;
 }

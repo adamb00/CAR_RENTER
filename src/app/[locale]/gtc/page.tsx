@@ -1,4 +1,6 @@
 import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
 
 type GTCList = {
   type?: 'ordered' | 'unordered';
@@ -13,13 +15,31 @@ type GTCSection = {
   notes?: string[];
 };
 
+type PageParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  return buildPageMetadata({
+    locale: resolvedLocale,
+    pageKey: 'gtc',
+    path: '/gtc',
+    imagePath: '/header_image.webp',
+  });
+}
+
 export default async function GTCPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<PageParams>;
 }) {
-  const locale = params?.locale ?? 'hu';
-  const t = await getTranslations({ locale, namespace: 'GTC' });
+  const { locale = 'hu' } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'GTC' });
   const rawSections = t.raw('sections');
   const sections: GTCSection[] = Array.isArray(rawSections)
     ? (rawSections as GTCSection[])

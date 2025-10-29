@@ -1,15 +1,35 @@
 import Link from 'next/link';
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+
+type PageParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  return buildPageMetadata({
+    locale: resolvedLocale,
+    pageKey: 'insurance',
+    path: '/insurance',
+    imagePath: '/cars.webp',
+  });
+}
 
 export default async function Insurance({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<PageParams>;
 }) {
-  const locale = params?.locale ?? 'hu';
-  const t = await getTranslations({ locale, namespace: 'Insurance' });
-  const tf = await getTranslations({ locale, namespace: 'Footer' });
+  const { locale = 'hu' } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'Insurance' });
+  const tf = await getTranslations({ locale: resolvedLocale, namespace: 'Footer' });
   return (
     <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40 mb-10'>
       {/* <Link

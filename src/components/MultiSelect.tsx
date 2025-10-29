@@ -903,25 +903,14 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                             >
                               {option.label}
                             </span>
-                            <div
-                              role='button'
-                              tabIndex={0}
+                            <button
+                              type='button'
                               onClick={(event) => {
                                 event.stopPropagation();
                                 toggleOption(value);
                               }}
-                              onKeyDown={(event) => {
-                                if (
-                                  event.key === 'Enter' ||
-                                  event.key === ' '
-                                ) {
-                                  event.preventDefault();
-                                  event.stopPropagation();
-                                  toggleOption(value);
-                                }
-                              }}
                               aria-label={`Remove ${option.label} from selection`}
-                              className='ml-2 h-4 w-4 cursor-pointer hover:bg-white/20 rounded-sm p-0.5 -m-0.5 focus:outline-none focus:ring-1 focus:ring-white/50'
+                              className='ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60'
                             >
                               <XCircle
                                 className={cn(
@@ -929,8 +918,9 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                   responsiveSettings.compactMode &&
                                     'h-2.5 w-2.5'
                                 )}
+                                aria-hidden='true'
                               />
-                            </div>
+                            </button>
                           </Badge>
                         );
                       })
@@ -970,25 +960,17 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                     )}
                   </div>
                   <div className='flex items-center justify-between'>
-                    <div
-                      role='button'
-                      tabIndex={0}
+                    <button
+                      type='button'
                       onClick={(event) => {
                         event.stopPropagation();
                         handleClear();
                       }}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          event.preventDefault();
-                          event.stopPropagation();
-                          handleClear();
-                        }
-                      }}
                       aria-label={`Clear all ${selectedValues.length} selected options`}
-                      className='flex items-center justify-center h-4 w-4 mx-2 cursor-pointer text-muted-foreground hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 rounded-sm'
+                      className='flex items-center justify-center h-8 w-8 mx-1 rounded-full text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                     >
-                      <XIcon className='h-4 w-4' />
-                    </div>
+                      <XIcon className='h-4 w-4' aria-hidden='true' />
+                    </button>
                     <Separator
                       orientation='vertical'
                       className='flex min-h-6 h-full'

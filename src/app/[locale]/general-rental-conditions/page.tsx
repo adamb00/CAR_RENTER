@@ -1,14 +1,37 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+
+type PageParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  return buildPageMetadata({
+    locale: resolvedLocale,
+    pageKey: 'generalRental',
+    path: '/general-rental-conditions',
+    imagePath: '/header_image.webp',
+  });
+}
 
 export default async function GeneralRentalConditionsPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<PageParams>;
 }) {
-  const locale = params?.locale ?? 'hu';
-  const t = await getTranslations({ locale, namespace: 'GeneralRental' });
-  const tf = await getTranslations({ locale, namespace: 'Footer' });
+  const { locale = 'hu' } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'GeneralRental',
+  });
+  const tf = await getTranslations({ locale: resolvedLocale, namespace: 'Footer' });
   const title = t('title');
 
   return (

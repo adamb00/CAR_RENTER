@@ -3,6 +3,89 @@
     "header": "Autóbérlés Fuerteventura-n és Lanzarote-n, kényelmesen, gyorsan",
     "book_now": "Bérelj autót most"
   },
+  "SEO": {
+    "brand": "Zodiac Rent a Car",
+    "defaultTitle": "Autóbérlés Fuerteventurán és Lanzarotén",
+    "titleTemplate": "%s | Zodiac Rent a Car",
+    "siteDescription": "Bérelj autót Fuerteventurán és Lanzarotén helyi magyar csapattal, rugalmas átvétellel és teljes körű biztosítással.",
+    "ogTitle": "Zodiac Rent a Car – Autóbérlés Fuerteventurán és Lanzarotén",
+    "ogDescription": "Helyi magyar csapat, ingyenes második sofőr, korlátlan kilométer. Foglalj online a Zodiac Rent a Carnál.",
+    "ogImageAlt": "Autók a Zodiac Rent a Car flottájából Fuerteventurán",
+    "twitterTitle": "Zodiac Rent a Car – Autóbérlés a Kanári-szigeteken",
+    "twitterDescription": "Gyors, kényelmes autóbérlés Fuerteventurán és Lanzarotén, extra díjak nélkül."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "{carName} bérlés Fuerteventurán | Zodiac Rent a Car",
+      "description": "Bérelj {carName} modellt Fuerteventurán vagy Lanzarotén, rugalmas átvétellel, korlátlan kilométerrel és teljes biztosítással.",
+      "imageAlt": "{carName} a Zodiac Rent a Car flottájában"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "{carName} részletei és bérlése | Zodiac Rent a Car",
+      "description": "Fedezd fel a {carName} felszereltségét, csomagtér-kapacitását és bérleti díját Fuerteventurán és Lanzarotén.",
+      "imageAlt": "{carName} modell a Zodiac Rent a Car kínálatában"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Autóbérlés Fuerteventurán és Lanzarotén | Zodiac Rent a Car",
+      "description": "Fedezd fel a Kanári-szigeteket magyar csapatunkkal: prémium bérautók, rugalmas átvétel, korlátlan kilométer és teljes körű biztosítás.",
+      "ogImageAlt": "Bérautó Fuerteventurán a Zodiac Rent a Carnál"
+    },
+    "cars": {
+      "title": "Autóink – bérautó kínálat Fuerteventurán és Lanzarotén",
+      "description": "Kompakt, családi és automata bérautók rugalmas átvétellel, ingyenes második sofőrrel és korlátlan kilométerrel.",
+      "ogImageAlt": "Zodiac Rent a Car bérautóflotta"
+    },
+    "about": {
+      "title": "Rólunk – Zodiac Rent a Car",
+      "description": "Ismerd meg a Zodiac Rent a Car magyar csapatát, és tudj meg többet küldetésünkről Fuerteventurán és Lanzarotén.",
+      "ogImageAlt": "Zodiac Rent a Car csapatképe"
+    },
+    "contact": {
+      "title": "Kapcsolat – Zodiac Rent a Car Fuerteventura",
+      "description": "Lépj kapcsolatba velünk autóbérlés, kiszállítás vagy ajánlatkérés kapcsán. Gyorsan és magyarul válaszolunk.",
+      "ogImageAlt": "Zodiac Rent a Car ügyfélszolgálat"
+    },
+    "insurance": {
+      "title": "Biztosítás és fedezet – SSCP csomag",
+      "description": "Ismerd meg a Super Comfort Plus biztosítást: teljes védelem, nulla önrész, gyakori kivételek lefedve.",
+      "ogImageAlt": "Zodiac Rent a Car biztosítási tájékoztató"
+    },
+    "generalRental": {
+      "title": "Általános bérleti feltételek – Zodiac Rent a Car",
+      "description": "Bérleti feltételek, szerződéses szabályok és ügyfélkötelezettségek Fuerteventurán és Lanzarotén.",
+      "ogImageAlt": "Autóbérlési feltételek dokumentuma"
+    },
+    "gtc": {
+      "title": "Bérleti szerződés – Zodiac Rent a Car",
+      "description": "Részletes bérleti szerződés és jogi feltételek a Zodiac Rent a Car ügyfelei számára.",
+      "ogImageAlt": "Bérleti szerződés dokumentum"
+    },
+    "rentalRequirements": {
+      "title": "Autóbérlés feltételei a Kanári-szigeteken",
+      "description": "Életkor, jogosítvány, kaució – minden tudnivaló a Zodiac Rent a Car bérlési feltételeiről.",
+      "ogImageAlt": "Autóbérlés feltételeinek listája"
+    },
+    "offices": {
+      "title": "Átadási helyszínek és irodák – Zodiac Rent a Car",
+      "description": "Autóátvételi pontok Fuerteventurán és Lanzarotén, elérhetőségek és nyitvatartás.",
+      "ogImageAlt": "Zodiac Rent a Car iroda külső nézet"
+    },
+    "faq": {
+      "title": "GYIK – Gyakori kérdések a Zodiac Rent a Carnál",
+      "description": "Találd meg a leggyakoribb kérdésekre adott válaszainkat a foglalástól a biztosításig.",
+      "ogImageAlt": "Zodiac Rent a Car ügyfélszolgálat segítséget nyújt",
+      "keywords": [
+        "autóbérlés GYIK",
+        "Zodiac Rent a Car gyakori kérdések",
+        "autóbérlés Fuerteventura GYIK",
+        "autóbérlés Lanzarote információk"
+      ]
+    }
+  },
   "AboutSection": {
     "title": "Ne maradj le egyetlen élményről sem",
     "pickup_title": "Átvétel, ahol neked kényelmes",
@@ -20,7 +103,8 @@
     "about": "Rólunk",
     "blog": "Blog",
     "contact": "Kapcsolat",
-    "home": "Kezdőlap"
+    "home": "Kezdőlap",
+    "faq": "GYIK"
   },
   "LocaleToggle": {
     "ariaLabel": "Nyelvválasztó"
@@ -36,7 +120,8 @@
     "insurance": "Biztosítás",
     "rental_requirements": "Bérleti követelmények",
     "zodiac_car_rental": "Zodiac Autókölcsönző",
-    "logo_placeholder": "Ide kerül a logó"
+    "logo_placeholder": "Ide kerül a logó",
+    "faq": "GYIK"
   },
   "Explore": {
     "title": "Fedezd fel a Kanári-szigetek szépségeit bérautóval!",
@@ -1065,6 +1150,36 @@
         "paragraphs": [
           "A jelen feltételekből eredő vitás ügyekben a Felek lemondanak minden más joghatóságról, és elfogadják a Santa Cruz de Tenerife illetékes bíróságainak kizárólagos illetőségét a vonatkozó spanyol jogszabályoknak megfelelően."
         ]
+      }
+    ]
+  },
+  "FAQ": {
+    "title": "Gyakran ismételt kérdések",
+    "intro": "Összegyűjtöttük a legfontosabb tudnivalókat, hogy a bérlésed Fuerteventurán és Lanzarotén is gördülékeny legyen.",
+    "items": [
+      {
+        "question": "Hogyan tudok autót foglalni?",
+        "answer": "Töltsd ki az online ajánlatkérő űrlapunkat, és kollégáink legfeljebb 24 órán belül visszaigazolják a bérlést. Ha sürgős, hívhatsz minket telefonon vagy írhatsz WhatsAppon is."
+      },
+      {
+        "question": "Milyen dokumentumokra van szükség az átvételnél?",
+        "answer": "Az átvételkor érvényes jogosítványra legalább 3 éves vezetési gyakorlattal, valamint személyi igazolványra vagy útlevélre lesz szükséged. Ezeket minden szerződött vezetőnek be kell mutatnia az átvételkor."
+      },
+      {
+        "question": "Kell kauciót fizetnem?",
+        "answer": "Teljes körű SSCP biztosítás választásakor nem kérünk kauciót. Alapbiztosítás esetén 300–500 € közötti letéttel számolj, egyes extrák (például tetőcsomagtartó) pedig külön biztosítékot igényelhetnek."
+      },
+      {
+        "question": "Hol vehetem át az autót?",
+        "answer": "Átveheted az autót a repülőtéren, irodánkban Puerto del Rosario-ban vagy a szállásodon Fuerteventurán és Lanzarotén is. Az átvételi helyet a visszaigazolásban pontosítjuk."
+      },
+      {
+        "question": "Lemondhatom díjmentesen a foglalást?",
+        "answer": "Igen, a bérlés kezdete előtt legalább 72 órával térítésmentesen módosíthatod vagy lemondhatod a foglalásod. Ha ennél közelebb kerül elő változás, vedd fel velünk a kapcsolatot minél hamarabb."
+      },
+      {
+        "question": "Mennyi a minimális életkor a bérléshez?",
+        "answer": "A legtöbb járművünk esetén 23 éves kortól tudunk autót biztosítani. Fiatalabb vezető esetén egyedi elbírálás és esetleges felár szükséges."
       }
     ]
   }

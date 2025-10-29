@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useId, useRef, useState } from 'react';
+import { Suspense, useEffect, useId, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -125,7 +125,9 @@ export function Navigation() {
             ))}
           </ul>
           <div className='h-6 w-px bg-border mx-1 lg:mx-2' aria-hidden />
-          <LocaleToggle />
+          <Suspense fallback={null}>
+            <LocaleToggle />
+          </Suspense>
           <ThemeToggle />
         </div>
       </nav>
@@ -232,6 +234,7 @@ export function Navigation() {
               <a
                 href={it.href}
                 onClick={() => setOpen(false)}
+                tabIndex={open ? 0 : -1}
                 className={
                   'inline-block uppercase no-underline text-2xl sm:text-4xl font-light px-4 py-3 text-white transition-colors duration-300 hover:bg-white hover:text-sky-dark'
                 }

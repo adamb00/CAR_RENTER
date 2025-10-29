@@ -1,161 +1,98 @@
-'use client';
-import React, { useTransition } from 'react';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslations } from 'next-intl';
-import { useParams, useRouter } from 'next/navigation';
-import { useForm, type Resolver } from 'react-hook-form';
-import { z } from 'zod';
+import { CARS } from '@/lib/cars';
+import { LOCALES } from '@/i18n/config';
+import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { NoSSR } from '@/components/NoSSR';
+import RentPageClient from './client-page';
 
-import { RentAction } from '@/actions/RentAction';
-import BaseDetails from '@/components/rent/BaseDetails';
-import Children from '@/components/rent/Children';
-import Contact from '@/components/rent/Contact';
-import Delivery from '@/components/rent/Delivery';
-import Drivers from '@/components/rent/Drivers';
-import Invoice from '@/components/rent/Invoice';
-import { Button } from '@/components/ui/button';
-import { Form } from '@/components/ui/form';
-import { createEmptyDriver } from '@/hooks/useDrivers';
-import { usePersistRentForm } from '@/hooks/usePersistRentForm';
-import {
-  useSetContact,
-  useSetDelivery,
-  useSetInvoice,
-} from '@/hooks/useSetForm';
-import { useWatchForm } from '@/hooks/useWatchForm';
-import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
-import { RentSchema, createRentSchema } from '@/schemas/RentSchema';
-import toast from 'react-hot-toast';
+type PageParams = {
+  locale: string;
+  id: string;
+};
 
-type RentFormValues = z.input<typeof RentSchema>;
-type RentFormResolvedValues = z.output<typeof RentSchema>;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale, id } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const car = CARS.find((item) => item.id === id);
 
-export default function RentPage() {
-  const t = useTranslations('RentForm');
-  const tSchema = useTranslations('RentSchema');
-  const { locale, id } = useParams<{ locale: string; id: string }>();
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
+  if (!car) {
+    return {};
+  }
 
-  const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'CarRent' });
+  const title = t('meta.title', { carName: car.name });
+  const description = t('meta.description', { carName: car.name });
+  const siteUrl = getSiteUrl();
+  const url = `${siteUrl}/${resolvedLocale}/cars/${car.id}/rent`;
 
-  const form = useForm<RentFormValues>({
-    resolver: zodResolver(rentSchema) as Resolver<
-      RentFormValues,
-      Record<string, never>,
-      RentFormResolvedValues
-    >,
-    defaultValues: {
-      extras: [],
-      adults: undefined,
-      children: [],
-      rentalPeriod: {
-        startDate: '',
-        endDate: '',
-      },
-      driver: [createEmptyDriver()],
-      contact: {
-        same: false,
-        name: '',
-        email: '',
-      },
-      invoice: {
-        same: false,
-        name: '',
-        phoneNumber: '',
-        email: '',
-        location: {
-          country: '',
-          postalCode: '',
-          city: '',
-          street: '',
-          doorNumber: '',
-        },
-      },
-      delivery: {
-        placeType: undefined,
-        locationName: '',
-        address: {
-          country: '',
-          postalCode: '',
-          city: '',
-          street: '',
-          doorNumber: '',
-        },
-      },
-      tax: {
-        id: '',
-      },
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: Object.fromEntries(
+        LOCALES.map((loc) => [
+          loc,
+          `${siteUrl}/${loc}/cars/${car.id}/rent`,
+        ])
+      ),
     },
-  });
-
-  const { clearStoredValues, isHydrated } = usePersistRentForm(form, {
-    locale,
-    carId: id,
-  });
-
-  const [placesReady, setPlacesReady] = React.useState(false);
-  const { extrasSelected } = useWatchForm(form);
-
-  const isDeliveryRequired = React.useMemo(
-    () =>
-      Array.isArray(extrasSelected) && extrasSelected.includes('kiszallitas'),
-    [extrasSelected]
-  );
-
-  useWindowWithGoogle(setPlacesReady);
-
-  useSetContact(form, { enabled: isHydrated });
-
-  useSetInvoice(form, { enabled: isHydrated });
-
-  useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
-
-  const onSubmit = (data: RentFormValues) => {
-    const parsed: RentFormResolvedValues = rentSchema.parse(data);
-    startTransition(async () => {
-      const res = await RentAction(parsed);
-      if (res.success) {
-        toast.success(t('toast.success'));
-        clearStoredValues();
-        setTimeout(() => {
-          router.push(`/${locale}`);
-        }, 2000);
-      } else {
-        toast.error(t('toast.error'));
-      }
-    });
+    openGraph: {
+      type: 'website',
+      locale: resolvedLocale,
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: `${siteUrl}${car.image}`,
+          width: 1200,
+          height: 630,
+          alt: t('meta.imageAlt', { carName: car.name }),
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${siteUrl}${car.image}`],
+    },
   };
+}
+
+export async function generateStaticParams(): Promise<PageParams[]> {
+  return LOCALES.flatMap((locale) =>
+    CARS.map((car) => ({
+      locale,
+      id: car.id,
+    }))
+  );
+}
+
+export default async function RentPage({
+  params,
+}: {
+  params: Promise<PageParams>;
+}) {
+  const { locale, id } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const carExists = CARS.some((car) => car.id === id);
+
+  if (!carExists) {
+    notFound();
+  }
+
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className='relative flex flex-col max-w-8xl mx-auto px-0 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'
-      >
-        <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
-          {t('title')}
-        </h2>
-        <section className='mt-10 space-y-8'>
-          <BaseDetails locale={locale} form={form} id={id} />
-          <Children form={form} />
-          <Drivers form={form} locale={locale} placesReady={placesReady} />
-          <Contact form={form} />
-          <Invoice form={form} placesReady={placesReady} />
-
-          {isDeliveryRequired && (
-            <Delivery form={form} placesReady={placesReady} />
-          )}
-        </section>
-
-        <Button
-          disabled={isPending}
-          type='submit'
-          className='self-end m-8 bg-sky-light text-sky-dark cursor-pointer hover:bg-sky-dark hover:border hover:text-white'
-        >
-          {t('buttons.submit')}
-        </Button>
-      </form>
-    </Form>
+    <NoSSR>
+      <RentPageClient locale={resolvedLocale} id={id} />
+    </NoSSR>
   );
 }

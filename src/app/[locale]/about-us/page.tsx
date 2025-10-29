@@ -1,14 +1,34 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+
+type PageParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  return buildPageMetadata({
+    locale: resolvedLocale,
+    pageKey: 'about',
+    path: '/about-us',
+    imagePath: '/cars.webp',
+  });
+}
 
 export default async function AboutUsPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<PageParams>;
 }) {
-  const locale = params?.locale ?? 'hu';
-  const t = await getTranslations({ locale, namespace: 'AboutUs' });
+  const { locale = 'hu' } = await params;
+  const resolvedLocale = resolveLocale(locale);
+  const t = await getTranslations({ locale: resolvedLocale, namespace: 'AboutUs' });
 
   return (
     <>
@@ -103,7 +123,10 @@ export default async function AboutUsPage({
           </p>
         </div>
         <div className='text-center text-lg !my-8 text-sky-dark hover:scale-110 duration-200'>
-          <Link href={'/'} className='hover:border-b pb-2 px-4 leading-snug'>
+          <Link
+            href={`/${resolvedLocale}`}
+            className='hover:border-b pb-2 px-4 leading-snug'
+          >
             {t('cta')}
           </Link>
         </div>
