@@ -61,7 +61,6 @@ export default async function LocaleLayout(props: {
           <Footer />
         </ThemeProvider>
       </div>
-      <Analytics />
     </NextIntlClientProvider>
   );
 }
