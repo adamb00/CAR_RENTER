@@ -4,6 +4,7 @@ import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 
 const LANGUAGE_ALTERNATES = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/${locale}`])
@@ -74,6 +75,7 @@ export default async function RootLayout({
   await params;
   return (
     <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
+      <Analytics />
       <body className='antialiased'>{children}</body>
     </html>
   );
