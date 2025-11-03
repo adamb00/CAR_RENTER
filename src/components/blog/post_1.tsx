@@ -171,11 +171,11 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
               <section key={section.id} aria-labelledby={`${section.id}-title`}>
                 <div className='space-y-6 rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8'>
                   <div className='flex items-center gap-3'>
-                    {section.icon ? (
+                    {/* {section.icon ? (
                       <span className='text-2xl sm:text-3xl leading-none text-sky-dark dark:text-amber-light'>
                         {section.icon}
                       </span>
-                    ) : null}
+                    ) : null} */}
                     <h2
                       id={`${section.id}-title`}
                       className='text-2xl sm:text-3xl font-semibold text-sky-dark dark:text-sky-light leading-snug'
@@ -291,7 +291,7 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
                     </ul>
                   ) : null}
                   {section.closing ? (
-                    <p className='text-base text-grey-dark-2 dark:text-amber-light leading-relaxed'>
+                    <p className='text-base text-amber-dark dark:text-amber-light leading-relaxed'>
                       {section.closing}
                     </p>
                   ) : null}
