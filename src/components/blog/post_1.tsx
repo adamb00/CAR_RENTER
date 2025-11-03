@@ -134,21 +134,21 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
               {heroTitle}
             </span>
           </h1>
-          <p className='mt-6 text-base sm:text-lg text-grey-dark-3 dark:text-grey-light-2'>
+          <p className='mt-6 text-base sm:text-lg text-grey-dark-3 dark:text-grey-dark-2'>
             {post.hero.subtitle}
           </p>
           {post.hero.description ? (
-            <p className='mt-4 text-sm sm:text-base text-grey-dark-2/90 dark:text-grey-light-2/90'>
+            <p className='mt-4 text-sm sm:text-base text-grey-dark-3/80 dark:text-grey-dark-2/90'>
               {post.hero.description}
             </p>
           ) : null}
-          <div className='mt-6 flex flex-wrap items-center gap-4 text-sm text-grey-dark-2/80 dark:text-grey-light-2/70'>
+          <div className='mt-6 flex flex-wrap items-center gap-4 text-sm text-grey-dark-2/80 dark:text-grey-dark-2/70'>
             <span>{post.hero.publishDate}</span>
-            <span className='hidden sm:block text-grey-light-2/70 dark:text-grey-light-3/60'>
+            <span className='hidden sm:block text-grey-light-2/70 dark:text-grey-dark-3/60'>
               •
             </span>
             <span>{post.hero.readingTime}</span>
-            <span className='hidden sm:block text-grey-light-2/70 dark:text-grey-light-3/60'>
+            <span className='hidden sm:block text-grey-light-2/70 dark:text-grey-dark-3/60'>
               •
             </span>
             <span>{post.hero.author}</span>
@@ -169,21 +169,21 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
             const imagesForSection = SECTION_IMAGES[section.id] ?? [];
             return (
               <section key={section.id} aria-labelledby={`${section.id}-title`}>
-                <div className='space-y-6'>
-                  <div className='flex items-start gap-3'>
-                    {/* {section.icon ? (
-                      <span className='text-2xl sm:text-3xl leading-none'>
+                <div className='space-y-6 rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8'>
+                  <div className='flex items-center gap-3'>
+                    {section.icon ? (
+                      <span className='text-2xl sm:text-3xl leading-none text-sky-dark dark:text-amber-light'>
                         {section.icon}
                       </span>
-                    ) : null} */}
+                    ) : null}
                     <h2
                       id={`${section.id}-title`}
-                      className='text-2xl sm:text-3xl font-semibold text-sky-dark dark:text-grey-light-1 leading-snug'
+                      className='text-2xl sm:text-3xl font-semibold text-sky-dark dark:text-sky-light leading-snug'
                     >
                       {section.title}
                     </h2>
                   </div>
-                  <div className='space-y-4 text-base text-grey-dark-3 dark:text-grey-light-2 leading-relaxed'>
+                  <div className='space-y-4 text-base text-grey-dark-3 dark:text-grey-dark-2 leading-relaxed'>
                     {section.paragraphs.map((paragraph, index) => (
                       <p
                         key={`${section.id}-paragraph-${index}`}
@@ -211,7 +211,7 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
                     </div>
                   ) : null}
                   {section.access ? (
-                    <div className='rounded-2xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/80 dark:bg-grey-dark-3/60 backdrop-blur px-5 py-4 sm:px-6 sm:py-5 text-sm sm:text-base text-grey-dark-2 dark:text-grey-light-2'>
+                    <div className='rounded-2xl border border-grey-light-2/60 dark:border-amber-dark bg-white/80 dark:bg-transparent backdrop-blur px-5 py-4 sm:px-6 sm:py-5 text-sm sm:text-base text-grey-dark-2 dark:text-grey-dark-2'>
                       <h3 className='font-semibold text-sky-dark dark:text-amber-light'>
                         {section.access.title}
                       </h3>
@@ -249,18 +249,18 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
                     </div>
                   ) : null}
                   {section.highlights ? (
-                    <div className='rounded-2xl bg-sky-light/10 dark:bg-grey-dark-3/60 border border-sky-light/30 dark:border-grey-dark-2/60 px-5 py-5 sm:px-6 sm:py-6'>
+                    <div className='rounded-2xl bg-sky-light/10 dark:bg-transparent border border-sky-light/30 dark:border-grey-dark-2/60 px-5 py-5 sm:px-6 sm:py-6'>
                       <h3 className='text-sm font-semibold uppercase tracking-[0.25em] text-sky-dark/80 dark:text-amber-light/80'>
                         {section.highlights.title}
                       </h3>
-                      <ul className='mt-4 space-y-2 text-sm sm:text-base leading-relaxed text-grey-dark-3 dark:text-grey-light-2'>
+                      <ul className='mt-4 space-y-2 text-sm sm:text-base leading-relaxed text-grey-dark-3 dark:text-dark-light-2'>
                         {section.highlights.items.map((item) => (
                           <li key={item.label}>
                             <a
                               href={item.href}
                               target='_blank'
                               rel='noreferrer noopener'
-                              className='inline-flex items-center gap-2 text-sky-dark dark:text-amber-light hover:underline'
+                              className='inline-flex items-center gap-2 text-sky-dark dark:text-sky-light hover:underline'
                             >
                               {item.label}
                               <span aria-hidden='true'>↗</span>
@@ -271,7 +271,7 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
                     </div>
                   ) : null}
                   {section.tip ? (
-                    <div className='rounded-2xl border border-amber-dark/30 dark:border-amber-light/40 bg-amber-light/10 dark:bg-amber-dark/20 px-5 py-4 sm:px-6 sm:py-5 text-sm sm:text-base text-grey-dark-3 dark:text-grey-light-2'>
+                    <div className='rounded-2xl border border-amber-dark/30 dark:border-amber-light/40 bg-amber-light/10 dark:bg-amber-dark/20 px-5 py-4 sm:px-6 sm:py-5 text-sm sm:text-base text-grey-dark-3 dark:text-grey-light-3'>
                       <h3 className='font-semibold text-amber-dark dark:text-amber-light'>
                         {section.tip.title}
                       </h3>
@@ -284,14 +284,14 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
                     </div>
                   ) : null}
                   {section.bullets ? (
-                    <ul className='list-disc list-inside space-y-2 text-base text-grey-dark-3 dark:text-grey-light-2 leading-relaxed'>
+                    <ul className='list-disc list-inside space-y-2 text-base text-grey-dark-3 dark:text-grey-dark-2 leading-relaxed'>
                       {section.bullets.map((item, index) => (
                         <li key={`${section.id}-bullet-${index}`}>{item}</li>
                       ))}
                     </ul>
                   ) : null}
                   {section.closing ? (
-                    <p className='text-base text-grey-dark-2 dark:text-grey-light-2 leading-relaxed'>
+                    <p className='text-base text-grey-dark-2 dark:text-amber-light leading-relaxed'>
                       {section.closing}
                     </p>
                   ) : null}
@@ -302,11 +302,11 @@ export default function Post_1({ locale, slug, post }: BlogPostComponentProps) {
         </div>
 
         <section className='mt-20'>
-          <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-grey-dark-3/70 backdrop-blur px-6 py-8 sm:px-8 sm:py-10 shadow-sm'>
-            <h2 className='text-2xl sm:text-3xl font-semibold text-sky-dark dark:text-grey-light-1'>
+          <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-8 sm:px-8 sm:py-10 shadow-sm'>
+            <h2 className='text-2xl sm:text-3xl font-semibold text-sky-dark dark:text-amber-light'>
               {post.cta.title}
             </h2>
-            <div className='mt-4 space-y-3 text-base text-grey-dark-3 dark:text-grey-light-2 leading-relaxed'>
+            <div className='mt-4 space-y-3 text-base text-grey-dark-3 dark:text-grey-dark-2 leading-relaxed'>
               {post.cta.paragraphs.map((paragraph, index) => (
                 <p
                   key={`cta-paragraph-${index}`}

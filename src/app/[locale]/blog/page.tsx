@@ -90,9 +90,7 @@ export default async function BlogPage({
     .map((post, index) => {
       const url = `${pageUrl}/${post.slug}`;
       const isoDate = post.publishDateISO ?? post.publishDate;
-      const imageUrl = `${siteUrl}${
-        post.image?.src ?? '/header_image.webp'
-      }`;
+      const imageUrl = `${siteUrl}${post.image?.src ?? '/header_image.webp'}`;
       return {
         '@type': 'BlogPosting',
         '@id': `${url}#blogPosting`,
@@ -148,7 +146,7 @@ export default async function BlogPage({
           <h1 className='text-3xl uppercase sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide md:tracking-[0.08em] bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
             {title}
           </h1>
-          <p className='mt-6 text-base md:text-lg text-grey-dark-3 dark:text-grey-light-2'>
+          <p className='mt-6 text-base md:text-lg text-grey-dark-3 dark:text-grey-dark-2'>
             {intro}
           </p>
         </header>
@@ -164,7 +162,7 @@ export default async function BlogPage({
             return (
               <article
                 key={post.title}
-                className='group relative overflow-hidden rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/85 dark:bg-grey-dark-3/70 backdrop-blur p-6 sm:p-8 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg'
+                className='group relative flex h-full flex-col overflow-hidden rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:border-amber-light/40'
               >
                 <span
                   className={`absolute left-6 right-6 top-0 h-1 rounded-b-full bg-gradient-to-r ${gradient}`}
@@ -177,43 +175,45 @@ export default async function BlogPage({
                       alt={imageAlt}
                       fill
                       className='object-cover transition-transform duration-500 group-hover:scale-105'
-                      sizes='(min-width: 1280px) 340px, (min-width: 768px) 45vw, 90vw'
+                      sizes='(min-width: 1280px) 320px, (min-width: 1024px) 28vw, (min-width: 768px) 40vw, 90vw'
                     />
                   </div>
                 ) : null}
-                <div className='mt-6 text-xs font-semibold uppercase tracking-[0.35em] text-amber-dark/80 dark:text-amber-light/80'>
-                  {post.category}
+                <div className='mt-6 flex flex-1 flex-col'>
+                  <div className='text-xs font-semibold uppercase tracking-[0.35em] text-amber-dark/80 dark:text-amber-light/80'>
+                    {post.category}
+                  </div>
+                  <div className='mt-4 space-y-4'>
+                    <h2 className='text-2xl font-semibold text-sky-dark dark:text-grey-dark-1'>
+                      {post.title}
+                    </h2>
+                    <p className='text-sm sm:text-base text-grey-dark-3 dark:text-grey-dark-2 leading-relaxed'>
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  <div className='mt-6 flex flex-wrap items-center gap-3 text-sm text-grey-dark-2/90 dark:text-grey-dark-2/80'>
+                    <span>{post.publishDate}</span>
+                    <span className='text-grey-light-2/70 dark:text-grey-dark-3/60'>
+                      /
+                    </span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  {href ? (
+                    <Link
+                      href={href}
+                      prefetch={false}
+                      className='mt-8 inline-flex items-center gap-2 rounded-full border border-sky-dark/30 dark:border-amber-light/40 px-5 py-2 text-sm font-medium text-sky-dark dark:text-amber-light transition-colors hover:border-sky-dark hover:bg-sky-dark/10 dark:hover:border-amber-light dark:hover:bg-amber-light/10'
+                      aria-label={`${readMore}: ${post.title}`}
+                    >
+                      {readMore}
+                      <span aria-hidden='true'>→</span>
+                    </Link>
+                  ) : (
+                    <span className='mt-8 inline-flex items-center gap-2 rounded-full border border-grey-light-2/40 px-5 py-2 text-sm font-medium text-grey-dark-2/80'>
+                      {readMore}
+                    </span>
+                  )}
                 </div>
-                <div className='mt-4 space-y-4'>
-                  <h2 className='text-2xl font-semibold text-sky-dark dark:text-grey-light-1'>
-                    {post.title}
-                  </h2>
-                  <p className='text-sm sm:text-base text-grey-dark-3 dark:text-grey-light-2 leading-relaxed'>
-                    {post.excerpt}
-                  </p>
-                </div>
-                <div className='mt-6 flex flex-wrap items-center gap-3 text-sm text-grey-dark-2/90 dark:text-grey-light-2/80'>
-                  <span>{post.publishDate}</span>
-                  <span className='text-grey-light-2/70 dark:text-grey-light-3/60'>
-                    /
-                  </span>
-                  <span>{post.readTime}</span>
-                </div>
-                {href ? (
-                  <Link
-                    href={href}
-                    prefetch={false}
-                    className='mt-8 inline-flex items-center gap-2 rounded-full border border-sky-dark/30 dark:border-amber-light/40 px-5 py-2 text-sm font-medium text-sky-dark dark:text-amber-light transition-colors hover:border-sky-dark hover:bg-sky-dark/10 dark:hover:border-amber-light dark:hover:bg-amber-light/10'
-                    aria-label={`${readMore}: ${post.title}`}
-                  >
-                    {readMore}
-                    <span aria-hidden='true'>→</span>
-                  </Link>
-                ) : (
-                  <span className='mt-8 inline-flex items-center gap-2 rounded-full border border-grey-light-2/40 px-5 py-2 text-sm font-medium text-grey-dark-2/80'>
-                    {readMore}
-                  </span>
-                )}
               </article>
             );
           })}
