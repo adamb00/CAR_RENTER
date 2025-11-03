@@ -28,17 +28,14 @@ export default async function AboutUsPage({
 }) {
   const { locale = 'hu' } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const t = await getTranslations({ locale: resolvedLocale, namespace: 'AboutUs' });
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'AboutUs',
+  });
 
   return (
     <>
       <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40'>
-        {/* <Link
-          href='/'
-          className='absolute -left-8 sm:left-0 md:-left-8 -top-4 sm:top-0 md:-top-8 z-[1200]'
-        >
-          <Logo size='sm' />
-        </Link> */}
         <h1 className='block text-5xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-widest lg:tracking-[0.3em] text-center my-10 bg-gradient-to-r from-sky-light/90 to-sky-dark/80 bg-clip-text text-transparent'>
           {t('headline')}
         </h1>
@@ -124,7 +121,7 @@ export default async function AboutUsPage({
         </div>
         <div className='text-center text-lg !my-8 text-sky-dark hover:scale-110 duration-200'>
           <Link
-            href={`/${resolvedLocale}`}
+            href={`/${resolvedLocale}/cars`}
             className='hover:border-b pb-2 px-4 leading-snug'
           >
             {t('cta')}

@@ -33,7 +33,7 @@ export const LANG_BY_COUNTRY: Record<string, Locale> = {
 //   CH: 'de',
 //   FR: 'fr',
 //   BE: 'fr',
-//   LU: 'fr', // francia térség
+//   LU: 'fr',
 //   SE: 'se',
 //   NO: 'no',
 //   DK: 'dk',

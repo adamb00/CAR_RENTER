@@ -99,6 +99,183 @@
       "image": "Ilustración de alquiler de coches"
     }
   },
+  "Blog": {
+    "title": "Blog y guía de viaje",
+    "intro": "Consejos locales, trucos de alquiler y rutas para aprovechar cada kilómetro en Fuerteventura y Lanzarote.",
+    "readMore": "Abrir artículo",
+    "posts": [
+      {
+        "slug": "que-ver-en-fuerteventura-en-coche",
+        "title": "Qué ver en Fuerteventura en coche – 3 paradas imprescindibles",
+        "excerpt": "Las dunas de Corralejo, Betancuria y las cuevas de Ajuy: guía para aprovechar al máximo tu coche de alquiler en Fuerteventura.",
+        "category": "Guía de viaje",
+        "readTime": "Lectura de 6 minutos",
+        "publishDate": "2 de febrero de 2024",
+        "publishDateISO": "2024-02-02",
+        "image": {
+          "src": "/DSC00595.jpg",
+          "alt": "Atardecer sobre las dunas de Corralejo junto al Atlántico"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Qué ver en Fuerteventura en coche – 3 paradas imprescindibles con coche de alquiler | Zodiacs Rent a Car",
+        "description": "Descubre Fuerteventura en coche de alquiler: las dunas de Corralejo, Betancuria y las cuevas de Ajuy son paradas fáciles y seguras. Alquiler de coches en Fuerteventura con Zodiacs Rent a Car.",
+        "keywords": [
+          "alquiler de coches Fuerteventura",
+          "coche de alquiler Fuerteventura",
+          "qué ver en Fuerteventura en coche",
+          "dunas de Corralejo",
+          "Betancuria",
+          "Cuevas de Ajuy",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/que-ver-en-fuerteventura-en-coche",
+        "image": {
+          "src": "/DSC00595.jpg",
+          "alt": "Vista de las dunas de Corralejo en Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Fuerteventura: lugares que ver en coche – 3 sitios que no puedes perderte si exploras la isla en coche de alquiler",
+        "category": "Guía de viaje",
+        "subtitle": "Alquilar un coche en Fuerteventura te permite descubrir la isla a tu ritmo. Sin prisas, sin horarios de guaguas: solo el océano, el sol y la sensación de libertad.",
+        "description": "Reunimos tres paradas fáciles y seguras para visitar con tu coche de alquiler, perfectas para disfrutar de experiencias inolvidables.",
+        "publishDate": "3 de noviembre de 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "Lectura de 6 minutos",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Dunas de Corralejo: el paisaje más icónico de Fuerteventura",
+          "paragraphs": [
+            "En el norte de la isla se encuentra el <strong>Parque Natural de Corralejo</strong>, uno de los lugares más emblemáticos de Fuerteventura.",
+            "Las extensas dunas de arena blanca contrastan con el Atlántico turquesa: un paisaje desértico junto al mar."
+          ],
+          "access": {
+            "title": "Cómo llegar en coche",
+            "description": "Cruza las dunas por la FV-1 o la FV-1a en dirección a Corralejo. Encontrarás aparcamientos señalizados desde los que acceder a las playas y a las dunas a pie."
+          },
+          "links": [
+            {
+              "label": "Mapa dunas de Corralejo",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Consejo",
+            "description": "Haz una parada en las <strong>Grandes Playas de Corralejo</strong>, donde las dunas se funden con el océano: escenario perfecto para tus fotos."
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria: antigua capital entre montañas y miradores panorámicos",
+          "paragraphs": [
+            "En el interior montañoso se esconde Betancuria, la antigua capital de Fuerteventura y hoy su corazón cultural.",
+            "El pueblo se sitúa en un valle verde rodeado de colinas volcánicas, con calles pintorescas y un ambiente tranquilo."
+          ],
+          "access": {
+            "title": "Cómo llegar en coche",
+            "description": "Accede por la FV-30 desde Puerto del Rosario, Caleta de Fuste o Pájara. Aunque la carretera es sinuosa, está en buen estado y ofrece panorámicas espectaculares."
+          },
+          "links": [
+            {
+              "label": "Mapa Betancuria",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Paradas recomendadas",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose: dos estatuas de bronce vigilan el valle.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa: una de las mejores vistas de la isla.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Cuevas de Ajuy y playa de arena negra: el oeste salvaje de Fuerteventura",
+          "paragraphs": [
+            "La costa oeste es más salvaje y rocosa, y precisamente por eso resulta tan especial. Allí se encuentra <strong>Ajuy</strong>, un pequeño pueblo pesquero famoso por su playa de arena negra y las <strong>Cuevas de Ajuy</strong>.",
+            "Un sendero acondicionado recorre los acantilados hasta llegar a las cuevas, donde podrás ver formaciones geológicas de millones de años mientras escuchas el rugido del océano. Al atardecer el lugar es aún más mágico."
+          ],
+          "access": {
+            "title": "Cómo llegar en coche",
+            "description": "Desde Pájara toma la FV-621 hasta Ajuy por carretera asfaltada en todo el recorrido."
+          },
+          "links": [
+            {
+              "label": "Mapa cuevas de Ajuy",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "¿Por qué merece la pena alquilar coche en Fuerteventura?",
+          "paragraphs": [
+            "Entre los principales atractivos de la isla hay distancias considerables y el transporte público es limitado.",
+            "Con un coche de alquiler disfrutas de libertad absoluta para llegar a playas escondidas y a pueblos de montaña a tu ritmo.",
+            "Las carreteras están en muy buen estado, el tráfico es ligero y aparcar suele ser gratuito."
+          ],
+          "links": [
+            {
+              "label": "Descubre nuestra flota – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Viaja de forma responsable: cuida la naturaleza de Fuerteventura",
+          "paragraphs": [
+            "Somos locales y protegemos la isla. Te pedimos que hagas lo mismo para conservar su belleza:"
+          ],
+          "bullets": [
+            "no dejes basura y utiliza siempre los contenedores habilitados;",
+            "no tires colillas en la arena ni entre las rocas;",
+            "respeta los senderos señalizados, especialmente en las dunas y los acantilados."
+          ],
+          "closing": "Si cuidas cada rincón, Fuerteventura te lo agradecerá… y querrás volver."
+        }
+      ],
+      "cta": {
+        "title": "Explora la isla con la comodidad de un coche de alquiler",
+        "paragraphs": [
+          "Recorre dunas, pueblos escondidos entre montañas y cuevas junto al océano a tu propio ritmo.",
+          "<strong>Zodiacs Rent a Car</strong>: alquiler de coches en Fuerteventura con atención cercana, coches fiables y recomendaciones locales."
+        ],
+        "buttons": [
+          {
+            "label": "Ver coches disponibles",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Reserva online en pocos clics",
+            "href": "/{locale}/contact"
+          }
+        ]
+      },
+      "backToBlog": "Volver al blog"
+    }
+  },
   "Cars": {
     "title": "Descubre Fuerteventura y Lanzarote con total libertad con nuestros coches",
     "p1": "Alquila fácil y rápido: elige el vehículo que mejor se adapte a ti y te lo entregamos en el aeropuerto o directamente en tu alojamiento. Con nuestras opciones flexibles de alquiler podrás disfrutar sin preocupaciones, tanto para escapadas cortas como para estancias más largas.",
@@ -1174,6 +1351,17 @@
         "Zodiac Rent a Car preguntas frecuentes",
         "alquiler coche Fuerteventura dudas",
         "alquiler coche Lanzarote información"
+      ]
+    },
+    "blog": {
+      "title": "Blog – Consejos de alquiler y rutas en Fuerteventura",
+      "description": "Guías locales, recomendaciones de rutas y trucos de alquiler elaborados por el equipo de Zodiac Rent a Car.",
+      "ogImageAlt": "Ilustración del blog de Zodiac Rent a Car",
+      "keywords": [
+        "blog alquiler de coches",
+        "consejos Fuerteventura",
+        "rutas Lanzarote coche",
+        "Zodiac Rent a Car blog"
       ]
     }
   },

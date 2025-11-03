@@ -1,18 +1,17 @@
 'use server';
+import { GoogleMapsScript } from '@/components/GoogleMapsScript';
 import Footer from '@/components/layout/Footer';
 import { LocaleToggle } from '@/components/LocaleToggler';
 import { Navigation } from '@/components/navigation/Navigation';
+import { StructuredData } from '@/components/seo/StructuredData';
 import { ThemeToggle } from '@/components/ThemeToggler';
 import WhatsAppContainer from '@/components/WhatsAppContainer';
-import { GoogleMapsScript } from '@/components/GoogleMapsScript';
-import { Locale, LOCALES, DEFAULT_LOCALE } from '@/i18n/config';
+import { DEFAULT_LOCALE, Locale, LOCALES } from '@/i18n/config';
 import { ThemeProvider } from '@/providers/theme';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ReactNode, Suspense } from 'react';
-import { Analytics } from '@vercel/analytics/next';
 import { Toaster } from 'react-hot-toast';
-import { StructuredData } from '@/components/seo/StructuredData';
 
 export async function generateStaticParams() {
   return LOCALES.map((l) => ({ locale: l }));

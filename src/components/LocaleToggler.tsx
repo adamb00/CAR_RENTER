@@ -12,6 +12,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
 import { LOCALES, Locale } from '@/i18n/config';
+import { resolveLocalizedSlug } from '@/lib/blog/slugs';
 import { useTranslations } from 'next-intl';
 
 const FLAGS: Record<Locale, string> = {
@@ -47,10 +48,13 @@ const LABELS: Record<Locale, string> = {
 };
 
 function replaceLocaleInPath(pathname: string, next: Locale) {
-  const parts = pathname.split('/');
-  if (parts.length > 1) {
-    parts[1] = next;
-    const joined = parts.join('/');
+  const segments = pathname.split('/');
+  if (segments.length > 1) {
+    segments[1] = next;
+    if (segments[2] === 'blog' && segments[3]) {
+      segments[3] = resolveLocalizedSlug(segments[3], next);
+    }
+    const joined = segments.join('/');
     return joined || `/${next}`;
   }
   return `/${next}`;

@@ -84,6 +84,17 @@
         "autóbérlés Fuerteventura GYIK",
         "autóbérlés Lanzarote információk"
       ]
+    },
+    "blog": {
+      "title": "Blog – Autóbérlés és utazási tippek Fuerteventurán",
+      "description": "Friss autóbérlési tanácsok, útvonal javaslatok és helyi élmények a Zodiac Rent a Car csapatától.",
+      "ogImageAlt": "Zodiac Rent a Car blog illusztráció",
+      "keywords": [
+        "autóbérlés blog",
+        "Fuerteventura utazási tippek",
+        "Lanzarote road trip",
+        "Zodiac Rent a Car tanácsok"
+      ]
     }
   },
   "AboutSection": {
@@ -155,6 +166,183 @@
     },
     "alt": {
       "image": "Autóbérlés illusztráció"
+    }
+  },
+  "Blog": {
+    "title": "Blog és útikalauz",
+    "intro": "Helyi tippek, autóbérlési tanácsok és inspiráló útvonalak, hogy nyaralásod minden perce emlékezetes legyen.",
+    "readMore": "Cikk megnyitása",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Fuerteventura látnivalók autóval – 3 kihagyhatatlan hely",
+        "excerpt": "Corralejo dűnéi, Betancuria és Ajuy barlangjai: útikalauz, hogyan hozd ki a legtöbbet bérautóddal Fuerteventurán.",
+        "category": "Útikalauz",
+        "readTime": "6 perc olvasás",
+        "publishDate": "2024. február 2.",
+        "publishDateISO": "2024-02-02",
+        "image": {
+          "src": "/DSC00595.jpg",
+          "alt": "Kilátás a Corralejo homokdűnéire és az Atlanti-óceánra"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Fuerteventura látnivalók autóval – 3 kihagyhatatlan hely bérautóval | Zodiacs Rent a Car",
+        "description": "Fedezd fel Fuerteventura legszebb látnivalóit bérautóval! Corralejo dűnéi, Betancuria és Ajuy barlangjai autóval is könnyen elérhetők. Autóbérlés Fuerteventurán – Zodiacs Rent a Car.",
+        "keywords": [
+          "autóbérlés Fuerteventurán",
+          "bérautó Fuerteventura",
+          "Fuerteventura látnivalók autóval",
+          "Corralejo dűnék",
+          "Betancuria",
+          "Ajuy barlangok",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00595.jpg",
+          "alt": "Kilátás a Corralejo homokdűnéire Fuerteventurán"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Fuerteventura látnivalók autóval – 3 hely, amit ne hagyj ki, ha bérautóval fedezed fel a szigetet",
+        "category": "Útikalauz",
+        "subtitle": "Ha autót bérelsz Fuerteventurán, a sziget minden csodáját saját tempódban ismerheted meg. Nincs rohanás, nincs buszmenetrend – csak az óceán illata, a napsütés és a szabadság érzése.",
+        "description": "Összegyűjtöttünk három olyan helyet, amely bérautóval könnyen elérhető, biztonságosan megközelíthető, és garantáltan felejthetetlen élményt nyújt.",
+        "publishDate": "2025. november 3.",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 perc olvasás",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Corralejo homokdűnéi – Fuerteventura legikonikusabb természeti csodája",
+          "paragraphs": [
+            "Fuerteventura északi részén található a <strong>Corralejo Természeti Park</strong> (Parque Natural de Corralejo), amely a sziget egyik legnépszerűbb látnivalója.",
+            "A hatalmas, fehér homokdűnék kontrasztban állnak az Atlanti-óceán türkiz vizével – igazi sivatagi hangulat a tengerparton."
+          ],
+          "access": {
+            "title": "Autós megközelítés",
+            "description": "A dűnéken keresztül az FV-1 vagy FV-1a út vezet Corralejo felé. Az út mentén több kijelölt parkoló is található, ahonnan gyalog is megközelíthetők a strandok és a dűnék."
+          },
+          "links": [
+            {
+              "label": "Corralejo dűnék térkép",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Tipp",
+            "description": "Állj meg a <strong>Grandes Playas de Corralejo</strong> strandnál, ahol a dűnék közvetlenül az óceánba futnak – tökéletes fotóhelyszín!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – a történelmi főváros szerpentines útjai és lélegzetelállító kilátói",
+          "paragraphs": [
+            "A sziget belső, hegyvidéki részén fekvő Betancuria Fuerteventura egykori fővárosa, ma pedig a sziget kulturális szíve.",
+            "A városka egy zöld völgyben bújik meg a vulkanikus dombok között, festői utcákkal és nyugodt hangulattal várja a látogatókat."
+          ],
+          "access": {
+            "title": "Autós megközelítés",
+            "description": "Betancuria az FV-30 úton érhető el, Puerto del Rosario, Caleta de Fuste vagy Pájara felől. Bár szerpentines, az út jól karbantartott és lenyűgöző panorámát kínál."
+          },
+          "links": [
+            {
+              "label": "Betancuria térkép",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Látnivalók útközben",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – két óriási bronz szobor őrzi a völgyet.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – az egyik legszebb kilátópont a szigeten.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Ajuy barlangjai és fekete homokos strandja – Fuerteventura vad nyugati oldala",
+          "paragraphs": [
+            "A sziget nyugati partja nyersebb, sziklásabb, de épp ettől különleges. Itt található <strong>Ajuy</strong>, egy csendes halászfalu, amely a híres fekete homokos strandjáról és a <strong>Cuevas de Ajuy</strong> barlangokról ismert.",
+            "A sziklák mentén kiépített gyalogút vezet a barlangokhoz, ahol több millió éves kőzetformációkat figyelhetsz meg, miközben a tenger dübörgése kísér. A helyszín különösen naplementekor varázslatos."
+          ],
+          "access": {
+            "title": "Autós megközelítés",
+            "description": "Ajuy faluba Pájara felől az FV-621 úton juthatsz el, végig aszfaltozott úton."
+          },
+          "links": [
+            {
+              "label": "Ajuy barlangok térkép",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "Miért éri meg autót bérelni Fuerteventurán?",
+          "paragraphs": [
+            "A sziget látnivalói között gyakran hosszabb távolságok vannak, a tömegközlekedés pedig korlátozott.",
+            "A bérautó szabadságot ad – saját tempódban fedezheted fel a legeldugottabb strandokat és a hegyvidéki falvakat is.",
+            "Az utak kiváló állapotúak, a forgalom mérsékelt, a parkolás pedig szinte mindenhol ingyenes."
+          ],
+          "links": [
+            {
+              "label": "Nézd meg bérautóinkat – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Utazz környezettudatosan – óvd Fuerteventura természeti értékeit!",
+          "paragraphs": [
+            "Mi, helyiek, szeretjük és védjük a szigetünket. Kérünk, te is tartsd tiszteletben a természetet:"
+          ],
+          "bullets": [
+            "ne hagyj szemetet magad után, használj kijelölt hulladékgyűjtőt;",
+            "ne dobd el a cigarettacsikket a homokban vagy a sziklák között;",
+            "maradj a kijelölt ösvényeken, különösen a dűnéken és a sziklás partoknál."
+          ],
+          "closing": "Ha így teszel, Fuerteventura megköszöni – és visszavár."
+        }
+      ],
+      "cta": {
+        "title": "Fedezd fel a szigetet kényelmesen, bérautóval!",
+        "paragraphs": [
+          "Fedezd fel a homokdűnéket, a hegyek közé bújó falvakat és az óceánparti barlangokat saját ritmusodban.",
+          "<strong>Zodiacs Rent a Car</strong> – autóbérlés Fuerteventurán egyszerűen, gyors ügyintézéssel, megbízható autókkal és helyi tippekkel."
+        ],
+        "buttons": [
+          {
+            "label": "Nézd meg bérautóinkat",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Foglalj online néhány kattintással",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      },
+      "backToBlog": "Vissza a bloghoz"
     }
   },
   "WhatsApp": {
