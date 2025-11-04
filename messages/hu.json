@@ -1,7 +1,23 @@
 {
   "Header": {
-    "header": "Autóbérlés Fuerteventura-n és Lanzarote-n, kényelmesen, gyorsan",
+    "header": "Autóbérlés Fuerteventurán és Lanzarotén, kényelmesen, gyorsan",
     "book_now": "Bérelj autót most"
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "A Zodiac Rent a Car magyar csapatával az autóbérlés Fuerteventurán és Lanzarotén tényleg gondtalan. Online foglalás után megszervezzük a repülőtéri vagy szállodai átadást, segítünk kiválasztani az úthoz illő modellt, és minden részletet magyarul egyeztetünk.",
+      "Flottánk a kompakt városi autóktól a tágas SUV-okig terjed, mind korlátlan kilométerrel, ingyenes második sofőrrel és teljes SSCP biztosítással. Nincsenek rejtett díjak, az autóbérlés teljes költségét előre megkapod, a szerződést pedig jóváhagyás előtt átnézheted.",
+      "Utazás közben is számíthatsz ránk: megosztjuk a legjobb fuerteventurai strandparkolókat, a lanzarotei kilátópontokat és a kedvenc tapasbárokat. Telefonon, e-mailben és WhatsAppon is elérsz, így bármikor kérhetsz segítséget vagy személyre szabott ajánlatot."
+    ],
+    "highlights": {
+      "title": "Miért válassz minket?",
+      "items": [
+        "Magyar ügyfélszolgálat Fuerteventurán és Lanzarotén, gyors válaszidővel.",
+        "SSCP biztosítás, korlátlan kilométer és ingyenes második sofőr minden bérlésnél.",
+        "Rugalmas átvétel a repülőtéren, szálláson vagy kedvenc kirándulóhelyeden."
+      ]
+    },
+    "cta": "Kérj személyre szabott ajánlatot"
   },
   "SEO": {
     "brand": "Zodiac Rent a Car",
@@ -30,7 +46,7 @@
   },
   "Pages": {
     "home": {
-      "title": "Autóbérlés Fuerteventurán és Lanzarotén | Zodiac Rent a Car",
+      "title": "Autóbérlés Fuerteventurán és Lanzarotén",
       "description": "Fedezd fel a Kanári-szigeteket magyar csapatunkkal: prémium bérautók, rugalmas átvétel, korlátlan kilométer és teljes körű biztosítás.",
       "ogImageAlt": "Bérautó Fuerteventurán a Zodiac Rent a Carnál"
     },

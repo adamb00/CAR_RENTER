@@ -3,6 +3,22 @@
     "header": "Alquiler de coches en Fuerteventura y Lanzarote, fácil y rápido",
     "book_now": "Reserva tu coche ahora"
   },
+  "HomeIntro": {
+    "paragraphs": [
+      "Con Zodiac Rent a Car el alquiler de coches en Fuerteventura y Lanzarote es realmente sencillo. Tras tu reserva online coordinamos la entrega en aeropuerto, puerto o alojamiento, te aconsejamos sobre el vehículo ideal y resolvemos cada detalle en tu idioma.",
+      "Nuestra flota incluye desde compactos ágiles hasta SUV espaciosos, todos con kilometraje ilimitado, segundo conductor gratuito y cobertura SSCP completa. El precio final llega sin sorpresas: revisas el contrato digital antes de confirmar y conoces cada extra con antelación.",
+      "Durante el viaje seguimos a tu lado con recomendaciones locales: parkings gratuitos en Corralejo, miradores de Lanzarote o rutas para surfistas. Si necesitas ayuda, estamos disponibles por teléfono, e-mail o WhatsApp, y siempre puedes pedir un presupuesto personalizado."
+    ],
+    "highlights": {
+      "title": "¿Por qué elegirnos?",
+      "items": [
+        "Atención multilingüe en Canarias con respuestas rápidas y cercanas.",
+        "Cobertura SSCP, kilometraje ilimitado y segundo conductor gratuito siempre incluidos.",
+        "Entrega flexible en aeropuerto, puerto, alojamiento o punto de encuentro."
+      ]
+    },
+    "cta": "Solicita un presupuesto personalizado"
+  },
   "SEO": {
     "brand": "Zodiac Rent a Car",
     "defaultTitle": "Alquiler de coches en Fuerteventura y Lanzarote",
@@ -1298,7 +1314,7 @@
   },
   "Pages": {
     "home": {
-      "title": "Alquiler de coches en Fuerteventura y Lanzarote | Zodiac Rent a Car",
+      "title": "Alquiler de coches en Fuerteventura y Lanzarote",
       "description": "Descubre las Islas Canarias con nuestra flota: coches modernos, entrega flexible, kilometraje ilimitado y cobertura total.",
       "ogImageAlt": "Coche de alquiler de Zodiac Rent a Car en Fuerteventura"
     },
