@@ -7,6 +7,22 @@ import {
 } from '@/i18n/config';
 import { NextRequest, NextResponse } from 'next/server';
 
+const DEFAULT_CANONICAL_HOST = 'zodiacsrentacar.com';
+const CANONICAL_HOST = (() => {
+  const envUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!envUrl) return DEFAULT_CANONICAL_HOST;
+  try {
+    const hostname = new URL(envUrl).hostname;
+    return hostname || DEFAULT_CANONICAL_HOST;
+  } catch {
+    return (
+      envUrl.replace(/^https?:\/\//i, '').replace(/\/.*$/, '') ||
+      DEFAULT_CANONICAL_HOST
+    );
+  }
+})();
+const CANONICAL_WWW_HOST = `www.${CANONICAL_HOST}`.toLowerCase();
+
 type NextRequestWithGeo = NextRequest & {
   geo?: {
     country?: string | null;
@@ -29,6 +45,13 @@ function getCountryFromRequest(req: NextRequest): string | null {
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  const hostname = req.nextUrl.hostname.toLowerCase();
+
+  if (hostname === CANONICAL_WWW_HOST) {
+    const url = req.nextUrl.clone();
+    url.hostname = CANONICAL_HOST;
+    return NextResponse.redirect(url, 308);
+  }
 
   if (
     pathname.startsWith('/_next') ||
