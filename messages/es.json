@@ -637,7 +637,7 @@
       "removeDriver": "Eliminar conductor",
       "submit": "Enviar solicitud"
     },
-    "searching": "Buscando...",
+    "searching": "Proceso de datos...",
     "extras": {
       "label": "Servicios extra",
       "options": {

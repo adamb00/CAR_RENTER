@@ -19,7 +19,6 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     doorNumberRequired: 'A házszám megadása kötelező',
     invalidDateOfBirth: 'Érvénytelen születési dátum',
     placeOfBirthRequired: 'A születési hely megadása kötelező',
-    motherNameRequired: 'Az anyja nevének megadása kötelező',
     phoneRequired: 'A telefonszám megadása kötelező',
     phoneInvalid: 'Adj meg érvényes telefonszámot',
     emailRequired: 'Az email cím megadása kötelező',
@@ -100,9 +99,7 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
       placeOfBirth: {
         required: 'A születési hely megadása kötelező',
       },
-      nameOfMother: {
-        required: 'Az anyja nevének megadása kötelező',
-      },
+
       phoneNumber: {
         required: 'A telefonszám megadása kötelező',
         invalid: 'Adj meg érvényes telefonszámot',
@@ -322,10 +319,7 @@ export function createRentSchema(
           placeOfBirth: z
             .string()
             .min(1, message('fields.driver.placeOfBirth.required')),
-          nameOfMother: z
-            .string()
-            .min(1, message('fields.driver.nameOfMother.required'))
-            .optional(),
+          nameOfMother: z.string().optional(),
           phoneNumber: z
             .string()
             .min(1, message('fields.driver.phoneNumber.required'))

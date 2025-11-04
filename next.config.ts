@@ -9,5 +9,6 @@ export default withNextIntl({
   },
   experimental: {
     globalNotFound: true,
+    serverComponentsExternalPackages: ['pdfkit'],
   },
 });

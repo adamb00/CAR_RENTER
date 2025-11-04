@@ -903,11 +903,19 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                             >
                               {option.label}
                             </span>
-                            <button
-                              type='button'
+                            <span
+                              role='button'
+                              tabIndex={0}
                               onClick={(event) => {
                                 event.stopPropagation();
                                 toggleOption(value);
+                              }}
+                              onKeyDown={(event) => {
+                                if (event.key === 'Enter' || event.key === ' ') {
+                                  event.preventDefault();
+                                  event.stopPropagation();
+                                  toggleOption(value);
+                                }
                               }}
                               aria-label={`Remove ${option.label} from selection`}
                               className='ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60'
@@ -920,7 +928,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                 )}
                                 aria-hidden='true'
                               />
-                            </button>
+                            </span>
                           </Badge>
                         );
                       })
@@ -960,17 +968,25 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                     )}
                   </div>
                   <div className='flex items-center justify-between'>
-                    <button
-                      type='button'
+                    <span
+                      role='button'
+                      tabIndex={0}
                       onClick={(event) => {
                         event.stopPropagation();
                         handleClear();
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault();
+                          event.stopPropagation();
+                          handleClear();
+                        }
                       }}
                       aria-label={`Clear all ${selectedValues.length} selected options`}
                       className='flex items-center justify-center h-8 w-8 mx-1 rounded-full text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                     >
                       <XIcon className='h-4 w-4' aria-hidden='true' />
-                    </button>
+                    </span>
                     <Separator
                       orientation='vertical'
                       className='flex min-h-6 h-full'

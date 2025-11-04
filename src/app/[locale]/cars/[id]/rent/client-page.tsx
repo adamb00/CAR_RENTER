@@ -123,7 +123,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       const res = await RentAction(parsed);
       if (res.success) {
         toast.success(t('toast.success'));
-        clearStoredValues();
+        // clearStoredValues();
         setTimeout(() => {
           router.push(`/${locale}`);
         }, 2000);
@@ -135,9 +135,19 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
 
   return (
     <Form {...form}>
+      {isPending ? (
+        <div className='fixed inset-0 z-[5000] flex flex-col items-center justify-center gap-6 bg-black/70 backdrop-blur-sm text-white'>
+          <div
+            className='h-16 w-16 animate-spin rounded-full border-4 border-white/30 border-t-white'
+            aria-hidden='true'
+          />
+          <p className='text-lg font-semibold'>{t('searching')}</p>
+        </div>
+      ) : null}
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className='relative flex flex-col max-w-8xl mx-auto px-0 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'
+        aria-busy={isPending}
       >
         <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
           {t('title')}
