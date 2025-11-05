@@ -4,7 +4,7 @@ import { Locale } from '@/i18n/config';
 import { getSiteUrl } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 
-const CONTACT_EMAIL = 'info@zodiacsrentacar.es';
+const CONTACT_EMAIL = 'info@zodiacsrentacar.com';
 const CONTACT_PHONE = '+34 683 192 422';
 
 const ADDRESS = {
@@ -32,8 +32,8 @@ export async function StructuredData({ locale }: StructuredDataProps) {
       description: t('siteDescription'),
       image: `${siteUrl}/header_image.webp`,
       logo: `${siteUrl}/logo_white.png`,
-      email: CONTACT_EMAIL,
-      telephone: CONTACT_PHONE,
+      email: process.env.CONTACT_EMAIL || CONTACT_EMAIL,
+      telephone: process.env.CONTACT_PHONE || CONTACT_PHONE,
       address: {
         '@type': 'PostalAddress',
         ...ADDRESS,
@@ -42,8 +42,8 @@ export async function StructuredData({ locale }: StructuredDataProps) {
         {
           '@type': 'ContactPoint',
           contactType: 'customer service',
-          telephone: CONTACT_PHONE,
-          email: CONTACT_EMAIL,
+          telephone: process.env.CONTACT_PHONE || CONTACT_PHONE,
+          email: process.env.CONTACT_EMAIL || CONTACT_EMAIL,
           availableLanguage: ['hu', 'es'],
         },
       ],

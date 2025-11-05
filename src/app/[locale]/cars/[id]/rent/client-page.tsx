@@ -123,7 +123,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       const res = await RentAction(parsed);
       if (res.success) {
         toast.success(t('toast.success'));
-        // clearStoredValues();
+        clearStoredValues();
         setTimeout(() => {
           router.push(`/${locale}`);
         }, 2000);

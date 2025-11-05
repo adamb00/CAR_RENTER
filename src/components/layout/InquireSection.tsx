@@ -1,15 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useTransition } from 'react';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { InquireAction } from '@/actions/InquireAction';
+import toast from 'react-hot-toast';
 
-type FormValues = {
+export type InquireFormValues = {
   fullName: string;
   email: string;
+  message: string;
 };
 
 type FloatingFieldProps = React.ComponentPropsWithoutRef<typeof Input> & {
@@ -62,14 +65,29 @@ FloatingField.displayName = 'FloatingField';
 
 export default function Inquire() {
   const t = useTranslations('Inquire');
+  const [isPending, startTransition] = useTransition();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
-  } = useForm<FormValues>();
+  } = useForm<InquireFormValues>();
 
-  const onSubmit = async (data: FormValues) => {
-    console.log('Form adatok:', data);
+  const onSubmit = async (data: InquireFormValues) => {
+    startTransition(async () => {
+      const res = await InquireAction(data);
+      if (res && res.success) {
+        toast.success(t('toast.success'));
+        reset({
+          fullName: '',
+          email: '',
+          message: '',
+        });
+      } else {
+        toast.error(t('toast.error'));
+      }
+    });
   };
 
   return (
@@ -117,10 +135,17 @@ export default function Inquire() {
               })}
               error={errors.email?.message}
             />
+            <FloatingField
+              label={t('fields.message.label')}
+              {...register('message', {
+                required: t('fields.message.required'),
+              })}
+              error={errors.message?.message}
+            />
 
             <button
               type='submit'
-              disabled={isSubmitting}
+              disabled={isSubmitting || isPending}
               className='w-full md:w-auto px-6 rounded-3xl bg-sky dark:bg-sky-light cursor-pointer tracking-widest text-white dark:text-sky-dark font-semibold py-3 transition hover:bg-sky-light dark:hover:bg-sky disabled:opacity-50 shadow'
             >
               {isSubmitting ? t('submit.submitting') : t('submit.idle')}

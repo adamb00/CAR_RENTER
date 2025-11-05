@@ -143,6 +143,12 @@
         "placeholder": "Correo electrónico",
         "required": "Por favor, indica tu correo",
         "invalid": "Introduce un correo válido"
+      },
+      "message": {
+        "label": "¿En qué podemos ayudarte?",
+        "placeholder": "Por favor, describe en qué podemos ayudarte",
+        "required": "Por favor, describe en qué podemos ayudarte",
+        "invalid": "Por favor, completa este campo"
       }
     },
     "submit": {
@@ -151,6 +157,10 @@
     },
     "alt": {
       "image": "Ilustración de alquiler de coches"
+    },
+    "toast": {
+      "success": "¡Gracias! Nos pondremos en contacto contigo en breve.",
+      "error": "Ups, ha ocurrido un error. Por favor, inténtalo de nuevo más tarde."
     }
   },
   "Blog": {

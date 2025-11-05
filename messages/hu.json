@@ -199,6 +199,7 @@
   },
   "Inquire": {
     "title": "Foglald le most!",
+
     "description_1": "Ne hagyd az utolsó pillanatra az autóbérlést! A Zodiacs Rent a Car csapata 24 órán belül válaszol, és segít lefoglalni azt az autót, amelyik a leginkább illik a nyaralásodhoz.",
     "description_2": "Add meg az elérhetőséged, és személyre szabott ajánlatot küldünk, részletes árakkal, biztosítási információkkal és a kért extra felszereléssel. A Zodiacs-nál minden lépést a választott nyelveden egyeztetünk, hogy magabiztosan vághass neki az utazásnak.",
     "fields": {
@@ -212,6 +213,12 @@
         "placeholder": "Email cím",
         "required": "Kérlek add meg az email címed",
         "invalid": "Érvényes email címet adj meg"
+      },
+      "message": {
+        "label": "Miben segíthetünk?",
+        "placeholder": "Kérjük írd le miben segíthetünk ",
+        "required": "Kérlek írd le miben segíthetünk",
+        "invalid": "Kérlek töltsd ki a mezőt"
       }
     },
     "submit": {
@@ -220,6 +227,10 @@
     },
     "alt": {
       "image": "Autóbérlés illusztráció"
+    },
+    "toast": {
+      "success": "Köszönjük! Hamarosan felvesszük veled a kapcsolatot.",
+      "error": "Hoppá, valami hiba történt. Kérjük próbáld meg később."
     }
   },
   "Blog": {
@@ -811,7 +822,7 @@
           },
           "phoneNumber": {
             "label": "Telefonszám",
-            "placeholder": "+36 30 123 4567"
+            "placeholder": "+36301234567"
           },
           "email": {
             "label": "Email cím",
@@ -886,7 +897,7 @@
           },
           "phoneNumber": {
             "label": "Számlázási telefonszám",
-            "placeholder": "+36 20 123 4567"
+            "placeholder": "+36201234567"
           },
           "taxId": {
             "label": "Adószám (opcionális)",

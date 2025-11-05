@@ -340,7 +340,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
     areRangesEqual,
   ]);
 
-
   const disabledDays = useMemo(() => {
     const matchers: Matcher[] = [];
     if (normalizedMinDate) matchers.push({ before: normalizedMinDate });
@@ -502,17 +501,32 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                   locale={calendarLocale}
                   formatters={calendarFormatters}
                   onSelect={(value: { from?: Date; to?: Date } | undefined) => {
-                    if (value?.from) {
-                      const nextFrom = clampDate(value.from);
-                      const nextTo = value?.to
-                        ? clampDate(value.to)
-                        : undefined;
-                      hasInternalRangeUpdateRef.current = true;
-                      setRange({
+                    if (!value?.from) return;
+
+                    const nextFrom = clampDate(value.from);
+                    const pickedTo = value.to ? clampDate(value.to) : undefined;
+
+                    hasInternalRangeUpdateRef.current = true;
+
+                    // Ha csak egy dátumra kattintottak: egykattintásos kiválasztás (azonos napi "from" és "to"),
+                    // és azonnali alkalmazás + popover zárás.
+                    if (!pickedTo) {
+                      const sameDayRange = {
                         from: nextFrom,
-                        to: nextTo && nextTo < nextFrom ? nextFrom : nextTo,
-                      });
+                        to: nextFrom,
+                      } as DateRange;
+                      setRange(sameDayRange);
+
+                      // Auto-apply (ne reseteljen záráskor) és értesítsük a külvilágot
+                      skipResetRef.current = true;
+                      setIsOpen(false);
+                      onUpdate?.({ range: sameDayRange, rangeCompare });
+                      return;
                     }
+
+                    // Két kattintásos tartomány kiválasztás: normál működés
+                    const nextTo = pickedTo < nextFrom ? nextFrom : pickedTo;
+                    setRange({ from: nextFrom, to: nextTo });
                   }}
                   selected={range}
                   numberOfMonths={isSmallScreen ? 1 : 2}

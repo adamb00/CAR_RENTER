@@ -8,8 +8,6 @@ import z from 'zod';
 export const RentAction = async (values: z.infer<RentFormValues>) => {
   const validatedFields = await RentSchema.safeParseAsync(values);
 
-  console.log('val', validatedFields);
-
   if (!validatedFields.success) {
     return { error: 'Hibás adatok. Kérjük próbáld meg újból!' };
   }
