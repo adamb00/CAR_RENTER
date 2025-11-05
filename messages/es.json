@@ -782,7 +782,7 @@
           },
           "phoneNumber": {
             "label": "Teléfono",
-            "placeholder": "+34 600 123 456"
+            "placeholder": "+34600123456"
           },
           "email": {
             "label": "Correo electrónico",
@@ -857,7 +857,7 @@
           },
           "phoneNumber": {
             "label": "Teléfono de facturación",
-            "placeholder": "+34 600 123 456"
+            "placeholder": "+34600123456"
           },
           "taxId": {
             "label": "Número fiscal (opcional)",
