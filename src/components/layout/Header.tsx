@@ -35,7 +35,7 @@ export function Header() {
         {/* Képfedő réteg a bg-image helyett → megbízhatóbb reszponzivitás */}
         <img
           src={'/header_image.webp'}
-          alt=''
+          alt='Zodiacs Rent a Car'
           className='absolute inset-0 h-full w-full object-cover'
         />
       </picture>
