@@ -5,7 +5,7 @@ import React, { useRef, useTransition } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { useForm, type Resolver } from 'react-hook-form';
+import { useForm, type Resolver, type FieldErrors } from 'react-hook-form';
 import { z } from 'zod';
 
 import { RentAction } from '@/actions/RentAction';
@@ -37,44 +37,6 @@ type RentPageClientProps = {
   id: string;
 };
 
-function getFirstErrorPath(
-  errors: Record<string, any>,
-  prefix = ''
-): string | null {
-  for (const key of Object.keys(errors)) {
-    const val = errors[key];
-    if (!val) continue;
-    const path = prefix ? `${prefix}.${key}` : key;
-
-    if (
-      val?.message ||
-      val?.type ||
-      (val?.types && Object.keys(val.types).length)
-    ) {
-      return path;
-    }
-
-    // If array of nested errors
-    if (Array.isArray(val)) {
-      for (let i = 0; i < val.length; i++) {
-        const child = val[i];
-        if (!child) continue;
-        const found = getFirstErrorPath(child, `${path}.${i}`);
-        if (found) return found;
-      }
-    } else if (typeof val === 'object') {
-      // Nested object
-      const found = getFirstErrorPath(val, path);
-      if (found) return found;
-    }
-  }
-  return null;
-}
-
-function getSectionKey(path: string): string {
-  return path.split('.')[0] || path;
-}
-
 export default function RentPageClient({ locale, id }: RentPageClientProps) {
   const t = useTranslations('RentForm');
   const tSchema = useTranslations('RentSchema');
@@ -82,6 +44,115 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
   const [isPending, startTransition] = useTransition();
 
   const formRef = useRef<HTMLFormElement | null>(null);
+
+  // Find the first field name that has a validation error (dot notation, supports arrays)
+  const firstErrorPath = (errs: unknown, path = ''): string | null => {
+    if (!errs || typeof errs !== 'object') return null;
+
+    // Skip RHF/Zod meta keys that are not actual fields
+    const SKIP_KEYS = new Set(['root', '_errors']);
+
+    // Deterministic priority for top-level groups (matches your UI order)
+    const PRIORITY = [
+      'adults',
+      'children',
+      'driver',
+      'contact',
+      'invoice',
+      'delivery',
+      'rentalPeriod',
+      'extras',
+      'tax',
+    ];
+
+    const keys = Object.keys(errs as Record<string, unknown>)
+      .filter((k) => !SKIP_KEYS.has(k) && !(k.startsWith && k.startsWith('_')))
+      .sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
+
+    for (const key of keys) {
+      const next = (errs as any)[key];
+      const nextPath = path ? `${path}.${key}` : key;
+      if (!next) continue;
+
+      // Leaf FieldError (has message/type)
+      if (typeof next === 'object' && (next?.type || next?.message)) {
+        return nextPath;
+      }
+
+      // Arrays: traverse numeric keys in order
+      if (Array.isArray(next)) {
+        for (let i = 0; i < next.length; i++) {
+          const arrPath = `${nextPath}.${i}`;
+          const nested = firstErrorPath(next[i], arrPath);
+          if (nested) return nested;
+        }
+        continue;
+      }
+
+      const nested = firstErrorPath(next, nextPath);
+      if (nested) return nested;
+    }
+
+    // If only `root` exists, return null so caller can handle section-level scrolling
+    return null;
+  };
+
+  // Scroll smoothly to the first invalid field and focus it; fallback to its section
+  const scrollToFirstError = (name: string) => {
+    const root: Document | HTMLElement = formRef.current ?? document;
+    let el = (root as HTMLElement | Document).querySelector(
+      `[name="${name}"]`
+    ) as HTMLElement | null;
+
+    if (!el) {
+      const sectionName = name.split('.')[0];
+      el = (root as HTMLElement | Document).querySelector(
+        `[data-section="${sectionName}"]`
+      ) as HTMLElement | null;
+    }
+
+    if (el) {
+      const yOffset = -100; // optional offset for sticky header
+      const rect = el.getBoundingClientRect();
+      const scrollTop = window.pageYOffset + rect.top + yOffset;
+
+      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+
+      // fallback for browsers that ignore behavior: 'smooth'
+      setTimeout(() => {
+        try {
+          (el as any).focus?.();
+        } catch {
+          /* ignore focus errors */
+        }
+      }, 400);
+    }
+  };
+
+  const onInvalid = (errors: FieldErrors<RentFormValues>) => {
+    const first = firstErrorPath(errors);
+    if (first) {
+      scrollToFirstError(first);
+    } else {
+      // No concrete field found (likely `root` error): fall back to first section with any error
+      const ORDER: (keyof RentFormValues)[] = [
+        'adults',
+        'children',
+        'driver',
+        'contact',
+        'invoice',
+        'delivery',
+        'rentalPeriod',
+        'extras',
+        'tax',
+      ];
+      const firstSection = ORDER.find((k) => (errors as any)[k]);
+      if (firstSection) {
+        scrollToFirstError(String(firstSection));
+      }
+    }
+    toast.error(t('toast.error'));
+  };
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
 
@@ -161,18 +232,18 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
   const onSubmit = (data: RentFormValues) => {
     const parsed: RentFormResolvedValues = rentSchema.parse(data);
     console.log(parsed);
-    startTransition(async () => {
-      const res = await RentAction(parsed);
-      if (res.success) {
-        toast.success(t('toast.success'));
-        clearStoredValues();
-        setTimeout(() => {
-          router.push(`/${locale}`);
-        }, 2000);
-      } else {
-        toast.error(t('toast.error'));
-      }
-    });
+    // startTransition(async () => {
+    //   const res = await RentAction(parsed);
+    //   if (res.success) {
+    //     toast.success(t('toast.success'));
+    //     clearStoredValues();
+    //     setTimeout(() => {
+    //       router.push(`/${locale}`);
+    //     }, 2000);
+    //   } else {
+    //     toast.error(t('toast.error'));
+    //   }
+    // });
   };
 
   return (
@@ -188,38 +259,10 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       ) : null}
       <form
         ref={formRef}
-        onSubmit={form.handleSubmit(onSubmit, (errors) => {
-          const firstPath = getFirstErrorPath(errors as Record<string, any>);
-          if (!firstPath) return;
-
-          try {
-            // @ts-expect-error dynamic path
-            form.setFocus(firstPath);
-          } catch {}
-
-          const root = formRef.current ?? document;
-          const nameSelector = `[name="${firstPath}"]`;
-          const idSelector = `[id="${firstPath.replaceAll('.', '_')}"]`;
-          let el =
-            (root.querySelector(nameSelector) as HTMLElement | null) ||
-            (root.querySelector(idSelector) as HTMLElement | null);
-
-          if (!el) {
-            const sectionKey = getSectionKey(firstPath);
-            el = root.querySelector(
-              `[data-section="${sectionKey}"]`
-            ) as HTMLElement | null;
-          }
-
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            if (typeof (el as any).focus === 'function') {
-              (el as any).focus({ preventScroll: true });
-            }
-          }
-        })}
+        onSubmit={form.handleSubmit(onSubmit, onInvalid)}
         className='relative flex flex-col max-w-8xl mx-auto px-0 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'
         aria-busy={isPending}
+        noValidate
       >
         <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
           {t('title')}
