@@ -231,19 +231,19 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
 
   const onSubmit = (data: RentFormValues) => {
     const parsed: RentFormResolvedValues = rentSchema.parse(data);
-    console.log(parsed);
-    // startTransition(async () => {
-    //   const res = await RentAction(parsed);
-    //   if (res.success) {
-    //     toast.success(t('toast.success'));
-    //     clearStoredValues();
-    //     setTimeout(() => {
-    //       router.push(`/${locale}`);
-    //     }, 2000);
-    //   } else {
-    //     toast.error(t('toast.error'));
-    //   }
-    // });
+
+    startTransition(async () => {
+      const res = await RentAction(parsed);
+      if (res.success) {
+        toast.success(t('toast.success'));
+        clearStoredValues();
+        setTimeout(() => {
+          router.push(`/${locale}`);
+        }, 2000);
+      } else {
+        toast.error(t('toast.error'));
+      }
+    });
   };
 
   return (
