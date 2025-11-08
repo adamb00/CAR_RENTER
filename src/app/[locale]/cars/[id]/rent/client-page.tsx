@@ -5,7 +5,12 @@ import React, { useRef, useTransition } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { useForm, type Resolver, type FieldErrors } from 'react-hook-form';
+import {
+  useForm,
+  type Resolver,
+  type FieldErrors,
+  type FieldError,
+} from 'react-hook-form';
 import { z } from 'zod';
 
 import { RentAction } from '@/actions/RentAction';
@@ -46,8 +51,17 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
   const formRef = useRef<HTMLFormElement | null>(null);
 
   // Find the first field name that has a validation error (dot notation, supports arrays)
-  const firstErrorPath = (errs: unknown, path = ''): string | null => {
-    if (!errs || typeof errs !== 'object') return null;
+  const firstErrorPath = (
+    errs: FieldErrors<RentFormValues> | undefined,
+    path = ''
+  ): string | null => {
+    if (!errs) return null;
+
+    // Narrowers
+    const isPlainObject = (v: unknown): v is Record<string, unknown> =>
+      typeof v === 'object' && v !== null && !Array.isArray(v);
+    const isFieldError = (v: unknown): v is FieldError =>
+      isPlainObject(v) && ('type' in v || 'message' in v);
 
     // Skip RHF/Zod meta keys that are not actual fields
     const SKIP_KEYS = new Set(['root', '_errors']);
@@ -70,27 +84,32 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       .sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
 
     for (const key of keys) {
-      const next = (errs as any)[key];
+      const next = (errs as Record<string, unknown>)[key];
       const nextPath = path ? `${path}.${key}` : key;
-      if (!next) continue;
+      if (next == null) continue;
 
-      // Leaf FieldError (has message/type)
-      if (typeof next === 'object' && (next?.type || next?.message)) {
+      if (isFieldError(next)) {
         return nextPath;
       }
 
-      // Arrays: traverse numeric keys in order
       if (Array.isArray(next)) {
         for (let i = 0; i < next.length; i++) {
-          const arrPath = `${nextPath}.${i}`;
-          const nested = firstErrorPath(next[i], arrPath);
+          const nested = firstErrorPath(
+            next[i] as unknown as FieldErrors<RentFormValues>,
+            `${nextPath}.${i}`
+          );
           if (nested) return nested;
         }
         continue;
       }
 
-      const nested = firstErrorPath(next, nextPath);
-      if (nested) return nested;
+      if (isPlainObject(next)) {
+        const nested = firstErrorPath(
+          next as unknown as FieldErrors<RentFormValues>,
+          nextPath
+        );
+        if (nested) return nested;
+      }
     }
 
     // If only `root` exists, return null so caller can handle section-level scrolling
@@ -121,7 +140,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       // fallback for browsers that ignore behavior: 'smooth'
       setTimeout(() => {
         try {
-          (el as any).focus?.();
+          el.focus?.();
         } catch {
           /* ignore focus errors */
         }
@@ -146,7 +165,9 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
         'extras',
         'tax',
       ];
-      const firstSection = ORDER.find((k) => (errors as any)[k]);
+      const firstSection = ORDER.find((k) =>
+        Boolean((errors as FieldErrors<RentFormValues>)[k])
+      );
       if (firstSection) {
         scrollToFirstError(String(firstSection));
       }
