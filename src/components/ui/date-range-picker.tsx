@@ -17,6 +17,7 @@ import { Button } from './button';
 import { Calendar } from './calendar';
 import { DateInput } from './date-input';
 import { Popover, PopoverContent, PopoverTrigger } from './popover';
+import { useTranslations } from 'next-intl';
 
 export interface DateRangePickerProps {
   /** Click handler for applying the updates from DateRangePicker. */
@@ -47,6 +48,12 @@ export interface DateRangePickerProps {
   applyLabel?: string;
   /** Separator string between the start and end date */
   rangeSeparator?: string;
+  /** Single-click viselkedés:
+   * - 'apply-and-close': 1 katt → (from=to), apply + bezár (alapértelmezett)
+   * - 'keep-open':      1 katt → (from=to), onUpdate hívás, de nyitva marad
+   * - 'off':            alap DayPicker (második kattintásra vár)
+   */
+  singleClickSelect?: 'apply-and-close' | 'keep-open' | 'off';
 }
 
 const formatDate = (date: Date, locale: string = 'en-us'): string => {
@@ -80,7 +87,8 @@ interface DateRange {
 export const DateRangePicker: FC<DateRangePickerProps> & {
   filePath: string;
 } = ({
-  initialDateFrom = new Date(new Date().setHours(0, 0, 0, 0)),
+  // initialDateFrom = new Date(new Date().setHours(0, 0, 0, 0)),
+  initialDateFrom,
   initialDateTo,
   initialCompareFrom,
   initialCompareTo,
@@ -94,6 +102,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
   cancelLabel = 'Cancel',
   applyLabel = 'Update',
   rangeSeparator = ' - ',
+  singleClickSelect = 'off',
 }): JSX.Element => {
   const normalizedMinDate = useMemo(() => {
     if (!minDate) return null;
@@ -175,9 +184,22 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
   const [isOpen, setIsOpen] = useState(false);
 
   const hasInternalRangeUpdateRef = useRef(false);
-  const [range, setRange] = useState<DateRange>(() => {
+  // const [range, setRange] = useState<DateRange>(() => {
+  //   const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
+  //   const fromBase = resolveDateInput(initialDateFrom, fallbackStart);
+  //   const toBase =
+  //     initialDateTo != null
+  //       ? resolveDateInput(initialDateTo, fromBase)
+  //       : new Date(fromBase);
+  //   return clampRange({ from: fromBase, to: toBase });
+  // });
+  const [range, setRange] = useState<DateRange | undefined>(() => {
+    if (initialDateFrom == null && initialDateTo == null) return undefined;
     const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
-    const fromBase = resolveDateInput(initialDateFrom, fallbackStart);
+    const fromBase = resolveDateInput(
+      initialDateFrom ?? fallbackStart,
+      fallbackStart
+    );
     const toBase =
       initialDateTo != null
         ? resolveDateInput(initialDateTo, fromBase)
@@ -202,6 +224,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
   const openedRangeRef = useRef<DateRange | undefined>(undefined);
   const openedRangeCompareRef = useRef<DateRange | undefined>(undefined);
   const skipResetRef = useRef(false);
+  const t = useTranslations('MultiSelect');
 
   const [isSmallScreen, setIsSmallScreen] = useState(
     typeof window !== 'undefined' ? window.innerWidth < 960 : false
@@ -224,13 +247,14 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
     if (openedRangeRef.current) {
       setRange(openedRangeRef.current);
     } else {
-      const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
-      const baseFrom = resolveDateInput(initialDateFrom, fallbackStart);
-      const baseTo =
-        initialDateTo != null
-          ? resolveDateInput(initialDateTo, baseFrom)
-          : new Date(baseFrom);
-      setRange(clampRange({ from: baseFrom, to: baseTo }));
+      setRange(undefined);
+      // const fallbackStart = normalizedMinDate ?? normalizeDate(new Date());
+      // const baseFrom = resolveDateInput(initialDateFrom, fallbackStart);
+      // const baseTo =
+      //   initialDateTo != null
+      //     ? resolveDateInput(initialDateTo, baseFrom)
+      //     : new Date(baseFrom);
+      // setRange(clampRange({ from: baseFrom, to: baseTo }));
     }
 
     if (showCompare) {
@@ -264,7 +288,30 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
   );
 
   useEffect(() => {
+    // setRange((prev) => {
+    //   const clamped = clampRange(prev);
+    //   if (
+    //     datesEqual(prev.from, clamped.from) &&
+    //     datesEqual(prev.to, clamped.to)
+    //   ) {
+    //     return prev;
+    //   }
+    //   return clamped;
+    // });
     setRange((prev) => {
+      if (!prev) return prev; // <<-- GUARD
+      const clamped = clampRange(prev);
+      if (
+        datesEqual(prev.from, clamped.from) &&
+        datesEqual(prev.to, clamped.to)
+      ) {
+        return prev;
+      }
+      return clamped;
+    });
+
+    setRangeCompare((prev) => {
+      if (!prev) return prev; // ez már nálad megvan, hagyd így
       const clamped = clampRange(prev);
       if (
         datesEqual(prev.from, clamped.from) &&
@@ -365,19 +412,37 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
     );
   }, [normalizedMaxDate]);
 
+  // const initialMonth = useMemo(() => {
+  //   const base = new Date(range.from);
+  //   if (!isSmallScreen) {
+  //     base.setMonth(base.getMonth() - 1);
+  //   }
+  //   if (fromMonth && base < fromMonth) {
+  //     return new Date(fromMonth);
+  //   }
+  //   if (toMonth && base > toMonth) {
+  //     return new Date(toMonth);
+  //   }
+  //   return base;
+  // }, [fromMonth, isSmallScreen, range.from, toMonth]);
+
   const initialMonth = useMemo(() => {
-    const base = new Date(range.from);
-    if (!isSmallScreen) {
-      base.setMonth(base.getMonth() - 1);
-    }
-    if (fromMonth && base < fromMonth) {
-      return new Date(fromMonth);
-    }
-    if (toMonth && base > toMonth) {
-      return new Date(toMonth);
-    }
+    const fallback = normalizedMinDate ?? normalizeDate(new Date());
+    const baseFrom = range?.from ?? fallback; // <<--
+    const base = new Date(baseFrom);
+
+    if (!isSmallScreen) base.setMonth(base.getMonth() - 1);
+    if (fromMonth && base < fromMonth) return new Date(fromMonth);
+    if (toMonth && base > toMonth) return new Date(toMonth);
     return base;
-  }, [fromMonth, isSmallScreen, range.from, toMonth]);
+  }, [
+    fromMonth,
+    isSmallScreen,
+    range?.from,
+    toMonth,
+    normalizedMinDate,
+    normalizeDate,
+  ]);
 
   const calendarFormatters = useMemo(
     () => ({
@@ -387,31 +452,59 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
     [locale]
   );
 
-  const renderRangeLabel = (value: DateRange): string => {
+  const renderRangeLabel = (value?: DateRange): string => {
+    if (!value?.from) return t('placeholder');
     const formattedFrom = formatDate(value.from, locale);
-    const formattedTo =
-      value.to != null
-        ? `${rangeSeparator}${formatDate(value.to, locale)}`
-        : '';
+    const formattedTo = value.to
+      ? `${rangeSeparator}${formatDate(value.to, locale)}`
+      : '';
     return `${formattedFrom}${formattedTo}`;
   };
+
+  // const renderRangeLabel = (value: DateRange): string => {
+  //   const formattedFrom = formatDate(value.from, locale);
+  //   const formattedTo =
+  //     value.to != null
+  //       ? `${rangeSeparator}${formatDate(value.to, locale)}`
+  //       : '';
+  //   return `${formattedFrom}${formattedTo}`;
+  // };
 
   return (
     <Popover
       modal={true}
       open={isOpen}
       onOpenChange={(open: boolean) => {
+        // if (open) {
+        //   openedRangeRef.current = {
+        //     from: new Date(range.from),
+        //     to: range.to ? new Date(range.to) : undefined,
+        //   };
+        //   openedRangeCompareRef.current = rangeCompare
+        //     ? {
+        //         from: new Date(rangeCompare.from),
+        //         to: rangeCompare.to ? new Date(rangeCompare.to) : undefined,
+        //       }
+        //     : undefined;
+        //   setIsOpen(true);
+        //   return;
+        // }
+
         if (open) {
-          openedRangeRef.current = {
-            from: new Date(range.from),
-            to: range.to ? new Date(range.to) : undefined,
-          };
+          openedRangeRef.current = range
+            ? {
+                from: new Date(range.from),
+                to: range.to ? new Date(range.to) : undefined,
+              }
+            : undefined; // <<--
+
           openedRangeCompareRef.current = rangeCompare
             ? {
                 from: new Date(rangeCompare.from),
                 to: rangeCompare.to ? new Date(rangeCompare.to) : undefined,
               }
             : undefined;
+
           setIsOpen(true);
           return;
         }
@@ -424,7 +517,10 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
         setIsOpen(false);
       }}
     >
-      <PopoverTrigger asChild>
+      <PopoverTrigger
+        asChild
+        className='w-full flex self-start justify-baseline text-grey-dark-1'
+      >
         <Button size={'lg'} variant='outline'>
           <div className='text-right'>
             <div className='py-1'>
@@ -495,6 +591,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               <div>
                 <Calendar
                   mode='range'
+                  selected={range ?? undefined}
                   disabled={disabledDays}
                   fromMonth={fromMonth}
                   toMonth={toMonth}
@@ -510,6 +607,20 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
                     // Ha csak egy dátumra kattintottak: egykattintásos kiválasztás (azonos napi "from" és "to"),
                     // és azonnali alkalmazás + popover zárás.
+                    // if (!pickedTo) {
+                    //   const sameDayRange = {
+                    //     from: nextFrom,
+                    //     to: nextFrom,
+                    //   } as DateRange;
+                    //   setRange(sameDayRange);
+
+                    //   // Auto-apply (ne reseteljen záráskor) és értesítsük a külvilágot
+                    //   skipResetRef.current = true;
+                    //   setIsOpen(false);
+                    //   onUpdate?.({ range: sameDayRange, rangeCompare });
+                    //   return;
+                    // }
+
                     if (!pickedTo) {
                       const sameDayRange = {
                         from: nextFrom,
@@ -517,10 +628,20 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                       } as DateRange;
                       setRange(sameDayRange);
 
-                      // Auto-apply (ne reseteljen záráskor) és értesítsük a külvilágot
-                      skipResetRef.current = true;
-                      setIsOpen(false);
+                      if (singleClickSelect === 'off') {
+                        // Alap viselkedés: várunk a második kattintásra
+                        return;
+                      }
+
+                      // Azonnal szólunk kifelé, hogy from/to beállt ugyanarra a napra
                       onUpdate?.({ range: sameDayRange, rangeCompare });
+
+                      if (singleClickSelect === 'apply-and-close') {
+                        // Auto-apply és Popover bezárás
+                        skipResetRef.current = true;
+                        setIsOpen(false);
+                      }
+                      // 'keep-open' esetén nyitva hagyjuk a Popovert
                       return;
                     }
 
@@ -528,7 +649,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                     const nextTo = pickedTo < nextFrom ? nextFrom : pickedTo;
                     setRange({ from: nextFrom, to: nextTo });
                   }}
-                  selected={range}
+                  // selected={range}
                   numberOfMonths={isSmallScreen ? 1 : 2}
                   defaultMonth={initialMonth}
                 />
@@ -548,16 +669,29 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
             {cancelLabel}
           </Button>
           <Button
+            // onClick={() => {
+            //   skipResetRef.current = true;
+            //   setIsOpen(false);
+            //   if (
+            //     !areRangesEqual(range, openedRangeRef.current) ||
+            //     !areRangesEqual(rangeCompare, openedRangeCompareRef.current)
+            //   ) {
+            //     onUpdate?.({ range, rangeCompare });
+            //   }
+            // }}
             onClick={() => {
               skipResetRef.current = true;
               setIsOpen(false);
+              if (!range) return; // <<-- GUARD
+
               if (
                 !areRangesEqual(range, openedRangeRef.current) ||
                 !areRangesEqual(rangeCompare, openedRangeCompareRef.current)
               ) {
-                onUpdate?.({ range, rangeCompare });
+                onUpdate?.({ range, rangeCompare }); // range biztosan DateRange
               }
             }}
+            disabled={!range?.from || !range?.to} // <<-- Disable, ha hiányos
           >
             {applyLabel}
           </Button>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useTransition } from 'react';
+import React, { useRef, useTransition } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
@@ -37,11 +37,51 @@ type RentPageClientProps = {
   id: string;
 };
 
+function getFirstErrorPath(
+  errors: Record<string, any>,
+  prefix = ''
+): string | null {
+  for (const key of Object.keys(errors)) {
+    const val = errors[key];
+    if (!val) continue;
+    const path = prefix ? `${prefix}.${key}` : key;
+
+    if (
+      val?.message ||
+      val?.type ||
+      (val?.types && Object.keys(val.types).length)
+    ) {
+      return path;
+    }
+
+    // If array of nested errors
+    if (Array.isArray(val)) {
+      for (let i = 0; i < val.length; i++) {
+        const child = val[i];
+        if (!child) continue;
+        const found = getFirstErrorPath(child, `${path}.${i}`);
+        if (found) return found;
+      }
+    } else if (typeof val === 'object') {
+      // Nested object
+      const found = getFirstErrorPath(val, path);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+function getSectionKey(path: string): string {
+  return path.split('.')[0] || path;
+}
+
 export default function RentPageClient({ locale, id }: RentPageClientProps) {
   const t = useTranslations('RentForm');
   const tSchema = useTranslations('RentSchema');
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
 
@@ -91,6 +131,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       },
       tax: {
         id: '',
+        companyName: '',
       },
     },
   });
@@ -119,18 +160,19 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
 
   const onSubmit = (data: RentFormValues) => {
     const parsed: RentFormResolvedValues = rentSchema.parse(data);
-    startTransition(async () => {
-      const res = await RentAction(parsed);
-      if (res.success) {
-        toast.success(t('toast.success'));
-        clearStoredValues();
-        setTimeout(() => {
-          router.push(`/${locale}`);
-        }, 2000);
-      } else {
-        toast.error(t('toast.error'));
-      }
-    });
+    console.log(parsed);
+    // startTransition(async () => {
+    //   const res = await RentAction(parsed);
+    //   if (res.success) {
+    //     toast.success(t('toast.success'));
+    //     clearStoredValues();
+    //     setTimeout(() => {
+    //       router.push(`/${locale}`);
+    //     }, 2000);
+    //   } else {
+    //     toast.error(t('toast.error'));
+    //   }
+    // });
   };
 
   return (
@@ -145,7 +187,37 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
         </div>
       ) : null}
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        ref={formRef}
+        onSubmit={form.handleSubmit(onSubmit, (errors) => {
+          const firstPath = getFirstErrorPath(errors as Record<string, any>);
+          if (!firstPath) return;
+
+          try {
+            // @ts-expect-error dynamic path
+            form.setFocus(firstPath);
+          } catch {}
+
+          const root = formRef.current ?? document;
+          const nameSelector = `[name="${firstPath}"]`;
+          const idSelector = `[id="${firstPath.replaceAll('.', '_')}"]`;
+          let el =
+            (root.querySelector(nameSelector) as HTMLElement | null) ||
+            (root.querySelector(idSelector) as HTMLElement | null);
+
+          if (!el) {
+            const sectionKey = getSectionKey(firstPath);
+            el = root.querySelector(
+              `[data-section="${sectionKey}"]`
+            ) as HTMLElement | null;
+          }
+
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (typeof (el as any).focus === 'function') {
+              (el as any).focus({ preventScroll: true });
+            }
+          }
+        })}
         className='relative flex flex-col max-w-8xl mx-auto px-0 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'
         aria-busy={isPending}
       >
@@ -153,14 +225,30 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
           {t('title')}
         </h2>
         <section className='mt-10 space-y-8'>
-          <BaseDetails locale={locale} form={form} id={id} />
-          <Children form={form} />
-          <Drivers form={form} locale={locale} placesReady={placesReady} />
-          <Contact form={form} />
-          <Invoice form={form} placesReady={placesReady} />
+          <div data-section='adults' tabIndex={-1} className='scroll-mt-28'>
+            <BaseDetails locale={locale} form={form} id={id} />
+          </div>
+
+          <div data-section='children' tabIndex={-1} className='scroll-mt-28'>
+            <Children form={form} />
+          </div>
+
+          <div data-section='driver' tabIndex={-1} className='scroll-mt-28'>
+            <Drivers form={form} locale={locale} placesReady={placesReady} />
+          </div>
+
+          <div data-section='contact' tabIndex={-1} className='scroll-mt-28'>
+            <Contact form={form} />
+          </div>
+
+          <div data-section='invoice' tabIndex={-1} className='scroll-mt-28'>
+            <Invoice form={form} placesReady={placesReady} />
+          </div>
 
           {isDeliveryRequired && (
-            <Delivery form={form} placesReady={placesReady} />
+            <div data-section='delivery' tabIndex={-1} className='scroll-mt-28'>
+              <Delivery form={form} placesReady={placesReady} />
+            </div>
           )}
         </section>
 

@@ -918,11 +918,11 @@
             "placeholder": "Ciudad"
           },
           "street": {
-            "label": "Calle",
+            "label": "Calle (opcional)",
             "placeholder": "Calle"
           },
           "doorNumber": {
-            "label": "Número",
+            "label": "Número (opcional)",
             "placeholder": "Número"
           }
         }

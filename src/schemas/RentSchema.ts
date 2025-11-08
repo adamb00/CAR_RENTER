@@ -276,9 +276,17 @@ export function createRentSchema(
         .array(
           z.object({
             age: z
-              .number()
-              .min(0, message('fields.children.age.min'))
-              .max(17, message('fields.children.age.max')),
+              .union([
+                z
+                  .number()
+                  .min(0, message('fields.children.age.min'))
+                  .max(17, message('fields.children.age.max')),
+                z.literal(''), // üres input engedélyezve
+              ])
+              .optional()
+              .transform((val) =>
+                val === '' || val === undefined ? undefined : Number(val)
+              ),
             height: z
               .number()
               .min(0, message('fields.children.height.min'))
@@ -322,8 +330,11 @@ export function createRentSchema(
           nameOfMother: z.string().optional(),
           phoneNumber: z
             .string()
+            .trim()
             .min(1, message('fields.driver.phoneNumber.required'))
-            .refine((value) => validator.isMobilePhone(value), {
+            // minden whitespace, kötőjel, zárójel eltávolítása
+            .transform((value) => value.replace(/[\s\-().]/g, ''))
+            .refine((value) => validator.isMobilePhone(value, 'any'), {
               message: message('fields.driver.phoneNumber.invalid'),
             }),
           email: z
@@ -417,8 +428,10 @@ export function createRentSchema(
         name: z.string().min(1, message('fields.invoice.name.required')),
         phoneNumber: z
           .string()
+          .trim()
           .min(1, message('fields.invoice.phoneNumber.required'))
-          .refine((value) => validator.isMobilePhone(value), {
+          .transform((value) => value.replace(/[\s\-().]/g, ''))
+          .refine((value) => validator.isMobilePhone(value, 'any'), {
             message: message('fields.invoice.phoneNumber.invalid'),
           }),
         email: z
@@ -466,7 +479,7 @@ export function createRentSchema(
         companyName: z.string().optional(),
       }),
     })
-    .superRefine(({ rentalPeriod, extras, delivery }, ctx) => {
+    .superRefine(({ rentalPeriod, extras, delivery, children }, ctx) => {
       const start = new Date(rentalPeriod.startDate);
       const end = new Date(rentalPeriod.endDate);
 
@@ -527,18 +540,42 @@ export function createRentSchema(
         });
       }
 
-      (Object.keys(deliveryAddressMessages) as DeliveryAddressKey[]).forEach(
-        (key) => {
-          const value = address[key];
-          if (typeof value !== 'string' || value.trim().length === 0) {
+      // Csak a kötelező címmezők (street és doorNumber opcionális marad)
+      const requiredAddressKeys: DeliveryAddressKey[] = [
+        'country',
+        'postalCode',
+        'city',
+      ];
+      requiredAddressKeys.forEach((key) => {
+        const value = address[key];
+        if (typeof value !== 'string' || value.trim().length === 0) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message(deliveryAddressMessages[key]),
+            path: ['delivery', 'address', key],
+          });
+        }
+      });
+
+      const childList = Array.isArray(children) ? children : [];
+      if (childList.length > 0) {
+        childList.forEach((child, idx) => {
+          if (child?.age === undefined) {
             ctx.addIssue({
               code: z.ZodIssueCode.custom,
-              message: message(deliveryAddressMessages[key]),
-              path: ['delivery', 'address', key],
+              message: message('errors.deliveryFieldRequired'),
+              path: ['children', idx, 'age'],
             });
           }
-        }
-      );
+          if (child?.height === undefined) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: message('errors.deliveryFieldRequired'),
+              path: ['children', idx, 'height'],
+            });
+          }
+        });
+      }
     });
 }
 

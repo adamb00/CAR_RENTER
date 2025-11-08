@@ -30,7 +30,7 @@ export default function Children({
   });
 
   const handleAddChild = () => {
-    appendChild({ age: 0, height: undefined });
+    appendChild({ age: '', height: undefined });
   };
 
   return (
@@ -72,11 +72,13 @@ export default function Children({
                     <FormControl>
                       <Input
                         type='number'
+                        inputMode='numeric'
                         min={0}
                         max={17}
-                        value={field.value ?? 0}
-                        onChange={(event) =>
-                          field.onChange(Number(event.target.value))
+                        value={field.value || ''}
+                        onChange={(event) => field.onChange(event.target.value)}
+                        onWheel={(e) =>
+                          (e.currentTarget as HTMLInputElement).blur()
                         }
                       />
                     </FormControl>

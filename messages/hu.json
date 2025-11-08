@@ -58,96 +58,96 @@
     "cta": "Kérj személyre szabott ajánlatot"
   },
   "SEO": {
-    "brand": "Zodiac Rent a Car",
+    "brand": "Zodiacs Rent a Car",
     "defaultTitle": "Autóbérlés Fuerteventurán és Lanzarotén",
-    "titleTemplate": "%s | Zodiac Rent a Car",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
     "siteDescription": "Bérelj autót Fuerteventurán és Lanzarotén helyi magyar csapattal, rugalmas átvétellel és teljes körű biztosítással.",
-    "ogTitle": "Zodiac Rent a Car – Autóbérlés Fuerteventurán és Lanzarotén",
-    "ogDescription": "Helyi magyar csapat, ingyenes második sofőr, korlátlan kilométer. Foglalj online a Zodiac Rent a Carnál.",
-    "ogImageAlt": "Autók a Zodiac Rent a Car flottájából Fuerteventurán",
-    "twitterTitle": "Zodiac Rent a Car – Autóbérlés a Kanári-szigeteken",
+    "ogTitle": "Zodiacs Rent a Car – Autóbérlés Fuerteventurán és Lanzarotén",
+    "ogDescription": "Helyi magyar csapat, ingyenes második sofőr, korlátlan kilométer. Foglalj online a Zodiacs Rent a Carnál.",
+    "ogImageAlt": "Autók a Zodiacs Rent a Car flottájából Fuerteventurán",
+    "twitterTitle": "Zodiacs Rent a Car – Autóbérlés a Kanári-szigeteken",
     "twitterDescription": "Gyors, kényelmes autóbérlés Fuerteventurán és Lanzarotén, extra díjak nélkül."
   },
   "CarRent": {
     "meta": {
-      "title": "{carName} bérlés Fuerteventurán | Zodiac Rent a Car",
+      "title": "{carName} bérlés Fuerteventurán | Zodiacs Rent a Car",
       "description": "Bérelj {carName} modellt Fuerteventurán vagy Lanzarotén, rugalmas átvétellel, korlátlan kilométerrel és teljes biztosítással.",
-      "imageAlt": "{carName} a Zodiac Rent a Car flottájában"
+      "imageAlt": "{carName} a Zodiacs Rent a Car flottájában"
     }
   },
   "CarDetail": {
     "meta": {
-      "title": "{carName} részletei és bérlése | Zodiac Rent a Car",
+      "title": "{carName} részletei és bérlése | Zodiacs Rent a Car",
       "description": "Fedezd fel a {carName} felszereltségét, csomagtér-kapacitását és bérleti díját Fuerteventurán és Lanzarotén.",
-      "imageAlt": "{carName} modell a Zodiac Rent a Car kínálatában"
+      "imageAlt": "{carName} modell a Zodiacs Rent a Car kínálatában"
     }
   },
   "Pages": {
     "home": {
       "title": "Autóbérlés Fuerteventurán és Lanzarotén",
       "description": "Fedezd fel a Kanári-szigeteket magyar csapatunkkal: prémium bérautók, rugalmas átvétel, korlátlan kilométer és teljes körű biztosítás.",
-      "ogImageAlt": "Bérautó Fuerteventurán a Zodiac Rent a Carnál"
+      "ogImageAlt": "Bérautó Fuerteventurán a Zodiacs Rent a Carnál"
     },
     "cars": {
       "title": "Autóink – bérautó kínálat Fuerteventurán és Lanzarotén",
       "description": "Kompakt, családi és automata bérautók rugalmas átvétellel, ingyenes második sofőrrel és korlátlan kilométerrel.",
-      "ogImageAlt": "Zodiac Rent a Car bérautóflotta"
+      "ogImageAlt": "Zodiacs Rent a Car bérautóflotta"
     },
     "about": {
-      "title": "Rólunk – Zodiac Rent a Car",
-      "description": "Ismerd meg a Zodiac Rent a Car magyar csapatát, és tudj meg többet küldetésünkről Fuerteventurán és Lanzarotén.",
-      "ogImageAlt": "Zodiac Rent a Car csapatképe"
+      "title": "Rólunk – Zodiacs Rent a Car",
+      "description": "Ismerd meg a Zodiacs Rent a Car magyar csapatát, és tudj meg többet küldetésünkről Fuerteventurán és Lanzarotén.",
+      "ogImageAlt": "Zodiacs Rent a Car csapatképe"
     },
     "contact": {
-      "title": "Kapcsolat – Zodiac Rent a Car Fuerteventura",
+      "title": "Kapcsolat – Zodiacs Rent a Car Fuerteventura",
       "description": "Lépj kapcsolatba velünk autóbérlés, kiszállítás vagy ajánlatkérés kapcsán. Gyorsan és magyarul válaszolunk.",
-      "ogImageAlt": "Zodiac Rent a Car ügyfélszolgálat"
+      "ogImageAlt": "Zodiacs Rent a Car ügyfélszolgálat"
     },
     "insurance": {
       "title": "Biztosítás és fedezet – SSCP csomag",
       "description": "Ismerd meg a Super Comfort Plus biztosítást: teljes védelem, nulla önrész, gyakori kivételek lefedve.",
-      "ogImageAlt": "Zodiac Rent a Car biztosítási tájékoztató"
+      "ogImageAlt": "Zodiacs Rent a Car biztosítási tájékoztató"
     },
     "generalRental": {
-      "title": "Általános bérleti feltételek – Zodiac Rent a Car",
+      "title": "Általános bérleti feltételek – Zodiacs Rent a Car",
       "description": "Bérleti feltételek, szerződéses szabályok és ügyfélkötelezettségek Fuerteventurán és Lanzarotén.",
       "ogImageAlt": "Autóbérlési feltételek dokumentuma"
     },
     "gtc": {
-      "title": "Bérleti szerződés – Zodiac Rent a Car",
-      "description": "Részletes bérleti szerződés és jogi feltételek a Zodiac Rent a Car ügyfelei számára.",
+      "title": "Bérleti szerződés – Zodiacs Rent a Car",
+      "description": "Részletes bérleti szerződés és jogi feltételek a Zodiacs Rent a Car ügyfelei számára.",
       "ogImageAlt": "Bérleti szerződés dokumentum"
     },
     "rentalRequirements": {
       "title": "Autóbérlés feltételei a Kanári-szigeteken",
-      "description": "Életkor, jogosítvány, kaució – minden tudnivaló a Zodiac Rent a Car bérlési feltételeiről.",
+      "description": "Életkor, jogosítvány, kaució – minden tudnivaló a Zodiacs Rent a Car bérlési feltételeiről.",
       "ogImageAlt": "Autóbérlés feltételeinek listája"
     },
     "offices": {
-      "title": "Átadási helyszínek és irodák – Zodiac Rent a Car",
+      "title": "Átadási helyszínek és irodák – Zodiacs Rent a Car",
       "description": "Autóátvételi pontok Fuerteventurán és Lanzarotén, elérhetőségek és nyitvatartás.",
-      "ogImageAlt": "Zodiac Rent a Car iroda külső nézet"
+      "ogImageAlt": "Zodiacs Rent a Car iroda külső nézet"
     },
     "faq": {
-      "title": "GYIK – Gyakori kérdések a Zodiac Rent a Carnál",
+      "title": "GYIK – Gyakori kérdések a Zodiacs Rent a Carnál",
       "description": "Találd meg a leggyakoribb kérdésekre adott válaszainkat a foglalástól a biztosításig.",
-      "ogImageAlt": "Zodiac Rent a Car ügyfélszolgálat segítséget nyújt",
+      "ogImageAlt": "Zodiacs Rent a Car ügyfélszolgálat segítséget nyújt",
       "keywords": [
         "autóbérlés GYIK",
-        "Zodiac Rent a Car gyakori kérdések",
+        "Zodiacs Rent a Car gyakori kérdések",
         "autóbérlés Fuerteventura GYIK",
         "autóbérlés Lanzarote információk"
       ]
     },
     "blog": {
       "title": "Blog – Autóbérlés és utazási tippek Fuerteventurán",
-      "description": "Friss autóbérlési tanácsok, útvonal javaslatok és helyi élmények a Zodiac Rent a Car csapatától.",
-      "ogImageAlt": "Zodiac Rent a Car blog illusztráció",
+      "description": "Friss autóbérlési tanácsok, útvonal javaslatok és helyi élmények a Zodiacs Rent a Car csapatától.",
+      "ogImageAlt": "Zodiacs Rent a Car blog illusztráció",
       "keywords": [
         "autóbérlés blog",
         "Fuerteventura utazási tippek",
         "Lanzarote road trip",
-        "Zodiac Rent a Car tanácsok"
+        "Zodiacs Rent a Car tanácsok"
       ]
     }
   },
@@ -184,7 +184,7 @@
     "gtc": "Általános szerződési feltételek",
     "insurance": "Biztosítás",
     "rental_requirements": "Bérleti követelmények",
-    "zodiac_car_rental": "Zodiac Autókölcsönző",
+    "zodiac_car_rental": "Zodiacs Autókölcsönző",
     "logo_placeholder": "Ide kerül a logó",
     "faq": "GYIK"
   },
@@ -739,7 +739,7 @@
       "packages": {
         "base": "* Alapcsomag: fejenként 0,5 l víz és 0,33 l Fuze Tea",
         "energy": "** Energia csomag: az alapcsomagon felül 2-3 féle csoki vagy rágcsa igény szerint",
-        "lateArrival": "*** Esti érkezés csomag: az alapcsomagon felül 1,5 l víz és fejenként 2 kroaszon, késői érkezéshez"
+        "lateArrival": "*** Esti érkezés csomag: az alapcsomagon felül 1,5 l víz és fejenként 2 croissant, késői érkezéshez"
       }
     },
     "rentalPeriod": {
@@ -958,11 +958,11 @@
             "placeholder": "Település"
           },
           "street": {
-            "label": "Utca",
+            "label": "Utca (Opcionális)",
             "placeholder": "Utca"
           },
           "doorNumber": {
-            "label": "Házszám",
+            "label": "Házszám (Opcionális)",
             "placeholder": "Házszám"
           }
         }
