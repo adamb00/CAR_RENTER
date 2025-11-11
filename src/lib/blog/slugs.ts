@@ -16,6 +16,14 @@ export const BLOG_SLUGS: BlogSlugDefinition[] = [
       es: 'que-ver-en-fuerteventura-en-coche',
     },
   },
+  {
+    id: 'fuerteventura-visszatero-aramlat-biztonsagos-furdozes',
+    fallbackSlug: 'fuerteventura-visszatero-aramlat-biztonsagos-furdozes',
+    slugs: {
+      hu: 'fuerteventura-visszatero-aramlat-biztonsagos-furdozes',
+      es: 'corrientes-peligrosas-fuerteventura',
+    },
+  },
 ];
 
 const SLUG_TO_DEFINITION = BLOG_SLUGS.reduce<

@@ -191,6 +191,16 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
         },
       },
     },
+    consents: {
+      privacy: {
+        required:
+          'A foglalás véglegesítéséhez el kell fogadnod az adatkezelési tájékoztatót',
+      },
+      terms: {
+        required:
+          'A foglalás véglegesítéséhez el kell fogadnod az Általános Szerződési Feltételeket',
+      },
+    },
   },
 } as const;
 
@@ -477,6 +487,18 @@ export function createRentSchema(
       tax: z.object({
         id: z.string().optional(),
         companyName: z.string().optional(),
+      }),
+      consents: z.object({
+        privacy: z
+          .boolean()
+          .refine((value) => value === true, {
+            message: message('fields.consents.privacy.required'),
+          }),
+        terms: z
+          .boolean()
+          .refine((value) => value === true, {
+            message: message('fields.consents.terms.required'),
+          }),
       }),
     })
     .superRefine(({ rentalPeriod, extras, delivery, children }, ctx) => {

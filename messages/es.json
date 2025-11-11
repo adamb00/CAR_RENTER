@@ -3,6 +3,439 @@
     "header": "Alquiler de coches en Fuerteventura y Lanzarote, fácil y rápido",
     "book_now": "Reserva tu coche ahora"
   },
+  "CookieConsent": {
+    "title": "Usamos cookies",
+    "noticeTitle": "Aviso de cookies",
+    "body": "Utilizamos cookies para garantizar que obtengas la mejor experiencia en nuestro sitio web. Para más información sobre cómo usamos las cookies, consulta nuestra política de cookies.",
+    "minimalBody": "Usamos cookies para mejorar tu experiencia de navegación.",
+    "notice": "Al hacer clic en <highlight>{actionLabel}</highlight>, aceptas el uso de cookies.",
+    "learnMore": "Más información:",
+    "cookiePolicyLink": "Política de cookies",
+    "gdprLink": "Política de privacidad",
+    "accept": "Aceptar",
+    "decline": "Rechazar"
+  },
+  "GDPR": {
+    "title": "Política de privacidad (GDPR)",
+    "updated": "Última actualización: 8 de noviembre de 2025.",
+    "intro": [
+      "Esta política describe cómo Zodiacs Rent a Car (ZODIACSRENTACAR) trata los datos personales vinculados a sus servicios de alquiler.",
+      "Procesamos la información conforme al GDPR y a la normativa española, limitando la recogida al mínimo necesario y ofreciendo siempre transparencia a las personas interesadas."
+    ],
+    "sections": [
+      {
+        "heading": "1. Datos del responsable",
+        "lists": [
+          {
+            "items": [
+              "Nombre: ZODIACSRENTACAR",
+              "Domicilio: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, España",
+              "Correo electrónico: info@zodiacsrentacar.com",
+              "Teléfono: +34 683 192 422",
+              "Sitio web: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Finalidades del tratamiento",
+        "paragraphs": [
+          "Utilizamos los datos personales exclusivamente para los siguientes fines:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "preparar ofertas y contratos de alquiler",
+              "gestionar y confirmar reservas online",
+              "organizar la entrega, recogida y atención al cliente",
+              "realizar facturación y administración financiera",
+              "comunicarnos con los clientes por teléfono, correo electrónico o WhatsApp",
+              "enviar comunicaciones comerciales con el consentimiento del interesado",
+              "analizar de forma anonimizada el uso del servicio para mejorarlo"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Bases jurídicas",
+        "paragraphs": [
+          "Dependiendo del proceso aplicamos una o varias de las siguientes bases:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "ejecución o preparación de un contrato – GDPR art. 6.1.b",
+              "cumplimiento de obligaciones legales (contabilidad, fiscalidad) – GDPR art. 6.1.c",
+              "interés legítimo del responsable (prevención de fraude, seguridad del servicio) – GDPR art. 6.1.f",
+              "consentimiento explícito del interesado (formularios, marketing) – GDPR art. 6.1.a"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Categorías de datos tratados",
+        "paragraphs": [
+          "Recogemos solo los datos imprescindibles para prestar el servicio de alquiler. Las principales categorías son:"
+        ],
+        "lists": [
+          {
+            "title": "Datos de la reserva",
+            "items": [
+              "fechas de inicio y fin del alquiler",
+              "número de pasajeros y datos relevantes de los menores",
+              "categoría del vehículo y servicios adicionales solicitados"
+            ]
+          },
+          {
+            "title": "Datos personales del arrendatario y conductores",
+            "items": [
+              "nombre completo (dos apellidos y dos nombres)",
+              "lugar y fecha de nacimiento, nombre de la madre",
+              "nacionalidad y domicilio"
+            ]
+          },
+          {
+            "title": "Datos de contacto",
+            "items": [
+              "número de teléfono y canal preferido (WhatsApp, Messenger, etc.)",
+              "correo electrónico"
+            ]
+          },
+          {
+            "title": "Documentación identificativa",
+            "items": [
+              "tipo y número del documento de identidad, fechas de emisión y validez",
+              "número, categoría y validez del permiso de conducir",
+              "declaración de que el permiso cuenta con más de 3 años de vigencia"
+            ]
+          },
+          {
+            "title": "Conductores adicionales o contactos",
+            "items": [
+              "datos equivalentes a los del conductor principal para cada conductor adicional",
+              "nombre y teléfono de la persona de contacto si es distinta"
+            ]
+          },
+          {
+            "title": "Datos de facturación y entrega",
+            "items": [
+              "nombre o razón social, dirección fiscal y número de identificación (si aplica)",
+              "correo para el envío de la factura electrónica",
+              "nombre y dirección del hotel o alojamiento en caso de entrega"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Plazos de conservación",
+        "paragraphs": [
+          "Conservamos los datos necesarios para la prestación del servicio durante 5 años tras la finalización del alquiler.",
+          "Los justificantes contables y fiscales se almacenan 8 años conforme a la normativa española.",
+          "Los datos tratados con base en el consentimiento se eliminan cuando se retira dicho consentimiento o deja de existir la finalidad."
+        ]
+      },
+      {
+        "heading": "6. Destinatarios y encargados",
+        "paragraphs": [
+          "Compartimos datos únicamente con proveedores que son imprescindibles para ejecutar el servicio y que actúan como encargados del tratamiento:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "asesorías contables y financieras",
+              "proveedores de alojamiento web e infraestructura IT",
+              "plataformas de facturación y pasarelas de pago",
+              "empresas de mensajería o socios de entrega"
+            ]
+          }
+        ],
+        "notes": [
+          "No transferimos datos fuera de la Unión Europea y aplicamos medidas de cifrado y control de accesos."
+        ]
+      },
+      {
+        "heading": "7. Derechos de las personas interesadas",
+        "paragraphs": [
+          "Los interesados pueden ejercer en cualquier momento los derechos reconocidos por el GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "acceso y obtención de información",
+              "rectificación o supresión",
+              "limitación del tratamiento",
+              "oposición al tratamiento basado en interés legítimo",
+              "portabilidad de los datos",
+              "retirada del consentimiento"
+            ]
+          }
+        ],
+        "notes": [
+          "También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (C/ Jorge Juan 6, 28001 Madrid, www.aepd.es)."
+        ]
+      },
+      {
+        "heading": "8. Seguridad y uso de cookies",
+        "paragraphs": [
+          "Aplicamos medidas técnicas y organizativas para proteger los datos frente a accesos no autorizados, alteraciones o pérdidas.",
+          "Nuestro sitio web utiliza cookies con fines funcionales, estadísticos y de personalización. Los detalles se describen en la Política de cookies, donde puedes modificar tus preferencias en cualquier momento."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contacto y ejercicio de derechos",
+      "paragraphs": [
+        "Si necesitas información adicional o deseas ejercer tus derechos, ponte en contacto con nosotros por los siguientes canales.",
+        "Responderemos a las solicitudes en un máximo de 30 días, ampliable según permite el GDPR en casos complejos."
+      ],
+      "channels": [
+        "Correo: info@zodiacsrentacar.com",
+        "Teléfono: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "¡Atención! Corrientes de retorno peligrosas en Fuerteventura – Cómo bañarte con seguridad en el océano",
+        "description": "En las playas de Fuerteventura las corrientes de retorno (rip current) pueden arrastrar a los bañistas sin previo aviso. Aprende a identificarlas y a salir de ellas con seguridad.",
+        "keywords": [
+          "playa Fuerteventura",
+          "Cofete Beach",
+          "corriente de retorno",
+          "rip current",
+          "seguridad en la playa",
+          "peligros en Fuerteventura",
+          "viaje Islas Canarias",
+          "bañarse en el Atlántico",
+          "consejos Fuerteventura",
+          "seguridad en el mar",
+          "alquiler de coches Fuerteventura",
+          "Zodiacs Rent a Car",
+          "corriente marina",
+          "cómo detectar una rip current"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/4, Cofete vízjeles.jpg",
+          "alt": "Cartel de advertencia en Cofete, Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "¡Atención! Corrientes de retorno peligrosas en Fuerteventura – así te bañas con seguridad en el Atlántico",
+        "category": "Seguridad",
+        "subtitle": "Si vas a disfrutar de las playas salvajes de Fuerteventura, necesitas algo más que ganas de aventura: debes saber cómo actúan las rip currents.",
+        "description": "Te explicamos cómo detectar una corriente de retorno en Cofete o El Cotillo y qué hacer si la corriente te arrastra.",
+        "publishDate": "15 de noviembre de 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "Lectura de 7 minutos",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Qué es una corriente de retorno y por qué es tan peligrosa",
+          "paragraphs": [
+            "En el Atlántico la corriente de retorno es el peligro oculto más habitual: el agua que llega a la orilla vuelve al mar por un canal estrecho y muy potente.",
+            "Es un fenómeno engañoso, porque suele aparecer en las franjas donde el mar parece más calmado; justo ahí entran muchos bañistas confiados."
+          ],
+          "bullets": [
+            "La franja aparentemente tranquila puede ser el punto exacto donde nace la corriente.",
+            "La fuerza del agua no te hunde, pero te arrastra hacia afuera hasta agotarte."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Cómo identificar la zona peligrosa",
+          "paragraphs": [
+            "Cuando llegues a la playa observa el agua durante un minuto. Las corrientes de retorno dejan señales visibles si sabes qué buscar.",
+            "En Cofete existe cartelería, pero el viento a veces la gira hacia el interior; por eso conviene informarse antes de entrar al agua."
+          ],
+          "bullets": [
+            "Agua más oscura o turbia porque el fondo es más profundo.",
+            "Una franja de mar aparentemente calmada entre las olas que apunta hacia fuera.",
+            "Espuma, algas o restos que se desplazan hacia el océano en lugar de volver a la orilla.",
+            "Banderas y avisos de socorristas: tómalos siempre en serio."
+          ],
+          "tip": {
+            "title": "Consejo",
+            "description": "Haz una foto a los carteles de señalización al llegar; así recordarás qué significa cada bandera en esa playa."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Qué hacer si te atrapa la corriente",
+          "paragraphs": [
+            "Lo más importante es controlar el pánico. La rip current avanza más deprisa de lo que nadan la mayoría de personas.",
+            "Si gastas toda tu energía luchando contra ella de frente, te agotarás antes de salir del canal."
+          ],
+          "bullets": [
+            "Respira profundo y mantén la cabeza fuera del agua.",
+            "No nades directo a la orilla: la corriente es más rápida.",
+            "Nada paralelo a la costa hasta salir de la franja estrecha.",
+            "Si te cansas, flota boca arriba, pide ayuda levantando el brazo y deja que las olas te acerquen."
+          ],
+          "closing": "Cuanta más calma conserves, más probabilidades tendrás de salir por tu cuenta."
+        },
+        {
+          "id": "personal-story",
+          "title": "Historia real: rescaté a tres niños en Cofete",
+          "paragraphs": [
+            "\"En la playa de Cofete una corriente de retorno se llevó a mi hija y a dos primos en segundos. No grité ni hice gestos: necesitaba cada brazada para alcanzarlos.\"",
+            "\"Conseguí sacarlos del agua, pero desde entonces tengo claro que al océano se le respeta; no se le reta.\""
+          ],
+          "tip": {
+            "title": "Aprendizaje",
+            "description": "Habla con tu familia antes de entrar al agua: saber qué hacer reduce el pánico y salva vidas."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "¿Sabías que la corriente es más rápida que un olímpico?",
+          "paragraphs": [
+            "Los datos ayudan a entender por qué no tiene sentido luchar contra ella."
+          ],
+          "bullets": [
+            "Un nadador olímpico recorre unos 2,3 metros por segundo.",
+            "Una rip current puede avanzar a 2,4 metros por segundo: siempre irá un paso por delante."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Respeta la naturaleza y cuida la isla",
+          "paragraphs": [
+            "La conciencia no termina en el agua: mantener limpia la playa y seguir las normas locales también salva Fuerteventura."
+          ],
+          "bullets": [
+            "No dejes basura; llévala hasta el contenedor más cercano.",
+            "No tires colillas en la arena ni entre las rocas.",
+            "Camina por los senderos señalizados, sobre todo en dunas y zonas protegidas."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Viaja con cabeza en tu coche de alquiler",
+          "paragraphs": [
+            "Si recorres Fuerteventura en coche, lleva siempre agua, protector solar y consulta el parte de viento y corrientes antes de cada baño.",
+            "Así disfrutarás de la libertad de la carretera sin renunciar a la seguridad en el agua."
+          ],
+          "closing": "Comparte este artículo para que más viajeros sepan cómo reaccionar ante una corriente de retorno."
+        }
+      ],
+      "cta": {
+        "title": "Explora con Zodiacs y mantente seguro",
+        "paragraphs": [
+          "Te ayudamos a elegir el coche perfecto para llegar a playas remotas y te damos consejos actualizados de seguridad.",
+          "<strong>Zodiacs Rent a Car</strong>: equipo local, respuesta rápida y recomendaciones personalizadas para cada ruta."
+        ],
+        "buttons": [
+          {
+            "label": "Pide tu presupuesto",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Ver coches disponibles",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Volver al blog"
+  },
+  "CookiePolicy": {
+    "title": "Política de cookies",
+    "updated": "Última actualización: 8 de noviembre de 2025.",
+    "intro": [
+      "En este documento explicamos qué cookies utiliza el sitio web de Zodiacs Rent a Car, con qué finalidad y cómo puedes cambiar tus preferencias.",
+      "Las cookies son pequeños archivos de texto que facilitan el funcionamiento del sitio, el análisis estadístico y la personalización de contenidos."
+    ],
+    "sections": [
+      {
+        "heading": "1. ¿Qué es una cookie?",
+        "paragraphs": [
+          "Una cookie es un archivo que se almacena en tu navegador cuando visitas nuestro sitio. No contiene datos que te identifiquen directamente, pero permite recordar tu dispositivo y tus ajustes."
+        ]
+      },
+      {
+        "heading": "2. Tipos de cookies que utilizamos",
+        "paragraphs": [
+          "Para el correcto funcionamiento del servicio empleamos distintas categorías:"
+        ],
+        "lists": [
+          {
+            "title": "Cookies esenciales",
+            "items": [
+              "imprescindibles para la navegación, la seguridad y los formularios",
+              "base jurídica: interés legítimo (GDPR art. 6.1.f)"
+            ]
+          },
+          {
+            "title": "Cookies funcionales",
+            "items": [
+              "recuerdan el idioma seleccionado y los datos temporales de los formularios",
+              "base jurídica: consentimiento (GDPR art. 6.1.a)"
+            ]
+          },
+          {
+            "title": "Cookies analíticas",
+            "items": [
+              "miden de forma anónima la audiencia y nos ayudan a optimizar la experiencia",
+              "base jurídica: consentimiento (GDPR art. 6.1.a)"
+            ]
+          },
+          {
+            "title": "Cookies de marketing",
+            "items": [
+              "permiten mostrar anuncios personalizados y campañas de remarketing",
+              "base jurídica: consentimiento (GDPR art. 6.1.a)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Duración de las cookies",
+        "paragraphs": [
+          "Cookies de sesión: se eliminan al cerrar el navegador.",
+          "Cookies persistentes: permanecen en tu dispositivo entre 30 y 365 días o hasta que las elimines manualmente."
+        ]
+      },
+      {
+        "heading": "4. Cookies de terceros",
+        "paragraphs": [
+          "Algunos proveedores como Google, Meta o TikTok pueden colocar cookies para estadísticas o publicidad personalizada.",
+          "Cada proveedor aplica su propia política de privacidad, disponible en sus sitios oficiales."
+        ]
+      },
+      {
+        "heading": "5. Consentimiento y configuración",
+        "paragraphs": [
+          "Cuando accedes por primera vez al sitio mostramos un banner donde puedes aceptar todas las cookies, limitarte a las necesarias o elegir ajustes personalizados.",
+          "Puedes modificar tu decisión en cualquier momento mediante el enlace \"Modificar configuración de cookies\" o desde tu navegador."
+        ]
+      },
+      {
+        "heading": "6. Gestión de cookies en los navegadores",
+        "paragraphs": [
+          "Los navegadores más populares permiten borrar o bloquear cookies. Consulta la ayuda de Google Chrome, Mozilla Firefox, Safari o Microsoft Edge para obtener instrucciones concretas.",
+          "Ten en cuenta que algunas funciones pueden verse limitadas si deshabilitas las cookies."
+        ]
+      },
+      {
+        "heading": "7. Contacto",
+        "paragraphs": [
+          "Si tienes dudas sobre el uso de cookies o sobre la protección de datos, escríbenos:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "Correo: info@zodiacsrentacar.com",
+              "Web: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "HomeIntro": {
     "paragraphs": [
       "Con Zodiacs Rent a Car el alquiler de coches en Fuerteventura y Lanzarote es fácil y rápido. Tras tu reserva online coordinamos la entrega en aeropuerto, puerto o alojamiento, te aconsejamos sobre el vehículo ideal y resolvemos cada detalle en tu idioma preferido.",
@@ -115,6 +548,8 @@
     "gtc": "Condiciones generales del contrato",
     "insurance": "Seguro",
     "rental_requirements": "Requisitos de alquiler",
+    "cookie_policy": "Política de cookies",
+    "gdpr": "Política de privacidad",
     "zodiac_car_rental": "Zodiac Rent a Car",
     "logo_placeholder": "Aquí va el logotipo",
     "faq": "Preguntas frecuentes"
@@ -179,6 +614,19 @@
         "image": {
           "src": "/AJUY.jpg",
           "alt": "Atardecer sobre las dunas de Corralejo junto al Atlántico"
+        }
+      },
+      {
+        "slug": "corrientes-peligrosas-fuerteventura",
+        "title": "¡Atención! Corrientes de retorno peligrosas en Fuerteventura",
+        "excerpt": "Aprende a identificar una rip current antes de entrar al Atlántico y disfruta de Cofete y las playas salvajes sin sustos.",
+        "category": "Seguridad",
+        "readTime": "Lectura de 7 minutos",
+        "publishDate": "15 de noviembre de 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/4, Cofete vízjeles.jpg",
+          "alt": "Cartel de advertencia en la playa de Cofete en Fuerteventura"
         }
       }
     ]
@@ -336,8 +784,7 @@
             "href": "/{locale}/contact"
           }
         ]
-      },
-      "backToBlog": "Volver al blog"
+      }
     }
   },
   "Cars": {
@@ -668,7 +1115,75 @@
   "Contact": {
     "title": "¿Tienes dudas sobre el alquiler de coches en Fuerteventura o Lanzarote?",
     "p1": "Ponte en contacto con nosotros y te ayudaremos a encontrar <strong>la solución que mejor se adapte a ti</strong>. Ya sea una reserva anticipada, la entrega en el aeropuerto o en tu alojamiento, nuestro equipo <strong>responde rápido y con flexibilidad</strong>.",
-    "p2": "Rellena el formulario, envíanos un correo electrónico, un mensaje por Messenger, WhatsApp o Viber, o llámanos. <strong>Estaremos encantados de ayudarte</strong> para que tus vacaciones sean perfectas."
+    "p2": "Rellena el formulario, envíanos un correo electrónico, un mensaje por Messenger, WhatsApp o Viber, o llámanos. <strong>Estaremos encantados de ayudarte</strong> para que tus vacaciones sean perfectas.",
+    "form": {
+      "title": "Solicita tu presupuesto personalizado",
+      "description": "Indícanos las fechas y cuántas personas viajan y te enviaremos una propuesta adaptada en pocas horas.",
+      "fields": {
+        "name": {
+          "label": "Nombre completo",
+          "placeholder": "Nombre y apellidos"
+        },
+        "phone": {
+          "label": "Teléfono",
+          "placeholder": "+34 600 000 000"
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "placeholder": "nombre@ejemplo.com"
+        },
+        "channel": {
+          "label": "Canal de contacto preferido"
+        },
+        "rentalStart": {
+          "label": "Fecha de inicio",
+          "placeholder": "Selecciona fecha"
+        },
+        "rentalEnd": {
+          "label": "Fecha de devolución",
+          "placeholder": "Selecciona fecha"
+        },
+        "dateRange": {
+          "label": "Periodo de alquiler"
+        },
+        "partySize": {
+          "label": "Número de viajeros",
+          "placeholder": "¿Cuántas personas?"
+        },
+        "children": {
+          "label": "Número de niños",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-mail",
+        "phone": "Teléfono",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "Acepto la <link>Política de Privacidad</link>",
+        "terms": "Acepto los <link>Términos y Condiciones</link>"
+      },
+      "submit": {
+        "idle": "Quiero mi presupuesto",
+        "sending": "Enviando..."
+      },
+      "feedback": {
+        "success": "¡Gracias! Te responderemos muy pronto.",
+        "error": "Ups, ha ocurrido un error. Inténtalo más tarde."
+      },
+      "errors": {
+        "nameRequired": "Indica tu nombre",
+        "phoneRequired": "Indica tu teléfono",
+        "emailRequired": "Indica tu correo electrónico",
+        "emailInvalid": "Introduce un correo válido",
+        "privacyRequired": "Debes aceptar la política de privacidad",
+        "termsRequired": "Debes aceptar los términos y condiciones",
+        "rentalStartRequired": "Selecciona la fecha de inicio",
+        "rentalEndRequired": "Selecciona la fecha de devolución"
+      }
+    }
   },
   "MultiSelect": {
     "placeholder": "Selecciona una opción",
@@ -926,6 +1441,12 @@
             "placeholder": "Número"
           }
         }
+      },
+      "consents": {
+        "title": "Consentimientos legales",
+        "description": "Para enviar la reserva debes aceptar la Política de Privacidad y los Términos y Condiciones.",
+        "privacyLabel": "He leído y acepto la <link>Política de Privacidad</link>",
+        "termsLabel": "He leído y acepto los <link>Términos y Condiciones</link>"
       }
     },
     "toast": {
@@ -1124,6 +1645,14 @@
           "doorNumber": {
             "required": "Campo obligatorio"
           }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "Debes aceptar la política de privacidad"
+        },
+        "terms": {
+          "required": "Debes aceptar los términos y condiciones"
         }
       }
     }
@@ -1427,6 +1956,16 @@
         "rutas Lanzarote coche",
         "Zodiac Rent a Car blog"
       ]
+    },
+    "gdpr": {
+      "title": "Política de privacidad – Zodiacs Rent a Car",
+      "description": "Conoce cómo protegemos tus datos personales, las bases legales aplicables y los derechos que puedes ejercer.",
+      "ogImageAlt": "Documento de política de privacidad"
+    },
+    "cookiePolicy": {
+      "title": "Política de cookies – Zodiacs Rent a Car",
+      "description": "Información clara sobre las cookies que utilizamos, sus finalidades y la forma de modificar tu consentimiento.",
+      "ogImageAlt": "Aviso informativo sobre cookies"
     }
   },
   "FAQ": {
@@ -1456,6 +1995,54 @@
       {
         "question": "¿Cuál es la edad mínima para alquilar?",
         "answer": "En la mayoría de los casos alquilamos a partir de los 23 años. Para conductores más jóvenes necesitamos una evaluación individual y puede aplicarse un recargo."
+      },
+      {
+        "question": "¿Puedo recoger el coche en el aeropuerto?",
+        "answer": "Sí, al hacer la reserva puedes indicarnos que deseas entrega o traslado en el aeropuerto."
+      },
+      {
+        "question": "¿Puedo devolver el coche en el aeropuerto?",
+        "answer": "Claro, también puedes devolverlo allí; solo coordinemos previamente la hora exacta."
+      },
+      {
+        "question": "¿Cuál es vuestro horario?",
+        "answer": "Las entregas suelen realizarse entre las 10:00 y las 16:00, pero si lo coordinamos con antelación somos flexibles. Las devoluciones pueden hacerse en cualquier momento."
+      },
+      {
+        "question": "¿Puedo devolver el coche por la tarde o de noche?",
+        "answer": "Sí. Durante la entrega te explicamos cada paso del proceso para que puedas devolver el coche con seguridad a cualquier hora."
+      },
+      {
+        "question": "¿El coche tiene seguro a todo riesgo?",
+        "answer": "Sí, los daños producidos en carretera están cubiertos. Si circulas por pistas sin asfaltar y se produce un daño o un pinchazo, esos costes corren por cuenta del conductor."
+      },
+      {
+        "question": "¿Debo devolver el coche con combustible?",
+        "answer": "Sí, devuélvelo con el mismo nivel con el que lo recibiste. Nuestra flota utiliza gasolina 95."
+      },
+      {
+        "question": "¿Hay límite de kilómetros?",
+        "answer": "No, dispones de kilometraje ilimitado incluido en el precio del alquiler."
+      },
+      {
+        "question": "¿Puedo pagar con tarjeta de crédito o débito?",
+        "answer": "Sí, aceptamos ambas opciones."
+      },
+      {
+        "question": "¿Añadir un segundo conductor tiene coste adicional?",
+        "answer": "No, no cobramos ningún suplemento por registrar a un segundo conductor."
+      },
+      {
+        "question": "¿Existe algún cargo oculto además del precio del alquiler?",
+        "answer": "No, solo pagas el precio confirmado en la reserva; no trabajamos con costes ocultos."
+      },
+      {
+        "question": "¿Puedo solicitar una silla infantil?",
+        "answer": "Sí, disponemos de sillas ISOFIX en varios tamaños, desde recién nacidos hasta niños mayores."
+      },
+      {
+        "question": "¿Tengo que limpiar el coche antes de devolverlo?",
+        "answer": "No hace falta. Nosotros nos encargamos de limpiar y desinfectar cada vehículo tras la devolución; está incluido en la tarifa."
       }
     ]
   }

@@ -68,7 +68,7 @@ export default async function AboutUsPage({
           </div>
           <div className='order-2 lg:order-none relative w-full rounded-md overflow-hidden min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem]'>
             <Image
-              src='/cars.webp'
+              src='/DSC00594.jpg'
               fill
               sizes='(min-width: 1024px) 50vw, 100vw'
               alt={'car'}
@@ -79,7 +79,7 @@ export default async function AboutUsPage({
         <div className='grid grid-cols-1 lg:grid-cols-2 my-16 sm:my-20 gap-8 lg:gap-12 items-center justify-center'>
           <div className='order-2 lg:order-none relative w-full rounded-md overflow-hidden min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem]'>
             <Image
-              src='/cars.webp'
+              src='/DSC00603.jpg'
               fill
               sizes='(min-width: 1024px) 50vw, 100vw'
               alt={'car'}
@@ -118,6 +118,15 @@ export default async function AboutUsPage({
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </p>
+          <div className='order-2 mt-8 lg:order-none relative w-full rounded-md overflow-hidden min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem]'>
+            <Image
+              src='/DSC00259.jpg'
+              fill
+              sizes='(min-width: 1024px) 50vw, 100vw'
+              alt={'car'}
+              className='h-full w-full object-cover md:rounded-md md:shadow-lg'
+            />
+          </div>
         </div>
         <div className='text-center text-lg !my-8 text-sky-dark hover:scale-110 duration-200'>
           <Link

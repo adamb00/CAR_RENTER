@@ -1,15 +1,17 @@
 'use client';
 
-import React, { useRef, useTransition } from 'react';
+import Link from 'next/link';
+import React, { useMemo, useRef, useTransition } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import {
   useForm,
-  type Resolver,
   type FieldErrors,
   type FieldError,
+  type FieldValues,
+  type Resolver,
 } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -20,6 +22,9 @@ import Contact from '@/components/rent/Contact';
 import Delivery from '@/components/rent/Delivery';
 import Drivers from '@/components/rent/Drivers';
 import Invoice from '@/components/rent/Invoice';
+import LegalConsents, {
+  type LegalConsentItem,
+} from '@/components/rent/LegalConsents';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { createEmptyDriver } from '@/hooks/useDrivers';
@@ -34,7 +39,7 @@ import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
 import { RentSchema, createRentSchema } from '@/schemas/RentSchema';
 import toast from 'react-hot-toast';
 
-type RentFormValues = z.input<typeof RentSchema>;
+type RentFormValues = z.input<typeof RentSchema> & FieldValues;
 type RentFormResolvedValues = z.output<typeof RentSchema>;
 
 type RentPageClientProps = {
@@ -77,6 +82,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       'rentalPeriod',
       'extras',
       'tax',
+      'consents',
     ];
 
     const keys = Object.keys(errs as Record<string, unknown>)
@@ -164,6 +170,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
         'rentalPeriod',
         'extras',
         'tax',
+        'consents',
       ];
       const firstSection = ORDER.find((k) =>
         Boolean((errors as FieldErrors<RentFormValues>)[k])
@@ -225,6 +232,10 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
         id: '',
         companyName: '',
       },
+      consents: {
+        privacy: false,
+        terms: false,
+      },
     },
   });
 
@@ -266,6 +277,42 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
       }
     });
   };
+
+  const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
+    () => [
+      {
+        name: 'consents.privacy',
+        label: t.rich('sections.consents.privacyLabel', {
+          link: (chunks) => (
+            <Link
+              href={`/${locale}/gdpr`}
+              target='_blank'
+              rel='noreferrer'
+              className='underline underline-offset-2'
+            >
+              {chunks}
+            </Link>
+          ),
+        }),
+      },
+      {
+        name: 'consents.terms',
+        label: t.rich('sections.consents.termsLabel', {
+          link: (chunks) => (
+            <Link
+              href={`/${locale}/gtc`}
+              target='_blank'
+              rel='noreferrer'
+              className='underline underline-offset-2'
+            >
+              {chunks}
+            </Link>
+          ),
+        }),
+      },
+    ],
+    [locale, t]
+  );
 
   return (
     <Form {...form}>
@@ -314,6 +361,16 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
               <Delivery form={form} placesReady={placesReady} />
             </div>
           )}
+
+          <div data-section='consents' tabIndex={-1} className='scroll-mt-28'>
+            <LegalConsents
+              form={form}
+              items={consentItems}
+              title={t('sections.consents.title')}
+              description={t('sections.consents.description')}
+              className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8 shadow-sm'
+            />
+          </div>
         </section>
 
         <Button

@@ -1,11 +1,11 @@
-import { getTranslations } from 'next-intl/server';
-import type { Metadata } from 'next';
-import { Luggage, User } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { CARS } from '@/lib/cars';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { Luggage, User } from 'lucide-react';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 
 type PageParams = { locale: string };
 
@@ -31,7 +31,11 @@ export default async function CarsPage({
 }) {
   const { locale = 'hu' } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const t = await getTranslations({ locale: resolvedLocale, namespace: 'Cars' });
+
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'Cars',
+  });
   return (
     <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'>
       <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
@@ -53,12 +57,14 @@ export default async function CarsPage({
           >
             <div className='relative aspect-square md:aspect-[4/3] lg:aspect-[16/10] bg-muted/30 overflow-hidden'>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={car.image}
-                alt={car.name}
-                className='h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-300'
-                loading='lazy'
-              />
+              <Link href={`/${resolvedLocale}/cars/${car.id}`}>
+                <img
+                  src={car.image}
+                  alt={car.name}
+                  className='h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-300 cursor-pointer'
+                  loading='lazy'
+                />
+              </Link>
             </div>
             <div className='flex h-full flex-col border p-4 shadow-xl sm:p-5'>
               <div className='flex items-start justify-between gap-4'>

@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
 
 type PageParams = { locale: string };
 
@@ -43,6 +44,7 @@ export default async function ContactPage({
           </p>
         </div>
       </div>
+      <QuoteRequestForm locale={resolvedLocale} />
     </>
   );
 }

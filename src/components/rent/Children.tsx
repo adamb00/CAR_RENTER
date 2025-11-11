@@ -76,7 +76,9 @@ export default function Children({
                         min={0}
                         max={17}
                         value={field.value || ''}
-                        onChange={(event) => field.onChange(event.target.value)}
+                        onChange={(event) =>
+                          field.onChange(+event.target.value)
+                        }
                         onWheel={(e) =>
                           (e.currentTarget as HTMLInputElement).blur()
                         }

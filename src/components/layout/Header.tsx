@@ -3,9 +3,9 @@ import { SplittingText } from '@/components/ui/shadcn-io/splitting-text';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import HeaderCarousel from './HeaderCarousel';
 
 export function Header() {
-  // Clip-path az eredetihez igazítva
   const clip = 'polygon(0 0, 100% 0, 100% 75vh, 0 90%)';
   const t = useTranslations('Header');
   const { locale } = useParams();
@@ -16,32 +16,14 @@ export function Header() {
         'relative h-[95vh] isolate overflow-hidden bg-top bg-cover'
       )}
       style={{
-        // alap háttér: kiskép + gradiens
-        backgroundImage: `
-          linear-gradient(to right bottom, var(--color-primary)/0.8, var(--primary)/0.8),
-          url('/header_image.webp')
-        `,
-        // clip-path (webkit is támogatva)
         clipPath: clip,
         WebkitClipPath: clip,
       }}
     >
-      {/* Nagy felbontású/desktop háttér (media query alapú csere) */}
-      <picture>
-        <source
-          media='(min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px)'
-          srcSet={'/header_image.webp'}
-        />
-        {/* Képfedő réteg a bg-image helyett → megbízhatóbb reszponzivitás */}
-        <img
-          src={'/header_image.webp'}
-          alt='Zodiacs Rent a Car'
-          className='absolute inset-0 h-full w-full object-cover'
-        />
-      </picture>
+      <HeaderCarousel />
 
       {/* Gradiens overlay (a saját változóidra támaszkodva) */}
-      <div className='absolute inset-0 bg-gradient-to-br from-[var(--amber-light)]/70 to-[var(--sky-dark)]/70' />
+      <div className='absolute inset-0 bg-gradient-to-br from-[var(--amber-light)]/30 to-[var(--sky-dark)]/30' />
 
       {/* Középre igazított tartalom */}
       <div className='absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 text-center px-4 w-full'>

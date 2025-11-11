@@ -3,6 +3,292 @@
     "header": "Autóbérlés Fuerteventurán és Lanzarotén, kényelmesen, gyorsan",
     "book_now": "Bérelj autót most"
   },
+  "CookieConsent": {
+    "title": "Sütiket használunk",
+    "noticeTitle": "Süti értesítés",
+    "body": "A legjobb felhasználói élmény érdekében sütiket használunk a weboldalunkon. A sütik használatáról és kezeléséről a süti szabályzatunkban találsz bővebb információt.",
+    "minimalBody": "Sütiket használunk, hogy még jobb böngészési élményt nyújtsunk.",
+    "notice": "A <highlight>{actionLabel}</highlight> gombra kattintva hozzájárulsz a sütik használatához.",
+    "learnMore": "További információ:",
+    "cookiePolicyLink": "Sütikezelési tájékoztató",
+    "gdprLink": "Adatkezelési nyilatkozat",
+    "accept": "Elfogadom",
+    "decline": "Elutasítom"
+  },
+  "GDPR": {
+    "title": "Adatkezelési nyilatkozat (GDPR)",
+    "updated": "Utolsó frissítés: 2025. november 8.",
+    "intro": [
+      "A jelen adatkezelési tájékoztató a Zodiacs Rent a Car (ZODIACSRENTACAR) szolgáltatásaihoz kapcsolódó személyesadat-kezelés főbb szabályait foglalja össze.",
+      "Az adatainkat mindig a GDPR, valamint a spanyol és a magyar adatvédelmi előírások szerint kezeljük; csak a szükséges mértékben és időtartamra gyűjtünk információt, és minden esetben átlátható módon nyújtunk tájékoztatást."
+    ],
+    "sections": [
+      {
+        "heading": "1. Az adatkezelő adatai",
+        "lists": [
+          {
+            "items": [
+              "Cégnév: ZODIACSRENTACAR",
+              "Székhely: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Spanyolország",
+              "E-mail: info@zodiacsrentacar.com",
+              "Telefon: +34 683 192 422",
+              "Weboldal: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Az adatkezelés céljai",
+        "paragraphs": [
+          "Személyes adatokat kizárólag a szolgáltatásaink teljesítéséhez szükséges célokra használunk fel:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "autóbérlési ajánlatok és szerződések előkészítése és dokumentálása",
+              "online foglalások kezelése és visszaigazolása",
+              "járműátadás, kiszállítás és ügyfélszolgálati kapcsolattartás",
+              "számlázás, pénzügyi adminisztráció és jogszabályi kötelezettségek teljesítése",
+              "ügyfélkommunikáció telefonon, e-mailben, WhatsAppon vagy más csatornákon",
+              "marketing- és hírlevélküldés az érintett kifejezett hozzájárulásával",
+              "statisztikai elemzés és szolgáltatásfejlesztés anonim módon"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Az adatkezelés jogalapja",
+        "paragraphs": [
+          "Az egyes folyamatokhoz eltérő jogalap tartozhat, de minden esetben az alábbi GDPR rendelkezések valamelyikére támaszkodunk:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "szerződés teljesítése vagy előkészítése – GDPR 6. cikk (1) bekezdés b)",
+              "jogi kötelezettség teljesítése (pl. számviteli előírások) – GDPR 6. cikk (1) bekezdés c)",
+              "az adatkezelő jogos érdeke (például csalásmegelőzés) – GDPR 6. cikk (1) bekezdés f)",
+              "az érintett hozzájárulása (pl. hírlevél, kapcsolatfelvétel) – GDPR 6. cikk (1) bekezdés a)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. A kezelt adatok köre",
+        "paragraphs": [
+          "Az online űrlapokon és a szerződéskötés során kizárólag az autóbérléshez elengedhetetlen adatokat kérjük el. A főbb kategóriák a következők:"
+        ],
+        "lists": [
+          {
+            "title": "Foglalási adatok",
+            "items": [
+              "bérlés időpontja (tól–ig)",
+              "utasok száma, gyermekek életkora és magassága",
+              "választott járműkategória és igényelt extra szolgáltatások"
+            ]
+          },
+          {
+            "title": "Bérlő és vezető személyes adatai",
+            "items": [
+              "teljes név (két vezetéknév és két keresztnév)",
+              "születési hely, idő, anyja neve",
+              "állampolgárság és lakcím adatai"
+            ]
+          },
+          {
+            "title": "Kapcsolattartási adatok",
+            "items": [
+              "telefonszám és preferált kommunikációs csatorna (WhatsApp, Messenger stb.)",
+              "e-mail cím"
+            ]
+          },
+          {
+            "title": "Azonosító okmányok",
+            "items": [
+              "személyazonosító okmány típusa, száma, kiállítási és lejárati dátuma",
+              "vezetői engedély száma, kategóriája, érvényessége és kiállítási dátuma",
+              "nyilatkozat, hogy a jogosítvány több mint 3 éve érvényes"
+            ]
+          },
+          {
+            "title": "További vezető vagy kapcsolattartó",
+            "items": [
+              "az elsődleges bérlőhöz hasonló adatok a további sofőr esetén",
+              "kapcsolattartó neve és telefonszáma, ha eltér a bérlőtől"
+            ]
+          },
+          {
+            "title": "Számlázási és kiszállítási adatok",
+            "items": [
+              "név vagy cégnév, számlázási cím és (cégek esetén) adószám",
+              "a számla elektronikus megküldéséhez szükséges e-mail cím",
+              "szálloda vagy apartman neve és címe kiszállításkor"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Az adatkezelés időtartama",
+        "paragraphs": [
+          "A szolgáltatás teljesítéséhez szükséges adatokat a bérlés lezárásától számított 5 évig őrizzük meg a polgári jogi igények érvényesíthetősége érdekében.",
+          "A számviteli és adójogi bizonylatokat a vonatkozó jogszabályok szerint 8 évig tároljuk.",
+          "Az érintett hozzájárulásán alapuló adatokat a hozzájárulás visszavonásáig vagy a cél megszűnéséig kezeljük."
+        ]
+      },
+      {
+        "heading": "6. Adattovábbítás és adatfeldolgozók",
+        "paragraphs": [
+          "Az adatokat csak a szolgáltatás teljesítéséhez elengedhetetlen partnerekkel osztjuk meg, és velük adatfeldolgozói szerződést kötünk. Tipikus címzettek:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "könyvelő és pénzügyi szolgáltatók",
+              "tárhely- és informatikai üzemeltetők",
+              "számlázó rendszerek és fizetési szolgáltatók",
+              "futárszolgálatok vagy a kiszállítást végző partnerek"
+            ]
+          }
+        ],
+        "notes": [
+          "Az adatokat nem továbbítjuk az Európai Unión kívülre, és gondoskodunk a megfelelő titkosításról, hozzáférés-kezelésről."
+        ]
+      },
+      {
+        "heading": "7. Az érintettek jogai",
+        "paragraphs": [
+          "Az érintettek bármikor élhetnek a GDPR-ban rögzített jogaikkal:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "tájékoztatáshoz és hozzáféréshez való jog",
+              "helyesbítéshez vagy törléshez való jog",
+              "adatkezelés korlátozásának kérése",
+              "tiltakozás a jogos érdek alapján végzett adatkezelés ellen",
+              "adathordozhatósághoz való jog",
+              "a hozzájárulás bármikori visszavonása"
+            ]
+          }
+        ],
+        "notes": [
+          "Panasz esetén a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (1055 Budapest, Falk Miksa utca 9-11., ugyfelszolgalat@naih.hu, naih.hu) lehet fordulni."
+        ]
+      },
+      {
+        "heading": "8. Adatbiztonság és süti-kezelés",
+        "paragraphs": [
+          "Fizikai, technikai és szervezési intézkedésekkel védjük a személyes adatokat az illetéktelen hozzáféréstől, megváltoztatástól vagy elvesztéstől.",
+          "Weboldalunk sütiket használ a működés, a statisztika és a személyre szabás érdekében. A részleteket a Sütikezelési tájékoztató tartalmazza, ahol a hozzájárulási beállítások is bármikor módosíthatók."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Kapcsolat és jogérvényesítés",
+      "paragraphs": [
+        "Ha kérdésed van az adatkezeléssel kapcsolatban, vagy szeretnéd gyakorolni a jogaidat, vedd fel velünk a kapcsolatot az alábbi elérhetőségeken.",
+        "Kérelmeidet legkésőbb 30 napon belül megválaszoljuk, indokolt esetben a GDPR szerint meghosszabbítható határidővel."
+      ],
+      "channels": [
+        "E-mail: info@zodiacsrentacar.com",
+        "Telefon: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Sütikezelési tájékoztató",
+    "updated": "Utolsó frissítés: 2025. november 8.",
+    "intro": [
+      "Ez a tájékoztató bemutatja, hogy a Zodiacs Rent a Car weboldala milyen sütiket (cookie-kat) használ, milyen célból történik az adatkezelés, és hogyan módosíthatod a beállításaidat.",
+      "A sütik kis adatfájlok, amelyek segítenek a weboldal működésében, a statisztika készítésében és a személyre szabott tartalom megjelenítésében."
+    ],
+    "sections": [
+      {
+        "heading": "1. Mi az a süti?",
+        "paragraphs": [
+          "A süti egy rövid szöveges fájl, amelyet a böngésző tárol, amikor meglátogatod az oldalunkat. A sütik nem tartalmaznak közvetlen azonosításra alkalmas adatot, de segítenek felismerni az eszközödet és megjegyezni a beállításaidat."
+        ]
+      },
+      {
+        "heading": "2. A sütik típusai, amelyeket használunk",
+        "paragraphs": [
+          "A megfelelő működés érdekében különböző célú sütiket alkalmazunk:"
+        ],
+        "lists": [
+          {
+            "title": "Alapvető sütik",
+            "items": [
+              "nélkülözhetetlenek a weboldal működéséhez, a biztonsági folyamatokhoz és az űrlapok használatához",
+              "jogalap: jogos érdek (GDPR 6. cikk (1) f))"
+            ]
+          },
+          {
+            "title": "Funkcionális sütik",
+            "items": [
+              "megőrzik a választott nyelvet és az ideiglenes űrlapadatokat",
+              "jogalap: hozzájárulás (GDPR 6. cikk (1) a))"
+            ]
+          },
+          {
+            "title": "Analitikai és statisztikai sütik",
+            "items": [
+              "anonim módon mérik a látogatottságot és segítenek optimalizálni a szolgáltatást",
+              "jogalap: hozzájárulás (GDPR 6. cikk (1) a))"
+            ]
+          },
+          {
+            "title": "Marketing sütik",
+            "items": [
+              "személyre szabott ajánlatokat és remarketing hirdetéseket tesznek lehetővé",
+              "jogalap: hozzájárulás (GDPR 6. cikk (1) a))"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. A sütik élettartama",
+        "paragraphs": [
+          "Munkamenet sütik: a böngészés végéig maradnak aktívak, majd automatikusan törlődnek.",
+          "Állandó sütik: meghatározott ideig (általában 30–365 nap) tárolódnak, vagy amíg manuálisan nem törlöd őket."
+        ]
+      },
+      {
+        "heading": "4. Harmadik felektől származó sütik",
+        "paragraphs": [
+          "Bizonyos sütiket a partnereink helyeznek el (pl. Google, Meta, TikTok) a statisztikai elemzés és a személyre szabott hirdetések érdekében.",
+          "Ezekre a sütikre a szolgáltatók saját adatvédelmi szabályzata vonatkozik, amelyeket a hivatalos weboldalaikon találsz."
+        ]
+      },
+      {
+        "heading": "5. Hozzájárulás és beállítások",
+        "paragraphs": [
+          "Első látogatáskor sütikezelő ablak jelenik meg, ahol dönthetsz az összes süti elfogadásáról, a csak szükséges sütikről vagy az egyedi beállításokról.",
+          "Ezeket a választásokat bármikor módosíthatod a böngésződ beállításaiban vagy a weboldalon elhelyezett \"Sütibeállítások módosítása\" hivatkozáson keresztül."
+        ]
+      },
+      {
+        "heading": "6. Sütik kezelése a böngészőkben",
+        "paragraphs": [
+          "A legtöbb böngészőben lehetőség van a sütik törlésére vagy blokkolására. Az alábbi súgók segítenek a beállításban: Google Chrome, Mozilla Firefox, Safari és Microsoft Edge.",
+          "Fontos tudni, hogy egyes funkciók sütik nélkül korlátozottan működhetnek."
+        ]
+      },
+      {
+        "heading": "7. Kapcsolat",
+        "paragraphs": [
+          "Ha kérdésed van a sütik használatáról vagy az adatvédelemről, az alábbi elérhetőségeken keresztül segítünk:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-mail: info@zodiacsrentacar.com",
+              "Weboldal: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "HomeIntro": {
     "paragraphs": [
       "A Zodiacs Rent a Car helyi csapatával az autóbérlés Fuerteventurán és Lanzarotén kényelmesen és gyorsan intézhető. Online foglalás után megszervezzük a repülőtéri vagy szállodai átadást, segítünk kiválasztani az úthoz illő modellt, és minden részletet a számodra legkényelmesebb nyelven egyeztetünk.",
@@ -149,6 +435,16 @@
         "Lanzarote road trip",
         "Zodiacs Rent a Car tanácsok"
       ]
+    },
+    "gdpr": {
+      "title": "GDPR adatkezelési tájékoztató – Zodiacs Rent a Car",
+      "description": "Tudd meg, hogyan kezeljük a személyes adataidat, milyen jogalapokra támaszkodunk, és hogyan gyakorolhatod a jogaidat.",
+      "ogImageAlt": "GDPR adatkezelési dokumentum"
+    },
+    "cookiePolicy": {
+      "title": "Sütikezelési tájékoztató – Zodiacs Rent a Car",
+      "description": "Áttekintés az általunk használt sütikről, azok céljáról és a hozzájárulási beállításokról.",
+      "ogImageAlt": "Sütikre vonatkozó tájékoztató"
     }
   },
   "AboutSection": {
@@ -184,6 +480,8 @@
     "gtc": "Általános szerződési feltételek",
     "insurance": "Biztosítás",
     "rental_requirements": "Bérleti követelmények",
+    "cookie_policy": "Sütikezelési tájékoztató",
+    "gdpr": "Adatkezelési nyilatkozat",
     "zodiac_car_rental": "Zodiacs Autókölcsönző",
     "logo_placeholder": "Ide kerül a logó",
     "faq": "GYIK"
@@ -249,6 +547,19 @@
         "image": {
           "src": "/AJUY.jpg",
           "alt": "Kilátás a Corralejo homokdűnéire és az Atlanti-óceánra"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Figyelem! Veszélyes visszatérő áramlatok Fuerteventurán",
+        "excerpt": "Tanuld meg felismerni a rip current jeleit, hogy Cofete és a vad strandok élmény maradjanak, ne veszély.",
+        "category": "Biztonság",
+        "readTime": "7 perc olvasás",
+        "publishDate": "2025. november 15.",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/4, Cofete vízjeles.jpg",
+          "alt": "Figyelmeztető tábla Cofete vad partján"
         }
       }
     ]
@@ -406,9 +717,155 @@
             "href": "/{locale}/inquire"
           }
         ]
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "Figyelem! Veszélyes visszatérő áramlatok Fuerteventurán – Így fürdőzz biztonságosan az óceánban",
+        "description": "Fuerteventura strandjain gyakori a visszatérő áramlat (rip current), amely váratlanul sodorhatja el a fürdőzőket. Tudj meg mindent arról, hogyan ismerheted fel, és hogyan kerülheted el biztonságosan a veszélyt.",
+        "keywords": [
+          "Fuerteventura strand",
+          "Cofete Beach",
+          "visszatérő áramlat",
+          "rip current",
+          "biztonságos fürdőzés",
+          "Fuerteventura veszélyek",
+          "Kanári-szigetek utazás",
+          "óceánfürdőzés",
+          "Fuerteventura tippek",
+          "strand biztonság",
+          "autóbérlés Fuerteventura",
+          "Zodiacs Rent a Car",
+          "tengeráramlat",
+          "rip current felismerése"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/4, Cofete vízjeles.jpg",
+          "alt": "Figyelmeztető tábla Cofete vad partján Fuerteventurán"
+        }
       },
-      "backToBlog": "Vissza a bloghoz"
-    }
+      "hero": {
+        "icon": "⚠️",
+        "title": "Figyelem! Veszélyes visszatérő áramlatok Fuerteventurán – így fürdőzz biztonságosan az óceánban",
+        "category": "Biztonság",
+        "subtitle": "Ha Fuerteventura vad partjain szeretnél fürdeni, nem elég a kalandvágy – ismerned kell a visszatérő áramlat működését is.",
+        "description": "Elmagyarázzuk, hogyan ismerheted fel a rip current jeleit Cofete-től El Cotillo-ig, és mit tegyél, ha sodrásba kerülsz.",
+        "publishDate": "2025. november 15.",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "7 perc olvasás",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Mi az a visszatérő áramlat, és miért veszélyes?",
+          "paragraphs": [
+            "Az Atlanti-óceán partján a visszatérő áramlat a leggyakoribb rejtett veszély: a hullámok által partra tolt víztömeg keskeny sávban, nagy erővel áramlik vissza a mélybe.",
+            "A jelenség alattomos, mert gyakran ott keletkezik, ahol a víz simábbnak és nyugodtabbnak tűnik – a fürdőzők éppen ezeken a pontokon lépnek be a tengerbe."
+          ],
+          "bullets": [
+            "A látszólag hullámmentes vízfelület nem jelent biztonságot: lehet, hogy pontosan ott tör be a rip current.",
+            "A sodrás nem lefelé húz, hanem oldalirányban és kifelé, így a kimerülés okozza a legtöbb tragédiát."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Így ismered fel a veszélyes szakaszt",
+          "paragraphs": [
+            "Érkezéskor szánj egy percet arra, hogy megfigyeld a vizet. A visszatérő áramlat jelei szabad szemmel is látszanak, ha tudod, mit keresel.",
+            "Cofete-n például van figyelmeztető tábla, de sokszor a szél miatt a part felé néz – ezért mindig tájékozódj, mielőtt bemész a vízbe."
+          ],
+          "bullets": [
+            "Sötétebb, zavarosabb vízszín, mert a meder hirtelen mélyül.",
+            "Nyugodtnak tűnő sáv a hullámok között, ahol a víz befelé halad.",
+            "Hab, alga vagy törmelék, amely nem a partra, hanem a nyílt víz felé sodródik.",
+            "Zászlók, táblák vagy a helyiek figyelmeztetése – mindig vedd komolyan."
+          ],
+          "tip": {
+            "title": "Tipp",
+            "description": "Érkezéskor készíts fotót a jelzőtáblákról, így később is tudod, melyik zászló mit jelent az adott strandon."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Mit tegyél, ha elkap az áramlat?",
+          "paragraphs": [
+            "A legfontosabb, hogy ne ess pánikba. A rip current nem húz a mélybe, de gyorsabban áramlik, mint amilyen tempóban a legtöbben úszni tudnak.",
+            "Ha elfáradsz, mielőtt kiszabadulnál, veszélybe kerülsz – ezért stratégiával kell reagálnod."
+          ],
+          "bullets": [
+            "Lélegezz mélyeket, tartsd a fejed a víz felett.",
+            "Ne ússz a part felé – a sodrás erősebb nálad.",
+            "Ússz a parttal párhuzamosan, amíg el nem hagyod a keskeny sodrási sávot.",
+            "Ha elfáradsz, lebegj a hátadon, jelezz kézzel és várd meg, amíg a hullámok kihoznak."
+          ],
+          "closing": "Minél higgadtabb maradsz, annál nagyobb az esélyed, hogy önerőből kijuss."
+        },
+        {
+          "id": "personal-story",
+          "title": "Személyes történet: három gyereket húztam ki Cofete-n",
+          "paragraphs": [
+            "„Cofete partján történt, amikor a kislányomat és két unokatestvérét pillanatok alatt beszippantotta az áramlat. Nem kiabáltam, nem integettem – minden energiam az úszásra kellett.",
+            "Sikerült mindhármukat partra hozni, de az élmény örökre megtanított: az óceánt tisztelni kell, nem legyőzni.”"
+          ],
+          "tip": {
+            "title": "Tanulság",
+            "description": "Mindig figyeld a víz mozgását, és tanítsd meg a családodat is arra, hogyan reagáljanak, ha sodrásba kerülnek."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "Tudtad? Az áramlat gyorsabb, mint egy profi úszó",
+          "paragraphs": [
+            "Számokban könnyebb megérteni, miért nem érdemes erőből küzdeni a sodrás ellen."
+          ],
+          "bullets": [
+            "Egy olimpiai úszó kb. 2,3 métert tesz meg másodpercenként.",
+            "A rip current átlagosan 2,4 métert sodor ugyanennyi idő alatt – vagyis mindig egy lépéssel előtted jár."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Tiszteld a természetet, védd a szigetet",
+          "paragraphs": [
+            "A tudatosság nem ér véget a víz szélén: a strand tisztasága és a helyi szabályok betartása mindannyiunk felelőssége."
+          ],
+          "bullets": [
+            "Ne hagyj szemetet magad után, vidd el a saját hulladékod.",
+            "Ne dobj el cigarettacsikket a homokban vagy a sziklák között.",
+            "Maradj a kijelölt ösvényeken, különösen a dűnéknél és a természetvédelmi területeken."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Utazz okosan bérautóval",
+          "paragraphs": [
+            "Ha autóval fedezed fel Fuerteventurát, mindig legyen nálad elegendő víz, fényvédő, valamint friss információ az áramlatokról és a szélviszonyokról.",
+            "Így egyszerre élvezheted a szabadságot és a biztonságot."
+          ],
+          "closing": "Oszd meg ezt a cikket másokkal is, hogy minél kevesebb utazó kerüljön veszélybe a visszatérő áramlat miatt."
+        }
+      ],
+      "cta": {
+        "title": "Utazz biztonságban a Zodiacs bérautóival",
+        "paragraphs": [
+          "Segítünk olyan autót választani, amellyel eljuthatsz a vad, kevésbé ismert partokra is – minden szükséges tanáccsal együtt.",
+          "<strong>Zodiacs Rent a Car</strong> – helyi csapat, gyors kommunikáció, személyre szabott biztonsági tippek."
+        ],
+        "buttons": [
+          {
+            "label": "Kérj ajánlatot most",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Bérautó kínálat megtekintése",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Vissza a bloghoz"
   },
   "WhatsApp": {
     "aria_label": "WhatsApp üzenet",
@@ -450,7 +907,75 @@
   "Contact": {
     "title": "Kérdésed van az autóbérléssel kapcsolatban Fuerteventurán vagy Lanzarotén?",
     "p1": "Vedd fel velünk a kapcsolatot, és segítünk megtalálni <strong>a számodra legjobb megoldást!</strong> Legyen szó előfoglalásról, reptéri kiszállításról vagy szállodához történő autóátadásról, ügyfélszolgálatunk <strong>gyorsan és rugalmasan</strong> válaszol.",
-    "p2": "Töltsd ki az alábbi űrlapot, írj nekünk e-mailt, Messenger, WhatsApp vagy Viber üzenetet, vagy hívj telefonon! <strong>Örömmel állunk rendelkezésedre</strong>, hogy nyaralásod gondtalanul teljen."
+    "p2": "Töltsd ki az alábbi űrlapot, írj nekünk e-mailt, Messenger, WhatsApp vagy Viber üzenetet, vagy hívj telefonon! <strong>Örömmel állunk rendelkezésedre</strong>, hogy nyaralásod gondtalanul teljen.",
+    "form": {
+      "title": "Kérj személyre szabott ajánlatot",
+      "description": "Írd meg, mikor és milyen feltételekkel szeretnél autót bérelni – néhány órán belül válaszolunk.",
+      "fields": {
+        "name": {
+          "label": "Teljes név",
+          "placeholder": "Teljes név"
+        },
+        "phone": {
+          "label": "Telefonszám",
+          "placeholder": "+36 30 123 4567"
+        },
+        "email": {
+          "label": "E-mail cím",
+          "placeholder": "nev@example.com"
+        },
+        "channel": {
+          "label": "Előnyben részesített kapcsolatfelvétel"
+        },
+        "rentalStart": {
+          "label": "Bérlés kezdete",
+          "placeholder": "Válassz dátumot"
+        },
+        "rentalEnd": {
+          "label": "Bérlés vége",
+          "placeholder": "Válassz dátumot"
+        },
+        "dateRange": {
+          "label": "Bérlés időtartama"
+        },
+        "partySize": {
+          "label": "Utazók száma",
+          "placeholder": "Hány fő utazik?"
+        },
+        "children": {
+          "label": "Gyermekek száma",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "Elfogadom az <link>Adatkezelési tájékoztatót</link>",
+        "terms": "Elfogadom az <link>Általános Szerződési Feltételeket</link>"
+      },
+      "submit": {
+        "idle": "Ajánlatot kérek",
+        "sending": "Küldés..."
+      },
+      "feedback": {
+        "success": "Köszönjük! Hamarosan felvesszük veled a kapcsolatot.",
+        "error": "Hoppá, valami hiba történt. Próbáld újra később."
+      },
+      "errors": {
+        "nameRequired": "Add meg a neved",
+        "phoneRequired": "Add meg a telefonszámod",
+        "emailRequired": "Add meg az e-mail címed",
+        "emailInvalid": "Érvényes e-mail címet adj meg",
+        "privacyRequired": "Az adatkezelési tájékoztató elfogadása kötelező",
+        "termsRequired": "Az ÁSZF elfogadása kötelező",
+        "rentalStartRequired": "Válaszd ki a bérlés kezdő napját",
+        "rentalEndRequired": "Válaszd ki a bérlés befejező napját"
+      }
+    }
   },
   "Cars": {
     "title": "Fedezd fel Fuerteventurát és Lanzarotét teljes szabadságban autóinkkal!",
@@ -966,6 +1491,12 @@
             "placeholder": "Házszám"
           }
         }
+      },
+      "consents": {
+        "title": "Jogi nyilatkozatok",
+        "description": "A foglalás véglegesítéséhez el kell fogadnod az Adatkezelési tájékoztatót és az Általános Szerződési Feltételeket.",
+        "privacyLabel": "Elolvastam és elfogadom az <link>Adatkezelési tájékoztatót</link>",
+        "termsLabel": "Elolvastam és elfogadom az <link>Általános Szerződési Feltételeket</link>"
       }
     },
     "toast": {
@@ -1164,6 +1695,14 @@
           "doorNumber": {
             "required": "Kötelező mező"
           }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "A foglaláshoz el kell fogadnod az adatkezelési tájékoztatót"
+        },
+        "terms": {
+          "required": "A foglaláshoz el kell fogadnod az Általános Szerződési Feltételeket"
         }
       }
     }
@@ -1433,6 +1972,54 @@
       {
         "question": "Mennyi a minimális életkor a bérléshez?",
         "answer": "A legtöbb járművünk esetén 23 éves kortól tudunk autót biztosítani. Fiatalabb vezető esetén egyedi elbírálás és esetleges felár szükséges."
+      },
+      {
+        "question": "Átvehetem a reptéren az autót?",
+        "answer": "Igen, foglaláskor jelezheted, ha repülőtéri átvételt vagy transzfert szeretnél."
+      },
+      {
+        "question": "Lehetséges a reptéren visszaadni az autót?",
+        "answer": "Igen, a repülőtéren is leadhatod az autót, csak egyeztess velünk előre az időpontról."
+      },
+      {
+        "question": "Mikor vagytok nyitva?",
+        "answer": "Az átvétel általában 10:00–16:00 között történik, de előzetes megbeszélés alapján rugalmasak vagyunk. Leadni az autót bármikor lehetséges."
+      },
+      {
+        "question": "Visszahozhatom az autót este vagy éjszaka is?",
+        "answer": "Igen. Az átadáskor minden esetben elmondjuk a leadás menetét, így bármely időpontban biztonságosan visszaadhatod az autót."
+      },
+      {
+        "question": "Teljeskörű biztosítással rendelkezik az autó?",
+        "answer": "Igen, közúton történt károk esetén a biztosító fizet. Földúton bekövetkező sérüléseket vagy defektet viszont a bérlőnek kell megtérítenie."
+      },
+      {
+        "question": "Megtankolva kell visszahoznom az autót?",
+        "answer": "Igen, ugyanannyi üzemanyaggal kell visszahoznod, amennyivel átvetted. Flottánk minden járműve 95-ös benzinnel üzemel."
+      },
+      {
+        "question": "Van kilométer megkötés?",
+        "answer": "Nincs, korlátlan kilométert biztosítunk, amit a bérleti díj tartalmaz."
+      },
+      {
+        "question": "Fizethetek hitel- vagy bankkártyával?",
+        "answer": "Igen, egyaránt elfogadunk hitel- és betéti kártyát is."
+      },
+      {
+        "question": "Második sofőr felára van?",
+        "answer": "Nem számítunk fel extra díjat akkor sem, ha második sofőrt adsz meg."
+      },
+      {
+        "question": "Van bármi rejtett költség a bérleti díjon felül?",
+        "answer": "Nincs, kizárólag a visszaigazolt bérleti díjat kell megfizetned, rejtett költségek nélkül."
+      },
+      {
+        "question": "Kérhetek gyerekülést az autóba?",
+        "answer": "Igen, több méretben kínálunk ISOFIX gyereküléseket a legkisebbektől a nagyobb gyerekekig."
+      },
+      {
+        "question": "Ki kell takarítanom az autót visszahozás előtt?",
+        "answer": "Nem szükséges, mi minden visszahozott autót alaposan kitakarítunk és fertőtlenítünk, ez benne van a bérleti díjban."
       }
     ]
   }

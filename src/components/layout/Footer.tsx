@@ -22,15 +22,17 @@ export default function Footer() {
     { href: `/${locale}/contact`, label: t('contact') },
     { href: `/${locale}/blog`, label: t('blog') },
     { href: `/${locale}/cars`, label: t('fleet') },
+    { href: `/${locale}/gdpr`, label: t('gdpr') },
+    { href: `/${locale}/rental-requirements`, label: t('rental_requirements') },
   ];
 
   const nav_1 = [
+    { href: `/${locale}/cookie-policy`, label: t('cookie_policy') },
     {
       href: `/${locale}/general-rental-conditions`,
       label: t('general_rental_conditions'),
     },
     { href: `/${locale}/insurance`, label: t('insurance') },
-    { href: `/${locale}/rental-requirements`, label: t('rental_requirements') },
     { href: `/${locale}/gtc`, label: t('gtc') },
   ];
 
@@ -49,7 +51,6 @@ export default function Footer() {
         </div>
 
         <div className='grid grid-cols-1 items-start justify-center place-items-center md:grid-cols-2 md:gap-10'>
-          {/* Navigáció */}
           <nav
             aria-label='Footer'
             className='
@@ -60,8 +61,8 @@ export default function Footer() {
           >
             <ul
               className='
-              flex flex-wrap items-center justify-center
-              text-xs sm:text-[0.95rem] md:text-base md:gap-4
+              flex flex-wrap items-center justify-center gap-x-4 gap-y-2
+              text-xs sm:text-[0.95rem] md:text-base
             '
             >
               {nav.map((item) => (
@@ -94,8 +95,8 @@ export default function Footer() {
           >
             <ul
               className='
-              flex flex-wrap items-center justify-center
-              text-xs sm:text-[0.95rem] md:text-base md:gap-4
+              flex flex-wrap items-center justify-center gap-x-4 gap-y-2
+              text-xs sm:text-[0.95rem] md:text-base
             '
             >
               {nav_1.map((item) => (

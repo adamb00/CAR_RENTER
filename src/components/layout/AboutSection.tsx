@@ -7,15 +7,15 @@ export default function AboutSection() {
   const t = useTranslations('AboutSection');
 
   return (
-    <section id='about_section' className='section-about py-20 2xl:mb-32'>
-      <div className='u-center-text u-margin-bottom-big text-center mb-16'>
-        <h2 className='block text-2xl md:text-4xl font-semibold uppercase leading-10 lg:leading-6 tracking-wide md:tracking-wider text-sky-dark dark:text-sky-light md:mb-44'>
+    <section id='about_section' className='section-about 2xl:mb-32'>
+      <div className='u-center-text u-margin-bottom-big text-center mb-10'>
+        <h2 className='block text-2xl md:text-4xl font-semibold uppercase leading-10 lg:leading-6 tracking-wide md:tracking-wider text-sky-dark dark:text-sky-light md:mb-24'>
           {t('title')}
         </h2>
       </div>
 
       <div className='mx-auto max-w-[114rem] px-4 md:px-12'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-12'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-6'>
           <div className='place-self-center'>
             <h3 className='uppercase font-extrabold text-lg text-grey-dark-3 text-start mb-2'>
               {t('pickup_title')}
