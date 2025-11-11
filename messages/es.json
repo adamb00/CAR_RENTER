@@ -785,7 +785,154 @@
           }
         ]
       }
-    }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "¡Atención! Corrientes de retorno peligrosas en Fuerteventura – Cómo bañarte con seguridad en el océano",
+        "description": "En las playas de Fuerteventura las corrientes de retorno (rip current) pueden arrastrar a los bañistas sin previo aviso. Aprende a identificarlas y a salir de ellas con seguridad. Consejos para viajeros y quienes alquilan coche.",
+        "keywords": [
+          "playa Fuerteventura",
+          "Cofete Beach",
+          "corriente de retorno",
+          "rip current",
+          "seguridad en la playa",
+          "peligros en Fuerteventura",
+          "viaje Islas Canarias",
+          "bañarse en el Atlántico",
+          "consejos Fuerteventura",
+          "seguridad en el mar",
+          "alquiler de coches Fuerteventura",
+          "Zodiacs Rent a Car",
+          "corriente marina",
+          "cómo detectar una rip current"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/4, Cofete vízjeles.jpg",
+          "alt": "Cartel de advertencia en la playa de Cofete"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "¡Atención! Corrientes de retorno peligrosas en Fuerteventura – así te bañas con seguridad en el Atlántico",
+        "category": "Seguridad",
+        "subtitle": "Las playas salvajes de Fuerteventura son un sueño, pero exigen respeto: conocer las rip currents puede salvarte a ti y a tu familia.",
+        "description": "Aprende a identificar los signos de peligro en Cofete, El Cotillo u otras playas abiertas, y qué hacer si la corriente te arrastra.",
+        "publishDate": "15 de noviembre de 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "Lectura de 7 minutos",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Qué es una corriente de retorno y por qué es peligrosa",
+          "paragraphs": [
+            "En el Atlántico la corriente de retorno es el riesgo oculto más habitual: el agua que llega a la orilla regresa al mar por un canal estrecho y muy potente.",
+            "Es engañosa porque suele aparecer en las franjas donde el mar parece más calmado; muchos bañistas entran justo ahí."
+          ],
+          "bullets": [
+            "La lámina de agua aparentemente tranquila puede ser el inicio de la corriente.",
+            "No te arrastra hacia abajo, sino mar adentro hasta que te quedas sin fuerzas."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Cómo reconocer la zona peligrosa",
+          "paragraphs": [
+            "Antes de entrar al agua observa el océano durante un minuto. Las rip currents dejan señales visbles si sabes qué buscar.",
+            "En Cofete hay carteles, pero el viento a veces los gira; por eso conviene fijarse en la superficie del mar."
+          ],
+          "bullets": [
+            "Agua más oscura o turbia porque el fondo es más profundo.",
+            "Una franja de mar aparentemente calmada entre las olas.",
+            "Espuma, algas o restos que avanzan hacia el océano en lugar de volver a la orilla.",
+            "Banderas y avisos de socorristas o locales: respétalos siempre."
+          ],
+          "tip": {
+            "title": "Consejo",
+            "description": "Haz una foto a los carteles de señalización al llegar para recordar qué significa cada bandera."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Qué hacer si la corriente te atrapa",
+          "paragraphs": [
+            "La clave es no entrar en pánico. Una rip current suele avanzar más rápido que un nadador medio.",
+            "Si luchas de frente contra la corriente agotarás tus fuerzas antes de salir del canal."
+          ],
+          "bullets": [
+            "Respira profundo y mantén la cabeza fuera del agua.",
+            "No nades directo a la orilla: la corriente es más veloz.",
+            "Nada paralelo a la costa hasta dejar atrás el canal estrecho.",
+            "Si te cansas, flota boca arriba, pide ayuda levantando la mano y deja que las olas te acerquen."
+          ],
+          "closing": "Cuanta más calma conserves, más probabilidades tendrás de salir por tu cuenta."
+        },
+        {
+          "id": "personal-story",
+          "title": "Historia real: rescaté a tres niños en Cofete",
+          "paragraphs": [
+            "\"En Cofete una corriente se llevó a mi hija y a dos primos en segundos. Guardé toda mi energía para nadar.\"",
+            "\"Los saqué a todos, pero aprendí que al océano no se le vence: se le respeta.\""
+          ],
+          "tip": {
+            "title": "Aprendizaje",
+            "description": "Habla con tu familia sobre qué hacer antes de entrar al agua; la preparación lo cambia todo."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "¿Sabías que la corriente es más rápida que un nadador profesional?",
+          "paragraphs": [
+            "Los números explican por qué no debes intentar vencerla de frente."
+          ],
+          "bullets": [
+            "Un nadador olímpico recorre unos 2,3 metros por segundo.",
+            "Una rip current puede alcanzar 2,4 metros por segundo, siempre irá por delante."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Respeta la naturaleza y cuida la isla",
+          "paragraphs": [
+            "La seguridad también implica conservar el entorno que estás disfrutando."
+          ],
+          "bullets": [
+            "No dejes basura; llévala hasta un contenedor.",
+            "No tires colillas en la arena ni entre las rocas.",
+            "Permanece en los senderos señalizados, sobre todo en dunas y zonas protegidas."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Viaja con cabeza cuando explores en coche",
+          "paragraphs": [
+            "Si recorres Fuerteventura en coche de alquiler, lleva siempre agua, protector solar e infórmate del viento y las corrientes antes de cada baño.",
+            "Así podrás llegar a playas remotas con la tranquilidad de estar preparado."
+          ],
+          "closing": "Comparte este artículo para que más viajeros sepan reconocer y evitar las corrientes de retorno."
+        }
+      ],
+      "cta": {
+        "title": "Explora con Zodiacs y mantente seguro",
+        "paragraphs": [
+          "Te ayudamos a elegir el coche perfecto para llegar a playas salvajes y te damos consejos de seguridad actualizados.",
+          "<strong>Zodiacs Rent a Car</strong>: equipo local, respuesta rápida y recomendaciones personalizadas."
+        ],
+        "buttons": [
+          {
+            "label": "Pide tu presupuesto",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Ver coches disponibles",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Volver al blog"
   },
   "Cars": {
     "title": "Descubre Fuerteventura y Lanzarote con total libertad con nuestros coches",

@@ -142,7 +142,12 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  let enrichedPost = rawPost;
+  const basePost: BlogPostData = {
+    ...rawPost,
+    backToBlog: rawPost.backToBlog ?? blogPostTranslations('backToBlog'),
+  };
+
+  let enrichedPost = basePost;
 
   try {
     const rawList = blogListTranslations.raw('posts') as unknown;
@@ -151,20 +156,20 @@ export default async function BlogPostPage({
       const matched = summaryPosts.find((item) => item.slug === slug);
       if (matched) {
         enrichedPost = {
-          ...rawPost,
+          ...basePost,
           hero: {
-            ...rawPost.hero,
-            title: matched.title ?? rawPost.hero.title,
+            ...basePost.hero,
+            title: matched.title ?? basePost.hero.title,
             category:
-              rawPost.hero.category ??
+              basePost.hero.category ??
               matched.category ??
-              rawPost.hero.category,
+              basePost.hero.category,
           },
         };
       }
     }
   } catch {
-    enrichedPost = rawPost;
+    enrichedPost = basePost;
   }
 
   return <Component locale={resolvedLocale} slug={slug} post={enrichedPost} />;

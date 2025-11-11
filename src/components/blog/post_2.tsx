@@ -31,11 +31,6 @@ const fallbackTitleFromSlug = (slug: string) =>
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(' ');
 
-const HERO_IMAGE = {
-  src: '/4, Cofete vízjeles.jpg',
-  alt: 'Warning sign standing on the windswept Cofete coastline in Fuerteventura',
-};
-
 const SECTION_IMAGES: Record<
   string,
   Array<{ src: string; alt: string; caption?: string }>
@@ -151,8 +146,8 @@ export default function Post_2({ locale, slug, post }: BlogPostComponentProps) {
             <span>{post.hero.author}</span>
           </div>
           <BlogImage
-            src={HERO_IMAGE.src}
-            alt={HERO_IMAGE.alt}
+            src={post.meta.image?.src ?? '/header_image.webp'}
+            alt={post.meta.image?.alt ?? post.meta.title}
             className='mt-10'
             priority
           />
