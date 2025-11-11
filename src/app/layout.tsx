@@ -2,11 +2,11 @@ import '@/app/_style/globals.css';
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider';
 import { DEFAULT_LOCALE, LOCALES } from '@/i18n/config';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 const LANGUAGE_ALTERNATES = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/${locale}`])
@@ -88,7 +88,7 @@ export default async function RootLayout({
     <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <Analytics />
       {hasGtm ? <GoogleTagManager gtmId={gtmId} /> : null}
-      {/* {hasGa ? <GoogleAnalytics gaId={gaMeasurementId} /> : null} */}
+      {hasGa ? <GoogleAnalytics gaId={gaMeasurementId} /> : null}
       <body className='antialiased'>
         {hasGtm ? (
           <noscript>
@@ -100,7 +100,9 @@ export default async function RootLayout({
             ></iframe>
           </noscript>
         ) : null}
-        <AnalyticsProvider>{children}</AnalyticsProvider>
+        <Suspense fallback={null}>
+          <AnalyticsProvider>{children}</AnalyticsProvider>
+        </Suspense>
       </body>
     </html>
   );
