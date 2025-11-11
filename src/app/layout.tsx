@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/next';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const LANGUAGE_ALTERNATES = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/${locale}`])
@@ -73,10 +74,22 @@ export default async function RootLayout({
   params: Promise<Record<string, never>>;
 }) {
   await params;
+  const gtmId = process.env.GTM_ID || 'GTM-54HWZDVN';
   return (
     <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <Analytics />
-      <body className='antialiased'>{children}</body>
+      <GoogleTagManager gtmId={gtmId} />
+      <body className='antialiased'>
+        {children}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+            height='0'
+            width='0'
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+      </body>
     </html>
   );
 }
