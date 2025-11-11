@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const LANGUAGE_ALTERNATES = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/${locale}`])
@@ -79,6 +80,7 @@ export default async function RootLayout({
     <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <Analytics />
       <GoogleTagManager gtmId={gtmId} />
+      <GoogleAnalytics gaId='G-XYZ' />
       <body className='antialiased'>
         {children}
         <noscript>
