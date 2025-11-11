@@ -37,19 +37,19 @@ const SECTION_IMAGES: Record<
 > = {
   'rip-basics': [
     {
-      src: '/1,1 vízjeles.jpg',
+      src: '/vizjeles.jpg',
       alt: 'Dramatic Atlantic waves rolling onto a remote Fuerteventura beach',
     },
   ],
   'recognize-signs': [
     {
-      src: '/3.jpg',
+      src: '/th.jpg',
       alt: 'Close-up of ocean currents forming calmer channels between waves',
     },
   ],
   'respect-nature': [
     {
-      src: '/7 vízjeles.jpg',
+      src: '/vizj.jpg',
       alt: 'Visitor observing the untouched dunes and shoreline of Fuerteventura',
     },
   ],
