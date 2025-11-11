@@ -458,6 +458,205 @@
     "alt2": "Autó 2",
     "alt3": "Autó 3"
   },
+  "Search": {
+    "ariaLabel": "Weboldal keresése",
+    "openLabel": "Keresés megnyitása",
+    "closeLabel": "Keresés bezárása",
+    "placeholder": "Mit keresel? Írj be kulcsszót...",
+    "noResults": "Nincs találat erre: \"{query}\". Próbálj meg másik kifejezést.",
+    "suggested": "Ajánlott oldalak",
+    "results": "Találatok",
+    "entries": [
+      {
+        "title": "Főoldal",
+        "description": "Áttekintés a Zodiacs szolgáltatásairól, flottáról és ügyfélélményről Fuerteventurán és Lanzarotén.",
+        "keywords": [
+          "főoldal",
+          "nyitó",
+          "zodiacs",
+          "autóbérlés fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Autóink",
+        "description": "Teljes bérautó flotta árakkal, csomagtér-információval és foglalási lehetőséggel.",
+        "keywords": [
+          "autók",
+          "flotta",
+          "árak",
+          "járművek",
+          "foglalás",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "Rólunk",
+        "description": "Ismerd meg, hogyan dolgozunk a rugalmas átvételtől a személyes ügyfélszolgálatig.",
+        "keywords": [
+          "rólam",
+          "csapat",
+          "szolgáltatás",
+          "átvétel",
+          "kiszállítás",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Kapcsolat",
+        "description": "Ajánlatkérés WhatsAppon, e-mailben vagy telefonon, 24 órán belüli válasszal.",
+        "keywords": [
+          "kapcsolat",
+          "ajánlatkérés",
+          "űrlap",
+          "telefon",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog és útikalauz",
+        "description": "Helyi tippek, rip current figyelmeztetések és road trip inspirációk.",
+        "keywords": [
+          "blog",
+          "tippek",
+          "útikalauz",
+          "rip current",
+          "programok",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Rip current biztonság",
+        "description": "Figyelemfelhívó cikk a Fuerteventura partjain előforduló veszélyes áramlatokról.",
+        "keywords": [
+          "rip current",
+          "rip",
+          "biztonság",
+          "cofete",
+          "strand",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "GYIK",
+        "description": "Válaszok a leggyakoribb kérdésekre: reptéri átvétel, biztosítás, tankolás.",
+        "keywords": [
+          "gyik",
+          "kérdések",
+          "biztosítás",
+          "reptér",
+          "tankolás",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Adatkezelési nyilatkozat",
+        "description": "GDPR tájékoztató az adatkezelés módjáról, jogalapokról és jogaidról.",
+        "keywords": [
+          "gdpr",
+          "adatkezelés",
+          "privacy",
+          "adatvédelem",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Sütikezelési tájékoztató",
+        "description": "Milyen sütiket használunk és hogyan állíthatod be a hozzájárulásod.",
+        "keywords": [
+          "süti",
+          "cookie",
+          "hozzájárulás",
+          "adatvédelem",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Biztosítás",
+        "description": "Részletek a biztosítási csomagokról, fedezetekről és önrészekről.",
+        "keywords": [
+          "biztosítás",
+          "fedezet",
+          "önrész",
+          "káresemény",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Bérleti követelmények",
+        "description": "Tudnivalók jogosítványról, életkorról és szükséges dokumentumokról.",
+        "keywords": [
+          "bérleti feltételek",
+          "követelmények",
+          "jogosítvány",
+          "okmányok",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Átvételi pontok és irodák",
+        "description": "Hol tudod átvenni a bérautót Fuerteventurán és Lanzarotén, elérhetőségekkel együtt.",
+        "keywords": [
+          "irodák",
+          "átvétel",
+          "kiszállítás",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Általános bérleti feltételek",
+        "description": "Részletes leírás az autóbérlés szabályairól mindkét szigeten.",
+        "keywords": [
+          "feltételek",
+          "szerződés",
+          "általános",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "ÁSZF – szerződési feltételek",
+        "description": "A hivatalos szerződési feltételek (GTC) Fuerteventurán és Lanzarotén.",
+        "keywords": [
+          "ászf",
+          "gtc",
+          "szerződés",
+          "jogi",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
   "Navigation": {
     "menu_sr": "Menü",
     "cars": "Autóink",
@@ -497,7 +696,6 @@
   },
   "Inquire": {
     "title": "Foglald le most!",
-
     "description_1": "Ne hagyd az utolsó pillanatra az autóbérlést! A Zodiacs Rent a Car csapata 24 órán belül válaszol, és segít lefoglalni azt az autót, amelyik a leginkább illik a nyaralásodhoz.",
     "description_2": "Add meg az elérhetőséged, és személyre szabott ajánlatot küldünk, részletes árakkal, biztosítási információkkal és a kért extra felszereléssel. A Zodiacs-nál minden lépést a választott nyelveden egyeztetünk, hogy magabiztosan vághass neki az utazásnak.",
     "fields": {

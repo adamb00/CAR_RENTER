@@ -4,6 +4,7 @@ import { GoogleMapsScript } from '@/components/GoogleMapsScript';
 import Footer from '@/components/layout/Footer';
 import { LocaleToggle } from '@/components/LocaleToggler';
 import { Navigation } from '@/components/navigation/Navigation';
+import { GlobalSearch } from '@/components/navigation/GlobalSearch';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { ThemeToggle } from '@/components/ThemeToggler';
 import WhatsAppContainer from '@/components/WhatsAppContainer';
@@ -50,10 +51,14 @@ export default async function LocaleLayout(props: {
             }}
           >
             <Suspense fallback={null}>
+              <GlobalSearch />
+            </Suspense>
+            <Suspense fallback={null}>
               <LocaleToggle />
             </Suspense>
             <ThemeToggle />
           </div>
+
           {children}
           <Toaster position='bottom-right' reverseOrder={false} />
           <WhatsAppContainer />

@@ -526,6 +526,205 @@
     "alt2": "Coche 2",
     "alt3": "Coche 3"
   },
+  "Search": {
+    "ariaLabel": "Buscar en el sitio",
+    "openLabel": "Abrir búsqueda",
+    "closeLabel": "Cerrar búsqueda",
+    "placeholder": "¿Qué estás buscando? Escribe una palabra clave...",
+    "noResults": "No encontramos resultados para \"{query}\". Prueba con otro término.",
+    "suggested": "Páginas sugeridas",
+    "results": "Resultados",
+    "entries": [
+      {
+        "title": "Inicio",
+        "description": "Resumen de la flota de Zodiacs, servicios y experiencias en Fuerteventura y Lanzarote.",
+        "keywords": [
+          "inicio",
+          "portada",
+          "alquiler de coches",
+          "fuerteventura",
+          "lanzarote",
+          "zodiacs"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Coches de alquiler",
+        "description": "Flota completa con precios, capacidad de equipaje y disponibilidad para reservar online.",
+        "keywords": [
+          "coches",
+          "flota",
+          "precios",
+          "vehículos",
+          "reserva",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "Sobre nosotros",
+        "description": "Cómo trabajamos: entregas flexibles, servicio local y atención personalizada.",
+        "keywords": [
+          "sobre nosotros",
+          "equipo",
+          "servicio",
+          "entrega",
+          "traslado",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Contacto",
+        "description": "Pide presupuesto por WhatsApp, correo o teléfono con respuesta en menos de 24 h.",
+        "keywords": [
+          "contacto",
+          "presupuesto",
+          "formulario",
+          "teléfono",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog y guía",
+        "description": "Consejos locales, alertas de corrientes y rutas para explorar la isla.",
+        "keywords": [
+          "blog",
+          "guía",
+          "consejos",
+          "corrientes",
+          "planes",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Corrientes de retorno peligrosas",
+        "description": "Artículo sobre cómo detectar y evitar las rip currents en playas salvajes.",
+        "keywords": [
+          "rip current",
+          "corrientes",
+          "seguridad",
+          "cofete",
+          "playa",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/corrientes-peligrosas-fuerteventura",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "Preguntas frecuentes",
+        "description": "Resolvemos dudas sobre entrega en aeropuerto, seguros y combustible.",
+        "keywords": [
+          "faq",
+          "preguntas",
+          "seguro",
+          "aeropuerto",
+          "combustible",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Política de privacidad (GDPR)",
+        "description": "Información sobre cómo tratamos tus datos y qué derechos tienes.",
+        "keywords": [
+          "gdpr",
+          "privacidad",
+          "datos",
+          "protección",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Política de cookies",
+        "description": "Detalle de las cookies que usamos y cómo puedes gestionarlas.",
+        "keywords": [
+          "cookies",
+          "consentimiento",
+          "privacidad",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Seguro de alquiler",
+        "description": "Coberturas incluidas, franquicias y recomendaciones para viajar seguro.",
+        "keywords": [
+          "seguro",
+          "cobertura",
+          "franquicia",
+          "avería",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Requisitos de alquiler",
+        "description": "Documentación y condiciones necesarias para alquilar un coche con nosotros.",
+        "keywords": [
+          "requisitos",
+          "alquiler",
+          "documentación",
+          "permiso de conducir",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Oficinas y puntos de entrega",
+        "description": "Direcciones y horarios de recogida en Fuerteventura y Lanzarote.",
+        "keywords": [
+          "oficinas",
+          "recogida",
+          "entrega",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Condiciones generales de alquiler",
+        "description": "Normas y coberturas del alquiler aplicables en ambas islas.",
+        "keywords": [
+          "condiciones",
+          "alquiler",
+          "normas",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "Condiciones generales del contrato (GTC)",
+        "description": "El contrato completo del servicio de alquiler en Fuerteventura y Lanzarote.",
+        "keywords": [
+          "gtc",
+          "contrato",
+          "legal",
+          "condiciones",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
   "Navigation": {
     "menu_sr": "Menú",
     "cars": "Coches",

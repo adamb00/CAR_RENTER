@@ -74,7 +74,7 @@ export function WhatsappQuickChat({
         >
           <SocialIcon
             url='https://www.whatsapp.com/'
-            style={{ height: 32, width: 32 }}
+            style={{ height: 48, width: 48 }}
           />
         </Button>
       </DropdownMenuTrigger>

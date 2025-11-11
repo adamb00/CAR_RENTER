@@ -8,6 +8,7 @@ import logo from '../../../public/logo_white.png';
 import Logo from '../Logo';
 import { LocaleToggle } from '@/components/LocaleToggler';
 import { ThemeToggle } from '@/components/ThemeToggler';
+import { GlobalSearch } from '@/components/navigation/GlobalSearch';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import logo_black from '../../../public/logo_black.png';
@@ -125,6 +126,7 @@ export function Navigation() {
             ))}
           </ul>
           <div className='h-6 w-px bg-border mx-1 lg:mx-2' aria-hidden />
+          <GlobalSearch />
           <Suspense fallback={null}>
             <LocaleToggle />
           </Suspense>
