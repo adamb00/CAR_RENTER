@@ -1,4 +1,5 @@
 'use server';
+import { CookieConsent } from '@/components/cookie-consent';
 import { GoogleMapsScript } from '@/components/GoogleMapsScript';
 import Footer from '@/components/layout/Footer';
 import { LocaleToggle } from '@/components/LocaleToggler';
@@ -56,6 +57,7 @@ export default async function LocaleLayout(props: {
           {children}
           <Toaster position='bottom-right' reverseOrder={false} />
           <WhatsAppContainer />
+          <CookieConsent variant='default' />
 
           <Footer />
         </ThemeProvider>

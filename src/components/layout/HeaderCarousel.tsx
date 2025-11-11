@@ -57,10 +57,10 @@ export default function HeaderCarousel() {
           <picture>
             <source
               media='(min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px)'
-              srcSet={'/AJUY2.jpg'}
+              srcSet={'/AJUY.jpg'}
             />
             <img
-              src={'/AJUY2.jpg'}
+              src={'/AJUY.jpg'}
               alt='Zodiacs Rent a Car'
               className='h-full w-full object-cover object-center min-h-[95vh] min-w-full'
             />
@@ -113,6 +113,19 @@ export default function HeaderCarousel() {
             />
             <img
               src={'/DSC00587.jpg'}
+              alt='Zodiacs Rent a Car'
+              className='h-full w-full object-cover object-center min-h-[95vh] min-w-full'
+            />
+          </picture>
+        </CarouselItem>
+        <CarouselItem className='h-full'>
+          <picture>
+            <source
+              media='(min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px)'
+              srcSet={'/DSC00179.jpg'}
+            />
+            <img
+              src={'/DSC00179.jpg'}
               alt='Zodiacs Rent a Car'
               className='h-full w-full object-cover object-center min-h-[95vh] min-w-full'
             />

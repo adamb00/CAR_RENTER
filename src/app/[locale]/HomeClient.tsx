@@ -15,11 +15,6 @@ export default function HomeClient() {
       <HomeIntro />
       <Explore />
       <Inquire />
-      <CookieConsent
-        variant='default'
-        onAcceptCallback={() => console.log('Accepted')}
-        onDeclineCallback={() => console.log('Declined')}
-      />
     </div>
   );
 }
