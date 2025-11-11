@@ -1,12 +1,12 @@
 import '@/app/_style/globals.css';
+import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider';
 import { DEFAULT_LOCALE, LOCALES } from '@/i18n/config';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
-import { getTranslations } from 'next-intl/server';
-import type { Metadata } from 'next';
-import { ReactNode } from 'react';
-import { Analytics } from '@vercel/analytics/next';
 import { GoogleTagManager } from '@next/third-parties/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { ReactNode } from 'react';
 
 const LANGUAGE_ALTERNATES = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/${locale}`])
@@ -75,22 +75,32 @@ export default async function RootLayout({
   params: Promise<Record<string, never>>;
 }) {
   await params;
-  const gtmId = process.env.GTM_ID || 'GTM-54HWZDVN';
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? process.env.GTM_ID ?? '';
+
+  const gaMeasurementId =
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ??
+    process.env.GA_MEASUREMENT_ID ??
+    '';
+  const hasGtm = Boolean(gtmId);
+  const hasGa = Boolean(gaMeasurementId);
+
   return (
     <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <Analytics />
-      <GoogleTagManager gtmId={gtmId} />
-      <GoogleAnalytics gaId='G-XYZ' />
+      {hasGtm ? <GoogleTagManager gtmId={gtmId} /> : null}
+      {/* {hasGa ? <GoogleAnalytics gaId={gaMeasurementId} /> : null} */}
       <body className='antialiased'>
-        {children}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-            height='0'
-            width='0'
-            style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
-        </noscript>
+        {hasGtm ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height='0'
+              width='0'
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
+        ) : null}
+        <AnalyticsProvider>{children}</AnalyticsProvider>
       </body>
     </html>
   );

@@ -33,6 +33,7 @@ import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
 import LegalConsents, {
   type LegalConsentItem,
 } from '@/components/rent/LegalConsents';
+import { trackFormSubmission } from '@/lib/analytics';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;
@@ -129,6 +130,12 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
 
   const onSubmit = (values: QuoteRequestValues) => {
     setStatus('idle');
+    const submissionMeta = {
+      locale,
+      preferredChannel: values.preferredChannel,
+      hasChildren: Boolean(values.children && values.children !== '0'),
+      hasPartySize: Boolean(values.partySize),
+    };
     const { consents: _consents, ...rest } = values;
     void _consents;
     startTransition(async () => {
@@ -137,9 +144,19 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
         setStatus('success');
         form.reset(defaultValues);
         toast.success(t('form.feedback.success'));
+        trackFormSubmission({
+          formId: 'contact-quote',
+          status: 'success',
+          ...submissionMeta,
+        });
       } else {
         setStatus('error');
         toast.error(t('form.feedback.error'));
+        trackFormSubmission({
+          formId: 'contact-quote',
+          status: 'error',
+          ...submissionMeta,
+        });
       }
     });
   };

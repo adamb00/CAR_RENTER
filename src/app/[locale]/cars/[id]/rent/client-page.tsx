@@ -25,6 +25,7 @@ import Invoice from '@/components/rent/Invoice';
 import LegalConsents, {
   type LegalConsentItem,
 } from '@/components/rent/LegalConsents';
+import { trackFormSubmission } from '@/lib/analytics';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { createEmptyDriver } from '@/hooks/useDrivers';
@@ -263,17 +264,35 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
 
   const onSubmit = (data: RentFormValues) => {
     const parsed: RentFormResolvedValues = rentSchema.parse(data);
+    const submissionMeta = {
+      locale,
+      carId: id,
+      rentalStart: parsed.rentalPeriod.startDate,
+      rentalEnd: parsed.rentalPeriod.endDate,
+      extrasCount: Array.isArray(extrasSelected) ? extrasSelected.length : 0,
+    };
 
     startTransition(async () => {
       const res = await RentAction(parsed);
       if (res.success) {
         toast.success(t('toast.success'));
         clearStoredValues();
+        trackFormSubmission({
+          formId: 'rent-request',
+          status: 'success',
+          ...submissionMeta,
+        });
         setTimeout(() => {
           router.push(`/${locale}`);
         }, 2000);
       } else {
         toast.error(t('toast.error'));
+        trackFormSubmission({
+          formId: 'rent-request',
+          status: 'error',
+          errorMessage: res.error,
+          ...submissionMeta,
+        });
       }
     });
   };
