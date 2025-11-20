@@ -597,7 +597,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                   toMonth={toMonth}
                   fromYear={fromMonth?.getFullYear()}
                   toYear={toMonth?.getFullYear()}
-                  captionLayout='dropdown-buttons'
+                  captionLayout='dropdown'
                   locale={calendarLocale}
                   formatters={calendarFormatters}
                   onSelect={(value: { from?: Date; to?: Date } | undefined) => {
@@ -608,22 +608,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
                     hasInternalRangeUpdateRef.current = true;
 
-                    // Ha csak egy dátumra kattintottak: egykattintásos kiválasztás (azonos napi "from" és "to"),
-                    // és azonnali alkalmazás + popover zárás.
-                    // if (!pickedTo) {
-                    //   const sameDayRange = {
-                    //     from: nextFrom,
-                    //     to: nextFrom,
-                    //   } as DateRange;
-                    //   setRange(sameDayRange);
-
-                    //   // Auto-apply (ne reseteljen záráskor) és értesítsük a külvilágot
-                    //   skipResetRef.current = true;
-                    //   setIsOpen(false);
-                    //   onUpdate?.({ range: sameDayRange, rangeCompare });
-                    //   return;
-                    // }
-
                     if (!pickedTo) {
                       const sameDayRange = {
                         from: nextFrom,
@@ -632,11 +616,9 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                       setRange(sameDayRange);
 
                       if (singleClickSelect === 'off') {
-                        // Alap viselkedés: várunk a második kattintásra
                         return;
                       }
 
-                      // Azonnal szólunk kifelé, hogy from/to beállt ugyanarra a napra
                       onUpdate?.({ range: sameDayRange, rangeCompare });
 
                       if (singleClickSelect === 'apply-and-close') {
