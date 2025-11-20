@@ -1145,15 +1145,20 @@
       "from_price": "Desde €{price}"
     },
     "colors": {
-      "silver_metallic": "Plata metalizada",
       "milky_beige": "Beige marfil",
       "white": "Blanco",
+      "silver_metal": "Plata metalizada",
+      "blue": "Azul",
+      "metal_blue": "Azul metalizado",
+      "gray": "Gris",
+      "silver_metallic": "Plata metalizada",
       "metallic_blue": "Azul metalizado"
     },
     "categories": {
       "small": "Compacto",
       "medium": "Mediano",
-      "large": "Familiar"
+      "large": "Familiar",
+      "suv": "SUV / Todoterreno"
     },
     "details": {
       "back": "Volver a la flota",

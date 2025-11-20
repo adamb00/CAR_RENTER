@@ -1187,15 +1187,20 @@
       "from_price": "€{price}-tól"
     },
     "colors": {
-      "silver_metallic": "Ezüstmetál",
       "milky_beige": "Milky Beige",
       "white": "Fehér",
+      "silver_metal": "Ezüstmetál",
+      "blue": "Kék",
+      "metal_blue": "Metálkék",
+      "gray": "Szürke",
+      "silver_metallic": "Ezüstmetál",
       "metallic_blue": "Metálkék"
     },
     "categories": {
       "small": "Kisautó",
       "medium": "Középkategória",
-      "large": "Családi"
+      "large": "Családi",
+      "suv": "SUV / Terepjáró"
     },
     "transmissions": {
       "manual": "Manuális",

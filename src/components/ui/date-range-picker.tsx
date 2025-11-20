@@ -595,6 +595,9 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                   disabled={disabledDays}
                   fromMonth={fromMonth}
                   toMonth={toMonth}
+                  fromYear={fromMonth?.getFullYear()}
+                  toYear={toMonth?.getFullYear()}
+                  captionLayout='dropdown-buttons'
                   locale={calendarLocale}
                   formatters={calendarFormatters}
                   onSelect={(value: { from?: Date; to?: Date } | undefined) => {

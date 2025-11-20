@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { LOCALES } from '@/i18n/config';
-import { CARS } from '@/lib/cars';
+import { getCars } from '@/lib/cars';
 
 const HOST = (
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zodiacsrentacar.com'
@@ -19,8 +19,9 @@ const STATIC_PATHS = [
   '/offices',
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const cars = await getCars();
 
   const staticEntries = STATIC_PATHS.flatMap((path) =>
     LOCALES.map((locale) => {
@@ -39,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  const carDetailEntries = CARS.flatMap((car) =>
+  const carDetailEntries = cars.flatMap((car) =>
     LOCALES.map((locale) => {
       const path = `/cars/${car.id}`;
       return {
@@ -59,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  const rentEntries = CARS.flatMap((car) =>
+  const rentEntries = cars.flatMap((car) =>
     LOCALES.map((locale) => {
       const path = `/cars/${car.id}/rent`;
       return {

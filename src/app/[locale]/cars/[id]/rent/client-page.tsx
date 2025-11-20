@@ -38,6 +38,7 @@ import {
 import { useWatchForm } from '@/hooks/useWatchForm';
 import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
 import { RentSchema, createRentSchema } from '@/schemas/RentSchema';
+import type { Car } from '@/lib/cars';
 import toast from 'react-hot-toast';
 
 type RentFormValues = z.input<typeof RentSchema> & FieldValues;
@@ -45,14 +46,15 @@ type RentFormResolvedValues = z.output<typeof RentSchema>;
 
 type RentPageClientProps = {
   locale: string;
-  id: string;
+  car: Pick<Car, 'id' | 'seats'>;
 };
 
-export default function RentPageClient({ locale, id }: RentPageClientProps) {
+export default function RentPageClient({ locale, car }: RentPageClientProps) {
   const t = useTranslations('RentForm');
   const tSchema = useTranslations('RentSchema');
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const { id } = car;
 
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -356,7 +358,7 @@ export default function RentPageClient({ locale, id }: RentPageClientProps) {
         </h2>
         <section className='mt-10 space-y-8'>
           <div data-section='adults' tabIndex={-1} className='scroll-mt-28'>
-            <BaseDetails locale={locale} form={form} id={id} />
+            <BaseDetails locale={locale} form={form} car={car} />
           </div>
 
           <div data-section='children' tabIndex={-1} className='scroll-mt-28'>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
-import { CARS } from '@/lib/cars';
+import { getCarById, getCars } from '@/lib/cars';
 import { LOCALES } from '@/i18n/config';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { NoSSR } from '@/components/NoSSR';
@@ -20,9 +20,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, id } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const car = CARS.find((item) => item.id === id);
+  const car = await getCarById(id);
 
-  if (!car) {
+  if (!car || car.status !== 'available') {
     return {};
   }
 
@@ -69,8 +69,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<PageParams[]> {
+  const cars = await getCars();
   return LOCALES.flatMap((locale) =>
-    CARS.map((car) => ({
+    cars.map((car) => ({
       locale,
       id: car.id,
     }))
@@ -84,15 +85,15 @@ export default async function RentPage({
 }) {
   const { locale, id } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const carExists = CARS.some((car) => car.id === id);
+  const car = await getCarById(id);
 
-  if (!carExists) {
+  if (!car || car.status !== 'available') {
     notFound();
   }
 
   return (
     <NoSSR>
-      <RentPageClient locale={resolvedLocale} id={id} />
+      <RentPageClient locale={resolvedLocale} car={{ id: car.id, seats: car.seats }} />
     </NoSSR>
   );
 }

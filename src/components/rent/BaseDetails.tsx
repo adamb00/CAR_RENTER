@@ -1,16 +1,15 @@
-import { CARS } from '@/lib/cars';
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
 import { EXTRA_VALUES } from '@/lib/extra_values';
 import { RentFormValues } from '@/schemas/RentSchema';
 import { useMessages, useTranslations } from 'next-intl';
-import { notFound } from 'next/navigation';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { MultiSelect } from '../MultiSelect';
 import SectionCard from '../SectionCard';
 import { DateRangePicker } from '../ui/date-range-picker';
 import { enUS } from 'date-fns/locale';
+import type { Car } from '@/lib/cars';
 import {
   FormControl,
   FormField,
@@ -64,17 +63,16 @@ const formatDateValue = (date: Date): string => {
 export default function BaseDetails({
   locale,
   form,
-  id,
+  car,
 }: {
   locale: string;
   form: UseFormReturn<RentFormValues>;
-  id: string;
+  car: Pick<Car, 'id' | 'seats'>;
 }) {
   const t = useTranslations('RentForm');
   const messages = useMessages();
   const dateLocale = DATE_LOCALE_MAP[locale] ?? 'en-US';
   const calendarLocale = CALENDAR_LOCALE_MAP[locale] ?? enUS;
-  const car = CARS.find((item) => item.id === id);
 
   const today = React.useMemo(() => {
     const current = new Date();
@@ -96,8 +94,6 @@ export default function BaseDetails({
       })),
     [t]
   );
-
-  if (!car) return notFound();
 
   const dateRangePickerMessages = (
     messages?.RentForm as Record<string, unknown> | null

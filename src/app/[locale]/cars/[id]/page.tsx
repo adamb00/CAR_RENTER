@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CARS } from '@/lib/cars';
+import { getCarById, getCars } from '@/lib/cars';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { LOCALES } from '@/i18n/config';
 
@@ -22,9 +22,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, id } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const car = CARS.find((item) => item.id === id);
+  const car = await getCarById(id);
 
-  if (!car) {
+  if (!car || car.status !== 'available') {
     return {};
   }
 
@@ -71,8 +71,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<CarPageParams[]> {
+  const cars = await getCars();
   return LOCALES.flatMap((locale) =>
-    CARS.map((car) => ({
+    cars.map((car) => ({
       locale,
       id: car.id,
     }))
@@ -86,9 +87,9 @@ export default async function CarPage({
 }) {
   const { locale, id } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const car = CARS.find((item) => item.id === id);
+  const car = await getCarById(id);
 
-  if (!car) {
+  if (!car || car.status !== 'available') {
     notFound();
   }
 
@@ -129,7 +130,7 @@ export default async function CarPage({
           <img
             src={car.image}
             alt={car.name}
-            className='h-full w-full object-cover'
+            className='h-full w-full object-contain bg-background'
             loading='lazy'
           />
         </div>

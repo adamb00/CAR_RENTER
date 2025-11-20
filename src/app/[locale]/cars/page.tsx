@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CARS } from '@/lib/cars';
+import { getCars } from '@/lib/cars';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo';
 import { Luggage, User } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -31,6 +31,7 @@ export default async function CarsPage({
 }) {
   const { locale = 'hu' } = await params;
   const resolvedLocale = resolveLocale(locale);
+  const cars = await getCars();
 
   const t = await getTranslations({
     locale: resolvedLocale,
@@ -50,7 +51,7 @@ export default async function CarsPage({
         </p>
       </div>
       <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-20'>
-        {CARS.map((car) => (
+        {cars.map((car) => (
           <div
             key={car.id}
             className='group rounded-lg border border-border/60 bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200'
@@ -61,7 +62,7 @@ export default async function CarsPage({
                 <img
                   src={car.image}
                   alt={car.name}
-                  className='h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-300 cursor-pointer'
+                  className='h-full w-full object-contain bg-background group-hover:scale-[1.03] transition-transform duration-300 cursor-pointer'
                   loading='lazy'
                 />
               </Link>
