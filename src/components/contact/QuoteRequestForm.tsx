@@ -81,15 +81,9 @@ const buildSchema = (t: ReturnType<typeof useTranslations<'Contact'>>) =>
       .min(1, t('form.errors.emailRequired'))
       .email(t('form.errors.emailInvalid')),
     preferredChannel: z.enum(CHANNELS),
-    rentalStart: z
-      .string()
-      .min(1, t('form.errors.rentalStartRequired')),
-    rentalEnd: z
-      .string()
-      .min(1, t('form.errors.rentalEndRequired')),
-    arrivalFlight: z
-      .string()
-      .min(1, t('form.errors.arrivalFlightRequired')),
+    rentalStart: z.string().min(1, t('form.errors.rentalStartRequired')),
+    rentalEnd: z.string().min(1, t('form.errors.rentalEndRequired')),
+    arrivalFlight: z.string().min(1, t('form.errors.arrivalFlightRequired')),
     departureFlight: z
       .string()
       .min(1, t('form.errors.departureFlightRequired')),
@@ -228,7 +222,7 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
   );
 
   return (
-    <div className='mt-10 max-w-7xl mx-auto w-full'>
+    <div className='my-10 max-w-7xl mx-auto w-full'>
       <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8 shadow-sm'>
         <h3 className='text-2xl font-semibold text-sky-dark dark:text-amber-light'>
           {t('form.title')}
@@ -380,9 +374,7 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder={t(
-                          'form.fields.arrivalFlight.placeholder'
-                        )}
+                        placeholder={t('form.fields.arrivalFlight.placeholder')}
                       />
                     </FormControl>
                     <FormMessage />

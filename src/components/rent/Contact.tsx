@@ -1,6 +1,9 @@
-import React from 'react';
-import SectionCard from '../SectionCard';
+import { cn } from '@/lib/utils';
+import { RentFormValues } from '@/schemas/RentSchema';
 import { useTranslations } from 'next-intl';
+import { UseFormReturn } from 'react-hook-form';
+import SectionCard from '../SectionCard';
+import { Checkbox } from '../ui/checkbox';
 import {
   FormControl,
   FormField,
@@ -8,10 +11,6 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
-import { UseFormReturn } from 'react-hook-form';
-import { RentFormValues } from '@/schemas/RentSchema';
-import { Checkbox } from '../ui/checkbox';
-import { cn } from '@/lib/utils';
 import { Input } from '../ui/input';
 
 export default function Contact({
@@ -26,7 +25,7 @@ export default function Contact({
     <SectionCard
       title={t('sections.contact.title')}
       description={t('sections.contact.description')}
-      contentClassName='space-y-4 '
+      contentClassName='space-y-4'
     >
       <FormField
         control={form.control}

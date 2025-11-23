@@ -91,7 +91,7 @@ function redirectToLocale(
   return withLocaleCookie(res, locale);
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const hostname = req.nextUrl.hostname.toLowerCase();
 

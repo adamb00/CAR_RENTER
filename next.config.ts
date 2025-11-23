@@ -1,7 +1,7 @@
 // next.config.ts
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin(); // alapbeállítás: gyökérben keresi a next-intl.config.ts-t
+const withNextIntl = createNextIntlPlugin();
 
 export default withNextIntl({
   images: {
@@ -9,6 +9,6 @@ export default withNextIntl({
   },
   experimental: {
     globalNotFound: true,
-    serverComponentsExternalPackages: ['pdfkit'],
   },
+  serverExternalPackages: ['pdfkit'],
 });

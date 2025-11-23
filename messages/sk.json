@@ -1326,7 +1326,7 @@
       "i5": "Ďalší vodič(i) sú bez príplatku – treba ich nahlásiť v požičovni.",
       "i6": "<strong>Palivová politika</strong>: podľa úrovne paliva pri prevzatí môže byť požadovaná záloha.",
       "i7": "<strong>Zmeny/zrušenie</strong>: bez poplatku; online alebo e-mailom/telefonicky.",
-      "i8": "Pri letiskových rezerváciách je vozidlo držané <strongmax. 60 minút</strong> podľa reálneho času príletu.",
+      "i8": "Pri letiskových rezerváciách je vozidlo držané <strong>max. 60 minút</strong> podľa reálneho času príletu.",
       "i9": "<strong>Detské sedačky/podsedáky</strong> sú zdarma; 0–18 kg sedačka na zadné sedadlo, v smere alebo proti smeru jazdy; podsedák 15–36 kg; montáž vykonáva zákazník."
     },
     "peninsula": {
@@ -1366,7 +1366,7 @@
     }
   },
   "RentalRequirements": {
-    "title": "Bérleti követelmények",
+    "title": "Požiadavky na prenájom",
     "general": {
       "title": "Všeobecné podmienky (Fuerteventura / Lanzarote)",
       "i1": "Vodičom mladším ako 23 rokov vozidlo štandardne neprenajímame, iba za príplatok.",
