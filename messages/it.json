@@ -915,8 +915,9 @@
             "href": "/{locale}/inquire"
           }
         ]
-      },
-      "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
         "meta": {
           "title": "Attenzione! Correnti di risacca pericolose a Fuerteventura – Come fare il bagno in sicurezza nell’oceano",
           "description": "Sulle spiagge di Fuerteventura la corrente di risacca (rip current) è un fenomeno frequente che può trascinare improvvisamente al largo i bagnanti. Scopri come riconoscerla e come evitare in sicurezza il pericolo.",
@@ -1939,15 +1940,15 @@
       "close": "Chiudi",
       "clear": "Cancella"
     },
-    "NotFound": {
-      "label": "Ti sei perso?",
-      "title": "La pagina richiesta non è stata trovata",
-      "description": "È possibile che la pagina non esista più oppure che ci sia stato un errore di digitazione. Puoi continuare l'esplorazione dalla pagina principale oppure contattarci.",
-      "badge": "Ti aspetta una nuova avventura",
-      "cta": {
-        "home": {
-          "href": "it",
-          "label": "Torna alla pagina principale"
+  "NotFound": {
+    "label": "Ti sei perso?",
+    "title": "La pagina che stai cercando non è disponibile",
+    "description": "Forse la pagina non esiste più oppure c'è stato un errore di digitazione. Puoi continuare l'esplorazione dalla pagina principale oppure contattarci direttamente.",
+    "badge": "Ti aspetta una nuova avventura",
+    "cta": {
+      "home": {
+        "href": "it",
+        "label": "Torna alla pagina principale"
         },
         "contact": {
           "href": "it/contact",
@@ -2250,4 +2251,3 @@
       ]
     }
   }
-}
