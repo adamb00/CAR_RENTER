@@ -1,52 +1,45 @@
-// export const LOCALES = [
-//   'hu',
-//   'en',
-//   'de',
-//   'ro',
-//   'sk',
-//   'cz',
-//   'fr',
-//   'se',
-//   'no',
-//   'dk',
-//   'es',
-//   'it',
-//   'pl',
-// ] as const;
-export const LOCALES = ['hu', 'es'] as const;
+export const LOCALES = [
+  'hu',
+  'en',
+  'de',
+  'ro',
+  'fr',
+  'es',
+  'it',
+  'sk',
+  'cz',
+  'se',
+  'no',
+  'dk',
+  'pl',
+] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = 'hu';
+export const DEFAULT_LOCALE: Locale = 'en';
 
 export const LANG_BY_COUNTRY: Record<string, Locale> = {
   HU: 'hu',
+  RO: 'ro',
+  SK: 'sk',
+  CZ: 'cz',
+  DE: 'de',
+  AT: 'de',
+  CH: 'de',
+  FR: 'fr',
+  BE: 'fr',
+  LU: 'fr',
+  SE: 'se',
+  NO: 'no',
+  DK: 'dk',
   ES: 'es',
+  IT: 'it',
+  PL: 'pl',
+  GB: 'en',
+  IE: 'en',
+  US: 'en',
+  CA: 'en',
+  AU: 'en',
+  NZ: 'en',
 };
-
-// // Ország→locale fallback (bővíthető)
-// export const LANG_BY_COUNTRY: Record<string, Locale> = {
-//   HU: 'hu',
-//   RO: 'ro',
-//   SK: 'sk',
-//   CZ: 'cz',
-//   DE: 'de',
-//   AT: 'de',
-//   CH: 'de',
-//   FR: 'fr',
-//   BE: 'fr',
-//   LU: 'fr',
-//   SE: 'se',
-//   NO: 'no',
-//   DK: 'dk',
-//   ES: 'es',
-//   IT: 'it',
-//   PL: 'pl',
-//   GB: 'en',
-//   IE: 'en',
-//   US: 'en',
-//   CA: 'en',
-//   AU: 'en',
-//   NZ: 'en',
-// };
 
 // Accept-Language → a te locales-edre normalizálva
 export function matchLocaleFromAccept(accept: string): Locale | null {

@@ -1,0 +1,2248 @@
+{
+  "Header": {
+    "header": "Biluthyrning på Fuerteventura och Lanzarote – bekvämt och snabbt",
+    "book_now": "Boka hyrbil nu"
+  },
+  "CookieConsent": {
+    "title": "Vi använder cookies",
+    "noticeTitle": "Cookie-meddelande",
+    "body": "För att ge den bästa användarupplevelsen använder vi cookies på vår webbplats. Mer information om användning och hantering av cookies hittar du i vår cookiepolicy.",
+    "minimalBody": "Vi använder cookies för att ge dig en ännu bättre surfupplevelse.",
+    "notice": "Genom att klicka på knappen <highlight>{actionLabel}</highlight> samtycker du till användningen av cookies.",
+    "learnMore": "Mer information:",
+    "cookiePolicyLink": "Information om cookies",
+    "gdprLink": "Integritetspolicy",
+    "accept": "Jag accepterar",
+    "decline": "Jag avvisar"
+  },
+  "GDPR": {
+    "title": "Integritetspolicy (GDPR)",
+    "updated": "Senast uppdaterad: 8 november 2025.",
+    "intro": [
+      "Denna integritetspolicy sammanfattar de viktigaste reglerna för behandling av personuppgifter i samband med tjänsterna från Zodiacs Rent a Car (ZODIACSRENTACAR).",
+      "Vi behandlar alltid dina uppgifter i enlighet med GDPR samt spanska och ungerska dataskyddsbestämmelser. Vi samlar endast in information i den omfattning och under den tid som är nödvändig, och ger alltid tydlig och transparent information."
+    ],
+    "sections": [
+      {
+        "heading": "1. Uppgifter om personuppgiftsansvarig",
+        "lists": [
+          {
+            "items": [
+              "Företagsnamn: ZODIACSRENTACAR",
+              "Säte: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Spanien",
+              "E-post: info@zodiacsrentacar.com",
+              "Telefon: +34 683 192 422",
+              "Webbplats: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Ändamålen med behandlingen",
+        "paragraphs": [
+          "Vi använder personuppgifter uteslutande för ändamål som är nödvändiga för att kunna tillhandahålla våra tjänster:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "förberedelse och dokumentation av hyrbilserbjudanden och avtal",
+              "hantering och bekräftelse av onlinebokningar",
+              "överlämning av fordon, utlämning/leverans och kundservicekontakt",
+              "fakturering, ekonomisk administration och uppfyllande av rättsliga skyldigheter",
+              "kundkommunikation via telefon, e-post, WhatsApp eller andra kanaler",
+              "marknadsföring och nyhetsbrev med den registrerades uttryckliga samtycke",
+              "statistisk analys och tjänsteutveckling i anonymiserad form"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Rättslig grund för behandlingen",
+        "paragraphs": [
+          "Olika processer kan ha olika rättslig grund, men vi stödjer oss alltid på någon av följande bestämmelser i GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "fullgörande eller förberedelse av avtal – GDPR artikel 6.1 b",
+              "uppfyllande av rättslig förpliktelse (t.ex. bokföringsregler) – GDPR artikel 6.1 c",
+              "den personuppgiftsansvariges berättigade intresse (till exempel bedrägeriförebyggande) – GDPR artikel 6.1 f",
+              "den registrerades samtycke (t.ex. nyhetsbrev, kontaktförfrågan) – GDPR artikel 6.1 a"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Kategorier av personuppgifter",
+        "paragraphs": [
+          "I våra onlineformulär och vid avtalsteckning begär vi endast de uppgifter som är nödvändiga för biluthyrningen. De viktigaste kategorierna är följande:"
+        ],
+        "lists": [
+          {
+            "title": "Bokningsuppgifter",
+            "items": [
+              "hyrperiod (från–till)",
+              "antal resenärer, barns ålder och längd",
+              "vald fordonskategori och önskade extratjänster"
+            ]
+          },
+          {
+            "title": "Hyrestagare och förares personuppgifter",
+            "items": [
+              "fullständigt namn (två efternamn och två förnamn vid behov)",
+              "födelseort, födelsedatum, moderns namn",
+              "nationalitet och adressuppgifter"
+            ]
+          },
+          {
+            "title": "Kontaktuppgifter",
+            "items": [
+              "telefonnummer och föredragen kommunikationskanal (WhatsApp, Messenger etc.)",
+              "e-postadress"
+            ]
+          },
+          {
+            "title": "Identifieringshandlingar",
+            "items": [
+              "typ av identitetshandling, nummer, utfärdande- och utgångsdatum",
+              "körkortsnummer, kategori, giltighetstid och utfärdandedatum",
+              "förklaring om att körkortet har varit giltigt i mer än 3 år"
+            ]
+          },
+          {
+            "title": "Ytterligare förare eller kontaktperson",
+            "items": [
+              "uppgifter liknande huvudhyrestagarens för extra förare",
+              "kontaktpersons namn och telefonnummer om det skiljer sig från hyrestagarens"
+            ]
+          },
+          {
+            "title": "Fakturerings- och leveransuppgifter",
+            "items": [
+              "namn eller företagsnamn, faktureringsadress och (för företag) momsnummer",
+              "e-postadress för elektronisk faktura",
+              "namn och adress till hotell eller lägenhet vid leverans av fordon"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Lagringstid",
+        "paragraphs": [
+          "Uppgifter som är nödvändiga för att tillhandahålla tjänsten lagrar vi i 5 år efter att hyran har avslutats, för att kunna göra gällande civilrättsliga anspråk.",
+          "Redovisnings- och skatterättsliga handlingar lagras enligt tillämpliga lagar i 8 år.",
+          "Uppgifter som behandlas på grundval av samtycke lagras till dess att samtycket återkallas eller ändamålet upphör."
+        ]
+      },
+      {
+        "heading": "6. Överföring av uppgifter och personuppgiftsbiträden",
+        "paragraphs": [
+          "Vi delar endast uppgifter med partners som är absolut nödvändiga för att kunna utföra tjänsterna, och ingår personuppgiftsbiträdesavtal med dem. Typiska mottagare är:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "redovisnings- och finanstjänsteleverantörer",
+              "värdtjänster och IT-driftsleverantörer",
+              "faktureringssystem och betalningstjänster",
+              "kurirföretag eller partners som utför leverans av fordon"
+            ]
+          }
+        ],
+        "notes": [
+          "Vi överför inte uppgifter utanför Europeiska unionen och säkerställer lämplig kryptering och åtkomstkontroll."
+        ]
+      },
+      {
+        "heading": "7. Den registrerades rättigheter",
+        "paragraphs": [
+          "Registrerade personer kan när som helst utöva sina rättigheter enligt GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "rätt till information och tillgång",
+              "rätt till rättelse eller radering",
+              "rätt att begära begränsning av behandling",
+              "rätt att invända mot behandling som grundas på berättigat intresse",
+              "rätt till dataportabilitet",
+              "rätt att när som helst återkalla sitt samtycke"
+            ]
+          }
+        ],
+        "notes": [
+          "Vid klagomål kan du vända dig till den ungerska tillsynsmyndigheten: Nemzeti Adatvédelmi és Információszabadság Hatóság (1055 Budapest, Falk Miksa utca 9-11., ugyfelszolgalat@naih.hu, naih.hu)."
+        ]
+      },
+      {
+        "heading": "8. Datasäkerhet och cookies",
+        "paragraphs": [
+          "Vi skyddar personuppgifter med fysiska, tekniska och organisatoriska åtgärder mot obehörig åtkomst, ändring eller förlust.",
+          "Vår webbplats använder cookies för funktion, statistik och personalisering. Detaljerad information finns i vår cookiepolicy, där du också när som helst kan ändra dina samtyckesinställningar."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Kontakt och utövande av rättigheter",
+      "paragraphs": [
+        "Om du har frågor om behandlingen av personuppgifter eller vill utöva dina rättigheter, kontakta oss via nedanstående kontaktuppgifter.",
+        "Vi besvarar dina förfrågningar senast inom 30 dagar, med möjlighet till förlängning i enlighet med GDPR när det är motiverat."
+      ],
+      "channels": [
+        "E-post: info@zodiacsrentacar.com",
+        "Telefon: +34 683 192 422",
+        "Webb: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Information om cookies",
+    "updated": "Senast uppdaterad: 8 november 2025.",
+    "intro": [
+      "Denna information beskriver vilka cookies Zodiacs Rent a Cars webbplats använder, i vilket syfte uppgifterna behandlas och hur du kan ändra dina inställningar.",
+      "Cookies är små datafiler som hjälper till med att hålla webbplatsen igång, skapa statistik och visa personligt anpassat innehåll."
+    ],
+    "sections": [
+      {
+        "heading": "1. Vad är en cookie?",
+        "paragraphs": [
+          "En cookie är en liten textfil som lagras av din webbläsare när du besöker vår webbplats. Cookies innehåller inte uppgifter som direkt identifierar dig, men hjälper oss att känna igen din enhet och komma ihåg dina inställningar."
+        ]
+      },
+      {
+        "heading": "2. Typer av cookies vi använder",
+        "paragraphs": [
+          "För att webbplatsen ska fungera korrekt använder vi cookies med olika syften:"
+        ],
+        "lists": [
+          {
+            "title": "Nödvändiga cookies",
+            "items": [
+              "är oumbärliga för att webbplatsen ska fungera, för säkerhetsprocesser och för att formulär ska kunna användas",
+              "rättslig grund: berättigat intresse (GDPR artikel 6.1 f)"
+            ]
+          },
+          {
+            "title": "Funktionella cookies",
+            "items": [
+              "sparar valt språk och tillfälliga formulärdata",
+              "rättslig grund: samtycke (GDPR artikel 6.1 a)"
+            ]
+          },
+          {
+            "title": "Analytiska och statistiska cookies",
+            "items": [
+              "mäter besöksstatistik anonymt och hjälper oss att optimera tjänsten",
+              "rättslig grund: samtycke (GDPR artikel 6.1 a)"
+            ]
+          },
+          {
+            "title": "Marknadsföringscookies",
+            "items": [
+              "möjliggör personligt anpassade erbjudanden och remarketing-annonser",
+              "rättslig grund: samtycke (GDPR artikel 6.1 a)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Cookies giltighetstid",
+        "paragraphs": [
+          "Sessionscookies: är aktiva under ditt besök och raderas automatiskt när du stänger webbläsaren.",
+          "Beständiga cookies: lagras under en viss period (vanligtvis 30–365 dagar) eller tills du raderar dem manuellt."
+        ]
+      },
+      {
+        "heading": "4. Cookies från tredje part",
+        "paragraphs": [
+          "Vissa cookies placeras av våra partners (t.ex. Google, Meta, TikTok) för statistisk analys och personanpassad annonsering.",
+          "Dessa cookies omfattas av respektive leverantörs egen integritetspolicy, som du hittar på deras officiella webbplatser."
+        ]
+      },
+      {
+        "heading": "5. Samtycke och inställningar",
+        "paragraphs": [
+          "Vid ditt första besök visas ett cookie-fönster där du kan välja att acceptera alla cookies, endast nödvändiga cookies eller göra egna inställningar.",
+          "Dina val kan när som helst ändras i webbläsarens inställningar eller via länken ”Ändra cookie-inställningar” på webbplatsen."
+        ]
+      },
+      {
+        "heading": "6. Hantering av cookies i webbläsaren",
+        "paragraphs": [
+          "I de flesta webbläsare kan du radera eller blockera cookies. Följande hjälpsidor kan guida dig: Google Chrome, Mozilla Firefox, Safari och Microsoft Edge.",
+          "Observera att vissa funktioner kan fungera begränsat utan cookies."
+        ]
+      },
+      {
+        "heading": "7. Kontakt",
+        "paragraphs": [
+          "Om du har frågor om vår användning av cookies eller om dataskydd hjälper vi dig gärna via följande kontaktuppgifter:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-post: info@zodiacsrentacar.com",
+              "Webbplats: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "Med det lokala teamet hos Zodiacs Rent a Car kan du ordna biluthyrning på Fuerteventura och Lanzarote på ett bekvämt och snabbt sätt. Efter din onlinebokning organiserar vi överlämning vid flygplatsen eller på hotellet, hjälper dig att välja rätt bilmodell för resan och går igenom alla detaljer på det språk som passar dig bäst.",
+      "Vår flotta sträcker sig från kompakta stadsbilar till rymliga SUV:ar, alla med obegränsad körsträcka, gratis andra förare och fullständig SSCP-försäkring. Hos Zodiacs servar vi alla bilar regelbundet och dokumenterar deras skick med foton före överlämning, så att du kan ge dig ut på vägarna med lugn i sinnet.",
+      "Du kan räkna med oss under hela resan: vi delar våra bästa tips om strandparkering på Fuerteventura, utsiktspunkter på Lanzarote och favorit-tapasbarer. Du kan nå oss via telefon, e-post och WhatsApp, så du kan när som helst be om hjälp eller en skräddarsydd offert.",
+      "Våra tjänster är särskilt utformade för resenärer som semestrar på Kanarieöarna. Vi vet hur viktigt det är med snabb hantering, därför svarar vi direkt via WhatsApp, telefon och e-post – både före flyget och efter ankomst.",
+      "Enligt våra kunders feedback uppskattas det mest hos Zodiacs Rent a Car att vi kommer överens om allt i förväg och att det inte dyker upp några överraskningar vid betalningen. Vi lägger extra vikt vid barnfamiljer, äventyrslystna upptäckare och affärsresenärer: vi ordnar barnstolar, takbox eller till och med hållere for surfbrett om du behöver det.",
+      "I vår blogg och våra reseguidar delar vi detaljerade programförslag, så hyrbilen blir inte bara ett transportmedel utan nyckeln till att upptäcka öarna. Zodiacs lokala team uppdaterar kontinuerligt sina tips, så att även mindre kända stränder, restauranger och vandringsleder kommer med på din lista."
+    ],
+    "highlights": {
+      "title": "Varför välja oss?",
+      "items": [
+        "Flerspråkig kundtjänst på Fuerteventura och Lanzarote, med verklig lokal närvaro.",
+        "Tydligt hyresavtal med digitalt godkännande och alla kostnader klargjorda i förväg.",
+        "Flexibel upphämtning på flygplatsen, vid ditt boende eller vid en avtalad mötesplats.",
+        "Lokala tips, parkeringsråd och ruttförslag så att du får ut mesta möjliga av öarna med din Zodiacs-bil."
+      ]
+    },
+    "details": {
+      "title": "Biluthyrning steg för steg med Zodiacs Rent a Car",
+      "intro": "Vi vill att du redan i planeringsfasen ska veta vad du kan förvänta dig. Därför har vi utformat alla Zodiacs processer så att de ska vara tydliga, snabba och personligt anpassade – från bokning till retur av bilen.",
+      "sections": [
+        {
+          "heading": "1. Val av den bil som passar dig bäst",
+          "body": [
+            "Innan bokningen går vi kort igenom hur många ni är, hur stort bagageutrymme ni behöver och vilka rutter ni planerar. Om ni till exempel vill upptäcka bergen i norr eller de slingrande vägarna i vulkanlandskapet kan ni behöva en bil med mer kraft och effektivare luftkonditionering.",
+            "I vårt erbjudande ingår alltid detaljerade bilder och utrustningslista för bilen, så att du enkelt kan jämföra alternativen. Zodiacs-teamet hjälper dig även vid särskilda önskemål, till exempel barnstol, takbox eller transport av sportutrustning."
+          ]
+        },
+        {
+          "heading": "2. Bokning och avtal med några få klick",
+          "body": [
+            "Zodiacs onlineformulär för offertförfrågan guidar dig igenom hela processen på ditt eget språk. Du anger ankomst- och avresedatum, upphämtningsplats och får inom några minuter personligt anpassade priser inklusive full SSCP-försäkring.",
+            "Vi bekräftar bokningen via e-post och skickar avtalet digitalt, så att du kan läsa igenom det i lugn och ro innan resan. På plats slipper du pappersarbete – det är bara en snabb överlämning av bilen som väntar."
+          ]
+        },
+        {
+          "heading": "3. Upphämtning där det passar dig",
+          "body": [
+            "Oavsett om du anländer till Fuerteventura eller Lanzarote följer våra kollegor ditt flyg och väntar på dig vid flygplatsen eller framför ditt boende vid den avtalade tiden. Vid större förseningar är vi flexibla och håller löpande kontakt.",
+            "Om du inte vill slösa en enda minut av semestern på att stå i kö, kommer Zodiacs mobila kontor till dig, ordnar alla dokument på plats och du kan köra iväg med din valda bil på några minuter."
+          ]
+        },
+        {
+          "heading": "4. Support under hela resan",
+          "body": [
+            "När vi lämnar över bilen delar vi aktuella parkerings- och trafikråd, våra favoritutflyktsmål och tjänsteleverantörer som vi trygt kan anbefale. Har du spørsmål underveis, kan du nå Zodiacs-teamet via WhatsApp eller telefon.",
+            "Ved tilbakelevering foretar vi en rask kontroll og avslutter leieforholdet, og hvis du ønsker det, gir vi deg gjerne et oppdatert, skreddersydd tilbud til din neste reise. Målet vårt er at du hver gang skal føle at Zodiacs-bilen bidro til de beste ferieopplevelsene."
+          ]
+        }
+      ]
+    },
+    "cta": "Be om et skreddersydd tilbud"
+  },
+  "SEO": {
+    "brand": "Zodiacs Rent a Car",
+    "defaultTitle": "Biluthyrning på Fuerteventura och Lanzarote",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
+    "siteDescription": "Hyr bil på Fuerteventura och Lanzarote med ett lokalt ungerskt team, flexibel upphämtning och heltäckande försäkring.",
+    "ogTitle": "Zodiacs Rent a Car – Biluthyrning på Fuerteventura och Lanzarote",
+    "ogDescription": "Lokalt ungerskt team, gratis andra förare och obegränsad körsträcka. Boka online hos Zodiacs Rent a Car.",
+    "ogImageAlt": "Bilar ur Zodiacs Rent a Cars flotta på Fuerteventura",
+    "twitterTitle": "Zodiacs Rent a Car – Biluthyrning på Kanarieöarna",
+    "twitterDescription": "Snabb och enkel biluthyrning på Fuerteventura och Lanzarote – utan dolda avgifter."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "Hyra {carName} på Fuerteventura | Zodiacs Rent a Car",
+      "description": "Hyr modellen {carName} på Fuerteventura eller Lanzarote, med flexibel upphämtning, obegränsad körsträcka och full försäkring.",
+      "imageAlt": "{carName} i Zodiacs Rent a Cars bilflotta"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "Detaljer och hyrpris för {carName} | Zodiacs Rent a Car",
+      "description": "Upptäck utrustningen, bagagekapaciteten och hyrespriset för {carName} på Fuerteventura och Lanzarote.",
+      "imageAlt": "{carName}-modell i Zodiacs Rent a Cars utbud"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Biluthyrning på Fuerteventura och Lanzarote",
+      "description": "Upptäck Kanarieöarna med vårt ungerska team: premiumhyrbilar, flexibel upphämtning, obegränsad körsträcka och heltäckande försäkring.",
+      "ogImageAlt": "Hyrbil på Fuerteventura hos Zodiacs Rent a Car"
+    },
+    "cars": {
+      "title": "Våra bilar – hyrbilsutbud på Fuerteventura och Lanzarote",
+      "description": "Kompakta, familjevänliga och automatväxlade hyrbilar med flexibel upphämtning, gratis andra förare och obegränsad körsträcka.",
+      "ogImageAlt": "Zodiacs Rent a Car hyrbilsflotta"
+    },
+    "about": {
+      "title": "Om oss – Zodiacs Rent a Car",
+      "description": "Lär känna det ungerska teamet på Zodiacs Rent a Car och få veta mer om vårt uppdrag på Fuerteventura och Lanzarote.",
+      "ogImageAlt": "Teamfoto för Zodiacs Rent a Car"
+    },
+    "contact": {
+      "title": "Kontakt – Zodiacs Rent a Car Fuerteventura",
+      "description": "Kontakta oss om biluthyrning, leverans eller offertförfrågan. Vi svarar snabbt och på ungerska.",
+      "ogImageAlt": "Zodiacs Rent a Cars kundtjänst"
+    },
+    "insurance": {
+      "title": "Försäkring och skydd – SSCP-paket",
+      "description": "Lär känna Super Comfort Plus-försäkringen: heltäckande skydd, noll självrisk och täckning av vanliga undantag.",
+      "ogImageAlt": "Försäkringsinformation från Zodiacs Rent a Car"
+    },
+    "generalRental": {
+      "title": "Allmänna hyresvillkor – Zodiacs Rent a Car",
+      "description": "Hyresvillkor, avtalsregler och kundens skyldigheter på Fuerteventura och Lanzarote.",
+      "ogImageAlt": "Dokument med hyresvillkor för biluthyrning"
+    },
+    "gtc": {
+      "title": "Hyresavtal – Zodiacs Rent a Car",
+      "description": "Detaljerat hyresavtal och juridiska villkor för Zodiacs Rent a Cars kunder.",
+      "ogImageAlt": "Dokument med hyresavtal"
+    },
+    "rentalRequirements": {
+      "title": "Krav för biluthyrning på Kanarieöarna",
+      "description": "Ålder, körkort, deposition – allt du behöver veta om Zodiacs Rent a Cars hyreskrav.",
+      "ogImageAlt": "Lista över krav för biluthyrning"
+    },
+    "offices": {
+      "title": "Utlämningsplatser och kontor – Zodiacs Rent a Car",
+      "description": "Platser för upphämtning av hyrbil på Fuerteventura och Lanzarote, med kontaktuppgifter och öppettider.",
+      "ogImageAlt": "Yttre vy av Zodiacs Rent a Car-kontor"
+    },
+    "faq": {
+      "title": "FAQ – Vanliga frågor hos Zodiacs Rent a Car",
+      "description": "Hitta svar på de vanligaste frågorna från bokning till försäkring.",
+      "ogImageAlt": "Zodiacs Rent a Cars kundtjänst ger hjälp",
+      "keywords": [
+        "biluthyrning FAQ",
+        "vanliga frågor om Zodiacs Rent a Car",
+        "biluthyrning Fuerteventura FAQ",
+        "information om biluthyrning på Lanzarote"
+      ]
+    },
+    "blog": {
+      "title": "Blogg – Biluthyrning och resetips på Fuerteventura",
+      "description": "Aktuella tips om biluthyrning, ruttförslag och lokala upplevelser från Zodiacs Rent a Car-teamet.",
+      "ogImageAlt": "Illustration för Zodiacs Rent a Car-bloggen",
+      "keywords": [
+        "blogg om biluthyrning",
+        "resetips för Fuerteventura",
+        "roadtrip på Lanzarote",
+        "tips från Zodiacs Rent a Car"
+      ]
+    },
+    "gdpr": {
+      "title": "GDPR-integritetspolicy – Zodiacs Rent a Car",
+      "description": "Ta reda på hur vi behandlar dina personuppgifter, vilka rättsliga grunder vi använder och hur du kan utöva dina rättigheter.",
+      "ogImageAlt": "GDPR-integritetsdokument"
+    },
+    "cookiePolicy": {
+      "title": "Cookiepolicy – Zodiacs Rent a Car",
+      "description": "Översikt över de cookies vi använder, deras syften och hur du kan hantera ditt samtycke.",
+      "ogImageAlt": "Information om cookies"
+    }
+  },
+  "AboutSection": {
+    "title": "Missa inte en enda upplevelse",
+    "pickup_title": "Upphämtning där det passar dig",
+    "pickup_text": "Hämta din bil där det är bekvämast för dig: direkt framför ditt hotell, din lägenhet eller den adress du anger. På så sätt kan du börja utforska fritt från första minuten.",
+    "transfer_title": "Bekväm transfer vid behov",
+    "transfer_text": "Om du vill använda vår transfer­tjänst markerar du det enkelt i offertformuläret – vi ser till att allt går så smidigt som möjligt.",
+    "learn_more": "Läs mer →",
+    "alt1": "Bil 1",
+    "alt2": "Bil 2",
+    "alt3": "Bil 3"
+  },
+  "Search": {
+    "ariaLabel": "Sök på webbplatsen",
+    "openLabel": "Öppna sökfält",
+    "closeLabel": "Stäng sökfält",
+    "placeholder": "Vad letar du efter? Skriv in ett nyckelord...",
+    "noResults": "Inga träffar för: \"{query}\". Försök med ett annat uttryck.",
+    "suggested": "Rekommenderade sidor",
+    "results": "Träffar",
+    "entries": [
+      {
+        "title": "Startsida",
+        "description": "Översikt över Zodiacs tjänster, fordonsflotta och kundupplevelse på Fuerteventura och Lanzarote.",
+        "keywords": [
+          "startsida",
+          "förstasida",
+          "zodiacs",
+          "biluthyrning fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Våra bilar",
+        "description": "Komplett hyrbilsflotta med priser, bagageinformation och bokningsmöjlighet.",
+        "keywords": [
+          "bilar",
+          "flotta",
+          "priser",
+          "fordon",
+          "bokning",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "Om oss",
+        "description": "Lär dig hur vi arbetar – från flexibel upphämtning till personlig kundservice.",
+        "keywords": [
+          "om oss",
+          "team",
+          "tjänster",
+          "upphämtning",
+          "leverans",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Kontakt",
+        "description": "Offertförfrågan via WhatsApp, e-post eller telefon med svar inom 24 timmar.",
+        "keywords": [
+          "kontakt",
+          "offertförfrågan",
+          "formulär",
+          "telefon",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blogg och reseguide",
+        "description": "Lokala tips, varningar om rip currents och inspiration för roadtrips.",
+        "keywords": [
+          "blogg",
+          "tips",
+          "reseguide",
+          "rip current",
+          "aktiviteter",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Säkerhet vid rip currents",
+        "description": "Uppmärksammande artikel om farliga strömmar vid Fuerteventuras stränder.",
+        "keywords": [
+          "rip current",
+          "ström",
+          "säkerhet",
+          "cofete",
+          "strand",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "FAQ",
+        "description": "Svar på de vanligaste frågorna om upphämtning på flygplatsen, försäkring och tankning.",
+        "keywords": [
+          "faq",
+          "frågor",
+          "försäkring",
+          "flygplats",
+          "tankning",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Integritetspolicy",
+        "description": "GDPR-information om hur vi behandlar dina uppgifter, rättsliga grunder och dina rättigheter.",
+        "keywords": [
+          "gdpr",
+          "databehandling",
+          "integritet",
+          "dataskydd",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Cookiepolicy",
+        "description": "Vilka cookies vi använder och hur du kan hantera ditt samtycke.",
+        "keywords": ["cookie", "kakor", "samtycke", "dataskydd", "lanzarote"],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Försäkring",
+        "description": "Detaljer om försäkringspaket, täckning och självrisk.",
+        "keywords": [
+          "försäkring",
+          "skydd",
+          "självrisk",
+          "skadeanmälan",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Hyreskrav",
+        "description": "Information om körkort, ålder och nödvändiga dokument.",
+        "keywords": [
+          "hyresvillkor",
+          "krav",
+          "körkort",
+          "handlingar",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Utlämningsplatser och kontor",
+        "description": "Var du kan hämta din hyrbil på Fuerteventura och Lanzarote, inklusive kontaktuppgifter.",
+        "keywords": [
+          "kontor",
+          "upphämtning",
+          "leverans",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Allmänna hyresvillkor",
+        "description": "Detaljerad beskrivning av reglerna för biluthyrning på båda öarna.",
+        "keywords": [
+          "villkor",
+          "avtal",
+          "allmänna",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "Allmänna avtalsvillkor (GTC)",
+        "description": "De officiella avtalsvillkoren (GTC) på Fuerteventura och Lanzarote.",
+        "keywords": [
+          "gtc",
+          "allmänna villkor",
+          "avtal",
+          "juridik",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
+  "Navigation": {
+    "menu_sr": "Meny",
+    "cars": "Våra bilar",
+    "about": "Om oss",
+    "blog": "Blogg",
+    "contact": "Kontakt",
+    "home": "Startsida",
+    "faq": "FAQ"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Språkväljare"
+  },
+  "Footer": {
+    "about": "Om oss",
+    "blog": "Blogg",
+    "contact": "Kontakt",
+    "home": "Startsida",
+    "fleet": "Våra bilar",
+    "general_rental_conditions": "Allmänna hyresvillkor",
+    "gtc": "Allmänna avtalsvillkor",
+    "insurance": "Försäkring",
+    "rental_requirements": "Hyreskrav",
+    "cookie_policy": "Cookiepolicy",
+    "gdpr": "Integritetspolicy",
+    "zodiac_car_rental": "Zodiacs biluthyrning",
+    "logo_placeholder": "Här kommer logotypen",
+    "faq": "FAQ"
+  },
+  "Explore": {
+    "title": "Upptäck Kanarieöarnas skönhet med hyrbil!",
+    "subtitle": "Boka online, med flexibel upphämtning och leverans till ditt boende eller flygplatsen.",
+    "cards": {
+      "map": "Zodiacs Rent a Car erbjuder pålitlig biluthyrning på Fuerteventura, i Costa Calma och på Lanzarote.",
+      "globe": "Oavsett om du planerar avkoppling vid havet eller ett äventyr bland bergen hittar du den perfekta bilen i vår flotta.",
+      "heart": "Boka online och hämta din hyrbil direkt på flygplatsen eller vid ditt boende!"
+    }
+  },
+  "Inquire": {
+    "title": "Boka nu!",
+    "description_1": "Lämna inte biluthyrningen till sista stund! Zodiacs Rent a Car-teamet svarar inom 24 timmar och hjälper dig att boka den bil som passar din semester bäst.",
+    "description_2": "Ange dina kontaktuppgifter så skickar vi ett personligt erbjudande med detaljerade priser, försäkringsinformation och önskad extrautrustning. Hos Zodiacs stämmer vi av varje steg på ditt valda språk, så att du kan resa med full trygghet.",
+    "fields": {
+      "fullName": {
+        "label": "Fullständigt namn",
+        "placeholder": "Fullständigt namn",
+        "required": "Vänligen ange ditt namn"
+      },
+      "email": {
+        "label": "E-postadress",
+        "placeholder": "E-postadress",
+        "required": "Vänligen ange din e-postadress",
+        "invalid": "Ange en giltig e-postadress"
+      },
+      "message": {
+        "label": "Hur kan vi hjälpa dig?",
+        "placeholder": "Berätta gärna hur vi kan hjälpa dig",
+        "required": "Vänligen beskriv hur vi kan hjälpa dig",
+        "invalid": "Vänligen fyll i fältet"
+      }
+    },
+    "submit": {
+      "idle": "Fortsätt →",
+      "submitting": "Skickar..."
+    },
+    "alt": {
+      "image": "Illustration av biluthyrning"
+    },
+    "toast": {
+      "success": "Tack! Vi kontaktar dig inom kort.",
+      "error": "Hoppsan, något gick fel. Försök gärna igen senare."
+    }
+  },
+  "Blog": {
+    "title": "Blogg och reseguide",
+    "intro": "Lokala tips, råd om biluthyrning och inspirerande rutter så att varje minut av din semester blir minnesvärd.",
+    "readMore": "Öppna artikel",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Sevärdheter på Fuerteventura med bil – 3 platser du inte får missa",
+        "excerpt": "Corralejo-sanden, Betancuria och Ajuy-grottorna: en reseguide till hur du får ut mesta möjliga av din hyrbil på Fuerteventura.",
+        "category": "Reseguide",
+        "readTime": "6 minuters läsning",
+        "publishDate": "3 november 2025",
+        "publishDateISO": "2025-11-03",
+        "image": {
+          "src": "/AJUY.jpg",
+          "alt": "Utsikt över sanddynerna vid Corralejo och Atlanten"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Varning! Farliga återströmmar på Fuerteventura",
+        "excerpt": "Lär dig känna igen tecknen på rip currents så att Cofete och de vilda stränderna förblir en upplevelse – inte en fara.",
+        "category": "Säkerhet",
+        "readTime": "7 minuters läsning",
+        "publishDate": "15 november 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Varningsskylt vid den vilda stranden i Cofete"
+        }
+      }
+    ]
+  },
+
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Sevärdheter på Fuerteventura med bil – 3 platser du inte får missa med hyrbil | Zodiacs Rent a Car",
+        "description": "Upptäck Fuerteventuras vackraste sevärdheter med hyrbil! Corralejo-dynerna, Betancuria och Ajuy-grottorna är lättillgängliga med bil. Biluthyrning på Fuerteventura – Zodiacs Rent a Car.",
+        "keywords": [
+          "biluthyrning på Fuerteventura",
+          "hyrbil Fuerteventura",
+          "Fuerteventura sevärdheter med bil",
+          "Corralejo sanddyner",
+          "Betancuria",
+          "Ajuy grottor",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00594.jpg",
+          "alt": "Utsikt över sanddynerna vid Corralejo på Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Sevärdheter på Fuerteventura med bil – 3 platser du inte får missa när du upptäcker ön med hyrbil",
+        "category": "Reseguide",
+        "subtitle": "Om du hyr bil på Fuerteventura kan du upptäcka öns alla höjdpunkter i din egen takt. Inga tidtabeller, ingen stress – bara doften av havet, solskenet och känslan av frihet.",
+        "description": "Vi har samlat tre platser som är lätta att nå och säkra att besöka med hyrbil – och som garanterat ger oförglömliga upplevelser.",
+        "publishDate": "3 november 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 minuters läsning",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Corralejo sanddyner – Fuerteventuras mest ikoniska naturunder",
+          "paragraphs": [
+            "På norra Fuerteventura ligger <strong>Corralejo naturpark</strong> (Parque Natural de Corralejo), en av öns mest populära sevärdheter.",
+            "De enorma vita sanddynerna står i stark kontrast till Atlanten i turkost – riktig ökenkänsla vid havet."
+          ],
+          "access": {
+            "title": "Att ta sig dit med bil",
+            "description": "Genom dynerna går vägarna FV-1 och FV-1a mot Corralejo. Längs vägen finns flera markerade parkeringsplatser varifrån du enkelt når stränderna och dynerna till fots."
+          },
+          "links": [
+            {
+              "label": "Karta över Corralejo-dynerna",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Tips",
+            "description": "Stanna vid stranden <strong>Grandes Playas de Corralejo</strong>, där dynerna går ända ner i havet – perfekt plats för foton!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – den historiska huvudstaden med slingrande vägar och spektakulära utsikter",
+          "paragraphs": [
+            "I det bergiga inlandet ligger Betancuria, Fuerteventuras tidigare huvudstad och idag öns kulturella hjärta.",
+            "Den lilla staden gömmer sig i en grön dal mellan vulkaniska kullar, med pittoreska gator och stillsam atmosfär."
+          ],
+          "access": {
+            "title": "Att ta sig dit med bil",
+            "description": "Betancuria nås via FV-30 från Puerto del Rosario, Caleta de Fuste eller Pájara. Vägen är slingrig men välskött och bjuder på fantastiska vyer."
+          },
+          "links": [
+            {
+              "label": "Karta över Betancuria",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Sevärdheter längs vägen",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – två enorma bronsstatyer vakar över dalen.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – en av öns vackraste utsiktspunkter.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Ajuy-grottorna och den svarta sandstranden – Fuerteventuras vilda västkust",
+          "paragraphs": [
+            "Fuerteventuras västkust är mer dramatisk och klippig – och just därför så speciell. Här ligger <strong>Ajuy</strong>, en stillsam fiskeby känd för sin svarta sandstrand och grottorna <strong>Cuevas de Ajuy</strong>.",
+            "En markerad gångväg längs klipporna leder till grottorna, där du kan se flera miljoner år gamla bergsformationer medan havet dånar nedanför. Platsen är särskilt magisk vid solnedgång."
+          ],
+          "access": {
+            "title": "Att ta sig dit med bil",
+            "description": "Byn Ajuy nås från Pájara via FV-621 på helt asfalterad väg."
+          },
+          "links": [
+            {
+              "label": "Karta över Ajuy-grottorna",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "Varför lönar det sig att hyra bil på Fuerteventura?",
+          "paragraphs": [
+            "Det är ofta långa avstånd mellan sevärdheterna på ön, och kollektivtrafiken är begränsad.",
+            "Med hyrbil får du frihet – du kan upptäcka både avlägsna stränder och små bergsbyar i din egen takt.",
+            "Vägarna är i mycket gott skick, trafiken är lugn och parkering är gratis nästan överallt."
+          ],
+          "links": [
+            {
+              "label": "Se våra hyrbilar – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Res hållbart – värna Fuerteventuras natur",
+          "paragraphs": [
+            "Vi som bor här älskar och skyddar vår ö. Vi ber dig göra detsamma:"
+          ],
+          "bullets": [
+            "lämna inget skräp efter dig, använd papperskorgar;",
+            "släng inte cigarettfimpar i sanden eller bland klipporna;",
+            "håll dig till markerade stigar, särskilt i dynerna och vid klippkusten."
+          ],
+          "closing": "Gör du det, kommer Fuerteventura att tacka dig – och välkomna dig tillbaka."
+        }
+      ],
+      "cta": {
+        "title": "Upptäck ön bekvämt – med hyrbil!",
+        "paragraphs": [
+          "Upplev sanddyner, bergsbyar och havsgrottor i din egen takt.",
+          "<strong>Zodiacs Rent a Car</strong> – biluthyrning på Fuerteventura med enkel bokning, snabb service, pålitliga bilar och lokala tips."
+        ],
+        "buttons": [
+          {
+            "label": "Se våra hyrbilar",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Boka online med några klick",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "Varning! Farliga återströmmar på Fuerteventura – så badar du säkert i havet",
+        "description": "På Fuerteventuras stränder är återströmmar (rip currents) vanliga och kan oväntat dra med sig badande. Lär dig hur du känner igen dem och hur du undviker faran på ett säkert sätt.",
+        "keywords": [
+          "strand Fuerteventura",
+          "Cofete Beach",
+          "återström",
+          "rip current",
+          "säker badning",
+          "faror på Fuerteventura",
+          "resa till Kanarieöarna",
+          "bada i havet",
+          "Fuerteventura tips",
+          "strandsäkerhet",
+          "biluthyrning Fuerteventura",
+          "Zodiacs Rent a Car",
+          "havströmmar",
+          "känna igen rip current"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Varningsskylt på den vilda stranden Cofete på Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "Varning! Farliga återströmmar på Fuerteventura – så badar du säkert i Atlanten",
+        "category": "Säkerhet",
+        "subtitle": "Om du vill bada vid Fuerteventuras vilda stränder räcker det inte med äventyrslusta – du måste också förstå hur återströmmar fungerar.",
+        "description": "Vi förklarar hur du känner igen tecknen på rip currents, från Cofete till El Cotillo, och vad du ska göra om du hamnar i strömmen.",
+        "publishDate": "15 november 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "7 minuters läsning",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Vad är en återström och varför är den farlig?",
+          "paragraphs": [
+            "Vid Atlantkusten är återströmmar den vanligaste dolda faran: vattnet som vågorna pressar upp på stranden strömmar med stor kraft tillbaka ut mot det djupa vattnet i en smal fåra.",
+            "Fenomenet är förrädiskt eftersom det ofta uppstår där vattnet ser lugnare och slätare ut – just där många väljer att gå i."
+          ],
+          "bullets": [
+            "Ett till synes vågfritt vattenband är inte nödvändigtvis säkert – det kan vara exakt där rip current går.",
+            "Strömmen drar inte neråt utan utåt och åt sidan, och det är utmattning som orsakar de flesta olyckor."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Så känner du igen den farliga zonen",
+          "paragraphs": [
+            "När du kommer till stranden, ägna en minut åt att studera vattnet. Tecknen på en återström går att se med blotta ögat – om du vet vad du ska leta efter.",
+            "Vid Cofete finns varningsskyltar, men vinden kan ibland vrida dem bort från stranden – därför är det viktigt att alltid orientera sig innan du går i vattnet."
+          ],
+          "bullets": [
+            "Mörkare, mer grumlig vattenfärg där botten plötsligt blir djupare.",
+            "Ett lugnt band mellan vågorna där vattnet rör sig inåt mot havet.",
+            "Skum, alger eller skräp som inte driver mot stranden utan ut mot öppet hav.",
+            "Flaggor, skyltar eller varningar från lokalbefolkningen – ta dem alltid på allvar."
+          ],
+          "tip": {
+            "title": "Tips",
+            "description": "Ta ett foto av skyltarna när du kommer fram, så minns du lättare vad de olika flaggorna betyder på just den stranden."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Vad ska du göra om du hamnar i strömmen?",
+          "paragraphs": [
+            "Det viktigaste är att inte få panik. En rip current drar dig inte ner i djupet, men den är snabbare än de flesta kan simma.",
+            "Om du hinner bli utmattad innan du tar dig därifrån hamnar du i fara – därför behöver du en strategi."
+          ],
+          "bullets": [
+            "Andas lugnt och håll huvudet över vattenytan.",
+            "Försök inte simma rakt mot stranden – strömmen är starkare än du.",
+            "Simma längs med stranden tills du kommer ut ur den smala strömsvålen.",
+            "Om du blir trött, ligg och flyt på rygg, signalera med armen och låt vågorna hjälpa dig in."
+          ],
+          "closing": "Ju lugnare du håller dig, desto större chans att du tar dig ur situationen för egen kraft."
+        },
+        {
+          "id": "personal-story",
+          "title": "Personlig berättelse: Jag drog upp tre barn ur vattnet vid Cofete",
+          "paragraphs": [
+            "”Det hände vid Cofete. På några ögonblick sögs min dotter och två kusiner in i strömmen. Jag skrek inte, jag vinkade inte – all min energi behövdes för att simma.",
+            "Jag lyckades få upp alla tre på stranden, men upplevelsen lärde mig något för livet: havet ska respekteras, inte besegras.”"
+          ],
+          "tip": {
+            "title": "Lärdom",
+            "description": "Titta alltid på hur vattnet rör sig, och lär även familjen hur de ska reagera om de hamnar i en ström."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "Visste du? Strömmen är snabbare än en elitssimmare",
+          "paragraphs": [
+            "Siffror gör det enklare att förstå varför du inte ska kämpa emot med ren muskelkraft."
+          ],
+          "bullets": [
+            "En olympisk simmare klarar ungefär 2,3 meter per sekund.",
+            "En rip current kan i snitt föra dig 2,4 meter på samma tid – den ligger alltså alltid steget före."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Respektera naturen och skydda ön",
+          "paragraphs": [
+            "Medvetenhet slutar inte vid vattenbrynet: strandens renlighet och respekten för lokala regler är vårt gemensamma ansvar."
+          ],
+          "bullets": [
+            "Lämna inget skräp, ta alltid med dig ditt eget avfall.",
+            "Släng inte cigarettfimpar i sanden eller bland klipporna.",
+            "Håll dig till markerade stigar, särskilt i dyner och naturskyddade områden."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Res smart med hyrbil",
+          "paragraphs": [
+            "Om du upptäcker Fuerteventura med bil, se till att du alltid har tillräckligt med vatten, solskydd och aktuell information om strömmar och vindförhållanden.",
+            "På så sätt kan du njuta av både frihet och säkerhet."
+          ],
+          "closing": "Dela gärna den här artikeln med andra, så att färre resenärer hamnar i fara på grund av återströmmar."
+        }
+      ],
+      "cta": {
+        "title": "Res trygt med Zodiacs hyrbilar",
+        "paragraphs": [
+          "Vi hjälper dig att välja en bil som tar dig till de vilda, mindre kända stränderna – tillsammans med all säkerhetsinformation du behöver.",
+          "<strong>Zodiacs Rent a Car</strong> – lokalt team, snabb kommunikation och personligt anpassade säkerhetstips."
+        ],
+        "buttons": [
+          {
+            "label": "Be om ett erbjudande nu",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Se vårt utbud av hyrbilar",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Tillbaka till bloggen"
+  },
+  "WhatsApp": {
+    "aria_label": "WhatsApp-meddelande",
+    "choose_option": "Välj ett alternativ",
+    "options": {
+      "transfer_quote": {
+        "label": "Jag vill ha pris på transfer",
+        "text": "Hej! Jag skulle vilja be om ett erbjudande för transfer."
+      },
+      "car_availability": {
+        "label": "Tillgänglighet på bilar",
+        "text": "Hej! Jag vill fråga om bilarnas tillgänglighet för mina datum."
+      },
+      "interested_in": {
+        "label": "Jag vill ställa en fråga",
+        "text": "Hej! Jag är intresserad av hur hyrbilsprocessen går till."
+      },
+      "custom_message": {
+        "label": "Eget meddelande",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> är ett <strong>ungerskt familjeföretag</strong> vars hjärta och hem finns på <strong>Fuerteventura</strong>. Vi lever och arbetar i en internationell miljö, men vi vet exakt vad som är viktigt för resenärer som kommer hit: trygghet, pålitlighet och ett vänligt bemötande.",
+    "why_title": "Varför Fuerteventura?",
+    "why_text": "För oss är den här ön inte bara ett resmål, utan vårt hem. Vi älskar solen, havet, den lugna livsstilen och den oändliga frihetskänslan. Allt detta vill vi att du också ska få uppleva när du hyr bil hos oss.",
+    "fleet_title": "Våra bilar – bekväma, pålitliga, prisvärda",
+    "fleet_text": "I vår flotta hittar du <strong>smidiga småbilar</strong>, <strong>familjebilar</strong> och även <strong>rymligare modeller</strong>. Alla våra bilar servas regelbundet och lämnas över nystädade, så att du kan utforska ön utan bekymmer.",
+    "delivery_title": "Utkörning och flexibilitet",
+    "delivery_text": "Du kan hämta din hyrbil inte bara på Fuerteventura utan även på <strong>Lanzarote</strong>. Oavsett om du landar på flygplatsen eller bor på hotell ser vi till att bilen levereras så att din resa startar så bekvämt som möjligt.",
+    "more_title": "Mer än bara biluthyrning",
+    "more_text": "För oss handlar biluthyrning om mer än att överlämna en nyckel. Vid behov hjälper vi med reseförslag, lokala tips och visar vart du bör åka för att uppleva den äkta <strong>Fuerteventura-känslan</strong>: de gömda vikarna, sandstränderna, de unika landskapen och de kulinariska upplevelserna.",
+    "mission_title": "Vårt uppdrag",
+    "mission_text": "Vårt mål är att varje gäst ska kunna uppleva ön <strong>fritt, bekvämt och säkert</strong>. Som familjeföretag och lokal aktör lägger vi hela vårt hjärta i att du ska kunna ta med dig Fuerteventuras speciella stämning hem.",
+    "cta": "Hyr bil hos oss och upplev Fuerteventura så som vi älskar ön!"
+  },
+  "Contact": {
+    "title": "Har du frågor om biluthyrning på Fuerteventura eller Lanzarote?",
+    "p1": "Kontakta oss så hjälper vi dig att hitta <strong>den bästa lösningen för dig!</strong> Oavsett om det gäller förbokning, leverans till flygplatsen eller bilöverlämning vid hotellet svarar vår kundtjänst <strong>snabbt och flexibelt</strong>.",
+    "p2": "Fyll i formuläret nedan, skicka ett e-postmeddelande, ett meddelande via Messenger, WhatsApp eller Viber, eller ring oss! <strong>Vi hjälper dig gärna</strong> så att din semester blir helt bekymmersfri.",
+    "form": {
+      "title": "Begär en personlig offert",
+      "description": "Skriv när och på vilka villkor du vill hyra bil – vi svarar inom några timmar.",
+      "fields": {
+        "name": {
+          "label": "Fullständigt namn",
+          "placeholder": "Fullständigt namn"
+        },
+        "phone": {
+          "label": "Telefonnummer",
+          "placeholder": "+36 30 123 4567"
+        },
+        "email": {
+          "label": "E-postadress",
+          "placeholder": "namn@example.com"
+        },
+        "channel": {
+          "label": "Föredraget kontaktsätt"
+        },
+        "rentalStart": {
+          "label": "Hyresstart",
+          "placeholder": "Välj datum"
+        },
+        "rentalEnd": {
+          "label": "Hyresslut",
+          "placeholder": "Välj datum"
+        },
+        "dateRange": {
+          "label": "Hyresperiod"
+        },
+        "arrivalFlight": {
+          "label": "Ankommande flygnummer",
+          "placeholder": "t.ex. FR1234"
+        },
+        "departureFlight": {
+          "label": "Hemresans flygnummer",
+          "placeholder": "t.ex. FR5678"
+        },
+        "partySize": {
+          "label": "Antal resenärer",
+          "placeholder": "Hur många personer reser?"
+        },
+        "children": {
+          "label": "Antal barn",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-post",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "Jag godkänner <link>Integritetspolicyn</link>",
+        "terms": "Jag godkänner <link>Allmänna villkor</link>"
+      },
+      "submit": {
+        "idle": "Begär offert",
+        "sending": "Skickar..."
+      },
+      "feedback": {
+        "success": "Tack! Vi kontaktar dig snart.",
+        "error": "Hoppsan, något gick fel. Försök igen senare."
+      },
+      "errors": {
+        "nameRequired": "Ange ditt namn",
+        "phoneRequired": "Ange ditt telefonnummer",
+        "emailRequired": "Ange din e-postadress",
+        "emailInvalid": "Ange en giltig e-postadress",
+        "privacyRequired": "Du måste godkänna integritetspolicyn",
+        "termsRequired": "Du måste godkänna de allmänna villkoren",
+        "rentalStartRequired": "Välj startdatum för hyran",
+        "rentalEndRequired": "Välj slutdatum för hyran",
+        "arrivalFlightRequired": "Ange ankommande flygnummer",
+        "departureFlightRequired": "Ange flygnummer för hemresan"
+      }
+    }
+  },
+  "Cars": {
+    "title": "Upptäck Fuerteventura och Lanzarote i full frihet med våra bilar!",
+    "p1": "Hos oss är biluthyrning enkelt och snabbt: du väljer det fordon som passar dig, och vi levererar det till flygplatsen eller direkt till ditt hotell. Tack vare våra flexibla hyrbilsalternativ kan du <strong>njuta av din semester utan bekymmer</strong>, oavsett om du behöver bil för en kortare eller längre vistelse.",
+    "p2": "<strong>Det lönar sig att boka din valda bil i förväg</strong>, så är du säker på att den finns tillgänglig vid ankomst. Välj bland bilarna nedan, klicka för detaljer och boka enkelt online!",
+    "labels": {
+      "seats": "personer",
+      "manual": "Manuell",
+      "automatic": "Automat",
+      "per_day": "/ dag",
+      "from_price": "från €{price}"
+    },
+    "colors": {
+      "milky_beige": "Milky Beige",
+      "white": "Vit",
+      "silver_metal": "Silvermetallic",
+      "blue": "Blå",
+      "metal_blue": "Metallicblå",
+      "gray": "Grå",
+      "silver_metallic": "Silvermetallic",
+      "metallic_blue": "Metallicblå"
+    },
+    "categories": {
+      "small": "Småbil",
+      "medium": "Mellanklass",
+      "large": "Familjebil",
+      "suv": "SUV / terrängbil"
+    },
+    "transmissions": {
+      "manual": "Manuell",
+      "automatic": "Automat"
+    },
+    "details": {
+      "back": "Tillbaka till fordonsflottan",
+      "title": "Bildetaljer",
+      "category": "Kategori",
+      "luggage_large": "Stor resväska: {count}",
+      "luggage_small": "Liten resväska: {count}",
+      "colors": "Tillgängliga färger"
+    },
+    "buttons": {
+      "interested": "Intresserad"
+    }
+  },
+  "Insurance": {
+    "title": "Försäkring (SSCP)",
+    "igic_note": "+15 % IGIC ingår inte. Max +30 € per hyra.",
+    "sscp_title": "Super Comfort Plus-försäkring (SSCP)",
+    "sscp_intro": "För en liten extra kostnad kan den inkluderade försäkringen utökas. Utöver det omfattande skydd som ingår i hyran tar SSCP bort följande undantag:",
+    "table": {
+      "header_event": "Händelse",
+      "header_desc": "Beskrivning",
+      "header_cost": "Ca. kostnad (utan försäkring)",
+      "rows": {
+        "lost_keys": {
+          "event": "Förlorade nycklar",
+          "desc": "Ersättning och programmering",
+          "cost": "100 €"
+        },
+        "tyre_damage": {
+          "event": "Skada på däck",
+          "desc": "Byte/reparation",
+          "cost": "150 €"
+        },
+        "rim_flat": {
+          "event": "Fälgskada / punkteringsreparation",
+          "desc": "Reparation",
+          "cost": "60 €"
+        },
+        "wrong_fuel": {
+          "event": "Felaktig tankning",
+          "desc": "Tömning och rengöring",
+          "cost": "110 €"
+        },
+        "battery": {
+          "event": "Urladdat batteri på grund av oaktsamhet",
+          "desc": "Assistans/start",
+          "cost": "90 €"
+        },
+        "dru": {
+          "event": "Extra DRU-service*",
+          "desc": "Vägassistans på plats",
+          "cost": "40 € / 100 €"
+        }
+      }
+    },
+    "coverage_note": "Med denna försäkring omfattas alla undantag i vår försäkring (förutom sådant som inget försäkringsbolag täcker).",
+    "footnote": "* +15 % IGIC ingår inte. Max +30 € per hyra.",
+    "pricing_title": "Pris och erbjudande",
+    "pricing_text": "Lägg till den nu för endast 2 € per dag, upp till max 30 € per hyra för alla modeller, och njut av en bekymmersfri biluthyrning.",
+    "closing": "Det är bäst att njuta med fullt skydd.",
+    "related": {
+      "title": "Relaterade sidor",
+      "details": "Fler detaljer:"
+    }
+  },
+  "GeneralRental": {
+    "title": "Allmänna hyresvillkor",
+    "general": {
+      "title": "Allmänna bestämmelser",
+      "p1": "Hyrestagaren måste alltid ha med sig ett <strong>giltigt fysiskt hyresavtal</strong> i fordonet, eftersom de spanska myndigheterna kan utfärda böter om detta saknas.",
+      "p2": "Alla trafikförseelser och relaterade kostnader som uppstår under hyresperioden belastar <strong>hyrestagaren</strong> utan att det påverkar eventuella rättsliga åtgärder.",
+      "p3": "Hyrestagaren ansvarar för <strong>korrekt tankning</strong> av fordonet.",
+      "p4": "Leverantören förbehåller sig rätten att neka uthyrning baserat på hyrestagarens tidigare händelser eller bristande efterlevnad av de allmänna villkoren. Om den valda modellen inte är tillgänglig levererar vi en <strong>liknande eller högre fordonskategori</strong>."
+    },
+    "services": {
+      "title": "Inkluderade tjänster",
+      "kanary": {
+        "title": "Kanarieöarna",
+        "i1": "<strong>Helförsäkring</strong> utan självrisk",
+        "i2": "Skatter, flygplats-/tåg-/hamnavgifter: ingår",
+        "i3": "<strong>Obegränsad</strong> körsträcka",
+        "i4": "Barnstolar och bälteskuddar: ingår",
+        "i5": "Takräcke: ingår",
+        "i6": "GPS: standardutrustning på vissa modeller",
+        "i7": "Extra förare: ingår",
+        "i8": "Leverans utanför kontor: ingår",
+        "i9": "Återlämning till kontor: ingår",
+        "i10": "Försenad återlämning med några timmar: ingår",
+        "i11": "Ung förare (21–25): ingår"
+      },
+      "peninsula": {
+        "title": "Fastlandet / Balearerna",
+        "i1": "Försäkringen gäller tillsammans med <strong>villkoren</strong>*",
+        "i2": "Skatter och avgifter: ingår",
+        "i3": "Obegränsad körsträcka: <strong>max. 28 dagar</strong>**",
+        "i4": "Barnstolar och bälteskuddar: 13,99 €/dag (max. 97,93 €)",
+        "i5": "Takräcke: 54 €",
+        "i6": "GPS: 14 €/dag (max. 98 €)",
+        "i7": "Övriga tillbehör (kedjor, skidhållare…): 54 €",
+        "i8": "Extra förare: 12,50 €/dag (max. 125 €)",
+        "i9": "Leverans utanför kontor: <strong>ingår inte</strong>",
+        "i10": "Återlämning till kontor: <strong>ingår inte</strong>",
+        "i11": "Försenad återlämning med några timmar: 50 €",
+        "i12": "Utomlandsassistans: 55 €"
+      },
+      "foot1": "(*) Helförsäkring utan självrisk – med undantag (karossens övre del, underrede, interiör, felaktig användning etc.). Detaljer: Försäkring.",
+      "foot2": "(**) Körsträcka obegränsad upp till max. 28 dagar."
+    },
+    "canary": {
+      "title": "Hyresvillkor – Kanarieöarna",
+      "i1": "<strong>Omedelbar</strong> bokningsbekräftelse; om valt fordon inte finns, tillhandahålls en liknande eller bättre modell.",
+      "i2": "<strong>100 % helförsäkring</strong> utan självrisk; obegränsad körsträcka; skatter och flygplatsavgifter ingår.",
+      "i3": "Audioguider finns tillgängliga på hyrkontoret.",
+      "i4": "Barnstolar, bälteskuddar och takboxar är <strong>kostnadsfria</strong>.",
+      "i5": "Extra förare är kostnadsfria – kan läggas till på hyrkontoret.",
+      "i6": "<strong>Bränslepolicy</strong>: efter bränslenivån vid utlämning kan en deposition tas ut.",
+      "i7": "<strong>Ändring/avbokning</strong>: kostnadsfri; online eller via e-post/telefon.",
+      "i8": "Vid flygplatsbokning hålls bokningen <strong>upp till 60 minuter</strong> efter den faktiska ankomsttiden.",
+      "i9": "<strong>Barnstolar/bälteskuddar</strong> är avgiftsfria; 0–18 kg-stol på baksätet, framåt- eller bakåtvänd; bälteskudde 15–36 kg; kunden ansvarar för korrekt montering."
+    },
+    "peninsula": {
+      "title": "Hyresvillkor – Fastlandet och Balearerna",
+      "i1": "Alla priser anges i euro. Minsta hyresperiod: <strong>24 timmar</strong>. 29 minuters respit; därefter debiteras en hel dag.",
+      "i2": "Vid resa utomlands krävs <strong>internationell assistansförsäkring</strong>; lista över tillåtna länder finns i kontraktet.",
+      "i3": "Betalning: <strong>endast</strong> med fysisk kreditkort i kontraktsinnehavarens namn. Kontanter/resescheckar accepteras inte.",
+      "i4": "Deposition: 200 € för mindre kategorier, 400 € för större/premium/MPV; för vissa kategorier krävs reservering på ett giltigt internationellt kort.",
+      "i5": "Om bränslet inte fylls på debiteras bränslekostnaden + 18 € serviceavgift.",
+      "i6": "Förare under 25 år: 21,99 €/dag, max. 219,90 €.",
+      "i7": "Extra förare: 12,50 €/dag, max. 125 €.",
+      "i8": "Ålders- och körkortskrav per fordonsgrupp (detaljer i kontraktet); minst 2 års giltigt körkort.",
+      "i9": "Flygplatshyra i Madrid/Barcelona utan flygbiljett accepteras <strong>inte</strong> (ankomst- och returdata krävs).",
+      "i10": "<strong>Resa utomlands</strong>: tillåtna länder – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; andra länder är inte tillåtna; avslut av hyran utomlands kräver förhandsgodkännande; nyttofordon får inte lämnas utomlands.",
+      "i11": "<strong>Förvaring av tillbehör</strong> (barnstol, takräcke, nycklar, dokument) är hyrestagarens ansvar; vid förlust/skada kan en avgift tas ut."
+    },
+    "schedule": {
+      "title": "Öppettider och leveranser",
+      "i1": "Stadskontor: mån–fre 9:30–13:30 och 16:30–19:00; lör 10:00–13:00.",
+      "i2": "Flygplatskontor: alla dagar 08:00–23:00 (kan variera säsongsvis).",
+      "i3": "Rabatterad leverans vid disk: upp till 36,3 €, beroende på tillgänglighet.",
+      "i4": "Leverans/avhämtning utanför kontor: 27 €/50 €/100 € (5 km / 50 km / 100 km), med 48 timmars förvarning.",
+      "i5": "Leverans/avhämtning utanför öppettid från eget kontor: +50 €.",
+      "i6": "I städer utan kontor: 0,84 €/km (min. 57 €) fram till närmaste kontor (tur och retur).",
+      "i7": "Återlämning till kontor under öppettid; utanför öppettid ansvarar hyrestagaren för fordonet fram till mottagandet.",
+      "i8": "Bokningshållning: max. 120 minuter från avtalad tid (inom kontorets öppettider); för flygningar gäller den faktiska ankomsttiden."
+    },
+    "liability": {
+      "title": "Ansvarsfriskrivning",
+      "p1": "Leverantören ansvarar inte för skador som uppstår på grund av felaktig funktion, underlåtenhet, avbrott, radering, försening, datorvirus, stöld, förstörelse, obehörig åtkomst eller användning av data eller information.",
+      "p2": "Användaren accepterar uttryckligen att användningen av webbplatsen sker <strong>på egen risk</strong>, inklusive alla kostnader för tjänster och reparationer som krävs för systemets funktion.",
+      "p3": "Organisationer som är kopplade till leverantören och deras anställda ansvarar inte för någon förlust eller skada som uppstår till följd av användning eller försök till användning av webbplatsen."
+    },
+    "related": {
+      "title": "Relaterade sidor",
+      "details": "Fler detaljer:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Hyreskrav",
+    "general": {
+      "title": "Allmänna villkor (Fuerteventura / Lanzarote)",
+      "i1": "Förare under 23 år hyr vi i princip inte ut till, endast mot tilläggsavgift.",
+      "i2": "Efter bekräftad bokning kan följande leda till avbokning:",
+      "i2a": "uppgifter lämnade av kunden är inte korrekta/sanna/aktuella",
+      "i2b": "brott mot hyresvillkoren",
+      "i3": "Obligatoriskt: giltigt körkort, ID-kort/pass, adress och fungerande telefonnummer."
+    },
+    "vehicle": {
+      "title": "Villkor för fordonet",
+      "i1": "Den bokade bilmodellen är vägledande; den kan ersättas med en liknande modell i samma kategori.",
+      "i2": "För fordon utrustade med GPS används positionering i skydds- och säkerhetssyfte, i enlighet med gällande lagstiftning.",
+      "i3": "Fordonet får inte lämna den ö där det hyrs.",
+      "i4": "Användning: i enlighet med lagar och regler, endast på offentliga vägar; får inte användas för förbjudna/olagliga ändamål; inte för reklamsyfte.",
+      "i5": "Rekommenderat bränsle ska användas; fordonet måste alltid låsas vid parkering.",
+      "i6": "Barnstol tillhandahålls vid utlämning; korrekt montering är obligatorisk.",
+      "i7": "Bagage/surfbrädor måste säkras på taket med takräcke.",
+      "i8": "Vid tekniskt fel: stanna, parkera säkert och meddela oss <strong>omedelbart</strong>.",
+      "i9": "Hyrestagaren ansvarar för fordonet från utlämning till korrekt återlämning."
+    },
+    "handover": {
+      "title": "Utlämning och retur",
+      "i1": "Utlämning och återlämning: på den i bokningen angivna och bekräftade flygplatsen och tidpunkten.",
+      "i2": "Fordonet får inte återlämnas på en annan ö. Undantag: Lanzarote mot tilläggsavgift (40 €).",
+      "i3": "Vid återlämning ska fordonets skick motsvara det vid utlämning (med undantag för normalt slitage).",
+      "i4": "Vid händelse/skada måste dokumentation/protokoll lämnas in.",
+      "i5": "Vid extrem smuts debiteras en rengöringsavgift på 70 €.",
+      "i6": "Vid tidig återlämning ges ingen återbetalning av hyresavgiften.",
+      "i7": "Lämna inga föremål i fordonet vid återlämning; vi ansvarar inte för förlorade/förgätna saker."
+    },
+    "price": {
+      "title": "Detta ingår i bokningspriset",
+      "i1": "Skatter (IGIC/IVA)",
+      "i2": "Obegränsad körsträcka",
+      "i3": "Andra förare gratis",
+      "i4": "Utlämning och retur på flygplatsen",
+      "i5": "Kostnadsfri avbokning av bokningen",
+      "i6": "Barnstolar och bälteskuddar är gratis (inte ISOFIX; ISOFIX kan hyras som tillval)",
+      "i7": "Grundförsäkring med 300–500 € deposition (självrisk vid skada)"
+    },
+    "base_excludes": {
+      "title": "Vad grundförsäkringen inte täcker",
+      "i1": "Tak",
+      "i2": "Glasytor (rutor, strålkastare, speglar)",
+      "i3": "Däck och hjul",
+      "i4": "Urladdat batteri",
+      "i5": "Interiör (säten, mattor etc.)",
+      "i6": "Fjädring/chassi",
+      "i9": "Växellåda",
+      "i7": "Personliga tillhörigheter i bilen (bagageutrymme, handskfack)",
+      "i8": "Förlorade nycklar",
+      "note": "Kostnader för dessa skador belastar hyrestagaren."
+    },
+    "deposit": {
+      "title": "Deposition och innehållande",
+      "i1": "Kontant deposition: 300–500 € (ingen kreditkortsreserv behövs).",
+      "i2": "Depositionen kan kvarhållas i upp till 15 dagar; återbetalning sker via banköverföring (t.ex. Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Fullförsäkring (tillval)",
+      "p1": "Med fullförsäkring krävs ingen deposition på 300–500 €, och de flesta skador är täckta.",
+      "note": "Undantag: skador orsakade av vårdslöshet eller brott mot hyresvillkoren (exempel nedan)."
+    },
+    "exceptions": {
+      "title": "Undantag – exempel",
+      "i1": "Körning på icke-asfalterad eller förbjuden väg (t.ex. Cofete)",
+      "i2": "Körning under påverkan av alkohol/psykoaktiva ämnen",
+      "i3": "Mobilanvändning under körning utan handsfree",
+      "i4": "Ignorera varningslampor/felmeddelanden på instrumentpanelen och fortsätta köra",
+      "i5": "Transport av farliga/brännbara ämnen, djur eller icke tillåtet gods",
+      "i6": "Olaglig/otillåten aktivitet, uthyrning till tredje part",
+      "i7": "Föremål på taket utan godkänd takhållare",
+      "i8": "Vattenskador/inre skador som går utöver normal omsorg",
+      "i9": "Skador på fordon som lämnats olåst, eller förare som inte är godkänd",
+      "i10": "Överskridande av kontrakterad hyresperiod"
+    },
+    "related": {
+      "title": "Relaterade sidor",
+      "details": "Fler detaljer:"
+    }
+  },
+  "RentForm": {
+    "title": "Fyll i formuläret nedan för att slutföra din bokning",
+    "buttons": {
+      "addChild": "Lägg till barn",
+      "removeChild": "Ta bort",
+      "addDriver": "Lägg till förare",
+      "removeDriver": "Ta bort förare",
+      "submit": "Skicka bokning"
+    },
+    "searching": "Bearbetar uppgifter...",
+    "extras": {
+      "label": "Extra tjänster",
+      "options": {
+        "szorfo_deszka_rogzito": "Fäste för surfbräda",
+        "gyerekules": "Barnstol",
+        "kiszallitas": "Leverans",
+        "alap_csomag": "Bas­paket *",
+        "energia_csomag": "Energi­paket **",
+        "esti_erkezes_csomag": "Paket för sen ankomst ***"
+      },
+      "packages": {
+        "base": "* Baspaket: 0,5 l vatten och 0,33 l Fuze Tea per person",
+        "energy": "** Energipaket: utöver baspaketet 2–3 sorters choklad eller snacks efter önskemål",
+        "lateArrival": "*** Paket för sen ankomst: utöver baspaketet 1,5 l vatten och 2 croissanter per person vid sen ankomst"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Hyresperiod"
+    },
+    "dateRangePicker": {
+      "cancel": "Avbryt",
+      "apply": "Spara"
+    },
+    "adults": {
+      "label": "Antal vuxna",
+      "placeholder": "Antal vuxna"
+    },
+    "sections": {
+      "booking": {
+        "title": "Bokningsuppgifter",
+        "description": "Välj önskade extra tjänster, ange hyresperioden och antalet vuxna resenärer."
+      },
+      "children": {
+        "title": "Barn som reser med",
+        "description": "Om barn reser med, ange deras ålder (och eventuellt längd), så att vi kan tillhandahålla rätt utrustning.",
+        "empty": "Inga barn har lagts till ännu.",
+        "ageLabel": "Barn #{index} ålder (år)",
+        "heightLabel": "Längd (cm) – valfritt"
+      },
+      "drivers": {
+        "title": "Föraruppgifter",
+        "description": "Ange personuppgifter för huvudföraren och vid behov övriga förare samt detaljer om körkortet.",
+        "primaryInfo": "Utifrån huvudförarens uppgifter fyller vi automatiskt i kontakt- och faktureringsfält om du aktiverar kryssrutorna.",
+        "primaryTitle": "Huvudförarens uppgifter",
+        "secondaryTitle": "Förare {index} uppgifter",
+        "fields": {
+          "lastName1": {
+            "label": "Förarens efternamn",
+            "placeholder": "Efternamn"
+          },
+          "lastName2": {
+            "label": "Förarens efternamn (valfritt)",
+            "placeholder": "Efternamn (valfritt)"
+          },
+          "firstName1": {
+            "label": "Förarens förnamn",
+            "placeholder": "Förnamn"
+          },
+          "firstName2": {
+            "label": "Förarens förnamn (valfritt)",
+            "placeholder": "Förnamn (valfritt)"
+          },
+          "postalCode": {
+            "label": "Postnummer",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Ort",
+            "placeholder": "Ort"
+          },
+          "country": {
+            "label": "Land",
+            "placeholder": "Land"
+          },
+          "street": {
+            "label": "Gata",
+            "placeholder": "Gata"
+          },
+          "doorNumber": {
+            "label": "Husnummer",
+            "placeholder": "Husnummer"
+          },
+          "dateOfBirth": {
+            "label": "Födelsedatum",
+            "placeholder": "Välj datum"
+          },
+          "placeOfBirth": {
+            "label": "Födelseort",
+            "placeholder": "Födelseort"
+          },
+          "nameOfMother": {
+            "label": "Moderns namn",
+            "placeholder": "Moderns namn"
+          },
+          "phoneNumber": {
+            "label": "Telefonnummer",
+            "placeholder": "+46701234567"
+          },
+          "email": {
+            "label": "E-postadress",
+            "placeholder": "exempel@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Dokumenttyp",
+            "placeholder": "Välj dokument",
+            "passport": "Pass",
+            "id_card": "ID-kort"
+          },
+          "number": {
+            "label": "Dokumentnummer",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Utfärdandedatum",
+            "placeholder": "Välj datum"
+          },
+          "validUntil": {
+            "label": "Utgångsdatum",
+            "placeholder": "Välj datum"
+          },
+          "drivingLicenceNumber": {
+            "label": "Körkortsnummer",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Högsta kategori",
+            "placeholder": "Välj kategori"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Körkort utfärdat",
+            "placeholder": "Välj datum"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Körkort giltigt till",
+            "placeholder": "Välj datum"
+          },
+          "drivingLicenceIsOlderThan3": "Jag intygar att jag har haft körkort i mer än 3 år"
+        }
+      },
+      "contact": {
+        "title": "Kontaktuppgifter",
+        "description": "Om kontaktpersonen är någon annan än huvudföraren, ange den personens uppgifter här.",
+        "toggle": "Samma som huvudförarens uppgifter",
+        "fields": {
+          "name": {
+            "label": "Kontaktpersonens namn",
+            "placeholder": "Kontaktpersonens namn"
+          },
+          "email": {
+            "label": "Kontaktpersonens e-postadress",
+            "placeholder": "Kontaktpersonens e-postadress"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Faktureringsuppgifter",
+        "description": "Ange vilket namn och vilken adress fakturan ska ställas ut på. Om de är samma som föraren, markera alternativet nedan.",
+        "toggle": "Samma som huvudförarens uppgifter",
+        "fields": {
+          "name": {
+            "label": "Fakturanamn",
+            "placeholder": "Fakturanamn"
+          },
+          "email": {
+            "label": "Faktura-e-post",
+            "placeholder": "Faktura-e-post"
+          },
+          "phoneNumber": {
+            "label": "Fakturatelefonnummer",
+            "placeholder": "+46201234567"
+          },
+          "taxId": {
+            "label": "Moms-/organisationsnummer (valfritt)",
+            "placeholder": "Moms-/organisationsnummer"
+          },
+          "companyName": {
+            "label": "Företagsnamn (valfritt)",
+            "placeholder": "Företagsnamn"
+          },
+          "address": {
+            "country": {
+              "label": "Land",
+              "placeholder": "Land"
+            },
+            "postalCode": {
+              "label": "Postnummer",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Ort",
+              "placeholder": "Ort"
+            },
+            "street": {
+              "label": "Gata",
+              "placeholder": "Gata"
+            },
+            "doorNumber": {
+              "label": "Husnummer",
+              "placeholder": "Husnummer"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Exakt leveransadress",
+        "description": "Ange den fullständiga adressen till boendet eller flygplatsen för leverans.",
+        "locationName": {
+          "label": "Boendets/flygplatsens namn (valfritt)",
+          "placeholder": "T.ex. Hotel Marina eller Budapest Liszt Ferenc"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Platsens typ",
+            "placeholder": "Välj plats",
+            "accommodation": "Boende",
+            "airport": "Flygplats"
+          },
+          "arrivalFlight": {
+            "label": "Ankommande flightnummer",
+            "placeholder": "t.ex. FR1234"
+          },
+          "departureFlight": {
+            "label": "Hemresans flightnummer",
+            "placeholder": "t.ex. FR5678"
+          },
+          "country": {
+            "label": "Land",
+            "placeholder": "Land"
+          },
+          "postalCode": {
+            "label": "Postnummer",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Ort",
+            "placeholder": "Ort"
+          },
+          "street": {
+            "label": "Gata (valfritt)",
+            "placeholder": "Gata"
+          },
+          "doorNumber": {
+            "label": "Husnummer (valfritt)",
+            "placeholder": "Husnummer"
+          }
+        }
+      },
+      "consents": {
+        "title": "Juridiska medgivanden",
+        "description": "För att slutföra bokningen måste du godkänna integritetspolicyn och de allmänna villkoren.",
+        "privacyLabel": "Jag har läst och godkänner <link>integritetspolicyn</link>",
+        "termsLabel": "Jag har läst och godkänner <link>allmänna villkor</link>"
+      }
+    },
+    "toast": {
+      "success": "Tack! Vi kontaktar dig inom kort.",
+      "error": "Hoppsan, något gick fel. Försök igen senare."
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Ogiltigt startdatum",
+      "invalidEndDate": "Ogiltigt slutdatum",
+      "adultsMin": "Minst en vuxen krävs",
+      "childAgeMin": "Åldern kan inte vara negativ",
+      "childAgeMax": "Barnets ålder får högst vara 17 år",
+      "childHeightMin": "Längden kan inte vara negativ",
+      "firstNameRequired": "Förnamn är obligatoriskt",
+      "lastNameRequired": "Efternamn är obligatoriskt",
+      "countryRequired": "Land är obligatoriskt",
+      "postalCodeRequired": "Postnummer är obligatoriskt",
+      "cityRequired": "Ort är obligatorisk",
+      "streetRequired": "Gata är obligatorisk",
+      "doorNumberRequired": "Husnummer är obligatoriskt",
+      "invalidDateOfBirth": "Ogiltigt födelsedatum",
+      "placeOfBirthRequired": "Födelseort är obligatorisk",
+      "motherNameRequired": "Moderns namn är obligatoriskt",
+      "phoneRequired": "Telefonnummer är obligatoriskt",
+      "phoneInvalid": "Ange ett giltigt telefonnummer",
+      "emailRequired": "E-postadress är obligatorisk",
+      "emailInvalid": "Ange en giltig e-postadress",
+      "documentNumberRequired": "Dokumentnummer är obligatoriskt",
+      "documentIssueInvalid": "Ogiltigt utfärdandedatum för dokumentet",
+      "documentExpiryInvalid": "Ogiltigt utgångsdatum för dokumentet",
+      "drivingLicenceNumberRequired": "Körkortsnummer är obligatoriskt",
+      "drivingLicenceIssueInvalid": "Ogiltigt utfärdandedatum för körkortet",
+      "drivingLicenceExpiryInvalid": "Ogiltigt utgångsdatum för körkortet",
+      "contactNameRequired": "Kontaktpersonens namn är obligatoriskt",
+      "contactEmailRequired": "Kontaktpersonens e-postadress är obligatorisk",
+      "contactEmailInvalid": "Ange en giltig e-postadress till kontaktpersonen",
+      "invoiceNameRequired": "Fakturanamn är obligatoriskt",
+      "invoicePhoneRequired": "Fakturatelefonnummer är obligatoriskt",
+      "invoiceEmailRequired": "Faktura-e-post är obligatorisk",
+      "invoiceEmailInvalid": "Ange en giltig faktura-e-postadress",
+      "startPast": "Startdatum kan inte ligga i det förflutna",
+      "startTooLate": "Startdatum kan högst vara inom ett år",
+      "endBeforeStart": "Slutdatum kan inte vara före startdatum",
+      "endTooLate": "Slutdatum kan högst vara inom ett år",
+      "deliveryPlaceTypeRequired": "Välj om du anger adress till boende eller flygplats",
+      "deliveryFieldRequired": "Obligatoriskt fält",
+      "invalidAdults": "Minst en vuxen krävs",
+      "adultsInvalid": "Ange antalet vuxna passagerare"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Ogiltigt startdatum",
+          "past": "Startdatum kan inte ligga i det förflutna",
+          "tooLate": "Startdatum kan högst vara inom ett år"
+        },
+        "endDate": {
+          "invalid": "Ogiltigt slutdatum",
+          "beforeStart": "Slutdatum kan inte vara före startdatum",
+          "tooLate": "Slutdatum kan högst vara inom ett år"
+        }
+      },
+      "adults": {
+        "min": "Minst en vuxen krävs"
+      },
+      "children": {
+        "age": {
+          "min": "Åldern kan inte vara negativ",
+          "max": "Barnets ålder får högst vara 17 år"
+        },
+        "height": {
+          "min": "Längden kan inte vara negativ"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "Förnamn är obligatoriskt"
+        },
+        "lastName_1": {
+          "required": "Efternamn är obligatoriskt"
+        },
+        "location": {
+          "country": {
+            "required": "Land är obligatoriskt"
+          },
+          "postalCode": {
+            "required": "Postnummer är obligatoriskt"
+          },
+          "city": {
+            "required": "Ort är obligatorisk"
+          },
+          "street": {
+            "required": "Gata är obligatorisk"
+          },
+          "doorNumber": {
+            "required": "Husnummer är obligatoriskt"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Ogiltigt födelsedatum"
+        },
+        "placeOfBirth": {
+          "required": "Födelseort är obligatorisk"
+        },
+        "nameOfMother": {
+          "required": "Moderns namn är obligatoriskt"
+        },
+        "phoneNumber": {
+          "required": "Telefonnummer är obligatoriskt",
+          "invalid": "Ange ett giltigt telefonnummer"
+        },
+        "email": {
+          "required": "E-postadress är obligatorisk",
+          "invalid": "Ange en giltig e-postadress"
+        },
+        "document": {
+          "number": {
+            "required": "Dokumentnummer är obligatoriskt"
+          },
+          "validFrom": {
+            "invalid": "Ogiltigt utfärdandedatum för dokumentet"
+          },
+          "validUntil": {
+            "invalid": "Ogiltigt utgångsdatum för dokumentet"
+          },
+          "drivingLicenceNumber": {
+            "required": "Körkortsnummer är obligatoriskt"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Ogiltigt utfärdandedatum för körkortet",
+            "minAge": "Körkortet måste ha varit giltigt i minst 3 år"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Ogiltigt utgångsdatum för körkortet"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "Kontaktpersonens namn är obligatoriskt"
+        },
+        "email": {
+          "required": "Kontaktpersonens e-postadress är obligatorisk",
+          "invalid": "Ange en giltig e-postadress till kontaktpersonen"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "Fakturanamn är obligatoriskt"
+        },
+        "phoneNumber": {
+          "required": "Fakturatelefonnummer är obligatoriskt",
+          "invalid": "Ange ett giltigt telefonnummer"
+        },
+        "email": {
+          "required": "Faktura-e-post är obligatorisk",
+          "invalid": "Ange en giltig faktura-e-postadress"
+        },
+        "location": {
+          "country": {
+            "required": "Land är obligatoriskt"
+          },
+          "postalCode": {
+            "required": "Postnummer är obligatoriskt"
+          },
+          "city": {
+            "required": "Ort är obligatorisk"
+          },
+          "street": {
+            "required": "Gata är obligatorisk"
+          },
+          "doorNumber": {
+            "required": "Husnummer är obligatoriskt"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Välj om du anger adress till boende eller flygplats"
+        },
+        "arrivalFlight": {
+          "required": "Ange ankommende flygnummer"
+        },
+        "departureFlight": {
+          "required": "Ange flygnummer för retur"
+        },
+        "address": {
+          "country": {
+            "required": "Obligatoriskt fält"
+          },
+          "postalCode": {
+            "required": "Obligatoriskt fält"
+          },
+          "city": {
+            "required": "Obligatoriskt fält"
+          },
+          "street": {
+            "required": "Obligatoriskt fält"
+          },
+          "doorNumber": {
+            "required": "Obligatoriskt fält"
+          }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "För att boka måste du godkänna integritetspolicyn"
+        },
+        "terms": {
+          "required": "För att boka måste du godkänna de allmänna villkoren"
+        }
+      }
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Vänligen välj",
+    "selectAll": "Markera alla",
+    "close": "Stäng",
+    "clear": "Rensa"
+  },
+  "NotFound": {
+    "label": "Vilse?",
+    "title": "Sidan du letar efter finns tyvärr inte",
+    "description": "Sidan du söker finns kanske inte längre, eller så har det blivit ett stavfel. Du kan fortsätta utforska via startsidan eller ta kontakt med oss.",
+    "badge": "Ett nytt äventyr väntar",
+    "cta": {
+      "home": {
+        "href": "se",
+        "label": "Tillbaka till startsidan"
+      },
+      "contact": {
+        "href": "se/contact",
+        "label": "Kontakta oss"
+      }
+    }
+  },
+  "GTC": {
+    "title": "Hyresavtal",
+    "sections": [
+      {
+        "heading": "1. Avtalsparter och avtalets ingående",
+        "paragraphs": [
+          "Detta avtal ingås mellan ZODIACSRENTACAR Thomy Fuerteventura SL. (nedan: Uthyraren) och den fysiska eller juridiska person som accepterar erbjudandet (nedan: Hyrestagaren).",
+          "Parterna accepterar att bestämmelserna i Avtalet är bindande och giltiga under hela hyresperioden, fram till dess att fordonets retur slutgiltigt registrerats.",
+          "Förfrågan om offert och bokning kan göras via webbplatsen www.zodiacsrentacar.com samt genom de ovan angivna kontaktkanalerna.",
+          "Offertförfrågan, bekräftelse av offertens acceptans och eventuellt avslag på bokningen skickas till den e-postadress som anges i dataformuläret.",
+          "Uthyraren förbehåller sig rätten att av driftsmässiga skäl – särskilt vid bristande tillgänglighet av det begärda fordonet – avslå eller avvisa en bokningsförfrågan som är ofullständig, felaktig eller inte uppfyller gällande villkor.",
+          "Den person som anges i Avtalet, den bokningsberättigade och huvudföraren måste vara samma person; avtalet får inte överlåtas till tredje part.",
+          "Av säkerhetsskäl begär vi inte bank- eller finansiell information via plattformen, men Hyrestagaren är skyldig att visa upp sådana uppgifter (särskilt sitt kreditkort) vid hämtning av hyrfordonet på kontoret.",
+          "Kreditkortet måste ägas av Hyrestagaren och vara giltigt under hela hyresperioden samt ytterligare tre (3) månader därefter på Kanarieöarna för att täcka eventuella efterföljande kostnader.",
+          "Vi accepterar de vanligaste kreditkorten (Visa/MC/Amex/Diners) och bankkort utfärdade av finansiella institut; betalkort (debit) accepteras inte.",
+          "Uthyraren accepterar en deposition på 500 € för hyresperioden, vilken återbetalas inom 15 kalenderdagar efter att fordonet återlämnats, förutsatt att fordonets skick överensstämmer med avtalsvillkoren.",
+          "Behandling av personuppgifter och övriga rättsliga villkor för plattformens drift regleras i GDPR-integritetspolicyn på Uthyrarens webbplats. Hyrestagaren bekräftar genom att underteckna detta avtal att denne tagit del av och godkänner denna policy."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Uthyrarens uppgifter:",
+            "items": [
+              "Företagsnamn: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Säte: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Spanien",
+              "Skattenummer (CIF): B13702493",
+              "E-postadress: info@zodiacsrentacar.es",
+              "Växelnummer: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Hyresvillkor och krav på förare",
+        "paragraphs": [
+          "Uthyraren hyr inte ut fordon till förare under 25 år.",
+          "Användare får endast hyra fordon av Uthyraren om de uppfyller nedanstående villkor.",
+          "Uppfyllandet av dessa villkor är obligatoriskt och kan inte frångås.",
+          "Uthyraren tar inte ut någon avgift av användare som inte kan ingå avtal på grund av att villkoren inte uppfylls, eftersom bokningen i sådant fall inte kan genomföras.",
+          "Samma villkor gäller för ytterligare förare som anges av Hyrestagaren.",
+          "Efter bekräftelse av bokningen har Uthyraren rätt att avboka den i följande fall."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Villkor för uthyrning:",
+            "items": [
+              "Minst tjugofem (25) år fyllda.",
+              "Innehar minst körkortsbehörighet klass B som är giltig inom Europeiska unionen.",
+              "Minst två (2) års dokumenterad körerfarenhet från det att körkortet erhölls, vid tidpunkten för bokningen."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "Bokningen kan avbokas om:",
+            "items": [
+              "det visar sig att den information kunden lämnat är felaktig, osann eller inaktuell.",
+              "giltigheten för något nödvändigt dokument löper ut under hyresperioden.",
+              "Hyrestagaren bryter mot hyresvillkoren."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) Enligt spansk lag... (här återges ett stycke om spansk lagstiftning som av juridiska skäl lämnas oförändrat)."
+        ]
+      },
+      {
+        "heading": "3. Villkor gällande hyrfordonet",
+        "paragraphs": [
+          "Det reserverade fordonets modell är vägledande och kan av Uthyraren ersättas med ett fordon i samma eller högre kategori som finns tillgängligt i flottan.",
+          "GPS-spårning: genom att underteckna hyresavtalet samtycker Hyrestagaren till att fordonet kan spåras; geolokaliseringsdata används av Uthyraren enbart för fordonets säkerhet och för att kontrollera att hyresvillkoren följs.",
+          "Användningsbegränsning: fordonet får inte lämna den ö där hyresavtalet ingåtts, om inte annat uttryckligen avtalats och registrerats i bokningssystemet.",
+          "Om hyresavtalet även omfattar Lanzarote, eller om fordonet ska återlämnas på Lanzarote, gäller dessa villkor i sin helhet även under dessa omständigheter.",
+          "Vid upptäckt av fel eller funktionsstörning ska fordonet omedelbart stannas på ett trafiksäkert sätt i enlighet med trafikreglerna och Uthyraren ska omedelbart underrättas.",
+          "Hyrestagaren är skyldig att före hyresperiodens start kontrollera att alla obligatoriska tillbehör finns i fordonet.",
+          "Hyrestagaren ansvarar från hämtning till bekräftad retur för laglig och tekniskt korrekt användning samt för att fordonets skick bevaras.",
+          "Om återlämning inte sker på det sätt som Uthyraren angivit (till exempel utan personlig överlämning) förlängs Hyrestagarens ansvar till dess att fordonets faktiska mottagande registrerats och dess skick kontrollerats.",
+          "Kostnaderna för reparation av konstaterade skador och fel bärs av Hyrestagaren."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Övriga användningsregler:",
+            "items": [
+              "Hyrestagaren accepterar som bindande alla tillämpliga nationella bestämmelser och lagar, inklusive trafikregler.",
+              "Fordonet får inte användas i olagligt syfte eller som hjälpmedel vid brott.",
+              "Fordonet får endast användas på allmänna vägar med fast beläggning.",
+              "Observera: om fordonet används på icke asfalterad väg bär Hyrestagaren alla kostnader för punkteringar, bärgning, transport och reparation på plats.",
+              "Fordonet får inte användas för kommersiella eller reklamändamål.",
+              "Endast bränsle som rekommenderas av tillverkaren får användas. Vid tankning av inkompatibelt bränsle måste Uthyraren omedelbart informeras och fordonet får inte startas.",
+              "Hyrestagaren ska säkerställa att fordonet vid parkering eller då det lämnas är helt låst och att alla rimliga åtgärder vidtagits för att förhindra obehörig användning.",
+              "Vid parkering ska parkeringsbromsen läggas i och lämplig växel användas; i lutning ska framhjulen vridas mot trottoarkanten.",
+              "Barnstolar tillhandahålls av Uthyraren vid hämtning, men korrekt montering och användning är alltid Hyrestagarens ansvar.",
+              "Sportutrustning (till exempel surfbrädor) får inte transporteras eller förvaras i fordonets kupé.",
+              "Hyrestagaren ansvarar för att bagage och surfbrädor är korrekt fastsatta i takräcket, om sådant hyrs."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Regler för överlämning och återlämning",
+        "paragraphs": [
+          "Hämtning och återlämning av hyrfordonet sker på det kontor och vid de datum och tider som anges i bokningen och bekräftats av Uthyraren.",
+          "Fordonet får under inga omständigheter återlämnas på en annan ö än den som anges i avtalet.",
+          "Fordonet kan endast hämtas under kontorets öppettider; återlämning kan enligt de villkor som anges i bokningsprocessen organiseras även utanför öppettid.",
+          "Återlämning på flygplatsen utanför öppettid eller före öppning är kostnadsfri; vid transport till annan plats kan en särskild avgift tas ut. Avtalade specialfall registreras i bokningssystemet.",
+          "Kontorets öppettider är normalt 10:00–13:00 och 16:00–20:00; exakt information kan inhämtas via e-post, WhatsApp eller telefon.",
+          "Vid försening eller inställt flyg är Hyrestagaren skyldig att i tid informera Uthyraren; underlåtenhet innebär att Uthyraren inte kan garantera att bokningen bibehålls.",
+          "Om det inte är möjligt att hålla bokningen förbehåller sig Uthyraren rätten att avboka den och får utan ersättningsanspråk förfoga över fordonet.",
+          "Fordonet ska återlämnas i samma skick som registrerades vid hämtning; vid avvikelse är Hyrestagaren skyldig att styrka inträffade händelser med dokumentation.",
+          "Ingen återbetalning görs vid förtida återlämning.",
+          "Bränsle: fordonet ska återlämnas med samma bränslenivå som vid hämtning; vid underskott står Hyrestagaren för bränslekostnad och serviceavgift.",
+          "Vid överskott av bränsle kan vi tyvärr inte återbetala mellanskillnaden.",
+          "Inga personliga tillhörigheter får lämnas kvar i fordonet vid återlämning. Uthyraren ansvarar inte för egendom som lämnats kvar och kan varken förvara eller vidarebefordra dessa."
+        ]
+      },
+      {
+        "heading": "5. Tjänster och försäkring",
+        "paragraphs": [
+          "Det slutliga priset för fordonsbokningen inkluderar följande poster.",
+          "Ingen självrisk (deposition, kontant eller kortreservation) krävs, med undantag för den deposition på 500 € som anges i punkt 1.",
+          "Det är viktigt att notera att enligt spanska trafikregler är användning av godkänd barnstol obligatorisk för minderåriga under 135 cm."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Skatter (IGIC/IVA ingår).",
+              "Obegränsad körsträcka.",
+              "Gratis andra förare.",
+              "Service vid vårt kontor (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Kostnadsfri avbokning (se punkt 9).",
+              "Gratis babyskydd och bälteskuddar (ej ISOFIX).",
+              "Följande försäkringar utan självrisk: vagnskadeförsäkring (CDW), stöldskydd (TP), ansvarsförsäkring mot tredje man (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. Situationer som inte täcks av försäkringen",
+        "paragraphs": [
+          "Viktigt! Ovanstående försäkring utan självrisk täcker inte följande situationer eller händelser; för skador och kostnader som uppstår i dessa fall ansvarar Hyrestagaren fullt ut ekonomiskt."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Skador på däck och hjul vid körning på icke asfalterad väg.",
+              "Förlust, brytning eller skada på bilnycklarna.",
+              "Tankning med fel bränsle (bränsletyp anges separat på varje fordon).",
+              "Oansvarig körning eller olycka under påverkan av alkohol, droger eller andra giftiga eller psykoaktiva ämnen.",
+              "Olyckor och/eller skador vid terrängkörning (utan fast beläggning).",
+              "Böter (parkering, fortkörning, trafikförseelser)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Tillvalstjänster",
+        "paragraphs": [
+          "Som valfria eller kompletterande tjänster kan Hyrestagare hyra följande extrautrustning, som inte ingår i fordonets bokningspris.",
+          "Tackräcken lämpar sig för transport av upp till två surfbrädor vid korrekt fastsättning.",
+          "Uthyraren ansvarar under inga omständigheter för föremål som transporteras på fordonets tak eller för skador som orsakas tredje man av dessa; Hyrestagaren bär fullt ansvar för sådana skador.",
+          "Alla grundläggande och valfria tjänster står till Hyrestagarens förfogande och garanteras enligt de allmänna villkoren i avtalet med Uthyraren."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Tackräcke för transport av bagage, till det pris som anges på webbplatsen; inkluderar inte rep eller spännband, utan endast skenor och stänger för fastsättning på fordonet."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Bränslepolicy",
+        "paragraphs": [
+          "Hyrestagaren ska återlämna fordonet med samma mängd bränsle som vid hämtning.",
+          "Om Hyrestagaren tankar fordonet med fel bränsle ansvarar denne för alla nödvändiga reparationer och kostnader."
+        ]
+      },
+      {
+        "heading": "9. Betalnings- och återbetalningspolicy",
+        "paragraphs": [
+          "Uthyraren erbjuder onlinebetalning för att reglera hyresavgiften via webbplatsen.",
+          "Bokningen anses genomförd när betalning har skett med kreditkort, betalkort eller bankkort.",
+          "Tjänsteleverantör för onlinebetalningar: CAIXABANK (bankkonto: ES60 2100 1512 2602 0067 6927).",
+          "Återbetalningspolicy.",
+          "För återbetalning ska Hyrestagaren kontakta info@zodiacsrentacar.es eller ringa +34 683 192 422 och uppge IBAN-nummer och fullständigt namn.",
+          "Uthyraren genomför överföringen inom 15 arbetsdagar."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Full återbetalning är endast möjlig om avbokningen sker minst 3 kalenderdagar (72 timmar) före hyresperiodens början.",
+              "Uthyraren återbetalar inte någon del av hyresavgiften om fordonet återlämnas tidigare än avtalat.",
+              "Återbetalning – om tillämpligt – sker via banköverföring."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Ändring av dessa allmänna villkor",
+        "paragraphs": [
+          "Uthyraren har rätt att när som helst ändra de Allmänna villkoren, särskilt för att anpassa sig till förändringar i regelverket eller för att justera den kommersiella policyn."
+        ]
+      },
+      {
+        "heading": "11. Tillämplig lag och jurisdiktion",
+        "paragraphs": [
+          "Vid tvister som uppstår ur dessa villkor avstår Parterna från alla andra jurisdiktioner och accepterar de behöriga domstolarna i Santa Cruz de Tenerife som exklusivt behöriga, i enlighet med tillämplig spansk lag."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "title": "Vanliga frågor",
+    "intro": "Vi har samlat de viktigaste informationerna så att din biluthyrning på Fuerteventura och Lanzarote ska bli så smidig som möjligt.",
+    "items": [
+      {
+        "question": "Hur kan jag boka en bil?",
+        "answer": "Fyll i vårt onlineformulär för offertförfrågan så bekräftar våra kollegor hyran inom högst 24 timmar. Om det är brådskande kan du även ringa oss eller skriva via WhatsApp."
+      },
+      {
+        "question": "Vilka dokument behövs vid hämtning?",
+        "answer": "Vid hämtning behöver du ett giltigt körkort med minst 3 års körerfarenhet samt ett ID-kort eller pass. Samtliga förare som anges i avtalet måste visa dessa dokument vid hämtning."
+      },
+      {
+        "question": "Måste jag betala deposition?",
+        "answer": "Vid val av fullständig SSCP-försäkring tar vi ingen deposition. Med grundförsäkring tillkommer en deposition på 300–500 €, och vissa tillval (till exempel takräcke) kan kräva extra säkerhet."
+      },
+      {
+        "question": "Var kan jag hämta bilen?",
+        "answer": "Du kan hämta bilen på flygplatsen, på vårt kontor i Puerto del Rosario eller vid ditt boende på Fuerteventura och Lanzarote. Den exakta hämtplatsen framgår av bekräftelsen."
+      },
+      {
+        "question": "Kan jag avboka kostnadsfritt?",
+        "answer": "Ja, du kan ändra eller avboka din bokning utan avgift upp till 72 timmar före hyresperiodens början. Om något ändras närmare inpå, kontakta oss så snart som möjligt."
+      },
+      {
+        "question": "Vad är minimiålder för att hyra?",
+        "answer": "För de flesta av våra fordon kan vi erbjuda biluthyrning från 23 års ålder. För yngre förare krävs individuell bedömning och eventuell tilläggsavgift."
+      },
+      {
+        "question": "Kan jag hämta bilen på flygplatsen?",
+        "answer": "Ja, när du bokar kan du ange att du önskar hämtning eller transfer på flygplatsen."
+      },
+      {
+        "question": "Kan jag lämna tillbaka bilen på flygplatsen?",
+        "answer": "Ja, du kan lämna tillbaka bilen på flygplatsen – meddela oss bara i förväg om tidpunkten."
+      },
+      {
+        "question": "När har ni öppet?",
+        "answer": "Hämtning sker normalt mellan 10:00 och 16:00, men vi är flexibla efter överenskommelse. Du kan lämna tillbaka bilen när som helst."
+      },
+      {
+        "question": "Kan jag lämna tillbaka bilen på kvällen eller natten?",
+        "answer": "Ja. Vid hämtning går vi alltid igenom hur returprocessen fungerar, så att du kan lämna tillbaka bilen säkert när som helst."
+      },
+      {
+        "question": "Är bilen fullt försäkrad?",
+        "answer": "Ja, vid skador på allmän väg ersätts skadan av försäkringen. Skador eller punktering på grusväg måste däremot ersättas av Hyrestagaren."
+      },
+      {
+        "question": "Måste jag tanka fullt när jag lämnar tillbaka bilen?",
+        "answer": "Ja, du ska lämna tillbaka bilen med samma mängd bränsle som när du hämtade den. Hela vår flotta körs på 95-oktanigt bensin."
+      },
+      {
+        "question": "Finns det någon begränsning i antal kilometer?",
+        "answer": "Nej, vi erbjuder obegränsad körsträcka som ingår i hyresavgiften."
+      },
+      {
+        "question": "Kan jag betala med kredit- eller bankkort?",
+        "answer": "Ja, vi accepterar både kreditkort och bankkort."
+      },
+      {
+        "question": "Tillkommer avgift för andra förare?",
+        "answer": "Nej, vi tar ingen extra avgift om du lägger till en andra förare."
+      },
+      {
+        "question": "Finns det några dolda kostnader utöver hyran?",
+        "answer": "Nej, du betalar endast den bekräftade hyresavgiften – inga dolda kostnader tillkommer."
+      },
+      {
+        "question": "Kan jag få barnstol i bilen?",
+        "answer": "Ja, vi erbjuder ISOFIX-barnstolar i flera storlekar, från de minsta barnen till större barn."
+      },
+      {
+        "question": "Måste jag städa bilen innan jag lämnar tillbaka den?",
+        "answer": "Nej, det behövs inte. Vi rengör och desinficerar alla återlämnade fordon grundligt, detta ingår i hyresavgiften."
+      }
+    ]
+  }
+}

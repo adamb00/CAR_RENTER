@@ -180,6 +180,14 @@ export async function buildRentPdf(data: RentData): Promise<Buffer> {
         : '—'
     );
     addField('Hely neve', formatOptional(data.delivery.locationName));
+    addField(
+      'Érkezési járatszám',
+      formatOptional(data.delivery.arrivalFlight)
+    );
+    addField(
+      'Hazautazó járatszám',
+      formatOptional(data.delivery.departureFlight)
+    );
     const address = data.delivery.address;
     if (address) {
       addField(

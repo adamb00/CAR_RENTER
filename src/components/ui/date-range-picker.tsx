@@ -654,16 +654,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
             {cancelLabel}
           </Button>
           <Button
-            // onClick={() => {
-            //   skipResetRef.current = true;
-            //   setIsOpen(false);
-            //   if (
-            //     !areRangesEqual(range, openedRangeRef.current) ||
-            //     !areRangesEqual(rangeCompare, openedRangeCompareRef.current)
-            //   ) {
-            //     onUpdate?.({ range, rangeCompare });
-            //   }
-            // }}
             onClick={() => {
               skipResetRef.current = true;
               setIsOpen(false);

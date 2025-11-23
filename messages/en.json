@@ -1,0 +1,2247 @@
+{
+  "Header": {
+    "header": "Car rental in Fuerteventura and Lanzarote – convenient and fast",
+    "book_now": "Rent a car now"
+  },
+  "CookieConsent": {
+    "title": "We use cookies",
+    "noticeTitle": "Cookie notice",
+    "body": "To ensure the best user experience, we use cookies on our website. You can find more information about the use and management of cookies in our cookie policy.",
+    "minimalBody": "We use cookies to provide you with a better browsing experience.",
+    "notice": "By clicking the <highlight>{actionLabel}</highlight> button, you consent to the use of cookies.",
+    "learnMore": "More information:",
+    "cookiePolicyLink": "Cookie policy",
+    "gdprLink": "Privacy notice",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "GDPR": {
+    "title": "Privacy notice (GDPR)",
+    "updated": "Last updated: 8 November 2025",
+    "intro": [
+      "This privacy notice summarises the main rules of personal data processing related to the services of Zodiacs Rent a Car (ZODIACSRENTACAR).",
+      "We always handle data in accordance with the GDPR, as well as Spanish and Hungarian data protection regulations; we only collect information to the extent and for the duration that is necessary, and we always provide transparent information about data processing."
+    ],
+    "sections": [
+      {
+        "heading": "1. Data controller details",
+        "lists": [
+          {
+            "items": [
+              "Company name: ZODIACSRENTACAR",
+              "Registered office: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Spain",
+              "E-mail: info@zodiacsrentacar.com",
+              "Phone: +34 683 192 422",
+              "Website: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Purposes of data processing",
+        "paragraphs": [
+          "We only use personal data for purposes necessary to provide our services:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "preparing and documenting car rental offers and contracts",
+              "managing and confirming online reservations",
+              "vehicle handover, delivery and customer service communication",
+              "invoicing, financial administration and fulfilment of legal obligations",
+              "customer communication by phone, e-mail, WhatsApp or other channels",
+              "marketing and newsletter sending with the explicit consent of the data subject",
+              "statistical analysis and service development in an anonymous form"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Legal basis of data processing",
+        "paragraphs": [
+          "Different processes may have different legal bases, but in all cases we rely on one of the following GDPR provisions:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "performance or preparation of a contract – GDPR Article 6(1)(b)",
+              "compliance with a legal obligation (e.g. accounting rules) – GDPR Article 6(1)(c)",
+              "legitimate interests of the controller (for example fraud prevention) – GDPR Article 6(1)(f)",
+              "consent of the data subject (e.g. newsletter, contact) – GDPR Article 6(1)(a)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Categories of data processed",
+        "paragraphs": [
+          "In online forms and during contract conclusion we only request data that is essential for car rental. The main categories are as follows:"
+        ],
+        "lists": [
+          {
+            "title": "Booking data",
+            "items": [
+              "rental period (from–to)",
+              "number of passengers, age and height of children",
+              "selected vehicle category and requested extra services"
+            ]
+          },
+          {
+            "title": "Personal data of renter and driver",
+            "items": [
+              "full name (two surnames and two given names)",
+              "place and date of birth, mother’s name",
+              "nationality and address details"
+            ]
+          },
+          {
+            "title": "Contact details",
+            "items": [
+              "phone number and preferred communication channel (WhatsApp, Messenger etc.)",
+              "e-mail address"
+            ]
+          },
+          {
+            "title": "Identification documents",
+            "items": [
+              "type and number of ID document, date of issue and expiry",
+              "driving licence number, category, validity and date of issue",
+              "declaration that the driving licence has been valid for more than 3 years"
+            ]
+          },
+          {
+            "title": "Additional driver or contact person",
+            "items": [
+              "data similar to the primary renter for each additional driver",
+              "name and phone number of a contact person if different from the renter"
+            ]
+          },
+          {
+            "title": "Billing and delivery data",
+            "items": [
+              "name or company name, billing address and (for companies) tax number",
+              "e-mail address required for sending the invoice electronically",
+              "name and address of hotel or apartment for delivery"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Duration of data processing",
+        "paragraphs": [
+          "Data necessary for the performance of the service is retained for 5 years from the closure of the rental in order to enforce civil law claims.",
+          "Accounting and tax documents are stored for 8 years in accordance with applicable laws.",
+          "Data processed on the basis of consent is kept until the withdrawal of consent or until the purpose ceases."
+        ]
+      },
+      {
+        "heading": "6. Data transfers and processors",
+        "paragraphs": [
+          "We only share data with partners that are essential for providing the service and we conclude data processing agreements with them. Typical recipients:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "accounting and financial service providers",
+              "hosting and IT infrastructure providers",
+              "invoicing systems and payment service providers",
+              "courier services or partners providing delivery"
+            ]
+          }
+        ],
+        "notes": [
+          "We do not transfer data outside the European Union and we ensure appropriate encryption and access control."
+        ]
+      },
+      {
+        "heading": "7. Rights of data subjects",
+        "paragraphs": [
+          "Data subjects may exercise their rights under the GDPR at any time:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "right to information and access",
+              "right to rectification or erasure",
+              "right to request restriction of processing",
+              "right to object to processing based on legitimate interest",
+              "right to data portability",
+              "right to withdraw consent at any time"
+            ]
+          }
+        ],
+        "notes": [
+          "In case of a complaint, you may contact the Hungarian National Authority for Data Protection and Freedom of Information (1055 Budapest, Falk Miksa utca 9-11., ugyfelszolgalat@naih.hu, naih.hu)."
+        ]
+      },
+      {
+        "heading": "8. Data security and cookie management",
+        "paragraphs": [
+          "We protect personal data against unauthorised access, alteration or loss by physical, technical and organisational measures.",
+          "Our website uses cookies for operation, statistics and personalisation. Details are included in the Cookie Policy, where you can also modify your consent settings at any time."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contact and enforcement of rights",
+      "paragraphs": [
+        "If you have any questions about data processing or would like to exercise your rights, please contact us using one of the channels below.",
+        "We will respond to your requests within 30 days at the latest; in justified cases this deadline may be extended in accordance with the GDPR."
+      ],
+      "channels": [
+        "E-mail: info@zodiacsrentacar.com",
+        "Phone: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Cookie policy",
+    "updated": "Last updated: 8 November 2025",
+    "intro": [
+      "This notice explains which cookies are used on the Zodiacs Rent a Car website, for what purpose data is processed, and how you can change your settings.",
+      "Cookies are small data files that help the website operate, compile statistics and display personalised content."
+    ],
+    "sections": [
+      {
+        "heading": "1. What is a cookie?",
+        "paragraphs": [
+          "A cookie is a short text file stored by your browser when you visit our site. Cookies do not contain data that directly identifies you, but they help recognise your device and remember your settings."
+        ]
+      },
+      {
+        "heading": "2. Types of cookies we use",
+        "paragraphs": [
+          "For proper operation we use cookies for different purposes:"
+        ],
+        "lists": [
+          {
+            "title": "Essential cookies",
+            "items": [
+              "they are indispensable for the operation of the website, security processes and the use of forms",
+              "legal basis: legitimate interest (GDPR Article 6(1)(f))"
+            ]
+          },
+          {
+            "title": "Functional cookies",
+            "items": [
+              "they remember the selected language and temporary form data",
+              "legal basis: consent (GDPR Article 6(1)(a))"
+            ]
+          },
+          {
+            "title": "Analytics and statistics cookies",
+            "items": [
+              "they measure traffic anonymously and help optimise our service",
+              "legal basis: consent (GDPR Article 6(1)(a))"
+            ]
+          },
+          {
+            "title": "Marketing cookies",
+            "items": [
+              "they allow personalised offers and remarketing ads",
+              "legal basis: consent (GDPR Article 6(1)(a))"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Cookie lifetime",
+        "paragraphs": [
+          "Session cookies: active only during the browsing session and then automatically deleted.",
+          "Persistent cookies: stored for a fixed period (typically 30–365 days) or until you delete them manually."
+        ]
+      },
+      {
+        "heading": "4. Third-party cookies",
+        "paragraphs": [
+          "Some cookies are placed by our partners (e.g. Google, Meta, TikTok) for statistical analysis and personalised advertising.",
+          "These cookies are subject to the providers’ own privacy policies, which you can find on their official websites."
+        ]
+      },
+      {
+        "heading": "5. Consent and settings",
+        "paragraphs": [
+          "On your first visit a cookie banner appears where you can choose to accept all cookies, use only essential cookies or set custom preferences.",
+          "You can change these choices at any time in your browser settings or via the “Change cookie settings” link placed on the website."
+        ]
+      },
+      {
+        "heading": "6. Managing cookies in browsers",
+        "paragraphs": [
+          "In most browsers you can delete or block cookies. The following help pages explain the settings: Google Chrome, Mozilla Firefox, Safari and Microsoft Edge.",
+          "Please note that some functions may work only in a limited way without cookies."
+        ]
+      },
+      {
+        "heading": "7. Contact",
+        "paragraphs": [
+          "If you have any questions about our use of cookies or about data protection, we are happy to help you via the following channels:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-mail: info@zodiacsrentacar.com",
+              "Website: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "With the local team of Zodiacs Rent a Car, car rental in Fuerteventura and Lanzarote is convenient and quick. After your online booking we arrange airport or hotel delivery, help you choose the right model for your trip and discuss every detail in the language that is most comfortable for you.",
+      "Our fleet ranges from compact city cars to spacious SUVs, all with unlimited mileage, a free second driver and full SSCP insurance. At Zodiacs every vehicle is regularly serviced and we document its condition with photos before handover, so you can start your journey with peace of mind.",
+      "You can count on us during your trip as well: we share the best beach parking spots in Fuerteventura, lookout points in Lanzarote and our favourite tapas bars. You can reach us by phone, e-mail and WhatsApp, so you can always ask for help or a personalised offer.",
+      "We tailor our service specifically to the needs of travellers holidaying in the Canary Islands. We know how important fast administration is, so we respond immediately on WhatsApp, by phone and e-mail – whether you contact us before your flight or after arrival.",
+      "According to our customers’ feedback, what they appreciate most about Zodiacs Rent a Car is that we agree on everything in advance and there are no surprises at the counter. We pay special attention to families, adventurous explorers and business travellers: we can provide child seats, roof racks or even surfboard holders on request.",
+      "In our blog and travel guides we share detailed itinerary suggestions, so your rental car becomes not just a means of transport but the key to discovery. The local Zodiacs team continuously updates its tips, so the lesser-known beaches, restaurants and hiking trails won’t be left off your list."
+    ],
+    "highlights": {
+      "title": "Why choose us?",
+      "items": [
+        "Multilingual customer service in Fuerteventura and Lanzarote, with a truly local presence.",
+        "Transparent rental contract with digital approval and all costs agreed in advance.",
+        "Flexible pickup at the airport, at your accommodation or at a pre-arranged meeting point.",
+        "Local tips, parking advice and route suggestions so you can get the most out of the islands with your Zodiacs car."
+      ]
+    },
+    "details": {
+      "title": "Car rental step by step with the Zodiacs Rent a Car team",
+      "intro": "We want you to know what to expect already at the planning stage. That’s why we designed every Zodiacs process to be transparent, fast and tailored to you – from booking to returning the car.",
+      "sections": [
+        {
+          "heading": "1. Choosing the right car for you",
+          "body": [
+            "Before booking we briefly discuss how many people are travelling, how much luggage space you need and what kind of routes you are planning. For example, if you want to explore the northern mountains or the winding roads of volcanic terrain, you may need a more powerful model and stronger air conditioning.",
+            "Our offer always includes exact photos and equipment details of the vehicle, so you can easily compare your options. The Zodiacs team will also help if you have special needs, such as a child seat, roof box or the transport of sports equipment."
+          ]
+        },
+        {
+          "heading": "2. Booking and contract in just a few clicks",
+          "body": [
+            "The Zodiacs online quote form guides you through the entire process in Hungarian. You provide your arrival and departure dates, pickup location, and within minutes you receive personalised prices including full SSCP insurance.",
+            "We confirm the booking by e-mail and send you the contract digitally so you can review it comfortably before travelling. This way there is no paperwork on site – just a quick handover of the car."
+          ]
+        },
+        {
+          "heading": "3. Pickup where it’s most convenient for you",
+          "body": [
+            "Whether you arrive in Fuerteventura or Lanzarote, our colleagues monitor your flight and will be waiting for you at the airport or in front of your accommodation at the agreed time. In case of significant delay we react flexibly and stay in contact throughout.",
+            "If you don’t want to waste a single minute of your holiday standing in queues, the Zodiacs mobile office prepares the necessary documents on site so you can set off with your chosen car in no time."
+          ]
+        },
+        {
+          "heading": "4. Support throughout your trip",
+          "body": [
+            "When we hand over the car, we share current parking and traffic information, our favourite excursion spots and service providers we can confidently recommend. If you have questions during your journey, you can reach the Zodiacs team via WhatsApp or phone.",
+            "When you return the car, we perform a quick check and close the rental, and if you like, we will give you an updated, personalised offer for your next trip as well. Our goal is for you to feel that the Zodiacs car contributed to the quality of your holiday every time."
+          ]
+        }
+      ]
+    },
+    "cta": "Request a personalised quote"
+  },
+  "SEO": {
+    "brand": "Zodiacs Rent a Car",
+    "defaultTitle": "Car rental in Fuerteventura and Lanzarote",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
+    "siteDescription": "Rent a car in Fuerteventura and Lanzarote with a local Hungarian team, flexible pickup and full insurance.",
+    "ogTitle": "Zodiacs Rent a Car – Car rental in Fuerteventura and Lanzarote",
+    "ogDescription": "Local Hungarian team, free second driver, unlimited mileage. Book online with Zodiacs Rent a Car.",
+    "ogImageAlt": "Cars from the Zodiacs Rent a Car fleet in Fuerteventura",
+    "twitterTitle": "Zodiacs Rent a Car – Car rental in the Canary Islands",
+    "twitterDescription": "Fast, convenient car rental in Fuerteventura and Lanzarote with no hidden extra fees."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "{carName} rental in Fuerteventura | Zodiacs Rent a Car",
+      "description": "Rent a {carName} model in Fuerteventura or Lanzarote with flexible pickup, unlimited mileage and full insurance.",
+      "imageAlt": "{carName} in the Zodiacs Rent a Car fleet"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "{carName} details and rental | Zodiacs Rent a Car",
+      "description": "Discover the features, luggage capacity and rental price of {carName} in Fuerteventura and Lanzarote.",
+      "imageAlt": "{carName} model in the Zodiacs Rent a Car offer"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Car rental in Fuerteventura and Lanzarote",
+      "description": "Discover the Canary Islands with our Hungarian team: premium rental cars, flexible pickup, unlimited mileage and full insurance.",
+      "ogImageAlt": "Rental car in Fuerteventura at Zodiacs Rent a Car"
+    },
+    "cars": {
+      "title": "Our cars – rental fleet in Fuerteventura and Lanzarote",
+      "description": "Compact, family and automatic rental cars with flexible pickup, free second driver and unlimited mileage.",
+      "ogImageAlt": "Zodiacs Rent a Car rental fleet"
+    },
+    "about": {
+      "title": "About us – Zodiacs Rent a Car",
+      "description": "Get to know the Hungarian team of Zodiacs Rent a Car and learn more about our mission in Fuerteventura and Lanzarote.",
+      "ogImageAlt": "Zodiacs Rent a Car team photo"
+    },
+    "contact": {
+      "title": "Contact – Zodiacs Rent a Car Fuerteventura",
+      "description": "Contact us about car rental, delivery or a quote. We respond quickly and in Hungarian.",
+      "ogImageAlt": "Zodiacs Rent a Car customer service"
+    },
+    "insurance": {
+      "title": "Insurance and coverage – SSCP package",
+      "description": "Learn more about the Super Comfort Plus insurance: full coverage, zero excess and coverage of common exclusions.",
+      "ogImageAlt": "Zodiacs Rent a Car insurance information"
+    },
+    "generalRental": {
+      "title": "General rental conditions – Zodiacs Rent a Car",
+      "description": "Rental conditions, contractual rules and customer obligations in Fuerteventura and Lanzarote.",
+      "ogImageAlt": "Car rental terms document"
+    },
+    "gtc": {
+      "title": "Rental contract – Zodiacs Rent a Car",
+      "description": "Detailed rental contract and legal terms for Zodiacs Rent a Car customers.",
+      "ogImageAlt": "Rental contract document"
+    },
+    "rentalRequirements": {
+      "title": "Car rental requirements in the Canary Islands",
+      "description": "Age, driving licence, deposit – everything you need to know about Zodiacs Rent a Car rental conditions.",
+      "ogImageAlt": "List of car rental requirements"
+    },
+    "offices": {
+      "title": "Pickup locations and offices – Zodiacs Rent a Car",
+      "description": "Car pickup points in Fuerteventura and Lanzarote, contact details and opening hours.",
+      "ogImageAlt": "Exterior view of Zodiacs Rent a Car office"
+    },
+    "faq": {
+      "title": "FAQ – Frequently asked questions at Zodiacs Rent a Car",
+      "description": "Find answers to the most common questions from booking to insurance.",
+      "ogImageAlt": "Zodiacs Rent a Car customer service assisting a client",
+      "keywords": [
+        "car rental FAQ",
+        "Zodiacs Rent a Car frequently asked questions",
+        "car rental Fuerteventura FAQ",
+        "car rental Lanzarote information"
+      ]
+    },
+    "blog": {
+      "title": "Blog – Car rental and travel tips in Fuerteventura",
+      "description": "Fresh car rental advice, route suggestions and local experiences from the Zodiacs Rent a Car team.",
+      "ogImageAlt": "Zodiacs Rent a Car blog illustration",
+      "keywords": [
+        "car rental blog",
+        "Fuerteventura travel tips",
+        "Lanzarote road trip",
+        "Zodiacs Rent a Car advice"
+      ]
+    },
+    "gdpr": {
+      "title": "GDPR privacy notice – Zodiacs Rent a Car",
+      "description": "Learn how we handle your personal data, which legal bases we rely on and how you can exercise your rights.",
+      "ogImageAlt": "GDPR data protection document"
+    },
+    "cookiePolicy": {
+      "title": "Cookie policy – Zodiacs Rent a Car",
+      "description": "Overview of the cookies we use, their purposes and consent settings.",
+      "ogImageAlt": "Cookie information document"
+    }
+  },
+  "AboutSection": {
+    "title": "Don’t miss a single experience",
+    "pickup_title": "Pickup where it suits you",
+    "pickup_text": "Pick up your car wherever it’s most convenient: right in front of your hotel, apartment or the specified address. From the very first minute you can freely start exploring.",
+    "transfer_title": "Comfortable transfer on request",
+    "transfer_text": "If you would like to use our transfer service as well, simply indicate it on our quote request form – we’ll take care of everything so that things run smoothly.",
+    "learn_more": "Learn more →",
+    "alt1": "Car 1",
+    "alt2": "Car 2",
+    "alt3": "Car 3"
+  },
+  "Search": {
+    "ariaLabel": "Search the website",
+    "openLabel": "Open search",
+    "closeLabel": "Close search",
+    "placeholder": "What are you looking for? Type a keyword...",
+    "noResults": "No results for \"{query}\". Try another term.",
+    "suggested": "Suggested pages",
+    "results": "Results",
+    "entries": [
+      {
+        "title": "Home",
+        "description": "Overview of Zodiacs services, fleet and customer experience in Fuerteventura and Lanzarote.",
+        "keywords": [
+          "home",
+          "landing",
+          "zodiacs",
+          "car rental fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Our cars",
+        "description": "Full rental fleet with prices, luggage information and booking options.",
+        "keywords": [
+          "cars",
+          "fleet",
+          "prices",
+          "vehicles",
+          "booking",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "About us",
+        "description": "Learn how we work – from flexible pickup to personal customer service.",
+        "keywords": [
+          "about",
+          "team",
+          "service",
+          "pickup",
+          "delivery",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Contact",
+        "description": "Request a quote via WhatsApp, e-mail or phone with a reply within 24 hours.",
+        "keywords": [
+          "contact",
+          "quote request",
+          "form",
+          "phone",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog and travel guide",
+        "description": "Local tips, rip current warnings and road trip inspiration.",
+        "keywords": [
+          "blog",
+          "tips",
+          "travel guide",
+          "rip current",
+          "programmes",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Rip current safety",
+        "description": "Awareness article about dangerous currents along the beaches of Fuerteventura.",
+        "keywords": [
+          "rip current",
+          "rip",
+          "safety",
+          "cofete",
+          "beach",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "FAQ",
+        "description": "Answers to the most common questions: airport pickup, insurance, refuelling.",
+        "keywords": [
+          "faq",
+          "questions",
+          "insurance",
+          "airport",
+          "refuelling",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Privacy notice",
+        "description": "GDPR information on how we process your data, legal bases and your rights.",
+        "keywords": [
+          "gdpr",
+          "data processing",
+          "privacy",
+          "data protection",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Cookie policy",
+        "description": "Which cookies we use and how you can manage your consent.",
+        "keywords": [
+          "cookie",
+          "cookies",
+          "consent",
+          "data protection",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Insurance",
+        "description": "Details of insurance packages, coverage and excess.",
+        "keywords": ["insurance", "coverage", "excess", "claims", "lanzarote"],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Rental requirements",
+        "description": "Information about driving licence, age and required documents.",
+        "keywords": [
+          "rental conditions",
+          "requirements",
+          "driving licence",
+          "documents",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Pickup points and offices",
+        "description": "Where you can pick up your car in Fuerteventura and Lanzarote, with contacts.",
+        "keywords": [
+          "offices",
+          "pickup",
+          "delivery",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "General rental conditions",
+        "description": "Detailed description of rental rules on both islands.",
+        "keywords": [
+          "conditions",
+          "contract",
+          "general",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "Terms and Conditions",
+        "description": "Official General Terms and Conditions (GTC) in Fuerteventura and Lanzarote.",
+        "keywords": [
+          "terms and conditions",
+          "gtc",
+          "contract",
+          "legal",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Our cars",
+    "about": "About us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Home",
+    "faq": "FAQ"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Language selector"
+  },
+  "Footer": {
+    "about": "About us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Home",
+    "fleet": "Our cars",
+    "general_rental_conditions": "General rental conditions",
+    "gtc": "General terms and conditions",
+    "insurance": "Insurance",
+    "rental_requirements": "Rental requirements",
+    "cookie_policy": "Cookie policy",
+    "gdpr": "Privacy notice",
+    "zodiac_car_rental": "Zodiacs Car Rental",
+    "logo_placeholder": "Logo goes here",
+    "faq": "FAQ"
+  },
+  "Explore": {
+    "title": "Discover the beauty of the Canary Islands by rental car!",
+    "subtitle": "Online booking, flexible pickup and delivery to your accommodation or the airport.",
+    "cards": {
+      "map": "Zodiacs Rent a Car offers reliable car rental in Fuerteventura, Costa Calma and Lanzarote.",
+      "globe": "Whether you are planning a beach holiday or an adventurous trip, you’ll find the ideal car for you in our fleet.",
+      "heart": "Book online and pick up your car directly at the airport or at your accommodation!"
+    }
+  },
+  "Inquire": {
+    "title": "Book now!",
+    "description_1": "Don’t leave car rental to the last minute! The Zodiacs Rent a Car team will reply within 24 hours and help you book the car that best fits your holiday.",
+    "description_2": "Provide your contact details and we’ll send you a personalised quote with detailed prices, insurance information and requested extras. At Zodiacs we discuss every step in your chosen language so you can set off with confidence.",
+    "fields": {
+      "fullName": {
+        "label": "Full name",
+        "placeholder": "Full name",
+        "required": "Please enter your name"
+      },
+      "email": {
+        "label": "E-mail address",
+        "placeholder": "E-mail address",
+        "required": "Please enter your e-mail address",
+        "invalid": "Please enter a valid e-mail address"
+      },
+      "message": {
+        "label": "How can we help?",
+        "placeholder": "Please describe how we can help you",
+        "required": "Please tell us how we can help you",
+        "invalid": "Please fill out this field"
+      }
+    },
+    "submit": {
+      "idle": "Next →",
+      "submitting": "Sending..."
+    },
+    "alt": {
+      "image": "Car rental illustration"
+    },
+    "toast": {
+      "success": "Thank you! We will contact you soon.",
+      "error": "Oops, something went wrong. Please try again later."
+    }
+  },
+  "Blog": {
+    "title": "Blog and travel guide",
+    "intro": "Local tips, car rental advice and inspiring routes so every minute of your holiday is memorable.",
+    "readMore": "Open article",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Fuerteventura sights by car – 3 must-see spots",
+        "excerpt": "Corralejo dunes, Betancuria and Ajuy caves: a guide on how to get the most out of Fuerteventura with your rental car.",
+        "category": "Travel guide",
+        "readTime": "6 min read",
+        "publishDate": "3 November 2025",
+        "publishDateISO": "2025-11-03",
+        "image": {
+          "src": "/AJUY.jpg",
+          "alt": "View of the Corralejo sand dunes and the Atlantic Ocean"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Warning! Dangerous rip currents in Fuerteventura",
+        "excerpt": "Learn to recognise the signs of rip currents so that Cofete and the wild beaches remain an experience, not a danger.",
+        "category": "Safety",
+        "readTime": "7 min read",
+        "publishDate": "15 November 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Warning sign on the wild beach of Cofete"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Fuerteventura sights by car – 3 must-see places with a rental car | Zodiacs Rent a Car",
+        "description": "Discover Fuerteventura’s most beautiful sights by car! Corralejo dunes, Betancuria and Ajuy caves are all easy to reach by car. Car rental in Fuerteventura – Zodiacs Rent a Car.",
+        "keywords": [
+          "car rental in Fuerteventura",
+          "rental car Fuerteventura",
+          "Fuerteventura sights by car",
+          "Corralejo dunes",
+          "Betancuria",
+          "Ajuy caves",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00594.jpg",
+          "alt": "View of the Corralejo sand dunes in Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Fuerteventura sights by car – 3 places you shouldn’t miss if you explore the island by rental car",
+        "category": "Travel guide",
+        "subtitle": "If you rent a car in Fuerteventura, you can discover all the wonders of the island at your own pace. No rush, no bus schedules – just the smell of the ocean, sunshine and the feeling of freedom.",
+        "description": "We’ve collected three locations that are easy to reach by car, safe to access and guaranteed to provide unforgettable experiences.",
+        "publishDate": "3 November 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 min read",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Corralejo sand dunes – Fuerteventura’s most iconic natural wonder",
+          "paragraphs": [
+            "In the north of Fuerteventura lies the <strong>Corralejo Natural Park</strong> (Parque Natural de Corralejo), one of the island’s most popular attractions.",
+            "The huge white sand dunes contrast with the turquoise waters of the Atlantic Ocean – it’s a true desert atmosphere right by the sea."
+          ],
+          "access": {
+            "title": "Getting there by car",
+            "description": "The FV-1 or FV-1a road leads through the dunes towards Corralejo. There are several designated parking areas along the road from which the beaches and dunes are easily accessible on foot."
+          },
+          "links": [
+            {
+              "label": "Corralejo dunes map",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Tip",
+            "description": "Stop at the <strong>Grandes Playas de Corralejo</strong> beach, where the dunes run straight into the ocean – a perfect photo spot!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – the historic capital with winding roads and breathtaking viewpoints",
+          "paragraphs": [
+            "Located in the hilly inland of the island, Betancuria is the former capital of Fuerteventura and today the cultural heart of the island.",
+            "The little town lies in a green valley among volcanic hills, with picturesque streets and a peaceful atmosphere awaiting visitors."
+          ],
+          "access": {
+            "title": "Getting there by car",
+            "description": "Betancuria can be reached via the FV-30 road from Puerto del Rosario, Caleta de Fuste or Pájara. Although the road is winding, it is well maintained and offers stunning panoramic views."
+          },
+          "links": [
+            {
+              "label": "Betancuria map",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Highlights along the way",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – two huge bronze statues guarding the valley.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – one of the most beautiful viewpoints on the island.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Ajuy caves and black sand beach – the wild west side of Fuerteventura",
+          "paragraphs": [
+            "The western coast of the island is rougher and rockier, but that’s exactly what makes it special. Here you’ll find <strong>Ajuy</strong>, a quiet fishing village known for its famous black sand beach and the <strong>Cuevas de Ajuy</strong> caves.",
+            "A built walkway along the cliffs leads to the caves where you can see rock formations millions of years old while listening to the roar of the sea. The place is especially magical at sunset."
+          ],
+          "access": {
+            "title": "Getting there by car",
+            "description": "You can reach Ajuy from Pájara along the FV-621 road, on fully asphalted road."
+          },
+          "links": [
+            {
+              "label": "Ajuy caves map",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "Why does it make sense to rent a car in Fuerteventura?",
+          "paragraphs": [
+            "The sights on the island are often far apart and public transport is limited.",
+            "A rental car gives you freedom – you can discover remote beaches and mountain villages at your own pace.",
+            "The roads are in excellent condition, traffic is moderate and parking is free almost everywhere."
+          ],
+          "links": [
+            {
+              "label": "Check out our rental cars – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Travel sustainably – protect Fuerteventura’s natural treasures!",
+          "paragraphs": [
+            "As locals, we love and protect our island. We kindly ask you to respect nature too:"
+          ],
+          "bullets": [
+            "don’t leave litter behind, use designated bins;",
+            "don’t throw cigarette butts into the sand or among the rocks;",
+            "stay on marked paths, especially among the dunes and on rocky coasts."
+          ],
+          "closing": "If you do so, Fuerteventura will thank you – and welcome you back."
+        }
+      ],
+      "cta": {
+        "title": "Explore the island comfortably by rental car!",
+        "paragraphs": [
+          "Discover sand dunes, villages tucked away in the mountains and ocean-side caves at your own rhythm.",
+          "<strong>Zodiacs Rent a Car</strong> – car rental in Fuerteventura made easy, with fast administration, reliable cars and local tips."
+        ],
+        "buttons": [
+          {
+            "label": "View our rental cars",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Book online in a few clicks",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "Warning! Dangerous rip currents in Fuerteventura – How to swim safely in the ocean",
+        "description": "Rip currents are common on Fuerteventura’s beaches and can suddenly sweep swimmers away. Learn how to recognise them and avoid the danger safely.",
+        "keywords": [
+          "Fuerteventura beach",
+          "Cofete Beach",
+          "rip current",
+          "rip current",
+          "safe swimming",
+          "Fuerteventura dangers",
+          "Canary Islands travel",
+          "ocean swimming",
+          "Fuerteventura tips",
+          "beach safety",
+          "car rental Fuerteventura",
+          "Zodiacs Rent a Car",
+          "sea current",
+          "recognising rip currents"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Warning sign on the wild beach of Cofete in Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "Warning! Dangerous rip currents in Fuerteventura – how to swim safely in the ocean",
+        "category": "Safety",
+        "subtitle": "If you want to swim on Fuerteventura’s wild beaches, you need more than a sense of adventure – you must also understand how rip currents work.",
+        "description": "We explain how to recognise the signs of rip currents from Cofete to El Cotillo and what to do if you get caught by the current.",
+        "publishDate": "15 November 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "7 min read",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "What is a rip current and why is it dangerous?",
+          "paragraphs": [
+            "On the Atlantic coast, rip currents are the most common hidden danger: the mass of water pushed towards the shore by the waves flows back to deeper water in a narrow, powerful channel.",
+            "This phenomenon is insidious because it often forms where the water looks smoother and calmer – and this is exactly where swimmers tend to enter the sea."
+          ],
+          "bullets": [
+            "A seemingly wave-free water surface is not necessarily safe: that may be where the rip current flows out.",
+            "The current doesn’t pull you down, it pulls you sideways and outwards, so in most tragedies exhaustion is the real cause."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "How to recognise a dangerous section",
+          "paragraphs": [
+            "When you arrive, take a minute to observe the water. The signs of a rip current are visible to the naked eye if you know what to look for.",
+            "At Cofete, for example, there is a warning sign, but often it faces the wrong way because of the wind – so always inform yourself before entering the water."
+          ],
+          "bullets": [
+            "Darker, more turbid water because the seabed suddenly deepens.",
+            "A strip that appears calmer between the waves, where the water flows outwards.",
+            "Foam, algae or debris that moves away from the shore rather than towards it.",
+            "Flags, signs or warnings from locals – always take them seriously."
+          ],
+          "tip": {
+            "title": "Tip",
+            "description": "When you arrive, take a photo of the warning signs so you can later recall what each flag means on that beach."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "What to do if you get caught in the current?",
+          "paragraphs": [
+            "The most important thing is not to panic. A rip current does not pull you under, but it flows faster than most people can swim.",
+            "If you exhaust yourself before you escape the current, you can get into serious danger – so you need to react with strategy."
+          ],
+          "bullets": [
+            "Breathe deeply and keep your head above water.",
+            "Do not swim directly towards the shore – the current is stronger than you.",
+            "Swim parallel to the shore until you leave the narrow channel of the current.",
+            "If you get tired, float on your back, signal for help and let the waves carry you until you can get out."
+          ],
+          "closing": "The calmer you stay, the better your chances of getting out on your own."
+        },
+        {
+          "id": "personal-story",
+          "title": "Personal story: I pulled three children out at Cofete",
+          "paragraphs": [
+            "“It happened on Cofete beach when my little girl and two cousins were pulled into the current in a matter of seconds. I didn’t shout, I didn’t wave – I needed all my energy for swimming.",
+            "I managed to get all three of them back to shore, but the experience taught me for life: you must respect the ocean, not try to defeat it.”"
+          ],
+          "tip": {
+            "title": "Lesson",
+            "description": "Always watch how the water moves and teach your family how to react if they get caught in a current."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "Did you know? The current is faster than a professional swimmer",
+          "paragraphs": [
+            "Numbers make it easier to understand why you shouldn’t try to fight the current with sheer force."
+          ],
+          "bullets": [
+            "An Olympic swimmer covers about 2.3 meters per second.",
+            "A rip current typically moves around 2.4 meters per second – so it is always one step ahead of you."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Respect nature, protect the island",
+          "paragraphs": [
+            "Awareness doesn’t stop at the water’s edge: keeping the beach clean and following local rules is everyone’s responsibility."
+          ],
+          "bullets": [
+            "Don’t leave your rubbish behind – take your waste with you.",
+            "Don’t throw cigarette butts into the sand or among rocks.",
+            "Stay on marked paths, especially among dunes and in protected areas."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Travel smart with a rental car",
+          "paragraphs": [
+            "If you explore Fuerteventura by car, always have enough water, sunscreen and fresh information about currents and wind conditions with you.",
+            "That way you can enjoy both freedom and safety at the same time."
+          ],
+          "closing": "Share this article with others so fewer travellers get into danger because of rip currents."
+        }
+      ],
+      "cta": {
+        "title": "Travel safely with Zodiacs rental cars",
+        "paragraphs": [
+          "We help you choose a car that takes you even to the wild, lesser-known beaches – along with all the safety tips you need.",
+          "<strong>Zodiacs Rent a Car</strong> – local team, fast communication, personalised safety advice."
+        ],
+        "buttons": [
+          {
+            "label": "Request a quote now",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "View our car fleet",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Back to blog"
+  },
+  "WhatsApp": {
+    "aria_label": "WhatsApp message",
+    "choose_option": "Choose an option",
+    "options": {
+      "transfer_quote": {
+        "label": "Request transfer quote",
+        "text": "Hi! I’d like to request a quote for transfer service."
+      },
+      "car_availability": {
+        "label": "Car availability",
+        "text": "Hi! I’d like to ask about car availability for the given dates."
+      },
+      "interested_in": {
+        "label": "I’d like to inquire",
+        "text": "Hi! I’d like to ask about the car rental process."
+      },
+      "custom_message": {
+        "label": "Custom message",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> is a <strong>Hungarian family business</strong> whose heart and home is <strong>Fuerteventura</strong>. We live and work in an international environment, but we know exactly what matters to travellers coming here: safety, reliability and a friendly attitude.",
+    "why_title": "Why Fuerteventura?",
+    "why_text": "For us this island is not just a tourist destination, it is our home. We love the sunshine, the ocean, the relaxed lifestyle and the feeling of endless freedom. These are the experiences we want to share with you when you rent a car from us.",
+    "fleet_title": "Our cars – comfortable, reliable, affordable",
+    "fleet_text": "In our fleet you’ll find <strong>practical small cars</strong>, <strong>family models</strong> and even <strong>larger vehicles</strong>. We regularly maintain and clean all our cars so you can explore the island carefree.",
+    "delivery_title": "Delivery and flexibility",
+    "delivery_text": "You can pick up your rental car not only in Fuerteventura but also in <strong>Lanzarote</strong>. Whether you arrive at the airport or stay in a hotel, we deliver the car to you flexibly so your trip starts comfortably.",
+    "more_title": "More than just car rental",
+    "more_text": "For us, car rental is not only about handing over the keys. If you wish, we help with itineraries, local tips and show you where to go so you can experience the real <strong>Fuerteventura feeling</strong>: hidden coves, sandy beaches, unique landscapes and culinary experiences.",
+    "mission_title": "Our mission",
+    "mission_text": "Our goal is for every guest to experience the island’s charms in <strong>freedom, comfort and safety</strong>. As a family and as local entrepreneurs, we work with our hearts to ensure that you can take the special atmosphere of Fuerteventura home with you.",
+    "cta": "Rent a car from us and experience Fuerteventura the way we love it!"
+  },
+  "Contact": {
+    "title": "Questions about car rental in Fuerteventura or Lanzarote?",
+    "p1": "Get in touch and we’ll help you find <strong>the best solution for you!</strong> Whether it’s advance booking, airport delivery or car handover at your hotel, our customer service responds <strong>quickly and flexibly</strong>.",
+    "p2": "Fill out the form below, send us an e-mail, a message on Messenger, WhatsApp or Viber, or call us! <strong>We are happy to help</strong> so your holiday can be truly carefree.",
+    "form": {
+      "title": "Request a personalised quote",
+      "description": "Tell us when and under what conditions you’d like to rent a car – we’ll reply within a few hours.",
+      "fields": {
+        "name": {
+          "label": "Full name",
+          "placeholder": "Full name"
+        },
+        "phone": {
+          "label": "Phone number",
+          "placeholder": "+36 30 123 4567"
+        },
+        "email": {
+          "label": "E-mail address",
+          "placeholder": "name@example.com"
+        },
+        "channel": {
+          "label": "Preferred contact method"
+        },
+        "rentalStart": {
+          "label": "Rental start",
+          "placeholder": "Select a date"
+        },
+        "rentalEnd": {
+          "label": "Rental end",
+          "placeholder": "Select a date"
+        },
+        "dateRange": {
+          "label": "Rental period"
+        },
+        "arrivalFlight": {
+          "label": "Arrival flight number",
+          "placeholder": "e.g. FR1234"
+        },
+        "departureFlight": {
+          "label": "Return flight number",
+          "placeholder": "e.g. FR5678"
+        },
+        "partySize": {
+          "label": "Number of travellers",
+          "placeholder": "How many people are travelling?"
+        },
+        "children": {
+          "label": "Number of children",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-mail",
+        "phone": "Phone",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "I accept the <link>Privacy notice</link>",
+        "terms": "I accept the <link>General Terms and Conditions</link>"
+      },
+      "submit": {
+        "idle": "Request quote",
+        "sending": "Sending..."
+      },
+      "feedback": {
+        "success": "Thank you! We will contact you soon.",
+        "error": "Oops, something went wrong. Please try again later."
+      },
+      "errors": {
+        "nameRequired": "Please enter your name",
+        "phoneRequired": "Please enter your phone number",
+        "emailRequired": "Please enter your e-mail address",
+        "emailInvalid": "Please enter a valid e-mail address",
+        "privacyRequired": "Accepting the privacy notice is mandatory",
+        "termsRequired": "Accepting the Terms and Conditions is mandatory",
+        "rentalStartRequired": "Please select the rental start date",
+        "rentalEndRequired": "Please select the rental end date",
+        "arrivalFlightRequired": "Please enter your arrival flight number",
+        "departureFlightRequired": "Please enter your return flight number"
+      }
+    }
+  },
+  "Cars": {
+    "title": "Discover Fuerteventura and Lanzarote in total freedom with our cars!",
+    "p1": "With us, car rental is simple and fast: choose the vehicle that suits you best and we deliver it to the airport or directly to your hotel. Thanks to our flexible car rental options you can <strong>enjoy your holiday without worries</strong>, whether you need a car for a short trip or a longer stay.",
+    "p2": "<strong>It’s worth booking your chosen car in advance</strong> so it’s guaranteed to be available when you arrive. Browse our cars below, click for details and book online comfortably!",
+    "labels": {
+      "seats": "seats",
+      "manual": "Manual",
+      "automatic": "Automatic",
+      "per_day": "/ day",
+      "from_price": "from €{price}"
+    },
+    "colors": {
+      "milky_beige": "Milky Beige",
+      "white": "White",
+      "silver_metal": "Silver metallic",
+      "blue": "Blue",
+      "metal_blue": "Metallic blue",
+      "gray": "Grey",
+      "silver_metallic": "Silver metallic",
+      "metallic_blue": "Metallic blue"
+    },
+    "categories": {
+      "small": "Small car",
+      "medium": "Mid-size",
+      "large": "Family",
+      "suv": "SUV / Off-road"
+    },
+    "transmissions": {
+      "manual": "Manual",
+      "automatic": "Automatic"
+    },
+    "details": {
+      "back": "Back to fleet",
+      "title": "Car details",
+      "category": "Category",
+      "luggage_large": "Large suitcase: {count}",
+      "luggage_small": "Small suitcase: {count}",
+      "colors": "Available colours"
+    },
+    "buttons": {
+      "interested": "I’m interested"
+    }
+  },
+  "Insurance": {
+    "title": "Insurance (SSCP)",
+    "igic_note": "+15% IGIC not included. Maximum +30 € per rental.",
+    "sscp_title": "Super Comfort Plus Insurance (SSCP)",
+    "sscp_intro": "For a very small extra fee, the included insurance can be extended. In addition to the extensive coverage already included in the rental price, SSCP eliminates the following exclusions:",
+    "table": {
+      "header_event": "Event",
+      "header_desc": "Description",
+      "header_cost": "Approx. cost (without insurance)",
+      "rows": {
+        "lost_keys": {
+          "event": "Lost keys",
+          "desc": "Replacement and programming",
+          "cost": "100 €"
+        },
+        "tyre_damage": {
+          "event": "Tyre damage",
+          "desc": "Replacement/repair",
+          "cost": "150 €"
+        },
+        "rim_flat": {
+          "event": "Rim damage / flat repair",
+          "desc": "Repair",
+          "cost": "60 €"
+        },
+        "wrong_fuel": {
+          "event": "Wrong fuel",
+          "desc": "Draining and cleaning",
+          "cost": "110 €"
+        },
+        "battery": {
+          "event": "Battery discharged through negligence",
+          "desc": "Assistance / jump-start",
+          "cost": "90 €"
+        },
+        "dru": {
+          "event": "Additional DRU service*",
+          "desc": "Roadside assistance",
+          "cost": "40 € / 100 €"
+        }
+      }
+    },
+    "coverage_note": "With this insurance, our coverage is extended to all exclusions (except for those that no insurer covers).",
+    "footnote": "* +15% IGIC not included. Maximum +30 € per rental.",
+    "pricing_title": "Price and offer",
+    "pricing_text": "Rent it now for just 2 € per day, up to a maximum of 30 € for any model, and enjoy your rental without worries.",
+    "closing": "The best way is to enjoy your trip with full coverage.",
+    "related": {
+      "title": "Related pages",
+      "details": "More details:"
+    }
+  },
+  "GeneralRental": {
+    "title": "General rental conditions",
+    "general": {
+      "title": "General provisions",
+      "p1": "The renter must always carry a <strong>valid physical rental contract</strong> in the vehicle, as the Spanish authorities may issue a fine if this is missing.",
+      "p2": "All violations and related costs arising during the rental are borne by the renter, without prejudice to any legal action.",
+      "p3": "The renter is responsible for <strong>refuelling the vehicle correctly</strong>.",
+      "p4": "The provider reserves the right to refuse rental based on the renter’s previous incidents or non-compliance with the General Conditions. If the selected model is not available, we provide a <strong>similar or higher category</strong> model."
+    },
+    "services": {
+      "title": "Included services",
+      "kanary": {
+        "title": "Canary Islands",
+        "i1": "<strong>Full insurance</strong> with no excess",
+        "i2": "Taxes, airport/railway/port fees: included",
+        "i3": "<strong>Unlimited</strong> mileage",
+        "i4": "Child seats and boosters: included",
+        "i5": "Roof rack: included",
+        "i6": "GPS: included on some models as standard",
+        "i7": "Additional driver: included",
+        "i8": "Off-site delivery: included",
+        "i9": "Return to office: included",
+        "i10": "Late return by a few hours: included",
+        "i11": "Young driver (21–25): included"
+      },
+      "peninsula": {
+        "title": "Mainland / Balearic Islands",
+        "i1": "Insurance is provided <strong>with conditions</strong>*",
+        "i2": "Taxes and fees: included",
+        "i3": "Unlimited mileage: <strong>up to 28 days</strong>**",
+        "i4": "Child seats and boosters: 13.99 €/day (max. 97.93 €)",
+        "i5": "Roof rack: 54 €",
+        "i6": "GPS: 14 €/day (max. 98 €)",
+        "i7": "Other accessories (snow chains, ski racks…): 54 €",
+        "i8": "Additional driver: 12.50 €/day (max. 125 €)",
+        "i9": "Off-site delivery: <strong>not</strong> included",
+        "i10": "Return to office: <strong>not</strong> included",
+        "i11": "Late return by a few hours: 50 €",
+        "i12": "Abroad assistance insurance: 55 €"
+      },
+      "foot1": "(*) Full insurance with no excess – with exclusions (upper bodywork, undercarriage, interior, misuse, etc.). Details: Insurance.",
+      "foot2": "(**) Mileage is unlimited for up to 28 days."
+    },
+    "canary": {
+      "title": "Rental conditions – Canary Islands",
+      "i1": "<strong>Immediate</strong> booking confirmation; if the requested model is not available, a similar or better model is provided.",
+      "i2": "<strong>100% full insurance</strong> with no excess; unlimited mileage; taxes and airport charges included.",
+      "i3": "Audio guides available at the rental office.",
+      "i4": "Child seats, boosters and roof racks are <strong>free of charge</strong>.",
+      "i5": "Additional driver(s) are free – upon request at the rental office.",
+      "i6": "<strong>Fuel policy</strong>: fuel level at pickup may require a deposit.",
+      "i7": "<strong>Changes/cancellations</strong>: free of charge; can be made online or via e-mail/phone.",
+      "i8": "For airport bookings, reservations are held for <strong>up to 60 minutes</strong> based on actual arrival time.",
+      "i9": "<strong>Child seats/boosters</strong> are free; seats for 0–18 kg must be installed on the rear seat, facing with or against the direction of travel; boosters are for 15–36 kg; installation is the customer’s responsibility."
+    },
+    "peninsula": {
+      "title": "Rental conditions – Mainland and Balearic Islands",
+      "i1": "All prices are in euros. Minimum rental period: <strong>24 hours</strong>. 29 minutes grace period; beyond that a full day will be charged.",
+      "i2": "If travelling abroad, <strong>International Assistance Insurance</strong> is required; the list of permitted countries is included in the contract.",
+      "i3": "Payment: <strong>only</strong> with a physical credit card in the name of the contract holder. Cash/traveller’s cheques are not accepted.",
+      "i4": "Deposit: 200 € for smaller categories, 400 € for larger/premium/MPV; for some categories a valid international card pre-authorisation is required.",
+      "i5": "If the car is not refuelled, the fuel cost plus an 18 € service fee will be charged.",
+      "i6": "Drivers under 25: 21.99 €/day, max. 219.90 €.",
+      "i7": "Additional driver: 12.50 €/day, max. 125 €.",
+      "i8": "Age/licence requirements by group (see contract); minimum 2 years valid driving licence.",
+      "i9": "Airport rentals in Madrid/Barcelona are not allowed without a flight ticket (arrival and return flight details are required).",
+      "i10": "<strong>Travelling abroad</strong>: permitted countries – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; other countries are not allowed; cross-border one-way drops require prior approval; commercial vehicles cannot be dropped abroad.",
+      "i11": "<strong>Accessories</strong> (child seats, roof racks, keys, documents) must be kept safe by the renter; penalties may be charged in case of loss or damage."
+    },
+    "schedule": {
+      "title": "Opening hours and deliveries",
+      "i1": "City offices: Mon–Fri 9:30–13:30 and 16:30–19:00; Sat 10:00–13:00.",
+      "i2": "Airport offices: every day 08:00–23:00 (may vary seasonally).",
+      "i3": "Discounted counter delivery: up to 36.3 €, depending on availability.",
+      "i4": "Off-site delivery/pickup: 27 €/50 €/100 € (5 km / 50 km / 100 km), to be requested 48 hours in advance.",
+      "i5": "Out-of-hours delivery/pickup at our own offices: +50 €.",
+      "i6": "In cities without an office: 0.84 €/km (min. 57 €) to the nearest office (round-trip distance).",
+      "i7": "Return to the office during opening hours; outside of this the renter remains liable until collection.",
+      "i8": "Holding reservations: max. 120 minutes from the contractual time (within office opening hours); for flights, the actual arrival time applies."
+    },
+    "liability": {
+      "title": "Liability disclaimer",
+      "p1": "The provider is not liable for any damage resulting from defective performance, omission, interruption, deletion, delay, computer virus, theft, destruction, unauthorized access, or the use of data or information.",
+      "p2": "The user expressly accepts that the use of the website is at their <strong>own risk</strong>, including the full cost of services and repairs necessary for the operation of the system.",
+      "p3": "Entities associated with the provider and their employees are likewise not liable for any loss or damage arising from the use of the website or attempts to use it."
+    },
+    "related": {
+      "title": "Related pages",
+      "details": "More details:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Rental requirements",
+    "general": {
+      "title": "General conditions (Fuerteventura / Lanzarote)",
+      "i1": "As a rule, we do not rent to drivers under 23 years of age, only subject to a surcharge.",
+      "i2": "After confirmation, the booking may be cancelled in the following cases:",
+      "i2a": "the data provided by the customer are not accurate/true/up to date",
+      "i2b": "breach of the rental conditions",
+      "i3": "Required: valid driving licence, ID card/passport, address and an active phone number."
+    },
+    "vehicle": {
+      "title": "Vehicle conditions",
+      "i1": "The reserved vehicle model is indicative; it may be replaced with a similar model of the same category.",
+      "i2": "For vehicles equipped with GPS, location tracking is used for security purposes in compliance with applicable regulations.",
+      "i3": "The vehicle may not leave the island on which it was rented.",
+      "i4": "Use: in compliance with the law, on public roads only; use for prohibited/illegal purposes or for advertising purposes is not allowed.",
+      "i5": "Use of the recommended fuel is mandatory; the vehicle must always be locked when parked.",
+      "i6": "Child seats are provided on collection; correct installation is mandatory.",
+      "i7": "Luggage/surfboards must be secured on the roof rack.",
+      "i8": "In the event of a breakdown, stop the vehicle, park it safely and contact us <strong>immediately</strong>.",
+      "i9": "The renter is responsible for the vehicle from collection until its proper return."
+    },
+    "handover": {
+      "title": "Handover and return",
+      "i1": "Handover and return take place at the airport and at the time confirmed in the booking.",
+      "i2": "The vehicle may not be returned on a different island. Exception: Lanzarote, subject to a surcharge (40 €).",
+      "i3": "On return, the condition of the vehicle must correspond to that at collection (normal wear and tear excepted).",
+      "i4": "In the event of an incident/damage, submission of documentation/a report is mandatory.",
+      "i5": "In case of extreme dirtiness, a cleaning surcharge of 70 € will be applied.",
+      "i6": "No refund is given in case of early return.",
+      "i7": "Do not leave any items in the vehicle on return; we do not accept liability for any loss."
+    },
+    "price": {
+      "title": "The rental price includes",
+      "i1": "Taxes (IGIC/IVA)",
+      "i2": "Unlimited mileage",
+      "i3": "Second driver free of charge",
+      "i4": "Pick-up and drop-off at the airport",
+      "i5": "Free booking cancellation",
+      "i6": "Baby seats and child boosters free of charge (non-ISOFIX; ISOFIX seats can be rented as an option)",
+      "i7": "Basic insurance with a 300–500 € deposit (deductible in case of damage)"
+    },
+    "base_excludes": {
+      "title": "What basic insurance does not cover",
+      "i1": "Roof",
+      "i2": "Glass surfaces (windows, lights, mirrors)",
+      "i3": "Tyres and wheels",
+      "i4": "Flat battery",
+      "i5": "Interior upholstery (seats, carpets, etc.)",
+      "i6": "Suspension",
+      "i9": "Gearbox",
+      "i7": "Personal belongings in the car (boot, glovebox)",
+      "i8": "Lost keys",
+      "note": "The cost of these damages is borne by the renter."
+    },
+    "deposit": {
+      "title": "Deposit and retention",
+      "i1": "Cash deposit: 300–500 € (no credit card deposit required).",
+      "i2": "The deposit may be retained for up to 15 days; it will be refunded by bank transfer (e.g. Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Full insurance (optional)",
+      "p1": "With full insurance, no 300–500 € deposit is required, and the vast majority of damages are covered.",
+      "note": "Exceptions: damages resulting from negligence or breach of the terms and conditions (examples below)."
+    },
+    "exceptions": {
+      "title": "Exceptions – examples",
+      "i1": "Driving on unpaved or prohibited roads (e.g. Cofete)",
+      "i2": "Driving under the influence of alcohol/psychoactive substances",
+      "i3": "Using a mobile phone while driving without hands-free equipment",
+      "i4": "Ignoring a fault indicated on the dashboard and continuing to drive",
+      "i5": "Transporting hazardous/flammable materials, animals or unauthorised cargo",
+      "i6": "Illegal/unauthorised activity, sub-renting to a third party",
+      "i7": "Items on the roof without an approved carrier",
+      "i8": "Water ingress/interior damage beyond reasonable care",
+      "i9": "Damage caused when the vehicle is left unlocked, or by an unauthorised driver",
+      "i10": "Exceeding the contractually agreed rental period"
+    },
+    "related": {
+      "title": "Related pages",
+      "details": "More details:"
+    }
+  },
+  "RentForm": {
+    "title": "Please complete the form below to submit your booking",
+    "buttons": {
+      "addChild": "Add child",
+      "removeChild": "Remove",
+      "addDriver": "Add driver",
+      "removeDriver": "Remove driver",
+      "submit": "Submit booking"
+    },
+    "searching": "Processing data...",
+    "extras": {
+      "label": "Extra services",
+      "options": {
+        "szorfo_deszka_rogzito": "Surfboard holder",
+        "gyerekules": "Child seat",
+        "kiszallitas": "Delivery",
+        "alap_csomag": "Basic package *",
+        "energia_csomag": "Energy package **",
+        "esti_erkezes_csomag": "Late arrival package ***"
+      },
+      "packages": {
+        "base": "* Basic package: 0.5 l water and 0.33 l Fuze Tea per person",
+        "energy": "** Energy package: in addition to the basic package, 2–3 types of chocolate or snacks on request",
+        "lateArrival": "*** Late arrival package: in addition to the basic package, 1.5 l water and 2 croissants per person for late arrivals"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Rental period"
+    },
+    "dateRangePicker": {
+      "cancel": "Cancel",
+      "apply": "Save"
+    },
+    "adults": {
+      "label": "Number of adults",
+      "placeholder": "Number of adults"
+    },
+    "sections": {
+      "booking": {
+        "title": "Booking details",
+        "description": "Select the desired extra services, set the rental period and the number of adult passengers."
+      },
+      "children": {
+        "title": "Child passengers",
+        "description": "If a child is travelling with you, please provide their age (and optionally height) so we can provide the right equipment.",
+        "empty": "No children added yet.",
+        "ageLabel": "Child #{index} age (years)",
+        "heightLabel": "Height (cm) – optional"
+      },
+      "drivers": {
+        "title": "Driver details",
+        "description": "Please provide the personal details and driving licence information of the primary driver and any additional drivers.",
+        "primaryInfo": "Based on the primary driver’s data we can automatically fill the contact and billing fields if you enable the checkboxes.",
+        "primaryTitle": "Primary driver details",
+        "secondaryTitle": "Driver {index} details",
+        "fields": {
+          "lastName1": {
+            "label": "Driver surname",
+            "placeholder": "Surname"
+          },
+          "lastName2": {
+            "label": "Driver surname (optional)",
+            "placeholder": "Surname (optional)"
+          },
+          "firstName1": {
+            "label": "Driver first name",
+            "placeholder": "First name"
+          },
+          "firstName2": {
+            "label": "Driver first name (optional)",
+            "placeholder": "First name (optional)"
+          },
+          "postalCode": {
+            "label": "Postal code",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "City",
+            "placeholder": "City"
+          },
+          "country": {
+            "label": "Country",
+            "placeholder": "Country"
+          },
+          "street": {
+            "label": "Street",
+            "placeholder": "Street"
+          },
+          "doorNumber": {
+            "label": "House number",
+            "placeholder": "House number"
+          },
+          "dateOfBirth": {
+            "label": "Date of birth",
+            "placeholder": "Select a date"
+          },
+          "placeOfBirth": {
+            "label": "Place of birth",
+            "placeholder": "Place of birth"
+          },
+          "nameOfMother": {
+            "label": "Mother’s name",
+            "placeholder": "Mother’s name"
+          },
+          "phoneNumber": {
+            "label": "Phone number",
+            "placeholder": "+36301234567"
+          },
+          "email": {
+            "label": "Email address",
+            "placeholder": "example@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Document type",
+            "placeholder": "Select document",
+            "passport": "Passport",
+            "id_card": "ID card"
+          },
+          "number": {
+            "label": "Document number",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Issue date",
+            "placeholder": "Select a date"
+          },
+          "validUntil": {
+            "label": "Expiry date",
+            "placeholder": "Select a date"
+          },
+          "drivingLicenceNumber": {
+            "label": "Driving licence number",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Highest category",
+            "placeholder": "Select category"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Driving licence issue date",
+            "placeholder": "Select a date"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Driving licence expiry date",
+            "placeholder": "Select a date"
+          },
+          "drivingLicenceIsOlderThan3": "I declare that my driving licence is more than 3 years old"
+        }
+      },
+      "contact": {
+        "title": "Contact details",
+        "description": "If the contact person is different from the primary driver, you can provide their details here.",
+        "toggle": "Same as primary driver",
+        "fields": {
+          "name": {
+            "label": "Contact person name",
+            "placeholder": "Contact person name"
+          },
+          "email": {
+            "label": "Contact email address",
+            "placeholder": "Contact email address"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Billing details",
+        "description": "Set the name and address the invoice should be issued to. If it matches the driver’s details, tick the option below.",
+        "toggle": "Same as primary driver",
+        "fields": {
+          "name": {
+            "label": "Billing name",
+            "placeholder": "Billing name"
+          },
+          "email": {
+            "label": "Billing email address",
+            "placeholder": "Billing email address"
+          },
+          "phoneNumber": {
+            "label": "Billing phone number",
+            "placeholder": "+36201234567"
+          },
+          "taxId": {
+            "label": "Tax number (optional)",
+            "placeholder": "Tax number"
+          },
+          "companyName": {
+            "label": "Company name (optional)",
+            "placeholder": "Company name"
+          },
+          "address": {
+            "country": {
+              "label": "Country",
+              "placeholder": "Country"
+            },
+            "postalCode": {
+              "label": "Postal code",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "City",
+              "placeholder": "City"
+            },
+            "street": {
+              "label": "Street",
+              "placeholder": "Street"
+            },
+            "doorNumber": {
+              "label": "House number",
+              "placeholder": "House number"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Exact delivery address",
+        "description": "Please provide the full address of the accommodation or airport for delivery.",
+        "locationName": {
+          "label": "Accommodation / airport name (optional)",
+          "placeholder": "e.g. Hotel Marina or Budapest Liszt Ferenc"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Location type",
+            "placeholder": "Select location",
+            "accommodation": "Accommodation",
+            "airport": "Airport"
+          },
+          "arrivalFlight": {
+            "label": "Arrival flight number",
+            "placeholder": "e.g. FR1234"
+          },
+          "departureFlight": {
+            "label": "Departure flight number",
+            "placeholder": "e.g. FR5678"
+          },
+          "country": {
+            "label": "Country",
+            "placeholder": "Country"
+          },
+          "postalCode": {
+            "label": "Postal code",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "City",
+            "placeholder": "City"
+          },
+          "street": {
+            "label": "Street (optional)",
+            "placeholder": "Street"
+          },
+          "doorNumber": {
+            "label": "House number (optional)",
+            "placeholder": "House number"
+          }
+        }
+      },
+      "consents": {
+        "title": "Legal declarations",
+        "description": "To finalise the booking, you must accept the Privacy Policy and the General Terms and Conditions.",
+        "privacyLabel": "I have read and accept the <link>Privacy Policy</link>",
+        "termsLabel": "I have read and accept the <link>General Terms and Conditions</link>"
+      }
+    },
+    "toast": {
+      "success": "Thank you! We will contact you shortly.",
+      "error": "Whoops, something went wrong. Please try again later."
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Invalid start date",
+      "invalidEndDate": "Invalid end date",
+      "adultsMin": "At least one adult is required",
+      "childAgeMin": "Age cannot be negative",
+      "childAgeMax": "A child's age may be at most 17 years",
+      "childHeightMin": "Height cannot be negative",
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "countryRequired": "Country is required",
+      "postalCodeRequired": "Postal code is required",
+      "cityRequired": "City is required",
+      "streetRequired": "Street is required",
+      "doorNumberRequired": "House number is required",
+      "invalidDateOfBirth": "Invalid date of birth",
+      "placeOfBirthRequired": "Place of birth is required",
+      "motherNameRequired": "Mother’s name is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Please enter a valid phone number",
+      "emailRequired": "Email address is required",
+      "emailInvalid": "Please enter a valid email address",
+      "documentNumberRequired": "Document number is required",
+      "documentIssueInvalid": "Invalid document issue date",
+      "documentExpiryInvalid": "Invalid document expiry date",
+      "drivingLicenceNumberRequired": "Driving licence number is required",
+      "drivingLicenceIssueInvalid": "Invalid driving licence issue date",
+      "drivingLicenceExpiryInvalid": "Invalid driving licence expiry date",
+      "contactNameRequired": "Contact name is required",
+      "contactEmailRequired": "Contact email address is required",
+      "contactEmailInvalid": "Please enter a valid contact email address",
+      "invoiceNameRequired": "Billing name is required",
+      "invoicePhoneRequired": "Billing phone number is required",
+      "invoiceEmailRequired": "Billing email address is required",
+      "invoiceEmailInvalid": "Please enter a valid billing email address",
+      "startPast": "The start date cannot be in the past",
+      "startTooLate": "The start date can be at most one year from now",
+      "endBeforeStart": "The end date cannot be before the start date",
+      "endTooLate": "The end date can be at most one year from now",
+      "deliveryPlaceTypeRequired": "Please select whether you are providing an accommodation or airport address",
+      "deliveryFieldRequired": "Required field",
+      "invalidAdults": "At least one adult is required",
+      "adultsInvalid": "Please enter the number of adult passengers"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Invalid start date",
+          "past": "The start date cannot be in the past",
+          "tooLate": "The start date can be at most one year from now"
+        },
+        "endDate": {
+          "invalid": "Invalid end date",
+          "beforeStart": "The end date cannot be before the start date",
+          "tooLate": "The end date can be at most one year from now"
+        }
+      },
+      "adults": {
+        "min": "At least one adult is required"
+      },
+      "children": {
+        "age": {
+          "min": "Age cannot be negative",
+          "max": "A child's age may be at most 17 years"
+        },
+        "height": {
+          "min": "Height cannot be negative"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "First name is required"
+        },
+        "lastName_1": {
+          "required": "Last name is required"
+        },
+        "location": {
+          "country": {
+            "required": "Country is required"
+          },
+          "postalCode": {
+            "required": "Postal code is required"
+          },
+          "city": {
+            "required": "City is required"
+          },
+          "street": {
+            "required": "Street is required"
+          },
+          "doorNumber": {
+            "required": "House number is required"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Invalid date of birth"
+        },
+        "placeOfBirth": {
+          "required": "Place of birth is required"
+        },
+        "nameOfMother": {
+          "required": "Mother’s name is required"
+        },
+        "phoneNumber": {
+          "required": "Phone number is required",
+          "invalid": "Please enter a valid phone number"
+        },
+        "email": {
+          "required": "Email address is required",
+          "invalid": "Please enter a valid email address"
+        },
+        "document": {
+          "number": {
+            "required": "Document number is required"
+          },
+          "validFrom": {
+            "invalid": "Invalid document issue date"
+          },
+          "validUntil": {
+            "invalid": "Invalid document expiry date"
+          },
+          "drivingLicenceNumber": {
+            "required": "Driving licence number is required"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Invalid driving licence issue date",
+            "minAge": "The driving licence must be at least 3 years old"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Invalid driving licence expiry date"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "Contact name is required"
+        },
+        "email": {
+          "required": "Contact email address is required",
+          "invalid": "Please enter a valid contact email address"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "Billing name is required"
+        },
+        "phoneNumber": {
+          "required": "Billing phone number is required",
+          "invalid": "Please enter a valid phone number"
+        },
+        "email": {
+          "required": "Billing email address is required",
+          "invalid": "Please enter a valid email address"
+        },
+        "location": {
+          "country": {
+            "required": "Country is required"
+          },
+          "postalCode": {
+            "required": "Postal code is required"
+          },
+          "city": {
+            "required": "City is required"
+          },
+          "street": {
+            "required": "Street is required"
+          },
+          "doorNumber": {
+            "required": "House number is required"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Please select whether you are providing an accommodation or airport address"
+        },
+        "arrivalFlight": {
+          "required": "Please enter the arrival flight number"
+        },
+        "departureFlight": {
+          "required": "Please enter the return flight number"
+        },
+        "address": {
+          "country": {
+            "required": "Required field"
+          },
+          "postalCode": {
+            "required": "Required field"
+          },
+          "city": {
+            "required": "Required field"
+          },
+          "street": {
+            "required": "Required field"
+          },
+          "doorNumber": {
+            "required": "Required field"
+          }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "You must accept the Privacy Policy to complete the booking"
+        },
+        "terms": {
+          "required": "You must accept the General Terms and Conditions to complete the booking"
+        }
+      }
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Please select",
+    "selectAll": "Select all",
+    "close": "Close",
+    "clear": "Clear"
+  },
+  "NotFound": {
+    "label": "Lost?",
+    "title": "The page you are looking for could not be found",
+    "description": "The page may no longer exist, or there might be a typo. You can continue exploring on the homepage or get in touch with us.",
+    "badge": "A new adventure awaits",
+    "cta": {
+      "home": {
+        "href": "en",
+        "label": "Back to homepage"
+      },
+      "contact": {
+        "href": "en/contact",
+        "label": "Contact us"
+      }
+    }
+  },
+  "GTC": {
+    "title": "Rental agreement",
+    "sections": [
+      {
+        "heading": "1. The Contracting Parties and Conclusion of the Agreement",
+        "paragraphs": [
+          "This agreement is concluded between ZODIACSRENTACAR Thomy Fuerteventura SL. (hereinafter: Lessor) and the natural or legal person accepting the offer (hereinafter: Lessee).",
+          "The Parties accept the provisions of the Agreement as binding and valid for the entire rental period, up to the final completion of the vehicle return.",
+          "Requesting an offer and making a booking is possible via the www.zodiacsrentacar.com website and the contact channels specified above.",
+          "We send confirmation or possible rejection of the offer request and the subsequent booking to the e-mail address provided in the data form.",
+          "The Lessor reserves the right, for operational reasons – in particular if the requested vehicle is not available – to reject or refuse a given booking request if it is incomplete, inaccurate or does not comply with the applicable conditions.",
+          "The person named in the Agreement, the beneficiary of the booking and the primary driver must be the same person; the Agreement may not be transferred to a third party.",
+          "For security reasons, we do not request banking or financial information through the platform, but the Lessee is required to present such data (in particular their credit card) when collecting the rented vehicle at the office.",
+          "The credit card must be in the Lessee’s name and must remain valid throughout the rental period and for a further three (3) months thereafter in the Canary Islands to cover any subsequent costs.",
+          "We accept major credit cards (Visa/MC/Amex/Diners) and bank cards issued by financial institutions; debit cards are not accepted.",
+          "For the duration of the rental, the Lessor accepts a deposit of 500 €, which will be transferred back within 15 calendar days after the return of the vehicle, provided that its condition complies with the Agreement.",
+          "Processing of personal data and other legal conditions relating to the operation of the platform are governed by the GDPR privacy policy available on the Lessor’s website, the content of which the Lessee acknowledges and accepts by signing this Agreement."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Lessor’s details:",
+            "items": [
+              "Company name: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Registered office: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Spain",
+              "Tax identification number (CIF): B13702493",
+              "E-mail address: info@zodiacsrentacar.es",
+              "Main telephone number: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Rental Conditions and Driver Requirements",
+        "paragraphs": [
+          "The Lessor does not rent vehicles to drivers under 25 years of age.",
+          "Users may only rent a vehicle from the Lessor if they meet the conditions set out below.",
+          "Compliance with these conditions is mandatory and cannot be waived.",
+          "The Lessor does not charge a fee to users who cannot enter into an agreement due to failure to meet the conditions, as in such cases the booking cannot be concluded.",
+          "The same conditions apply to any additional drivers designated by the Lessee.",
+          "After confirmation of the booking, the Lessor is entitled to cancel it in the following cases."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Rental conditions:",
+            "items": [
+              "They are at least twenty-five (25) years old.",
+              "They hold at least a category B driving licence valid in the European Union.",
+              "They have at least two (2) years of verified driving experience from the date of obtaining their driving licence at the time of booking."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "The booking may be cancelled if:",
+            "items": [
+              "it is found that the information provided by the customer is not correct, not true or not up to date.",
+              "any necessary document expires during the rental period.",
+              "the Lessee breaches the rental conditions."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) In accordance with Spanish law... (this paragraph contains text on Spanish legislation, which is left unchanged due to legal verification)."
+        ]
+      },
+      {
+        "heading": "3. Conditions Relating to the Rented Vehicle",
+        "paragraphs": [
+          "The reserved vehicle model is indicative and may be replaced with a vehicle of the same or higher category available in the Lessor’s fleet.",
+          "GPS tracking: by signing the rental agreement, the Lessee consents to the vehicle being tracked; the Lessor uses geolocation data solely to ensure the security of the vehicle and to verify compliance with the rental conditions.",
+          "Use restrictions: the vehicle may not leave the island on which it was rented, unless a separate agreement is made and recorded in the booking system.",
+          "If the rental agreement is extended to the island of Lanzarote or if the return location is Lanzarote, the Parties consider these conditions binding under such circumstances as well.",
+          "In the event of a malfunction, the vehicle must be stopped safely in accordance with traffic rules and the Lessor must be notified without delay.",
+          "Before the start of the rental period, the Lessee is obliged to ensure that all mandatory accessories are present.",
+          "The Lessee is responsible, from collection until confirmed return, for lawful and technically appropriate operation of the vehicle and for preserving its condition.",
+          "If the return does not take place in the manner specified by the Lessor (for example, without personal handover), the Lessee’s responsibility is extended until the vehicle’s actual receipt is recorded and its condition is checked.",
+          "The costs of repairing any identified faults and damage are borne by the Lessee."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Other usage rules:",
+            "items": [
+              "The Lessee accepts as binding and applicable all relevant national regulations and legislation, including traffic rules.",
+              "The vehicle may not be used for illegal purposes or as a means of committing illegal acts.",
+              "The vehicle may be driven only on public roads with a solid surface.",
+              "Note: if the vehicle is used on unpaved roads, any resulting punctures, recovery, towing and on-site repair costs are borne by the Lessee.",
+              "The vehicle may not be used for commercial or advertising purposes.",
+              "Only the fuel recommended by the manufacturer may be used; if incorrect fuel is added, the Lessor must be notified immediately and the vehicle must not be started.",
+              "The Lessee must ensure that when leaving or parking the vehicle it is fully locked and that all reasonable measures are taken to prevent unauthorised use.",
+              "When parking, the parking brake and an appropriate gear must be engaged; on a slope, the steering wheels must be turned towards the kerb.",
+              "Child seats are provided by the Lessor on collection, but their correct installation and use is always the responsibility of the Lessee.",
+              "Sporting equipment (such as surfboards) may not be transported or stored in the passenger compartment.",
+              "The Lessee must ensure that luggage or surfboards are properly secured to the roof rack, if one has been rented."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Rules for Vehicle Handover and Return",
+        "paragraphs": [
+          "Handover and return of the rented vehicle take place at the office specified in the booking, on the dates and at the times confirmed by the Lessor.",
+          "Under no circumstances may the vehicle be returned on an island other than that specified in the Agreement.",
+          "The vehicle may only be collected during office hours; return may be arranged outside office hours under the conditions set out in the booking process.",
+          "Outside office hours or before opening, return at the airport is free of charge; delivery to other locations may incur an additional fee, which is recorded in the booking system for each agreed case.",
+          "The office’s opening hours are generally 10:00–13:00 and 16:00–20:00; precise information can be requested by e-mail, WhatsApp or telephone.",
+          "In case of delay or flight cancellation, the Lessee must inform the Lessor in due time; failure to do so means the Lessor cannot guarantee the booking will be maintained.",
+          "If the booking cannot be maintained, the Lessor reserves the right to cancel it and to dispose of the vehicle without any obligation to pay compensation.",
+          "The vehicle must be returned in the condition recorded at collection; if this is not the case, the Lessee must provide documentation of the events that occurred.",
+          "No refund is given if the vehicle is returned earlier than the time specified in the Agreement.",
+          "Fuel: the vehicle must be returned with the fuel level recorded at collection; in case of a shortfall, the Lessee bears the cost of refuelling and any service fee.",
+          "If there is excess fuel, we are unable to reimburse the difference.",
+          "No personal belongings may remain in the vehicle upon return; the Lessor does not accept liability for any items left inside and cannot store or forward them."
+        ]
+      },
+      {
+        "heading": "5. Services and Insurance",
+        "paragraphs": [
+          "The final price of the vehicle rental includes the following items.",
+          "No excess (deposit, cash or card pre-authorisation) is required, except for the 500 € deposit specified in point 1.",
+          "It is important to note that, under Spanish traffic regulations, the use of an approved child seat is mandatory for minors under 135 cm."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Taxes (including IGIC/IVA).",
+              "Unlimited kilometres.",
+              "Second driver free of charge.",
+              "Service at our office (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Free booking cancellation (see point 9).",
+              "Child seats and boosters provided free of charge (non-ISOFIX).",
+              "The following zero-excess insurance cover: Collision Damage Waiver (CDW), Theft Protection (TP), Third Party Insurance (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. Situations Not Covered by the Insurance",
+        "paragraphs": [
+          "Important! The above zero-excess insurance does not cover the following situations or events; the Lessee bears full financial responsibility for any resulting damages and costs."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Damage to tyres and wheels occurring on non-asphalted roads.",
+              "Loss, breakage or damage of the car keys.",
+              "Refuelling with the wrong type of fuel (the fuel type is indicated on every vehicle).",
+              "Careless driving or accidents under the influence of alcohol, drugs or any toxic or psychotropic substances.",
+              "Accidents and/or damage occurring while driving off-road (on non-solid surfaces).",
+              "Fines (parking, speeding, traffic offences)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Optional Extras",
+        "paragraphs": [
+          "As optional or additional services, Lessees may rent the extras listed below, which are not included in the vehicle rental price.",
+          "With proper fastening, roof racks are suitable for transporting up to two surfboards.",
+          "Under no circumstances does the Lessor accept liability for items transported on the roof of the vehicle or for any damage caused to third parties by such items; all such damage is the responsibility of the Lessee.",
+          "All basic and optional services are available to the Lessee and are guaranteed under the Lessor’s general terms and conditions."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Roof rack for transporting luggage, at the price shown on the website; does not include ropes, only the rails and bars for securing it to the vehicle."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Fuel Policy",
+        "paragraphs": [
+          "The Lessee must return the vehicle with the same amount of fuel as when it was collected.",
+          "If the Lessee refuels the vehicle with the wrong type of fuel, the necessary repairs and costs are borne by the Lessee."
+        ]
+      },
+      {
+        "heading": "9. Payment and Refund Policy",
+        "paragraphs": [
+          "The Lessor offers online payment options for settling the rental fee via the website.",
+          "The booking is considered completed once payment has been made by credit card, debit card or bank card.",
+          "The payment service provider is CAIXABANK (bank account number: ES60 2100 1512 2602 0067 6927).",
+          "Refund policy.",
+          "To request a refund, the Lessee must contact us at info@zodiacsrentacar.es or by calling +34 683 192 422 and provide their IBAN and full name.",
+          "The Lessor will execute the transfer within 15 working days."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "A full refund is only possible if the booking is cancelled at least 3 calendar days (72 hours) before the start of the rental period.",
+              "The Lessor does not refund any part of the rental fee if the vehicle is returned earlier than specified in the Agreement.",
+              "Refunds, where applicable, are made by bank transfer."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Amendment of These General Conditions",
+        "paragraphs": [
+          "The Lessor reserves the right to amend the General Conditions at any time, in particular to reflect regulatory changes or adjustments to the commercial policy applied."
+        ]
+      },
+      {
+        "heading": "11. Governing Law and Jurisdiction",
+        "paragraphs": [
+          "For any disputes arising from these conditions, the Parties waive any other jurisdiction and accept the exclusive jurisdiction of the courts of Santa Cruz de Tenerife, in accordance with the applicable Spanish legislation."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "intro": "We’ve collected the most important information to make your rental smooth both on Fuerteventura and Lanzarote.",
+    "items": [
+      {
+        "question": "How can I book a car?",
+        "answer": "Fill in our online quote request form and our colleagues will confirm your rental within 24 hours at most. If it’s urgent, you can also call us or send a WhatsApp message."
+      },
+      {
+        "question": "What documents do I need at pick-up?",
+        "answer": "At pick-up you’ll need a valid driving licence with at least 3 years of driving experience and an ID card or passport. All contracted drivers must present these documents at pick-up."
+      },
+      {
+        "question": "Do I have to pay a deposit?",
+        "answer": "If you choose full SSCP insurance, we do not request a deposit. With basic insurance, you should expect a deposit of 300–500 €, and some extras (such as roof racks) may require an additional security deposit."
+      },
+      {
+        "question": "Where can I pick up the car?",
+        "answer": "You can pick up the car at the airport, at our office in Puerto del Rosario or at your accommodation on Fuerteventura and Lanzarote. The exact pick-up location will be specified in the confirmation."
+      },
+      {
+        "question": "Can I cancel my booking free of charge?",
+        "answer": "Yes, you can modify or cancel your booking free of charge up to 72 hours before the start of the rental. If something comes up closer to the start date, contact us as soon as possible."
+      },
+      {
+        "question": "What is the minimum age for renting?",
+        "answer": "For most of our vehicles the minimum age is 23 years. For younger drivers, an individual assessment and a possible surcharge may apply."
+      },
+      {
+        "question": "Can I pick up the car at the airport?",
+        "answer": "Yes, when booking you can indicate if you’d like airport pick-up or transfer."
+      },
+      {
+        "question": "Can I return the car at the airport?",
+        "answer": "Yes, you can also return the car at the airport – just arrange the time with us in advance."
+      },
+      {
+        "question": "What are your opening hours?",
+        "answer": "Pick-up usually takes place between 10:00 and 16:00, but we are flexible by prior arrangement. You can return the car at any time."
+      },
+      {
+        "question": "Can I return the car in the evening or at night?",
+        "answer": "Yes. At handover we always explain the return procedure so you can safely return the car at any time."
+      },
+      {
+        "question": "Does the car have full insurance?",
+        "answer": "Yes, damage on public roads is covered by the insurer. Damage or punctures occurring off-road must be paid by the renter."
+      },
+      {
+        "question": "Do I have to refuel the car before returning it?",
+        "answer": "Yes, you must return the car with the same fuel level as when you picked it up. All vehicles in our fleet run on 95 octane petrol."
+      },
+      {
+        "question": "Is there a mileage limit?",
+        "answer": "No, we offer unlimited mileage, which is included in the rental price."
+      },
+      {
+        "question": "Can I pay by credit or debit card?",
+        "answer": "Yes, we accept both credit and debit cards."
+      },
+      {
+        "question": "Is there a surcharge for a second driver?",
+        "answer": "No, we do not charge any extra if you add a second driver."
+      },
+      {
+        "question": "Are there any hidden costs on top of the rental price?",
+        "answer": "No, you only pay the confirmed rental price, with no hidden charges."
+      },
+      {
+        "question": "Can I request a child seat for the car?",
+        "answer": "Yes, we offer ISOFIX child seats in several sizes, from infants to older children."
+      },
+      {
+        "question": "Do I have to clean the car before returning it?",
+        "answer": "No, you don’t. We thoroughly clean and disinfect every returned car – this is included in the rental price."
+      }
+    ]
+  }
+}

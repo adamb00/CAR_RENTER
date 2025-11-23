@@ -10,6 +10,8 @@ export type ContactQuotePayload = {
   preferredChannel: 'email' | 'phone' | 'whatsapp' | 'viber';
   rentalStart?: string;
   rentalEnd?: string;
+  arrivalFlight: string;
+  departureFlight: string;
   partySize?: string;
   children?: string;
 };
@@ -29,6 +31,8 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       `Telefon: ${payload.phone}`,
       `Előnyben részesített csatorna: ${CHANNEL_LABELS[payload.preferredChannel]}`,
       `Bérlés: ${payload.rentalStart || 'n/a'} → ${payload.rentalEnd || 'n/a'}`,
+      `Érkezési járatszám: ${payload.arrivalFlight}`,
+      `Hazautazó járatszám: ${payload.departureFlight}`,
       `Utazók száma: ${payload.partySize || 'n/a'}`,
       `Gyermekek száma: ${payload.children || '0'}`,
       `Beküldve a(z) ${payload.locale.toUpperCase()} nyelvű kapcsolat oldalon.`,

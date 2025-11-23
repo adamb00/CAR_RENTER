@@ -29,9 +29,9 @@ type NextRequestWithGeo = NextRequest & {
   };
 };
 
-function hasLocalePrefix(pathname: string): boolean {
+function getLocaleFromPathname(pathname: string): Locale | null {
   const seg = pathname.split('/')[1]?.toLowerCase();
-  return LOCALES.includes(seg as Locale);
+  return LOCALES.includes(seg as Locale) ? (seg as Locale) : null;
 }
 
 function getCountryFromRequest(req: NextRequest): string | null {
@@ -41,6 +41,54 @@ function getCountryFromRequest(req: NextRequest): string | null {
 
   const headerCountry = req.headers.get('x-vercel-ip-country');
   return headerCountry ? headerCountry.toUpperCase() : null;
+}
+
+function detectLocaleFromRequest(req: NextRequest): Locale | null {
+  const country = getCountryFromRequest(req);
+  if (country) {
+    const mapped = LANG_BY_COUNTRY[country];
+    if (mapped && LOCALES.includes(mapped)) return mapped;
+  }
+
+  const accept = req.headers.get('accept-language') || '';
+  return matchLocaleFromAccept(accept);
+}
+
+const LOCALE_COOKIE_OPTIONS = {
+  path: '/' as const,
+  maxAge: 60 * 60 * 24 * 365,
+};
+
+function withLocaleCookie(res: NextResponse, locale: Locale) {
+  res.cookies.set('NEXT_LOCALE', locale, LOCALE_COOKIE_OPTIONS);
+  return res;
+}
+
+function buildLocalizedPath(
+  pathname: string,
+  locale: Locale,
+  existingLocale: Locale | null,
+): string {
+  if (existingLocale) {
+    const segments = pathname.split('/');
+    segments[1] = locale;
+    const rebuilt = segments.join('/');
+    return rebuilt || `/${locale}`;
+  }
+
+  if (pathname === '/') return `/${locale}`;
+  return `/${locale}${pathname}`;
+}
+
+function redirectToLocale(
+  req: NextRequest,
+  locale: Locale,
+  existingLocale: Locale | null,
+) {
+  const url = req.nextUrl.clone();
+  url.pathname = buildLocalizedPath(req.nextUrl.pathname, locale, existingLocale);
+  const res = NextResponse.redirect(url);
+  return withLocaleCookie(res, locale);
 }
 
 export function middleware(req: NextRequest) {
@@ -61,42 +109,34 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  if (hasLocalePrefix(pathname)) {
-    return NextResponse.next();
-  }
-
-  // 1) Cookie
+  const pathLocale = getLocaleFromPathname(pathname);
   const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value as
     | Locale
     | undefined;
-  let locale: Locale | null =
-    cookieLocale && LOCALES.includes(cookieLocale) ? cookieLocale : null;
+  const validCookie = cookieLocale && LOCALES.includes(cookieLocale);
 
-  // 2) Geo location (country → locale mapping)
-  if (!locale) {
-    const country = getCountryFromRequest(req);
-    const mapped = country ? LANG_BY_COUNTRY[country] : null;
-    if (mapped && LOCALES.includes(mapped)) locale = mapped;
+  if (pathLocale) {
+    if (!validCookie) {
+      const detected = detectLocaleFromRequest(req) ?? DEFAULT_LOCALE;
+      if (detected !== pathLocale) {
+        return redirectToLocale(req, detected, pathLocale);
+      }
+    }
+
+    const res = NextResponse.next();
+    if (!validCookie || cookieLocale !== pathLocale) {
+      return withLocaleCookie(res, pathLocale);
+    }
+
+    return res;
   }
 
-  // 3) Accept-Language
-  if (!locale) {
-    const accept = req.headers.get('accept-language') || '';
-    locale = matchLocaleFromAccept(accept);
-  }
+  const targetLocale =
+    (validCookie ? (cookieLocale as Locale) : null) ??
+    detectLocaleFromRequest(req) ??
+    DEFAULT_LOCALE;
 
-  // 4) Fallback
-  if (!locale) locale = DEFAULT_LOCALE;
-
-  const url = req.nextUrl.clone();
-  url.pathname = `/${locale}${pathname}`;
-  const res = NextResponse.redirect(url);
-  res.cookies.set('NEXT_LOCALE', locale, {
-    path: '/',
-    maxAge: 60 * 60 * 24 * 365,
-  });
-
-  return res;
+  return redirectToLocale(req, targetLocale, null);
 }
 
 export const config = {

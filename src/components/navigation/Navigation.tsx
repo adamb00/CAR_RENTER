@@ -116,7 +116,7 @@ export function Navigation() {
                 <a
                   href={it.href}
                   className={clsx(
-                    'inline-block rounded-full px-3 py-2 text-grey-dark-3 tracking-wide dark:text-white text-sm lg:text-lg uppercase transition-colors',
+                    'inline-block rounded-full px-3 py-2 text-grey-dark-3 tracking-wide dark:text-white text-sm lg:text-lg uppercase transition-colors whitespace-nowrap',
                     'hover:bg-white/60 dark:hover:bg-sky-dark/30'
                   )}
                 >
@@ -238,7 +238,7 @@ export function Navigation() {
                 onClick={() => setOpen(false)}
                 tabIndex={open ? 0 : -1}
                 className={
-                  'inline-block uppercase no-underline text-2xl sm:text-4xl font-light px-4 py-3 text-white transition-colors duration-300 hover:bg-white hover:text-sky-dark'
+                  'inline-block uppercase no-underline text-2xl sm:text-4xl font-light px-4 py-3 text-white transition-colors duration-300 hover:bg-white hover:text-sky-dark whitespace-nowrap'
                 }
               >
                 {it.prefix && (

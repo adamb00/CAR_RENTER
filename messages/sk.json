@@ -1,0 +1,2247 @@
+{
+  "Header": {
+    "header": "Požičanie auta na Fuerteventure a Lanzarote, pohodlne a rýchlo",
+    "book_now": "Požičať auto teraz"
+  },
+  "CookieConsent": {
+    "title": "Používame súbory cookie",
+    "noticeTitle": "Oznámenie o súboroch cookie",
+    "body": "Na dosiahnutie čo najlepšieho používateľského zážitku používame na našej webovej stránke súbory cookie. Viac informácií o používaní a správe súborov cookie nájdeš v našich zásadách používania súborov cookie.",
+    "minimalBody": "Používame súbory cookie, aby sme ti poskytli lepší zážitok z prehliadania.",
+    "notice": "Kliknutím na tlačidlo <highlight>{actionLabel}</highlight> vyjadruješ súhlas s používaním súborov cookie.",
+    "learnMore": "Viac informácií:",
+    "cookiePolicyLink": "Informácie o používaní súborov cookie",
+    "gdprLink": "Vyhlásenie o ochrane osobných údajov",
+    "accept": "Súhlasím",
+    "decline": "Odmietam"
+  },
+  "GDPR": {
+    "title": "Vyhlásenie o spracúvaní osobných údajov (GDPR)",
+    "updated": "Posledná aktualizácia: 8. november 2025",
+    "intro": [
+      "Toto oznámenie o spracúvaní osobných údajov zhrňuje hlavné pravidlá spracúvania osobných údajov v súvislosti so službami Zodiacs Rent a Car (ZODIACSRENTACAR).",
+      "Tvoje údaje spracúvame vždy v súlade s GDPR, ako aj so španielskymi a maďarskými predpismi o ochrane údajov; zbierame len údaje v nevyhnutnom rozsahu a na nevyhnutný čas a o spracúvaní poskytujeme vždy transparentné informácie."
+    ],
+    "sections": [
+      {
+        "heading": "1. Údaje o prevádzkovateľovi",
+        "lists": [
+          {
+            "items": [
+              "Obchodné meno: ZODIACSRENTACAR",
+              "Sídlo: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Španielsko",
+              "E-mail: info@zodiacsrentacar.com",
+              "Telefón: +34 683 192 422",
+              "Webová stránka: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Účely spracúvania osobných údajov",
+        "paragraphs": [
+          "Osobné údaje používame výlučne na účely, ktoré sú nevyhnutné na poskytovanie našich služieb:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "príprava a dokumentácia ponúk a zmlúv o prenájme vozidla",
+              "spracúvanie online rezervácií a ich potvrdzovanie",
+              "odovzdanie vozidla, doručenie na miesto a komunikácia so zákazníkmi",
+              "fakturácia, finančná administratíva a plnenie zákonných povinností",
+              "komunikácia so zákazníkmi telefonicky, e-mailom, cez WhatsApp alebo iné kanály",
+              "marketing a zasielanie newsletterov na základe výslovného súhlasu dotknutej osoby",
+              "štatistická analýza a rozvoj služieb v anonymizovanej forme"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Právny základ spracúvania",
+        "paragraphs": [
+          "Pre jednotlivé procesy spracúvania sa môžu uplatňovať rôzne právne základy, vždy sa však opierame o niektorý z nasledujúcich článkov GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "plnenie alebo príprava zmluvy – článok 6 ods. 1 písm. b) GDPR",
+              "plnenie zákonnej povinnosti (napr. účtovné predpisy) – článok 6 ods. 1 písm. c) GDPR",
+              "oprávnený záujem prevádzkovateľa (napríklad prevencia podvodov) – článok 6 ods. 1 písm. f) GDPR",
+              "súhlas dotknutej osoby (napr. newsletter, kontaktovanie) – článok 6 ods. 1 písm. a) GDPR"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Rozsah spracúvaných údajov",
+        "paragraphs": [
+          "V online formulároch a pri uzatváraní zmluvy požadujeme iba údaje, ktoré sú nevyhnutné pre prenájom vozidla. Hlavné kategórie sú tieto:"
+        ],
+        "lists": [
+          {
+            "title": "Údaje o rezervácii",
+            "items": [
+              "obdobie prenájmu (od–do)",
+              "počet cestujúcich, vek a výška detí",
+              "zvolená kategória vozidla a požadované doplnkové služby"
+            ]
+          },
+          {
+            "title": "Osobné údaje nájomcu a vodiča",
+            "items": [
+              "celé meno (dve priezviská a dve krstné mená, ak je to relevantné)",
+              "miesto a dátum narodenia, meno matky",
+              "štátna príslušnosť a adresa trvalého bydliska"
+            ]
+          },
+          {
+            "title": "Kontaktné údaje",
+            "items": [
+              "telefónne číslo a preferovaný komunikačný kanál (WhatsApp, Messenger atď.)",
+              "e-mailová adresa"
+            ]
+          },
+          {
+            "title": "Identifikačné doklady",
+            "items": [
+              "typ a číslo dokladu totožnosti, dátum vydania a dátum skončenia platnosti",
+              "číslo vodičského preukazu, jeho kategória, platnosť a dátum vydania",
+              "vyhlásenie, že vodičský preukaz je platný viac ako 3 roky"
+            ]
+          },
+          {
+            "title": "Ďalší vodič alebo kontaktná osoba",
+            "items": [
+              "údaje podobné primárnemu nájomcovi v prípade ďalšieho vodiča",
+              "meno a telefónne číslo kontaktnej osoby, ak sa líši od nájomcu"
+            ]
+          },
+          {
+            "title": "Fakturačné a doručovacie údaje",
+            "items": [
+              "meno alebo obchodné meno, fakturačná adresa a (v prípade spoločností) DIČ",
+              "e-mailová adresa potrebná na zaslanie faktúry v elektronickej podobe",
+              "názov a adresa hotela alebo apartmánu pri doručení na ubytovanie"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Doba uchovávania osobných údajov",
+        "paragraphs": [
+          "Údaje potrebné na poskytnutie služby uchovávame po dobu 5 rokov od ukončenia prenájmu z dôvodu možného uplatnenia občianskoprávnych nárokov.",
+          "Účtovné doklady a daňové záznamy uchovávame podľa príslušných právnych predpisov po dobu 8 rokov.",
+          "Údaje založené na súhlase dotknutej osoby spracúvame do odvolania súhlasu alebo do zániku účelu spracúvania."
+        ]
+      },
+      {
+        "heading": "6. Odovzdávanie údajov a sprostredkovatelia",
+        "paragraphs": [
+          "Údaje poskytujeme len tým partnerom, ktorí sú nevyhnutní na splnenie služby, a s ktorými máme uzatvorenú zmluvu o spracúvaní údajov. Typickí príjemcovia sú:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "účtovníci a poskytovatelia finančných služieb",
+              "poskytovatelia hostingu a IT správy",
+              "fakturačné systémy a platobné služby",
+              "kuriérske služby alebo partneri zabezpečujúci doručenie vozidla"
+            ]
+          }
+        ],
+        "notes": [
+          "Údaje neodovzdávame mimo Európskej únie a zabezpečujeme ich správnym šifrovaním a kontrolou prístupu."
+        ]
+      },
+      {
+        "heading": "7. Práva dotknutých osôb",
+        "paragraphs": [
+          "Dotknuté osoby môžu kedykoľvek uplatniť svoje práva podľa GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "právo na informácie a prístup k údajom",
+              "právo na opravu alebo vymazanie údajov",
+              "právo požadovať obmedzenie spracúvania",
+              "právo namietať proti spracúvaniu založenému na oprávnenom záujme",
+              "právo na prenosnosť údajov",
+              "právo kedykoľvek odvolať udelený súhlas"
+            ]
+          }
+        ],
+        "notes": [
+          "V prípade sťažnosti sa možno obrátiť na Národný úrad pre ochranu osobných údajov a slobodu informácií (Nemzeti Adatvédelmi és Információszabadság Hatóság – 1055 Budapešť, Falk Miksa utca 9–11., ugyfelszolgalat@naih.hu, naih.hu)."
+        ]
+      },
+      {
+        "heading": "8. Bezpečnosť údajov a používanie súborov cookie",
+        "paragraphs": [
+          "Osobné údaje chránime fyzickými, technickými a organizačnými opatreniami pred neoprávneným prístupom, zmenou alebo stratou.",
+          "Naša webová stránka používa súbory cookie na zabezpečenie fungovania stránky, štatistické účely a prispôsobenie obsahu. Podrobnosti nájdeš v dokumente o používaní súborov cookie, kde môžeš kedykoľvek zmeniť svoje nastavenia súhlasu."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Kontakt a uplatnenie práv",
+      "paragraphs": [
+        "Ak máš otázky týkajúce sa spracúvania osobných údajov alebo chceš uplatniť svoje práva, kontaktuj nás prostredníctvom nižšie uvedených kanálov.",
+        "Na tvoje žiadosti odpovieme najneskôr do 30 dní, vo výnimočných prípadoch v lehote predĺženej podľa GDPR."
+      ],
+      "channels": [
+        "E-mail: info@zodiacsrentacar.com",
+        "Telefón: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Informácie o používaní súborov cookie",
+    "updated": "Posledná aktualizácia: 8. november 2025",
+    "intro": [
+      "Tento dokument vysvetľuje, aké súbory cookie používa webová stránka Zodiacs Rent a Car, na aký účel sa osobné údaje spracúvajú a ako môžeš zmeniť svoje nastavenia.",
+      "Súbory cookie sú malé dátové súbory, ktoré pomáhajú zabezpečiť fungovanie webovej stránky, vytváranie štatistík a zobrazovanie personalizovaného obsahu."
+    ],
+    "sections": [
+      {
+        "heading": "1. Čo je súbor cookie?",
+        "paragraphs": [
+          "Súbor cookie je krátky textový súbor, ktorý sa uloží v tvojom prehliadači pri návšteve našej stránky. Súbory cookie neobsahujú údaje umožňujúce priamu identifikáciu, ale pomáhajú rozpoznať tvoje zariadenie a zapamätať si tvoje nastavenia."
+        ]
+      },
+      {
+        "heading": "2. Typy súborov cookie, ktoré používame",
+        "paragraphs": [
+          "Na správne fungovanie používame súbory cookie s rôznym účelom:"
+        ],
+        "lists": [
+          {
+            "title": "Nevyhnutné (technické) súbory cookie",
+            "items": [
+              "sú nevyhnutné pre fungovanie webovej stránky, bezpečnostné procesy a používanie formulárov",
+              "právny základ: oprávnený záujem (článok 6 ods. 1 písm. f) GDPR)"
+            ]
+          },
+          {
+            "title": "Funkčné súbory cookie",
+            "items": [
+              "uchovávajú zvolený jazyk a dočasné údaje z formulárov",
+              "právny základ: súhlas (článok 6 ods. 1 písm. a) GDPR)"
+            ]
+          },
+          {
+            "title": "Analytické a štatistické súbory cookie",
+            "items": [
+              "anonymne merajú návštevnosť a pomáhajú optimalizovať naše služby",
+              "právny základ: súhlas (článok 6 ods. 1 písm. a) GDPR)"
+            ]
+          },
+          {
+            "title": "Marketingové súbory cookie",
+            "items": [
+              "umožňujú personalizované ponuky a remarketingové kampane",
+              "právny základ: súhlas (článok 6 ods. 1 písm. a) GDPR)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Doba platnosti súborov cookie",
+        "paragraphs": [
+          "Relačné (session) súbory cookie: zostávajú aktívne len počas prehliadania a po zatvorení prehliadača sa automaticky vymažú.",
+          "Trvalé súbory cookie: ukladajú sa na vopred stanovené obdobie (zvyčajne 30–365 dní) alebo dovtedy, kým ich ručne nevymažeš."
+        ]
+      },
+      {
+        "heading": "4. Súbory cookie tretích strán",
+        "paragraphs": [
+          "Niektoré súbory cookie umiestňujú naši partneri (napr. Google, Meta, TikTok) na účely štatistickej analýzy a personalizovanej reklamy.",
+          "Na tieto súbory cookie sa vzťahujú vlastné zásady ochrany osobných údajov týchto poskytovateľov, ktoré nájdeš na ich oficiálnych webových stránkach."
+        ]
+      },
+      {
+        "heading": "5. Súhlas a nastavenia",
+        "paragraphs": [
+          "Pri prvej návšteve sa zobrazí okno na správu súborov cookie, kde si môžeš zvoliť prijatie všetkých súborov cookie, iba nevyhnutných súborov alebo individuálne nastavenia.",
+          "Tieto voľby môžeš kedykoľvek zmeniť v nastaveniach svojho prehliadača alebo prostredníctvom odkazu „Zmeniť nastavenia súborov cookie“ na webovej stránke."
+        ]
+      },
+      {
+        "heading": "6. Správa súborov cookie v prehliadačoch",
+        "paragraphs": [
+          "Vo väčšine prehliadačov je možné súbory cookie vymazať alebo blokovať. Pri konfigurácii ti pomôžu návody v prehliadačoch Google Chrome, Mozilla Firefox, Safari a Microsoft Edge.",
+          "Je dôležité vedieť, že niektoré funkcie môžu bez súborov cookie fungovať len obmedzene."
+        ]
+      },
+      {
+        "heading": "7. Kontakt",
+        "paragraphs": [
+          "Ak máš otázky týkajúce sa používania súborov cookie alebo ochrany osobných údajov, radi ti pomôžeme prostredníctvom nasledujúcich kanálov:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-mail: info@zodiacsrentacar.com",
+              "Webová stránka: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "So miestnym tímom Zodiacs Rent a Car je prenájom auta na Fuerteventure a Lanzarote pohodlný a rýchly. Po online rezervácii zabezpečíme odovzdanie auta na letisku alebo pri tvojom ubytovaní, pomôžeme ti vybrať model zodpovedajúci tvojej ceste a všetky detaily dohodneme v jazyku, ktorý ti najviac vyhovuje.",
+      "Naša flotila siaha od kompaktných mestských áut až po priestranné SUV, všetko s neobmedzeným počtom kilometrov, druhým vodičom zadarmo a kompletným poistením SSCP. V Zodiacs pravidelne servisujeme každé vozidlo a pred odovzdaním ho zdokumentujeme fotografiami, aby si mohol na cestu vyraziť s maximálnym pokojom.",
+      "Aj počas tvojho pobytu sa na nás môžeš spoľahnúť: podelíme sa o najlepšie parkoviská pri plážach Fuerteventury, výhliadkové miesta na Lanzarote a naše obľúbené tapas bary. Sme ti k dispozícii telefonicky, e-mailom aj cez WhatsApp, aby si kedykoľvek mohol požiadať o pomoc alebo personalizovanú ponuku.",
+      "Naše služby sú prispôsobené špeciálne potrebám cestovateľov tráviacich dovolenku na Kanárskych ostrovoch. Chápeme, aké dôležité je rýchle vybavenie, preto reagujeme okamžite cez WhatsApp, telefonicky aj e-mailom – či už sa na nás obraciaš pred odletom, alebo po prílete.",
+      "Podľa spätnej väzby našich zákazníkov si na Zodiacs Rent a Car najviac cenia, že všetko vopred dohodneme a pri pokladni ich nečakajú žiadne prekvapenia. Osobitnú pozornosť venujeme rodinám, dobrodružným objaviteľom aj obchodným cestujúcim: na požiadanie zabezpečíme detské sedačky, strešné nosiče alebo držiaky na surf.",
+      "Na našom blogu a v cestovateľských sprievodcoch zdieľame podrobné návrhy programov, vďaka ktorým sa prenajaté auto stane kľúčom k objavovaniu, a nie len dopravným prostriedkom. Miestny tím Zodiacs neustále aktualizuje svoje tipy, takže zo zoznamu ti neuniknú ani menej známe pláže, reštaurácie či turistické trasy."
+    ],
+    "highlights": {
+      "title": "Prečo si vybrať nás?",
+      "items": [
+        "Viacjazyčný zákaznícky servis na Fuerteventure a Lanzarote s reálnou miestnou prítomnosťou.",
+        "Transparentná zmluva o prenájme s digitálnym schvaľovaním a všetkými nákladmi dohodnutými vopred.",
+        "Flexibilné prevzatie auta na letisku, pri tvojom ubytovaní alebo na vopred dohodnutom mieste.",
+        "Miestne tipy, rady k parkovaniu a návrhy trás, vďaka ktorým zo svojho Zodiacs auta vyťažíš z ostrovov maximum."
+      ]
+    },
+    "details": {
+      "title": "Prenájom auta krok za krokom s tímom Zodiacs Rent a Car",
+      "intro": "Chceme, aby si už pri plánovaní vedel, čo môžeš očakávať. Preto sme všetky procesy v Zodiacs nastavili tak, aby boli prehľadné, rýchle a prispôsobené na mieru – od rezervácie až po vrátenie vozidla.",
+      "sections": [
+        {
+          "heading": "1. Výber ideálneho auta pre teba",
+          "body": [
+            "Pred rezerváciou si krátko prejdeme, koľkí cestujete, aký veľký batožinový priestor potrebujete a aké trasy plánujete. Ak sa napríklad chystáte objavovať severné hory alebo kľukaté cesty sopečnej krajiny, môže byť potrebné výkonnejšie auto a silnejšia klimatizácia.",
+            "Naša ponuka vždy obsahuje detailné fotografie a výbavu konkrétneho vozidla, aby si mohol jednoducho porovnať možnosti. Tím Zodiacs ti rád poradí aj v prípade špeciálnych požiadaviek, napríklad na detskú sedačku, strešný box alebo prevoz športového vybavenia."
+          ]
+        },
+        {
+          "heading": "2. Rezervácia a zmluva v niekoľkých kliknutiach",
+          "body": [
+            "Online formulár Zodiacs ťa v slovenskom alebo inom jazyku krok za krokom prevedie celým procesom. Zadáš dátum príchodu a odchodu, miesto prevzatia a v priebehu niekoľkých minút dostaneš personalizované ceny vrátane kompletného poistenia SSCP.",
+            "Potvrdenie rezervácie ti zašleme e-mailom a zmluvu dostaneš v digitálnej podobe, aby si si ju mohol v pokoji preštudovať ešte pred cestou. Na mieste tak už nie sú potrebné zdĺhavé papiere – čaká ťa len rýchle odovzdanie auta."
+          ]
+        },
+        {
+          "heading": "3. Prevzatie tam, kde ti to najviac vyhovuje",
+          "body": [
+            "Či priletíš na Fuerteventuru alebo Lanzarote, naši kolegovia sledujú tvoj let a v dohodnutom čase ťa čakajú na letisku alebo pri ubytovaní. V prípade výrazného meškania reagujeme flexibilne a zostávame s tebou v kontakte.",
+            "Ak nechceš strácať ani minútu dovolenky čakaním v rade, mobilná kancelária Zodiacs pripraví potrebné dokumenty priamo na mieste a ty môžeš v priebehu chvíľky vyraziť s vopred vybraným autom."
+          ]
+        },
+        {
+          "heading": "4. Podpora počas celej cesty",
+          "body": [
+            "Pri odovzdaní auta ti poskytneme aktuálne informácie o parkovaní, doprave, našich obľúbených výletoch a overených lokálnych službách. Ak sa počas cesty objaví otázka, tím Zodiacs je dostupný aj cez WhatsApp alebo telefonicky.",
+            "Pri vrátení vozidla po krátkej kontrole uzavrieme prenájom a v prípade záujmu ti pripravíme aj aktualizovanú, personalizovanú ponuku na tvoju ďalšiu cestu. Naším cieľom je, aby si mal vždy pocit, že auto od Zodiacs prispelo k tvojim dovolenkovým zážitkom."
+          ]
+        }
+      ]
+    },
+    "cta": "Požiadaj o personalizovanú ponuku"
+  },
+  "SEO": {
+    "brand": "Zodiacs Rent a Car",
+    "defaultTitle": "Prenájom auta na Fuerteventure a Lanzarote",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
+    "siteDescription": "Požičaj si auto na Fuerteventure a Lanzarote s miestnym maďarským tímom, flexibilným prevzatím a kompletným poistením.",
+    "ogTitle": "Zodiacs Rent a Car – Prenájom auta na Fuerteventure a Lanzarote",
+    "ogDescription": "Miestny maďarský tím, druhý vodič zadarmo, neobmedzené kilometre. Rezervuj online u Zodiacs Rent a Car.",
+    "ogImageAlt": "Autá z flotily Zodiacs Rent a Car na Fuerteventure",
+    "twitterTitle": "Zodiacs Rent a Car – Prenájom auta na Kanárskych ostrovoch",
+    "twitterDescription": "Rýchly a pohodlný prenájom auta na Fuerteventure a Lanzarote bez skrytých poplatkov."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "Prenájom {carName} na Fuerteventure | Zodiacs Rent a Car",
+      "description": "Požičaj si model {carName} na Fuerteventure alebo Lanzarote s flexibilným prevzatím, neobmedzeným počtom kilometrov a kompletným poistením.",
+      "imageAlt": "{carName} vo flotile Zodiacs Rent a Car"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "Detaily a prenájom {carName} | Zodiacs Rent a Car",
+      "description": "Objav výbavu, batožinový priestor a cenu prenájmu modelu {carName} na Fuerteventure a Lanzarote.",
+      "imageAlt": "Model {carName} v ponuke Zodiacs Rent a Car"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Prenájom auta na Fuerteventure a Lanzarote",
+      "description": "Objav Kanárske ostrovy s naším maďarským tímom: prémiové prenajaté vozidlá, flexibilné prevzatie, neobmedzené kilometre a kompletné poistenie.",
+      "ogImageAlt": "Prenajaté auto na Fuerteventure od Zodiacs Rent a Car"
+    },
+    "cars": {
+      "title": "Naše autá – ponuka prenájmov na Fuerteventure a Lanzarote",
+      "description": "Kompaktné, rodinné a automatické vozidlá s flexibilným prevzatím, druhým vodičom zadarmo a neobmedzenými kilometrami.",
+      "ogImageAlt": "Flotila prenajatých vozidiel Zodiacs Rent a Car"
+    },
+    "about": {
+      "title": "O nás – Zodiacs Rent a Car",
+      "description": "Zoznám sa s maďarským tímom Zodiacs Rent a Car a zisti viac o našom poslaní na Fuerteventure a Lanzarote.",
+      "ogImageAlt": "Tím Zodiacs Rent a Car"
+    },
+    "contact": {
+      "title": "Kontakt – Zodiacs Rent a Car Fuerteventura",
+      "description": "Kontaktuj nás v súvislosti s prenájmom auta, doručením alebo žiadosťou o ponuku. Odpovedáme rýchlo a aj po maďarsky.",
+      "ogImageAlt": "Zákaznícky servis Zodiacs Rent a Car"
+    },
+    "insurance": {
+      "title": "Poistenie a krytie – balík SSCP",
+      "description": "Zoznám sa so Super Comfort Plus poistením: kompletná ochrana, nulová spoluúčasť a krytie častých výnimiek.",
+      "ogImageAlt": "Informačný dokument o poistení Zodiacs Rent a Car"
+    },
+    "generalRental": {
+      "title": "Všeobecné podmienky prenájmu – Zodiacs Rent a Car",
+      "description": "Podmienky prenájmu, zmluvné pravidlá a povinnosti zákazníkov na Fuerteventure a Lanzarote.",
+      "ogImageAlt": "Dokument s podmienkami prenájmu auta"
+    },
+    "gtc": {
+      "title": "Zmluva o prenájme – Zodiacs Rent a Car",
+      "description": "Podrobná zmluva o prenájme a právne podmienky pre zákazníkov Zodiacs Rent a Car.",
+      "ogImageAlt": "Dokument zmluvy o prenájme"
+    },
+    "rentalRequirements": {
+      "title": "Podmienky prenájmu auta na Kanárskych ostrovoch",
+      "description": "Vek, vodičský preukaz, depozit – všetko, čo treba vedieť o podmienkach prenájmu v Zodiacs Rent a Car.",
+      "ogImageAlt": "Zoznam podmienok prenájmu auta"
+    },
+    "offices": {
+      "title": "Miesta odovzdania a pobočky – Zodiacs Rent a Car",
+      "description": "Miesta prevzatia vozidiel na Fuerteventure a Lanzarote, kontakty a otváracie hodiny.",
+      "ogImageAlt": "Exteriér pobočky Zodiacs Rent a Car"
+    },
+    "faq": {
+      "title": "FAQ – Často kladené otázky v Zodiacs Rent a Car",
+      "description": "Nájdi odpovede na najčastejšie otázky od rezervácie až po poistenie.",
+      "ogImageAlt": "Zákaznícky servis Zodiacs Rent a Car poskytujúci pomoc",
+      "keywords": [
+        "prenájom auta FAQ",
+        "Zodiacs Rent a Car otázky",
+        "prenájom auta Fuerteventura FAQ",
+        "informácie o prenájme auta Lanzarote"
+      ]
+    },
+    "blog": {
+      "title": "Blog – Tipy na prenájom auta a cestovanie na Fuerteventure",
+      "description": "Aktuálne rady k prenájmu auta, návrhy trás a miestne zážitky od tímu Zodiacs Rent a Car.",
+      "ogImageAlt": "Ilustrácia blogu Zodiacs Rent a Car",
+      "keywords": [
+        "blog prenájom auta",
+        "cestovateľské tipy Fuerteventura",
+        "road trip Lanzarote",
+        "tipy Zodiacs Rent a Car"
+      ]
+    },
+    "gdpr": {
+      "title": "GDPR – Informácie o spracúvaní osobných údajov – Zodiacs Rent a Car",
+      "description": "Zisti, ako spracúvame tvoje osobné údaje, na aké právne základy sa spoliehame a ako môžeš uplatniť svoje práva.",
+      "ogImageAlt": "Dokument o spracúvaní osobných údajov podľa GDPR"
+    },
+    "cookiePolicy": {
+      "title": "Informácie o súboroch cookie – Zodiacs Rent a Car",
+      "description": "Prehľad súborov cookie, ktoré používame, ich účelov a nastavení súhlasu.",
+      "ogImageAlt": "Dokument o používaní súborov cookie"
+    }
+  },
+  "AboutSection": {
+    "title": "Nezmeškaj ani jeden zážitok",
+    "pickup_title": "Prevzatie tam, kde ti to najviac vyhovuje",
+    "pickup_text": "Prevezmi si auto presne tam, kde je to pre teba najpohodlnejšie: pred hotelom, apartmánom alebo na určenej adrese. Od prvého momentu tak môžeš slobodne vyraziť za dobrodružstvom.",
+    "transfer_title": "Pohodlný transfer na požiadanie",
+    "transfer_text": "Ak chceš využiť aj transferovú službu, jednoducho to uveď v našom formulári na dopyt ponuky – my sa postaráme o to, aby všetko prebehlo hladko.",
+    "learn_more": "Zisti viac →",
+    "alt1": "Auto 1",
+    "alt2": "Auto 2",
+    "alt3": "Auto 3"
+  },
+  "Search": {
+    "ariaLabel": "Vyhľadávanie na webovej stránke",
+    "openLabel": "Otvoriť vyhľadávanie",
+    "closeLabel": "Zavrieť vyhľadávanie",
+    "placeholder": "Čo hľadáš? Zadaj kľúčové slovo...",
+    "noResults": "Pre dopyt „{query}“ neboli nájdené žiadne výsledky. Skús iný výraz.",
+    "suggested": "Odporúčané stránky",
+    "results": "Výsledky",
+    "entries": [
+      {
+        "title": "Domov",
+        "description": "Prehľad služieb Zodiacs, flotily a zákazníckej skúsenosti na Fuerteventure a Lanzarote.",
+        "keywords": [
+          "domov",
+          "úvod",
+          "zodiacs",
+          "prenájom auta fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Naše autá",
+        "description": "Kompletná flotila prenajatých vozidiel s cenami, informáciami o batožinovom priestore a možnosťou rezervácie.",
+        "keywords": [
+          "autá",
+          "flotila",
+          "ceny",
+          "vozidlá",
+          "rezervácia",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "O nás",
+        "description": "Zisti, ako pracujeme – od flexibilného prevzatia až po osobný zákaznícky servis.",
+        "keywords": [
+          "o nás",
+          "tím",
+          "služby",
+          "prevzatie",
+          "doručenie",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Kontakt",
+        "description": "Žiadosť o ponuku cez WhatsApp, e-mail alebo telefonicky s odpoveďou do 24 hodín.",
+        "keywords": [
+          "kontakt",
+          "ponuka",
+          "formulár",
+          "telefón",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog a cestovateľský sprievodca",
+        "description": "Miestne tipy, upozornenia na rip current a inšpirácie na road trip.",
+        "keywords": [
+          "blog",
+          "tipy",
+          "sprievodca",
+          "rip current",
+          "programy",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Bezpečnosť pri rip current",
+        "description": "Upozorňujúci článok o nebezpečných prúdoch pri pobreží Fuerteventury.",
+        "keywords": [
+          "rip current",
+          "prúd",
+          "bezpečnosť",
+          "cofete",
+          "pláž",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "FAQ",
+        "description": "Odpovede na najčastejšie otázky: prevzatie na letisku, poistenie, tankovanie.",
+        "keywords": [
+          "faq",
+          "otázky",
+          "poistenie",
+          "letisko",
+          "tankovanie",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Vyhlásenie o spracúvaní osobných údajov",
+        "description": "GDPR informácie o spôsobe spracúvania údajov, právnych základoch a tvojich právach.",
+        "keywords": [
+          "gdpr",
+          "spracúvanie údajov",
+          "privacy",
+          "ochrana údajov",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Informácie o súboroch cookie",
+        "description": "Aké súbory cookie používame a ako môžeš nastaviť svoj súhlas.",
+        "keywords": [
+          "cookie",
+          "súbor cookie",
+          "súhlas",
+          "ochrana údajov",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Poistenie",
+        "description": "Podrobnosti o poistných balíkoch, krytí a spoluúčasti.",
+        "keywords": [
+          "poistenie",
+          "krytie",
+          "spoluúčasť",
+          "škodová udalosť",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Podmienky prenájmu",
+        "description": "Informácie o vodičskom preukaze, veku a požadovaných dokumentoch.",
+        "keywords": [
+          "podmienky prenájmu",
+          "požiadavky",
+          "vodičský preukaz",
+          "doklady",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Miesta prevzatia a pobočky",
+        "description": "Kde si môžeš prevziať prenajaté auto na Fuerteventure a Lanzarote, vrátane kontaktov.",
+        "keywords": [
+          "pobočky",
+          "prevzatie",
+          "doručenie",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Všeobecné podmienky prenájmu",
+        "description": "Podrobný popis pravidiel prenájmu na oboch ostrovoch.",
+        "keywords": [
+          "podmienky",
+          "zmluva",
+          "všeobecné",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "VOP – zmluvné podmienky",
+        "description": "Oficiálne zmluvné podmienky (GTC) na Fuerteventure a Lanzarote.",
+        "keywords": ["vop", "gtc", "zmluva", "právne", "lanzarote"],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Naše autá",
+    "about": "O nás",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "home": "Domov",
+    "faq": "FAQ"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Prepínač jazyka"
+  },
+  "Footer": {
+    "about": "O nás",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "home": "Domov",
+    "fleet": "Naše autá",
+    "general_rental_conditions": "Všeobecné podmienky prenájmu",
+    "gtc": "Všeobecné zmluvné podmienky",
+    "insurance": "Poistenie",
+    "rental_requirements": "Podmienky prenájmu",
+    "cookie_policy": "Informácie o súboroch cookie",
+    "gdpr": "Vyhlásenie o spracúvaní osobných údajov",
+    "zodiac_car_rental": "Zodiacs požičovňa áut",
+    "logo_placeholder": "Tu bude logo",
+    "faq": "FAQ"
+  },
+  "Explore": {
+    "title": "Objav krásy Kanárskych ostrovov s prenajatým autom!",
+    "subtitle": "Online rezervácia, flexibilné prevzatie a doručenie k tvojmu ubytovaniu alebo na letisko.",
+    "cards": {
+      "map": "Zodiacs Rent a Car ponúka spoľahlivý prenájom áut na Fuerteventure, v Costa Calma a na Lanzarote.",
+      "globe": "Či plánuješ oddych pri mori alebo dobrodružné výlety, v našej flotile nájdeš auto ideálne pre tvoju cestu.",
+      "heart": "Rezervuj online a prevezmi si svoje prenajaté auto priamo na letisku alebo pri ubytovaní!"
+    }
+  },
+  "Inquire": {
+    "title": "Rezervuj si teraz!",
+    "description_1": "Nenechávaj prenájom auta na poslednú chvíľu! Tím Zodiacs Rent a Car ti odpovie do 24 hodín a pomôže ti rezervovať auto, ktoré sa najviac hodí k tvojej dovolenke.",
+    "description_2": "Zadaj svoje kontaktné údaje a pošleme ti personalizovanú ponuku s detailnými cenami, informáciami o poistení a požadovaným extra vybavením. V Zodiacs všetko dohadujeme v jazyku, ktorý si zvolíš, aby si sa na cestu mohol vydať s úplnou istotou.",
+    "fields": {
+      "fullName": {
+        "label": "Celé meno",
+        "placeholder": "Celé meno",
+        "required": "Prosím, zadaj svoje meno"
+      },
+      "email": {
+        "label": "E-mailová adresa",
+        "placeholder": "E-mailová adresa",
+        "required": "Prosím, zadaj svoju e-mailovú adresu",
+        "invalid": "Zadaj platnú e-mailovú adresu"
+      },
+      "message": {
+        "label": "Ako ti môžeme pomôcť?",
+        "placeholder": "Napíš, s čím ti môžeme pomôcť",
+        "required": "Prosím, napíš, s čím ti môžeme pomôcť",
+        "invalid": "Prosím, vyplň toto pole"
+      }
+    },
+    "submit": {
+      "idle": "Ďalej →",
+      "submitting": "Odosielanie..."
+    },
+    "alt": {
+      "image": "Ilustrácia prenájmu auta"
+    },
+    "toast": {
+      "success": "Ďakujeme! Čoskoro ťa budeme kontaktovať.",
+      "error": "Ups, nastala chyba. Skús to prosím neskôr."
+    }
+  },
+  "Blog": {
+    "title": "Blog a cestovný sprievodca",
+    "intro": "Miestne tipy, rady k prenájmu auta a inšpiratívne trasy, aby bol každý okamih tvojej dovolenky nezabudnuteľný.",
+    "readMore": "Otvoriť článok",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Fuerteventura – zaujímavosti autom – 3 miesta, ktoré netreba vynechať",
+        "excerpt": "Duny Corralejo, Betancuria a jaskyne Ajuy: sprievodca, ako čo najlepšie využiť svoj prenajatý automobil na Fuerteventure.",
+        "category": "Cestovný sprievodca",
+        "readTime": "6 minút čítania",
+        "publishDate": "3. november 2025",
+        "publishDateISO": "2025-11-03",
+        "image": {
+          "src": "/AJUY.jpg",
+          "alt": "Výhľad na piesočné duny Corralejo a Atlantický oceán"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Pozor! Nebezpečné spätné prúdy na Fuerteventure",
+        "excerpt": "Nauč sa rozpoznať príznaky rip current, aby boli Cofete a divoké pláže zážitkom – nie nebezpečenstvom.",
+        "category": "Bezpečnosť",
+        "readTime": "7 minút čítania",
+        "publishDate": "15. november 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Výstražná tabuľa na divokej pláži Cofete"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Fuerteventura – zaujímavosti autom – 3 miesta, ktoré netreba vynechať | Zodiacs Rent a Car",
+        "description": "Objav najkrajšie miesta Fuerteventury s prenajatým autom! Duny Corralejo, Betancuria a jaskyne Ajuy sú autom ľahko dostupné. Prenájom auta na Fuerteventure – Zodiacs Rent a Car.",
+        "keywords": [
+          "prenájom auta Fuerteventura",
+          "báre auto Fuerteventura",
+          "Fuerteventura pamiatky autom",
+          "duny Corralejo",
+          "Betancuria",
+          "jaskyne Ajuy",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00594.jpg",
+          "alt": "Výhľad na piesočné duny Corralejo na Fuerteventure"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Fuerteventura – zaujímavosti autom – 3 miesta, ktoré netreba vynechať, ak objavuješ ostrov s prenajatým autom",
+        "category": "Cestovný sprievodca",
+        "subtitle": "Ak si na Fuerteventure prenajmeš auto, môžeš objavovať všetky zázraky ostrova vlastným tempom. Žiadny zhon, žiadne autobusové poriadky – len vôňa oceánu, slnko a pocit slobody.",
+        "description": "Zozbierali sme tri miesta, ktoré sú s prenajatým autom ľahko dostupné, bezpečne prístupné a garantujú nezabudnuteľný zážitok.",
+        "publishDate": "3. november 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 minút čítania",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Piesočné duny Corralejo – najikonickejší prírodný zázrak Fuerteventury",
+          "paragraphs": [
+            "Na severe Fuerteventury sa nachádza <strong>prírodný park Corralejo</strong> (Parque Natural de Corralejo), ktorý patrí medzi najobľúbenejšie atrakcie ostrova.",
+            "Obrovské biele piesočné duny vytvárajú kontrast s tyrkysovou vodou Atlantiku – skutočná púštna atmosféra pri oceáne."
+          ],
+          "access": {
+            "title": "Prístup autom",
+            "description": "Cez duny vedie cesta FV-1 alebo FV-1a smerom na Corralejo. Popri ceste je viacero vyznačených parkovísk, odkiaľ sa pešo dostaneš na pláže aj k dunám."
+          },
+          "links": [
+            {
+              "label": "Mapa dún Corralejo",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Tip",
+            "description": "Zastav sa na pláži <strong>Grandes Playas de Corralejo</strong>, kde duny priamo ústia do oceánu – ideálne miesto na fotky!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – historické hlavné mesto so serpentínami a dychberúcimi vyhliadkami",
+          "paragraphs": [
+            "Vo vnútrozemskej, hornatej časti ostrova leží Betancuria, bývalé hlavné mesto Fuerteventury a dnešné kultúrne srdce ostrova.",
+            "Mestečko je zasadené v zelenom údolí medzi vulkanickými kopcami, s malebnými uličkami a pokojným, uvoľneným tempom."
+          ],
+          "access": {
+            "title": "Prístup autom",
+            "description": "Betancuria je dostupná po ceste FV-30 z Puerto del Rosario, Caleta de Fuste alebo Pájara. Cesta je síce kľukatá, ale dobre udržiavaná a ponúka úžasné panorámy."
+          },
+          "links": [
+            {
+              "label": "Mapa Betancurie",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Zastávky po ceste",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – údolie strážia dve obrovské bronzové sochy.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – jedna z najkrajších vyhliadok na ostrove.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Jaskyne Ajuy a čierna piesočná pláž – divoký západ Fuerteventury",
+          "paragraphs": [
+            "Západné pobrežie ostrova je drsnejšie a skalnatejšie, práve preto také výnimočné. Tu leží <strong>Ajuy</strong>, tichá rybárska dedinka známa svojou čiernou piesočnou plážou a <strong>Cuevas de Ajuy</strong>, miestnymi jaskyňami.",
+            "Popri útesoch vedie vybudovaný chodník k jaskyniam, kde môžeš pozorovať milióny rokov staré horninové útvary za sprievodu burácajúceho oceánu. Miesto je obzvlášť magické pri západe slnka."
+          ],
+          "access": {
+            "title": "Prístup autom",
+            "description": "Do dediny Ajuy sa dostaneš z Pájara po ceste FV-621, po celej trase po asfalte."
+          },
+          "links": [
+            {
+              "label": "Mapa jaskýň Ajuy",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "Prečo sa oplatí prenajať si auto na Fuerteventure?",
+          "paragraphs": [
+            "Medzi pamiatkami a zaujímavosťami ostrova sú často väčšie vzdialenosti a verejná doprava je obmedzená.",
+            "Prenajaté auto ti dáva slobodu – vlastným tempom objavíš aj skryté pláže a horské dedinky.",
+            "Cesty sú vo výbornom stave, doprava je mierna a parkovanie je takmer všade zadarmo."
+          ],
+          "links": [
+            {
+              "label": "Pozri si naše autá – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Cestuj udržateľne – chráň prírodné hodnoty Fuerteventury!",
+          "paragraphs": [
+            "My, miestni, svoj ostrov milujeme a chránime. Prosíme ťa, aby si mal úctu k prírode aj ty:"
+          ],
+          "bullets": [
+            "nenechávaj po sebe odpadky, používaj vyhradené smetné koše;",
+            "nehádž ohorky cigariet do piesku ani medzi skaly;",
+            "drž sa vyznačených chodníkov, najmä na dunách a skalnatých pobrežiach."
+          ],
+          "closing": "Ak sa takto budeš správať, Fuerteventura sa ti poďakuje – a rada ťa privíta znova."
+        }
+      ],
+      "cta": {
+        "title": "Objav ostrov pohodlne – s prenajatým autom!",
+        "paragraphs": [
+          "Objav piesočné duny, dedinky ukryté medzi horami a jaskyne na pobreží vlastným tempom.",
+          "<strong>Zodiacs Rent a Car</strong> – prenájom auta na Fuerteventure jednoducho, s rýchlym vybavením, spoľahlivými autami a miestnymi tipmi."
+        ],
+        "buttons": [
+          {
+            "label": "Pozri si naše autá",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Rezervuj online v niekoľkých klikoch",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "Pozor! Nebezpečné spätné prúdy na Fuerteventure – takto sa kúpať v oceáne bezpečne",
+        "description": "Na plážach Fuerteventury sú časté spätné prúdy (rip current), ktoré môžu nečakane odtiahnuť kúpanie sa ľudí. Zisti, ako ich rozpoznať a ako sa bezpečne vyhnúť nebezpečenstvu.",
+        "keywords": [
+          "pláž Fuerteventura",
+          "Cofete Beach",
+          "spätný prúd",
+          "rip current",
+          "bezpečné kúpanie",
+          "nebezpečenstvá Fuerteventury",
+          "cestovanie Kanárske ostrovy",
+          "kúpanie v oceáne",
+          "tipy Fuerteventura",
+          "bezpečnosť na pláži",
+          "prenájom auta Fuerteventura",
+          "Zodiacs Rent a Car",
+          "morský prúd",
+          "rozpoznanie rip current"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Výstražná tabuľa na divokej pláži Cofete na Fuerteventure"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "Pozor! Nebezpečné spätné prúdy na Fuerteventure – takto sa kúpať v oceáne bezpečne",
+        "category": "Bezpečnosť",
+        "subtitle": "Ak sa chceš kúpať na divokých plážach Fuerteventury, nestačí len chuť na dobrodružstvo – musíš poznať aj fungovanie spätných prúdov.",
+        "description": "Vysvetlíme ti, ako rozpoznať príznaky rip current od Cofete až po El Cotillo a čo robiť, ak ťa prúd strhne.",
+        "publishDate": "15. november 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "7 minút čítania",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Čo je spätný prúd a prečo je nebezpečný?",
+          "paragraphs": [
+            "Na pobreží Atlantiku je spätný prúd najčastejším skrytým nebezpečenstvom: voda, ktorú vlny tlačia na breh, sa v úzkom páse s veľkou silou vracia späť do hĺbky.",
+            "Jav je zákerný, pretože často vzniká tam, kde voda vyzerá hladšia a pokojnejšia – presne na tých miestach ľudia najradšej vchádzajú do mora."
+          ],
+          "bullets": [
+            "Zdanlivo „pokojná“, bezvlnová vodná plocha neznamená bezpečie – môže ísť o miesto, kde prebieha rip current.",
+            "Prúd ťa neťahá nadol, ale do strán a von od brehu, takže väčšina tragédií vzniká z vyčerpania."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Ako rozpoznať nebezpečný úsek",
+          "paragraphs": [
+            "Po príchode na pláž si urob minútu na pozorovanie vody. Znaky spätného prúdu sú voľným okom viditeľné, ak vieš, čo hľadať.",
+            "Na Cofete je napríklad výstražná tabuľa, no vietor ju často otočí smerom k pevnine – preto sa vždy informuj skôr, než vojdeš do vody."
+          ],
+          "bullets": [
+            "Tmavšia, zakalenejšia farba vody, pretože dno sa náhle prehlbuje.",
+            "Pruh vody, ktorý pôsobí pokojnejšie medzi vlnami, ale smeruje späť do mora.",
+            "Pena, riasy alebo drobný odpad, ktorý sa nehýbe k brehu, ale smeruje von na otvorené more.",
+            "Zástavy, tabule alebo upozornenia miestnych – vždy ich ber vážne."
+          ],
+          "tip": {
+            "title": "Tip",
+            "description": "Po príchode si odfoť informačné tabule a vlajky, aby si neskôr presne vedel, čo ktorý symbol znamená na danej pláži."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Čo robiť, ak ťa chytí prúd?",
+          "paragraphs": [
+            "Najdôležitejšie je nepanikáriť. Rip current ťa neťahá na dno, ale prúdi rýchlejšie, než vie väčšina ľudí plávať.",
+            "Ak sa vyčerpáš skôr, než sa ti podarí uniknúť, dostávaš sa do skutočného nebezpečenstva – preto treba reagovať s rozumom, nie silou."
+          ],
+          "bullets": [
+            "Dýchaj zhlboka a drž hlavu nad vodou.",
+            "Neplávaj priamo smerom na breh – prúd je silnejší než ty.",
+            "Plávaj rovnobežne s pobrežím, kým sa nedostaneš z úzkeho pásu prúdu.",
+            "Ak sa unavíš, ľahni si na chrbát, plávaj, aby si sa udržal nad vodou, mávaj rukou a počkaj, kým ťa vlny nevynesú."
+          ],
+          "closing": "Čím pokojnejší zostaneš, tým väčšia je šanca, že sa vlastnými silami dostaneš späť do bezpečia."
+        },
+        {
+          "id": "personal-story",
+          "title": "Osobný príbeh: z Cofete som vytiahol tri deti",
+          "paragraphs": [
+            "„Stalo sa to na pláži Cofete, keď moju dcéru a dvoch bratrancov v priebehu niekoľkých sekúnd vtiahol prúd. Nekričal som, nemával som – všetka energia išla do plávania.",
+            "Podarilo sa mi všetkých troch dostať na breh, ale zážitok ma navždy naučil: oceán treba rešpektovať, nie poraziť.“"
+          ],
+          "tip": {
+            "title": "Ponaučenie",
+            "description": "Vždy sleduj pohyb vody a nauč svoje deti aj rodinu, ako reagovať, ak sa dostanú do prúdu."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "Vedeli ste? Prúd je rýchlejší ako profesionálny plavec",
+          "paragraphs": [
+            "Čísla pomáhajú pochopiť, prečo nemá zmysel bojovať s prúdom silou."
+          ],
+          "bullets": [
+            "Olympijský plavec prepláva približne 2,3 metra za sekundu.",
+            "Rip current má priemernú rýchlosť okolo 2,4 metra za sekundu – teda je vždy o krok pred tebou."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Rešpektuj prírodu, chráň ostrov",
+          "paragraphs": [
+            "Uvedomelý prístup nekončí na hranici vody: čistota pláží a dodržiavanie miestnych pravidiel je zodpovednosť nás všetkých."
+          ],
+          "bullets": [
+            "Nenechávaj po sebe odpadky, svoj odpad si vezmi so sebou.",
+            "Nehádž ohorky cigariet do piesku ani medzi skaly.",
+            "Drž sa vyznačených chodníkov, najmä na dunách a chránených územiach."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Cestuj rozumne s prenajatým autom",
+          "paragraphs": [
+            "Ak objavuješ Fuerteventuru autom, maj pri sebe vždy dostatok vody, opaľovací krém a aktuálne informácie o prúdoch a vetre.",
+            "Tak si môžeš užívať slobodu aj bezpečie naraz."
+          ],
+          "closing": "Zdieľaj tento článok s ostatnými, aby sa do nebezpečného prúdu dostalo čo najmenej cestovateľov."
+        }
+      ],
+      "cta": {
+        "title": "Cestuj bezpečne s autami Zodiacs",
+        "paragraphs": [
+          "Pomôžeme ti vybrať také auto, s ktorým sa dostaneš aj na divokejšie, menej známe pláže – spolu so všetkými potrebnými radami.",
+          "<strong>Zodiacs Rent a Car</strong> – miestny tím, rýchla komunikácia a personalizované bezpečnostné tipy."
+        ],
+        "buttons": [
+          {
+            "label": "Požiadaj o ponuku teraz",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Pozri si ponuku áut",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Späť na blog"
+  },
+  "WhatsApp": {
+    "aria_label": "Správa na WhatsAppe",
+    "choose_option": "Vyber si z možností",
+    "options": {
+      "transfer_quote": {
+        "label": "Chcem ponuku na transfer",
+        "text": "Ahoj! Chcel by som požiadať o ponuku na transfer službu."
+      },
+      "car_availability": {
+        "label": "Dostupnosť áut",
+        "text": "Ahoj! Zaujímala by ma dostupnosť áut na zadaný termín."
+      },
+      "interested_in": {
+        "label": "Chcem sa informovať",
+        "text": "Ahoj! Rád by som sa informoval o procese prenájmu auta."
+      },
+      "custom_message": {
+        "label": "Vlastná správa",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> je <strong>maďarská rodinná firma</strong>, ktorej srdce a domov je <strong>Fuerteventura</strong>. Žijeme a pracujeme v medzinárodnom prostredí, ale presne vieme, čo je dôležité pre cestovateľov, ktorí sem prichádzajú: bezpečnosť, spoľahlivosť a priateľský prístup.",
+    "why_title": "Prečo Fuerteventura?",
+    "why_text": "Pre nás nie je tento ostrov len turistickým cieľom, ale skutočným domovom. Milujeme slnko, oceán, pokojný životný štýl a nekonečný pocit slobody. Presne tieto zážitky ti chceme odovzdať, keď si u nás prenajmeš auto.",
+    "fleet_title": "Naše autá – pohodlné, spoľahlivé, dostupné",
+    "fleet_text": "V našom vozovom parku nájdeš <strong>praktické malé autá</strong>, <strong>rodinné modely</strong> aj <strong>priestrannejšie vozidlá</strong>. Všetky autá pravidelne servisujeme a odovzdávame čisté, aby si mohol ostrov spoznávať úplne bez starostí.",
+    "delivery_title": "Doručenie auta a flexibilita",
+    "delivery_text": "Svoje prenajaté auto si môžeš prevziať nielen na Fuerteventure, ale aj na <strong>Lanzarote</strong>. Či priletíš na letisko alebo bývaš v hoteli, auto ti doručíme flexibilne tak, aby tvoja cesta začala čo najpohodlnejšie.",
+    "more_title": "Viac než len prenájom auta",
+    "more_text": "U nás prenájom auta neznamená len odovzdanie kľúčov. Na požiadanie ti pomôžeme s plánom ciest, miestnymi tipmi a ukážeme ti, kam sa oplatí zájsť, aby si zažil autentickú <strong>fuerteventurskú atmosféru</strong>: skryté zátoky, piesočné pláže, jedinečné scenérie a gastronomické zážitky.",
+    "mission_title": "Naše poslanie",
+    "mission_text": "Naším cieľom je, aby každý náš hosť mohol <strong>slobodne, pohodlne a bezpečne</strong> prežiť všetko, čo ostrov ponúka. Ako rodina a miestni podnikatelia pracujeme srdcom aj dušou na tom, aby si si domov odniesol kúsok jedinečnej nálady Fuerteventury.",
+    "cta": "Prenajmi si u nás auto a zaži Fuerteventuru tak, ako ju máme radi my!"
+  },
+  "Contact": {
+    "title": "Máš otázky k prenájmu auta na Fuerteventure alebo Lanzarote?",
+    "p1": "Kontaktuj nás a pomôžeme ti nájsť <strong>to najlepšie riešenie pre teba!</strong> Či už ide o predbežnú rezerváciu, odovzdanie auta na letisku alebo pri hoteli, naša zákaznícka podpora odpovie <strong>rýchlo a flexibilne</strong>.",
+    "p2": "Vyplň nižšie uvedený formulár, napíš nám e-mail, správu cez Messenger, WhatsApp alebo Viber, alebo nám zavolaj! <strong>Radi ti pomôžeme</strong>, aby tvoja dovolenka prebehla úplne bez starostí.",
+    "form": {
+      "title": "Požiadaj o personalizovanú ponuku",
+      "description": "Napíš, kedy a za akých podmienok chceš auto prenajať – odpovieme v priebehu niekoľkých hodín.",
+      "fields": {
+        "name": {
+          "label": "Celé meno",
+          "placeholder": "Celé meno"
+        },
+        "phone": {
+          "label": "Telefónne číslo",
+          "placeholder": "+36 30 123 4567"
+        },
+        "email": {
+          "label": "E-mailová adresa",
+          "placeholder": "meno@example.com"
+        },
+        "channel": {
+          "label": "Preferovaný spôsob kontaktu"
+        },
+        "rentalStart": {
+          "label": "Začiatok prenájmu",
+          "placeholder": "Vyber dátum"
+        },
+        "rentalEnd": {
+          "label": "Koniec prenájmu",
+          "placeholder": "Vyber dátum"
+        },
+        "dateRange": {
+          "label": "Trvanie prenájmu"
+        },
+        "arrivalFlight": {
+          "label": "Číslo príletového letu",
+          "placeholder": "napr. FR1234"
+        },
+        "departureFlight": {
+          "label": "Číslo odletového letu",
+          "placeholder": "napr. FR5678"
+        },
+        "partySize": {
+          "label": "Počet cestujúcich",
+          "placeholder": "Koľko osôb cestuje?"
+        },
+        "children": {
+          "label": "Počet detí",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-mail",
+        "phone": "Telefón",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "Súhlasím so <link>Zásadami spracúvania osobných údajov</link>",
+        "terms": "Súhlasím s <link>Všeobecnými zmluvnými podmienkami</link>"
+      },
+      "submit": {
+        "idle": "Chcem ponuku",
+        "sending": "Odosielanie..."
+      },
+      "feedback": {
+        "success": "Ďakujeme! Čoskoro ťa budeme kontaktovať.",
+        "error": "Ups, nastala chyba. Skús to znova neskôr."
+      },
+      "errors": {
+        "nameRequired": "Zadaj svoje meno",
+        "phoneRequired": "Zadaj svoje telefónne číslo",
+        "emailRequired": "Zadaj svoju e-mailovú adresu",
+        "emailInvalid": "Zadaj platnú e-mailovú adresu",
+        "privacyRequired": "Je potrebné súhlasiť so zásadami spracúvania osobných údajov",
+        "termsRequired": "Je potrebné súhlasiť s Všeobecnými zmluvnými podmienkami",
+        "rentalStartRequired": "Vyber dátum začiatku prenájmu",
+        "rentalEndRequired": "Vyber dátum ukončenia prenájmu",
+        "arrivalFlightRequired": "Zadaj číslo príletového letu",
+        "departureFlightRequired": "Zadaj číslo odletového letu"
+      }
+    }
+  },
+  "Cars": {
+    "title": "Objav Fuerteventuru a Lanzarote v úplnej slobode s našimi autami!",
+    "p1": "U nás je prenájom auta jednoduchý a rýchly: vyberieš si vozidlo, ktoré ti najviac vyhovuje, a my ti ho doručíme na letisko alebo priamo k tvojmu hotelu. Vďaka našim flexibilným možnostiam prenájmu <strong>si môžeš dovolenku užívať bez starostí</strong>, či potrebuješ auto na pár dní alebo na dlhší pobyt.",
+    "p2": "<strong>Oplatí sa rezervovať auto vopred</strong>, aby ťa pri príchode určite čakalo. Prezri si naše autá nižšie, klikni na detaily a rezervuj si ich online pohodlne z domu!",
+    "labels": {
+      "seats": "osôb",
+      "manual": "Manuál",
+      "automatic": "Automat",
+      "per_day": "/ deň",
+      "from_price": "od €{price}"
+    },
+    "colors": {
+      "milky_beige": "Milky Beige",
+      "white": "Biela",
+      "silver_metal": "Strieborná metalíza",
+      "blue": "Modrá",
+      "metal_blue": "Modrá metalíza",
+      "gray": "Sivá",
+      "silver_metallic": "Strieborná metalíza",
+      "metallic_blue": "Modrá metalíza"
+    },
+    "categories": {
+      "small": "Malé auto",
+      "medium": "Stredná trieda",
+      "large": "Rodinné",
+      "suv": "SUV / terénne"
+    },
+    "transmissions": {
+      "manual": "Manuál",
+      "automatic": "Automat"
+    },
+    "details": {
+      "back": "Späť na flotilu",
+      "title": "Detaily auta",
+      "category": "Kategória",
+      "luggage_large": "Veľký kufor: {count}",
+      "luggage_small": "Malý kufor: {count}",
+      "colors": "Dostupné farby"
+    },
+    "buttons": {
+      "interested": "Mám záujem"
+    }
+  },
+  "Insurance": {
+    "title": "Poistenie (SSCP)",
+    "igic_note": "+15 % IGIC nie je zahrnuté. Maximum +30 € na prenájom.",
+    "sscp_title": "Poistenie Super Comfort Plus (SSCP)",
+    "sscp_intro": "Za veľmi malý príplatok si môžeš rozšíriť už zahrnuté poistenie. SSCP popri širokom krytí, ktoré je súčasťou ceny prenájmu, ruší nasledujúce výnimky:",
+    "table": {
+      "header_event": "Udalosť",
+      "header_desc": "Popis",
+      "header_cost": "Pribl. náklad (bez poistenia)",
+      "rows": {
+        "lost_keys": {
+          "event": "Strata kľúčov",
+          "desc": "Výmena a programovanie",
+          "cost": "100 €"
+        },
+        "tyre_damage": {
+          "event": "Poškodenie pneumatiky",
+          "desc": "Výmena/oprava",
+          "cost": "150 €"
+        },
+        "rim_flat": {
+          "event": "Poškodenie disku / oprava defektu",
+          "desc": "Oprava",
+          "cost": "60 €"
+        },
+        "wrong_fuel": {
+          "event": "Nesprávne natankovanie",
+          "desc": "Vypustenie paliva, čistenie",
+          "cost": "110 €"
+        },
+        "battery": {
+          "event": "Vybitéj batéria z nedbanlivosti",
+          "desc": "Pomoc na ceste / naštartovanie",
+          "cost": "90 €"
+        },
+        "dru": {
+          "event": "Plus DRU servis*",
+          "desc": "Asistencia na mieste",
+          "cost": "40 € / 100 €"
+        }
+      }
+    },
+    "coverage_note": "S týmto poistením sa krytie vzťahuje na všetky výnimky z nášho poistenia (okrem tých, ktoré neprepláca žiadna poisťovňa).",
+    "footnote": "* +15 % IGIC nie je zahrnuté. Maximum +30 € na prenájom.",
+    "pricing_title": "Cena a ponuka",
+    "pricing_text": "Získaj ho teraz len za 2 € na deň, maximálne do 30 € pri akomkoľvek modeli, a užívaj si prenájom bez starostí.",
+    "closing": "Najlepšie je cestovať s kompletným krytím.",
+    "related": {
+      "title": "Súvisiace stránky",
+      "details": "Viac podrobností:"
+    }
+  },
+  "GeneralRental": {
+    "title": "Všeobecné podmienky prenájmu",
+    "general": {
+      "title": "Všeobecné ustanovenia",
+      "p1": "Je potrebné, aby mal nájomca v aute vždy pri sebe <strong>platnú fyzickú nájomnú zmluvu</strong>, pretože v opačnom prípade môžu španielske orgány uložiť peňažnú pokutu.",
+      "p2": "Za všetky priestupky a súvisiace náklady, ktoré vzniknú počas prenájmu, zodpovedá <strong>výhradne nájomca</strong>, bez ujmy na prípadných právnych krokoch.",
+      "p3": "Za <strong>správne tankovanie</strong> vozidla zodpovedá nájomca.",
+      "p4": "Poskytovateľ si vyhradzuje právo odmietnuť prenájom na základe predchádzajúcich udalostí s nájomcom alebo nedodržania Všeobecných podmienok. Ak vybraný model nie je k dispozícii, dodáme <strong>podobný alebo vyššej kategórie</strong>."
+    },
+    "services": {
+      "title": "Zahrnuté služby",
+      "kanary": {
+        "title": "Kanárske ostrovy",
+        "i1": "<strong>Havarijné poistenie</strong> bez spoluúčasti",
+        "i2": "Dane, poplatky letiska/stanice/prístavu: zahrnuté",
+        "i3": "<strong>Neobmedzený</strong> počet najazdených kilometrov",
+        "i4": "Detské sedačky a podsedáky: zahrnuté",
+        "i5": "Strešný box: zahrnutý",
+        "i6": "GPS: pri niektorých modeloch ako štandardná výbava",
+        "i7": "Dodatočný vodič: zahrnutý",
+        "i8": "Dodanie mimo pobočky: zahrnuté",
+        "i9": "Vrátenie na pobočku: zahrnuté",
+        "i10": "Oneskorené vrátenie (niekoľko hodín): zahrnuté",
+        "i11": "Mladý vodič (21–25 rokov): zahrnutý"
+      },
+      "peninsula": {
+        "title": "Poloostrov / Baleárske ostrovy",
+        "i1": "Poistenie je viazané na <strong>konkrétne podmienky</strong>*",
+        "i2": "Dane a poplatky: zahrnuté",
+        "i3": "Neobmedzený počet kilometrov: <strong>max. 28 dní</strong>**",
+        "i4": "Detské sedačky a podsedáky: 13,99 €/deň (max. 97,93 €)",
+        "i5": "Strešný box: 54 €",
+        "i6": "GPS: 14 €/deň (max. 98 €)",
+        "i7": "Iné doplnky (reťaze, nosiče lyží…): 54 €",
+        "i8": "Dodatočný vodič: 12,50 €/deň (max. 125 €)",
+        "i9": "Dodanie mimo pobočky: <strong>nie je</strong> zahrnuté",
+        "i10": "Vrátenie na pobočku: <strong>nie je</strong> zahrnuté",
+        "i11": "Oneskorené vrátenie (niekoľko hodín): 50 €",
+        "i12": "Asistencia v zahraničí: 55 €"
+      },
+      "foot1": "(*) Havarijné poistenie bez spoluúčasti – s výnimkami (horná časť karosérie, podvozok, interiér, nesprávne používanie atď.). Podrobnosti: Poistenie.",
+      "foot2": "(**) Neobmedzený počet kilometrov max. 28 dní."
+    },
+    "canary": {
+      "title": "Podmienky prenájmu – Kanárske ostrovy",
+      "i1": "<strong>Okamžité</strong> potvrdenie rezervácie; ak nie je dostupný rovnaký model, poskytne sa podobný alebo vyššej kategórie.",
+      "i2": "<strong>100 % havarijné poistenie</strong> bez spoluúčasti; neobmedzený počet kilometrov; dane a letiskové poplatky zahrnuté.",
+      "i3": "Audio sprievodcovia sú k dispozícii v požičovni.",
+      "i4": "Detské sedačky, podsedáky, strešné boxy sú <strong>zadarmo</strong>.",
+      "i5": "Ďalší vodič(i) sú bez príplatku – treba ich nahlásiť v požičovni.",
+      "i6": "<strong>Palivová politika</strong>: podľa úrovne paliva pri prevzatí môže byť požadovaná záloha.",
+      "i7": "<strong>Zmeny/zrušenie</strong>: bez poplatku; online alebo e-mailom/telefonicky.",
+      "i8": "Pri letiskových rezerváciách je vozidlo držané <strongmax. 60 minút</strong> podľa reálneho času príletu.",
+      "i9": "<strong>Detské sedačky/podsedáky</strong> sú zdarma; 0–18 kg sedačka na zadné sedadlo, v smere alebo proti smeru jazdy; podsedák 15–36 kg; montáž vykonáva zákazník."
+    },
+    "peninsula": {
+      "title": "Podmienky prenájmu – Poloostrov a Baleárske ostrovy",
+      "i1": "Všetky ceny sú v eurách. Minimálna dĺžka prenájmu: <strong>24 hodín</strong>. +29 minút tolerancie; po prekročení sa účtuje celý deň.",
+      "i2": "Pri ceste do zahraničia je potrebné <strong>Medzinárodné asistenčné poistenie</strong>; zoznam povolených krajín je uvedený v zmluve.",
+      "i3": "Platba: <strong>len</strong> fyzickou kreditnou kartou na meno držiteľa zmluvy. Hotovosť/cestovné šeky sa neakceptujú.",
+      "i4": "Záloha: menšie kategórie 200 €, väčšie/prémiové/MPV 400 €; pri niektorých kategóriách je nutné zablokovať sumu na platnej medzinárodnej karte.",
+      "i5": "Ak sa vozidlo vráti s menším množstvom paliva, ako pri prevzatí, účtuje sa cena paliva + 18 € manipulačný poplatok.",
+      "i6": "Vodiči mladší ako 25 rokov: 21,99 €/deň, max. 219,90 €.",
+      "i7": "Ďalší vodič: 12,50 €/deň, max. 125 €.",
+      "i8": "Podmienky veku/jazdného preukazu sú podľa skupiny vozidla (podrobnosti v zmluve); minimálne 2 roky platného vodičského oprávnenia.",
+      "i9": "Prenájom na letisku Madrid/Barcelona bez letenky <strong>nie je</strong> akceptovaný (potrebné údaje o prílete a odlete).",
+      "i10": "<strong>Cestovanie do zahraničia</strong>: povolené krajiny – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; iné krajiny nie sú povolené; ukončenie prenájmu v zahraničí len s predchádzajúcim súhlasom; úžitkové vozidlá nemožno odovzdať mimo Španielska.",
+      "i11": "<strong>Starostlivosť o príslušenstvo</strong> (detské sedačky, strešné boxy, kľúče, dokumenty) je zodpovednosťou nájomcu; pri strate/poškodení môže byť účtovaná zmluvná pokuta."
+    },
+    "schedule": {
+      "title": "Otváracie hodiny a doručenie",
+      "i1": "Mestské pobočky: Po–Pi 9:30–13:30 a 16:30–19:00; So 10:00–13:00.",
+      "i2": "Letiskové pobočky: denne 08:00–23:00 (môže sa líšiť podľa sezóny).",
+      "i3": "Zľavnené doručenie k prepážke: až do 36,3 €, podľa dostupnosti.",
+      "i4": "Doručenie/prevzatie mimo pobočky: 27 €/50 €/100 € (5 km / 50 km / 100 km), s rezerváciou min. 48 hodín vopred.",
+      "i5": "Doručenie/prevzatie na vlastnej pobočke mimo otváracích hodín: +50 €.",
+      "i6": "V mestách bez pobočky: 0,84 €/km (min. 57 €) z najbližšej pobočky (dvojitá vzdialenosť).",
+      "i7": "Vrátenie na pobočke počas otváracích hodín; mimo nich nesie nájomca zodpovednosť až do momentu prevzatia.",
+      "i8": "Rezervácie sa držia max. 120 minút od dohodnutého času (počas otváracích hodín); pri letoch sa berie do úvahy reálny čas príletu."
+    },
+    "liability": {
+      "title": "Vyhlásenie o zodpovednosti",
+      "p1": "Poskytovateľ nenesie zodpovednosť za škody spôsobené chybou alebo nedostatočným výkonom, opomenutím, prerušením, vymazaním, poruchou, oneskorením v prevádzke alebo prenose, počítačovým vírusom, krádežou, zničením, neoprávneným prístupom či zmenou údajov alebo informácií.",
+      "p2": "Používateľ výslovne súhlasí s tým, že webstránku používa <strong>na vlastné riziko</strong>, vrátane nákladov na údržbu a opravy všetkých služieb potrebných na jej správne fungovanie.",
+      "p3": "S poskytovateľom prepojené organizácie a ich pracovníci nenesú zodpovednosť za žiadne straty alebo škody, ktoré vzniknú v dôsledku používania alebo pokusu o používanie tejto stránky."
+    },
+    "related": {
+      "title": "Súvisiace stránky",
+      "details": "Viac podrobností:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Bérleti követelmények",
+    "general": {
+      "title": "Všeobecné podmienky (Fuerteventura / Lanzarote)",
+      "i1": "Vodičom mladším ako 23 rokov vozidlo štandardne neprenajímame, iba za príplatok.",
+      "i2": "Po potvrdení rezervácie môže dôjsť k zrušeniu v nasledovných prípadoch:",
+      "i2a": "údaje poskytnuté klientom nie sú presné/skutočné/aktuálne",
+      "i2b": "porušenie podmienok prenájmu",
+      "i3": "Vyžaduje sa platný vodičský preukaz, občiansky preukaz/pas, adresa bydliska a funkčné telefónne číslo."
+    },
+    "vehicle": {
+      "title": "Podmienky týkajúce sa vozidla",
+      "i1": "Rezervovaný model vozidla je iba orientačný; môže byť nahradený podobným modelom rovnakej kategórie.",
+      "i2": "Pri vozidlách vybavených GPS môže byť poloha vozidla z bezpečnostných dôvodov sledovaná v súlade s právnymi predpismi.",
+      "i3": "Vozidlo nesmie opustiť ostrov, na ktorom je prenajaté.",
+      "i4": "Používanie: v súlade s platnými predpismi, len na bežných komunikáciách; zákaz používať na nelegálne alebo zakázané účely; nesmie sa používať na reklamu.",
+      "i5": "Je povinné používať odporúčaný typ paliva; pri parkovaní musí byť vozidlo vždy riadne zamknuté.",
+      "i6": "Detská sedačka je k dispozícii pri prevzatí; za jej správne pripútanie zodpovedá nájomca.",
+      "i7": "Batožina/surfovacie dosky musia byť upevnené v strešnom nosiči.",
+      "i8": "V prípade poruchy vozidlo okamžite odstavte, zaparkujte na bezpečnom mieste a <strong>ihneď</strong> nás kontaktujte.",
+      "i9": "Za vozidlo zodpovedá nájomca od okamihu prevzatia až po riadne vrátenie."
+    },
+    "handover": {
+      "title": "Prevzatie a vrátenie",
+      "i1": "Prevzatie a vrátenie prebieha na potvrdenom letisku a v potvrdenom čase uvedenom v rezervácii.",
+      "i2": "Vozidlo nemožno vrátiť na inom ostrove. Výnimka: Lanzarote za príplatok 40 €.",
+      "i3": "Pri vrátení musí byť technický stav vozidla zodpovedajúci stavu pri prevzatí (s výnimkou bežného opotrebenia).",
+      "i4": "V prípade poškodenia udalosti je potrebné doložiť dokumentáciu/zápis.",
+      "i5": "Pri nadmernom znečistení môže byť účtovaný poplatok za čistenie: 70 €.",
+      "i6": "Pri skoršom vrátení vozidla sa nájomné nevracia.",
+      "i7": "Pri vrátení vozidla nenechávajte vo vnútri žiadne osobné veci; za ich stratu nezodpovedáme."
+    },
+    "price": {
+      "title": "Cena rezervácie zahŕňa",
+      "i1": "Dane (IGIC/IVA)",
+      "i2": "Neobmedzený počet najazdených kilometrov",
+      "i3": "Druhý vodič zdarma",
+      "i4": "Prevzatie a odovzdanie na letisku",
+      "i5": "Bezplatné zrušenie rezervácie",
+      "i6": "Detské sedačky a podsedáky zdarma (nie ISOFIX; ISOFIX je možné prenajať za príplatok)",
+      "i7": "Základné poistenie so zálohou 300–500 € (spoluúčasť pri škode)"
+    },
+    "base_excludes": {
+      "title": "Na čo sa základné poistenie nevzťahuje",
+      "i1": "Strecha vozidla",
+      "i2": "Sklenené plochy (okná, svetlá, spätné zrkadlá)",
+      "i3": "Pneumatiky a kolesá",
+      "i4": "Vybité batérie",
+      "i5": "Vnútorné čalúnenie (sedadlá, koberce atď.)",
+      "i6": "Podvozok",
+      "i9": "Prevodovka",
+      "i7": "Osobné veci vo vozidle (batožinový priestor, odkladacie priečinky)",
+      "i8": "Stratené kľúče",
+      "note": "Náklady na tieto škody znáša nájomca."
+    },
+    "deposit": {
+      "title": "Kaucie a zadržanie",
+      "i1": "Hotovostná kaucia: 300–500 € (nie je potrebná záloha na kreditnej karte).",
+      "i2": "Kaucia môže byť zadržaná max. 15 dní; vracia sa bankovým prevodom (napr. Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Komplexné poistenie (doplnková možnosť)",
+      "p1": "S plným poistením sa neblokuje kaucia 300–500 € a väčšina poškodení je krytá.",
+      "note": "Výnimkou sú škody spôsobené hrubou nedbanlivosťou alebo porušením podmienok zmluvy (príklady nižšie)."
+    },
+    "exceptions": {
+      "title": "Výnimky – príklady",
+      "i1": "Jazda po nespevnených alebo zakázaných cestách (napr. Cofete)",
+      "i2": "Vedenie vozidla pod vplyvom alkoholu/omamných látok",
+      "i3": "Používanie mobilného telefónu pri šoférovaní bez handsfree",
+      "i4": "Ignorovanie poruchy signalizovanej na prístrojovej doske a pokračovanie v jazde",
+      "i5": "Preprava nebezpečných/horľavých látok, zvierat alebo neohláseného nákladu",
+      "i6": "Nelegálna/neoprávnená činnosť, prenájom tretej osobe",
+      "i7": "Prevoz predmetov na streche bez schváleného nosiča",
+      "i8": "Zaplavovanie a vnútorné škody presahujúce bežnú opatrnosť",
+      "i9": "Škody spôsobené na neuzamknutom vozidle alebo vodičom, ktorý nie je uvedený v zmluve",
+      "i10": "Prekročenie dohodnutého konca prenájmu"
+    },
+    "related": {
+      "title": "Súvisiace stránky",
+      "details": "Viac podrobností:"
+    }
+  },
+  "RentForm": {
+    "title": "Prosím vyplňte nasledujúci formulár pre úspešnú rezerváciu",
+    "buttons": {
+      "addChild": "Pridať dieťa",
+      "removeChild": "Odstrániť",
+      "addDriver": "Pridať vodiča",
+      "removeDriver": "Odstrániť vodiča",
+      "submit": "Odoslať rezerváciu"
+    },
+    "searching": "Spracovanie údajov...",
+    "extras": {
+      "label": "Doplnkové služby",
+      "options": {
+        "szorfo_deszka_rogzito": "Držiak na surfovú dosku",
+        "gyerekules": "Detská autosedačka",
+        "kiszallitas": "Doručenie vozidla",
+        "alap_csomag": "Základný balík *",
+        "energia_csomag": "Energetický balík **",
+        "esti_erkezes_csomag": "Balík pri večernom prílete ***"
+      },
+      "packages": {
+        "base": "* Základný balík: 0,5 l vody a 0,33 l Fuze Tea na osobu",
+        "energy": "** Energetický balík: k základnému balíku navyše 2–3 druhy čokolády alebo snacku podľa želania",
+        "lateArrival": "*** Balík pri večernom prílete: k základnému balíku navyše 1,5 l vody a 2 croissanty na osobu na neskorý prílet"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Obdobie prenájmu"
+    },
+    "dateRangePicker": {
+      "cancel": "Zrušiť",
+      "apply": "Uložiť"
+    },
+    "adults": {
+      "label": "Počet dospelých",
+      "placeholder": "Počet dospelých"
+    },
+    "sections": {
+      "booking": {
+        "title": "Údaje o rezervácii",
+        "description": "Vyber požadované doplnkové služby, nastav trvanie prenájmu a počet dospelých cestujúcich."
+      },
+      "children": {
+        "title": "Deti ako cestujúci",
+        "description": "Ak cestujú aj deti, zadaj prosím ich vek (a voliteľne výšku), aby sme vedeli zabezpečiť vhodné vybavenie.",
+        "empty": "Momentálne nie je pridané žiadne dieťa.",
+        "ageLabel": "Vek dieťaťa #{index} (roky)",
+        "heightLabel": "Výška (cm) – voliteľné"
+      },
+      "drivers": {
+        "title": "Údaje o vodičoch",
+        "description": "Zadaj osobné údaje hlavného a prípadných ďalších vodičov a údaje o vodičskom preukaze.",
+        "primaryInfo": "Na základe údajov hlavného vodiča automaticky vyplníme kontaktné a fakturačné polia, ak zaškrtneš príslušné políčka.",
+        "primaryTitle": "Údaje hlavného vodiča",
+        "secondaryTitle": "Údaje vodiča {index}",
+        "fields": {
+          "lastName1": {
+            "label": "Priezvisko vodiča",
+            "placeholder": "Priezvisko"
+          },
+          "lastName2": {
+            "label": "Priezvisko vodiča (voliteľné)",
+            "placeholder": "Priezvisko (voliteľné)"
+          },
+          "firstName1": {
+            "label": "Meno vodiča",
+            "placeholder": "Meno"
+          },
+          "firstName2": {
+            "label": "Meno vodiča (voliteľné)",
+            "placeholder": "Meno (voliteľné)"
+          },
+          "postalCode": {
+            "label": "PSČ",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Mesto/obec",
+            "placeholder": "Mesto/obec"
+          },
+          "country": {
+            "label": "Krajina",
+            "placeholder": "Krajina"
+          },
+          "street": {
+            "label": "Ulica",
+            "placeholder": "Ulica"
+          },
+          "doorNumber": {
+            "label": "Číslo domu",
+            "placeholder": "Číslo domu"
+          },
+          "dateOfBirth": {
+            "label": "Dátum narodenia",
+            "placeholder": "Vyber dátum"
+          },
+          "placeOfBirth": {
+            "label": "Miesto narodenia",
+            "placeholder": "Miesto narodenia"
+          },
+          "nameOfMother": {
+            "label": "Meno matky",
+            "placeholder": "Meno matky"
+          },
+          "phoneNumber": {
+            "label": "Telefónne číslo",
+            "placeholder": "+36301234567"
+          },
+          "email": {
+            "label": "E-mailová adresa",
+            "placeholder": "priklad@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Typ dokladu",
+            "placeholder": "Vyber doklad",
+            "passport": "Cestovný pas",
+            "id_card": "Občiansky preukaz"
+          },
+          "number": {
+            "label": "Číslo dokladu",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Dátum vydania",
+            "placeholder": "Vyber dátum"
+          },
+          "validUntil": {
+            "label": "Dátum platnosti do",
+            "placeholder": "Vyber dátum"
+          },
+          "drivingLicenceNumber": {
+            "label": "Číslo vodičského preukazu",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Najvyššia skupina",
+            "placeholder": "Vyber skupinu"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Vodičský preukaz vydaný",
+            "placeholder": "Vyber dátum"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Vodičský preukaz platný do",
+            "placeholder": "Vyber dátum"
+          },
+          "drivingLicenceIsOlderThan3": "Vyhlasujem, že môj vodičský preukaz je starší ako 3 roky"
+        }
+      },
+      "contact": {
+        "title": "Kontaktné údaje",
+        "description": "Ak je kontaktná osoba odlišná od hlavného vodiča, môžeš tu zadať jej údaje.",
+        "toggle": "Zhoduje sa s údajmi hlavného vodiča",
+        "fields": {
+          "name": {
+            "label": "Meno kontaktnej osoby",
+            "placeholder": "Meno kontaktnej osoby"
+          },
+          "email": {
+            "label": "E-mail kontaktnej osoby",
+            "placeholder": "E-mail kontaktnej osoby"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Fakturačné údaje",
+        "description": "Nastav, na aké meno a adresu má byť vystavená faktúra. Ak sa zhodujú s údajmi vodiča, označ možnosť nižšie.",
+        "toggle": "Zhoduje sa s údajmi hlavného vodiča",
+        "fields": {
+          "name": {
+            "label": "Fakturačné meno",
+            "placeholder": "Fakturačné meno"
+          },
+          "email": {
+            "label": "Fakturačný e-mail",
+            "placeholder": "Fakturačný e-mail"
+          },
+          "phoneNumber": {
+            "label": "Fakturačné telefónne číslo",
+            "placeholder": "+36201234567"
+          },
+          "taxId": {
+            "label": "DIČ (voliteľné)",
+            "placeholder": "DIČ"
+          },
+          "companyName": {
+            "label": "Názov firmy (voliteľné)",
+            "placeholder": "Názov firmy"
+          },
+          "address": {
+            "country": {
+              "label": "Krajina",
+              "placeholder": "Krajina"
+            },
+            "postalCode": {
+              "label": "PSČ",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Mesto/obec",
+              "placeholder": "Mesto/obec"
+            },
+            "street": {
+              "label": "Ulica",
+              "placeholder": "Ulica"
+            },
+            "doorNumber": {
+              "label": "Číslo domu",
+              "placeholder": "Číslo domu"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Presná adresa doručenia",
+        "description": "Zadaj prosím detailnú adresu ubytovania alebo letiska na doručenie vozidla.",
+        "locationName": {
+          "label": "Názov ubytovania / letiska (voliteľné)",
+          "placeholder": "Napr. Hotel Marina alebo Budapest Liszt Ferenc"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Typ miesta",
+            "placeholder": "Vyber miesto",
+            "accommodation": "Ubytovanie",
+            "airport": "Letisko"
+          },
+          "arrivalFlight": {
+            "label": "Číslo príletového letu",
+            "placeholder": "napr. FR1234"
+          },
+          "departureFlight": {
+            "label": "Číslo odletového letu",
+            "placeholder": "napr. FR5678"
+          },
+          "country": {
+            "label": "Krajina",
+            "placeholder": "Krajina"
+          },
+          "postalCode": {
+            "label": "PSČ",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Mesto/obec",
+            "placeholder": "Mesto/obec"
+          },
+          "street": {
+            "label": "Ulica (voliteľné)",
+            "placeholder": "Ulica"
+          },
+          "doorNumber": {
+            "label": "Číslo domu (voliteľné)",
+            "placeholder": "Číslo domu"
+          }
+        }
+      },
+      "consents": {
+        "title": "Právne vyhlásenia",
+        "description": "Na dokončenie rezervácie musíš prijať Zásady spracúvania osobných údajov a Všeobecné zmluvné podmienky.",
+        "privacyLabel": "Prečítal(a) som si a súhlasím so <link>Zásadami spracúvania osobných údajov</link>",
+        "termsLabel": "Prečítal(a) som si a súhlasím s <link>Všeobecnými zmluvnými podmienkami</link>"
+      }
+    },
+    "toast": {
+      "success": "Ďakujeme! Čoskoro ťa budeme kontaktovať.",
+      "error": "Ups, nastala chyba. Skús to prosím neskôr."
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Neplatný dátum začiatku",
+      "invalidEndDate": "Neplatný dátum ukončenia",
+      "adultsMin": "Je potrebný aspoň jeden dospelý",
+      "childAgeMin": "Vek nemôže byť záporný",
+      "childAgeMax": "Vek dieťaťa môže byť najviac 17 rokov",
+      "childHeightMin": "Výška nemôže byť záporná",
+      "firstNameRequired": "Meno je povinné",
+      "lastNameRequired": "Priezvisko je povinné",
+      "countryRequired": "Krajina je povinná",
+      "postalCodeRequired": "PSČ je povinné",
+      "cityRequired": "Mesto/obec je povinné",
+      "streetRequired": "Ulica je povinná",
+      "doorNumberRequired": "Číslo domu je povinné",
+      "invalidDateOfBirth": "Neplatný dátum narodenia",
+      "placeOfBirthRequired": "Miesto narodenia je povinné",
+      "motherNameRequired": "Meno matky je povinné",
+      "phoneRequired": "Telefónne číslo je povinné",
+      "phoneInvalid": "Zadaj platné telefónne číslo",
+      "emailRequired": "E-mailová adresa je povinná",
+      "emailInvalid": "Zadaj platnú e-mailovú adresu",
+      "documentNumberRequired": "Číslo dokladu je povinné",
+      "documentIssueInvalid": "Neplatný dátum vydania dokladu",
+      "documentExpiryInvalid": "Neplatný dátum skončenia platnosti dokladu",
+      "drivingLicenceNumberRequired": "Číslo vodičského preukazu je povinné",
+      "drivingLicenceIssueInvalid": "Neplatný dátum vydania vodičského preukazu",
+      "drivingLicenceExpiryInvalid": "Neplatný dátum skončenia platnosti vodičského preukazu",
+      "contactNameRequired": "Meno kontaktnej osoby je povinné",
+      "contactEmailRequired": "E-mail kontaktnej osoby je povinný",
+      "contactEmailInvalid": "Zadaj platný e-mail kontaktnej osoby",
+      "invoiceNameRequired": "Fakturačné meno je povinné",
+      "invoicePhoneRequired": "Fakturačné telefónne číslo je povinné",
+      "invoiceEmailRequired": "Fakturačný e-mail je povinný",
+      "invoiceEmailInvalid": "Zadaj platný fakturačný e-mail",
+      "startPast": "Dátum začiatku nemôže byť v minulosti",
+      "startTooLate": "Dátum začiatku môže byť najviac o jeden rok dopredu",
+      "endBeforeStart": "Dátum ukončenia nemôže byť pred dátumom začiatku",
+      "endTooLate": "Dátum ukončenia môže byť najviac o jeden rok dopredu",
+      "deliveryPlaceTypeRequired": "Vyber, či zadávaš adresu ubytovania alebo letiska",
+      "deliveryFieldRequired": "Povinné pole",
+      "invalidAdults": "Je potrebný aspoň jeden dospelý",
+      "adultsInvalid": "Zadaj počet dospelých cestujúcich"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Neplatný dátum začiatku",
+          "past": "Dátum začiatku nemôže byť v minulosti",
+          "tooLate": "Dátum začiatku môže byť najviac o jeden rok dopredu"
+        },
+        "endDate": {
+          "invalid": "Neplatný dátum ukončenia",
+          "beforeStart": "Dátum ukončenia nemôže byť pred dátumom začiatku",
+          "tooLate": "Dátum ukončenia môže byť najviac o jeden rok dopredu"
+        }
+      },
+      "adults": {
+        "min": "Je potrebný aspoň jeden dospelý"
+      },
+      "children": {
+        "age": {
+          "min": "Vek nemôže byť záporný",
+          "max": "Vek dieťaťa môže byť najviac 17 rokov"
+        },
+        "height": {
+          "min": "Výška nemôže byť záporná"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "Meno je povinné"
+        },
+        "lastName_1": {
+          "required": "Priezvisko je povinné"
+        },
+        "location": {
+          "country": {
+            "required": "Krajina je povinná"
+          },
+          "postalCode": {
+            "required": "PSČ je povinné"
+          },
+          "city": {
+            "required": "Mesto/obec je povinné"
+          },
+          "street": {
+            "required": "Ulica je povinná"
+          },
+          "doorNumber": {
+            "required": "Číslo domu je povinné"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Neplatný dátum narodenia"
+        },
+        "placeOfBirth": {
+          "required": "Miesto narodenia je povinné"
+        },
+        "nameOfMother": {
+          "required": "Meno matky je povinné"
+        },
+        "phoneNumber": {
+          "required": "Telefónne číslo je povinné",
+          "invalid": "Zadaj platné telefónne číslo"
+        },
+        "email": {
+          "required": "E-mailová adresa je povinná",
+          "invalid": "Zadaj platnú e-mailovú adresu"
+        },
+        "document": {
+          "number": {
+            "required": "Číslo dokladu je povinné"
+          },
+          "validFrom": {
+            "invalid": "Neplatný dátum vydania dokladu"
+          },
+          "validUntil": {
+            "invalid": "Neplatný dátum skončenia platnosti dokladu"
+          },
+          "drivingLicenceNumber": {
+            "required": "Číslo vodičského preukazu je povinné"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Neplatný dátum vydania vodičského preukazu",
+            "minAge": "Vodičský preukaz musí byť starý aspoň 3 roky"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Neplatný dátum skončenia platnosti vodičského preukazu"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "Meno kontaktnej osoby je povinné"
+        },
+        "email": {
+          "required": "E-mail kontaktnej osoby je povinný",
+          "invalid": "Zadaj platný e-mail kontaktnej osoby"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "Fakturačné meno je povinné"
+        },
+        "phoneNumber": {
+          "required": "Fakturačné telefónne číslo je povinné",
+          "invalid": "Zadaj platné telefónne číslo"
+        },
+        "email": {
+          "required": "Fakturačný e-mail je povinný",
+          "invalid": "Zadaj platný fakturačný e-mail"
+        },
+        "location": {
+          "country": {
+            "required": "Krajina je povinná"
+          },
+          "postalCode": {
+            "required": "PSČ je povinné"
+          },
+          "city": {
+            "required": "Mesto/obec je povinné"
+          },
+          "street": {
+            "required": "Ulica je povinná"
+          },
+          "doorNumber": {
+            "required": "Číslo domu je povinné"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Vyber, či zadávaš adresu ubytovania alebo letiska"
+        },
+        "arrivalFlight": {
+          "required": "Zadaj číslo príletového letu"
+        },
+        "departureFlight": {
+          "required": "Zadaj číslo odletového letu"
+        },
+        "address": {
+          "country": {
+            "required": "Povinné pole"
+          },
+          "postalCode": {
+            "required": "Povinné pole"
+          },
+          "city": {
+            "required": "Povinné pole"
+          },
+          "street": {
+            "required": "Povinné pole"
+          },
+          "doorNumber": {
+            "required": "Povinné pole"
+          }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "Na rezerváciu musíš prijať Zásady spracúvania osobných údajov"
+        },
+        "terms": {
+          "required": "Na rezerváciu musíš prijať Všeobecné zmluvné podmienky"
+        }
+      }
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Prosím vyberte",
+    "selectAll": "Vybrať všetko",
+    "close": "Zavrieť",
+    "clear": "Vymazať"
+  },
+  "NotFound": {
+    "label": "Stratil si sa?",
+    "title": "Žiaľ, požadovanú stránku sa nepodarilo nájsť",
+    "description": "Stránka možno už neexistuje alebo došlo k preklepu. Môžeš pokračovať v prehliadaní na hlavnej stránke alebo nás kontaktovať.",
+    "badge": "Čaká ťa nové dobrodružstvo",
+    "cta": {
+      "home": {
+        "href": "sk",
+        "label": "Späť na hlavnú stránku"
+      },
+      "contact": {
+        "href": "sk/contact",
+        "label": "Kontaktuj nás"
+      }
+    }
+  },
+  "GTC": {
+    "title": "Nájomná zmluva",
+    "sections": [
+      {
+        "heading": "1. Zmluvné strany a vznik Zmluvy",
+        "paragraphs": [
+          "Táto zmluva sa uzatvára medzi spoločnosťou ZODIACSRENTACAR Thomy Fuerteventura SL. (ďalej len: Prenajímateľ) a fyzickou alebo právnickou osobou, ktorá prijme ponuku (ďalej len: Nájomca).",
+          "Zmluvné strany považujú ustanovenia Zmluvy počas celého trvania nájmu až do konečného ukončenia odovzdania vozidla za pre seba záväzné a platné.",
+          "O cenovú ponuku a rezerváciu je možné požiadať prostredníctvom webovej stránky www.zodiacsrentacar.com, ako aj prostredníctvom vyššie uvedených komunikačných kanálov.",
+          "Žiadosť o cenovú ponuku, potvrdenie rezervácie po jej prijatí alebo prípadné zamietnutie žiadosti zašleme na e-mailovú adresu uvedenú vo formulári.",
+          "Prenajímateľ si vyhradzuje právo z prevádzkových dôvodov – najmä v prípade nedostupnosti požadovaného vozidla – zamietnuť alebo odmietnuť konkrétnu žiadosť o rezerváciu, ak je neúplná, nepresná alebo nespĺňa platné podmienky.",
+          "Osoba uvedená v Zmluve, oprávnený držiteľ rezervácie a hlavný vodič musia byť totožné osoby; zmluva nemôže byť postúpená tretej osobe.",
+          "Z bezpečnostných dôvodov prostredníctvom platformy nevyžadujeme bankové ani finančné údaje, Nájomca je však povinný tieto údaje (najmä svoju kreditnú kartu) predložiť pri prevzatí prenajatého vozidla v kancelárii.",
+          "Kreditná karta musí byť vo vlastníctve Nájomcu a musí zostať platná po celý čas nájmu, ako aj ďalšie tri (3) mesiace po jeho skončení na pokrytie prípadných následných nákladov na Kanárskych ostrovoch.",
+          "Akceptujeme hlavné kreditné karty (Visa/MC/Amex/Diners) a bankové karty vydané finančnými inštitúciami; debetné karty (debit) neakceptujeme.",
+          "Prenajímateľ prijíma na dobu nájmu zálohu vo výške 500 €, ktorá bude vrátená bankovým prevodom do 15 kalendárnych dní po vrátení vozidla, pokiaľ je jeho stav v súlade s ustanoveniami zmluvy.",
+          "O spracovaní vašich osobných údajov a o ďalších právnych podmienkach týkajúcich sa fungovania platformy informuje zásady ochrany osobných údajov (GDPR) zverejnené na webovej stránke Prenajímateľa, s ktorými sa Nájomca oboznamuje a ich prijatie potvrdzuje podpisom tejto zmluvy."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Údaje Prenajímateľa:",
+            "items": [
+              "Názov spoločnosti: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Sídlo: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Španielsko",
+              "Daňové identifikačné číslo (CIF): B13702493",
+              "E-mail: info@zodiacsrentacar.es",
+              "Hlavné telefónne číslo: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Podmienky nájmu a požiadavky na vodiča",
+        "paragraphs": [
+          "Prenajímateľ neprenajíma vozidlá vodičom mladším ako 25 rokov.",
+          "Používatelia si môžu prenajať vozidlo od Prenajímateľa len vtedy, ak spĺňajú nasledujúce podmienky.",
+          "Splnenie vyššie uvedených podmienok je povinné, nie je možné sa od nich odchýliť.",
+          "Prenajímateľ neúčtuje poplatok používateľom, ktorí z dôvodu nesplnenia podmienok nemôžu uzavrieť zmluvu, pretože v takom prípade rezervácia nemôže vzniknúť.",
+          "Tie isté podmienky sa vzťahujú aj na ďalších vodičov uvedených Nájomcom.",
+          "Po potvrdení rezervácie je Prenajímateľ oprávnený ju v nasledujúcich prípadoch zrušiť."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Podmienky nájmu:",
+            "items": [
+              "Majú aspoň dvadsaťpäť (25) rokov.",
+              "Disponujú platným vodičským oprávnením minimálne skupiny B platným v Európskej únii.",
+              "Od získania vodičského oprávnenia majú najmenej dva (2) roky preukázateľnej vodičskej praxe v čase rezervácie."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "Rezervácia môže byť zrušená, ak:",
+            "items": [
+              "sa preukáže, že informácie poskytnuté klientom nie sú správne, pravdivé alebo aktuálne.",
+              "počas trvania nájmu dôjde k uplynutiu platnosti niektorého z požadovaných dokumentov.",
+              "Nájomca poruší podmienky nájmu."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) V súlade so španielskym právom... (tu text obsahuje odsek o španielskej legislatíve, ktorý ponechávame bezo zmeny z dôvodu právnej záväznosti)."
+        ]
+      },
+      {
+        "heading": "3. Podmienky týkajúce sa prenajatého vozidla",
+        "paragraphs": [
+          "Rezervovaný model vozidla má informatívny charakter a môže byť Prenajímateľom nahradený vozidlom rovnakej alebo vyššej kategórie dostupným vo flotile.",
+          "GPS-sledovanie: podpisom nájomnej zmluvy Nájomca súhlasí so sledovaním vozidla; geolokačné údaje používa Prenajímateľ výlučne na účely bezpečnosti vozidla a kontroly dodržiavania nájomných podmienok.",
+          "Obmedzenie používania: vozidlo nesmie opustiť ostrov, na ktorom prebehlo odovzdanie, pokiaľ nie je uzavretá osobitná dohoda, ktorá je zaznamenaná v rezervačnom systéme.",
+          "Ak sa nájomná zmluva vzťahuje aj na ostrov Lanzarote alebo je miestom odovzdania vozidla Lanzarote, zmluvné strany považujú tieto podmienky za záväzné aj za týchto okolností.",
+          "V prípade zistenia poruchy je potrebné vozidlo v súlade s pravidlami cestnej premávky bezpečne odstaviť a bezodkladne informovať Prenajímateľa.",
+          "Nájomca je povinný pred začiatkom nájmu presvedčiť sa o prítomnosti povinnej výbavy.",
+          "Nájomca nesie zodpovednosť za zákonné a technicky správne používanie vozidla, ako aj za zachovanie jeho stavu od okamihu prevzatia až do preukázaného vrátenia.",
+          "Ak vrátenie vozidla neprebehne spôsobom určeným Prenajímateľom (napríklad nie osobným odovzdaním), zodpovednosť Nájomcu sa predlžuje až do momentu zaznamenaného fyzického prevzatia a kontroly stavu vozidla.",
+          "Náklady na opravu zistených chýb a poškodení znáša Nájomca."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Ďalšie pravidlá používania:",
+            "items": [
+              "Nájomca považuje za záväzné všetky príslušné vnútroštátne predpisy a právne normy, vrátane pravidiel cestnej premávky.",
+              "Motorové vozidlo nesmie byť použité na protiprávne účely alebo ako prostriedok na ich spáchanie.",
+              "Vozidlo môže jazdiť iba po verejných komunikáciách so spevneným povrchom.",
+              "Upozornenie: ak bolo vozidlo použité na nespevnených cestách, náklady na defekty pneumatík, vyprosťovanie, odťah a opravu na mieste znáša Nájomca.",
+              "Vozidlo nesmie byť použité na komerčné alebo reklamné účely.",
+              "Pri vozidle je dovolené používať iba palivo odporúčané výrobcom; v prípade natankovania nesprávneho typu paliva je potrebné okamžite informovať Prenajímateľa a vozidlo nesmie byť uvedené do prevádzky.",
+              "Nájomca je povinný zabezpečiť, aby bolo vozidlo pri opustení alebo parkovaní úplne uzamknuté a aby urobil všetky kroky na zabránenie neoprávnenému použitiu.",
+              "Pri parkovaní je nutné použiť parkovaciu brzdu a vhodný prevodový stupeň; pri parkovaní vo svahu je potrebné natočiť riadené kolesá smerom k obrubníku.",
+              "Detské sedačky poskytuje Prenajímateľ pri odovzdaní vozidla, avšak ich správne upevnenie a používanie je vždy výlučne zodpovednosťou Nájomcu.",
+              "Športové vybavenie (napríklad surfové dosky) je zakázané prepravovať alebo skladovať v interiéri vozidla.",
+              "Nájomca je povinný zabezpečiť, aby bola batožina alebo surfové dosky riadne pripevnené k strešnému nosiču, pokiaľ si takýto nosič prenajal."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Pravidlá odovzdania a vrátenia vozidla",
+        "paragraphs": [
+          "Odovzdanie a vrátenie prenajatého vozidla prebieha v kancelárii uvedenej v rezervácii, v dátumoch a časoch potvrdených Prenajímateľom.",
+          "Vozidlo sa za žiadnych okolností nesmie vrátiť na inom ostrove, než je uvedené v zmluve.",
+          "Prevzatie vozidla je možné iba počas otváracích hodín; vrátenie môže byť za podmienok stanovených v rezervačnom procese zorganizované aj mimo otváracích hodín.",
+          "Mimo otváracích hodín alebo pred nimi je vrátenie na letisku bezplatné, pri doručení na iné miesto môže byť účtovaný osobitný poplatok; dohodnuté prípady sú zaznamenané v rezervačnom systéme.",
+          "Otváracie hodiny kancelárie sú zvyčajne medzi 10:00–13:00 a 16:00–20:00; presné informácie je možné vyžiadať e-mailom, cez WhatsApp alebo telefonicky.",
+          "V prípade meškania alebo zrušenia letu je Nájomca povinný včas informovať Prenajímateľa; pri nesplnení tejto povinnosti Prenajímateľ nemôže zaručiť udržanie rezervácie.",
+          "Ak nie je možné rezerváciu udržať, Prenajímateľ si vyhradzuje právo ju zrušiť a je oprávnený voľne disponovať s vozidlom bez nároku Nájomcu na náhradu škody.",
+          "Vozidlo musí byť vrátené v stave zaznamenanom pri prevzatí; v prípade odchýlky je Nájomca povinný preukázať priebeh udalostí príslušnou dokumentáciou.",
+          "Za predčasné vrátenie vozidla sa neposkytuje žiadna refundácia.",
+          "Palivo: vozidlo musí byť vrátené s rovnakou hladinou paliva, s akou bolo prevzaté; v prípade nedostatku znáša Nájomca náklady na dotankovanie a servisný poplatok.",
+          "Pri prebytku paliva nemôžeme rozdiel refundovať.",
+          "Pri vrátení vozidla nesmú v ňom zostať osobné veci; Prenajímateľ nepreberá zodpovednosť za ponechané predmety a nemá možnosť ich uschovávať alebo zasielať."
+        ]
+      },
+      {
+        "heading": "5. Služby a poistenie",
+        "paragraphs": [
+          "Konečná cena rezervácie vozidla zahŕňa nasledujúce položky.",
+          "Nie je potrebná žiadna spoluúčasť (depozit v hotovosti alebo predautorizácia na karte), okrem zálohy 500 € stanovenej v bode 1.",
+          "Dôležité: podľa španielskych dopravných predpisov je pre maloletých s výškou nižšou ako 135 cm povinné používanie schválenej detskej autosedačky."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Dane (IGIC/IVA zahrnuté).",
+              "Neobmedzený počet kilometrov.",
+              "Bezplatný druhý vodič.",
+              "Služba v našej kancelárii (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Bezplatné zrušenie rezervácie (pozri bod 9).",
+              "Bezplatne poskytované detské sedačky a podsedáky (nie ISOFIX).",
+              "Nasledujúce poistenia bez spoluúčasti: havarijné poistenie (CDW), poistenie proti krádeži (TP), poistenie zodpovednosti za škodu spôsobenú tretej osobe (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. Situácie, ktoré nie sú kryté poistením",
+        "paragraphs": [
+          "Dôležité! Vyššie uvedené poistenie s nulovou spoluúčasťou nekryje nasledujúce situácie alebo udalosti; za škody a náklady z nich vyplývajúce nesie Nájomca plnú finančnú zodpovednosť."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Poškodenie pneumatík a kolies na nespevnenej ceste.",
+              "Strata, zlomenie alebo poškodenie kľúčov od vozidla.",
+              "Natankovanie nesprávneho paliva (typ paliva je na každom vozidle jasne označený).",
+              "Nezodpovedná jazda a nehody pod vplyvom alkoholu, drog alebo iných toxických či psychotropných látok.",
+              "Nehody a/alebo škodové udalosti pri jazde v teréne (mimo spevnených ciest).",
+              "Pokuty (parkovanie, prekročenie rýchlosti, dopravné priestupky)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Voliteľné doplnky",
+        "paragraphs": [
+          "Ako voliteľné alebo doplnkové služby si Nájomcovia môžu prenajať nasledujúce extra vybavenie, ktoré nie je súčasťou ceny rezervácie vozidla.",
+          "Strešné nosiče sú pri správnom upevnení vhodné aj na prepravu dvoch surfových dosiek.",
+          "Prenajímateľ v žiadnom prípade nepreberá zodpovednosť za predmety prepravované na streche vozidla ani za škody spôsobené tretím osobám; za takéto škody zodpovedá Nájomca.",
+          "Všetky základné a voliteľné služby sú Nájomcovi k dispozícii a sú garantované v súlade so všeobecnými podmienkami uzavretými s Prenajímateľom."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Strešný nosič na prepravu batožiny za cenu uvedenú na webovej stránke; nezahŕňa laná či popruhy, iba koľajnice a tyče na uchytenie k vozidlu."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Politika paliva",
+        "paragraphs": [
+          "Nájomca je povinný vrátiť vozidlo s rovnakou hladinou paliva, s akou ho prevzal.",
+          "Ak Nájomca natankuje nesprávny typ paliva, znáša všetky náklady na potrebné opravy."
+        ]
+      },
+      {
+        "heading": "9. Platobné a refundančné podmienky",
+        "paragraphs": [
+          "Prenajímateľ ponúka možnosť online platby nájomného prostredníctvom webovej stránky.",
+          "Rezervácia sa považuje za dokončenú v okamihu, keď je platba vykonaná kreditnou, debetnou alebo bankovou kartou.",
+          "Poskytovateľom online platby je: CAIXABANK (číslo účtu: ES60 2100 1512 2602 0067 6927).",
+          "Podmienky vrátenia platieb.",
+          "Na účely refundácie musí Nájomca kontaktovať Prenajímateľa na e-mailovej adrese info@zodiacsrentacar.es alebo na telefónnom čísle +34 683 192 422 a uviesť svoje číslo IBAN a celé meno.",
+          "Prenajímateľ vykoná bankový prevod do 15 pracovných dní."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Plná refundácia je možná len v prípade zrušenia najmenej 3 kalendárne dni (72 hodín) pred začiatkom nájomného obdobia.",
+              "Prenajímateľ nevracia časť nájomného, ak je vozidlo vrátené skôr, než je dohodnuté v zmluve.",
+              "Refundácia – ak je uplatniteľná – prebieha bankovým prevodom."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Zmeny týchto všeobecných podmienok",
+        "paragraphs": [
+          "Prenajímateľ je oprávnený kedykoľvek zmeniť Všeobecné podmienky, najmä v súvislosti so zmenami regulácie alebo úpravou používanej obchodnej politiky."
+        ]
+      },
+      {
+        "heading": "11. Rozhodné právo a príslušnosť súdu",
+        "paragraphs": [
+          "V prípade sporov vyplývajúcich z týchto podmienok sa zmluvné strany vzdávajú akejkoľvek inej príslušnosti a prijímajú výlučnú príslušnosť súdov v Santa Cruz de Tenerife v súlade s príslušnými španielskymi právnymi predpismi."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "title": "Často kladené otázky",
+    "intro": "Zhrnuli sme najdôležitejšie informácie, aby bol tvoj nájom na Fuerteventure a Lanzarote čo najplynulejší.",
+    "items": [
+      {
+        "question": "Ako si môžem rezervovať auto?",
+        "answer": "Vyplň náš online formulár na cenovú ponuku a naši kolegovia ti do 24 hodín potvrdia rezerváciu. Ak je to súrne, môžeš nám zavolať alebo napísať cez WhatsApp."
+      },
+      {
+        "question": "Aké dokumenty sú potrebné pri prevzatí?",
+        "answer": "Pri prevzatí budeš potrebovať platný vodičský preukaz s minimálne 3-ročnou praxou a občiansky preukaz alebo cestovný pas. Tieto doklady musí predložiť každý vodič uvedený v zmluve."
+      },
+      {
+        "question": "Musím zaplatiť kauciu?",
+        "answer": "Pri výbere kompletného poistenia SSCP nevyžadujeme kauciu. Pri základnom poistení rátaj s depozitom 300–500 €, niektoré doplnky (napr. strešný nosič) môžu vyžadovať dodatočnú zábezpeku."
+      },
+      {
+        "question": "Kde si môžem auto prevziať?",
+        "answer": "Auto si môžeš prevziať na letisku, v našej kancelárii v Puerto del Rosario alebo priamo pri ubytovaní na Fuerteventure aj Lanzarote. Presné miesto odovzdania upresníme v potvrdení rezervácie."
+      },
+      {
+        "question": "Môžem rezerváciu zrušiť bez poplatku?",
+        "answer": "Áno, najmenej 72 hodín pred začiatkom nájmu môžeš rezerváciu bezplatne zmeniť alebo zrušiť. Ak sa zmena objaví neskôr, kontaktuj nás čo najskôr."
+      },
+      {
+        "question": "Aký je minimálny vek na prenájom?",
+        "answer": "Väčšinu našich vozidiel vieme poskytnúť od 23 rokov. Pri mladšom vodičovi je potrebné individuálne posúdenie a prípadný príplatok."
+      },
+      {
+        "question": "Môžem si auto prevziať na letisku?",
+        "answer": "Áno, pri rezervácii môžeš uviesť, že chceš prevzatie alebo transfer z letiska."
+      },
+      {
+        "question": "Môžem auto vrátiť na letisku?",
+        "answer": "Áno, vozidlo môžeš odovzdať aj na letisku, stačí sa s nami vopred dohodnúť na čase."
+      },
+      {
+        "question": "Kedy máte otvorené?",
+        "answer": "Odovzdanie vozidla prebieha zvyčajne medzi 10:00–16:00, ale po dohode sme flexibilní. Vozidlo je možné vrátiť kedykoľvek."
+      },
+      {
+        "question": "Môžem auto vrátiť aj večer alebo v noci?",
+        "answer": "Áno. Pri odovzdaní ti vždy vysvetlíme presný postup vrátenia, takže auto môžeš bezpečne odovzdať v ktorúkoľvek hodinu."
+      },
+      {
+        "question": "Má auto kompletné poistenie?",
+        "answer": "Áno, škody spôsobené na cestných komunikáciách hradí poisťovňa. Poškodenia alebo defekty na nespevnených cestách však musí uhradiť nájomca."
+      },
+      {
+        "question": "Musím auto vrátiť natankované?",
+        "answer": "Áno, vozidlo je potrebné vrátiť s rovnakou hladinou paliva, s akou si ho prevzal. Celá naša flotila jazdí na benzín Natural 95."
+      },
+      {
+        "question": "Je počet kilometrov obmedzený?",
+        "answer": "Nie, poskytujeme neobmedzený počet kilometrov, ktorý je zahrnutý v cene nájmu."
+      },
+      {
+        "question": "Môžem platiť kreditnou alebo bankovou kartou?",
+        "answer": "Áno, akceptujeme kreditné aj debetné karty."
+      },
+      {
+        "question": "Platí sa príplatok za druhého vodiča?",
+        "answer": "Nie, za uvedenie druhého vodiča neúčtujeme žiaden príplatok."
+      },
+      {
+        "question": "Existujú nejaké skryté poplatky nad rámec nájomného?",
+        "answer": "Nie, platíš iba potvrdenú cenu nájmu, bez skrytých poplatkov."
+      },
+      {
+        "question": "Môžem si vyžiadať detskú sedačku do auta?",
+        "answer": "Áno, ponúkame ISOFIX detské sedačky vo viacerých veľkostiach – od najmenších detí po väčšie deti."
+      },
+      {
+        "question": "Musím auto pred vrátením vyčistiť?",
+        "answer": "Nie je to potrebné, každé vrátené vozidlo dôkladne vyčistíme a dezinfikujeme, je to zahrnuté v cene nájmu."
+      }
+    ]
+  }
+}

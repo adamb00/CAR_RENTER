@@ -87,6 +87,12 @@ const buildSchema = (t: ReturnType<typeof useTranslations<'Contact'>>) =>
     rentalEnd: z
       .string()
       .min(1, t('form.errors.rentalEndRequired')),
+    arrivalFlight: z
+      .string()
+      .min(1, t('form.errors.arrivalFlightRequired')),
+    departureFlight: z
+      .string()
+      .min(1, t('form.errors.departureFlightRequired')),
     partySize: z.string().optional(),
     children: z.string().optional(),
     consents: z.object({
@@ -116,6 +122,8 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
       preferredChannel: 'email' as PreferredChannel,
       rentalStart: '',
       rentalEnd: '',
+      arrivalFlight: '',
+      departureFlight: '',
       partySize: '',
       children: '',
       consents: { privacy: false, terms: false },
@@ -358,6 +366,49 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
                 )}
               />
               <input type='hidden' {...form.register('rentalEnd')} />
+            </div>
+
+            <div className='grid gap-4 sm:grid-cols-2'>
+              <FormField
+                control={form.control}
+                name='arrivalFlight'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      {t('form.fields.arrivalFlight.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        placeholder={t(
+                          'form.fields.arrivalFlight.placeholder'
+                        )}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='departureFlight'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      {t('form.fields.departureFlight.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        placeholder={t(
+                          'form.fields.departureFlight.placeholder'
+                        )}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
 
             <div className='grid gap-4 sm:grid-cols-2'>

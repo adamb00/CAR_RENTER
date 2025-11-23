@@ -1,0 +1,2247 @@
+{
+  "Header": {
+    "header": "Închiriere auto în Fuerteventura și Lanzarote, comod și rapid",
+    "book_now": "Închiriază o mașină acum"
+  },
+  "CookieConsent": {
+    "title": "Folosim cookie-uri",
+    "noticeTitle": "Notificare cookie-uri",
+    "body": "Pentru cea mai bună experiență de utilizare, folosim cookie-uri pe site-ul nostru. Poți găsi mai multe informații despre utilizarea și gestionarea cookie-urilor în politica noastră privind cookie-urile.",
+    "minimalBody": "Folosim cookie-uri pentru a-ți oferi o experiență de navigare mai bună.",
+    "notice": "Dând clic pe butonul <highlight>{actionLabel}</highlight>, îți exprimi acordul pentru utilizarea cookie-urilor.",
+    "learnMore": "Mai multe informații:",
+    "cookiePolicyLink": "Informații despre gestionarea cookie-urilor",
+    "gdprLink": "Declarație privind prelucrarea datelor",
+    "accept": "Accept",
+    "decline": "Respinge"
+  },
+  "GDPR": {
+    "title": "Declarație privind prelucrarea datelor (GDPR)",
+    "updated": "Ultima actualizare: 8 noiembrie 2025",
+    "intro": [
+      "Prezentul document privind prelucrarea datelor rezumă principalele reguli ale prelucrării datelor cu caracter personal legate de serviciile Zodiacs Rent a Car (ZODIACSRENTACAR).",
+      "Datele tale sunt întotdeauna prelucrate în conformitate cu GDPR, precum și cu reglementările spaniole și maghiare privind protecția datelor; colectăm informații doar în măsura și pentru perioada necesară și oferim întotdeauna informații transparente despre modul de prelucrare."
+    ],
+    "sections": [
+      {
+        "heading": "1. Datele operatorului de date",
+        "lists": [
+          {
+            "items": [
+              "Denumire: ZODIACSRENTACAR",
+              "Sediu: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Spania",
+              "E-mail: info@zodiacsrentacar.com",
+              "Telefon: +34 683 192 422",
+              "Website: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Scopurile prelucrării datelor",
+        "paragraphs": [
+          "Folosim datele cu caracter personal exclusiv pentru scopuri necesare prestării serviciilor noastre:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "pregătirea și documentarea ofertelor și contractelor de închiriere auto",
+              "gestionarea și confirmarea rezervărilor online",
+              "predarea vehiculului, livrare și comunicare cu serviciul de relații cu clienții",
+              "facturare, administrare financiară și îndeplinirea obligațiilor legale",
+              "comunicare cu clienții prin telefon, e-mail, WhatsApp sau alte canale",
+              "marketing și trimiterea de newslettere pe baza consimțământului explicit al persoanei vizate",
+              "analiză statistică și dezvoltarea serviciilor în mod anonim"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Temeiul juridic al prelucrării datelor",
+        "paragraphs": [
+          "Pentru diferite operațiuni de prelucrare se pot aplica temeiuri juridice diferite, însă ne bazăm întotdeauna pe una dintre următoarele dispoziții GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "executarea sau pregătirea unui contract – art. 6 alin. (1) lit. b) GDPR",
+              "îndeplinirea unei obligații legale (de ex. reglementări contabile) – art. 6 alin. (1) lit. c) GDPR",
+              "interesul legitim al operatorului (de exemplu prevenirea fraudelor) – art. 6 alin. (1) lit. f) GDPR",
+              "consimțământul persoanei vizate (de ex. newsletter, formular de contact) – art. 6 alin. (1) lit. a) GDPR"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Categoriile de date prelucrate",
+        "paragraphs": [
+          "În formularele online și în timpul încheierii contractului solicităm doar datele indispensabile pentru închirierea auto. Principalele categorii sunt următoarele:"
+        ],
+        "lists": [
+          {
+            "title": "Date de rezervare",
+            "items": [
+              "perioada de închiriere (de la–până la)",
+              "numărul de pasageri, vârsta și înălțimea copiilor",
+              "categoria aleasă de vehicul și serviciile extra solicitate"
+            ]
+          },
+          {
+            "title": "Date personale ale chiriașului și ale conducătorului auto",
+            "items": [
+              "nume complet (două nume de familie și două prenume)",
+              "locul și data nașterii, numele mamei",
+              "cetățenie și date privind adresa de domiciliu"
+            ]
+          },
+          {
+            "title": "Date de contact",
+            "items": [
+              "număr de telefon și canal de comunicare preferat (WhatsApp, Messenger etc.)",
+              "adresă de e-mail"
+            ]
+          },
+          {
+            "title": "Documente de identificare",
+            "items": [
+              "tipul documentului de identitate, număr, data emiterii și data expirării",
+              "numărul permisului de conducere, categoria, valabilitatea și data emiterii",
+              "declarație că permisul este valabil de mai mult de 3 ani"
+            ]
+          },
+          {
+            "title": "Conducător auto suplimentar sau persoană de contact",
+            "items": [
+              "date similare cu ale chiriașului principal pentru conducătorul suplimentar",
+              "numele și numărul de telefon al persoanei de contact, dacă este diferită de chiriaș"
+            ]
+          },
+          {
+            "title": "Date de facturare și livrare",
+            "items": [
+              "nume sau denumire firmă, adresă de facturare și, pentru firme, cod fiscal",
+              "adresă de e-mail necesară pentru trimiterea facturii electronice",
+              "numele și adresa hotelului sau apartamentului în cazul livrării"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Durata prelucrării datelor",
+        "paragraphs": [
+          "Datele necesare pentru prestarea serviciilor sunt păstrate timp de 5 ani de la încheierea perioadei de închiriere, pentru a permite exercitarea eventualelor pretenții civile.",
+          "Documentele contabile și fiscale sunt stocate timp de 8 ani, în conformitate cu legislația aplicabilă.",
+          "Datele bazate pe consimțământ sunt prelucrate până la retragerea consimțământului sau până la încetarea scopului."
+        ]
+      },
+      {
+        "heading": "6. Transferul datelor și persoanele împuternicite",
+        "paragraphs": [
+          "Datele sunt transmise doar partenerilor indispensabili pentru prestarea serviciilor, cu care încheiem contracte de împuternicire. Destinatarii tipici sunt:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "servicii de contabilitate și financiare",
+              "gazde și operatori IT",
+              "sisteme de facturare și furnizori de plăți",
+              "firme de curierat sau parteneri care efectuează livrarea"
+            ]
+          }
+        ],
+        "notes": [
+          "Nu transferăm datele în afara Uniunii Europene și asigurăm criptarea, respectiv gestionarea adecvată a drepturilor de acces."
+        ]
+      },
+      {
+        "heading": "7. Drepturile persoanelor vizate",
+        "paragraphs": [
+          "Persoanele vizate își pot exercita în orice moment drepturile prevăzute de GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "dreptul de a fi informat și de acces la date",
+              "dreptul la rectificare sau ștergere",
+              "dreptul de a solicita restricționarea prelucrării",
+              "dreptul de a se opune prelucrării bazate pe interes legitim",
+              "dreptul la portabilitatea datelor",
+              "dreptul de a retrage consimțământul în orice moment"
+            ]
+          }
+        ],
+        "notes": [
+          "În caz de plângere, te poți adresa Autorității Naționale de Supraveghere a Prelucrării Datelor cu Caracter Personal: 1055 Budapest, Falk Miksa utca 9-11., ugyfelszolgalat@naih.hu, naih.hu."
+        ]
+      },
+      {
+        "heading": "8. Securitatea datelor și gestionarea cookie-urilor",
+        "paragraphs": [
+          "Protejăm datele personale împotriva accesului neautorizat, modificării sau pierderii prin măsuri fizice, tehnice și organizatorice.",
+          "Site-ul nostru utilizează cookie-uri pentru funcționare, statistică și personalizarea conținutului. Detaliile sunt prezentate în documentul privind gestionarea cookie-urilor, unde poți modifica oricând setările consimțământului."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contact și exercitarea drepturilor",
+      "paragraphs": [
+        "Dacă ai întrebări legate de prelucrarea datelor sau dorești să îți exerciți drepturile, te rugăm să ne contactezi prin una dintre modalitățile de mai jos.",
+        "Răspundem solicitărilor tale în cel mult 30 de zile, cu posibilitatea de prelungire a termenului, în conformitate cu GDPR, în cazuri justificate."
+      ],
+      "channels": [
+        "E-mail: info@zodiacsrentacar.com",
+        "Telefon: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Informații privind gestionarea cookie-urilor",
+    "updated": "Ultima actualizare: 8 noiembrie 2025",
+    "intro": [
+      "Acest document prezintă ce tipuri de cookie-uri folosește site-ul Zodiacs Rent a Car, în ce scop are loc prelucrarea datelor și cum îți poți modifica setările.",
+      "Cookie-urile sunt fișiere mici de date care ajută la funcționarea site-ului, la realizarea statisticilor și la afișarea de conținut personalizat."
+    ],
+    "sections": [
+      {
+        "heading": "1. Ce este un cookie?",
+        "paragraphs": [
+          "Un cookie este un fișier text scurt pe care browserul îl stochează atunci când vizitezi site-ul nostru. Cookie-urile nu conțin date direct identificabile, dar ajută la recunoașterea dispozitivului tău și la memorarea setărilor tale."
+        ]
+      },
+      {
+        "heading": "2. Tipurile de cookie-uri pe care le folosim",
+        "paragraphs": [
+          "Pentru funcționarea optimă utilizăm cookie-uri cu scopuri diferite:"
+        ],
+        "lists": [
+          {
+            "title": "Cookie-uri esențiale",
+            "items": [
+              "sunt indispensabile pentru funcționarea site-ului, pentru procesele de securitate și pentru utilizarea formularelor",
+              "temei juridic: interes legitim (art. 6 alin. (1) lit. f) GDPR)"
+            ]
+          },
+          {
+            "title": "Cookie-uri funcționale",
+            "items": [
+              "memorează limba aleasă și datele temporare din formular",
+              "temei juridic: consimțământ (art. 6 alin. (1) lit. a) GDPR)"
+            ]
+          },
+          {
+            "title": "Cookie-uri analitice și statistice",
+            "items": [
+              "măsoară anonim traficul și ne ajută să optimizăm serviciile",
+              "temei juridic: consimțământ (art. 6 alin. (1) lit. a) GDPR)"
+            ]
+          },
+          {
+            "title": "Cookie-uri de marketing",
+            "items": [
+              "permit afișarea de oferte personalizate și reclame de remarketing",
+              "temei juridic: consimțământ (art. 6 alin. (1) lit. a) GDPR)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Durata de viață a cookie-urilor",
+        "paragraphs": [
+          "Cookie-uri de sesiune: rămân active până la finalizarea sesiunii de navigare și sunt apoi șterse automat.",
+          "Cookie-uri persistente: sunt stocate pentru o perioadă determinată (de regulă 30–365 de zile) sau până când le ștergi manual."
+        ]
+      },
+      {
+        "heading": "4. Cookie-uri plasate de terți",
+        "paragraphs": [
+          "Unele cookie-uri sunt plasate de partenerii noștri (de ex. Google, Meta, TikTok) în scopuri statistice și pentru afișarea de reclame personalizate.",
+          "Pentru aceste cookie-uri se aplică politicile de confidențialitate ale respectivilor furnizori, disponibile pe site-urile lor oficiale."
+        ]
+      },
+      {
+        "heading": "5. Consimțământ și setări",
+        "paragraphs": [
+          "La prima vizită apare o fereastră de gestionare a cookie-urilor, unde poți alege să accepți toate cookie-urile, doar pe cele necesare sau setări personalizate.",
+          "Îți poți modifica oricând aceste alegeri în setările browserului sau prin linkul „Modifică setările cookie-urilor” de pe site."
+        ]
+      },
+      {
+        "heading": "6. Gestionarea cookie-urilor în browsere",
+        "paragraphs": [
+          "În majoritatea browserelor poți șterge sau bloca cookie-urile. Pagina de ajutor pentru Google Chrome, Mozilla Firefox, Safari și Microsoft Edge te poate ghida în configurare.",
+          "Este important de știut că anumite funcții pot funcționa limitat fără cookie-uri."
+        ]
+      },
+      {
+        "heading": "7. Contact",
+        "paragraphs": [
+          "Dacă ai întrebări privind utilizarea cookie-urilor sau protecția datelor, îți stăm la dispoziție la următoarele date de contact:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-mail: info@zodiacsrentacar.com",
+              "Website: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "Cu echipa locală Zodiacs Rent a Car, închirierea unei mașini în Fuerteventura și Lanzarote este simplă și rapidă. După rezervarea online, organizăm predarea la aeroport sau la hotel, te ajutăm să alegi modelul potrivit traseului tău și stabilim toate detaliile în limba în care îți este cel mai comod.",
+      "Flota noastră variază de la mașini compacte de oraș până la SUV-uri spațioase, toate cu kilometraj nelimitat, al doilea șofer gratuit și asigurare completă SSCP. La Zodiacs, fiecare vehicul este revizuit regulat, iar înainte de predare documentăm starea lui cu fotografii, astfel încât să poți porni la drum cu toată liniștea.",
+      "Pe durata călătoriei poți conta pe noi: îți împărtășim cele mai bune locuri de parcare de lângă plajele din Fuerteventura, punctele de belvedere din Lanzarote și barurile noastre preferate de tapas. Ne poți contacta prin telefon, e-mail sau WhatsApp, astfel încât să poți cere oricând ajutor sau o ofertă personalizată.",
+      "Ne adaptăm serviciile special pentru nevoile turiștilor care își petrec vacanța în Insulele Canare. Știm cât de importantă este soluționarea rapidă, de aceea răspundem imediat prin WhatsApp, telefon sau e-mail, fie înainte de zbor, fie după sosire.",
+      "Clienții noștri apreciază cel mai mult faptul că la Zodiacs Rent a Car agreăm totul în prealabil și nu există surprize la casă. Acordăm atenție specială familiilor, aventurierilor și călătorilor de afaceri: îți putem pune la dispoziție scaun pentru copii, portbagaj de plafon sau suport pentru placa de surf, dacă ai nevoie.",
+      "În blogul și ghidurile noastre de călătorie publicăm recomandări detaliate de programe, astfel încât mașina închiriată să nu fie doar un mijloc de transport, ci cheia explorării. Echipa locală Zodiacs își actualizează constant recomandările, astfel încât nici plajele mai puțin cunoscute, restaurantele și traseele de drumeție să nu lipsească de pe lista ta."
+    ],
+    "highlights": {
+      "title": "De ce să ne alegi pe noi?",
+      "items": [
+        "Serviciu clienți multilingv în Fuerteventura și Lanzarote, cu prezență locală reală.",
+        "Contract de închiriere transparent, cu aprobare digitală și toate costurile convenite în avans.",
+        "Predare flexibilă la aeroport, la cazare sau într-un loc de întâlnire stabilit de comun acord.",
+        "Sfaturi locale, recomandări de parcare și trasee, pentru ca, având mașina Zodiacs, să profiți la maximum de insule."
+      ]
+    },
+    "details": {
+      "title": "Închiriere auto pas cu pas cu echipa Zodiacs Rent a Car",
+      "intro": "Ne dorim ca încă din faza de planificare să știi exact la ce să te aștepți. De aceea, am creat procesele Zodiacs astfel încât, de la rezervare până la predarea mașinii, totul să fie transparent, rapid și personalizat.",
+      "sections": [
+        {
+          "heading": "1. Alegerea mașinii ideale pentru tine",
+          "body": [
+            "Înainte de rezervare discutăm pe scurt câți sunteți, de cât spațiu pentru bagaje aveți nevoie și ce trasee plănuiți. De exemplu, dacă vreți să explorați zonele muntoase din nord sau drumurile șerpuite printre peisajele vulcanice, poate fi nevoie de un model mai puternic și cu aer condiționat mai performant.",
+            "Oferta noastră include întotdeauna fotografii reale ale vehiculului și dotărilor, astfel încât să poți compara ușor opțiunile. Echipa Zodiacs te ajută și dacă ai cerințe speciale, de exemplu scaun pentru copii, cutie de portbagaj sau transport de echipamente sportive."
+          ]
+        },
+        {
+          "heading": "2. Rezervare și contract în câteva clicuri",
+          "body": [
+            "Formularul online de ofertare Zodiacs te ghidează în limba română pe tot parcursul procesului. Introduci data sosirii și a plecării, locul de predare, iar în câteva minute primești ofertele personalizate, inclusiv cu asigurarea completă SSCP.",
+            "Confirmarea finală a rezervării ți-o trimitem prin e-mail, împreună cu contractul, pe care îl poți citi liniștit înainte de călătorie. Astfel, la fața locului nu mai este nevoie de birocrație, ci doar de predarea rapidă a mașinii."
+          ]
+        },
+        {
+          "heading": "3. Predare acolo unde îți este mai comod",
+          "body": [
+            "Poți sosi în Fuerteventura sau Lanzarote – colegii noștri urmăresc zborul și te așteaptă la ora stabilită, la aeroport sau în fața cazării. În caz de întârziere mai mare, reacționăm flexibil și rămânem permanent în contact.",
+            "Dacă nu vrei să irosești niciun minut din concediu stând la coadă, biroul mobil Zodiacs întocmește documentele necesare direct la fața locului, iar în câteva clipe poți pleca cu mașina aleasă."
+          ]
+        },
+        {
+          "heading": "4. Suport pe toată durata călătoriei",
+          "body": [
+            "La predarea mașinii îți oferim informații actuale despre parcare și trafic, locuri de excursie preferate și furnizori locali de încredere. Dacă ai întrebări pe drum, poți contacta echipa Zodiacs pe WhatsApp sau telefonic.",
+            "La predare, după o verificare rapidă, închidem închirierea și, dacă dorești, îți putem oferi și o ofertă personalizată pentru o viitoare călătorie. Scopul nostru este ca de fiecare dată să simți că mașina Zodiacs a contribuit la reușita vacanței tale."
+          ]
+        }
+      ]
+    },
+    "cta": "Cere o ofertă personalizată"
+  },
+  "SEO": {
+    "brand": "Zodiacs Rent a Car",
+    "defaultTitle": "Închiriere auto în Fuerteventura și Lanzarote",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
+    "siteDescription": "Închiriază o mașină în Fuerteventura și Lanzarote cu echipă locală de limbă maghiară, predare flexibilă și asigurare completă.",
+    "ogTitle": "Zodiacs Rent a Car – Închiriere auto în Fuerteventura și Lanzarote",
+    "ogDescription": "Echipă locală de limbă maghiară, al doilea șofer gratuit, kilometraj nelimitat. Fă o rezervare online la Zodiacs Rent a Car.",
+    "ogImageAlt": "Mașini din flota Zodiacs Rent a Car în Fuerteventura",
+    "twitterTitle": "Zodiacs Rent a Car – Închiriere auto în Insulele Canare",
+    "twitterDescription": "Închiriere auto rapidă și comodă în Fuerteventura și Lanzarote, fără costuri ascunse."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "Închiriere {carName} în Fuerteventura | Zodiacs Rent a Car",
+      "description": "Închiriază modelul {carName} în Fuerteventura sau Lanzarote, cu predare flexibilă, kilometraj nelimitat și asigurare completă.",
+      "imageAlt": "{carName} în flota Zodiacs Rent a Car"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "Detalii și închiriere {carName} | Zodiacs Rent a Car",
+      "description": "Descoperă dotările, capacitatea portbagajului și tariful de închiriere pentru {carName} în Fuerteventura și Lanzarote.",
+      "imageAlt": "Model {carName} în oferta Zodiacs Rent a Car"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Închiriere auto în Fuerteventura și Lanzarote",
+      "description": "Descoperă Insulele Canare cu echipa noastră de limbă maghiară: mașini premium de închiriat, predare flexibilă, kilometraj nelimitat și asigurare completă.",
+      "ogImageAlt": "Mașină închiriată în Fuerteventura de la Zodiacs Rent a Car"
+    },
+    "cars": {
+      "title": "Mașinile noastre – ofertă de închiriere auto în Fuerteventura și Lanzarote",
+      "description": "Mașini compacte, familiale și automate, cu predare flexibilă, al doilea șofer gratuit și kilometraj nelimitat.",
+      "ogImageAlt": "Flota de închiriere Zodiacs Rent a Car"
+    },
+    "about": {
+      "title": "Despre noi – Zodiacs Rent a Car",
+      "description": "Află mai multe despre echipa Zodiacs Rent a Car și misiunea noastră în Fuerteventura și Lanzarote.",
+      "ogImageAlt": "Fotografie de echipă Zodiacs Rent a Car"
+    },
+    "contact": {
+      "title": "Contact – Zodiacs Rent a Car Fuerteventura",
+      "description": "Ia legătura cu noi pentru închiriere auto, livrare sau ofertă. Îți răspundem rapid, în limba maghiară.",
+      "ogImageAlt": "Serviciu clienți Zodiacs Rent a Car"
+    },
+    "insurance": {
+      "title": "Asigurare și acoperire – Pachet SSCP",
+      "description": "Cunoaște asigurarea Super Comfort Plus: protecție completă, fără franșiză, cu acoperirea celor mai frecvente excepții.",
+      "ogImageAlt": "Informații despre asigurarea Zodiacs Rent a Car"
+    },
+    "generalRental": {
+      "title": "Condiții generale de închiriere – Zodiacs Rent a Car",
+      "description": "Condiții de închiriere, reguli contractuale și obligațiile clientului în Fuerteventura și Lanzarote.",
+      "ogImageAlt": "Document cu condiții de închiriere auto"
+    },
+    "gtc": {
+      "title": "Contract de închiriere – Zodiacs Rent a Car",
+      "description": "Contract de închiriere detaliat și condiții juridice pentru clienții Zodiacs Rent a Car.",
+      "ogImageAlt": "Document de contract de închiriere"
+    },
+    "rentalRequirements": {
+      "title": "Condiții de închiriere auto în Insulele Canare",
+      "description": "Vârstă, permis de conducere, depozit – toate informațiile despre condițiile de închiriere Zodiacs Rent a Car.",
+      "ogImageAlt": "Listă cu condiții de închiriere auto"
+    },
+    "offices": {
+      "title": "Puncte de predare și birouri – Zodiacs Rent a Car",
+      "description": "Locuri de preluare a mașinii în Fuerteventura și Lanzarote, cu date de contact și program.",
+      "ogImageAlt": "Vedere exterioară a biroului Zodiacs Rent a Car"
+    },
+    "faq": {
+      "title": "Întrebări frecvente – Zodiacs Rent a Car",
+      "description": "Găsește răspunsuri la cele mai frecvente întrebări, de la rezervare la asigurare.",
+      "ogImageAlt": "Serviciul clienți Zodiacs Rent a Car oferă ajutor",
+      "keywords": [
+        "închiriere auto întrebări frecvente",
+        "Întrebări frecvente Zodiacs Rent a Car",
+        "închiriere auto Fuerteventura întrebări",
+        "închiriere auto Lanzarote informații"
+      ]
+    },
+    "blog": {
+      "title": "Blog – Închiriere auto și sfaturi de călătorie în Fuerteventura",
+      "description": "Sfaturi actuale pentru închiriere auto, propuneri de trasee și experiențe locale de la echipa Zodiacs Rent a Car.",
+      "ogImageAlt": "Ilustrație blog Zodiacs Rent a Car",
+      "keywords": [
+        "blog închiriere auto",
+        "sfaturi de călătorie Fuerteventura",
+        "road trip Lanzarote",
+        "sfaturi Zodiacs Rent a Car"
+      ]
+    },
+    "gdpr": {
+      "title": "Informații GDPR privind prelucrarea datelor – Zodiacs Rent a Car",
+      "description": "Află cum îți prelucrăm datele personale, pe ce temei juridic ne bazăm și cum îți poți exercita drepturile.",
+      "ogImageAlt": "Document privind prelucrarea datelor GDPR"
+    },
+    "cookiePolicy": {
+      "title": "Informații despre cookie-uri – Zodiacs Rent a Car",
+      "description": "Prezentare generală a cookie-urilor pe care le folosim, scopul lor și setările de consimțământ.",
+      "ogImageAlt": "Document informativ despre cookie-uri"
+    }
+  },
+  "AboutSection": {
+    "title": "Nu rata niciun moment al vacanței",
+    "pickup_title": "Predare acolo unde îți este comod",
+    "pickup_text": "Preia mașina acolo unde ți se potrivește cel mai bine: chiar în fața hotelului, apartamentului sau adresei indicate. Astfel, de la primul minut poți porni liber în explorare.",
+    "transfer_title": "Transfer confortabil, la cerere",
+    "transfer_text": "Dacă dorești să folosești și serviciul de transfer, indică acest lucru simplu în formularul de ofertă – iar noi ne asigurăm că totul decurge fără probleme.",
+    "learn_more": "Află mai multe →",
+    "alt1": "Mașină 1",
+    "alt2": "Mașină 2",
+    "alt3": "Mașină 3"
+  },
+  "Search": {
+    "ariaLabel": "Căutare pe site",
+    "openLabel": "Deschide căutarea",
+    "closeLabel": "Închide căutarea",
+    "placeholder": "Ce cauți? Introdu un cuvânt cheie...",
+    "noResults": "Nu există rezultate pentru: \"{query}\". Încearcă un alt termen.",
+    "suggested": "Pagini recomandate",
+    "results": "Rezultate",
+    "entries": [
+      {
+        "title": "Pagina principală",
+        "description": "Prezentare generală a serviciilor Zodiacs, a flotei și a experienței clienților în Fuerteventura și Lanzarote.",
+        "keywords": [
+          "pagină principală",
+          "start",
+          "zodiacs",
+          "închiriere auto fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Mașinile noastre",
+        "description": "Flotă completă de mașini de închiriat, cu prețuri, informații despre portbagaj și posibilitatea de rezervare.",
+        "keywords": [
+          "mașini",
+          "flotă",
+          "prețuri",
+          "vehicule",
+          "rezervare",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "Despre noi",
+        "description": "Află cum lucrăm, de la predare flexibilă până la serviciu clienți personalizat.",
+        "keywords": [
+          "despre noi",
+          "echipă",
+          "servicii",
+          "predare",
+          "livrare",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Contact",
+        "description": "Cerere de ofertă prin WhatsApp, e-mail sau telefon, cu răspuns în 24 de ore.",
+        "keywords": [
+          "contact",
+          "cerere ofertă",
+          "formular",
+          "telefon",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog și ghid de călătorie",
+        "description": "Sfaturi locale, avertizări privind curenții de retur și inspirație pentru road trip.",
+        "keywords": [
+          "blog",
+          "sfaturi",
+          "ghid de călătorie",
+          "rip current",
+          "programe",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Siguranță rip current",
+        "description": "Articol de informare despre curenții periculoși care pot apărea pe coastele din Fuerteventura.",
+        "keywords": [
+          "rip current",
+          "rip",
+          "siguranță",
+          "cofete",
+          "plajă",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "Întrebări frecvente",
+        "description": "Răspunsuri la cele mai frecvente întrebări: predare la aeroport, asigurare, alimentare.",
+        "keywords": [
+          "întrebări frecvente",
+          "faq",
+          "asigurare",
+          "aeroport",
+          "alimentare",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Declarație privind prelucrarea datelor",
+        "description": "Informații GDPR despre modul de prelucrare a datelor, temeiuri juridice și drepturile tale.",
+        "keywords": [
+          "gdpr",
+          "prelucrare date",
+          "privacy",
+          "protecția datelor",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Informații cookie-uri",
+        "description": "Ce cookie-uri folosim și cum îți poți seta consimțământul.",
+        "keywords": [
+          "cookie",
+          "fișiere cookie",
+          "consimțământ",
+          "protecția datelor",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Asigurare",
+        "description": "Detalii despre pachetele de asigurare, acoperiri și franșize.",
+        "keywords": [
+          "asigurare",
+          "acoperire",
+          "franșiză",
+          "daună",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Condiții de închiriere",
+        "description": "Informații despre permis, vârstă și documentele necesare.",
+        "keywords": [
+          "condiții de închiriere",
+          "cerințe",
+          "permis de conducere",
+          "documente",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Puncte de predare și birouri",
+        "description": "Unde poți prelua mașina în Fuerteventura și Lanzarote, inclusiv date de contact.",
+        "keywords": [
+          "birouri",
+          "predare",
+          "livrare",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Condiții generale de închiriere",
+        "description": "Descriere detaliată a regulilor de închiriere pe ambele insule.",
+        "keywords": [
+          "condiții",
+          "contract",
+          "general",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "CGC – condiții generale de contract",
+        "description": "Condiții generale de contract (GTC) oficiale pentru Fuerteventura și Lanzarote.",
+        "keywords": ["cgc", "gtc", "contract", "juridic", "lanzarote"],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
+  "Navigation": {
+    "menu_sr": "Meniu",
+    "cars": "Mașinile noastre",
+    "about": "Despre noi",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Acasă",
+    "faq": "Întrebări frecvente"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Selector de limbă"
+  },
+  "Footer": {
+    "about": "Despre noi",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Acasă",
+    "fleet": "Mașinile noastre",
+    "general_rental_conditions": "Condiții generale de închiriere",
+    "gtc": "Condiții generale de contract",
+    "insurance": "Asigurare",
+    "rental_requirements": "Condiții de închiriere",
+    "cookie_policy": "Informații despre cookie-uri",
+    "gdpr": "Informații GDPR",
+    "zodiac_car_rental": "Zodiacs Închirieri Auto",
+    "logo_placeholder": "Aici va fi logo-ul",
+    "faq": "Întrebări frecvente"
+  },
+  "Explore": {
+    "title": "Descoperă frumusețea Insulelor Canare cu o mașină închiriată!",
+    "subtitle": "Rezervare online, predare și livrare flexibilă la cazare sau la aeroport.",
+    "cards": {
+      "map": "Zodiacs Rent a Car oferă servicii de închiriere auto fiabile în Fuerteventura, Costa Calma și Lanzarote.",
+      "globe": "Fie că planifici relaxare la malul mării sau excursii pline de aventură, în flota noastră vei găsi mașina ideală pentru tine.",
+      "heart": "Rezervă online și preia mașina închiriată direct la aeroport sau la cazare!"
+    }
+  },
+  "Inquire": {
+    "title": "Rezervă acum!",
+    "description_1": "Nu lăsa închirierea mașinii pe ultima sută de metri! Echipa Zodiacs Rent a Car îți răspunde în 24 de ore și te ajută să rezervi mașina care se potrivește cel mai bine vacanței tale.",
+    "description_2": "Lasă-ne datele tale de contact și îți trimitem o ofertă personalizată, cu prețuri detaliate, informații despre asigurare și echipamentele extra dorite. La Zodiacs, fiecare pas este comunicat în limba aleasă de tine, ca să pornești la drum cu încredere.",
+    "fields": {
+      "fullName": {
+        "label": "Nume complet",
+        "placeholder": "Nume complet",
+        "required": "Te rugăm să îți introduci numele"
+      },
+      "email": {
+        "label": "Adresă de e-mail",
+        "placeholder": "Adresă de e-mail",
+        "required": "Te rugăm să îți introduci adresa de e-mail",
+        "invalid": "Te rugăm să introduci o adresă de e-mail validă"
+      },
+      "message": {
+        "label": "Cu ce te putem ajuta?",
+        "placeholder": "Te rugăm să ne scrii cu ce te putem ajuta",
+        "required": "Te rugăm să ne scrii cu ce te putem ajuta",
+        "invalid": "Te rugăm să completezi acest câmp"
+      }
+    },
+    "submit": {
+      "idle": "Continuă →",
+      "submitting": "Se trimite..."
+    },
+    "alt": {
+      "image": "Ilustrație închiriere auto"
+    },
+    "toast": {
+      "success": "Îți mulțumim! Te vom contacta în curând.",
+      "error": "Ups, a apărut o eroare. Te rugăm să încerci din nou mai târziu."
+    }
+  },
+  "Blog": {
+    "title": "Blog și ghid de călătorie",
+    "intro": "Sfaturi locale, recomandări pentru închirierea mașinii și trasee inspiraționale, ca fiecare minut al vacanței tale să fie memorabil.",
+    "readMore": "Deschide articolul",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Obiective de vizitat cu mașina în Fuerteventura – 3 locuri de neratat",
+        "excerpt": "Dunele din Corralejo, Betancuria și peșterile din Ajuy: ghid despre cum să profiți la maximum de mașina închiriată în Fuerteventura.",
+        "category": "Ghid de călătorie",
+        "readTime": "6 minute de citire",
+        "publishDate": "3 noiembrie 2025",
+        "publishDateISO": "2025-11-03",
+        "image": {
+          "src": "/AJUY.jpg",
+          "alt": "Priveliște spre dunele de nisip Corralejo și Oceanul Atlantic"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Atenție! Curenturi de revenire periculoase în Fuerteventura",
+        "excerpt": "Învață să recunoști semnele curenților de tip rip current, ca plajele sălbatice precum Cofete să rămână o experiență plăcută, nu un pericol.",
+        "category": "Siguranță",
+        "readTime": "7 minute de citire",
+        "publishDate": "15 noiembrie 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Panou de avertizare pe coasta sălbatică Cofete"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Obiective de vizitat cu mașina în Fuerteventura – 3 locuri de neratat cu mașină închiriată | Zodiacs Rent a Car",
+        "description": "Descoperă cele mai frumoase obiective din Fuerteventura cu mașina! Dunele din Corralejo, Betancuria și peșterile din Ajuy sunt ușor accesibile cu mașină închiriată. Închiriere auto în Fuerteventura – Zodiacs Rent a Car.",
+        "keywords": [
+          "închiriere auto Fuerteventura",
+          "mașină de închiriat Fuerteventura",
+          "obiective Fuerteventura cu mașina",
+          "dunele Corralejo",
+          "Betancuria",
+          "peșterile Ajuy",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00594.jpg",
+          "alt": "Priveliște către dunele de nisip Corralejo în Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Obiective de vizitat cu mașina în Fuerteventura – 3 locuri pe care să nu le ratezi dacă explorezi insula cu mașină închiriată",
+        "category": "Ghid de călătorie",
+        "subtitle": "Dacă închiriezi mașină în Fuerteventura, poți descoperi toate minunățiile insulei în propriul ritm. Fără grabă, fără orare de autobuz – doar miros de ocean, soare și senzația de libertate.",
+        "description": "Am adunat trei locuri care pot fi accesate ușor cu mașina, sunt sigure de vizitat și oferă experiențe de neuitat.",
+        "publishDate": "3 noiembrie 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 minute de citire",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Dunele din Corralejo – cea mai emblematică minune naturală a Fuerteventurii",
+          "paragraphs": [
+            "În partea de nord a insulei Fuerteventura se află <strong>Parcul Natural Corralejo</strong> (Parque Natural de Corralejo), una dintre cele mai cunoscute atracții ale insulei.",
+            "Dunele uriașe de nisip alb contrastează cu albastrul turcoaz al Oceanului Atlantic – o adevărată atmosferă de deșert pe malul mării."
+          ],
+          "access": {
+            "title": "Acces cu mașina",
+            "description": "Prin dune trece drumul FV-1 sau FV-1a spre Corralejo. De-a lungul drumului există mai multe parcări amenajate, de unde poți ajunge pe jos la plaje și la dune."
+          },
+          "links": [
+            {
+              "label": "Hartă dunele Corralejo",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Sfaturi",
+            "description": "Oprește-te la plaja <strong>Grandes Playas de Corralejo</strong>, unde dunele coboară direct în ocean – loc perfect pentru fotografii!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – fosta capitală istorică, drumuri serpentine și priveliști spectaculoase",
+          "paragraphs": [
+            "În zona deluroasă din interiorul insulei se află Betancuria, fosta capitală a Fuerteventurii și inima culturală a insulei.",
+            "Orășelul este ascuns într-o vale verde, între dealuri vulcanice, cu străduțe pitorești și o atmosferă liniștită."
+          ],
+          "access": {
+            "title": "Acces cu mașina",
+            "description": "Betancuria este accesibilă pe drumul FV-30, venind din Puerto del Rosario, Caleta de Fuste sau Pájara. Deși drumul este plin de serpentine, este bine întreținut și oferă panorame spectaculoase."
+          },
+          "links": [
+            {
+              "label": "Hartă Betancuria",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Obiective pe traseu",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – două statui uriașe de bronz veghează asupra văii.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – unul dintre cele mai frumoase puncte de belvedere de pe insulă.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Peșterile Ajuy și plaja cu nisip negru – coasta sălbatică de vest a Fuerteventurii",
+          "paragraphs": [
+            "Coasta de vest a insulei este mai sălbatică și mai stâncoasă, dar tocmai asta o face specială. Aici se află satul pescăresc liniștit <strong>Ajuy</strong>, cunoscut pentru plaja sa cu nisip negru și pentru peșterile <strong>Cuevas de Ajuy</strong>.",
+            "De-a lungul stâncilor există o potecă amenajată care duce la peșteri, unde poți vedea formațiuni stâncoase vechi de milioane de ani, în timp ce auzi vuietul mării. Locul este deosebit de spectaculos la apus."
+          ],
+          "access": {
+            "title": "Acces cu mașina",
+            "description": "În satul Ajuy se ajunge dinspre Pájara, pe drumul FV-621, complet asfaltat."
+          },
+          "links": [
+            {
+              "label": "Hartă peșterile Ajuy",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "De ce merită să închiriezi mașină în Fuerteventura?",
+          "paragraphs": [
+            "Distanțele dintre obiective sunt adesea mari, iar transportul în comun este limitat.",
+            "Mașina închiriată îți oferă libertate – poți descoperi în propriul ritm cele mai ascunse plaje și satele de munte.",
+            "Drumurile sunt într-o stare foarte bună, traficul este redus, iar parcarea este gratuită aproape peste tot."
+          ],
+          "links": [
+            {
+              "label": "Vezi mașinile noastre – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Călătorește responsabil – protejează natura din Fuerteventura!",
+          "paragraphs": [
+            "Noi, localnicii, iubim și protejăm insula. Te rugăm și pe tine să respecți natura:"
+          ],
+          "bullets": [
+            "nu lăsa gunoaie în urmă, folosește coșurile de gunoi;",
+            "nu arunca mucuri de țigară în nisip sau printre stânci;",
+            "rămâi pe potecile marcate, mai ales în zonele de dune și pe coastele stâncoase."
+          ],
+          "closing": "Dacă procedezi așa, Fuerteventura îți va mulțumi – și te va aștepta înapoi."
+        }
+      ],
+      "cta": {
+        "title": "Descoperă insula în confort, cu mașină închiriată!",
+        "paragraphs": [
+          "Explorează dunele de nisip, satele ascunse printre munți și peșterile de pe țărm în propriul tău ritm.",
+          "<strong>Zodiacs Rent a Car</strong> – închiriere auto în Fuerteventura simplu, cu formalități rapide, mașini de încredere și sfaturi locale."
+        ],
+        "buttons": [
+          {
+            "label": "Vezi mașinile noastre",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Rezervă online în câteva clicuri",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "Atenție! Curenturi de revenire periculoase în Fuerteventura – Cum să înoți în siguranță în ocean",
+        "description": "Pe plajele din Fuerteventura curenții de revenire (rip currents) apar frecvent și pot lua prin surprindere înotătorii. Află cum îi recunoști și cum poți evita pericolul în siguranță.",
+        "keywords": [
+          "plajă Fuerteventura",
+          "Cofete Beach",
+          "curent de revenire",
+          "rip current",
+          "înot în siguranță",
+          "pericole Fuerteventura",
+          "călătorie Insulele Canare",
+          "înot în ocean",
+          "sfaturi Fuerteventura",
+          "siguranță pe plajă",
+          "închiriere auto Fuerteventura",
+          "Zodiacs Rent a Car",
+          "curenți marini",
+          "recunoașterea rip current"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Panou de avertizare pe coasta sălbatică Cofete din Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "Atenție! Curenturi de revenire periculoase în Fuerteventura – așa înoți în siguranță în ocean",
+        "category": "Siguranță",
+        "subtitle": "Dacă vrei să înoți pe plajele sălbatice din Fuerteventura, nu este suficient spiritul de aventură – trebuie să înțelegi și cum funcționează curenții de revenire.",
+        "description": "Îți explicăm cum recunoști semnele rip current-urilor de la Cofete până la El Cotillo și ce să faci dacă ești prins de curent.",
+        "publishDate": "15 noiembrie 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "7 minute de citire",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Ce este curentul de revenire și de ce este periculos?",
+          "paragraphs": [
+            "Pe coasta Oceanului Atlantic, curentul de revenire este cel mai frecvent pericol ascuns: masa de apă împinsă de valuri spre țărm se întoarce înapoi spre larg într-o bandă îngustă, cu forță mare.",
+            "Fenomenul este înșelător, pentru că apare adesea în zone unde suprafața apei pare mai liniștită – exact acolo intră în apă cei mai mulți înotători."
+          ],
+          "bullets": [
+            "O suprafață aparent fără valuri nu înseamnă neapărat siguranță: este posibil ca tocmai acolo să se formeze un rip current.",
+            "Curentul nu te trage în jos, ci lateral și spre larg, iar epuizarea este cea care duce la cele mai multe tragedii."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Cum recunoști zona periculoasă",
+          "paragraphs": [
+            "La sosire, rezervă-ți un minut să observi apa. Semnele curenților de revenire pot fi văzute cu ochiul liber, dacă știi ce să cauți.",
+            "La Cofete, de exemplu, există panou de avertizare, dar de multe ori, din cauza vântului, este întors spre uscat – de aceea informează-te întotdeauna înainte să intri în apă."
+          ],
+          "bullets": [
+            "Culoare mai închisă și apă mai tulbure, deoarece fundul mării se adâncește brusc.",
+            "Bandă aparent mai liniștită între valuri, unde apa curge înapoi spre larg.",
+            "Spumă, alge sau resturi care nu sunt împinse spre țărm, ci trase în larg.",
+            "Steaguri, panouri sau avertismentele localnicilor – ia-le mereu în serios."
+          ],
+          "tip": {
+            "title": "Sfaturi",
+            "description": "Când ajungi pe plajă, fotografiază panourile de semnalizare, astfel îți vei aminti ce înseamnă fiecare steag pe plaja respectivă."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Ce să faci dacă te prinde curentul?",
+          "paragraphs": [
+            "Cel mai important este să nu intri în panică. Rip current-ul nu te trage la fund, dar se deplasează mai repede decât pot înota majoritatea oamenilor.",
+            "Dacă obosești înainte să scapi din curent, ajungi în pericol – de aceea trebuie să reacționezi cu o strategie."
+          ],
+          "bullets": [
+            "Respiră profund și ține capul la suprafața apei.",
+            "Nu înota direct spre țărm – curentul este mai puternic decât tine.",
+            "Înoată paralel cu țărmul până simți că nu mai ești în banda îngustă de curent.",
+            "Dacă obosești, plutește pe spate, fă semne cu mâna și așteaptă ca valurile să te readucă spre mal."
+          ],
+          "closing": "Cu cât rămâi mai calm, cu atât șansele de a ieși singur la mal sunt mai mari."
+        },
+        {
+          "id": "personal-story",
+          "title": "Poveste personală: am scos trei copii din apă la Cofete",
+          "paragraphs": [
+            "„S-a întâmplat pe plaja Cofete, când fiica mea și doi verișori de-ai ei au fost trași în câteva secunde de curent. Nu am strigat, nu am făcut semne – toată energia mi-am folosit-o pentru înot.",
+            "Am reușit să îi aduc pe toți trei la țărm, dar experiența m-a învățat pentru totdeauna: oceanul trebuie respectat, nu înfruntat.”"
+          ],
+          "tip": {
+            "title": "Concluzie",
+            "description": "Observă mereu cum se mișcă apa și învață-ți familia ce să facă în cazul în care sunt prinși de curent."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "Știai? Curentul e mai rapid decât un înotător de performanță",
+          "paragraphs": [
+            "Cifrele te ajută să înțelegi de ce nu are sens să te lupți cu forța cu un astfel de curent."
+          ],
+          "bullets": [
+            "Un înotător olimpic parcurge aproximativ 2,3 metri pe secundă.",
+            "Un rip current poate ajunge, în medie, la 2,4 metri pe secundă – adică este întotdeauna cu un pas înaintea ta."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Respectă natura, protejează insula",
+          "paragraphs": [
+            "Responsabilitatea nu se oprește la linia apei: curățenia plajei și respectarea regulilor locale țin de fiecare dintre noi."
+          ],
+          "bullets": [
+            "Nu lăsa gunoi în urmă, ia cu tine propriile deșeuri.",
+            "Nu arunca mucuri de țigară în nisip sau printre stânci.",
+            "Rămâi pe potecile marcate, mai ales în zonele cu dune și în ariile protejate."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Călătorește inteligent cu mașina închiriată",
+          "paragraphs": [
+            "Dacă explorezi Fuerteventura cu mașina, ai grijă să ai mereu suficientă apă, cremă de protecție solară și informații actualizate despre curenți și vânt.",
+            "Astfel, te poți bucura în același timp de libertate și siguranță."
+          ],
+          "closing": "Distribuie acest articol și altora, ca tot mai puțini călători să ajungă în pericol din cauza curenților de revenire."
+        }
+      ],
+      "cta": {
+        "title": "Călătorește în siguranță cu mașinile Zodiacs",
+        "paragraphs": [
+          "Te ajutăm să alegi mașina potrivită cu care poți ajunge și pe plajele sălbatice, mai puțin cunoscute – împreună cu toate sfaturile de siguranță necesare.",
+          "<strong>Zodiacs Rent a Car</strong> – echipă locală, comunicare rapidă, recomandări de siguranță personalizate."
+        ],
+        "buttons": [
+          {
+            "label": "Cere o ofertă acum",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Vezi oferta de mașini",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Înapoi la blog"
+  },
+  "WhatsApp": {
+    "aria_label": "Mesaj WhatsApp",
+    "choose_option": "Alege una dintre opțiuni",
+    "options": {
+      "transfer_quote": {
+        "label": "Cer ofertă pentru transfer",
+        "text": "Salut! Aș dori o ofertă pentru serviciul de transfer."
+      },
+      "car_availability": {
+        "label": "Disponibilitate mașini",
+        "text": "Salut! Aș dori să întreb despre disponibilitatea mașinilor pentru perioada indicată."
+      },
+      "interested_in": {
+        "label": "Aș vrea să mă informez",
+        "text": "Salut! Aș dori mai multe informații despre procesul de închiriere auto."
+      },
+      "custom_message": {
+        "label": "Mesaj personalizat",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> este o <strong>afacere de familie maghiară</strong>, a cărei inimă și casă este <strong>Fuerteventura</strong>. Trăim și lucrăm într-un mediu internațional, dar știm exact ce este important pentru cei care vin aici în vacanță: siguranță, fiabilitate și o atitudine prietenoasă.",
+    "why_title": "De ce Fuerteventura?",
+    "why_text": "Pentru noi această insulă nu este doar o destinație turistică, ci chiar casa noastră. Iubim soarele, oceanul, stilul de viață relaxat și sentimentul de libertate fără limite. Toate aceste trăiri vrem să ți le transmitem și ție atunci când închiriezi o mașină de la noi.",
+    "fleet_title": "Mașinile noastre – confortabile, fiabile, accesibile",
+    "fleet_text": "În flota noastră găsești atât <strong>mașini mici, practice</strong>, cât și <strong>modele de familie</strong> sau <strong>vehicule mai spațioase</strong>. Fiecare mașină este întreținută regulat și predată curată, ca tu să poți explora insula fără griji.",
+    "delivery_title": "Predare flexibilă",
+    "delivery_text": "Poți prelua mașina închiriată nu doar în Fuerteventura, ci și pe <strong>Lanzarote</strong>. Indiferent dacă ajungi la aeroport sau te cazezi la hotel, îți livrăm mașina flexibil, pentru ca vacanța ta să înceapă cât mai confortabil.",
+    "more_title": "Mai mult decât o simplă închiriere",
+    "more_text": "La noi închirierea mașinii nu se oprește la predarea cheilor. La cerere te ajutăm cu trasee, sfaturi locale și îți arătăm unde merită să ajungi ca să trăiești adevăratul <strong>stil de viață din Fuerteventura</strong>: golfuri ascunse, plaje cu nisip, peisaje speciale și experiențe gastronomice.",
+    "mission_title": "Misiunea noastră",
+    "mission_text": "Scopul nostru este ca fiecare client să se bucure de insulă <strong>în libertate, confort și siguranță</strong>. Ca familie și ca mică afacere locală, lucrăm cu sufletul ca tu să poți lua acasă o parte din atmosfera specială a Fuerteventurii.",
+    "cta": "Închiriază o mașină de la noi și descoperă Fuerteventura așa cum o iubim și noi!"
+  },
+  "Contact": {
+    "title": "Ai întrebări despre închirierea mașinii în Fuerteventura sau Lanzarote?",
+    "p1": "Ia legătura cu noi și te ajutăm să găsești <strong>cea mai bună soluție pentru tine!</strong> Fie că este vorba de rezervare în avans, livrare la aeroport sau predare la hotel, serviciul nostru de relații cu clienții răspunde <strong>rapid și flexibil</strong>.",
+    "p2": "Completează formularul de mai jos, scrie-ne un e-mail, un mesaj pe Messenger, WhatsApp sau Viber, sau sună-ne! <strong>Suntem bucuroși să te ajutăm</strong>, ca vacanța ta să decurgă fără griji.",
+    "form": {
+      "title": "Cere o ofertă personalizată",
+      "description": "Scrie-ne când și în ce condiții ai dori să închiriezi o mașină – îți răspundem în câteva ore.",
+      "fields": {
+        "name": {
+          "label": "Nume complet",
+          "placeholder": "Nume complet"
+        },
+        "phone": {
+          "label": "Număr de telefon",
+          "placeholder": "+40 7xx xxx xxx"
+        },
+        "email": {
+          "label": "Adresă de e-mail",
+          "placeholder": "nume@example.com"
+        },
+        "channel": {
+          "label": "Mod de contact preferat"
+        },
+        "rentalStart": {
+          "label": "Începutul închirierii",
+          "placeholder": "Alege data"
+        },
+        "rentalEnd": {
+          "label": "Sfârșitul închirierii",
+          "placeholder": "Alege data"
+        },
+        "dateRange": {
+          "label": "Perioada de închiriere"
+        },
+        "arrivalFlight": {
+          "label": "Numărul zborului de sosire",
+          "placeholder": "ex. FR1234"
+        },
+        "departureFlight": {
+          "label": "Numărul zborului de plecare",
+          "placeholder": "ex. FR5678"
+        },
+        "partySize": {
+          "label": "Numărul de pasageri",
+          "placeholder": "Câți pasageri călătoresc?"
+        },
+        "children": {
+          "label": "Numărul de copii",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "Accept <link>Politica de confidențialitate</link>",
+        "terms": "Accept <link>Termenii și Condițiile Generale</link>"
+      },
+      "submit": {
+        "idle": "Cer ofertă",
+        "sending": "Se trimite..."
+      },
+      "feedback": {
+        "success": "Îți mulțumim! Te vom contacta în curând.",
+        "error": "Ups, a apărut o eroare. Încearcă din nou mai târziu."
+      },
+      "errors": {
+        "nameRequired": "Te rugăm să îți introduci numele",
+        "phoneRequired": "Te rugăm să introduci numărul de telefon",
+        "emailRequired": "Te rugăm să introduci adresa de e-mail",
+        "emailInvalid": "Te rugăm să introduci o adresă de e-mail validă",
+        "privacyRequired": "Acceptarea politicii de confidențialitate este obligatorie",
+        "termsRequired": "Acceptarea Termenilor și Condițiilor este obligatorie",
+        "rentalStartRequired": "Te rugăm să selectezi data de început a închirierii",
+        "rentalEndRequired": "Te rugăm să selectezi data de sfârșit a închirierii",
+        "arrivalFlightRequired": "Te rugăm să introduci numărul zborului de sosire",
+        "departureFlightRequired": "Te rugăm să introduci numărul zborului de plecare"
+      }
+    }
+  },
+  "Cars": {
+    "title": "Descoperă Fuerteventura și Lanzarote în libertate totală cu mașinile noastre!",
+    "p1": "La noi închirierea mașinii este simplă și rapidă: alegi vehiculul potrivit pentru tine, iar noi ți-l livrăm la aeroport sau direct la hotel. Datorită opțiunilor noastre flexibile de închiriere <strong>te poți bucura de vacanță fără griji</strong>, indiferent dacă ai nevoie de mașină pentru câteva zile sau pentru o perioadă mai lungă.",
+    "p2": "<strong>Merită să rezervi din timp mașina dorită</strong>, ca să fii sigur că este disponibilă la sosire. Răsfoiește mașinile de mai jos, apasă pe detalii și rezervă online ușor și comod!",
+    "labels": {
+      "seats": "persoane",
+      "manual": "Manuală",
+      "automatic": "Automată",
+      "per_day": "/ zi",
+      "from_price": "de la €{price}"
+    },
+    "colors": {
+      "milky_beige": "Milky Beige",
+      "white": "Alb",
+      "silver_metal": "Argintiu metalizat",
+      "blue": "Albastru",
+      "metal_blue": "Albastru metalizat",
+      "gray": "Gri",
+      "silver_metallic": "Argintiu metalizat",
+      "metallic_blue": "Albastru metalizat"
+    },
+    "categories": {
+      "small": "Mașină mică",
+      "medium": "Clasă medie",
+      "large": "Familială",
+      "suv": "SUV / Off-road"
+    },
+    "transmissions": {
+      "manual": "Manuală",
+      "automatic": "Automată"
+    },
+    "details": {
+      "back": "Înapoi la flotă",
+      "title": "Detalii mașină",
+      "category": "Categorie",
+      "luggage_large": "Troler mare: {count}",
+      "luggage_small": "Troler mic: {count}",
+      "colors": "Culori disponibile"
+    },
+    "buttons": {
+      "interested": "Mă interesează"
+    }
+  },
+  "Insurance": {
+    "title": "Asigurare (SSCP)",
+    "igic_note": "+15% IGIC nu este inclus. Maximum +30 € per închiriere.",
+    "sscp_title": "Super Comfort Plus Insurance (SSCP)",
+    "sscp_intro": "Cu o sumă foarte mică poți extinde asigurarea inclusă. Pe lângă acoperirea largă inclusă în prețul de închiriere, SSCP elimină următoarele excepții:",
+    "table": {
+      "header_event": "Eveniment",
+      "header_desc": "Descriere",
+      "header_cost": "Cost aproximativ (fără asigurare)",
+      "rows": {
+        "lost_keys": {
+          "event": "Pierderea cheilor",
+          "desc": "Înlocuire și programare",
+          "cost": "100 €"
+        },
+        "tyre_damage": {
+          "event": "Deteriorare anvelopă",
+          "desc": "Înlocuire/reparație",
+          "cost": "150 €"
+        },
+        "rim_flat": {
+          "event": "Deteriorare jantă / pană reparată",
+          "desc": "Reparație",
+          "cost": "60 €"
+        },
+        "wrong_fuel": {
+          "event": "Alimentare greșită",
+          "desc": "Golire și curățare rezervor",
+          "cost": "110 €"
+        },
+        "battery": {
+          "event": "Descărcarea bateriei din neglijență",
+          "desc": "Asistență / pornire",
+          "cost": "90 €"
+        },
+        "dru": {
+          "event": "Serviciu suplimentar DRU*",
+          "desc": "Asistență la fața locului",
+          "cost": "40 € / 100 €"
+        }
+      }
+    },
+    "coverage_note": "Cu această asigurare acoperirea se extinde la toate excepțiile din polița noastră (cu excepția celor pe care niciun asigurator nu le acoperă).",
+    "footnote": "* +15% IGIC nu este inclus. Maximum +30 € per închiriere.",
+    "pricing_title": "Preț și ofertă",
+    "pricing_text": "Închiriați acum de la doar 2 €/zi, până la maximum 30 €, indiferent de model, și bucurați-vă de o închiriere fără griji.",
+    "closing": "Cel mai bine e să te bucuri de vacanță cu acoperire completă.",
+    "related": {
+      "title": "Pagini conexe",
+      "details": "Mai multe detalii:"
+    }
+  },
+  "GeneralRental": {
+    "title": "Condiții generale de închiriere",
+    "general": {
+      "title": "Dispoziții generale",
+      "p1": "Este necesar ca șoferul să aibă întotdeauna asupra sa un <strong>contract de închiriere fizic și valabil</strong> în vehicul, deoarece în lipsa acestuia autoritățile spaniole pot aplica amendă.",
+      "p2": "Orice contravenție sau cost apărut în timpul închirierii, fără a aduce atingere unor posibile acțiuni legale, <strong>este în întregime responsabilitatea șoferului</strong>.",
+      "p3": "<strong>Alimentarea corectă</strong> a vehiculului este responsabilitatea Șoferului.",
+      "p4": "Furnizorul își rezervă dreptul de a refuza închirierea pe baza unor incidente anterioare sau a nerespectării Condițiilor Generale. Dacă modelul ales nu este disponibil, furnizăm un model <strong>similar sau de categorie superioară</strong>."
+    },
+    "services": {
+      "title": "Servicii incluse",
+      "kanary": {
+        "title": "Insulele Canare",
+        "i1": "<strong>Asigurare full casco</strong> fără franșiză",
+        "i2": "Taxe, suprataxe de aeroport/gara/port: incluse",
+        "i3": "<strong>Kilometraj nelimitat</strong>",
+        "i4": "Scaune pentru copii și înălțătoare: incluse",
+        "i5": "Portbagaj de plafon: inclus",
+        "i6": "GPS: standard pe anumite modele",
+        "i7": "Șofer adițional: inclus",
+        "i8": "Livrare în afara biroului: inclusă",
+        "i9": "Returnare la birou: inclusă",
+        "i10": "Returnare cu întârziere de câteva ore: inclusă",
+        "i11": "Șofer tânăr (21–25 ani): inclus"
+      },
+      "peninsula": {
+        "title": "Peninsulă / Insulele Baleare",
+        "i1": "Asigurarea este valabilă împreună cu <strong>condițiile</strong>*",
+        "i2": "Taxe și impozite: incluse",
+        "i3": "Kilometraj nelimitat: <strong>max. 28 de zile</strong>**",
+        "i4": "Scaune pentru copii și înălțătoare: 13,99 €/zi (max. 97,93 €)",
+        "i5": "Portbagaj de plafon: 54 €",
+        "i6": "GPS: 14 €/zi (max. 98 €)",
+        "i7": "Alte accesorii (lanțuri, suport schi etc.): 54 €",
+        "i8": "Șofer adițional: 12,50 €/zi (max. 125 €)",
+        "i9": "Livrare în afara biroului: <strong>nu</strong> este inclusă",
+        "i10": "Returnare la birou: <strong>nu</strong> este inclusă",
+        "i11": "Returnare cu întârziere de câteva ore: 50 €",
+        "i12": "Asigurare de asistență în străinătate: 55 €"
+      },
+      "foot1": "(*) Asigurare full casco fără franșiză – cu excepții (partea superioară a caroseriei, șasiu, interior, utilizare necorespunzătoare etc.). Detalii: Asigurare.",
+      "foot2": "(**) Kilometraj nelimitat, max. 28 de zile."
+    },
+    "canary": {
+      "title": "Condiții de închiriere – Insulele Canare",
+      "i1": "<strong>Confirmare imediată</strong> a rezervării; în lipsa modelului exact, se oferă un model similar sau mai bun.",
+      "i2": "<strong>Asigurare completă 100%</strong> fără franșiză; kilometraj nelimitat; taxe și suprataxe de aeroport incluse.",
+      "i3": "Ghiduri audio disponibile în biroul de închirieri.",
+      "i4": "Scaune pentru copii, înălțătoare și portbagaje sunt <strong>gratuite</strong>.",
+      "i5": "Șofer(i) suplimentar(i) gratuit(ţi) – se solicită în birou.",
+      "i6": "<strong>Politică de combustibil</strong>: poate fi solicitat depozit în funcție de nivelul la predare.",
+      "i7": "<strong>Modificare/anulare</strong>: gratuită; online sau prin e-mail/telefon.",
+      "i8": "La rezervările de aeroport, rezervarea se păstrează <strong>max. 60 de minute</strong>, conform orei reale de sosire.",
+      "i9": "<strong>Scaune pentru copii/înălțătoare</strong> gratuite; scaun 0–18 kg pe bancheta din spate, cu fața sau cu spatele la direcția de mers; înălțător 15–36 kg; montarea corectă este responsabilitatea clientului."
+    },
+    "peninsula": {
+      "title": "Condiții de închiriere – Peninsulă și Insulele Baleare",
+      "i1": "Toate prețurile sunt exprimate în euro. Durata minimă a închirierii: <strong>24 de ore</strong>. +29 minute timp de grație; după aceea se taxează zi întreagă.",
+      "i2": "La călătoriile în străinătate este necesară <strong>Asigurare Internațională de Asistență</strong>; lista țărilor admise este în contract.",
+      "i3": "Plata: <strong>doar</strong> cu card de credit fizic, pe numele titularului contractului. Numerarul/cec-ul de călătorie nu sunt acceptate.",
+      "i4": "Depozit: 200 € pentru categoriile mici, 400 € pentru categoriile mari/premium/MPV; pentru anumite categorii este necesară blocarea unui card internațional.",
+      "i5": "Dacă rezervorul nu este realimentat, se facturează prețul combustibilului + 18 € taxă de serviciu.",
+      "i6": "Șofer sub 25 de ani: 21,99 €/zi, max. 219,90 €.",
+      "i7": "Șofer suplimentar: 12,50 €/zi, max. 125 €.",
+      "i8": "Condiții de vârstă/permise pe categorii (detalii în contract); minim 2 ani vechime a permisului.",
+      "i9": "Închiriere la aeroport Madrid/Barcelona fără bilet de avion <strong>nu</strong> este acceptată (sunt necesare datele de sosire și plecare).",
+      "i10": "<strong>Călătorii în străinătate</strong>: țări permise – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; alte țări nu sunt permise; returnarea în străinătate necesită aprobare prealabilă; vehiculele utilitare nu pot fi lăsate în afara țării.",
+      "i11": "<strong>Păstrarea accesoriilor</strong> (scaun copil, portbagaj plafon, chei, documentație) este responsabilitatea șoferului; în caz de pierdere/deteriorare se poate aplica penalitate."
+    },
+    "schedule": {
+      "title": "Program și livrări",
+      "i1": "Birouri în oraș: L–V 9:30–13:30 și 16:30–19:00; Sâmbătă 10:00–13:00.",
+      "i2": "Birouri în aeroport: zilnic 08:00–23:00 (în funcție de sezon poate varia).",
+      "i3": "Livrare la ghișeu cu discount: până la 36,3 €, în funcție de disponibilitate.",
+      "i4": "Livrare/preluare în afara biroului: 27 €/50 €/100 € (5 km / 50 km / 100 km), cu 48 de ore înainte.",
+      "i5": "Livrare/preluare în afara programului la biroul propriu: +50 €.",
+      "i6": "În orașele fără birou: 0,84 €/km (min. 57 €) până la cel mai apropiat birou (dus-întors).",
+      "i7": "Returnare la birou în timpul programului; în afara acestuia răspunderea șoferului rămâne până la preluare.",
+      "i8": "Păstrarea rezervărilor: max. 120 minute de la ora prevăzută în contract (în timpul programului biroului); la zboruri, se ia în considerare ora reală de sosire."
+    },
+    "liability": {
+      "title": "Declinare de răspundere",
+      "p1": "Furnizorul nu răspunde pentru daune rezultate din funcționare defectuoasă, omisiune, întrerupere, ștergere, întârziere, viruși informatici, furt, distrugere, acces neautorizat sau utilizare a datelor sau informațiilor.",
+      "p2": "Utilizatorul acceptă în mod expres că folosește site-ul <strong>pe propria răspundere</strong>, inclusiv toate costurile serviciilor și reparațiilor necesare pentru funcționarea sistemului.",
+      "p3": "Organizațiile și angajații afiliați furnizorului nu sunt răspunzători pentru nicio pierdere sau daună rezultată din utilizarea sau încercarea de a utiliza site-ul."
+    },
+    "related": {
+      "title": "Pagini conexe",
+      "details": "Mai multe detalii:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Cerințe de închiriere",
+    "general": {
+      "title": "Condiții generale (Fuerteventura / Lanzarote)",
+      "i1": "În mod normal nu închiriem șoferilor sub 23 de ani, decât cu suprataxă.",
+      "i2": "După confirmarea rezervării aceasta poate fi anulată în următoarele cazuri:",
+      "i2a": "datele furnizate de client nu sunt corecte/reale/actualizate",
+      "i2b": "încălcarea condițiilor de închiriere",
+      "i3": "Necesare: permis de conducere valabil, carte de identitate/pașaport, adresă de domiciliu și număr de telefon funcțional."
+    },
+    "vehicle": {
+      "title": "Condiții privind vehiculul",
+      "i1": "Modelul rezervat are caracter informativ; poate fi înlocuit cu un model similar, din aceeași categorie.",
+      "i2": "La vehiculele echipate cu GPS, localizarea este folosită în scop de protecție, în conformitate cu legislația.",
+      "i3": "Vehiculul nu poate părăsi insula pe care a fost închiriat.",
+      "i4": "Utilizare: cu respectarea legislației, doar pe drumuri publice; este interzisă utilizarea în scopuri interzise/ilegale; nu este permisă utilizarea în scop publicitar.",
+      "i5": "Utilizarea combustibilului recomandat este obligatorie; vehiculul trebuie încuiat de fiecare dată când este parcat.",
+      "i6": "Scaunul pentru copil este pus la dispoziție la preluare; fixarea corectă este obligatorie.",
+      "i7": "Bagajele/plăcile de surf trebuie fixate cu portbagaj de plafon.",
+      "i8": "În caz de defecțiune, opriți vehiculul, parcați în siguranță și <strong>informați-ne imediat</strong>.",
+      "i9": "Șoferul este responsabil pentru vehicul din momentul preluării până la predarea corectă."
+    },
+    "handover": {
+      "title": "Predare și returnare",
+      "i1": "Predarea și returnarea vehiculului: la aeroportul și ora confirmate în rezervare.",
+      "i2": "Vehiculul nu poate fi returnat pe altă insulă. Excepție: Lanzarote, cu suprataxă (40 €).",
+      "i3": "La returnare, starea vehiculului trebuie să corespundă stării de la preluare (cu excepția uzurii normale).",
+      "i4": "În caz de incident/daună, este obligatorie prezentarea documentației/procesului-verbal.",
+      "i5": "În caz de murdărie excesivă se percepe taxă suplimentară de curățare: 70 €.",
+      "i6": "În cazul returnării înainte de termen, nu se rambursează diferența de preț.",
+      "i7": "La returnare nu lăsați obiecte personale în vehicul; nu ne asumăm responsabilitatea pentru pierderea lor."
+    },
+    "price": {
+      "title": "Prețul rezervării include",
+      "i1": "Taxe (IGIC/IVA)",
+      "i2": "Kilometraj nelimitat",
+      "i3": "Al doilea șofer gratuit",
+      "i4": "Preluare și returnare la aeroport",
+      "i5": "Anularea gratuită a rezervării",
+      "i6": "Scaune pentru bebeluși și înălțătoare gratuite (fără ISOFIX; ISOFIX disponibil opțional contra cost)",
+      "i7": "Asigurare de bază cu depozit de 300–500 € (franșiză în caz de daună)"
+    },
+    "base_excludes": {
+      "title": "Ce nu acoperă asigurarea de bază",
+      "i1": "Plafon",
+      "i2": "Suprafețe vitrate (geamuri, faruri, oglinzi)",
+      "i3": "Anvelope și roți",
+      "i4": "Baterie descărcată",
+      "i5": "Interior (scaune, covorașe etc.)",
+      "i6": "Sistem de suspensie",
+      "i9": "Cutie de viteze",
+      "i7": "Bunuri personale lăsate în vehicul (portbagaj, torpedou)",
+      "i8": "Chei pierdute",
+      "note": "Costurile acestor daune sunt în responsabilitatea șoferului."
+    },
+    "deposit": {
+      "title": "Depozit și reținere",
+      "i1": "Depozit în numerar: 300–500 € (nu este necesar depozit pe card de credit).",
+      "i2": "Depozitul poate fi reținut până la 15 zile; se face returnare prin transfer bancar (de ex. Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Asigurare full (opțional)",
+      "p1": "Cu asigurare full nu este necesar depozitul de 300–500 €, iar majoritatea tipurilor de daune sunt acoperite.",
+      "note": "Excepții: daune cauzate prin neglijență sau prin încălcarea condițiilor contractuale (exemple mai jos)."
+    },
+    "exceptions": {
+      "title": "Excepții – exemple",
+      "i1": "Conducere pe drumuri neasfaltate sau interzise (ex. Cofete)",
+      "i2": "Conducere sub influența alcoolului/substanțelor psihoactive",
+      "i3": "Folosirea telefonului la volan fără hands-free",
+      "i4": "Ignorarea unui mesaj de avertizare pe bord și continuarea condusului",
+      "i5": "Transport de materiale periculoase/inflamabile, animale sau marfă neautorizată",
+      "i6": "Activități ilegale/neautorizate, închirierea către terți",
+      "i7": "Obiecte pe plafon fără portbagaj autorizat",
+      "i8": "Infiltrații de apă/daune interioare peste limitele unei utilizări normale",
+      "i9": "Daune produse când vehiculul a fost lăsat descuiat sau condus de persoană neautorizată",
+      "i10": "Depășirea perioadei de închiriere prevăzute în contract"
+    },
+    "related": {
+      "title": "Pagini conexe",
+      "details": "Mai multe detalii:"
+    }
+  },
+  "RentForm": {
+    "title": "Te rugăm să completezi formularul de mai jos pentru a finaliza cu succes rezervarea",
+    "buttons": {
+      "addChild": "Adaugă copil",
+      "removeChild": "Elimină",
+      "addDriver": "Adaugă șofer",
+      "removeDriver": "Elimină șofer",
+      "submit": "Trimite rezervarea"
+    },
+    "searching": "Prelucrarea datelor...",
+    "extras": {
+      "label": "Servicii extra",
+      "options": {
+        "szorfo_deszka_rogzito": "Suport pentru placă de surf",
+        "gyerekules": "Scaun pentru copil",
+        "kiszallitas": "Livrare",
+        "alap_csomag": "Pachet de bază *",
+        "energia_csomag": "Pachet energie **",
+        "esti_erkezes_csomag": "Pachet sosire târzie ***"
+      },
+      "packages": {
+        "base": "* Pachet de bază: 0,5 l apă și 0,33 l Fuze Tea de persoană",
+        "energy": "** Pachet energie: pe lângă pachetul de bază, 2–3 tipuri de ciocolată sau snacks, în funcție de preferințe",
+        "lateArrival": "*** Pachet sosire târzie: pe lângă pachetul de bază, 1,5 l apă și 2 croissante de persoană pentru sosiri târzii"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Perioada de închiriere"
+    },
+    "dateRangePicker": {
+      "cancel": "Anulează",
+      "apply": "Salvează"
+    },
+    "adults": {
+      "label": "Număr de adulți",
+      "placeholder": "Număr de adulți"
+    },
+    "sections": {
+      "booking": {
+        "title": "Detalii rezervare",
+        "description": "Alege serviciile extra dorite, stabilește perioada de închiriere și numărul pasagerilor adulți."
+      },
+      "children": {
+        "title": "Pasageri copii",
+        "description": "Dacă vei călători cu copii, te rugăm să indici vârsta lor (și opțional înălțimea), pentru a putea oferi echipamentul potrivit.",
+        "empty": "Momentan nu a fost adăugat niciun copil.",
+        "ageLabel": "Vârsta copilului #{index} (ani)",
+        "heightLabel": "Înălțime (cm) – opțional"
+      },
+      "drivers": {
+        "title": "Datele șoferilor",
+        "description": "Te rugăm să introduci datele personale ale șoferului principal și, dacă este cazul, ale șoferilor suplimentari, precum și detaliile permiselor de conducere.",
+        "primaryInfo": "Pe baza datelor șoferului principal vom completa automat câmpurile de contact și facturare, dacă activezi căsuțele corespunzătoare.",
+        "primaryTitle": "Datele șoferului principal",
+        "secondaryTitle": "Datele șoferului {index}",
+        "fields": {
+          "lastName1": {
+            "label": "Nume de familie șofer",
+            "placeholder": "Nume de familie"
+          },
+          "lastName2": {
+            "label": "Nume de familie șofer (opțional)",
+            "placeholder": "Nume de familie (opțional)"
+          },
+          "firstName1": {
+            "label": "Prenume șofer",
+            "placeholder": "Prenume"
+          },
+          "firstName2": {
+            "label": "Prenume șofer (opțional)",
+            "placeholder": "Prenume (opțional)"
+          },
+          "postalCode": {
+            "label": "Cod poștal",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Localitate",
+            "placeholder": "Localitate"
+          },
+          "country": {
+            "label": "Țară",
+            "placeholder": "Țară"
+          },
+          "street": {
+            "label": "Stradă",
+            "placeholder": "Stradă"
+          },
+          "doorNumber": {
+            "label": "Număr",
+            "placeholder": "Număr"
+          },
+          "dateOfBirth": {
+            "label": "Data nașterii",
+            "placeholder": "Alege data"
+          },
+          "placeOfBirth": {
+            "label": "Locul nașterii",
+            "placeholder": "Locul nașterii"
+          },
+          "nameOfMother": {
+            "label": "Numele mamei",
+            "placeholder": "Numele mamei"
+          },
+          "phoneNumber": {
+            "label": "Număr de telefon",
+            "placeholder": "+36301234567"
+          },
+          "email": {
+            "label": "Adresă de email",
+            "placeholder": "exemplu@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Tip act de identitate",
+            "placeholder": "Alege documentul",
+            "passport": "Pașaport",
+            "id_card": "Carte de identitate"
+          },
+          "number": {
+            "label": "Număr document",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Data emiterii",
+            "placeholder": "Alege data"
+          },
+          "validUntil": {
+            "label": "Data expirării",
+            "placeholder": "Alege data"
+          },
+          "drivingLicenceNumber": {
+            "label": "Număr permis de conducere",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Cea mai înaltă categorie",
+            "placeholder": "Alege categoria"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Data emiterii permisului",
+            "placeholder": "Alege data"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Data expirării permisului",
+            "placeholder": "Alege data"
+          },
+          "drivingLicenceIsOlderThan3": "Declar că permisul meu are o vechime mai mare de 3 ani"
+        }
+      },
+      "contact": {
+        "title": "Date persoană de contact",
+        "description": "Dacă persoana de contact este diferită de șoferul principal, poți introduce aici datele sale.",
+        "toggle": "Este aceeași cu șoferul principal",
+        "fields": {
+          "name": {
+            "label": "Nume persoană de contact",
+            "placeholder": "Nume persoană de contact"
+          },
+          "email": {
+            "label": "Email persoană de contact",
+            "placeholder": "Email persoană de contact"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Date de facturare",
+        "description": "Setează numele și adresa pe care va fi emisă factura. Dacă sunt identice cu datele șoferului, bifează opțiunea de mai jos.",
+        "toggle": "Este aceeași cu șoferul principal",
+        "fields": {
+          "name": {
+            "label": "Nume pentru facturare",
+            "placeholder": "Nume pentru facturare"
+          },
+          "email": {
+            "label": "Email pentru facturare",
+            "placeholder": "Email pentru facturare"
+          },
+          "phoneNumber": {
+            "label": "Telefon pentru facturare",
+            "placeholder": "+36201234567"
+          },
+          "taxId": {
+            "label": "Cod fiscal (opțional)",
+            "placeholder": "Cod fiscal"
+          },
+          "companyName": {
+            "label": "Denumire firmă (opțional)",
+            "placeholder": "Denumire firmă"
+          },
+          "address": {
+            "country": {
+              "label": "Țară",
+              "placeholder": "Țară"
+            },
+            "postalCode": {
+              "label": "Cod poștal",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Localitate",
+              "placeholder": "Localitate"
+            },
+            "street": {
+              "label": "Stradă",
+              "placeholder": "Stradă"
+            },
+            "doorNumber": {
+              "label": "Număr",
+              "placeholder": "Număr"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Adresă exactă pentru livrare",
+        "description": "Te rugăm să indici adresa completă a cazării sau a aeroportului pentru livrarea mașinii.",
+        "locationName": {
+          "label": "Numele cazării / aeroportului (opțional)",
+          "placeholder": "Ex. Hotel Marina sau Aeroport Budapesta Liszt Ferenc"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Tip locație",
+            "placeholder": "Alege locația",
+            "accommodation": "Cazare",
+            "airport": "Aeroport"
+          },
+          "arrivalFlight": {
+            "label": "Numărul zborului de sosire",
+            "placeholder": "ex. FR1234"
+          },
+          "departureFlight": {
+            "label": "Numărul zborului de plecare",
+            "placeholder": "ex. FR5678"
+          },
+          "country": {
+            "label": "Țară",
+            "placeholder": "Țară"
+          },
+          "postalCode": {
+            "label": "Cod poștal",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "Localitate",
+            "placeholder": "Localitate"
+          },
+          "street": {
+            "label": "Stradă (opțional)",
+            "placeholder": "Stradă"
+          },
+          "doorNumber": {
+            "label": "Număr (opțional)",
+            "placeholder": "Număr"
+          }
+        }
+      },
+      "consents": {
+        "title": "Declarații legale",
+        "description": "Pentru finalizarea rezervării este necesar să accepți Politica de confidențialitate și Termenii și Condițiile Generale.",
+        "privacyLabel": "Am citit și accept <link>Politica de confidențialitate</link>",
+        "termsLabel": "Am citit și accept <link>Termenii și Condițiile Generale</link>"
+      }
+    },
+    "toast": {
+      "success": "Îți mulțumim! Te vom contacta în curând.",
+      "error": "Ups, a apărut o eroare. Te rugăm să încerci din nou mai târziu."
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Data de început nu este validă",
+      "invalidEndDate": "Data de sfârșit nu este validă",
+      "adultsMin": "Este necesar cel puțin un adult",
+      "childAgeMin": "Vârsta nu poate fi negativă",
+      "childAgeMax": "Vârsta copilului poate fi de maximum 17 ani",
+      "childHeightMin": "Înălțimea nu poate fi negativă",
+      "firstNameRequired": "Prenumele este obligatoriu",
+      "lastNameRequired": "Numele de familie este obligatoriu",
+      "countryRequired": "Țara este obligatorie",
+      "postalCodeRequired": "Codul poștal este obligatoriu",
+      "cityRequired": "Localitatea este obligatorie",
+      "streetRequired": "Strada este obligatorie",
+      "doorNumberRequired": "Numărul este obligatoriu",
+      "invalidDateOfBirth": "Data nașterii nu este validă",
+      "placeOfBirthRequired": "Locul nașterii este obligatoriu",
+      "motherNameRequired": "Numele mamei este obligatoriu",
+      "phoneRequired": "Numărul de telefon este obligatoriu",
+      "phoneInvalid": "Te rugăm să introduci un număr de telefon valid",
+      "emailRequired": "Adresa de email este obligatorie",
+      "emailInvalid": "Te rugăm să introduci o adresă de email validă",
+      "documentNumberRequired": "Numărul documentului este obligatoriu",
+      "documentIssueInvalid": "Data emiterii documentului nu este validă",
+      "documentExpiryInvalid": "Data expirării documentului nu este validă",
+      "drivingLicenceNumberRequired": "Numărul permisului de conducere este obligatoriu",
+      "drivingLicenceIssueInvalid": "Data emiterii permisului nu este validă",
+      "drivingLicenceExpiryInvalid": "Data expirării permisului nu este validă",
+      "contactNameRequired": "Numele persoanei de contact este obligatoriu",
+      "contactEmailRequired": "Emailul persoanei de contact este obligatoriu",
+      "contactEmailInvalid": "Te rugăm să introduci un email de contact valid",
+      "invoiceNameRequired": "Numele pentru facturare este obligatoriu",
+      "invoicePhoneRequired": "Telefonul pentru facturare este obligatoriu",
+      "invoiceEmailRequired": "Emailul pentru facturare este obligatoriu",
+      "invoiceEmailInvalid": "Te rugăm să introduci un email de facturare valid",
+      "startPast": "Data de început nu poate fi în trecut",
+      "startTooLate": "Data de început poate fi cel mult peste un an",
+      "endBeforeStart": "Data de sfârșit nu poate fi anterioară datei de început",
+      "endTooLate": "Data de sfârșit poate fi cel mult peste un an",
+      "deliveryPlaceTypeRequired": "Te rugăm să alegi dacă introduci adresa unei cazări sau a unui aeroport",
+      "deliveryFieldRequired": "Câmp obligatoriu",
+      "invalidAdults": "Este necesar cel puțin un adult",
+      "adultsInvalid": "Te rugăm să introduci numărul pasagerilor adulți"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Data de început nu este validă",
+          "past": "Data de început nu poate fi în trecut",
+          "tooLate": "Data de început poate fi cel mult peste un an"
+        },
+        "endDate": {
+          "invalid": "Data de sfârșit nu este validă",
+          "beforeStart": "Data de sfârșit nu poate fi anterioară datei de început",
+          "tooLate": "Data de sfârșit poate fi cel mult peste un an"
+        }
+      },
+      "adults": {
+        "min": "Este necesar cel puțin un adult"
+      },
+      "children": {
+        "age": {
+          "min": "Vârsta nu poate fi negativă",
+          "max": "Vârsta copilului poate fi de maximum 17 ani"
+        },
+        "height": {
+          "min": "Înălțimea nu poate fi negativă"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "Prenumele este obligatoriu"
+        },
+        "lastName_1": {
+          "required": "Numele de familie este obligatoriu"
+        },
+        "location": {
+          "country": {
+            "required": "Țara este obligatorie"
+          },
+          "postalCode": {
+            "required": "Codul poștal este obligatoriu"
+          },
+          "city": {
+            "required": "Localitatea este obligatorie"
+          },
+          "street": {
+            "required": "Strada este obligatorie"
+          },
+          "doorNumber": {
+            "required": "Numărul este obligatoriu"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Data nașterii nu este validă"
+        },
+        "placeOfBirth": {
+          "required": "Locul nașterii este obligatoriu"
+        },
+        "nameOfMother": {
+          "required": "Numele mamei este obligatoriu"
+        },
+        "phoneNumber": {
+          "required": "Numărul de telefon este obligatoriu",
+          "invalid": "Te rugăm să introduci un număr de telefon valid"
+        },
+        "email": {
+          "required": "Adresa de email este obligatorie",
+          "invalid": "Te rugăm să introduci o adresă de email validă"
+        },
+        "document": {
+          "number": {
+            "required": "Numărul documentului este obligatoriu"
+          },
+          "validFrom": {
+            "invalid": "Data emiterii documentului nu este validă"
+          },
+          "validUntil": {
+            "invalid": "Data expirării documentului nu este validă"
+          },
+          "drivingLicenceNumber": {
+            "required": "Numărul permisului de conducere este obligatoriu"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Data emiterii permisului nu este validă",
+            "minAge": "Permisul trebuie să aibă o vechime de cel puțin 3 ani"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Data expirării permisului nu este validă"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "Numele persoanei de contact este obligatoriu"
+        },
+        "email": {
+          "required": "Emailul persoanei de contact este obligatoriu",
+          "invalid": "Te rugăm să introduci un email de contact valid"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "Numele pentru facturare este obligatoriu"
+        },
+        "phoneNumber": {
+          "required": "Telefonul pentru facturare este obligatoriu",
+          "invalid": "Te rugăm să introduci un număr de telefon valid"
+        },
+        "email": {
+          "required": "Emailul pentru facturare este obligatoriu",
+          "invalid": "Te rugăm să introduci un email de facturare valid"
+        },
+        "location": {
+          "country": {
+            "required": "Țara este obligatorie"
+          },
+          "postalCode": {
+            "required": "Codul poștal este obligatoriu"
+          },
+          "city": {
+            "required": "Localitatea este obligatorie"
+          },
+          "street": {
+            "required": "Strada este obligatorie"
+          },
+          "doorNumber": {
+            "required": "Numărul este obligatoriu"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Te rugăm să alegi dacă introduci adresa unei cazări sau a unui aeroport"
+        },
+        "arrivalFlight": {
+          "required": "Te rugăm să introduci numărul zborului de sosire"
+        },
+        "departureFlight": {
+          "required": "Te rugăm să introduci numărul zborului de plecare"
+        },
+        "address": {
+          "country": {
+            "required": "Câmp obligatoriu"
+          },
+          "postalCode": {
+            "required": "Câmp obligatoriu"
+          },
+          "city": {
+            "required": "Câmp obligatoriu"
+          },
+          "street": {
+            "required": "Câmp obligatoriu"
+          },
+          "doorNumber": {
+            "required": "Câmp obligatoriu"
+          }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "Pentru rezervare trebuie să accepți Politica de confidențialitate"
+        },
+        "terms": {
+          "required": "Pentru rezervare trebuie să accepți Termenii și Condițiile Generale"
+        }
+      }
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Te rugăm să alegi",
+    "selectAll": "Selectează tot",
+    "close": "Închide",
+    "clear": "Șterge"
+  },
+  "NotFound": {
+    "label": "Te-ai rătăcit?",
+    "title": "Pagina căutată nu a fost găsită",
+    "description": "Este posibil ca pagina să nu mai existe sau să fi apărut o greșeală de tastare. Poți continua explorarea de pe pagina principală sau ne poți contacta.",
+    "badge": "Te așteaptă o nouă aventură",
+    "cta": {
+      "home": {
+        "href": "ro",
+        "label": "Înapoi la pagina principală"
+      },
+      "contact": {
+        "href": "ro/contact",
+        "label": "Contactează-ne"
+      }
+    }
+  },
+  "GTC": {
+    "title": "Contract de închiriere",
+    "sections": [
+      {
+        "heading": "1. Părțile contractante și încheierea Contractului",
+        "paragraphs": [
+          "Prezentul contract se încheie între ZODIACSRENTACAR Thomy Fuerteventura SL. (denumită în continuare: Locator) și persoana fizică sau juridică ce acceptă oferta (denumită în continuare: Chiriaș).",
+          "Părțile acceptă dispozițiile prevăzute în Contract ca fiind obligatorii și valabile pe întreaga durată a închirierii, până la finalizarea definitivă a predării vehiculului.",
+          "Solicitarea unei oferte și rezervarea se pot face prin site-ul www.zodiacsrentacar.com, precum și prin canalele de contact menționate mai sus.",
+          "Solicitarea de ofertă, confirmarea rezervării ulterioare sau, după caz, refuzul acesteia se trimit la adresa de e-mail indicată în formularul de date.",
+          "Locatorul își rezervă dreptul de a refuza sau respinge o anumită cerere de rezervare din motive operaționale – în special în cazul în care vehiculul solicitat nu este disponibil – dacă cererea este incompletă, inexactă sau nu corespunde condițiilor în vigoare.",
+          "Persoana indicată în Contract, titularul rezervării și șoferul principal trebuie să fie aceeași persoană; contractul nu poate fi cesionat unei terțe părți.",
+          "Din motive de siguranță, prin intermediul platformei nu solicităm date bancare sau informații financiare, însă Chiriașul este obligat să le prezinte (în special cardul de credit) la preluarea vehiculului în birou.",
+          "Cardul de credit trebuie să fie în proprietatea Chiriașului și să fie valabil pe toată durata închirierii, precum și încă trei (3) luni după aceasta, pentru acoperirea eventualelor costuri ulterioare în Insulele Canare.",
+          "Acceptăm principalele carduri de credit (Visa/MC/Amex/Diners) și carduri bancare emise de instituții financiare; nu acceptăm carduri de debit.",
+          "Locatorul acceptă un depozit de 500 € pe durata închirierii, sumă care va fi restituită prin transfer în termen de 15 zile calendaristice de la returnarea vehiculului, dacă starea acestuia corespunde celor prevăzute în contract.",
+          "Prelucrarea datelor cu caracter personal și celelalte condiții legale legate de funcționarea platformei sunt reglementate în politica de confidențialitate GDPR disponibilă pe site-ul Locatorului; prin semnarea prezentului contract Chiriașul declară că a luat la cunoștință și acceptă aceste dispoziții."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Datele Locatorului:",
+            "items": [
+              "Denumire firmă: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Sediu: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Spania",
+              "Cod de identificare fiscală (CIF): B13702493",
+              "Adresă e-mail: info@zodiacsrentacar.es",
+              "Număr de telefon centrală: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Condiții de închiriere și cerințe pentru șoferi",
+        "paragraphs": [
+          "Locatorul nu închiriază vehicule șoferilor cu vârsta sub 25 de ani.",
+          "Utilizatorii pot închiria un vehicul de la Locator numai dacă îndeplinesc următoarele condiții.",
+          "Îndeplinirea condițiilor de mai jos este obligatorie și nu este permisă nicio derogare.",
+          "Locatorul nu percepe taxe utilizatorilor care, din cauza neîndeplinirii condițiilor, nu pot încheia contractul, deoarece în acest caz rezervarea nu poate fi finalizată.",
+          "Aceleași condiții se aplică și șoferilor suplimentari indicați de către Chiriaș.",
+          "După confirmarea rezervării, Locatorul are dreptul să o anuleze în următoarele cazuri."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Condițiile de închiriere:",
+            "items": [
+              "Au împlinit cel puțin douăzeci și cinci (25) de ani.",
+              "Dețin un permis de conducere valabil în Uniunea Europeană, cel puțin categoria B.",
+              "De la obținerea permisului de conducere, au cel puțin doi (2) ani de experiență de condus dovedită la momentul rezervării."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "Rezervarea poate fi anulată dacă:",
+            "items": [
+              "se dovedește că informațiile furnizate de client nu sunt corecte, adevărate sau actualizate.",
+              "pe durata închirierii expiră valabilitatea unui document necesar.",
+              "Chiriașul încalcă condițiile de închiriere."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) În conformitate cu legislația spaniolă... (aici textul conține un paragraf privind actele normative spaniole, care, din motive de acuratețe juridică, este lăsat neschimbat)."
+        ]
+      },
+      {
+        "heading": "3. Condiții referitoare la vehiculul închiriat",
+        "paragraphs": [
+          "Modelul vehiculului rezervat are caracter informativ și poate fi înlocuit de Locator cu un vehicul din aceeași categorie sau dintr-o categorie superioară, disponibil în flotă.",
+          "GPS – urmărire: prin semnarea contractului de închiriere, Chiriașul își dă acordul pentru monitorizarea vehiculului; datele de geolocalizare sunt utilizate de Locator exclusiv pentru siguranța vehiculului și verificarea respectării condițiilor de închiriere.",
+          "Restricții de utilizare: vehiculul nu poate părăsi insula pe care s-a realizat închirierea, cu excepția cazurilor în care există un acord special în acest sens, înregistrat în sistemul de rezervare.",
+          "În cazul în care contractul de închiriere se extinde și pe insula Lanzarote sau locul de predare a vehiculului este Lanzarote, Părțile consideră prezentele condiții obligatorii și în aceste împrejurări.",
+          "În cazul apariției unei defecțiuni, vehiculul trebuie oprit în siguranță, în conformitate cu regulile de circulație, iar Locatorul trebuie informat fără întârziere.",
+          "Chiriașul este obligat să verifice, înainte de începerea închirierii, existența tuturor accesoriilor obligatorii ale vehiculului.",
+          "Chiriașul este responsabil pentru exploatarea legală și tehnic corectă a vehiculului, precum și pentru menținerea stării acestuia, din momentul preluării până la predarea dovedită în mod corespunzător.",
+          "Dacă predarea nu se face în modul indicat de Locator (de exemplu, nu are loc o predare personală), răspunderea Chiriașului se prelungește până la momentul înregistrării efective a preluării vehiculului și verificării stării acestuia.",
+          "Costurile remedierii defecțiunilor și a daunelor constatate sunt în sarcina Chiriașului."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Alte reguli de utilizare:",
+            "items": [
+              "Chiriașul acceptă ca obligatorii pentru sine dispozițiile legale naționale aplicabile, inclusiv regulile de circulație.",
+              "Vehiculul nu poate fi utilizat în scopuri ilegale sau ca mijloc pentru comiterea unor fapte ilegale.",
+              "Vehiculul poate circula numai pe drumuri publice (cu carosabil solid).",
+              "Atenție: dacă vehiculul a fost utilizat pe drumuri neasfaltate, toate costurile rezultate (pană, tractare, transport și reparații la fața locului) vor fi suportate de Chiriaș.",
+              "Vehiculul nu poate fi utilizat în scopuri comerciale sau de publicitate.",
+              "Pentru vehicul poate fi utilizat exclusiv combustibilul recomandat de producător; în caz de alimentare cu combustibil incompatibil, Locatorul trebuie informat imediat și este interzisă pornirea vehiculului.",
+              "Chiriașul este obligat să se asigure că, la părăsirea sau parcarea vehiculului, acesta este complet încuiat și s-au luat toate măsurile rezonabile pentru prevenirea utilizării neautorizate.",
+              "La parcare trebuie utilizată frâna de mână și treapta de viteză corespunzătoare; în pantă, roțile directoare trebuie orientate spre bordură.",
+              "Scaunele pentru copii sunt furnizate de Locator la preluare, dar fixarea corectă și utilizarea acestora rămân în totalitate responsabilitatea Chiriașului.",
+              "Este interzis transportul sau depozitarea echipamentelor sportive (de exemplu plăci de surf) în habitaclul vehiculului.",
+              "Chiriașul este obligat să se asigure că bagajele sau plăcile de surf sunt fixate corect de suportul de plafon, dacă acesta a fost închiriat."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Reguli privind predarea și returnarea vehiculului",
+        "paragraphs": [
+          "Predarea și returnarea vehiculului închiriat au loc la biroul indicat în rezervare, la datele și orele confirmate de Locator.",
+          "Vehiculul nu poate fi returnat, în niciun caz, pe o altă insulă decât cea menționată în contract.",
+          "Preluarea vehiculului este posibilă numai în timpul programului de lucru; returnarea poate fi organizată și în afara programului, în condițiile stabilite în procesul de rezervare.",
+          "În afara orelor de program sau înainte de acestea, returnarea la aeroport este gratuită; pentru transportul către alte locații se pot aplica taxe suplimentare, cazurile convenite fiind înregistrate în sistemul de rezervare.",
+          "Programul de lucru al biroului este, în general, între 10:00–13:00 și 16:00–20:00; informații exacte pot fi solicitate prin e-mail, WhatsApp sau telefon.",
+          "În caz de întârziere sau anulare a zborului, Chiriașul este obligat să informeze la timp Locatorul; în caz contrar, Locatorul nu poate garanta menținerea rezervării.",
+          "Dacă menținerea rezervării nu este posibilă, Locatorul își rezervă dreptul de a anula rezervarea și, fără obligații de despăgubire, poate dispune liber de vehicul.",
+          "Vehiculul trebuie returnat în starea consemnată la preluare; în caz de diferențe, Chiriașul este obligat să prezinte documente justificative privind evenimentele survenite.",
+          "Nu se acordă rambursare pentru returnarea anticipată a vehiculului.",
+          "Carburant: vehiculul trebuie returnat cu același nivel de combustibil cu care a fost preluat; în caz contrar, Chiriașul suportă costurile de realimentare și taxa de serviciu.",
+          "În cazul unui surplus de combustibil, nu putem rambursa diferența.",
+          "La returnare, nu trebuie să rămână bunuri personale în vehicul; Locatorul nu își asumă nicio răspundere pentru obiectele lăsate în interior și nu are obligația de a le păstra sau expedia."
+        ]
+      },
+      {
+        "heading": "5. Servicii și asigurare",
+        "paragraphs": [
+          "Prețul final al rezervării vehiculului include următoarele elemente.",
+          "Nu este necesară o franșiză (depozit, numerar sau preautorizare pe card), cu excepția depozitului de 500 € prevăzut la punctul 1.",
+          "Este important de reținut că, potrivit regulilor de circulație spaniole, este obligatorie folosirea unui scaun omologat pentru copiii sub 135 cm înălțime."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Taxe (IGIC/IVA incluse).",
+              "Kilometraj nelimitat.",
+              "Al doilea șofer gratuit.",
+              "Servicii în biroul nostru (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Anulare gratuită a rezervării (vezi punctul 9).",
+              "Scaune pentru bebeluși și înălțătoare pentru copii oferite gratuit (fără ISOFIX).",
+              "Următoarele asigurări fără franșiză: asigurare de avarii (CDW), asigurare împotriva furtului (TP), asigurare pentru daune către terți (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. Situații neacoperite de asigurare",
+        "paragraphs": [
+          "Important! Asigurarea cu franșiză zero menționată mai sus nu acoperă următoarele situații sau evenimente; pentru daunele și costurile rezultate din acestea, Chiriașul răspunde integral din punct de vedere financiar."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Deteriorarea anvelopelor și roților în timpul utilizării pe drumuri neasfaltate.",
+              "Pierderea, ruperea sau deteriorarea cheilor vehiculului.",
+              "Alimentarea cu tip de combustibil necorespunzător (tipul de combustibil este indicat separat pentru fiecare vehicul).",
+              "Conducere neglijentă sau accident produs sub influența alcoolului, drogurilor sau a oricăror substanțe toxice ori psihotrope.",
+              "Accidente și/sau daune produse în timpul conducerii pe teren accidentat (drumuri fără carosabil solid).",
+              "Amenzi (parcare, viteză excesivă, încălcări ale regulilor de circulație)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Extra opționale",
+        "paragraphs": [
+          "Ca servicii opționale sau suplimentare, Chiriașii pot închiria următoarele extraopțiuni, care nu fac parte din prețul de rezervare al vehiculului.",
+          "Suporturile de plafon sunt potrivite, în condiții de fixare corespunzătoare, pentru transportul a până la două plăci de surf.",
+          "Locatorul nu își asumă în niciun caz răspunderea pentru obiectele transportate pe plafonul vehiculului sau pentru daunele cauzate terților; pentru astfel de daune răspunde exclusiv Chiriașul.",
+          "Toate serviciile de bază și opționale sunt puse la dispoziția Chiriașului și sunt garantate în condițiile stipulate în termenii generali conveniți cu Locatorul."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Suport de plafon pentru transportul bagajelor, la prețul indicat pe site; nu include corzile de fixare, ci doar șinele și barele de prindere pe vehicul."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Politica de combustibil",
+        "paragraphs": [
+          "Vehiculul trebuie returnat de către Chiriaș cu același nivel de combustibil cu care a fost preluat.",
+          "Dacă Chiriașul alimentează vehiculul cu un tip de combustibil necorespunzător, costurile și reparațiile necesare vor fi suportate de acesta."
+        ]
+      },
+      {
+        "heading": "9. Politica de plată și rambursare",
+        "paragraphs": [
+          "Locatorul oferă posibilitatea de plată online pentru achitarea taxei de închiriere prin intermediul site-ului.",
+          "Rezervarea este considerată finalizată în momentul în care plata a fost efectuată cu card de credit, card de debit sau card bancar.",
+          "Furnizorul serviciului de plată online: CAIXABANK (număr de cont bancar: ES60 2100 1512 2602 0067 6927).",
+          "Politica de rambursare.",
+          "Pentru rambursare, Chiriașul trebuie să contacteze Locatorul la adresa info@zodiacsrentacar.es sau la numărul de telefon +34 683 192 422 și să furnizeze IBAN-ul și numele complet.",
+          "Locatorul efectuează transferul bancar în termen de 15 zile lucrătoare."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Rambursarea integrală este posibilă doar dacă anularea are loc cu cel puțin 3 zile calendaristice (72 de ore) înainte de începerea perioadei de închiriere.",
+              "Locatorul nu rambursează nicio parte a taxei de închiriere dacă vehiculul este returnat mai devreme decât data stabilită în contract.",
+              "Rambursarea – acolo unde este aplicabilă – se efectuează prin transfer bancar."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Modificarea prezentelor condiții generale",
+        "paragraphs": [
+          "Locatorul își rezervă dreptul de a modifica în orice moment Condițiile Generale, în special pentru a se adapta la schimbări legislative sau pentru ajustarea politicii comerciale aplicate."
+        ]
+      },
+      {
+        "heading": "11. Legea aplicabilă și jurisdicția competentă",
+        "paragraphs": [
+          "În cazul litigiilor ce decurg din prezentele condiții, Părțile renunță la orice alt for de jurisdicție și acceptă competența exclusivă a instanțelor din Santa Cruz de Tenerife, în conformitate cu legislația spaniolă aplicabilă."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "title": "Întrebări frecvente",
+    "intro": "Am adunat cele mai importante informații pentru ca închirierea ta în Fuerteventura și Lanzarote să decurgă fără probleme.",
+    "items": [
+      {
+        "question": "Cum pot rezerva o mașină?",
+        "answer": "Completează formularul nostru online de cerere de ofertă, iar colegii noștri îți vor confirma închirierea în cel mult 24 de ore. Dacă este urgent, ne poți suna sau ne poți scrie pe WhatsApp."
+      },
+      {
+        "question": "Ce documente sunt necesare la preluare?",
+        "answer": "La preluare ai nevoie de un permis de conducere valabil cu o vechime de cel puțin 3 ani, precum și de carte de identitate sau pașaport. Toți șoferii trecuți în contract trebuie să prezinte aceste documente la preluare."
+      },
+      {
+        "question": "Trebuie să plătesc un depozit?",
+        "answer": "Dacă alegi asigurarea completă SSCP, nu solicităm depozit. În cazul asigurării de bază, se aplică un depozit între 300–500 €, iar unele extraopțiuni (de exemplu suportul de plafon) pot necesita garanții suplimentare."
+      },
+      {
+        "question": "De unde pot prelua mașina?",
+        "answer": "Poți prelua mașina de la aeroport, de la biroul nostru din Puerto del Rosario sau direct de la cazarea ta, atât în Fuerteventura, cât și în Lanzarote. Locul exact de preluare este confirmat în rezervare."
+      },
+      {
+        "question": "Pot anula rezervarea fără taxă?",
+        "answer": "Da, poți modifica sau anula gratuit rezervarea cu cel puțin 72 de ore înainte de începerea perioadei de închiriere. Dacă intervine ceva mai târziu, contactează-ne cât mai repede."
+      },
+      {
+        "question": "Care este vârsta minimă pentru închiriere?",
+        "answer": "Pentru majoritatea vehiculelor noastre putem oferi mașină de la 23 de ani. Pentru șoferi mai tineri este necesară o evaluare individuală și se poate aplica un supliment."
+      },
+      {
+        "question": "Pot prelua mașina la aeroport?",
+        "answer": "Da, la rezervare poți indica dacă dorești preluare la aeroport sau transfer."
+      },
+      {
+        "question": "Pot returna mașina la aeroport?",
+        "answer": "Da, poți returna mașina și la aeroport; este suficient să stabilim din timp ora exactă."
+      },
+      {
+        "question": "Care este programul vostru?",
+        "answer": "Preluarea are loc, de regulă, între 10:00–16:00, însă suntem flexibili pe baza unei înțelegeri prealabile. Mașina poate fi returnată în orice moment."
+      },
+      {
+        "question": "Pot returna mașina seara sau noaptea?",
+        "answer": "Da. La preluare îți explicăm întotdeauna procedura de returnare, astfel încât să poți preda mașina în siguranță la orice oră."
+      },
+      {
+        "question": "Mașina are asigurare completă?",
+        "answer": "Da, pentru daune produse pe drumurile publice, asigurarea acoperă costurile. Totuși, avariile sau penele produse pe drumuri de pământ trebuie achitate de Chiriaș."
+      },
+      {
+        "question": "Trebuie să aduc mașina cu rezervorul plin?",
+        "answer": "Da, trebuie să o aduci cu aceeași cantitate de combustibil cu care ai preluat-o. Toate vehiculele din flotă funcționează cu benzină 95."
+      },
+      {
+        "question": "Există limită de kilometri?",
+        "answer": "Nu, îți oferim kilometraj nelimitat, inclus în tariful de închiriere."
+      },
+      {
+        "question": "Pot plăti cu card de credit sau de debit?",
+        "answer": "Da, acceptăm atât carduri de credit, cât și carduri de debit."
+      },
+      {
+        "question": "Există taxă pentru al doilea șofer?",
+        "answer": "Nu percepem taxă suplimentară dacă adaugi un al doilea șofer."
+      },
+      {
+        "question": "Există costuri ascunse pe lângă tariful de închiriere?",
+        "answer": "Nu, trebuie să plătești doar tariful de închiriere confirmat; nu aplicăm costuri ascunse."
+      },
+      {
+        "question": "Pot solicita scaun pentru copil în mașină?",
+        "answer": "Da, oferim scaune pentru copii cu prindere ISOFIX în mai multe mărimi, de la cei mai mici până la copiii mai mari."
+      },
+      {
+        "question": "Trebuie să curăț mașina înainte de returnare?",
+        "answer": "Nu este necesar; noi curățăm și dezinfectăm temeinic fiecare vehicul după returnare, acest lucru este inclus în tariful de închiriere."
+      }
+    ]
+  }
+}

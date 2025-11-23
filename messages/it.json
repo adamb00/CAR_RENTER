@@ -1,0 +1,2253 @@
+{
+  "Header": {
+    "header": "Noleggio auto a Fuerteventura e Lanzarote, in modo comodo e veloce",
+    "book_now": "Noleggia un'auto ora"
+  },
+  "CookieConsent": {
+    "title": "Utilizziamo i cookie",
+    "noticeTitle": "Avviso sui cookie",
+    "body": "Per offrirti la migliore esperienza possibile, utilizziamo cookie sul nostro sito web. Puoi trovare maggiori informazioni sull'uso e sulla gestione dei cookie nella nostra informativa sui cookie.",
+    "minimalBody": "Utilizziamo cookie per offrirti un'esperienza di navigazione migliore.",
+    "notice": "Facendo clic sul pulsante <highlight>{actionLabel}</highlight> acconsenti all'utilizzo dei cookie.",
+    "learnMore": "Maggiori informazioni:",
+    "cookiePolicyLink": "Informativa sui cookie",
+    "gdprLink": "Informativa sulla privacy",
+    "accept": "Accetto",
+    "decline": "Rifiuto"
+  },
+  "GDPR": {
+    "title": "Informativa sulla privacy (GDPR)",
+    "updated": "Ultimo aggiornamento: 8 novembre 2025",
+    "intro": [
+      "La presente informativa sulla privacy riassume le principali regole relative al trattamento dei dati personali connesso ai servizi di Zodiacs Rent a Car (ZODIACSRENTACAR).",
+      "Trattiamo i dati sempre in conformità al GDPR, nonché alle normative spagnole e ungheresi sulla protezione dei dati; raccogliamo informazioni solo nella misura e per la durata necessarie e forniamo in ogni caso una comunicazione trasparente."
+    ],
+    "sections": [
+      {
+        "heading": "1. Dati del titolare del trattamento",
+        "lists": [
+          {
+            "items": [
+              "Ragione sociale: ZODIACSRENTACAR",
+              "Sede: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Spagna",
+              "E-mail: info@zodiacsrentacar.com",
+              "Telefono: +34 683 192 422",
+              "Sito web: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Finalità del trattamento",
+        "paragraphs": [
+          "Utilizziamo i dati personali esclusivamente per le finalità necessarie all'erogazione dei nostri servizi:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "preparazione e documentazione di offerte e contratti di noleggio auto",
+              "gestione e conferma delle prenotazioni online",
+              "consegna del veicolo, ritiro e contatto con il servizio clienti",
+              "fatturazione, amministrazione finanziaria e adempimenti legali",
+              "comunicazione con i clienti tramite telefono, e-mail, WhatsApp o altri canali",
+              "marketing e invio di newsletter con il consenso esplicito dell'interessato",
+              "analisi statistiche e sviluppo dei servizi in forma anonima"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Base giuridica del trattamento",
+        "paragraphs": [
+          "Le diverse attività di trattamento possono avere basi giuridiche differenti, ma in ogni caso si basano su una delle seguenti disposizioni del GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "esecuzione o preparazione di un contratto – art. 6 par. 1 lett. b) GDPR",
+              "adempimento di obblighi legali (ad es. norme contabili) – art. 6 par. 1 lett. c) GDPR",
+              "legittimo interesse del titolare (ad es. prevenzione delle frodi) – art. 6 par. 1 lett. f) GDPR",
+              "consenso dell'interessato (ad es. newsletter, contatto) – art. 6 par. 1 lett. a) GDPR"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Tipologie di dati trattati",
+        "paragraphs": [
+          "Nei moduli online e durante la stipula del contratto richiediamo esclusivamente i dati indispensabili per il noleggio dell'auto. Le principali categorie sono le seguenti:"
+        ],
+        "lists": [
+          {
+            "title": "Dati della prenotazione",
+            "items": [
+              "periodo di noleggio (da–a)",
+              "numero di passeggeri, età e altezza dei bambini",
+              "categoria del veicolo selezionata e servizi extra richiesti"
+            ]
+          },
+          {
+            "title": "Dati personali del noleggiante e del conducente",
+            "items": [
+              "nome completo (due cognomi e due nomi, se presenti)",
+              "luogo e data di nascita, nome della madre",
+              "cittadinanza e indirizzo di residenza"
+            ]
+          },
+          {
+            "title": "Dati di contatto",
+            "items": [
+              "numero di telefono e canale di comunicazione preferito (WhatsApp, Messenger, ecc.)",
+              "indirizzo e-mail"
+            ]
+          },
+          {
+            "title": "Documenti di identificazione",
+            "items": [
+              "tipo e numero del documento di identità, data di rilascio e di scadenza",
+              "numero, categoria, validità e data di rilascio della patente di guida",
+              "dichiarazione che la patente è valida da più di 3 anni"
+            ]
+          },
+          {
+            "title": "Conducente aggiuntivo o contatto di riferimento",
+            "items": [
+              "dati simili a quelli del noleggiante principale per l'eventuale conducente aggiuntivo",
+              "nome e telefono del contatto di riferimento, se diverso dal noleggiante"
+            ]
+          },
+          {
+            "title": "Dati di fatturazione e di consegna",
+            "items": [
+              "nome o ragione sociale, indirizzo di fatturazione e, per le aziende, partita IVA",
+              "indirizzo e-mail necessario per l'invio della fattura elettronica",
+              "nome e indirizzo dell'hotel o dell'appartamento in caso di consegna"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Durata del trattamento",
+        "paragraphs": [
+          "Conserviamo i dati necessari all'esecuzione del servizio per 5 anni dalla chiusura del noleggio, al fine di consentire l'eventuale esercizio di diritti civili.",
+          "I documenti contabili e fiscali vengono conservati per 8 anni in conformità alle normative applicabili.",
+          "I dati basati sul consenso dell'interessato vengono trattati fino alla revoca del consenso o al venir meno della relativa finalità."
+        ]
+      },
+      {
+        "heading": "6. Destinatari dei dati e responsabili del trattamento",
+        "paragraphs": [
+          "Condividiamo i dati solo con i partner indispensabili per l'esecuzione dei servizi e stipuliamo con loro un accordo di trattamento dei dati. I tipici destinatari sono:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "servizi di contabilità e consulenti finanziari",
+              "provider di hosting e gestori di infrastrutture IT",
+              "sistemi di fatturazione e prestatori di servizi di pagamento",
+              "corrieri o partner incaricati della consegna"
+            ]
+          }
+        ],
+        "notes": [
+          "I dati non vengono trasferiti al di fuori dell'Unione Europea e garantiamo un'adeguata crittografia e gestione degli accessi."
+        ]
+      },
+      {
+        "heading": "7. Diritti degli interessati",
+        "paragraphs": [
+          "Gli interessati possono esercitare in qualsiasi momento i diritti previsti dal GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "diritto di ottenere informazioni e accesso ai dati",
+              "diritto di rettifica o cancellazione",
+              "diritto di richiedere la limitazione del trattamento",
+              "diritto di opposizione al trattamento basato sul legittimo interesse",
+              "diritto alla portabilità dei dati",
+              "diritto di revocare in qualsiasi momento il consenso prestato"
+            ]
+          }
+        ],
+        "notes": [
+          "In caso di reclamo è possibile rivolgersi all'Autorità nazionale per la protezione dei dati e la libertà d'informazione (Nemzeti Adatvédelmi és Információszabadság Hatóság, 1055 Budapest, Falk Miksa utca 9-11., ugyfelszolgalat@naih.hu, naih.hu)."
+        ]
+      },
+      {
+        "heading": "8. Sicurezza dei dati e gestione dei cookie",
+        "paragraphs": [
+          "Proteggiamo i dati personali con misure fisiche, tecniche e organizzative per prevenire accessi non autorizzati, modifiche o perdita.",
+          "Il nostro sito web utilizza cookie per il funzionamento, la statistica e la personalizzazione. I dettagli sono riportati nell'Informativa sui cookie, dove puoi modificare in qualsiasi momento le impostazioni del consenso."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contatti e tutela dei diritti",
+      "paragraphs": [
+        "Se hai domande relative al trattamento dei dati o desideri esercitare i tuoi diritti, contattaci attraverso i seguenti canali.",
+        "Risponderemo alle tue richieste entro 30 giorni al massimo, con eventuale proroga nei casi previsti dal GDPR."
+      ],
+      "channels": [
+        "E-mail: info@zodiacsrentacar.com",
+        "Telefono: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Informativa sui cookie",
+    "updated": "Ultimo aggiornamento: 8 novembre 2025",
+    "intro": [
+      "La presente informativa illustra quali cookie utilizza il sito web di Zodiacs Rent a Car, per quali finalità avviene il trattamento dei dati e come puoi modificare le impostazioni.",
+      "I cookie sono piccoli file di dati che aiutano il corretto funzionamento del sito, la realizzazione di statistiche e la visualizzazione di contenuti personalizzati."
+    ],
+    "sections": [
+      {
+        "heading": "1. Che cosa è un cookie?",
+        "paragraphs": [
+          "Un cookie è un breve file di testo che il browser memorizza quando visiti il nostro sito. I cookie non contengono dati direttamente identificativi, ma aiutano a riconoscere il tuo dispositivo e a ricordare le tue impostazioni."
+        ]
+      },
+      {
+        "heading": "2. Tipi di cookie che utilizziamo",
+        "paragraphs": [
+          "Per il corretto funzionamento del sito utilizziamo cookie con diverse finalità:"
+        ],
+        "lists": [
+          {
+            "title": "Cookie essenziali",
+            "items": [
+              "sono indispensabili per il funzionamento del sito, i processi di sicurezza e l'utilizzo dei moduli",
+              "base giuridica: legittimo interesse (art. 6 par. 1 lett. f) GDPR)"
+            ]
+          },
+          {
+            "title": "Cookie funzionali",
+            "items": [
+              "memorizzano la lingua selezionata e i dati temporanei dei moduli",
+              "base giuridica: consenso (art. 6 par. 1 lett. a) GDPR)"
+            ]
+          },
+          {
+            "title": "Cookie analitici e statistici",
+            "items": [
+              "misurano in forma anonima il traffico e aiutano a ottimizzare il servizio",
+              "base giuridica: consenso (art. 6 par. 1 lett. a) GDPR)"
+            ]
+          },
+          {
+            "title": "Cookie di marketing",
+            "items": [
+              "permettono offerte personalizzate e campagne di remarketing",
+              "base giuridica: consenso (art. 6 par. 1 lett. a) GDPR)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Durata dei cookie",
+        "paragraphs": [
+          "Cookie di sessione: restano attivi fino alla fine della sessione di navigazione, quindi vengono cancellati automaticamente.",
+          "Cookie persistenti: vengono memorizzati per un periodo determinato (di solito 30–365 giorni) o finché non li elimini manualmente."
+        ]
+      },
+      {
+        "heading": "4. Cookie di terze parti",
+        "paragraphs": [
+          "Alcuni cookie sono impostati dai nostri partner (ad es. Google, Meta, TikTok) per l'analisi statistica e la pubblicità personalizzata.",
+          "Questi cookie sono disciplinati dalle informative sulla privacy dei rispettivi fornitori, consultabili sui loro siti ufficiali."
+        ]
+      },
+      {
+        "heading": "5. Consenso e impostazioni",
+        "paragraphs": [
+          "Alla prima visita compare una finestra di gestione dei cookie, dove puoi scegliere se accettare tutti i cookie, consentire solo quelli necessari o impostarli in modo personalizzato.",
+          "Puoi modificare queste scelte in qualsiasi momento nelle impostazioni del tuo browser o tramite il link \"Modifica impostazioni cookie\" presente sul sito."
+        ]
+      },
+      {
+        "heading": "6. Gestione dei cookie nei browser",
+        "paragraphs": [
+          "Nella maggior parte dei browser è possibile cancellare o bloccare i cookie. Le seguenti guide di supporto possono aiutarti: Google Chrome, Mozilla Firefox, Safari e Microsoft Edge.",
+          "È importante sapere che alcune funzionalità potrebbero funzionare solo in modo limitato senza cookie."
+        ]
+      },
+      {
+        "heading": "7. Contatti",
+        "paragraphs": [
+          "Se hai domande sull'uso dei cookie o sulla protezione dei dati, saremo lieti di aiutarti ai seguenti recapiti:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-mail: info@zodiacsrentacar.com",
+              "Sito web: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "Con il team locale di Zodiacs Rent a Car il noleggio auto a Fuerteventura e Lanzarote è comodo e veloce. Dopo la prenotazione online organizziamo la consegna in aeroporto o in hotel, ti aiutiamo a scegliere il modello più adatto al tuo viaggio e concordiamo ogni dettaglio nella lingua per te più comoda.",
+      "La nostra flotta spazia dalle compatte cittadine ai SUV spaziosi, tutti con chilometraggio illimitato, secondo conducente gratuito e copertura SSCP completa. Da Zodiacs ogni veicolo è sottoposto a manutenzione regolare e fotografato prima della consegna, così puoi partire con la massima tranquillità.",
+      "Durante il viaggio puoi contare su di noi: condividiamo i migliori parcheggi per le spiagge di Fuerteventura, i punti panoramici di Lanzarote e i nostri tapas bar preferiti. Puoi contattarci via telefono, e-mail o WhatsApp, così potrai chiedere aiuto o un'offerta personalizzata in qualsiasi momento.",
+      "Adattiamo i nostri servizi alle esigenze dei viaggiatori che scelgono le Isole Canarie per le vacanze. Sappiamo quanto sia importante la rapidità, per questo rispondiamo subito su WhatsApp, telefono ed e-mail, sia prima del volo che dopo l'arrivo.",
+      "Secondo i feedback dei nostri clienti, ciò che apprezzano di più da Zodiacs Rent a Car è il fatto che concordiamo tutto in anticipo e non ci sono sorprese al momento del pagamento. Poniamo particolare attenzione alle famiglie, agli esploratori avventurosi e ai viaggiatori d'affari: su richiesta forniamo seggiolini per bambini, portapacchi da tetto o portatavole da surf.",
+      "Nel nostro blog e nelle nostre guide di viaggio condividiamo programmi dettagliati, così l'auto a noleggio non è solo un mezzo di trasporto, ma la chiave per scoprire l'isola. Il team locale di Zodiacs aggiorna costantemente i propri consigli, così nemmeno le spiagge meno note, i ristoranti nascosti e i sentieri più suggestivi resteranno fuori dal tuo itinerario."
+    ],
+    "highlights": {
+      "title": "Perché scegliere noi?",
+      "items": [
+        "Servizio clienti multilingue a Fuerteventura e Lanzarote, con presenza realmente locale.",
+        "Contratto di noleggio trasparente con approvazione digitale e tutti i costi concordati in anticipo.",
+        "Consegna flessibile in aeroporto, presso il tuo alloggio o in un punto d'incontro concordato.",
+        "Consigli locali, suggerimenti per il parcheggio e itinerari, per sfruttare al massimo le Isole Canarie con la tua auto Zodiacs."
+      ]
+    },
+    "details": {
+      "title": "Noleggio auto passo dopo passo con il team Zodiacs Rent a Car",
+      "intro": "Vogliamo che, fin dalla pianificazione del viaggio, tu sappia esattamente cosa aspettarti. Per questo abbiamo strutturato ogni fase del processo Zodiacs in modo che sia trasparente, rapido e personalizzato – dalla prenotazione alla riconsegna dell'auto.",
+      "sections": [
+        {
+          "heading": "1. Scelta dell'auto ideale per te",
+          "body": [
+            "Prima della prenotazione analizziamo brevemente in quanti viaggiate, di quanto spazio bagagli avete bisogno e quali percorsi avete in mente. Se, ad esempio, desiderate esplorare le montagne del nord o le strade tortuose delle zone vulcaniche, potrebbe essere necessario un modello più potente e con climatizzatore più efficiente.",
+            "La nostra offerta include sempre foto dettagliate e dotazioni del veicolo, così puoi confrontare facilmente le opzioni. Il team Zodiacs ti aiuta anche in caso di esigenze particolari, ad esempio se hai bisogno di un seggiolino per bambini, di un box da tetto o del trasporto di attrezzature sportive."
+          ]
+        },
+        {
+          "heading": "2. Prenotazione e contratto in pochi clic",
+          "body": [
+            "Il modulo online Zodiacs per la richiesta di offerta ti guida in italiano (e in altre lingue) attraverso l'intero processo. Inserisci le date di arrivo e partenza, il luogo di consegna e in pochi minuti riceverai un preventivo personalizzato, comprensivo di copertura SSCP completa.",
+            "Confermiamo la prenotazione via e-mail e ti inviamo il contratto in formato digitale, che potrai leggere con calma prima del viaggio. In questo modo, sul posto non ci saranno lungaggini burocratiche: ti attenderà solo una consegna rapida dell'auto."
+          ]
+        },
+        {
+          "heading": "3. Consegna dove è più comodo per te",
+          "body": [
+            "Che tu arrivi a Fuerteventura o a Lanzarote, i nostri colleghi monitorano il tuo volo e ti aspettano all'orario concordato in aeroporto o davanti al tuo alloggio. In caso di ritardi significativi, reagiamo con flessibilità e restiamo in contatto costante.",
+            "Se non vuoi sprecare nemmeno un minuto della tua vacanza in fila, il nostro ufficio mobile Zodiacs prepara i documenti direttamente in loco, così potrai partire in pochi istanti con l'auto che hai scelto."
+          ]
+        },
+        {
+          "heading": "4. Assistenza per tutta la durata del viaggio",
+          "body": [
+            "Al momento della consegna condividiamo con te le informazioni aggiornate su parcheggi e traffico, le nostre mete preferite e i fornitori locali che consigliamo. Se durante il viaggio hai qualsiasi domanda, puoi contattare il team Zodiacs via WhatsApp o telefono.",
+            "Al momento della riconsegna effettuiamo un controllo rapido e chiudiamo il noleggio; se lo desideri, ti prepariamo già un'offerta personalizzata per la tua prossima vacanza. Il nostro obiettivo è che tu senta ogni volta che l'auto Zodiacs ha contribuito davvero alle tue esperienze."
+          ]
+        }
+      ]
+    },
+    "cta": "Richiedi un'offerta personalizzata"
+  },
+  "SEO": {
+    "brand": "Zodiacs Rent a Car",
+    "defaultTitle": "Noleggio auto a Fuerteventura e Lanzarote",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
+    "siteDescription": "Noleggia un'auto a Fuerteventura e Lanzarote con un team locale ungherese, consegna flessibile e copertura assicurativa completa.",
+    "ogTitle": "Zodiacs Rent a Car – Noleggio auto a Fuerteventura e Lanzarote",
+    "ogDescription": "Team ungherese locale, secondo conducente gratuito, chilometraggio illimitato. Prenota online con Zodiacs Rent a Car.",
+    "ogImageAlt": "Auto della flotta Zodiacs Rent a Car a Fuerteventura",
+    "twitterTitle": "Zodiacs Rent a Car – Noleggio auto alle Isole Canarie",
+    "twitterDescription": "Noleggio auto rapido e comodo a Fuerteventura e Lanzarote, senza costi nascosti."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "Noleggio {carName} a Fuerteventura | Zodiacs Rent a Car",
+      "description": "Noleggia il modello {carName} a Fuerteventura o Lanzarote, con consegna flessibile, chilometraggio illimitato e copertura assicurativa completa.",
+      "imageAlt": "{carName} nella flotta di Zodiacs Rent a Car"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "Dettagli e noleggio {carName} | Zodiacs Rent a Car",
+      "description": "Scopri la dotazione, la capacità del bagagliaio e la tariffa di noleggio di {carName} a Fuerteventura e Lanzarote.",
+      "imageAlt": "Modello {carName} nell'offerta Zodiacs Rent a Car"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Noleggio auto a Fuerteventura e Lanzarote",
+      "description": "Scopri le Isole Canarie con il nostro team ungherese: auto a noleggio premium, consegna flessibile, chilometraggio illimitato e copertura completa.",
+      "ogImageAlt": "Auto a noleggio Zodiacs a Fuerteventura"
+    },
+    "cars": {
+      "title": "Le nostre auto – flotta a noleggio a Fuerteventura e Lanzarote",
+      "description": "Auto compatte, familiari e automatiche con consegna flessibile, secondo conducente gratuito e chilometraggio illimitato.",
+      "ogImageAlt": "Flotta di Zodiacs Rent a Car"
+    },
+    "about": {
+      "title": "Chi siamo – Zodiacs Rent a Car",
+      "description": "Conosci il team ungherese di Zodiacs Rent a Car e scopri la nostra missione a Fuerteventura e Lanzarote.",
+      "ogImageAlt": "Foto del team Zodiacs Rent a Car"
+    },
+    "contact": {
+      "title": "Contatti – Zodiacs Rent a Car Fuerteventura",
+      "description": "Contattaci per noleggio auto, consegna o richiesta di offerta. Ti rispondiamo rapidamente e in ungherese.",
+      "ogImageAlt": "Servizio clienti Zodiacs Rent a Car"
+    },
+    "insurance": {
+      "title": "Assicurazione e coperture – Pacchetto SSCP",
+      "description": "Scopri l'assicurazione Super Comfort Plus: copertura completa, zero franchigia e molte esclusioni coperte.",
+      "ogImageAlt": "Informazioni assicurative Zodiacs Rent a Car"
+    },
+    "generalRental": {
+      "title": "Condizioni generali di noleggio – Zodiacs Rent a Car",
+      "description": "Condizioni di noleggio, regole contrattuali e obblighi del cliente a Fuerteventura e Lanzarote.",
+      "ogImageAlt": "Documento con le condizioni di noleggio"
+    },
+    "gtc": {
+      "title": "Contratto di noleggio – Zodiacs Rent a Car",
+      "description": "Contratto di noleggio dettagliato e condizioni legali per i clienti di Zodiacs Rent a Car.",
+      "ogImageAlt": "Documento del contratto di noleggio"
+    },
+    "rentalRequirements": {
+      "title": "Requisiti per il noleggio auto alle Canarie",
+      "description": "Età, patente di guida, deposito cauzionale – tutte le informazioni sulle condizioni di noleggio Zodiacs Rent a Car.",
+      "ogImageAlt": "Elenco dei requisiti di noleggio"
+    },
+    "offices": {
+      "title": "Punti di consegna e uffici – Zodiacs Rent a Car",
+      "description": "Punti di ritiro auto a Fuerteventura e Lanzarote, con orari di apertura e recapiti.",
+      "ogImageAlt": "Vista esterna dell'ufficio Zodiacs Rent a Car"
+    },
+    "faq": {
+      "title": "FAQ – Domande frequenti da Zodiacs Rent a Car",
+      "description": "Trova le risposte alle domande più comuni, dalla prenotazione all'assicurazione.",
+      "ogImageAlt": "Servizio clienti Zodiacs che offre assistenza",
+      "keywords": [
+        "noleggio auto FAQ",
+        "Zodiacs Rent a Car domande frequenti",
+        "noleggio auto Fuerteventura FAQ",
+        "informazioni noleggio auto Lanzarote"
+      ]
+    },
+    "blog": {
+      "title": "Blog – Consigli di noleggio auto e viaggio a Fuerteventura",
+      "description": "Consigli aggiornati sul noleggio auto, itinerari e esperienze locali dal team Zodiacs Rent a Car.",
+      "ogImageAlt": "Illustrazione del blog Zodiacs Rent a Car",
+      "keywords": [
+        "blog noleggio auto",
+        "consigli di viaggio Fuerteventura",
+        "road trip Lanzarote",
+        "consigli Zodiacs Rent a Car"
+      ]
+    },
+    "gdpr": {
+      "title": "Informativa GDPR – Zodiacs Rent a Car",
+      "description": "Scopri come trattiamo i tuoi dati personali, su quali basi giuridiche e come puoi esercitare i tuoi diritti.",
+      "ogImageAlt": "Documento di informativa GDPR"
+    },
+    "cookiePolicy": {
+      "title": "Informativa sui cookie – Zodiacs Rent a Car",
+      "description": "Panoramica sui cookie che utilizziamo, sulle loro finalità e sulle impostazioni di consenso.",
+      "ogImageAlt": "Informativa relativa ai cookie"
+    }
+  },
+  "AboutSection": {
+    "title": "Non perderti nessuna esperienza",
+    "pickup_title": "Ritiro dove è più comodo per te",
+    "pickup_text": "Ritira la tua auto dove ti è più comodo: direttamente davanti al tuo hotel, appartamento o all'indirizzo indicato. Così potrai iniziare l'esplorazione fin dal primo minuto.",
+    "transfer_title": "Transfer comodo su richiesta",
+    "transfer_text": "Se desideri anche un servizio di transfer, segnalalo semplicemente nel nostro modulo di richiesta online – noi ci occuperemo di rendere tutto il più fluido possibile.",
+    "learn_more": "Scopri di più →",
+    "alt1": "Auto 1",
+    "alt2": "Auto 2",
+    "alt3": "Auto 3"
+  },
+  "Search": {
+    "ariaLabel": "Ricerca sul sito",
+    "openLabel": "Apri ricerca",
+    "closeLabel": "Chiudi ricerca",
+    "placeholder": "Cosa stai cercando? Inserisci una parola chiave...",
+    "noResults": "Nessun risultato per: \"{query}\". Prova con un'altra espressione.",
+    "suggested": "Pagine consigliate",
+    "results": "Risultati",
+    "entries": [
+      {
+        "title": "Pagina principale",
+        "description": "Panoramica sui servizi, sulla flotta e sull'esperienza clienti Zodiacs a Fuerteventura e Lanzarote.",
+        "keywords": [
+          "pagina principale",
+          "home",
+          "zodiacs",
+          "noleggio auto fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Le nostre auto",
+        "description": "Flotta completa con prezzi, informazioni sul bagagliaio e possibilità di prenotazione.",
+        "keywords": [
+          "auto",
+          "flotta",
+          "prezzi",
+          "veicoli",
+          "prenotazione",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "Chi siamo",
+        "description": "Scopri come lavoriamo, dal ritiro flessibile al servizio clienti personalizzato.",
+        "keywords": [
+          "chi siamo",
+          "team",
+          "servizio",
+          "ritiro",
+          "consegna",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Contatti",
+        "description": "Richiesta di offerta via WhatsApp, e-mail o telefono, con risposta entro 24 ore.",
+        "keywords": [
+          "contatti",
+          "richiesta offerta",
+          "modulo",
+          "telefono",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog e guida di viaggio",
+        "description": "Consigli locali, avvisi sulle correnti di risacca e ispirazioni per road trip.",
+        "keywords": [
+          "blog",
+          "consigli",
+          "guida",
+          "rip current",
+          "programmi",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Sicurezza rip current",
+        "description": "Articolo informativo sulle correnti di risacca pericolose lungo le coste di Fuerteventura.",
+        "keywords": [
+          "rip current",
+          "correnti di risacca",
+          "sicurezza",
+          "cofete",
+          "spiaggia",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "FAQ",
+        "description": "Risposte alle domande più frequenti: ritiro in aeroporto, assicurazione, rifornimento.",
+        "keywords": [
+          "faq",
+          "domande",
+          "assicurazione",
+          "aeroporto",
+          "rifornimento",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Informativa sulla privacy",
+        "description": "Informativa GDPR sulle modalità del trattamento dei dati, basi giuridiche e tuoi diritti.",
+        "keywords": [
+          "gdpr",
+          "trattamento dati",
+          "privacy",
+          "protezione dati",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Informativa sui cookie",
+        "description": "Quali cookie utilizziamo e come puoi gestire il tuo consenso.",
+        "keywords": [
+          "cookie",
+          "consenso cookie",
+          "privacy",
+          "protezione dati",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Assicurazione",
+        "description": "Dettagli sui pacchetti assicurativi, le coperture e le franchigie.",
+        "keywords": [
+          "assicurazione",
+          "copertura",
+          "franchigia",
+          "sinistro",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Requisiti di noleggio",
+        "description": "Informazioni su patente, età minima e documenti necessari.",
+        "keywords": [
+          "requisiti di noleggio",
+          "condizioni",
+          "patente",
+          "documenti",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Punti di ritiro e uffici",
+        "description": "Dove puoi ritirare l'auto a Fuerteventura e Lanzarote, con relativi contatti.",
+        "keywords": [
+          "uffici",
+          "ritiro",
+          "consegna",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Condizioni generali di noleggio",
+        "description": "Descrizione dettagliata delle regole di noleggio su entrambe le isole.",
+        "keywords": [
+          "condizioni",
+          "contratto",
+          "generali",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "Termini e condizioni (GTC)",
+        "description": "Termini e condizioni contrattuali ufficiali (GTC) a Fuerteventura e Lanzarote.",
+        "keywords": [
+          "termini e condizioni",
+          "gtc",
+          "contratto",
+          "legale",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Le nostre auto",
+    "about": "Chi siamo",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "home": "Home",
+    "faq": "FAQ"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Selettore lingua"
+  },
+  "Footer": {
+    "about": "Chi siamo",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "home": "Home",
+    "fleet": "Le nostre auto",
+    "general_rental_conditions": "Condizioni generali di noleggio",
+    "gtc": "Termini e condizioni generali",
+    "insurance": "Assicurazione",
+    "rental_requirements": "Requisiti di noleggio",
+    "cookie_policy": "Informativa sui cookie",
+    "gdpr": "Informativa sulla privacy",
+    "zodiac_car_rental": "Zodiacs Autonoleggio",
+    "logo_placeholder": "Qui verrà inserito il logo",
+    "faq": "FAQ"
+  },
+  "Explore": {
+    "title": "Scopri le meraviglie delle Canarie con un'auto a noleggio!",
+    "subtitle": "Prenotazione online, ritiro e consegna flessibili presso il tuo alloggio o in aeroporto.",
+    "cards": {
+      "map": "Zodiacs Rent a Car offre un servizio di noleggio auto affidabile a Fuerteventura, Costa Calma e Lanzarote.",
+      "globe": "Che tu voglia rilassarti in spiaggia o vivere avventure on the road, nella nostra flotta troverai l'auto ideale per te.",
+      "heart": "Prenota online e ritira la tua auto direttamente in aeroporto o presso il tuo alloggio!"
+    }
+  },
+  "Inquire": {
+    "title": "Prenota adesso!",
+    "description_1": "Non lasciare il noleggio auto all'ultimo minuto! Il team di Zodiacs Rent a Car risponde entro 24 ore e ti aiuta a prenotare l'auto che meglio si adatta alla tua vacanza.",
+    "description_2": "Inserisci i tuoi contatti e ti invieremo un'offerta personalizzata con prezzi dettagliati, informazioni sull'assicurazione e gli accessori extra richiesti. Da Zodiacs ogni fase viene concordata nella lingua che preferisci, così potrai partire per il viaggio con la massima sicurezza.",
+    "fields": {
+      "fullName": {
+        "label": "Nome e cognome",
+        "placeholder": "Nome e cognome",
+        "required": "Per favore inserisci il tuo nome"
+      },
+      "email": {
+        "label": "Indirizzo e-mail",
+        "placeholder": "Indirizzo e-mail",
+        "required": "Per favore inserisci il tuo indirizzo e-mail",
+        "invalid": "Inserisci un indirizzo e-mail valido"
+      },
+      "message": {
+        "label": "In cosa possiamo aiutarti?",
+        "placeholder": "Descrivici in cosa possiamo aiutarti",
+        "required": "Per favore descrivi in cosa possiamo aiutarti",
+        "invalid": "Per favore compila questo campo"
+      }
+    },
+    "submit": {
+      "idle": "Avanti →",
+      "submitting": "Invio in corso..."
+    },
+    "alt": {
+      "image": "Illustrazione del noleggio auto"
+    },
+    "toast": {
+      "success": "Grazie! Ti contatteremo al più presto.",
+      "error": "Ops, si è verificato un errore. Riprova più tardi."
+    }
+  },
+  "Blog": {
+    "title": "Blog e guida di viaggio",
+    "intro": "Consigli locali, suggerimenti per il noleggio auto e itinerari ispirazionali, perché ogni momento della tua vacanza sia memorabile.",
+    "readMore": "Apri l'articolo",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Cosa vedere a Fuerteventura in auto – 3 luoghi imperdibili",
+        "excerpt": "Le dune di Corralejo, Betancuria e le grotte di Ajuy: una guida per sfruttare al massimo la tua auto a noleggio a Fuerteventura.",
+        "category": "Guida di viaggio",
+        "readTime": "6 minuti di lettura",
+        "publishDate": "3 novembre 2025",
+        "publishDateISO": "2025-11-03",
+        "image": {
+          "src": "/AJUY.jpg",
+          "alt": "Vista sulle dune di Corralejo e sull'Oceano Atlantico"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Attenzione! Correnti di risacca pericolose a Fuerteventura",
+        "excerpt": "Impara a riconoscere i segnali della rip current, così le spiagge selvagge come Cofete resteranno un'esperienza indimenticabile e non un pericolo.",
+        "category": "Sicurezza",
+        "readTime": "7 minuti di lettura",
+        "publishDate": "15 novembre 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Cartello di avvertimento sulla spiaggia selvaggia di Cofete"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Cosa vedere a Fuerteventura in auto – 3 luoghi imperdibili con l'auto a noleggio | Zodiacs Rent a Car",
+        "description": "Scopri le attrazioni più belle di Fuerteventura in auto! Le dune di Corralejo, Betancuria e le grotte di Ajuy sono facilmente raggiungibili in auto. Noleggio auto a Fuerteventura – Zodiacs Rent a Car.",
+        "keywords": [
+          "noleggio auto Fuerteventura",
+          "auto a noleggio Fuerteventura",
+          "cosa vedere a Fuerteventura in auto",
+          "dune di Corralejo",
+          "Betancuria",
+          "grotte di Ajuy",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00594.jpg",
+          "alt": "Vista sulle dune di Corralejo a Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Cosa vedere a Fuerteventura in auto – 3 luoghi da non perdere se esplori l'isola con un'auto a noleggio",
+        "category": "Guida di viaggio",
+        "subtitle": "Se noleggi un'auto a Fuerteventura, puoi scoprire tutte le meraviglie dell'isola al tuo ritmo. Niente corse, niente orari di bus – solo il profumo dell'oceano, il sole e la sensazione di libertà.",
+        "description": "Abbiamo raccolto tre luoghi facilmente raggiungibili in auto, sicuri da visitare e capaci di offrirti esperienze indimenticabili.",
+        "publishDate": "3 novembre 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 minuti di lettura",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Le dune di Corralejo – la meraviglia naturale più iconica di Fuerteventura",
+          "paragraphs": [
+            "Nella parte nord di Fuerteventura si trova il <strong>Parque Natural de Corralejo</strong>, uno dei luoghi più famosi e visitati dell’isola.",
+            "Le immense dune di sabbia bianca creano un contrasto mozzafiato con il turchese dell’Oceano Atlantico – una vera atmosfera desertica proprio a ridosso del mare."
+          ],
+          "access": {
+            "title": "Come arrivare in auto",
+            "description": "Le dune sono attraversate dalle strade FV-1 e FV-1a in direzione Corralejo. Lungo la strada troverai diversi parcheggi segnalati, da cui puoi raggiungere a piedi sia le spiagge che le dune."
+          },
+          "links": [
+            {
+              "label": "Mappa delle dune di Corralejo",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Consiglio",
+            "description": "Fermati sulla spiaggia delle <strong>Grandes Playas de Corralejo</strong>, dove le dune scendono direttamente fino all’oceano – location perfetta per scattare foto!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – l’antica capitale tra tornanti e punti panoramici spettacolari",
+          "paragraphs": [
+            "Situata nella zona montuosa interna, Betancuria è l’ex capitale di Fuerteventura e oggi il cuore culturale dell’isola.",
+            "Il paesino è nascosto in una valle verde tra colline vulcaniche, con stradine pittoresche e un’atmosfera tranquilla che accoglie i visitatori."
+          ],
+          "access": {
+            "title": "Come arrivare in auto",
+            "description": "Betancuria è raggiungibile tramite la strada FV-30 da Puerto del Rosario, Caleta de Fuste o Pájara. Anche se la strada è tortuosa, è ben tenuta e offre panorami davvero spettacolari."
+          },
+          "links": [
+            {
+              "label": "Mappa di Betancuria",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Punti d’interesse lungo il percorso",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – due enormi statue di bronzo che sorvegliano la valle.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – uno dei punti panoramici più belli dell’isola.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Le grotte di Ajuy e la spiaggia di sabbia nera – il lato selvaggio di Fuerteventura",
+          "paragraphs": [
+            "La costa occidentale dell’isola è più selvaggia e rocciosa, ed è proprio questo a renderla speciale. Qui si trova <strong>Ajuy</strong>, un tranquillo villaggio di pescatori famoso per la sua spiaggia di sabbia nera e per le grotte di <strong>Cuevas de Ajuy</strong>.",
+            "Un sentiero pedonale costruito lungo le scogliere porta alle grotte, dove puoi osservare formazioni rocciose di milioni di anni, accompagnato dal fragore del mare. Il luogo è particolarmente suggestivo al tramonto."
+          ],
+          "access": {
+            "title": "Come arrivare in auto",
+            "description": "Il villaggio di Ajuy è raggiungibile da Pájara tramite la strada FV-621, completamente asfaltata."
+          },
+          "links": [
+            {
+              "label": "Mappa delle grotte di Ajuy",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "Perché conviene noleggiare un’auto a Fuerteventura?",
+          "paragraphs": [
+            "Le attrazioni dell’isola spesso si trovano a distanze considerevoli tra loro e i mezzi pubblici sono limitati.",
+            "Con un’auto a noleggio sei libero – puoi esplorare spiagge appartate e villaggi di montagna al tuo ritmo.",
+            "Le strade sono in ottime condizioni, il traffico è moderato e il parcheggio è quasi sempre gratuito."
+          ],
+          "links": [
+            {
+              "label": "Scopri la nostra flotta – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Viaggia in modo sostenibile – proteggi le meraviglie naturali di Fuerteventura!",
+          "paragraphs": [
+            "Noi, che viviamo qui, amiamo e proteggiamo la nostra isola. Ti chiediamo di rispettare anche tu la natura:"
+          ],
+          "bullets": [
+            "non lasciare rifiuti in giro, usa i cestini o porta via la spazzatura;",
+            "non gettare mozziconi di sigaretta nella sabbia o tra le rocce;",
+            "rimani sui sentieri segnalati, soprattutto sulle dune e lungo le coste rocciose."
+          ],
+          "closing": "Se lo farai, Fuerteventura ti ringrazierà – e ti aspetterà per il tuo prossimo ritorno."
+        }
+      ],
+      "cta": {
+        "title": "Scopri l’isola in pieno comfort, con un’auto a noleggio!",
+        "paragraphs": [
+          "Esplora le dune di sabbia, i villaggi incastonati tra le montagne e le grotte a picco sull’oceano al tuo ritmo.",
+          "<strong>Zodiacs Rent a Car</strong> – noleggio auto a Fuerteventura in modo semplice, con gestione rapida, auto affidabili e consigli locali."
+        ],
+        "buttons": [
+          {
+            "label": "Guarda le nostre auto a noleggio",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Prenota online in pochi clic",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      },
+      "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+        "meta": {
+          "title": "Attenzione! Correnti di risacca pericolose a Fuerteventura – Come fare il bagno in sicurezza nell’oceano",
+          "description": "Sulle spiagge di Fuerteventura la corrente di risacca (rip current) è un fenomeno frequente che può trascinare improvvisamente al largo i bagnanti. Scopri come riconoscerla e come evitare in sicurezza il pericolo.",
+          "keywords": [
+            "spiaggia Fuerteventura",
+            "Cofete Beach",
+            "corrente di risacca",
+            "rip current",
+            "fare il bagno in sicurezza",
+            "pericoli Fuerteventura",
+            "viaggio Isole Canarie",
+            "bagno in oceano",
+            "consigli Fuerteventura",
+            "sicurezza in spiaggia",
+            "noleggio auto Fuerteventura",
+            "Zodiacs Rent a Car",
+            "correnti marine",
+            "riconoscere rip current"
+          ],
+          "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+          "image": {
+            "src": "/cofete.jpg",
+            "alt": "Cartello di avvertimento sulla spiaggia selvaggia di Cofete a Fuerteventura"
+          }
+        },
+        "hero": {
+          "icon": "⚠️",
+          "title": "Attenzione! Correnti di risacca pericolose a Fuerteventura – così fai il bagno in sicurezza nell’oceano",
+          "category": "Sicurezza",
+          "subtitle": "Se vuoi fare il bagno sulle coste selvagge di Fuerteventura, non basta la voglia di avventura – devi conoscere anche il funzionamento della corrente di risacca.",
+          "description": "Ti spieghiamo come riconoscere i segnali della rip current, da Cofete a El Cotillo, e cosa fare se vieni trascinato dalla corrente.",
+          "publishDate": "15 novembre 2025",
+          "publishDateISO": "2025-11-15",
+          "readingTime": "7 minuti di lettura",
+          "author": "Zodiacs Rent a Car"
+        },
+        "sections": [
+          {
+            "id": "rip-basics",
+            "title": "Che cos’è la corrente di risacca e perché è pericolosa?",
+            "paragraphs": [
+              "Sulle coste dell’Oceano Atlantico la corrente di risacca è il pericolo nascosto più frequente: la massa d’acqua spinta dalle onde verso riva torna al largo in una stretta fascia, con grande forza.",
+              "Il fenomeno è subdolo perché spesso si forma proprio dove l’acqua sembra più liscia e tranquilla – i bagnanti entrano in mare proprio in questi punti."
+            ],
+            "bullets": [
+              "Una superficie d’acqua apparentemente calma non significa sicurezza: è possibile che proprio lì si formi una rip current.",
+              "La corrente non ti tira verso il fondo, ma lateralmente e verso il largo; è lo sfinimento a causare la maggior parte delle tragedie."
+            ]
+          },
+          {
+            "id": "recognize-signs",
+            "title": "Come riconoscere i tratti pericolosi",
+            "paragraphs": [
+              "Appena arrivi in spiaggia, prenditi un minuto per osservare l’acqua. I segnali della corrente di risacca si vedono anche a occhio nudo, se sai cosa cercare.",
+              "A Cofete, per esempio, c’è un cartello di avvertimento, ma spesso a causa del vento è girato verso l’entroterra – per questo informati sempre prima di entrare in acqua."
+            ],
+            "bullets": [
+              "Colore dell’acqua più scuro e torbido, perché il fondale scende più rapidamente.",
+              "Una fascia che sembra più calma tra le onde, dove l’acqua in realtà scorre verso il largo.",
+              "Schiuma, alghe o detriti che non vanno verso riva, ma vengono trascinati al largo.",
+              "Bandiere, cartelli o avvertimenti dei locali – prendili sempre sul serio."
+            ],
+            "tip": {
+              "title": "Consiglio",
+              "description": "Appena arrivi, fotografa i cartelli informativi: così ricorderai più facilmente il significato delle bandiere su quella spiaggia."
+            }
+          },
+          {
+            "id": "what-to-do",
+            "title": "Cosa fare se ti prende la corrente?",
+            "paragraphs": [
+              "La cosa più importante è non farsi prendere dal panico. La rip current non ti trascina verso il fondo, ma scorre più velocemente di quanto la maggior parte delle persone sappia nuotare.",
+              "Se ti esaurisci prima di riuscire a liberarti, ti metti in grave pericolo – perciò devi reagire con strategia."
+            ],
+            "bullets": [
+              "Respira profondamente e mantieni la testa fuori dall’acqua.",
+              "Non nuotare verso la riva – la corrente è più forte di te.",
+              "Nuota parallelamente alla spiaggia finché non esci dalla stretta fascia di corrente.",
+              "Se ti stanchi, galleggia sulla schiena, segnala con il braccio e lascia che le onde ti riportino lentamente verso la riva."
+            ],
+            "closing": "Più riesci a mantenere la calma, maggiori sono le possibilità di uscirne con le tue forze."
+          },
+          {
+            "id": "personal-story",
+            "title": "Storia personale: ho tirato fuori tre bambini a Cofete",
+            "paragraphs": [
+              "„È successo sulla spiaggia di Cofete, quando mia figlia e due suoi cugini sono stati risucchiati in pochi istanti dalla corrente. Non ho urlato, non ho fatto cenni – ogni mia energia serviva per nuotare.",
+              "Sono riuscito a portarli tutti e tre a riva, ma quell’esperienza mi ha insegnato per sempre una cosa: l’oceano va rispettato, non sfidato.”"
+            ],
+            "tip": {
+              "title": "Morale",
+              "description": "Osserva sempre il movimento dell’acqua e insegna anche alla tua famiglia cosa fare se vengono trascinati dalla corrente."
+            }
+          },
+          {
+            "id": "did-you-know",
+            "title": "Lo sapevi? La corrente è più veloce di un nuotatore professionista",
+            "paragraphs": [
+              "Con qualche numero è più facile capire perché non ha senso lottare a forza contro la corrente."
+            ],
+            "bullets": [
+              "Un nuotatore olimpico copre circa 2,3 metri al secondo.",
+              "Una rip current può trascinare in media 2,4 metri nello stesso tempo – quindi è sempre un passo avanti a te."
+            ]
+          },
+          {
+            "id": "respect-nature",
+            "title": "Rispetta la natura, proteggi l’isola",
+            "paragraphs": [
+              "La consapevolezza non si ferma al bagnasciuga: la pulizia della spiaggia e il rispetto delle regole locali sono responsabilità di tutti."
+            ],
+            "bullets": [
+              "Non lasciare rifiuti, porta via la tua spazzatura.",
+              "Non gettare mozziconi di sigaretta nella sabbia o tra le rocce.",
+              "Rimani sui sentieri segnalati, soprattutto sulle dune e nelle aree protette."
+            ]
+          },
+          {
+            "id": "safe-travel",
+            "title": "Viaggia in modo intelligente con l’auto a noleggio",
+            "paragraphs": [
+              "Se esplori Fuerteventura in auto, porta sempre con te abbastanza acqua, protezione solare e informazioni aggiornate su correnti e condizioni del vento.",
+              "In questo modo potrai goderti allo stesso tempo la libertà e la sicurezza."
+            ],
+            "closing": "Condividi questo articolo con altri viaggiatori, così sempre meno persone finiranno in pericolo a causa della corrente di risacca."
+          }
+        ],
+        "cta": {
+          "title": "Viaggia in sicurezza con le auto a noleggio Zodiacs",
+          "paragraphs": [
+            "Ti aiutiamo a scegliere l’auto ideale per raggiungere anche le spiagge più selvagge e meno conosciute – insieme a tutte le informazioni di sicurezza necessarie.",
+            "<strong>Zodiacs Rent a Car</strong> – team locale, comunicazione rapida e consigli di sicurezza personalizzati."
+          ],
+          "buttons": [
+            {
+              "label": "Richiedi un’offerta ora",
+              "href": "/{locale}/inquire"
+            },
+            {
+              "label": "Vedi la nostra flotta",
+              "href": "/{locale}/cars"
+            }
+          ]
+        }
+      },
+      "backToBlog": "Torna al blog"
+    },
+    "WhatsApp": {
+      "aria_label": "Messaggio WhatsApp",
+      "choose_option": "Scegli un’opzione",
+      "options": {
+        "transfer_quote": {
+          "label": "Richiedo un preventivo transfer",
+          "text": "Ciao! Vorrei chiedere un preventivo per il servizio transfer."
+        },
+        "car_availability": {
+          "label": "Disponibilità auto",
+          "text": "Ciao! Vorrei informazioni sulla disponibilità delle auto per le date indicate."
+        },
+        "interested_in": {
+          "label": "Vorrei informarmi",
+          "text": "Ciao! Vorrei informarmi sul processo di noleggio auto."
+        },
+        "custom_message": {
+          "label": "Messaggio personalizzato",
+          "text": ""
+        }
+      }
+    },
+    "AboutUs": {
+      "headline": "Zodiacs Rent a Car",
+      "intro": "<strong>Zodiacs Rent a Car</strong> è un <strong>business familiare ungherese</strong>, il cui cuore e casa si trova a <strong>Fuerteventura</strong>. Viviamo e lavoriamo in un ambiente internazionale, ma sappiamo esattamente cosa è importante per chi viene qui in vacanza: sicurezza, affidabilità e un approccio cordiale.",
+      "why_title": "Perché Fuerteventura?",
+      "why_text": "Per noi quest’isola non è solo una destinazione turistica, ma la nostra casa. Amiamo il sole, l’oceano, lo stile di vita tranquillo e la sensazione di libertà infinita. È proprio questa esperienza che vogliamo trasmetterti quando noleggi un’auto da noi.",
+      "fleet_title": "Le nostre auto – comode, affidabili, accessibili",
+      "fleet_text": "Nella nostra flotta trovi <strong>auto compatte pratiche</strong>, <strong>modelli familiari</strong> e anche <strong>veicoli più spaziosi</strong>. Tutte le nostre auto sono sottoposte a manutenzione regolare e consegnate pulite, per permetterti di esplorare l’isola senza pensieri.",
+      "delivery_title": "Consegna e flessibilità",
+      "delivery_text": "Puoi ritirare la tua auto non solo a Fuerteventura, ma anche a <strong>Lanzarote</strong>. Che tu arrivi in aeroporto o alloggi in hotel, ti consegniamo l’auto in modo flessibile, così il tuo viaggio comincia nel massimo comfort.",
+      "more_title": "Più di un semplice noleggio auto",
+      "more_text": "Per noi il noleggio non si limita alla consegna delle chiavi. Su richiesta ti aiutiamo con il piano di viaggio, consigli locali e ti mostriamo dove vale la pena andare per vivere la vera <strong>atmosfera di Fuerteventura</strong>: calette nascoste, spiagge sabbiose, paesaggi unici e esperienze gastronomiche.",
+      "mission_title": "La nostra missione",
+      "mission_text": "Il nostro obiettivo è che ogni nostro ospite possa vivere le esperienze dell’isola in piena <strong>libertà, comfort e sicurezza</strong>. Come famiglia e come impresa locale lavoriamo con il cuore perché anche tu possa portare a casa l’atmosfera speciale di Fuerteventura.",
+      "cta": "Noleggia un’auto da noi e scopri Fuerteventura così come la amiamo noi!"
+    },
+    "Contact": {
+      "title": "Hai domande sul noleggio auto a Fuerteventura o Lanzarote?",
+      "p1": "Mettiti in contatto con noi e ti aiuteremo a trovare <strong>la soluzione migliore per te!</strong> Che si tratti di prenotazione anticipata, consegna in aeroporto o consegna in hotel, il nostro servizio clienti risponde <strong>in modo rapido e flessibile</strong>.",
+      "p2": "Compila il modulo qui sotto, scrivici via e-mail, Messenger, WhatsApp o Viber, oppure chiamaci! <strong>Saremo felici di aiutarti</strong> per rendere la tua vacanza il più possibile spensierata.",
+      "form": {
+        "title": "Richiedi un’offerta personalizzata",
+        "description": "Scrivici quando e a quali condizioni desideri noleggiare un’auto – ti risponderemo entro poche ore.",
+        "fields": {
+          "name": {
+            "label": "Nome e cognome",
+            "placeholder": "Nome e cognome"
+          },
+          "phone": {
+            "label": "Telefono",
+            "placeholder": "+36 30 123 4567"
+          },
+          "email": {
+            "label": "Indirizzo e-mail",
+            "placeholder": "nome@example.com"
+          },
+          "channel": {
+            "label": "Metodo di contatto preferito"
+          },
+          "rentalStart": {
+            "label": "Inizio noleggio",
+            "placeholder": "Scegli una data"
+          },
+          "rentalEnd": {
+            "label": "Fine noleggio",
+            "placeholder": "Scegli una data"
+          },
+          "dateRange": {
+            "label": "Periodo di noleggio"
+          },
+          "arrivalFlight": {
+            "label": "Numero del volo di arrivo",
+            "placeholder": "es. FR1234"
+          },
+          "departureFlight": {
+            "label": "Numero del volo di ritorno",
+            "placeholder": "es. FR5678"
+          },
+          "partySize": {
+            "label": "Numero di viaggiatori",
+            "placeholder": "Quante persone viaggiano?"
+          },
+          "children": {
+            "label": "Numero di bambini",
+            "placeholder": "0"
+          }
+        },
+        "channels": {
+          "email": "E-mail",
+          "phone": "Telefono",
+          "whatsapp": "WhatsApp",
+          "viber": "Viber"
+        },
+        "consents": {
+          "privacy": "Accetto l’<link>Informativa sul trattamento dei dati</link>",
+          "terms": "Accetto i <link>Termini e Condizioni Generali</link>"
+        },
+        "submit": {
+          "idle": "Richiedi un’offerta",
+          "sending": "Invio in corso..."
+        },
+        "feedback": {
+          "success": "Grazie! Ti contatteremo al più presto.",
+          "error": "Ops, si è verificato un errore. Riprova più tardi."
+        },
+        "errors": {
+          "nameRequired": "Inserisci il tuo nome",
+          "phoneRequired": "Inserisci il tuo numero di telefono",
+          "emailRequired": "Inserisci il tuo indirizzo e-mail",
+          "emailInvalid": "Inserisci un indirizzo e-mail valido",
+          "privacyRequired": "Devi accettare l’informativa sul trattamento dei dati",
+          "termsRequired": "Devi accettare i Termini e Condizioni Generali",
+          "rentalStartRequired": "Seleziona la data di inizio noleggio",
+          "rentalEndRequired": "Seleziona la data di fine noleggio",
+          "arrivalFlightRequired": "Inserisci il numero del volo di arrivo",
+          "departureFlightRequired": "Inserisci il numero del volo di ritorno"
+        }
+      }
+    },
+    "Cars": {
+      "title": "Scopri Fuerteventura e Lanzarote in totale libertà con le nostre auto!",
+      "p1": "Da noi il noleggio auto è semplice e veloce: scegli il veicolo più adatto a te e noi te lo consegniamo in aeroporto o direttamente presso il tuo alloggio. Grazie alle nostre soluzioni flessibili di autonoleggio potrai <strong>goderti la vacanza senza pensieri</strong>, sia per soggiorni brevi che per periodi più lunghi.",
+      "p2": "<strong>Ti consigliamo di prenotare l’auto scelta in anticipo</strong>, così sarà sicuramente disponibile al tuo arrivo. Sfoglia le auto qui sotto, clicca sui dettagli e prenota comodamente online!",
+      "labels": {
+        "seats": "persone",
+        "manual": "Manuale",
+        "automatic": "Automatico",
+        "per_day": "/ giorno",
+        "from_price": "da €{price}"
+      },
+      "colors": {
+        "milky_beige": "Milky Beige",
+        "white": "Bianco",
+        "silver_metal": "Argento metallizzato",
+        "blue": "Blu",
+        "metal_blue": "Blu metallizzato",
+        "gray": "Grigio",
+        "silver_metallic": "Argento metallizzato",
+        "metallic_blue": "Blu metallizzato"
+      },
+      "categories": {
+        "small": "Utilitaria",
+        "medium": "Media",
+        "large": "Familiare",
+        "suv": "SUV / Fuoristrada"
+      },
+      "transmissions": {
+        "manual": "Manuale",
+        "automatic": "Automatico"
+      },
+      "details": {
+        "back": "Torna alla flotta",
+        "title": "Dettagli dell’auto",
+        "category": "Categoria",
+        "luggage_large": "Valigia grande: {count}",
+        "luggage_small": "Valigia piccola: {count}",
+        "colors": "Colori disponibili"
+      },
+      "buttons": {
+        "interested": "Mi interessa"
+      }
+    },
+    "Insurance": {
+      "title": "Assicurazione (SSCP)",
+      "igic_note": "+15% IGIC non incluso. Massimo +30 € per noleggio.",
+      "sscp_title": "Super Comfort Plus Insurance (SSCP)",
+      "sscp_intro": "Con una piccola cifra aggiuntiva puoi estendere l’assicurazione inclusa. Oltre all’ampia copertura già compresa nel prezzo del noleggio, l’SSCP elimina le seguenti esclusioni:",
+      "table": {
+        "header_event": "Evento",
+        "header_desc": "Descrizione",
+        "header_cost": "Costo indicativo (senza assicurazione)",
+        "rows": {
+          "lost_keys": {
+            "event": "Perdita delle chiavi",
+            "desc": "Sostituzione e riprogrammazione",
+            "cost": "100 €"
+          },
+          "tyre_damage": {
+            "event": "Danno allo pneumatico",
+            "desc": "Sostituzione / riparazione",
+            "cost": "150 €"
+          },
+          "rim_flat": {
+            "event": "Danno al cerchio / riparazione foratura",
+            "desc": "Riparazione",
+            "cost": "60 €"
+          },
+          "wrong_fuel": {
+            "event": "Rifornimento errato",
+            "desc": "Svuotamento serbatoio e pulizia",
+            "cost": "110 €"
+          },
+          "battery": {
+            "event": "Scarica della batteria per negligenza",
+            "desc": "Assistenza / avviamento",
+            "cost": "90 €"
+          },
+          "dru": {
+            "event": "Assistenza DRU aggiuntiva*",
+            "desc": "Soccorso in loco",
+            "cost": "40 € / 100 €"
+          }
+        }
+      },
+      "coverage_note": "Con questa assicurazione la copertura si estende a tutte le nostre esclusioni (tranne quelle che nessuna compagnia assicura).",
+      "footnote": "* +15% IGIC non incluso. Massimo +30 € per noleggio.",
+      "pricing_title": "Prezzo e offerta",
+      "pricing_text": "Attivala ora a soli 2 € al giorno, fino a un massimo di 30 € per qualsiasi modello, e goditi il noleggio senza preoccupazioni.",
+      "closing": "Il modo migliore per rilassarsi è con la copertura completa.",
+      "related": {
+        "title": "Pagine correlate",
+        "details": "Per maggiori dettagli:"
+      }
+    },
+    "GeneralRental": {
+      "title": "Condizioni generali di noleggio",
+      "general": {
+        "title": "Disposizioni generali",
+        "p1": "Il conducente deve avere sempre con sé un <strong>contratto di noleggio fisico valido</strong> nel veicolo, poiché in mancanza di questo le autorità spagnole possono imporre sanzioni.",
+        "p2": "Qualsiasi infrazione e tutti i relativi costi che derivano dal noleggio sono a <strong>carico del cliente</strong>, fatti salvi i diritti di azione legale.",
+        "p3": "Il <strong>rifornimento corretto del veicolo</strong> è responsabilità del cliente.",
+        "p4": "Il fornitore si riserva il diritto di rifiutare il noleggio in base a precedenti incidenti del cliente o al mancato rispetto delle Condizioni Generali. Se il modello scelto non è disponibile, forniremo un veicolo di <strong>categoria uguale o superiore</strong>."
+      },
+      "services": {
+        "title": "Servizi inclusi",
+        "kanary": {
+          "title": "Isole Canarie",
+          "i1": "<strong>Assicurazione casco totale</strong> senza franchigia",
+          "i2": "Tasse, oneri aeroportuali/ferroviari/portuali: inclusi",
+          "i3": "<strong>Chilometraggio illimitato</strong>",
+          "i4": "Seggiolini e rialzi: inclusi",
+          "i5": "Portapacchi da tetto: incluso",
+          "i6": "GPS: di serie su alcuni modelli",
+          "i7": "Conducente aggiuntivo: incluso",
+          "i8": "Consegna fuori ufficio: inclusa",
+          "i9": "Riconsegna in ufficio: inclusa",
+          "i10": "Riconsegna con ore di ritardo: inclusa",
+          "i11": "Conducente giovane (21–25 anni): incluso"
+        },
+        "peninsula": {
+          "title": "Penisola / Isole Baleari",
+          "i1": "Assicurazione casco con <strong>condizioni specifiche</strong>*",
+          "i2": "Tasse e oneri: inclusi",
+          "i3": "Chilometraggio illimitato: <strong>max. 28 giorni</strong>**",
+          "i4": "Seggiolini e rialzi: 13,99 €/giorno (max. 97,93 €)",
+          "i5": "Portapacchi da tetto: 54 €",
+          "i6": "GPS: 14 €/giorno (max. 98 €)",
+          "i7": "Altri accessori (catene, portasci, ecc.): 54 €",
+          "i8": "Conducente aggiuntivo: 12,50 €/giorno (max. 125 €)",
+          "i9": "Consegna fuori ufficio: <strong>non</strong> inclusa",
+          "i10": "Riconsegna in ufficio: <strong>non</strong> inclusa",
+          "i11": "Riconsegna con ore di ritardo: 50 €",
+          "i12": "Assistenza internazionale: 55 €"
+        },
+        "foot1": "(*) Assicurazione casco totale senza franchigia – con esclusioni (parte superiore della carrozzeria, sottoscocca, interni, uso improprio, ecc.). Dettagli: sezione Assicurazione.",
+        "foot2": "(**) Chilometraggio illimitato fino a max. 28 giorni."
+      },
+      "canary": {
+        "title": "Condizioni di noleggio – Isole Canarie",
+        "i1": "<strong>Conferma immediata</strong> della prenotazione; in mancanza del modello selezionato sarà fornito un veicolo simile o migliore.",
+        "i2": "<strong>Assicurazione completa al 100%</strong> senza franchigia; chilometraggio illimitato; tasse e oneri aeroportuali inclusi.",
+        "i3": "Audioguide disponibili in agenzia.",
+        "i4": "Seggiolini, rialzi e portapacchi <strong>inclusi</strong>.",
+        "i5": "Conducente(i) aggiuntivo(i) inclusi – da richiedere in agenzia.",
+        "i6": "<strong>Politica carburante</strong>: può essere richiesto un deposito in base al livello di rifornimento al momento della consegna.",
+        "i7": "<strong>Modifica/cancellazione</strong>: gratuita; online o tramite e-mail/telefono.",
+        "i8": "Per prenotazioni in aeroporto, la prenotazione viene mantenuta per <strong>max. 60 minuti</strong> in base all’orario effettivo di arrivo del volo.",
+        "i9": "<strong>Seggiolini/rialzi</strong> gratuiti; i seggiolini 0–18 kg vanno montati sul sedile posteriore, in senso di marcia o contrario; i rialzi sono per 15–36 kg; il corretto montaggio è responsabilità del cliente."
+      },
+      "peninsula": {
+        "title": "Condizioni di noleggio – Penisola e Isole Baleari",
+        "i1": "Tutti i prezzi sono espressi in euro. Durata minima del noleggio: <strong>24 ore</strong>. 29 minuti di tolleranza; oltre, verrà addebitato un giorno intero.",
+        "i2": "Per viaggi all’estero è necessaria l’<strong>Assistenza Internazionale</strong>; l’elenco dei paesi consentiti è riportato nel contratto.",
+        "i3": "Pagamento: <strong>solo</strong> con carta di credito fisica intestata al titolare del contratto. Contanti/assegni turistici non sono accettati.",
+        "i4": "Deposito: 200 € per le categorie piccole; 400 € per le grandi/premium/MPV; per alcune categorie è necessario un blocco su carta internazionale valida.",
+        "i5": "In caso di mancato rifornimento, verrà addebitato il costo del carburante + 18 € di spese di servizio.",
+        "i6": "Conducente sotto i 25 anni: 21,99 €/giorno, max. 219,90 €.",
+        "i7": "Conducente aggiuntivo: 12,50 €/giorno, max. 125 €.",
+        "i8": "Requisiti di età/patente per categoria (dettagli nel contratto); minimo 2 anni di patente valida.",
+        "i9": "Noleggio in aeroporto a Madrid/Barcellona non consentito senza biglietto aereo (sono richiesti i dati di arrivo e ritorno).",
+        "i10": "<strong>Viaggio all’estero</strong>: paesi consentiti – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; altri paesi non sono consentiti; la riconsegna all’estero richiede autorizzazione preventiva; i veicoli commerciali non possono essere parcheggiati all’estero.",
+        "i11": "<strong>Custodia degli accessori</strong> (seggiolino, portapacchi, chiavi, documenti) a carico del cliente; in caso di perdita/danno può essere applicata una penale."
+      },
+      "schedule": {
+        "title": "Orari di apertura e consegne",
+        "i1": "Uffici in città: Lun–Ven 9:30–13:30 e 16:30–19:00; Sab 10:00–13:00.",
+        "i2": "Uffici in aeroporto: tutti i giorni 08:00–23:00 (può variare in base alla stagione).",
+        "i3": "Consegna con sconto allo sportello: fino a 36,3 €, in base alla disponibilità.",
+        "i4": "Consegna/ritiro fuori ufficio: 27 €/50 €/100 € (5 km / 50 km / 100 km), da concordare con 48 ore di anticipo.",
+        "i5": "Consegna/ritiro fuori orario dai propri uffici: +50 €.",
+        "i6": "Nelle città senza ufficio: 0,84 €/km (min. 57 €) fino all’ufficio più vicino (km A/R).",
+        "i7": "Riconsegna in ufficio durante l’orario di apertura; al di fuori di questo, la responsabilità del veicolo resta al cliente fino alla presa in carico.",
+        "i8": "Le prenotazioni vengono mantenute: max. 120 minuti dall’orario indicato a contratto (entro l’orario d’ufficio); per i voli fa fede l’orario di arrivo effettivo."
+      },
+      "liability": {
+        "title": "Esclusione di responsabilità",
+        "p1": "Il fornitore non è responsabile per danni causati da errata prestazione, omissione, interruzione, cancellazione, ritardo, virus informatici, furto, distruzione, accesso non autorizzato o uso di dati o informazioni.",
+        "p2": "L’utente accetta espressamente che l’utilizzo del sito avvenga <strong>a proprio rischio</strong>, inclusi tutti i costi derivanti dai servizi e dalle riparazioni necessari al funzionamento del sistema.",
+        "p3": "Le entità collegate al fornitore e i loro dipendenti non sono responsabili per perdite o danni derivanti dall’uso del sito web o dal tentativo di utilizzarlo."
+      },
+      "related": {
+        "title": "Pagine correlate",
+        "details": "Per maggiori dettagli:"
+      }
+    },
+    "RentalRequirements": {
+      "title": "Requisiti di noleggio",
+      "general": {
+        "title": "Condizioni generali (Fuerteventura / Lanzarote)",
+        "i1": "Di norma non noleggiamo veicoli a conducenti sotto i 23 anni, se non con supplemento.",
+        "i2": "Dopo la conferma della prenotazione questa può essere annullata nei seguenti casi:",
+        "i2a": "i dati forniti dal cliente non sono esatti/veritieri/aggiornati",
+        "i2b": "violazione delle condizioni di noleggio",
+        "i3": "Sono necessari: patente di guida valida, carta d’identità/passaporto, indirizzo e numero di telefono attivo."
+      },
+      "vehicle": {
+        "title": "Condizioni relative al veicolo",
+        "i1": "Il modello prenotato è indicativo; può essere sostituito da un veicolo simile della stessa categoria.",
+        "i2": "Per i veicoli dotati di GPS il tracciamento è a scopo di sicurezza, in conformità alle leggi vigenti.",
+        "i3": "Il veicolo non può lasciare l’isola di noleggio.",
+        "i4": "Uso consentito: nel rispetto del codice della strada e solo su strade pubbliche; è vietato l’uso per scopi illegali/non autorizzati o a fini pubblicitari.",
+        "i5": "È obbligatorio utilizzare il tipo di carburante raccomandato; il veicolo deve essere sempre chiuso a chiave durante il parcheggio.",
+        "i6": "Il seggiolino per bambini viene fornito al momento della consegna; il corretto fissaggio è obbligatorio.",
+        "i7": "Bagagli/tavole da surf devono essere fissati su portapacchi omologati.",
+        "i8": "In caso di guasto, fermare subito il veicolo, parcheggiarlo in sicurezza e avvisarci <strong>immediatamente</strong>.",
+        "i9": "Il cliente è responsabile del veicolo dal momento del ritiro fino alla riconsegna corretta."
+      },
+      "handover": {
+        "title": "Consegna e riconsegna",
+        "i1": "Consegna e riconsegna: presso l’aeroporto e all’orario indicati e confermati nella prenotazione.",
+        "i2": "Il veicolo non può essere riconsegnato su un’altra isola. Eccezione: Lanzarote, con supplemento (40 €).",
+        "i3": "Alla riconsegna, il veicolo deve essere in condizioni equivalenti a quelle del ritiro (eccetto normale usura).",
+        "i4": "In caso di incidente/danno è obbligatorio presentare la documentazione/il verbale.",
+        "i5": "In caso di sporco eccessivo può essere applicata una tariffa di pulizia: 70 €.",
+        "i6": "In caso di riconsegna anticipata non è previsto rimborso.",
+        "i7": "Alla riconsegna non lasciare oggetti nel veicolo; non siamo responsabili della loro perdita."
+      },
+      "price": {
+        "title": "Il prezzo della prenotazione include",
+        "i1": "Tasse (IGIC/IVA)",
+        "i2": "Chilometraggio illimitato",
+        "i3": "Secondo conducente gratuito",
+        "i4": "Consegna e riconsegna in aeroporto",
+        "i5": "Cancellazione gratuita della prenotazione",
+        "i6": "Seggiolini e rialzi per bambini gratuiti (non ISOFIX; sistema ISOFIX disponibile come extra a pagamento)",
+        "i7": "Assicurazione base con deposito di 300–500 € (franchigia in caso di danno)"
+      },
+      "base_excludes": {
+        "title": "Cosa non copre l’assicurazione base",
+        "i1": "Tetto",
+        "i2": "Superfici in vetro (finestre, fari, specchi)",
+        "i3": "Pneumatici e cerchi",
+        "i4": "Batteria scarica",
+        "i5": "Danni interni (sedili, tappetini, ecc.)",
+        "i6": "Sospensioni",
+        "i9": "Cambio",
+        "i7": "Oggetti personali all’interno del veicolo (bagagliaio, vano portaoggetti)",
+        "i8": "Chiavi perse",
+        "note": "I costi relativi a tali danni sono a carico del cliente."
+      },
+      "deposit": {
+        "title": "Deposito e trattenuta",
+        "i1": "Deposito in contanti: 300–500 € (non è richiesto deposito su carta di credito).",
+        "i2": "Il deposito può essere trattenuto fino a un massimo di 15 giorni; il rimborso avviene tramite bonifico bancario (ad es. Revolut, Caixabank)."
+      },
+      "full": {
+        "title": "Assicurazione completa (opzionale)",
+        "p1": "Con l’assicurazione completa non è richiesto il deposito di 300–500 € e la maggior parte dei danni è coperta.",
+        "note": "Eccezioni: danni dovuti a negligenza o a violazione delle condizioni contrattuali (vedi esempi sotto)."
+      },
+      "exceptions": {
+        "title": "Eccezioni – esempi",
+        "i1": "Guida su strade sterrate o vietate (es. Cofete)",
+        "i2": "Guida sotto l’effetto di alcol/sostanze psicotrope",
+        "i3": "Uso del cellulare alla guida senza vivavoce",
+        "i4": "Continuare a guidare ignorando un allarme/messaggio di errore sul cruscotto",
+        "i5": "Trasporto di materiali pericolosi/infiammabili, animali o carichi non autorizzati",
+        "i6": "Attività illegali/non autorizzate, subnoleggio a terzi",
+        "i7": "Oggetti sul tetto senza portapacchi autorizzato",
+        "i8": "Danni interni causati da acqua/umidità oltre la normale diligenza",
+        "i9": "Danni a veicolo lasciato aperto o guidato da persona non autorizzata",
+        "i10": "Superamento del periodo di noleggio indicato a contratto"
+      },
+      "related": {
+        "title": "Pagine correlate",
+        "details": "Per maggiori dettagli:"
+      }
+    },
+    "RentForm": {
+      "title": "Compila il modulo seguente per completare la prenotazione",
+      "buttons": {
+        "addChild": "Aggiungi bambino",
+        "removeChild": "Rimuovi",
+        "addDriver": "Aggiungi conducente",
+        "removeDriver": "Rimuovi conducente",
+        "submit": "Invia prenotazione"
+      },
+      "searching": "Elaborazione dei dati...",
+      "extras": {
+        "label": "Servizi extra",
+        "options": {
+          "szorfo_deszka_rogzito": "Portatavola da surf",
+          "gyerekules": "Seggiolino per bambini",
+          "kiszallitas": "Consegna del veicolo",
+          "alap_csomag": "Pacchetto base *",
+          "energia_csomag": "Pacchetto energia **",
+          "esti_erkezes_csomag": "Pacchetto arrivo serale ***"
+        },
+        "packages": {
+          "base": "* Pacchetto base: 0,5 l d’acqua e 0,33 l di Fuze Tea a persona",
+          "energy": "** Pacchetto energia: oltre al pacchetto base, 2–3 tipi di snack o cioccolato a scelta",
+          "lateArrival": "*** Pacchetto arrivo serale: oltre al pacchetto base, 1,5 l d’acqua e 2 croissant a persona per gli arrivi in tarda serata"
+        }
+      },
+      "rentalPeriod": {
+        "label": "Periodo di noleggio"
+      },
+      "dateRangePicker": {
+        "cancel": "Annulla",
+        "apply": "Salva"
+      },
+      "adults": {
+        "label": "Numero di adulti",
+        "placeholder": "Numero di adulti"
+      },
+      "sections": {
+        "booking": {
+          "title": "Dati della prenotazione",
+          "description": "Seleziona i servizi extra desiderati, indica la durata del noleggio e il numero di passeggeri adulti."
+        },
+        "children": {
+          "title": "Passeggeri bambini",
+          "description": "Se viaggiano anche bambini, indica la loro età (e facoltativamente l’altezza), così potremo fornire l’attrezzatura adeguata.",
+          "empty": "Al momento non è stato aggiunto alcun bambino.",
+          "ageLabel": "Età del bambino #{index} (anni)",
+          "heightLabel": "Altezza (cm) – opzionale"
+        },
+        "drivers": {
+          "title": "Dati dei conducenti",
+          "description": "Inserisci i dati personali del conducente principale e di eventuali conducenti aggiuntivi, oltre ai dettagli della patente.",
+          "primaryInfo": "I dati del conducente principale verranno usati per compilare automaticamente i campi di contatto e fatturazione se attivi le caselle corrispondenti.",
+          "primaryTitle": "Dati del conducente principale",
+          "secondaryTitle": "Dati del conducente {index}",
+          "fields": {
+            "lastName1": {
+              "label": "Cognome del conducente",
+              "placeholder": "Cognome"
+            },
+            "lastName2": {
+              "label": "Secondo cognome (opzionale)",
+              "placeholder": "Cognome (opzionale)"
+            },
+            "firstName1": {
+              "label": "Nome del conducente",
+              "placeholder": "Nome"
+            },
+            "firstName2": {
+              "label": "Secondo nome (opzionale)",
+              "placeholder": "Nome (opzionale)"
+            },
+            "postalCode": {
+              "label": "CAP",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Città",
+              "placeholder": "Città"
+            },
+            "country": {
+              "label": "Paese",
+              "placeholder": "Paese"
+            },
+            "street": {
+              "label": "Via",
+              "placeholder": "Via"
+            },
+            "doorNumber": {
+              "label": "Numero civico",
+              "placeholder": "Numero civico"
+            },
+            "dateOfBirth": {
+              "label": "Data di nascita",
+              "placeholder": "Seleziona una data"
+            },
+            "placeOfBirth": {
+              "label": "Luogo di nascita",
+              "placeholder": "Luogo di nascita"
+            },
+            "nameOfMother": {
+              "label": "Nome della madre",
+              "placeholder": "Nome della madre"
+            },
+            "phoneNumber": {
+              "label": "Numero di telefono",
+              "placeholder": "+36301234567"
+            },
+            "email": {
+              "label": "Indirizzo e-mail",
+              "placeholder": "esempio@email.com"
+            }
+          },
+          "documents": {
+            "type": {
+              "label": "Tipo di documento",
+              "placeholder": "Seleziona un documento",
+              "passport": "Passaporto",
+              "id_card": "Carta d’identità"
+            },
+            "number": {
+              "label": "Numero del documento",
+              "placeholder": "AA123456"
+            },
+            "validFrom": {
+              "label": "Data di rilascio",
+              "placeholder": "Seleziona una data"
+            },
+            "validUntil": {
+              "label": "Data di scadenza",
+              "placeholder": "Seleziona una data"
+            },
+            "drivingLicenceNumber": {
+              "label": "Numero della patente",
+              "placeholder": "ABC123456"
+            },
+            "drivingLicenceCategory": {
+              "label": "Categoria più alta",
+              "placeholder": "Seleziona la categoria"
+            },
+            "drivingLicenceValidFrom": {
+              "label": "Data di rilascio della patente",
+              "placeholder": "Seleziona una data"
+            },
+            "drivingLicenceValidUntil": {
+              "label": "Data di scadenza della patente",
+              "placeholder": "Seleziona una data"
+            },
+            "drivingLicenceIsOlderThan3": "Dichiaro che la mia patente è stata rilasciata da oltre 3 anni"
+          }
+        },
+        "contact": {
+          "title": "Dati del contatto",
+          "description": "Se la persona di contatto è diversa dal conducente principale, puoi inserire qui i suoi dati.",
+          "toggle": "Uguale ai dati del conducente principale",
+          "fields": {
+            "name": {
+              "label": "Nome del contatto",
+              "placeholder": "Nome del contatto"
+            },
+            "email": {
+              "label": "E-mail del contatto",
+              "placeholder": "E-mail del contatto"
+            }
+          }
+        },
+        "invoice": {
+          "title": "Dati di fatturazione",
+          "description": "Imposta a quale nome e indirizzo deve essere emessa la fattura. Se coincide con i dati del conducente, seleziona l’opzione qui sotto.",
+          "toggle": "Uguale ai dati del conducente principale",
+          "fields": {
+            "name": {
+              "label": "Intestazione fattura",
+              "placeholder": "Nome per la fattura"
+            },
+            "email": {
+              "label": "E-mail per la fattura",
+              "placeholder": "E-mail per la fattura"
+            },
+            "phoneNumber": {
+              "label": "Telefono per la fatturazione",
+              "placeholder": "+36201234567"
+            },
+            "taxId": {
+              "label": "Partita IVA (opzionale)",
+              "placeholder": "Partita IVA"
+            },
+            "companyName": {
+              "label": "Ragione sociale (opzionale)",
+              "placeholder": "Ragione sociale"
+            },
+            "address": {
+              "country": {
+                "label": "Paese",
+                "placeholder": "Paese"
+              },
+              "postalCode": {
+                "label": "CAP",
+                "placeholder": "1234"
+              },
+              "city": {
+                "label": "Città",
+                "placeholder": "Città"
+              },
+              "street": {
+                "label": "Via",
+                "placeholder": "Via"
+              },
+              "doorNumber": {
+                "label": "Numero civico",
+                "placeholder": "Numero civico"
+              }
+            }
+          }
+        },
+        "delivery": {
+          "title": "Indirizzo esatto per la consegna",
+          "description": "Inserisci l’indirizzo dettagliato dell’alloggio o dell’aeroporto per la consegna dell’auto.",
+          "locationName": {
+            "label": "Nome dell’alloggio / aeroporto (opzionale)",
+            "placeholder": "Es. Hotel Marina o Budapest Liszt Ferenc"
+          },
+          "fields": {
+            "placeType": {
+              "label": "Tipo di luogo",
+              "placeholder": "Seleziona il tipo di luogo",
+              "accommodation": "Alloggio",
+              "airport": "Aeroporto"
+            },
+            "arrivalFlight": {
+              "label": "Numero del volo di arrivo",
+              "placeholder": "es. FR1234"
+            },
+            "departureFlight": {
+              "label": "Numero del volo di ritorno",
+              "placeholder": "es. FR5678"
+            },
+            "country": {
+              "label": "Paese",
+              "placeholder": "Paese"
+            },
+            "postalCode": {
+              "label": "CAP",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "Città",
+              "placeholder": "Città"
+            },
+            "street": {
+              "label": "Via (opzionale)",
+              "placeholder": "Via"
+            },
+            "doorNumber": {
+              "label": "Numero civico (opzionale)",
+              "placeholder": "Numero civico"
+            }
+          }
+        },
+        "consents": {
+          "title": "Dichiarazioni legali",
+          "description": "Per finalizzare la prenotazione devi accettare l’Informativa sul trattamento dei dati e i Termini e Condizioni Generali.",
+          "privacyLabel": "Ho letto e accetto l’<link>Informativa sul trattamento dei dati</link>",
+          "termsLabel": "Ho letto e accetto i <link>Termini e Condizioni Generali</link>"
+        }
+      },
+      "toast": {
+        "success": "Grazie! Ti contatteremo al più presto.",
+        "error": "Ops, si è verificato un errore. Riprova più tardi."
+      }
+    },
+    "RentSchema": {
+      "errors": {
+        "invalidStartDate": "Data di inizio non valida",
+        "invalidEndDate": "Data di fine non valida",
+        "adultsMin": "È richiesto almeno un adulto",
+        "childAgeMin": "L'età non può essere negativa",
+        "childAgeMax": "L'età del bambino può essere al massimo di 17 anni",
+        "childHeightMin": "L'altezza non può essere negativa",
+        "firstNameRequired": "Il nome è obbligatorio",
+        "lastNameRequired": "Il cognome è obbligatorio",
+        "countryRequired": "Il paese è obbligatorio",
+        "postalCodeRequired": "Il codice postale è obbligatorio",
+        "cityRequired": "La città è obbligatoria",
+        "streetRequired": "La via è obbligatoria",
+        "doorNumberRequired": "Il numero civico è obbligatorio",
+        "invalidDateOfBirth": "Data di nascita non valida",
+        "placeOfBirthRequired": "Il luogo di nascita è obbligatorio",
+        "motherNameRequired": "Il nome della madre è obbligatorio",
+        "phoneRequired": "Il numero di telefono è obbligatorio",
+        "phoneInvalid": "Inserisci un numero di telefono valido",
+        "emailRequired": "L'indirizzo email è obbligatorio",
+        "emailInvalid": "Inserisci un indirizzo email valido",
+        "documentNumberRequired": "Il numero del documento è obbligatorio",
+        "documentIssueInvalid": "Data di rilascio del documento non valida",
+        "documentExpiryInvalid": "Data di scadenza del documento non valida",
+        "drivingLicenceNumberRequired": "Il numero della patente è obbligatorio",
+        "drivingLicenceIssueInvalid": "Data di rilascio della patente non valida",
+        "drivingLicenceExpiryInvalid": "Data di scadenza della patente non valida",
+        "contactNameRequired": "Il nome del referente è obbligatorio",
+        "contactEmailRequired": "L'email del referente è obbligatoria",
+        "contactEmailInvalid": "Inserisci un'email del referente valida",
+        "invoiceNameRequired": "Il nome di fatturazione è obbligatorio",
+        "invoicePhoneRequired": "Il numero di telefono di fatturazione è obbligatorio",
+        "invoiceEmailRequired": "L'email di fatturazione è obbligatoria",
+        "invoiceEmailInvalid": "Inserisci un'email di fatturazione valida",
+        "startPast": "La data di inizio non può essere nel passato",
+        "startTooLate": "La data di inizio può essere al massimo entro un anno",
+        "endBeforeStart": "La data di fine non può essere precedente alla data di inizio",
+        "endTooLate": "La data di fine può essere al massimo entro un anno",
+        "deliveryPlaceTypeRequired": "Seleziona se stai indicando l'indirizzo di un alloggio o di un aeroporto",
+        "deliveryFieldRequired": "Campo obbligatorio",
+        "invalidAdults": "È richiesto almeno un adulto",
+        "adultsInvalid": "Per favore indica il numero di passeggeri adulti"
+      },
+      "fields": {
+        "rentalPeriod": {
+          "startDate": {
+            "invalid": "Data di inizio non valida",
+            "past": "La data di inizio non può essere nel passato",
+            "tooLate": "La data di inizio può essere al massimo entro un anno"
+          },
+          "endDate": {
+            "invalid": "Data di fine non valida",
+            "beforeStart": "La data di fine non può essere precedente alla data di inizio",
+            "tooLate": "La data di fine può essere al massimo entro un anno"
+          }
+        },
+        "adults": {
+          "min": "È richiesto almeno un adulto"
+        },
+        "children": {
+          "age": {
+            "min": "L'età non può essere negativa",
+            "max": "L'età del bambino può essere al massimo di 17 anni"
+          },
+          "height": {
+            "min": "L'altezza non può essere negativa"
+          }
+        },
+        "driver": {
+          "firstName_1": {
+            "required": "Il nome è obbligatorio"
+          },
+          "lastName_1": {
+            "required": "Il cognome è obbligatorio"
+          },
+          "location": {
+            "country": {
+              "required": "Il paese è obbligatorio"
+            },
+            "postalCode": {
+              "required": "Il codice postale è obbligatorio"
+            },
+            "city": {
+              "required": "La città è obbligatoria"
+            },
+            "street": {
+              "required": "La via è obbligatoria"
+            },
+            "doorNumber": {
+              "required": "Il numero civico è obbligatorio"
+            }
+          },
+          "dateOfBirth": {
+            "invalid": "Data di nascita non valida"
+          },
+          "placeOfBirth": {
+            "required": "Il luogo di nascita è obbligatorio"
+          },
+          "nameOfMother": {
+            "required": "Il nome della madre è obbligatorio"
+          },
+          "phoneNumber": {
+            "required": "Il numero di telefono è obbligatorio",
+            "invalid": "Inserisci un numero di telefono valido"
+          },
+          "email": {
+            "required": "L'indirizzo email è obbligatorio",
+            "invalid": "Inserisci un indirizzo email valido"
+          },
+          "document": {
+            "number": {
+              "required": "Il numero del documento è obbligatorio"
+            },
+            "validFrom": {
+              "invalid": "Data di rilascio del documento non valida"
+            },
+            "validUntil": {
+              "invalid": "Data di scadenza del documento non valida"
+            },
+            "drivingLicenceNumber": {
+              "required": "Il numero della patente è obbligatorio"
+            },
+            "drivingLicenceValidFrom": {
+              "invalid": "Data di rilascio della patente non valida",
+              "minAge": "La patente deve essere stata rilasciata da almeno 3 anni"
+            },
+            "drivingLicenceValidUntil": {
+              "invalid": "Data di scadenza della patente non valida"
+            }
+          }
+        },
+        "contact": {
+          "name": {
+            "required": "Il nome del referente è obbligatorio"
+          },
+          "email": {
+            "required": "L'email del referente è obbligatoria",
+            "invalid": "Inserisci un'email del referente valida"
+          }
+        },
+        "invoice": {
+          "name": {
+            "required": "Il nome di fatturazione è obbligatorio"
+          },
+          "phoneNumber": {
+            "required": "Il numero di telefono di fatturazione è obbligatorio",
+            "invalid": "Inserisci un numero di telefono valido"
+          },
+          "email": {
+            "required": "L'email di fatturazione è obbligatoria",
+            "invalid": "Inserisci un'email di fatturazione valida"
+          },
+          "location": {
+            "country": {
+              "required": "Il paese è obbligatorio"
+            },
+            "postalCode": {
+              "required": "Il codice postale è obbligatorio"
+            },
+            "city": {
+              "required": "La città è obbligatoria"
+            },
+            "street": {
+              "required": "La via è obbligatoria"
+            },
+            "doorNumber": {
+              "required": "Il numero civico è obbligatorio"
+            }
+          }
+        },
+        "delivery": {
+          "placeType": {
+            "required": "Seleziona se stai indicando l'indirizzo di un alloggio o di un aeroporto"
+          },
+          "arrivalFlight": {
+            "required": "Inserisci il numero del volo di arrivo"
+          },
+          "departureFlight": {
+            "required": "Inserisci il numero del volo di ritorno"
+          },
+          "address": {
+            "country": {
+              "required": "Campo obbligatorio"
+            },
+            "postalCode": {
+              "required": "Campo obbligatorio"
+            },
+            "city": {
+              "required": "Campo obbligatorio"
+            },
+            "street": {
+              "required": "Campo obbligatorio"
+            },
+            "doorNumber": {
+              "required": "Campo obbligatorio"
+            }
+          }
+        },
+        "consents": {
+          "privacy": {
+            "required": "Per completare la prenotazione devi accettare l'informativa sulla privacy"
+          },
+          "terms": {
+            "required": "Per completare la prenotazione devi accettare le Condizioni Generali di Contratto"
+          }
+        }
+      }
+    },
+    "MultiSelect": {
+      "placeholder": "Seleziona un'opzione",
+      "selectAll": "Seleziona tutto",
+      "close": "Chiudi",
+      "clear": "Cancella"
+    },
+    "NotFound": {
+      "label": "Ti sei perso?",
+      "title": "La pagina richiesta non è stata trovata",
+      "description": "È possibile che la pagina non esista più oppure che ci sia stato un errore di digitazione. Puoi continuare l'esplorazione dalla pagina principale oppure contattarci.",
+      "badge": "Ti aspetta una nuova avventura",
+      "cta": {
+        "home": {
+          "href": "it",
+          "label": "Torna alla pagina principale"
+        },
+        "contact": {
+          "href": "it/contact",
+          "label": "Contattaci"
+        }
+      }
+    },
+    "GTC": {
+      "title": "Contratto di noleggio",
+      "sections": [
+        {
+          "heading": "1. Le Parti Contraenti e la Conclusione del Contratto",
+          "paragraphs": [
+            "Il presente contratto è concluso tra ZODIACSRENTACAR Thomy Fuerteventura SL. (di seguito: Locatore) e la persona fisica o giuridica che accetta l'offerta (di seguito: Conduttore).",
+            "Le Parti considerano vincolanti e valide, per l'intera durata del periodo di noleggio fino alla definitiva riconsegna del veicolo, tutte le disposizioni contenute nel Contratto.",
+            "La richiesta di offerta e la prenotazione possono essere effettuate tramite il sito www.zodiacsrentacar.com, nonché attraverso i canali di comunicazione indicati.",
+            "L'accettazione della richiesta di offerta, la conferma della prenotazione o l'eventuale rifiuto vengono inviati all'indirizzo e-mail fornito nel modulo di raccolta dati.",
+            "Il Locatore si riserva il diritto di rifiutare o respingere una richiesta di prenotazione qualora, per motivi operativi – in particolare per indisponibilità del veicolo richiesto – la prenotazione risulti incompleta, inesatta o non conforme alle condizioni vigenti.",
+            "La persona indicata nel Contratto, il titolare della prenotazione e il conducente principale devono coincidere; il contratto non può essere ceduto a terzi.",
+            "Per motivi di sicurezza, tramite la piattaforma non vengono richiesti dati bancari o finanziari, ma il Conduttore è tenuto a presentarli (in particolare la propria carta di credito) al momento del ritiro del veicolo presso l'ufficio.",
+            "La carta di credito deve essere intestata al Conduttore e rimanere valida per l'intera durata del noleggio e per ulteriori tre (3) mesi successivi alle Isole Canarie, per coprire eventuali costi successivi.",
+            "Sono accettate le principali carte di credito (Visa/MC/Amex/Diners) e le carte bancarie emesse dagli istituti di credito; non si accettano carte di debito (debit).",
+            "Per la durata del noleggio il Locatore accetta un deposito di 500 €, che verrà restituito entro 15 giorni di calendario dalla riconsegna del veicolo, a condizione che lo stato del veicolo sia conforme a quanto previsto nel contratto.",
+            "Il trattamento dei dati personali e le altre condizioni legali relative al funzionamento della piattaforma sono disciplinati dall'informativa GDPR presente sul sito web del Locatore, la cui presa visione e accettazione il Conduttore dichiara con la firma del presente contratto."
+          ],
+          "lists": [
+            {
+              "type": "unordered",
+              "title": "Dati del Locatore:",
+              "items": [
+                "Ragione sociale: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+                "Sede legale: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Spagna",
+                "Codice fiscale (CIF): B13702493",
+                "Indirizzo e-mail: info@zodiacsrentacar.es",
+                "Numero di telefono centrale: +34 683-192-422"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. Condizioni di noleggio e requisiti per i conducenti",
+          "paragraphs": [
+            "Il Locatore non noleggia veicoli a conducenti di età inferiore ai 25 anni.",
+            "Gli utenti possono noleggiare un veicolo dal Locatore solo se soddisfano tutte le condizioni riportate di seguito.",
+            "Il rispetto di tali condizioni è obbligatorio e non è possibile discostarsene.",
+            "Il Locatore non addebita alcun costo agli utenti che, per mancato rispetto dei requisiti, non possono concludere il contratto, poiché in tal caso la prenotazione non può perfezionarsi.",
+            "Le stesse condizioni si applicano ad ogni eventuale conducente aggiuntivo indicato dal Conduttore.",
+            "Dopo la conferma della prenotazione, il Locatore è autorizzato a cancellarla nei seguenti casi."
+          ],
+          "lists": [
+            {
+              "type": "unordered",
+              "title": "Condizioni per il noleggio:",
+              "items": [
+                "Età minima di venticinque (25) anni.",
+                "Essere in possesso di una patente di guida di categoria almeno B, valida nell'Unione Europea.",
+                "Avere almeno due (2) anni di esperienza di guida documentata alla data della prenotazione."
+              ]
+            },
+            {
+              "type": "unordered",
+              "title": "La prenotazione può essere cancellata se:",
+              "items": [
+                "si accerta che le informazioni fornite dal cliente non sono corrette, veritiere o aggiornate.",
+                "durante il periodo di noleggio la validità di uno qualsiasi dei documenti richiesti risulta scaduta.",
+                "il Conduttore viola le condizioni di noleggio."
+              ]
+            }
+          ],
+          "notes": [
+            "(*) In conformità alla legislazione spagnola... (qui il testo contiene un paragrafo relativo alle disposizioni di legge spagnole, che, per la sua natura giuridica, viene mantenuto invariato)."
+          ]
+        },
+        {
+          "heading": "3. Condizioni relative al veicolo a noleggio",
+          "paragraphs": [
+            "Il modello del veicolo prenotato ha valore puramente indicativo e può essere sostituito con un veicolo della stessa categoria o di categoria superiore disponibile nella flotta del Locatore.",
+            "Localizzazione GPS: con la sottoscrizione del contratto di noleggio, il Conduttore acconsente al tracciamento del veicolo; i dati di geolocalizzazione sono utilizzati dal Locatore esclusivamente per la sicurezza del veicolo e per verificare il rispetto delle condizioni di noleggio.",
+            "Limitazione d'uso: il veicolo non può lasciare l'isola in cui è avvenuto il noleggio, salvo accordo specifico registrato nel sistema di prenotazione.",
+            "Qualora il contratto di noleggio si estenda anche all'isola di Lanzarote o il luogo di riconsegna sia Lanzarote, le Parti considerano vincolanti le presenti condizioni anche in tali circostanze.",
+            "In caso di guasto, il veicolo deve essere fermato in condizioni di sicurezza conformi al codice della strada e il Locatore deve essere informato immediatamente.",
+            "Prima dell'inizio del noleggio, il Conduttore è tenuto a verificare la presenza di tutti gli accessori obbligatori.",
+            "Il Conduttore è responsabile dell'uso conforme alla legge e alla corretta manutenzione tecnica del veicolo, nonché della sua conservazione, dal momento del ritiro fino alla riconsegna regolarmente certificata.",
+            "Se la riconsegna non avviene secondo le modalità indicate dal Locatore (ad esempio senza consegna personale), la responsabilità del Conduttore si prolunga fino alla registrazione effettiva della riconsegna e al controllo dello stato del veicolo.",
+            "I costi per la riparazione dei danni riscontrati sono a carico del Conduttore."
+          ],
+          "lists": [
+            {
+              "type": "unordered",
+              "title": "Altre regole di utilizzo:",
+              "items": [
+                "Il Conduttore accetta come vincolanti le normative nazionali e le disposizioni di legge applicabili, incluse le norme sulla circolazione stradale.",
+                "Il veicolo non può essere utilizzato per fini illeciti o come strumento per commettere reati.",
+                "Il veicolo può circolare esclusivamente su strade pubbliche con superficie pavimentata.",
+                "Attenzione: se il veicolo viene utilizzato su strade non asfaltate, eventuali forature, costi di soccorso, trasporto e riparazione sul posto sono a carico del Conduttore.",
+                "Il veicolo non può essere utilizzato per scopi commerciali o pubblicitari.",
+                "È obbligatorio utilizzare esclusivamente il tipo di carburante raccomandato dal costruttore; in caso di rifornimento con carburante non compatibile, il Locatore deve essere informato immediatamente ed è vietato avviare il veicolo.",
+                "Il Conduttore è tenuto ad assicurarsi che, quando lascia il veicolo o lo parcheggia, questo sia completamente chiuso e che siano state adottate tutte le misure ragionevoli per impedirne l'uso non autorizzato.",
+                "In fase di parcheggio devono essere utilizzati il freno di stazionamento e il rapporto adeguato; in pendenza, le ruote sterzanti devono essere orientate verso il bordo della strada.",
+                "I seggiolini per bambini sono forniti dal Locatore al momento del ritiro, ma il corretto fissaggio e utilizzo resta sempre responsabilità del Conduttore.",
+                "È vietato trasportare o riporre attrezzature sportive (ad esempio tavole da surf) all'interno dell'abitacolo del veicolo.",
+                "Il Conduttore è tenuto ad assicurarsi che i bagagli o le tavole da surf siano correttamente fissati al portapacchi da tetto, qualora ne abbia noleggiato uno."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "4. Regole di consegna e riconsegna del veicolo",
+          "paragraphs": [
+            "La consegna e la riconsegna del veicolo a noleggio avvengono presso l'ufficio indicato nella prenotazione, alle date e agli orari confermati dal Locatore.",
+            "Il veicolo non può in alcun caso essere riconsegnato su un'isola diversa da quella indicata nel contratto.",
+            "Il veicolo può essere ritirato esclusivamente durante l'orario di apertura; la riconsegna può essere organizzata anche al di fuori di tali orari secondo le condizioni registrate nel processo di prenotazione.",
+            "Il rientro in aeroporto al di fuori dell'orario di apertura è gratuito; per la consegna in altre località può essere applicato un sovrapprezzo, che viene registrato nel sistema di prenotazione.",
+            "L'orario di apertura dell'ufficio è generalmente 10:00–13:00 e 16:00–20:00; per informazioni precise è possibile contattarci via e-mail, WhatsApp o telefono.",
+            "In caso di ritardo o cancellazione del volo, il Conduttore è tenuto ad informare tempestivamente il Locatore; in mancanza di tale comunicazione, il Locatore non può garantire il mantenimento della prenotazione.",
+            "Se il mantenimento della prenotazione non è possibile, il Locatore si riserva il diritto di cancellarla e di disporre del veicolo senza alcun obbligo di risarcimento.",
+            "Il veicolo deve essere riconsegnato nelle condizioni registrate al momento del ritiro; in caso contrario, il Conduttore è tenuto a documentare gli eventi che hanno causato le differenze.",
+            "La riconsegna anticipata del veicolo non dà diritto ad alcun rimborso.",
+            "Carburante: il veicolo deve essere riconsegnato con lo stesso livello di carburante presente al momento del ritiro; in caso contrario, il Conduttore sostiene i costi di rifornimento e l'eventuale spesa di servizio.",
+            "In caso di carburante in eccesso, non è possibile rimborsare la differenza.",
+            "Alla riconsegna, nel veicolo non devono rimanere effetti personali; il Locatore non è responsabile per gli oggetti lasciati all'interno e non può garantirne la custodia o la spedizione."
+          ]
+        },
+        {
+          "heading": "5. Servizi e assicurazione",
+          "paragraphs": [
+            "Il prezzo finale della prenotazione del veicolo comprende i seguenti elementi.",
+            "Non è richiesto alcun franchigia (deposito, contanti o preautorizzazione sulla carta), ad eccezione del deposito di 500 € previsto al punto 1.",
+            "È importante ricordare che, secondo il codice della strada spagnolo, l'uso di un seggiolino omologato è obbligatorio per i minori con altezza inferiore a 135 cm."
+          ],
+          "lists": [
+            {
+              "type": "ordered",
+              "items": [
+                "Imposte incluse (IGIC/IVA).",
+                "Chilometraggio illimitato.",
+                "Secondo conducente gratuito.",
+                "Servizio presso il nostro ufficio (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+                "Cancellazione gratuita della prenotazione (vedi punto 9).",
+                "Seggiolini per neonati e rialzi per bambini forniti gratuitamente (non ISOFIX).",
+                "Le seguenti coperture assicurative senza franchigia: kasko (CDW), protezione furto (TP), responsabilità civile verso terzi (TI)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "6. Situazioni non coperte dall'assicurazione",
+          "paragraphs": [
+            "Importante! Le coperture assicurative sopra menzionate, senza franchigia, non includono le seguenti situazioni o eventi; tutti i danni e i costi derivanti da tali casi sono a carico esclusivo del Conduttore."
+          ],
+          "lists": [
+            {
+              "type": "unordered",
+              "items": [
+                "Danni a pneumatici e cerchi causati dalla circolazione su strade non asfaltate.",
+                "Perdita, rottura o danneggiamento delle chiavi del veicolo.",
+                "Rifornimento con carburante errato (il tipo di carburante è indicato su ogni veicolo).",
+                "Guida imprudente, incidente sotto l'effetto di alcool, droghe o qualsiasi sostanza tossica o psicotropa.",
+                "Incidenti e/o danni verificatisi durante la guida fuoristrada (su fondo non pavimentato).",
+                "Multe (parcheggio, eccesso di velocità, infrazioni al codice della strada)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "7. Extra opzionali",
+          "paragraphs": [
+            "Come servizi opzionali o aggiuntivi, i Conduttori possono noleggiare i seguenti extra, non inclusi nel prezzo base della prenotazione.",
+            "I portapacchi da tetto, se correttamente montati, sono adatti al trasporto di due tavole da surf.",
+            "Il Locatore non è in alcun caso responsabile per i danni agli oggetti trasportati sul tetto del veicolo o per danni causati a terzi; di tali danni risponde esclusivamente il Conduttore.",
+            "Tutti i servizi di base e opzionali sono messi a disposizione del Conduttore e garantiti in conformità alle condizioni generali concordate con il Locatore."
+          ],
+          "lists": [
+            {
+              "type": "unordered",
+              "items": [
+                "Portapacchi da tetto per il trasporto di bagagli, al prezzo indicato sul sito; non include corde o cinghie, ma solo le guide e le barre di fissaggio al veicolo."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8. Politica sul carburante",
+          "paragraphs": [
+            "Il veicolo deve essere riconsegnato con la stessa quantità di carburante con cui è stato consegnato al Conduttore.",
+            "Se il Conduttore rifornisce il veicolo con un tipo di carburante non corretto, i costi delle riparazioni necessarie sono a suo carico."
+          ]
+        },
+        {
+          "heading": "9. Condizioni di pagamento e rimborso",
+          "paragraphs": [
+            "Il Locatore offre la possibilità di pagamento online del canone di noleggio tramite il proprio sito web.",
+            "La prenotazione si considera perfezionata nel momento in cui il pagamento è stato effettuato con carta di credito, carta di debito o carta bancaria.",
+            "Il fornitore del servizio di pagamento online è: CAIXABANK (numero di conto: ES60 2100 1512 2602 0067 6927).",
+            "Norme sui rimborsi.",
+            "Per richiedere un rimborso, il Conduttore deve contattare il Locatore all'indirizzo info@zodiacsrentacar.es o al numero +34 683 192 422, fornendo il proprio IBAN e il nome completo.",
+            "Il Locatore effettuerà il bonifico entro 15 giorni lavorativi."
+          ],
+          "lists": [
+            {
+              "type": "ordered",
+              "items": [
+                "Il rimborso integrale è possibile solo se la cancellazione avviene almeno 3 giorni di calendario (72 ore) prima dell'inizio del periodo di noleggio.",
+                "Il Locatore non rimborsa alcuna parte del canone se il veicolo viene riconsegnato prima della data prevista nel contratto.",
+                "L'eventuale rimborso viene effettuato tramite bonifico bancario."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "10. Modifica delle presenti condizioni generali",
+          "paragraphs": [
+            "Il Locatore si riserva il diritto di modificare in qualsiasi momento le Condizioni Generali, in particolare in caso di cambiamenti normativi o di adeguamento della propria politica commerciale."
+          ]
+        },
+        {
+          "heading": "11. Legge applicabile e foro competente",
+          "paragraphs": [
+            "Per eventuali controversie derivanti dalle presenti condizioni, le Parti rinunciano espressamente a qualsiasi altro foro e accettano la competenza esclusiva dei tribunali di Santa Cruz de Tenerife, in conformità alla normativa spagnola vigente."
+          ]
+        }
+      ]
+    },
+    "FAQ": {
+      "title": "Domande frequenti",
+      "intro": "Abbiamo raccolto le informazioni più importanti per rendere il tuo noleggio a Fuerteventura e Lanzarote il più semplice possibile.",
+      "items": [
+        {
+          "question": "Come posso prenotare un'auto?",
+          "answer": "Compila il nostro modulo di richiesta online e i nostri colleghi confermeranno il noleggio entro massimo 24 ore. Se hai urgenza, puoi chiamarci o scriverci su WhatsApp."
+        },
+        {
+          "question": "Quali documenti servono al momento del ritiro?",
+          "answer": "Al ritiro è necessaria una patente di guida valida con almeno 3 anni di esperienza, oltre a una carta d’identità o passaporto. Tutti i conducenti indicati nel contratto devono presentare questi documenti al momento del ritiro."
+        },
+        {
+          "question": "Devo pagare un deposito cauzionale?",
+          "answer": "Se scegli l'assicurazione completa SSCP, non richiediamo cauzione. Con l'assicurazione base, è previsto un deposito tra 300 e 500 €, e alcuni extra (ad esempio il portapacchi da tetto) possono richiedere una garanzia aggiuntiva."
+        },
+        {
+          "question": "Dove posso ritirare l'auto?",
+          "answer": "Puoi ritirare l'auto in aeroporto, nel nostro ufficio a Puerto del Rosario oppure presso il tuo alloggio a Fuerteventura e Lanzarote. Il luogo di ritiro viene indicato chiaramente nella conferma."
+        },
+        {
+          "question": "Posso cancellare gratuitamente la prenotazione?",
+          "answer": "Sì, puoi modificare o cancellare la tua prenotazione senza costi fino a 72 ore prima dell'inizio del noleggio. Se la modifica è più ravvicinata, contattaci il prima possibile."
+        },
+        {
+          "question": "Qual è l'età minima per noleggiare?",
+          "answer": "Per la maggior parte dei nostri veicoli, possiamo noleggiare a partire dai 23 anni. Per conducenti più giovani è necessaria una valutazione individuale e potrebbe essere applicato un supplemento."
+        },
+        {
+          "question": "Posso ritirare l'auto in aeroporto?",
+          "answer": "Sì, al momento della prenotazione puoi indicare se desideri il ritiro in aeroporto o un servizio transfer."
+        },
+        {
+          "question": "Posso riconsegnare l'auto in aeroporto?",
+          "answer": "Sì, puoi riconsegnare l'auto anche in aeroporto; ti chiediamo solo di concordare prima con noi l'orario esatto."
+        },
+        {
+          "question": "Quali sono i vostri orari di apertura?",
+          "answer": "Il ritiro avviene generalmente tra le 10:00 e le 16:00, ma siamo flessibili previo accordo. La riconsegna è possibile in qualsiasi momento, secondo la procedura che ti spiegheremo alla consegna."
+        },
+        {
+          "question": "Posso riconsegnare l'auto la sera o di notte?",
+          "answer": "Sì. Al momento della consegna ti spieghiamo sempre esattamente la procedura di riconsegna, in modo che tu possa restituire l'auto in sicurezza a qualsiasi ora."
+        },
+        {
+          "question": "L'auto è coperta da assicurazione completa?",
+          "answer": "Sì, per i danni avvenuti su strada l'assicurazione copre gli eventi. I danni o le forature su strade sterrate, invece, sono a carico del conduttore."
+        },
+        {
+          "question": "Devo fare il pieno prima di riconsegnare l'auto?",
+          "answer": "Sì, devi riportare il veicolo con la stessa quantità di carburante con cui l'hai ricevuto. Tutti i veicoli della nostra flotta utilizzano benzina 95."
+        },
+        {
+          "question": "Ci sono limiti di chilometraggio?",
+          "answer": "No, offriamo chilometraggio illimitato incluso nel prezzo di noleggio."
+        },
+        {
+          "question": "Posso pagare con carta di credito o bancomat?",
+          "answer": "Sì, accettiamo sia carte di credito che carte di debito."
+        },
+        {
+          "question": "C'è un supplemento per il secondo conducente?",
+          "answer": "No, non applichiamo alcun costo aggiuntivo se indichi un secondo conducente."
+        },
+        {
+          "question": "Ci sono costi nascosti oltre al canone di noleggio?",
+          "answer": "No, devi pagare solo il canone di noleggio confermato; non ci sono costi nascosti."
+        },
+        {
+          "question": "Posso richiedere un seggiolino per bambini in auto?",
+          "answer": "Sì, offriamo seggiolini ISOFIX in diverse misure, dai più piccoli ai bambini più grandi."
+        },
+        {
+          "question": "Devo pulire l'auto prima di riconsegnarla?",
+          "answer": "Non è necessario: puliamo e igienizziamo accuratamente ogni veicolo dopo la riconsegna, questo servizio è incluso nel canone di noleggio."
+        }
+      ]
+    }
+  }
+}

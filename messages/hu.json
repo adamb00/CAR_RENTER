@@ -645,13 +645,7 @@
       {
         "title": "ÁSZF – szerződési feltételek",
         "description": "A hivatalos szerződési feltételek (GTC) Fuerteventurán és Lanzarotén.",
-        "keywords": [
-          "ászf",
-          "gtc",
-          "szerződés",
-          "jogi",
-          "lanzarote"
-        ],
+        "keywords": ["ászf", "gtc", "szerződés", "jogi", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1136,6 +1130,14 @@
         "dateRange": {
           "label": "Bérlés időtartama"
         },
+        "arrivalFlight": {
+          "label": "Érkező járatszám",
+          "placeholder": "pl. FR1234"
+        },
+        "departureFlight": {
+          "label": "Hazautazó járatszám",
+          "placeholder": "pl. FR5678"
+        },
         "partySize": {
           "label": "Utazók száma",
           "placeholder": "Hány fő utazik?"
@@ -1171,7 +1173,9 @@
         "privacyRequired": "Az adatkezelési tájékoztató elfogadása kötelező",
         "termsRequired": "Az ÁSZF elfogadása kötelező",
         "rentalStartRequired": "Válaszd ki a bérlés kezdő napját",
-        "rentalEndRequired": "Válaszd ki a bérlés befejező napját"
+        "rentalEndRequired": "Válaszd ki a bérlés befejező napját",
+        "arrivalFlightRequired": "Add meg az érkező járat számát",
+        "departureFlightRequired": "Add meg a visszaút járatszámát"
       }
     }
   },
@@ -1673,6 +1677,14 @@
             "accommodation": "Szállás",
             "airport": "Repülőtér"
           },
+          "arrivalFlight": {
+            "label": "Érkező járatszám",
+            "placeholder": "pl. FR1234"
+          },
+          "departureFlight": {
+            "label": "Hazautazó járatszám",
+            "placeholder": "pl. FR5678"
+          },
           "country": {
             "label": "Ország",
             "placeholder": "Ország"
@@ -1881,6 +1893,12 @@
       "delivery": {
         "placeType": {
           "required": "Válaszd ki, hogy szállás vagy repülőtér címét adod meg"
+        },
+        "arrivalFlight": {
+          "required": "Add meg az érkező járatszámot"
+        },
+        "departureFlight": {
+          "required": "Add meg a visszaút járatszámát"
         },
         "address": {
           "country": {

@@ -1,0 +1,2253 @@
+{
+  "Header": {
+    "header": "Biludlejning på Fuerteventura og Lanzarote – nemt og hurtigt",
+    "book_now": "Book en lejebil nu"
+  },
+  "CookieConsent": {
+    "title": "Vi bruger cookies",
+    "noticeTitle": "Cookie-meddelelse",
+    "body": "For at give den bedste brugeroplevelse anvender vi cookies på vores hjemmeside. Du kan finde mere information om brug og håndtering af cookies i vores cookiepolitik.",
+    "minimalBody": "Vi bruger cookies for at give dig en endnu bedre browsingoplevelse.",
+    "notice": "Ved at klikke på knappen <highlight>{actionLabel}</highlight> accepterer du brugen af cookies.",
+    "learnMore": "Få mere at vide:",
+    "cookiePolicyLink": "Cookiepolitik",
+    "gdprLink": "Databeskyttelseserklæring",
+    "accept": "Jeg accepterer",
+    "decline": "Jeg afviser"
+  },
+  "GDPR": {
+    "title": "Databeskyttelseserklæring (GDPR)",
+    "updated": "Sidst opdateret: 8. november 2025.",
+    "intro": [
+      "Denne databeskyttelseserklæring sammenfatter de vigtigste regler for behandling af personoplysninger i forbindelse med Zodiacs Rent a Cars (ZODIACSRENTACAR) tjenester.",
+      "Vi behandler altid dine oplysninger i overensstemmelse med GDPR samt spanske og ungarske databeskyttelsesregler. Vi indsamler kun oplysninger i det omfang og i den periode, det er nødvendigt, og giver altid klar og gennemsigtig information."
+    ],
+    "sections": [
+      {
+        "heading": "1. Oplysninger om den dataansvarlige",
+        "lists": [
+          {
+            "items": [
+              "Firmanavn: ZODIACSRENTACAR",
+              "Hovedsæde: Calle Juan de Austria 111, 35600 Puerto del Rosario, Las Palmas, Spanien",
+              "E-mail: info@zodiacsrentacar.com",
+              "Telefon: +34 683 192 422",
+              "Website: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Formål med behandlingen",
+        "paragraphs": [
+          "Vi bruger personoplysninger udelukkende til formål, som er nødvendige for at kunne levere vores tjenester:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "udarbejdelse og dokumentation af tilbud og lejekontrakter for biler",
+              "håndtering og bekræftelse af online-bookinger",
+              "overdragelse af køretøjer, levering og kundeservicekontakt",
+              "fakturering, økonomisk administration og opfyldelse af lovkrav",
+              "kundekommunikation via telefon, e-mail, WhatsApp eller andre kanaler",
+              "markedsføring og nyhedsbreve med den registreredes udtrykkelige samtykke",
+              "statistiske analyser og udvikling af tjenester i anonymiseret form"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Retsgrundlag for behandlingen",
+        "paragraphs": [
+          "Forskellige processer kan have forskelligt retsgrundlag, men vi baserer os altid på et af følgende grundlag i GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "opfyldelse eller indgåelse af en kontrakt – GDPR artikel 6, stk. 1, litra b",
+              "opfyldelse af en retlig forpligtelse (f.eks. regnskabsregler) – GDPR artikel 6, stk. 1, litra c",
+              "den dataansvarliges legitime interesse (f.eks. forebyggelse af svig) – GDPR artikel 6, stk. 1, litra f",
+              "samtykke fra den registrerede (f.eks. nyhedsbrev, kontaktformular) – GDPR artikel 6, stk. 1, litra a"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Kategorier af personoplysninger",
+        "paragraphs": [
+          "I vores onlineformularer og ved indgåelse af kontrakt beder vi kun om de oplysninger, der er nødvendige for billeje. De vigtigste kategorier er:"
+        ],
+        "lists": [
+          {
+            "title": "Bookingoplysninger",
+            "items": [
+              "lejeperiode (fra–til)",
+              "antal rejsende, børns alder og højde",
+              "valgt bilkategori og ønskede ekstratjenester"
+            ]
+          },
+          {
+            "title": "Personoplysninger om lejer og fører",
+            "items": [
+              "fuldt navn (om nødvendigt to efternavne og to fornavne)",
+              "fødested, fødselsdato, moderens navn",
+              "nationalitet og adresseoplysninger"
+            ]
+          },
+          {
+            "title": "Kontaktoplysninger",
+            "items": [
+              "telefonnummer og foretrukken kommunikationskanal (WhatsApp, Messenger osv.)",
+              "e-mailadresse"
+            ]
+          },
+          {
+            "title": "Identifikationsdokumenter",
+            "items": [
+              "type identitetsdokument, nummer, udstedelses- og udløbsdato",
+              "kørekortnummer, kategori, gyldighed og udstedelsesdato",
+              "erklæring om, at kørekortet har været gyldigt i mere end 3 år"
+            ]
+          },
+          {
+            "title": "Ekstra fører eller kontaktperson",
+            "items": [
+              "oplysninger svarende til hovedlejerens for en ekstra fører",
+              "kontaktpersons navn og telefonnummer, hvis forskellig fra lejers"
+            ]
+          },
+          {
+            "title": "Fakturerings- og leveringsoplysninger",
+            "items": [
+              "navn eller virksomhedsnavn, faktureringsadresse og (for virksomheder) CVR-/momsnummer",
+              "e-mailadresse til elektronisk faktura",
+              "hotel- eller lejlighedsnavn og adresse ved levering af køretøjet"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "5. Opbevaringsperiode",
+        "paragraphs": [
+          "Oplysninger, der er nødvendige for at levere tjenesten, opbevares i 5 år efter afslutningen af lejeperioden for at kunne gøre civilretlige krav gældende.",
+          "Regnskabs- og skattedokumenter opbevares i 8 år i henhold til gældende lovgivning.",
+          "Oplysninger, der behandles på grundlag af samtykke, opbevares, indtil samtykket tilbagekaldes, eller formålet ikke længere er aktuelt."
+        ]
+      },
+      {
+        "heading": "6. Videregivelse af oplysninger og databehandlere",
+        "paragraphs": [
+          "Vi deler kun oplysninger med samarbejdspartnere, der er absolut nødvendige for at levere tjenesterne, og indgår databehandleraftaler med dem. Typiske modtagere er:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "bogholderi- og finansielle tjenesteudbydere",
+              "hosting- og IT-driftsleverandører",
+              "faktureringssystemer og betalingstjenester",
+              "kurierservices eller partnere, der står for levering af køretøjer"
+            ]
+          }
+        ],
+        "notes": [
+          "Vi overfører ikke oplysninger uden for EU og sikrer passende kryptering og adgangskontrol."
+        ]
+      },
+      {
+        "heading": "7. Den registreredes rettigheder",
+        "paragraphs": [
+          "Registrerede personer kan til enhver tid udøve deres rettigheder i henhold til GDPR:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "retten til information og indsigt",
+              "retten til berigtigelse eller sletning",
+              "retten til at anmode om begrænsning af behandling",
+              "retten til at gøre indsigelse mod behandling baseret på legitim interesse",
+              "retten til dataportabilitet",
+              "retten til når som helst at tilbagekalde sit samtykke"
+            ]
+          }
+        ],
+        "notes": [
+          "I tilfælde af klage kan du henvende dig til den ungarske tilsynsmyndighed: Nemzeti Adatvédelmi és Információszabadság Hatóság (1055 Budapest, Falk Miksa utca 9-11., ugyfelszolgalat@naih.hu, naih.hu)."
+        ]
+      },
+      {
+        "heading": "8. Datasikkerhed og cookies",
+        "paragraphs": [
+          "Vi beskytter personoplysninger med fysiske, tekniske og organisatoriske foranstaltninger mod uautoriseret adgang, ændring eller tab.",
+          "Vores website bruger cookies til funktionalitet, statistik og personalisering. Flere detaljer findes i vores cookiepolitik, hvor du også til enhver tid kan ændre dine samtykkeindstillinger."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Kontakt og udøvelse af rettigheder",
+      "paragraphs": [
+        "Hvis du har spørgsmål om databehandlingen eller ønsker at udøve dine rettigheder, kan du kontakte os via nedenstående oplysninger.",
+        "Vi besvarer dine henvendelser senest inden for 30 dage med mulighed for forlængelse i overensstemmelse med GDPR, hvis det er begrundet."
+      ],
+      "channels": [
+        "E-mail: info@zodiacsrentacar.com",
+        "Telefon: +34 683 192 422",
+        "Web: www.zodiacsrentacar.com"
+      ]
+    }
+  },
+  "CookiePolicy": {
+    "title": "Cookiepolitik",
+    "updated": "Sidst opdateret: 8. november 2025.",
+    "intro": [
+      "Denne information beskriver, hvilke cookies der anvendes på Zodiacs Rent a Cars hjemmeside, til hvilke formål data behandles, og hvordan du kan ændre dine indstillinger.",
+      "Cookies er små datafiler, der hjælper med at få hjemmesiden til at fungere, udarbejde statistik og vise personligt tilpasset indhold."
+    ],
+    "sections": [
+      {
+        "heading": "1. Hvad er en cookie?",
+        "paragraphs": [
+          "En cookie er en lille tekstfil, som gemmes af din browser, når du besøger vores side. Cookies indeholder ikke oplysninger, der direkte identificerer dig, men hjælper med at genkende din enhed og huske dine indstillinger."
+        ]
+      },
+      {
+        "heading": "2. Typer af cookies, vi bruger",
+        "paragraphs": [
+          "For at sikre korrekt funktion anvender vi cookies med forskellige formål:"
+        ],
+        "lists": [
+          {
+            "title": "Nødvendige cookies",
+            "items": [
+              "er uundværlige for hjemmesidens funktion, sikkerhedsprocesser og brug af formularer",
+              "retsgrundlag: legitim interesse (GDPR artikel 6, stk. 1, litra f)"
+            ]
+          },
+          {
+            "title": "Funktionelle cookies",
+            "items": [
+              "gemmer det valgte sprog og midlertidige formularoplysninger",
+              "retsgrundlag: samtykke (GDPR artikel 6, stk. 1, litra a)"
+            ]
+          },
+          {
+            "title": "Analytiske og statistiske cookies",
+            "items": [
+              "måler trafik anonymt og hjælper os med at optimere tjenesten",
+              "retsgrundlag: samtykke (GDPR artikel 6, stk. 1, litra a)"
+            ]
+          },
+          {
+            "title": "Marketingcookies",
+            "items": [
+              "muliggør personligt tilpassede tilbud og remarketing-annoncer",
+              "retsgrundlag: samtykke (GDPR artikel 6, stk. 1, litra a)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "3. Cookies levetid",
+        "paragraphs": [
+          "Sessionscookies: er aktive indtil slutningen af din browsersession og slettes automatisk derefter.",
+          "Permanente cookies: gemmes i en bestemt periode (typisk 30–365 dage) eller indtil du selv sletter dem."
+        ]
+      },
+      {
+        "heading": "4. Cookies fra tredjeparter",
+        "paragraphs": [
+          "Visse cookies sættes af vores partnere (f.eks. Google, Meta, TikTok) til statistisk analyse og personligt tilpasset annoncering.",
+          "Disse cookies er omfattet af de respektive udbyderes egne privatlivspolitikker, som findes på deres officielle hjemmesider."
+        ]
+      },
+      {
+        "heading": "5. Samtykke og indstillinger",
+        "paragraphs": [
+          "Ved første besøg vises et cookie-banner, hvor du kan vælge at acceptere alle cookies, kun nødvendige cookies eller lave individuelle indstillinger.",
+          "Du kan til enhver tid ændre dine valg i browserens indstillinger eller via linket \"Ændr cookieindstillinger\" på hjemmesiden."
+        ]
+      },
+      {
+        "heading": "6. Håndtering af cookies i browseren",
+        "paragraphs": [
+          "I de fleste browsere kan du slette eller blokere cookies. Følgende hjælpevejledninger kan bruges: Google Chrome, Mozilla Firefox, Safari og Microsoft Edge.",
+          "Vær opmærksom på, at nogle funktioner kan fungere begrænset uden cookies."
+        ]
+      },
+      {
+        "heading": "7. Kontakt",
+        "paragraphs": [
+          "Hvis du har spørgsmål om brugen af cookies eller om databeskyttelse, hjælper vi gerne via følgende kontaktoplysninger:"
+        ],
+        "lists": [
+          {
+            "items": [
+              "E-mail: info@zodiacsrentacar.com",
+              "Website: www.zodiacsrentacar.com"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "HomeIntro": {
+    "paragraphs": [
+      "Med det lokale team hos Zodiacs Rent a Car kan du ordne biludlejning på Fuerteventura og Lanzarote både nemt og hurtigt. Efter en onlinebooking arrangerer vi overdragelse i lufthavnen eller ved hotellet, hjælper dig med at vælge den rette bilmodel til turen og gennemgår alle detaljer på det sprog, der passer dig bedst.",
+      "Vores flåde spænder fra kompakte bybiler til rummelige SUV'er – alle med ubegrænset kilometer, gratis ekstra fører og fuld SSCP-forsikring. Hos Zodiacs servicerer vi alle køretøjer regelmæssigt og dokumenterer deres stand med fotos inden overdragelse, så du kan køre afsted med ro i sindet.",
+      "Du kan også regne med os under rejsen: vi deler vores bedste tips til strandparkering på Fuerteventura, udsigtspunkter på Lanzarote og yndlings tapasbarer. Du kan kontakte os via telefon, e-mail og WhatsApp, så du altid kan få hjælp eller et skræddersyet tilbud.",
+      "Vi tilpasser vores tjenester særligt til rejsende, der holder ferie på De Kanariske Øer. Vi ved, hvor vigtig hurtig betjening er, og derfor reagerer vi straks på WhatsApp, telefon og e-mail – både før afrejse og efter ankomst.",
+      "Ifølge vores kunder er det, de sætter mest pris på hos Zodiacs Rent a Car, at vi aftaler alt på forhånd, og at der ikke kommer uventede omkostninger ved skranken. Vi har særlig fokus på familier, eventyrlystne opdagelsesrejsende og forretningsrejsende: vi sørger for barnesæder, tagbokse eller endda surfbrætholdere, hvis du ønsker det.",
+      "I vores blog og rejseguider deler vi detaljerede forslag til ture og ruter, så lejebilen ikke kun er et transportmiddel, men nøglen til at opdage øerne. Zodiacs lokale team opdaterer løbende deres tips, så heller ikke de mindre kendte strande, restauranter og vandreruter går din næse forbi."
+    ],
+    "highlights": {
+      "title": "Hvorfor vælge os?",
+      "items": [
+        "Flersproget kundeservice på Fuerteventura og Lanzarote med reel lokal tilstedeværelse.",
+        "Gennemsigtig lejekontrakt med digital godkendelse, alle omkostninger aftalt på forhånd.",
+        "Fleksibel afhentning i lufthavnen, ved dit opholdssted eller ved et aftalt mødested.",
+        "Lokale tips, parkeringsråd og ruteidéer, så du får mest muligt ud af øerne med din Zodiacs-bil."
+      ]
+    },
+    "details": {
+      "title": "Biludlejning trin for trin med Zodiacs Rent a Car",
+      "intro": "Vi vil gerne, at du allerede under planlægningen ved, hvad du kan forvente. Derfor har vi indrettet alle Zodiacs processer, så de er gennemsigtige, hurtige og personligt tilpassede – fra booking til aflevering af bilen.",
+      "sections": [
+        {
+          "heading": "1. Valg af den bil, der passer bedst til dig",
+          "body": [
+            "Inden booking gennemgår vi kort, hvor mange I rejser, hvor meget bagage I har, og hvilke ruter I planlægger. Hvis I f.eks. vil udforske bjergene i nord eller de snoede veje i vulkanlandskaberne, kan der være behov for en kraftigere bil med effektiv aircondition.",
+            "Vores tilbud indeholder altid detaljerede billeder og udstyrsbeskrivelse af bilen, så du nemt kan sammenligne mulighederne. Zodiacs team hjælper også ved særlige ønsker som barnesæder, tagbokse eller transport af sportsudstyr."
+          ]
+        },
+        {
+          "heading": "2. Booking og kontrakt med få klik",
+          "body": [
+            "Zodiacs online forespørgselsformular guider dig gennem hele processen på dit eget sprog. Du angiver ankomst- og afrejsedato, afhentningssted og modtager inden for få minutter en personlig pris med fuld SSCP-forsikring.",
+            "Vi bekræfter bookingen via e-mail og sender kontrakten digitalt, så du kan gennemgå den inden rejsen. På stedet er der ikke mere papirarbejde – kun en hurtig overdragelse af bilen."
+          ]
+        },
+        {
+          "heading": "3. Afhentning der, hvor det passer dig",
+          "body": [
+            "Uanset om du ankommer til Fuerteventura eller Lanzarote, følger vores medarbejdere dit fly og venter på dig i lufthavnen eller foran dit opholdssted på det aftalte tidspunkt. Ved større forsinkelser reagerer vi fleksibelt og holder løbende kontakt.",
+            "Hvis du ikke vil spilde et minut af din ferie på at stå i kø, kommer Zodiacs mobile kontor til dig, ordner dokumenterne på stedet, og du kan køre afsted i din valgte bil på få minutter."
+          ]
+        },
+        {
+          "heading": "4. Support gennem hele rejsen",
+          "body": [
+            "Ved overdragelse af bilen deler vi aktuelle oplysninger om parkering og trafik, vores yndlingsudflugtsmål og samarbejdspartnere, som vi trygt kan anbefale. Hvis der opstår spørgsmål undervejs, kan du kontakte Zodiacs team via WhatsApp eller telefon.",
+            "Ved aflevering foretager vi et hurtigt tjek og afslutter lejen, og hvis du ønsker det, giver vi gerne et opdateret, skræddersyet tilbud til din næste rejse. Vores mål er, at du hver gang føler, at en Zodiacs-bil har bidraget til dine bedste ferieoplevelser."
+          ]
+        }
+      ]
+    },
+    "cta": "Få et skræddersyet tilbud"
+  },
+  "SEO": {
+    "brand": "Zodiacs Rent a Car",
+    "defaultTitle": "Biludlejning på Fuerteventura og Lanzarote",
+    "titleTemplate": "%s | Zodiacs Rent a Car",
+    "siteDescription": "Lej bil på Fuerteventura og Lanzarote med et lokalt ungarsk team, fleksibel afhentning og fuld forsikring.",
+    "ogTitle": "Zodiacs Rent a Car – biludlejning på Fuerteventura og Lanzarote",
+    "ogDescription": "Lokalt ungarsk team, gratis ekstra fører, ubegrænset kilometer. Book online hos Zodiacs Rent a Car.",
+    "ogImageAlt": "Biler fra Zodiacs Rent a Cars flåde på Fuerteventura",
+    "twitterTitle": "Zodiacs Rent a Car – biludlejning på De Kanariske Øer",
+    "twitterDescription": "Hurtig og bekvem biludlejning på Fuerteventura og Lanzarote – uden skjulte gebyrer."
+  },
+  "CarRent": {
+    "meta": {
+      "title": "Lej {carName} på Fuerteventura | Zodiacs Rent a Car",
+      "description": "Lej modellen {carName} på Fuerteventura eller Lanzarote med fleksibel afhentning, ubegrænset kilometer og fuld forsikring.",
+      "imageAlt": "{carName} i Zodiacs Rent a Cars flåde"
+    }
+  },
+  "CarDetail": {
+    "meta": {
+      "title": "Detaljer og leje af {carName} | Zodiacs Rent a Car",
+      "description": "Se udstyr, bagagekapacitet og lejepris for {carName} på Fuerteventura og Lanzarote.",
+      "imageAlt": "Modellen {carName} i Zodiacs Rent a Cars udvalg"
+    }
+  },
+  "Pages": {
+    "home": {
+      "title": "Biludlejning på Fuerteventura og Lanzarote",
+      "description": "Udforsk De Kanariske Øer med vores ungarske team: premium lejebiler, fleksibel afhentning, ubegrænsede kilometer og fuld forsikring.",
+      "ogImageAlt": "Lejebil på Fuerteventura hos Zodiacs Rent a Car"
+    },
+    "cars": {
+      "title": "Vores biler – udvalg af lejebiler på Fuerteventura og Lanzarote",
+      "description": "Kompakte, familievenlige og automatgearede lejebiler med fleksibel afhentning, gratis ekstra chauffør og ubegrænsede kilometer.",
+      "ogImageAlt": "Zodiacs Rent a Car bilflåde"
+    },
+    "about": {
+      "title": "Om os – Zodiacs Rent a Car",
+      "description": "Mød det ungarske team bag Zodiacs Rent a Car og læs mere om vores mission på Fuerteventura og Lanzarote.",
+      "ogImageAlt": "Teamfoto af Zodiacs Rent a Car"
+    },
+    "contact": {
+      "title": "Kontakt – Zodiacs Rent a Car Fuerteventura",
+      "description": "Kontakt os om biludlejning, levering eller tilbudsanmodning. Vi svarer hurtigt og på ungarsk.",
+      "ogImageAlt": "Kundeservice hos Zodiacs Rent a Car"
+    },
+    "insurance": {
+      "title": "Forsikring og dækning – SSCP-pakke",
+      "description": "Lær Super Comfort Plus-forsikringen at kende: fuld beskyttelse, ingen selvrisiko og dækning af typiske undtagelser.",
+      "ogImageAlt": "Forsikringsinformation fra Zodiacs Rent a Car"
+    },
+    "generalRental": {
+      "title": "Generelle lejebetingelser – Zodiacs Rent a Car",
+      "description": "Lejebetingelser, kontraktregler og kundens forpligtelser på Fuerteventura og Lanzarote.",
+      "ogImageAlt": "Dokument med betingelser for biludlejning"
+    },
+    "gtc": {
+      "title": "Lejekontrakt – Zodiacs Rent a Car",
+      "description": "Detaljeret lejekontrakt og juridiske vilkår for Zodiacs Rent a Cars kunder.",
+      "ogImageAlt": "Dokument med lejekontrakt"
+    },
+    "rentalRequirements": {
+      "title": "Krav til biludlejning på De Kanariske Øer",
+      "description": "Alder, kørekort, depositum – alt hvad du behøver at vide om Zodiacs Rent a Cars lejebetingelser.",
+      "ogImageAlt": "Liste over krav til biludlejning"
+    },
+    "offices": {
+      "title": "Afhentningssteder og kontorer – Zodiacs Rent a Car",
+      "description": "Steder hvor du kan hente lejebilen på Fuerteventura og Lanzarote, med kontaktoplysninger og åbningstider.",
+      "ogImageAlt": "Udvendigt view af Zodiacs Rent a Car-kontor"
+    },
+    "faq": {
+      "title": "FAQ – Ofte stillede spørgsmål hos Zodiacs Rent a Car",
+      "description": "Find svar på de mest almindelige spørgsmål fra booking til forsikring.",
+      "ogImageAlt": "Kundeservice hos Zodiacs Rent a Car hjælper en kunde",
+      "keywords": [
+        "biludlejning faq",
+        "ofte stillede spørgsmål zodiacs rent a car",
+        "biludlejning fuerteventura faq",
+        "information om biludlejning på lanzarote"
+      ]
+    },
+    "blog": {
+      "title": "Blog – Biludlejning og rejsetips på Fuerteventura",
+      "description": "Aktuelle råd om biludlejning, rute-forslag og lokale oplevelser fra Zodiacs Rent a Car-teamet.",
+      "ogImageAlt": "Illustration til Zodiacs Rent a Car-bloggen",
+      "keywords": [
+        "biludlejningsblog",
+        "rejsetips fuerteventura",
+        "lanzarote roadtrip",
+        "zodiacs rent a car tips"
+      ]
+    },
+    "gdpr": {
+      "title": "GDPR privatlivspolitik – Zodiacs Rent a Car",
+      "description": "Læs hvordan vi behandler dine personoplysninger, hvilke retsgrundlag vi bruger, og hvordan du kan udøve dine rettigheder.",
+      "ogImageAlt": "Dokument om databeskyttelse"
+    },
+    "cookiePolicy": {
+      "title": "Cookiepolitik – Zodiacs Rent a Car",
+      "description": "Overblik over de cookies vi bruger, deres formål og hvordan du kan administrere dit samtykke.",
+      "ogImageAlt": "Information om cookies"
+    }
+  },
+  "AboutSection": {
+    "title": "Gå ikke glip af én eneste oplevelse",
+    "pickup_title": "Afhentning der hvor det passer dig",
+    "pickup_text": "Afhent din bil der, hvor det er mest bekvemt: direkte foran dit hotel, din lejlighed eller den adresse, du angiver. Så kan du frit begynde at udforske fra første minut.",
+    "transfer_title": "Komfortabel transfer efter behov",
+    "transfer_text": "Hvis du ønsker transferservice, markerer du det blot i vores tilbudsformular – vi sørger for, at alting forløber gnidningsfrit.",
+    "learn_more": "Læs mere →",
+    "alt1": "Bil 1",
+    "alt2": "Bil 2",
+    "alt3": "Bil 3"
+  },
+  "Search": {
+    "ariaLabel": "Søg på websitet",
+    "openLabel": "Åbn søgning",
+    "closeLabel": "Luk søgning",
+    "placeholder": "Hvad leder du efter? Skriv et nøgleord...",
+    "noResults": "Ingen resultater for: \"{query}\". Prøv et andet udtryk.",
+    "suggested": "Anbefalede sider",
+    "results": "Resultater",
+    "entries": [
+      {
+        "title": "Forside",
+        "description": "Overblik over Zodiacs ydelser, bilflåde og kundeoplevelser på Fuerteventura og Lanzarote.",
+        "keywords": [
+          "forside",
+          "startside",
+          "zodiacs",
+          "biludlejning fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}",
+        "id": "home"
+      },
+      {
+        "title": "Vores biler",
+        "description": "Komplet bilflåde med priser, bagageinformation og mulighed for booking.",
+        "keywords": [
+          "biler",
+          "flåde",
+          "priser",
+          "køretøjer",
+          "booking",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cars",
+        "id": "cars"
+      },
+      {
+        "title": "Om os",
+        "description": "Se hvordan vi arbejder – fra fleksibel afhentning til personlig kundeservice.",
+        "keywords": [
+          "om os",
+          "team",
+          "service",
+          "afhentning",
+          "levering",
+          "lanzarote"
+        ],
+        "path": "/{locale}/about-us",
+        "id": "about"
+      },
+      {
+        "title": "Kontakt",
+        "description": "Tilbudsforespørgsel via WhatsApp, e-mail eller telefon med svar inden for 24 timer.",
+        "keywords": [
+          "kontakt",
+          "tilbudsforespørgsel",
+          "formular",
+          "telefon",
+          "whatsapp",
+          "lanzarote"
+        ],
+        "path": "/{locale}/contact",
+        "id": "contact"
+      },
+      {
+        "title": "Blog og rejseguide",
+        "description": "Lokale tips, advarsler om rip currents og inspiration til roadtrips.",
+        "keywords": [
+          "blog",
+          "tips",
+          "rejseguide",
+          "rip current",
+          "aktiviteter",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog",
+        "id": "blog"
+      },
+      {
+        "title": "Sikkerhed ved rip currents",
+        "description": "Oplysende artikel om farlige strømme ved Fuerteventuras strande.",
+        "keywords": [
+          "rip current",
+          "strøm",
+          "sikkerhed",
+          "cofete",
+          "strand",
+          "lanzarote"
+        ],
+        "path": "/{locale}/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "id": "blog-rip-current"
+      },
+      {
+        "title": "FAQ",
+        "description": "Svar på de mest almindelige spørgsmål om afhentning i lufthavn, forsikring og tankning.",
+        "keywords": [
+          "faq",
+          "spørgsmål",
+          "forsikring",
+          "lufthavn",
+          "tankning",
+          "lanzarote"
+        ],
+        "path": "/{locale}/faq",
+        "id": "faq"
+      },
+      {
+        "title": "Privatlivspolitik",
+        "description": "GDPR-information om, hvordan vi behandler dine data, retsgrundlag og dine rettigheder.",
+        "keywords": [
+          "gdpr",
+          "databehandling",
+          "privatliv",
+          "databeskyttelse",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gdpr",
+        "id": "gdpr"
+      },
+      {
+        "title": "Cookiepolitik",
+        "description": "Hvilke cookies vi bruger, og hvordan du kan administrere dit samtykke.",
+        "keywords": [
+          "cookie",
+          "cookies",
+          "samtykke",
+          "databeskyttelse",
+          "lanzarote"
+        ],
+        "path": "/{locale}/cookie-policy",
+        "id": "cookie-policy"
+      },
+      {
+        "title": "Forsikring",
+        "description": "Detaljer om forsikringspakker, dækning og selvrisiko.",
+        "keywords": [
+          "forsikring",
+          "dækning",
+          "selvrisiko",
+          "skade",
+          "lanzarote"
+        ],
+        "path": "/{locale}/insurance",
+        "id": "insurance"
+      },
+      {
+        "title": "Lejekrav",
+        "description": "Information om kørekort, alder og nødvendige dokumenter.",
+        "keywords": [
+          "lejebetingelser",
+          "krav",
+          "kørekort",
+          "dokumenter",
+          "lanzarote"
+        ],
+        "path": "/{locale}/rental-requirements",
+        "id": "rental-requirements"
+      },
+      {
+        "title": "Afhentningssteder og kontorer",
+        "description": "Hvor du kan hente din lejebil på Fuerteventura og Lanzarote, inkl. kontaktoplysninger.",
+        "keywords": [
+          "kontorer",
+          "afhentning",
+          "levering",
+          "puerto del rosario",
+          "lanzarote"
+        ],
+        "path": "/{locale}/offices",
+        "id": "offices"
+      },
+      {
+        "title": "Generelle lejebetingelser",
+        "description": "Detaljeret beskrivelse af reglerne for biludlejning på begge øer.",
+        "keywords": [
+          "betingelser",
+          "kontrakt",
+          "generelle",
+          "fuerteventura",
+          "lanzarote"
+        ],
+        "path": "/{locale}/general-rental-conditions",
+        "id": "general-rental-conditions"
+      },
+      {
+        "title": "Almindelige kontraktvilkår (GTC)",
+        "description": "De officielle kontraktvilkår (GTC) på Fuerteventura og Lanzarote.",
+        "keywords": [
+          "gtc",
+          "almindelige vilkår",
+          "kontrakt",
+          "juridisk",
+          "lanzarote"
+        ],
+        "path": "/{locale}/gtc",
+        "id": "gtc"
+      }
+    ]
+  },
+  "Navigation": {
+    "menu_sr": "Menu",
+    "cars": "Vores biler",
+    "about": "Om os",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "home": "Forside",
+    "faq": "FAQ"
+  },
+  "LocaleToggle": {
+    "ariaLabel": "Sprogvælger"
+  },
+  "Footer": {
+    "about": "Om os",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "home": "Forside",
+    "fleet": "Vores biler",
+    "general_rental_conditions": "Generelle lejebetingelser",
+    "gtc": "Almindelige kontraktvilkår",
+    "insurance": "Forsikring",
+    "rental_requirements": "Lejekrav",
+    "cookie_policy": "Cookiepolitik",
+    "gdpr": "Privatlivspolitik",
+    "zodiac_car_rental": "Zodiacs biludlejning",
+    "logo_placeholder": "Her kommer logoet",
+    "faq": "FAQ"
+  },
+  "Explore": {
+    "title": "Oplev Kanarieøernes skønhed i en lejebil!",
+    "subtitle": "Online booking, fleksibel afhentning og levering til dit hotel eller lufthavnen.",
+    "cards": {
+      "map": "Zodiacs Rent a Car tilbyder pålidelig biludlejning på Fuerteventura, i Costa Calma og på Lanzarote.",
+      "globe": "Uanset om du planlægger strandferie eller eventyrlige udflugter, finder du den ideelle bil i vores flåde.",
+      "heart": "Book online, og hent din lejebil direkte i lufthavnen eller ved dit overnatningssted!"
+    }
+  },
+  "Inquire": {
+    "title": "Book nu!",
+    "description_1": "Vent ikke til sidste øjeblik med at leje bil! Zodiacs Rent a Car-teamet svarer inden for 24 timer og hjælper dig med at reservere den bil, der passer bedst til din ferie.",
+    "description_2": "Angiv dine kontaktoplysninger, så sender vi et skræddersyet tilbud med detaljerede priser, forsikringsinformation og det ønskede ekstra udstyr. Hos Zodiacs gennemgår vi hvert trin på det sprog, du vælger, så du kan starte rejsen med ro i sindet.",
+    "fields": {
+      "fullName": {
+        "label": "Fulde navn",
+        "placeholder": "Fulde navn",
+        "required": "Angiv venligst dit navn"
+      },
+      "email": {
+        "label": "E-mailadresse",
+        "placeholder": "E-mailadresse",
+        "required": "Angiv venligst din e-mailadresse",
+        "invalid": "Angiv en gyldig e-mailadresse"
+      },
+      "message": {
+        "label": "Hvordan kan vi hjælpe?",
+        "placeholder": "Skriv kort, hvordan vi kan hjælpe dig",
+        "required": "Skriv venligst, hvordan vi kan hjælpe dig",
+        "invalid": "Udfyld venligst feltet"
+      }
+    },
+    "submit": {
+      "idle": "Videre →",
+      "submitting": "Sender..."
+    },
+    "alt": {
+      "image": "Illustration af biludlejning"
+    },
+    "toast": {
+      "success": "Tak! Vi kontakter dig snarest.",
+      "error": "Ups, der opstod en fejl. Prøv igen senere."
+    }
+  },
+  "Blog": {
+    "title": "Blog og rejseguide",
+    "intro": "Lokale tips, råd om biludlejning og inspirerende ruter, så hvert minut af din ferie bliver mindeværdigt.",
+    "readMore": "Åbn artikel",
+    "posts": [
+      {
+        "slug": "fuerteventura-latnivalok-autoval",
+        "title": "Seværdigheder på Fuerteventura i bil – 3 steder du ikke må gå glip af",
+        "excerpt": "Corralejo-klitterne, Betancuria og Ajuy-grotterne: en rejseguide til, hvordan du får mest muligt ud af din lejebil på Fuerteventura.",
+        "category": "Rejseguide",
+        "readTime": "6 minutters læsning",
+        "publishDate": "3. november 2025",
+        "publishDateISO": "2025-11-03",
+        "image": {
+          "src": "/AJUY.jpg",
+          "alt": "Udsigt over sanddynerne ved Corralejo og Atlanterhavet"
+        }
+      },
+      {
+        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "title": "Advarsel! Farlige rip currents på Fuerteventura",
+        "excerpt": "Lær at genkende tegnene på rip currents, så Cofete og de vilde strande bliver til gode minder og ikke farlige oplevelser.",
+        "category": "Sikkerhed",
+        "readTime": "7 minutters læsning",
+        "publishDate": "15. november 2025",
+        "publishDateISO": "2025-11-15",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Advarselsskilt ved den vilde strand i Cofete"
+        }
+      }
+    ]
+  },
+  "BlogPosts": {
+    "fuerteventura-latnivalok-autoval": {
+      "meta": {
+        "title": "Seværdigheder på Fuerteventura i bil – 3 steder du ikke må gå glip af med lejebil | Zodiacs Rent a Car",
+        "description": "Oplev Fuerteventuras smukkeste seværdigheder i lejebil! Corralejo-klitterne, Betancuria og Ajuy-grotterne er let tilgængelige i bil. Biludlejning på Fuerteventura – Zodiacs Rent a Car.",
+        "keywords": [
+          "biludlejning Fuerteventura",
+          "lejebil Fuerteventura",
+          "seværdigheder Fuerteventura i bil",
+          "Corralejo klitter",
+          "Betancuria",
+          "Ajuy grotter",
+          "Zodiacs Rent a Car"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "image": {
+          "src": "/DSC00594.jpg",
+          "alt": "Udsigt over Corralejo sandklitterne på Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🏝️",
+        "title": "Seværdigheder på Fuerteventura i bil – 3 steder du ikke må gå glip af, når du udforsker øen i lejebil",
+        "category": "Rejseguide",
+        "subtitle": "Når du lejer bil på Fuerteventura, kan du opleve øens højdepunkter i dit eget tempo. Ingen stress, ingen busplaner – kun duften af havet, solskin og følelsen af frihed.",
+        "description": "Vi har samlet tre steder, der er lette og sikre at nå i lejebil, og som garanterer uforglemmelige oplevelser.",
+        "publishDate": "3. november 2025",
+        "publishDateISO": "2025-11-03",
+        "readingTime": "6 minutters læsning",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "corralejo-dunes",
+          "icon": "🚗",
+          "title": "Corralejo sandklitter – Fuerteventuras mest ikoniske naturfænomen",
+          "paragraphs": [
+            "I den nordlige del af Fuerteventura ligger <strong>Corralejo naturpark</strong> (Parque Natural de Corralejo), en af øens mest besøgte seværdigheder.",
+            "De enorme, lyse sandklitter står i flot kontrast til Atlanterhavets turkise vand – som at stå i ørkenen ved havet."
+          ],
+          "access": {
+            "title": "I bil",
+            "description": "Vejen gennem klitterne følger FV-1 og FV-1a mod Corralejo. Langs vejen findes flere afmærkede parkeringspladser, hvorfra du nemt kan gå til både strande og klitter."
+          },
+          "links": [
+            {
+              "label": "Kort over Corralejo-klitterne",
+              "href": "https://maps.app.goo.gl/5Big3isjsQg9jU336"
+            }
+          ],
+          "tip": {
+            "title": "Tip",
+            "description": "Stop ved stranden <strong>Grandes Playas de Corralejo</strong>, hvor klitterne løber direkte ned i havet – et perfekt sted til billeder!"
+          }
+        },
+        {
+          "id": "betancuria",
+          "icon": "🏞️",
+          "title": "Betancuria – den historiske hovedstad med serpentiner og fantastisk udsigt",
+          "paragraphs": [
+            "I øens bjergrige indland ligger Betancuria, Fuerteventuras tidligere hovedstad og i dag øens kulturelle centrum.",
+            "Byen gemmer sig i en grøn dal mellem vulkanske bakker og byder på maleriske gader og rolig stemning."
+          ],
+          "access": {
+            "title": "I bil",
+            "description": "Betancuria nås via FV-30 fra Puerto del Rosario, Caleta de Fuste eller Pájara. Vejen er snoet, men velholdt og byder på imponerende udsigter."
+          },
+          "links": [
+            {
+              "label": "Kort over Betancuria",
+              "href": "https://maps.app.goo.gl/TbzozNXQjcscqrnz9"
+            }
+          ],
+          "highlights": {
+            "title": "Højdepunkter undervejs",
+            "items": [
+              {
+                "label": "Mirador de Guise y Ayose – to enorme bronzestatuer vogter over dalen.",
+                "href": "https://maps.app.goo.gl/ERxbL6nVttnkmDvo9"
+              },
+              {
+                "label": "Mirador de Morro Velosa – et af øens smukkeste udsigtspunkter.",
+                "href": "https://maps.app.goo.gl/3bNx24htMnJyDYFE7"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ajuy",
+          "icon": "🌋",
+          "title": "Ajuy-grotterne og den sorte sandstrand – Fuerteventuras vilde vestkyst",
+          "paragraphs": [
+            "Øens vestkyst er rå og klippefyldt – og netop derfor så unik. Her finder du <strong>Ajuy</strong>, en stille fiskerby kendt for sin sorte sandstrand og grotter, <strong>Cuevas de Ajuy</strong>.",
+            "En anlagt sti langs klipperne fører dig til grotterne, hvor du kan se millioner af år gamle klippeformationer, mens havet buldrer nedenfor. Stedet er særligt magisk ved solnedgang."
+          ],
+          "access": {
+            "title": "I bil",
+            "description": "Du kommer til Ajuy fra Pájara ad FV-621, som er asfalteret hele vejen."
+          },
+          "links": [
+            {
+              "label": "Kort over Ajuy-grotterne",
+              "href": "https://maps.app.goo.gl/nPz8uWeSdvMqa4YV7"
+            }
+          ]
+        },
+        {
+          "id": "why-rent",
+          "icon": "🚙",
+          "title": "Hvorfor kan det betale sig at leje bil på Fuerteventura?",
+          "paragraphs": [
+            "Der er ofte lange afstande mellem øens seværdigheder, og den offentlige transport er begrænset.",
+            "Med en lejebil får du frihed – du kan udforske både øde strande og små bjerglandsbyer i dit eget tempo.",
+            "Veje er i rigtig god stand, trafikken er rolig, og parkering er næsten altid gratis."
+          ],
+          "links": [
+            {
+              "label": "Se vores biler – Zodiacs Rent a Car Fuerteventura",
+              "href": "/{locale}/cars"
+            }
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌿",
+          "title": "Rejs ansvarligt – pas på Fuerteventuras natur",
+          "paragraphs": [
+            "Vi lokale elsker og passer på vores ø. Vi beder dig gøre det samme:"
+          ],
+          "bullets": [
+            "lad være med at efterlade affald – brug skraldespandene;",
+            "smid ikke cigaretskodder i sandet eller mellem klipperne;",
+            "bliv på de afmærkede stier, især på klitterne og ved klippekysten."
+          ],
+          "closing": "Gør du det, vil Fuerteventura takke dig – og byde dig velkommen tilbage."
+        }
+      ],
+      "cta": {
+        "title": "Oplev øen komfortabelt – i lejebil!",
+        "paragraphs": [
+          "Oplev sandklitter, bjerglandsbyer og havgrotter i dit eget tempo.",
+          "<strong>Zodiacs Rent a Car</strong> – biludlejning på Fuerteventura med enkel booking, hurtig service, pålidelige biler og lokale tips."
+        ],
+        "buttons": [
+          {
+            "label": "Se vores lejebiler",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Book online med få klik",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
+    "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
+      "meta": {
+        "title": "Advarsel! Farlige rip currents på Fuerteventura – sådan bader du sikkert i havet",
+        "description": "På Fuerteventuras strande er der ofte tilbagevendende strømme (rip currents), som uventet kan trække badende med sig. Læs, hvordan du genkender dem, og hvordan du undgår faren på en sikker måde.",
+        "keywords": [
+          "strand Fuerteventura",
+          "Cofete Beach",
+          "tilbagevendende strøm",
+          "rip current",
+          "sikker havbadning",
+          "farer på Fuerteventura",
+          "rejse til De Kanariske Øer",
+          "bade i havet",
+          "Fuerteventura tips",
+          "strandsikkerhed",
+          "biludlejning Fuerteventura",
+          "Zodiacs Rent a Car",
+          "havstrømme",
+          "genkende rip currents"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "image": {
+          "src": "/cofete.jpg",
+          "alt": "Advarselsskilt på den vilde strand Cofete på Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "⚠️",
+        "title": "Advarsel! Farlige rip currents på Fuerteventura – sådan bader du sikkert i Atlanterhavet",
+        "category": "Sikkerhed",
+        "subtitle": "Hvis du vil bade ved Fuerteventuras vilde kyster, er eventyrlyst ikke nok – du skal også forstå, hvordan de tilbagevendende strømme fungerer.",
+        "description": "Vi forklarer, hvordan du genkender tegnene på rip currents, fra Cofete til El Cotillo, og hvad du skal gøre, hvis du bliver fanget i strømmen.",
+        "publishDate": "15. november 2025",
+        "publishDateISO": "2025-11-15",
+        "readingTime": "7 minutters læsning",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "rip-basics",
+          "title": "Hvad er en tilbagevendende strøm, og hvorfor er den farlig?",
+          "paragraphs": [
+            "Langs Atlanterhavskysten er rip currents den mest almindelige skjulte fare: vandet, som bølgerne presser op på stranden, løber med stor kraft tilbage mod dybere vand i et smalt bånd.",
+            "Fænomenet er lumsk, fordi det ofte opstår dér, hvor vandet ser roligere og glattere ud – præcis dér de fleste vælger at gå i vandet."
+          ],
+          "bullets": [
+            "Et tilsyneladende roligt bånd uden bølger er ikke nødvendigvis sikkert – det kan være præcis dér, rip current løber.",
+            "Strømmen trækker dig ikke nedad, men udad og til siden, og det er udmattelse, der oftest fører til ulykker."
+          ]
+        },
+        {
+          "id": "recognize-signs",
+          "title": "Sådan genkender du det farlige område",
+          "paragraphs": [
+            "Når du kommer til stranden, så brug et øjeblik på at studere vandet. Tegnene på en tilbagevendende strøm kan ses med det blotte øje, hvis du ved, hvad du skal kigge efter.",
+            "Ved Cofete står der advarselsskilte, men vinden kan vende dem – derfor skal du altid orientere dig, før du går i vandet."
+          ],
+          "bullets": [
+            "Mørkere, mere grumset vand, fordi bunden pludselig bliver dybere.",
+            "Et tilsyneladende stille bånd mellem bølgerne, hvor vandet bevæger sig udad.",
+            "Skum, alger eller småstykker, der ikke driver ind mod land, men ud mod åbent hav.",
+            "Flag, skilte eller advarsler fra de lokale – tag dem altid alvorligt."
+          ],
+          "tip": {
+            "title": "Tip",
+            "description": "Tag et billede af skiltene, når du ankommer, så husker du lettere, hvad de enkelte flag betyder på den pågældende strand."
+          }
+        },
+        {
+          "id": "what-to-do",
+          "title": "Hvad gør du, hvis strømmen tager dig?",
+          "paragraphs": [
+            "Det vigtigste er ikke at gå i panik. En rip current trækker dig ikke ned på bunden, men den er hurtigere, end de fleste kan svømme.",
+            "Bliver du udmattet, før du kommer fri, kommer du i alvorlig fare – derfor skal du handle strategisk."
+          ],
+          "bullets": [
+            "Træk vejret roligt og hold hovedet over vandet.",
+            "Prøv ikke at svømme direkte mod stranden – strømmen er stærkere end dig.",
+            "Svøm parallelt med kysten, indtil du kommer ud af det smalle strømbånd.",
+            "Hvis du bliver træt, så flyd på ryggen, giv tegn med armen og lad bølgerne hjælpe dig ind."
+          ],
+          "closing": "Jo roligere du forholder dig, desto større er chancen for, at du selv kommer sikkert ud af situationen."
+        },
+        {
+          "id": "personal-story",
+          "title": "Personlig historie: Jeg fik tre børn sikkert op af vandet ved Cofete",
+          "paragraphs": [
+            "„Det skete på Cofete-stranden, da min datter og to kusiner på få sekunder blev fanget af strømmen. Jeg råbte ikke, jeg vinkede ikke – al min energi måtte gå til at svømme.",
+            "Det lykkedes mig at få alle tre ind på stranden, men oplevelsen lærte mig noget for livet: havet skal respekteres, ikke overvindes.”"
+          ],
+          "tip": {
+            "title": "Lærepunkt",
+            "description": "Hold altid øje med, hvordan vandet bevæger sig, og lær også din familie, hvordan de skal reagere, hvis de bliver fanget i en strøm."
+          }
+        },
+        {
+          "id": "did-you-know",
+          "title": "Vidste du? Strømmen er hurtigere end en elitesvømmer",
+          "paragraphs": [
+            "Tal gør det lettere at forstå, hvorfor det ikke nytter at kæmpe imod strømmen med rå kraft."
+          ],
+          "bullets": [
+            "En olympisk svømmer tilbagelægger cirka 2,3 meter i sekundet.",
+            "En rip current kan i gennemsnit føre dig 2,4 meter på samme tid – den er altså altid et skridt foran."
+          ]
+        },
+        {
+          "id": "respect-nature",
+          "title": "Respektér naturen og beskyt øen",
+          "paragraphs": [
+            "Bevidsthed stopper ikke ved vandkanten: strandens renhed og respekt for lokale regler er vores fælles ansvar."
+          ],
+          "bullets": [
+            "Lad ikke affald ligge – tag dine egne ting med.",
+            "Smid ikke cigaretskodder i sandet eller mellem klipperne.",
+            "Bliv på de afmærkede stier, særligt på klitterne og i naturbeskyttede områder."
+          ]
+        },
+        {
+          "id": "safe-travel",
+          "title": "Rejs klogt i lejebil",
+          "paragraphs": [
+            "Hvis du udforsker Fuerteventura i bil, så sørg for altid at have rigeligt med vand, solcreme og opdateret information om strømforhold og vind.",
+            "Så kan du nyde både frihed og sikkerhed på én gang."
+          ],
+          "closing": "Del gerne denne artikel med andre, så færre rejsende ender i fare på grund af rip currents."
+        }
+      ],
+      "cta": {
+        "title": "Rejs sikkert med Zodiacs lejebiler",
+        "paragraphs": [
+          "Vi hjælper dig med at vælge en bil, der kan føre dig til vilde, mindre kendte strande – sammen med alle de sikkerhedsråd, du har brug for.",
+          "<strong>Zodiacs Rent a Car</strong> – lokalt team, hurtig kommunikation og personligt tilpassede sikkerhedstips."
+        ],
+        "buttons": [
+          {
+            "label": "Få et tilbud nu",
+            "href": "/{locale}/inquire"
+          },
+          {
+            "label": "Se vores udvalg af lejebiler",
+            "href": "/{locale}/cars"
+          }
+        ]
+      }
+    },
+    "backToBlog": "Tilbage til bloggen"
+  },
+  "WhatsApp": {
+    "aria_label": "WhatsApp-besked",
+    "choose_option": "Vælg en mulighed",
+    "options": {
+      "transfer_quote": {
+        "label": "Jeg ønsker tilbud på transfer",
+        "text": "Hej! Jeg vil gerne bede om et tilbud på transfer."
+      },
+      "car_availability": {
+        "label": "Tilgængelighed af biler",
+        "text": "Hej! Jeg vil gerne høre om bilernes tilgængelighed på de ønskede datoer."
+      },
+      "interested_in": {
+        "label": "Jeg vil gerne høre nærmere",
+        "text": "Hej! Jeg er interesseret i, hvordan processen for biludlejning foregår."
+      },
+      "custom_message": {
+        "label": "Egen besked",
+        "text": ""
+      }
+    }
+  },
+  "AboutUs": {
+    "headline": "Zodiacs Rent a Car",
+    "intro": "<strong>Zodiacs Rent a Car</strong> er en <strong>ungarsk familievirksomhed</strong>, hvis hjerte og hjem er på <strong>Fuerteventura</strong>. Vi lever og arbejder i et internationalt miljø, men vi ved præcis, hvad der er vigtigt for rejsende: sikkerhed, pålidelighed og en venlig tilgang.",
+    "why_title": "Hvorfor Fuerteventura?",
+    "why_text": "For os er øen ikke bare et feriemål, men vores hjem. Vi elsker solen, havet, den afslappede livsstil og følelsen af uendelig frihed. Alt dette vil vi gerne dele med dig, når du lejer bil hos os.",
+    "fleet_title": "Vores biler – komfortable, pålidelige, til at betale",
+    "fleet_text": "I vores flåde finder du <strong>praktiske små biler</strong>, <strong>familiebiler</strong> og <strong>mere rummelige modeller</strong>. Alle biler serviceres regelmæssigt og leveres rene, så du kan udforske øen bekymringsfrit.",
+    "delivery_title": "Udkørsel og fleksibilitet",
+    "delivery_text": "Du kan få din lejebil leveret ikke kun på Fuerteventura, men også på <strong>Lanzarote</strong>. Uanset om du ankommer til lufthavnen eller bor på hotel, sørger vi fleksibelt for, at bilen står klar til dig.",
+    "more_title": "Mere end bare biludlejning",
+    "more_text": "Hos os handler biludlejning ikke kun om at række dig en nøgle. Om ønsket hjælper vi med rejseplaner, lokale tips og viser dig, hvor du bør tage hen for at opleve den ægte <strong>Fuerteventura-stemning</strong>: skjulte bugter, sandstrande, særprægede landskaber og kulinariske oplevelser.",
+    "mission_title": "Vores mission",
+    "mission_text": "Vores mål er, at hver gæst skal kunne opleve øen <strong>frit, komfortabelt og sikkert</strong>. Som familie og lokale erhvervsdrivende lægger vi hele vores hjerte i, at du kan tage Fuerteventuras særlige atmosfære med dig hjem.",
+    "cta": "Lej bil hos os, og oplev Fuerteventura, som vi selv elsker øen!"
+  },
+  "Contact": {
+    "title": "Har du spørgsmål om billeje på Fuerteventura eller Lanzarote?",
+    "p1": "Kontakt os, så hjælper vi dig med at finde <strong>den bedste løsning for dig!</strong> Uanset om det gælder forhåndsreservation, levering til lufthavnen eller aflevering ved hotellet, svarer vores kundeservice <strong>hurtigt og fleksibelt</strong>.",
+    "p2": " udfyld formularen nedenfor, send os en e-mail, en besked på Messenger, WhatsApp eller Viber, eller ring til os! <strong>Vi står gerne til rådighed</strong>, så din ferie kan forløbe helt uden bekymringer.",
+    "form": {
+      "title": "Få et skræddersyet tilbud",
+      "description": "Skriv, hvornår og på hvilke vilkår du ønsker at leje en bil – vi svarer inden for få timer.",
+      "fields": {
+        "name": {
+          "label": "Fulde navn",
+          "placeholder": "Fulde navn"
+        },
+        "phone": {
+          "label": "Telefonnummer",
+          "placeholder": "+36 30 123 4567"
+        },
+        "email": {
+          "label": "E-mailadresse",
+          "placeholder": "navn@example.com"
+        },
+        "channel": {
+          "label": "Foretrukken kontaktform"
+        },
+        "rentalStart": {
+          "label": "Lejestart",
+          "placeholder": "Vælg dato"
+        },
+        "rentalEnd": {
+          "label": "Lejeslut",
+          "placeholder": "Vælg dato"
+        },
+        "dateRange": {
+          "label": "Lejeperiode"
+        },
+        "arrivalFlight": {
+          "label": "Ankommende flynummer",
+          "placeholder": "f.eks. FR1234"
+        },
+        "departureFlight": {
+          "label": "Afrejsende flynummer",
+          "placeholder": "f.eks. FR5678"
+        },
+        "partySize": {
+          "label": "Antal rejsende",
+          "placeholder": "Hvor mange rejser?"
+        },
+        "children": {
+          "label": "Antal børn",
+          "placeholder": "0"
+        }
+      },
+      "channels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      },
+      "consents": {
+        "privacy": "Jeg accepterer <link>persondatapolitikken</link>",
+        "terms": "Jeg accepterer <link>almindelige lejebetingelser</link>"
+      },
+      "submit": {
+        "idle": "Få et tilbud",
+        "sending": "Sender..."
+      },
+      "feedback": {
+        "success": "Tak! Vi kontakter dig snarest.",
+        "error": "Ups, der opstod en fejl. Prøv igen senere."
+      },
+      "errors": {
+        "nameRequired": "Angiv dit navn",
+        "phoneRequired": "Angiv dit telefonnummer",
+        "emailRequired": "Angiv din e-mailadresse",
+        "emailInvalid": "Angiv en gyldig e-mailadresse",
+        "privacyRequired": "Accept af persondatapolitikken er påkrævet",
+        "termsRequired": "Accept af lejebetingelserne er påkrævet",
+        "rentalStartRequired": "Vælg startdato for lejen",
+        "rentalEndRequired": "Vælg slutdato for lejen",
+        "arrivalFlightRequired": "Angiv ankommende flynummer",
+        "departureFlightRequired": "Angiv afrejsende flynummer"
+      }
+    }
+  },
+  "Cars": {
+    "title": "Oplev Fuerteventura og Lanzarote i fuld frihed med vores biler!",
+    "p1": "Hos os er billeje enkelt og hurtigt: du vælger den bil, der passer til dig, og vi leverer den til lufthavnen eller direkte til dit hotel. Med vores fleksible lejebetingelser kan du <strong>nyde ferien uden bekymringer</strong> – uanset om du har brug for bil i kortere eller længere tid.",
+    "p2": "<strong>Det kan betale sig at reservere den ønskede bil på forhånd</strong>, så er du sikker på, at den står klar ved ankomst. Gennemse bilerne herunder, klik for detaljer og book nemt online!",
+    "labels": {
+      "seats": "personer",
+      "manual": "Manuel",
+      "automatic": "Automatisk",
+      "per_day": "/ dag",
+      "from_price": "fra €{price}"
+    },
+    "colors": {
+      "milky_beige": "Milky Beige",
+      "white": "Hvid",
+      "silver_metal": "Sølvmetal",
+      "blue": "Blå",
+      "metal_blue": "Metallisk blå",
+      "gray": "Grå",
+      "silver_metallic": "Sølvmetal",
+      "metallic_blue": "Metallisk blå"
+    },
+    "categories": {
+      "small": "Lille bil",
+      "medium": "Mellemklasse",
+      "large": "Familiebil",
+      "suv": "SUV / firehjulstrækker"
+    },
+    "transmissions": {
+      "manual": "Manuel",
+      "automatic": "Automatisk"
+    },
+    "details": {
+      "back": "Tilbage til flåden",
+      "title": "Billedetaljer",
+      "category": "Kategori",
+      "luggage_large": "Stor kuffert: {count}",
+      "luggage_small": "Lille kuffert: {count}",
+      "colors": "Tilgængelige farver"
+    },
+    "buttons": {
+      "interested": "Interesseret"
+    }
+  },
+  "Insurance": {
+    "title": "Forsikring (SSCP)",
+    "igic_note": "+15% IGIC er ikke inkluderet. Maks. +30 € pr. leje.",
+    "sscp_title": "Super Comfort Plus Insurance (SSCP)",
+    "sscp_intro": "For et meget lille beløb kan den inkluderede forsikring udvides. Ud over den omfattende dækning, der allerede er inkluderet i lejeprisen, fjerner SSCP følgende undtagelser:",
+    "table": {
+      "header_event": "Hændelse",
+      "header_desc": "Beskrivelse",
+      "header_cost": "Ca. omkostning (uden forsikring)",
+      "rows": {
+        "lost_keys": {
+          "event": "Mistet nøgle",
+          "desc": "Udskiftning og programmering",
+          "cost": "100 €"
+        },
+        "tyre_damage": {
+          "event": "Skade på dæk",
+          "desc": "Udskiftning/reparation",
+          "cost": "150 €"
+        },
+        "rim_flat": {
+          "event": "Fælgskade / lapning",
+          "desc": "Reparation",
+          "cost": "60 €"
+        },
+        "wrong_fuel": {
+          "event": "Forkert tankning",
+          "desc": "Tømning og rensning",
+          "cost": "110 €"
+        },
+        "battery": {
+          "event": "Afbrudt batteri pga. forsømmelse",
+          "desc": "Assistance/opstart",
+          "cost": "90 €"
+        },
+        "dru": {
+          "event": "Ekstra DRU-service*",
+          "desc": "Vejhjælp på stedet",
+          "cost": "40 € / 100 €"
+        }
+      }
+    },
+    "coverage_note": "Med denne forsikring er alle undtagelser i vores forsikring dækket (bortset fra forhold, som ingen forsikringsselskaber dækker).",
+    "footnote": "* +15% IGIC er ikke inkluderet. Maks. +30 € pr. leje.",
+    "pricing_title": "Pris og tilbud",
+    "pricing_text": "Tilføj den nu for kun 2 € pr. dag, op til maks. 30 € pr. leje for alle modeller, og nyd en ubekymret lejeperiode.",
+    "closing": "Det er bedst at nyde turen med fuld dækning.",
+    "related": {
+      "title": "Relaterede sider",
+      "details": "Flere detaljer:"
+    }
+  },
+  "GeneralRental": {
+    "title": "Generelle lejebetingelser",
+    "general": {
+      "title": "Generelle bestemmelser",
+      "p1": "Lejer skal altid have en <strong>gyldig, fysisk lejekontrakt</strong> med i bilen, da de spanske myndigheder kan udstede bøder, hvis den mangler.",
+      "p2": "Alle overtrædelser og relaterede omkostninger, der opstår under lejeperioden, påhviler <strong>lejeren</strong> uden at det berører mulige retlige skridt.",
+      "p3": "Lejer er ansvarlig for <strong>korrekt påfyldning af brændstof</strong> på bilen.",
+      "p4": "Udlejeren forbeholder sig retten til at nægte udlejning på baggrund af lejers tidligere hændelser eller manglende overholdelse af de generelle betingelser. Hvis den valgte model ikke er tilgængelig, leverer vi en <strong>lignende eller højere kategori</strong>."
+    },
+    "services": {
+      "title": "Inkluderede ydelser",
+      "kanary": {
+        "title": "De Kanariske Øer",
+        "i1": "<strong>Fuld kaskoforsikring</strong> uden selvrisiko",
+        "i2": "Skatter, lufthavns-/bane-/havneafgifter: inkluderet",
+        "i3": "<strong>Ubegrænset</strong> kilometertal",
+        "i4": "Barnesæder og selepuder: inkluderet",
+        "i5": "Tagbagagebærer: inkluderet",
+        "i6": "GPS: standardudstyr på visse modeller",
+        "i7": "Ekstra fører: inkluderet",
+        "i8": "Levering uden for kontor: inkluderet",
+        "i9": "Returnering til kontor: inkluderet",
+        "i10": "Forsinket returnering med nogle timer: inkluderet",
+        "i11": "Ung fører (21–25): inkluderet"
+      },
+      "peninsula": {
+        "title": "Fastlandet / De Baleariske Øer",
+        "i1": "Forsikringen gælder sammen med <strong>betingelserne</strong>*",
+        "i2": "Skatter og afgifter: inkluderet",
+        "i3": "Ubegrænset kilometertal: <strong>maks. 28 dage</strong>**",
+        "i4": "Barnesæder og selepuder: 13,99 €/dag (maks. 97,93 €)",
+        "i5": "Tagbagagebærer: 54 €",
+        "i6": "GPS: 14 €/dag (maks. 98 €)",
+        "i7": "Øvrigt ekstraudstyr (snekæder, skiholder…): 54 €",
+        "i8": "Ekstra fører: 12,50 €/dag (maks. 125 €)",
+        "i9": "Levering uden for kontor: <strong>ikke</strong> inkluderet",
+        "i10": "Returnering til kontor: <strong>ikke</strong> inkluderet",
+        "i11": "Forsinket returnering med nogle timer: 50 €",
+        "i12": "International vejhjælpsforsikring: 55 €"
+      },
+      "foot1": "(*) Fuld kaskoforsikring uden selvrisiko – med undtagelser (karrosseriets øvre del, undervogn, interiør, forkert brug mv.). Detaljer: Forsikring.",
+      "foot2": "(**) Ubegrænset kilometertal op til maks. 28 dage."
+    },
+    "canary": {
+      "title": "Lejebetingelser – De Kanariske Øer",
+      "i1": "<strong>Straks</strong> bekræftelse af reservation; i mangel af den valgte model leveres en lignende eller bedre model.",
+      "i2": "<strong>100% fuld forsikring</strong> uden selvrisiko; ubegrænset kilometertal; skatter og lufthavnsafgifter inkluderet.",
+      "i3": "Audioguides er tilgængelige i udlejningen.",
+      "i4": "Barnesæder, selepuder og bagagebærere er <strong>gratis</strong>.",
+      "i5": "Yderligere fører(e) er gratis – tilføjes i udlejningskontoret.",
+      "i6": "<strong>Brændstofpolitik</strong>: der kan kræves depositum på baggrund af niveauet ved udlevering.",
+      "i7": "<strong>Ændring/afbestilling</strong>: gratis; online eller via e-mail/telefon.",
+      "i8": "Ved lufthavnsreservation holdes reservationen <strong>i op til 60 minutter</strong> i forhold til den faktiske ankomsttid.",
+      "i9": "<strong>Børnestsæder/selepuder</strong> er gratis; stol 0–18 kg på bagsædet, for- eller bagudvendt; selepude 15–36 kg; kunden er ansvarlig for korrekt montering."
+    },
+    "peninsula": {
+      "title": "Lejebetingelser – Fastlandet og De Baleariske Øer",
+      "i1": "Alle priser er i euro. Minimum lejeperiode: <strong>24 timer</strong>. 29 minutters grace-periode; derefter debiteres et helt døgn.",
+      "i2": "Ved kørsel til udlandet kræves <strong>International Assistance-forsikring</strong>; listen over tilladte lande fremgår af kontrakten.",
+      "i3": "Betaling: <strong>kun</strong> med fysisk kreditkort i kontraktindehaverens navn. Kontanter/rejsechecks accepteres ikke.",
+      "i4": "Depositum: 200 € for mindre klasser, 400 € for større/premium/MPV; for nogle kategorier kræves reservation på et gyldigt internationalt kort.",
+      "i5": "Ved manglende optankning opkræves brændstofpris + 18 € administrationsgebyr.",
+      "i6": "Fører under 25 år: 21,99 €/dag, maks. 219,90 €.",
+      "i7": "Ekstra fører: 12,50 €/dag, maks. 125 €.",
+      "i8": "Krav til alder/kørekort pr. gruppe (detaljer i kontrakten); minimum 2 års gyldigt kørekort.",
+      "i9": "Leje fra lufthavn i Madrid/Barcelona uden flybillet accepteres <strong>ikke</strong> (ankomst- og afrejsedata er påkrævet).",
+      "i10": "<strong>Kørsel til udlandet</strong>: tilladte lande – AT, DE, BE, FR, NL, IT, LU, MC, CH, PT, AD, GI; andre lande er ikke tilladt; afslutning af lejemål i udlandet kræver forudgående godkendelse; varebiler må ikke efterlades i udlandet.",
+      "i11": "<strong>Opbevaring af tilbehør</strong> (barnesæde, tagbagagebærer, nøgler, dokumenter) er lejers ansvar; ved tab/skade kan der opkræves bod."
+    },
+    "schedule": {
+      "title": "Åbningstider og leveringer",
+      "i1": "Bykontorer: man–fre 9:30–13:30 og 16:30–19:00; lør 10:00–13:00.",
+      "i2": "Lufthavnskontorer: alle dage 08:00–23:00 (kan variere efter sæson).",
+      "i3": "Rabatteret levering ved skranken: op til 36,3 €, afhængigt af tilgængelighed.",
+      "i4": "Levering/afhentning uden for kontor: 27 €/50 €/100 € (5 km / 50 km / 100 km), med 48 timers varsel.",
+      "i5": "Levering/afhentning uden for åbningstid fra eget kontor: +50 €.",
+      "i6": "I byer uden kontor: 0,84 €/km (min. 57 €) til nærmeste kontor (tur/retur).",
+      "i7": "Returnering til kontor i åbningstiden; uden for åbningstid er lejer ansvarlig for bilen, indtil den er modtaget.",
+      "i8": "Reservationen holdes: maks. 120 minutter fra den aftalte tid (inden for kontorets åbningstid); for fly er det den faktiske ankomsttid, der gælder."
+    },
+    "liability": {
+      "title": "Ansvarsfraskrivelse",
+      "p1": "Udlejeren er ikke ansvarlig for skader som følge af fejl, forsømmelse, afbrydelser, sletninger, forsinkelser, computervirus, tyveri, ødelæggelse, uautoriseret adgang eller brug af data eller information.",
+      "p2": "Brugeren accepterer udtrykkeligt, at brugen af webstedet sker <strong>på eget ansvar</strong>, herunder alle omkostninger til tjenester og reparationer, der er nødvendige for systemets funktion.",
+      "p3": "Organisationer tilknyttet udlejeren og deres medarbejdere er ikke ansvarlige for tab eller skader, der opstår som følge af brug eller forsøg på brug af webstedet."
+    },
+    "related": {
+      "title": "Relaterede sider",
+      "details": "Flere detaljer:"
+    }
+  },
+  "RentalRequirements": {
+    "title": "Lejekrav",
+    "general": {
+      "title": "Generelle krav (Fuerteventura / Lanzarote)",
+      "i1": "Som udgangspunkt udlejer vi ikke til førere under 23 år, medmindre der betales et tillæg.",
+      "i2": "Efter bekræftet reservation kan den annulleres i følgende tilfælde:",
+      "i2a": "oplysninger angivet af kunden er ikke korrekte/sande/opdaterede",
+      "i2b": "overtrædelse af lejebetingelserne",
+      "i3": "Påkrævet: gyldigt kørekort, ID-kort/pas, adresse og fungerende telefonnummer."
+    },
+    "vehicle": {
+      "title": "Betingelser for køretøjet",
+      "i1": "Den reserverede bilmodel er vejledende; den kan erstattes af en lignende model i samme kategori.",
+      "i2": "For køretøjer med GPS anvendes lokalisering til beskyttelsesformål i overensstemmelse med lovgivningen.",
+      "i3": "Køretøjet må ikke forlade den ø, hvor det er lejet.",
+      "i4": "Brug: i overensstemmelse med lovgivningen, kun på offentlige veje; må ikke anvendes til forbudte/ulovlige formål; ikke til reklamebrug.",
+      "i5": "Anbefalet brændstof skal anvendes; køretøjet skal altid låses ved parkering.",
+      "i6": "Barnesæde udleveres ved afhentning; korrekt montering er obligatorisk.",
+      "i7": "Bagage/surfbrætter skal fastgøres på taget med tagbagagebærer.",
+      "i8": "Ved teknisk fejl skal køretøjet standses, parkeres sikkert, og vi skal kontaktes <strong>straks</strong>.",
+      "i9": "Lejer er ansvarlig for køretøjet fra udlevering til korrekt returnering."
+    },
+    "handover": {
+      "title": "Udlevering og returnering",
+      "i1": "Udlevering og returnering: på den i reservationen angivne og bekræftede lufthavn og tid.",
+      "i2": "Køretøjet må ikke returneres på en anden ø. Undtagelse: Lanzarote mod tillægsgebyr (40 €).",
+      "i3": "Ved returnering skal køretøjets tilstand svare til tilstanden ved udlevering (med undtagelse af normalt slid).",
+      "i4": "Ved hændelse/skade er det obligatorisk at indsende dokumentation/rapport.",
+      "i5": "Ved ekstremt snavset køretøj opkræves et rengøringsgebyr på 70 €.",
+      "i6": "Ved tidlig returnering ydes der ingen tilbagebetaling af lejebeløbet.",
+      "i7": "Efterlad ikke effekter i køretøjet ved returnering; vi påtager os intet ansvar for tabte/glemte genstande."
+    },
+    "price": {
+      "title": "Prisen på reservationen omfatter",
+      "i1": "Skatter (IGIC/IVA)",
+      "i2": "Ubegrænset kilometertal",
+      "i3": "Anden fører gratis",
+      "i4": "Udlevering og returnering i lufthavnen",
+      "i5": "Gratis annullering af reservation",
+      "i6": "Barnesæder og selepuder gratis (ingen ISOFIX; ISOFIX kan tilvælges)",
+      "i7": "Basisforsikring med 300–500 € depositum (selvrisiko ved skade)"
+    },
+    "base_excludes": {
+      "title": "Hvad basisforsikringen ikke dækker",
+      "i1": "Tag",
+      "i2": "Glasflader (ruder, forlygter, spejle)",
+      "i3": "Dæk og hjul",
+      "i4": "Afprøvet batteri",
+      "i5": "Interiør (sæder, måtter mv.)",
+      "i6": "Affjedring/undervogn",
+      "i9": "Gearkasse",
+      "i7": "Personlige ejendele i bilen (bagagerum, handskerum)",
+      "i8": "Tab af nøgler",
+      "note": "Omkostninger ved disse skader påhviler lejer."
+    },
+    "deposit": {
+      "title": "Depositum og tilbageholdelse",
+      "i1": "Kontant depositum: 300–500 € (intet kreditkortdepositum nødvendigt).",
+      "i2": "Depositum kan tilbageholdes i op til 15 dage; tilbagebetaling sker via bankoverførsel (f.eks. Revolut, Caixabank)."
+    },
+    "full": {
+      "title": "Fuld forsikring (tilvalg)",
+      "p1": "Med fuld forsikring kræves intet depositum på 300–500 €, og de fleste skader er dækket.",
+      "note": "Undtagelser: skader forårsaget af forsømmelse eller overtrædelse af lejebetingelserne (eksempler nedenfor)."
+    },
+    "exceptions": {
+      "title": "Undtagelser – eksempler",
+      "i1": "Kørsel på ikke-asfalterede eller forbudte veje (f.eks. Cofete)",
+      "i2": "Kørsel under påvirkning af alkohol/psykoaktive stoffer",
+      "i3": "Brug af mobiltelefon under kørsel uden håndfri",
+      "i4": "Ignorering af fejlmeddelelser på instrumentbrættet og fortsat kørsel",
+      "i5": "Transport af farlige/brændbare materialer, dyr eller ikke-tilladt last",
+      "i6": "Ulovlig/uberettiget aktivitet, udlejning til tredjemand",
+      "i7": "Genstande på taget uden godkendt tagbagagebærer",
+      "i8": "Vandskader/indre skader, der overstiger normal omhu",
+      "i9": "Skader, mens bilen er efterladt ulåst, eller ved kørsel af ikke-autoriseret fører",
+      "i10": "Overskridelse af den i kontrakten angivne lejeperiode"
+    },
+    "related": {
+      "title": "Relaterede sider",
+      "details": "Flere detaljer:"
+    }
+  },
+  "RentForm": {
+    "title": "Udfyld venligst formularen nedenfor for at gennemføre din booking",
+    "buttons": {
+      "addChild": "Tilføj barn",
+      "removeChild": "Fjern",
+      "addDriver": "Tilføj chauffør",
+      "removeDriver": "Fjern chauffør",
+      "submit": "Send booking"
+    },
+    "searching": "Behandler data...",
+    "extras": {
+      "label": "Ekstra services",
+      "options": {
+        "szorfo_deszka_rogzito": "Holder til surfbræt",
+        "gyerekules": "Barnesæde",
+        "kiszallitas": "Levering",
+        "alap_csomag": "Basis­pakke *",
+        "energia_csomag": "Energi­pakke **",
+        "esti_erkezes_csomag": "Pakke til sen ankomst ***"
+      },
+      "packages": {
+        "base": "* Basispakke: 0,5 l vand og 0,33 l Fuze Tea pr. person",
+        "energy": "** Energipakke: ud over basispakken 2–3 slags chokolade eller snacks efter ønske",
+        "lateArrival": "*** Pakke til sen ankomst: ud over basispakken 1,5 l vand og 2 croissanter pr. person til sen ankomst"
+      }
+    },
+    "rentalPeriod": {
+      "label": "Lejeperiode"
+    },
+    "dateRangePicker": {
+      "cancel": "Annuller",
+      "apply": "Gem"
+    },
+    "adults": {
+      "label": "Antal voksne",
+      "placeholder": "Antal voksne"
+    },
+    "sections": {
+      "booking": {
+        "title": "Bookingoplysninger",
+        "description": "Vælg de ønskede ekstra services, angiv lejeperioden og antallet af voksne passagerer."
+      },
+      "children": {
+        "title": "Børn som medrejsende",
+        "description": "Hvis der rejser børn med, angiv deres alder (og eventuelt højde), så vi kan sørge for det rigtige udstyr.",
+        "empty": "Der er endnu ikke tilføjet nogen børn.",
+        "ageLabel": "Barn #{index} alder (år)",
+        "heightLabel": "Højde (cm) – valgfrit"
+      },
+      "drivers": {
+        "title": "Chaufføroplysninger",
+        "description": "Angiv personlige oplysninger for hovedchaufføren og eventuelle ekstra chauffører samt detaljer om kørekort.",
+        "primaryInfo": "Ud fra hovedchaufførens oplysninger udfylder vi automatisk kontakt- og fakturafelter, hvis du aktiverer afkrydsningsfelterne.",
+        "primaryTitle": "Oplysninger om hovedchauffør",
+        "secondaryTitle": "Chauffør {index} oplysninger",
+        "fields": {
+          "lastName1": {
+            "label": "Chaufførens efternavn",
+            "placeholder": "Efternavn"
+          },
+          "lastName2": {
+            "label": "Chaufførens efternavn (valgfrit)",
+            "placeholder": "Efternavn (valgfrit)"
+          },
+          "firstName1": {
+            "label": "Chaufførens fornavn",
+            "placeholder": "Fornavn"
+          },
+          "firstName2": {
+            "label": "Chaufførens fornavn (valgfrit)",
+            "placeholder": "Fornavn (valgfrit)"
+          },
+          "postalCode": {
+            "label": "Postnummer",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "By",
+            "placeholder": "By"
+          },
+          "country": {
+            "label": "Land",
+            "placeholder": "Land"
+          },
+          "street": {
+            "label": "Gade",
+            "placeholder": "Gade"
+          },
+          "doorNumber": {
+            "label": "Husnummer",
+            "placeholder": "Husnummer"
+          },
+          "dateOfBirth": {
+            "label": "Fødselsdato",
+            "placeholder": "Vælg dato"
+          },
+          "placeOfBirth": {
+            "label": "Fødested",
+            "placeholder": "Fødested"
+          },
+          "nameOfMother": {
+            "label": "Mors navn",
+            "placeholder": "Mors navn"
+          },
+          "phoneNumber": {
+            "label": "Telefonnummer",
+            "placeholder": "+45 20 12 34 56"
+          },
+          "email": {
+            "label": "E-mailadresse",
+            "placeholder": "eksempel@email.com"
+          }
+        },
+        "documents": {
+          "type": {
+            "label": "Dokumenttype",
+            "placeholder": "Vælg dokument",
+            "passport": "Pas",
+            "id_card": "ID-kort"
+          },
+          "number": {
+            "label": "Dokumentnummer",
+            "placeholder": "AA123456"
+          },
+          "validFrom": {
+            "label": "Udstedelsesdato",
+            "placeholder": "Vælg dato"
+          },
+          "validUntil": {
+            "label": "Udløbsdato",
+            "placeholder": "Vælg dato"
+          },
+          "drivingLicenceNumber": {
+            "label": "Kørekortnummer",
+            "placeholder": "ABC123456"
+          },
+          "drivingLicenceCategory": {
+            "label": "Højeste kategori",
+            "placeholder": "Vælg kategori"
+          },
+          "drivingLicenceValidFrom": {
+            "label": "Kørekort udstedt",
+            "placeholder": "Vælg dato"
+          },
+          "drivingLicenceValidUntil": {
+            "label": "Kørekort udløber",
+            "placeholder": "Vælg dato"
+          },
+          "drivingLicenceIsOlderThan3": "Jeg erklærer, at mit kørekort er mere end 3 år gammelt"
+        }
+      },
+      "contact": {
+        "title": "Kontaktoplysninger",
+        "description": "Hvis kontaktpersonen er en anden end hovedchaufføren, angiv vedkommendes oplysninger her.",
+        "toggle": "Samme som hovedchaufførens oplysninger",
+        "fields": {
+          "name": {
+            "label": "Kontaktpersonens navn",
+            "placeholder": "Kontaktpersonens navn"
+          },
+          "email": {
+            "label": "Kontaktpersonens e-mailadresse",
+            "placeholder": "Kontaktpersonens e-mailadresse"
+          }
+        }
+      },
+      "invoice": {
+        "title": "Faktureringsoplysninger",
+        "description": "Angiv, hvilket navn og hvilken adresse fakturaen skal udstedes til. Hvis de er de samme som chaufførens, markér nedenstående mulighed.",
+        "toggle": "Samme som hovedchaufførens oplysninger",
+        "fields": {
+          "name": {
+            "label": "Fakturanavn",
+            "placeholder": "Fakturanavn"
+          },
+          "email": {
+            "label": "Faktura-e-mail",
+            "placeholder": "Faktura-e-mail"
+          },
+          "phoneNumber": {
+            "label": "Faktura-telefonnummer",
+            "placeholder": "+45 20 12 34 56"
+          },
+          "taxId": {
+            "label": "CVR/skat-ID (valgfrit)",
+            "placeholder": "CVR/skat-ID"
+          },
+          "companyName": {
+            "label": "Firmanavn (valgfrit)",
+            "placeholder": "Firmanavn"
+          },
+          "address": {
+            "country": {
+              "label": "Land",
+              "placeholder": "Land"
+            },
+            "postalCode": {
+              "label": "Postnummer",
+              "placeholder": "1234"
+            },
+            "city": {
+              "label": "By",
+              "placeholder": "By"
+            },
+            "street": {
+              "label": "Gade",
+              "placeholder": "Gade"
+            },
+            "doorNumber": {
+              "label": "Husnummer",
+              "placeholder": "Husnummer"
+            }
+          }
+        }
+      },
+      "delivery": {
+        "title": "Præcis leveringsadresse",
+        "description": "Angiv den fulde adresse på overnatningsstedet eller lufthavnen til levering.",
+        "locationName": {
+          "label": "Navn på overnatningssted / lufthavn (valgfrit)",
+          "placeholder": "F.eks. Hotel Marina eller Budapest Liszt Ferenc"
+        },
+        "fields": {
+          "placeType": {
+            "label": "Stedtype",
+            "placeholder": "Vælg sted",
+            "accommodation": "Overnatningssted",
+            "airport": "Lufthavn"
+          },
+          "arrivalFlight": {
+            "label": "Flynummer ved ankomst",
+            "placeholder": "f.eks. FR1234"
+          },
+          "departureFlight": {
+            "label": "Flynummer ved hjemrejse",
+            "placeholder": "f.eks. FR5678"
+          },
+          "country": {
+            "label": "Land",
+            "placeholder": "Land"
+          },
+          "postalCode": {
+            "label": "Postnummer",
+            "placeholder": "1234"
+          },
+          "city": {
+            "label": "By",
+            "placeholder": "By"
+          },
+          "street": {
+            "label": "Gade (valgfrit)",
+            "placeholder": "Gade"
+          },
+          "doorNumber": {
+            "label": "Husnummer (valgfrit)",
+            "placeholder": "Husnummer"
+          }
+        }
+      },
+      "consents": {
+        "title": "Juridiske erklæringer",
+        "description": "For at færdiggøre booking skal du acceptere privatlivspolitikken og de generelle vilkår og betingelser.",
+        "privacyLabel": "Jeg har læst og accepterer <link>privatlivspolitikken</link>",
+        "termsLabel": "Jeg har læst og accepterer <link>de generelle vilkår og betingelser</link>"
+      }
+    },
+    "toast": {
+      "success": "Tak! Vi kontakter dig snarest.",
+      "error": "Ups, der opstod en fejl. Prøv igen senere."
+    }
+  },
+  "RentSchema": {
+    "errors": {
+      "invalidStartDate": "Ugyldig startdato",
+      "invalidEndDate": "Ugyldig slutdato",
+      "adultsMin": "Der kræves mindst én voksen",
+      "childAgeMin": "Alder kan ikke være negativ",
+      "childAgeMax": "Barnets alder må højst være 17 år",
+      "childHeightMin": "Højde kan ikke være negativ",
+      "firstNameRequired": "Fornavn er påkrævet",
+      "lastNameRequired": "Efternavn er påkrævet",
+      "countryRequired": "Land er påkrævet",
+      "postalCodeRequired": "Postnummer er påkrævet",
+      "cityRequired": "By er påkrævet",
+      "streetRequired": "Gade er påkrævet",
+      "doorNumberRequired": "Husnummer er påkrævet",
+      "invalidDateOfBirth": "Ugyldig fødselsdato",
+      "placeOfBirthRequired": "Fødested er påkrævet",
+      "motherNameRequired": "Mors navn er påkrævet",
+      "phoneRequired": "Telefonnummer er påkrævet",
+      "phoneInvalid": "Angiv et gyldigt telefonnummer",
+      "emailRequired": "E-mailadresse er påkrævet",
+      "emailInvalid": "Angiv en gyldig e-mailadresse",
+      "documentNumberRequired": "Dokumentnummer er påkrævet",
+      "documentIssueInvalid": "Ugyldig udstedelsesdato for dokument",
+      "documentExpiryInvalid": "Ugyldig udløbsdato for dokument",
+      "drivingLicenceNumberRequired": "Kørekortnummer er påkrævet",
+      "drivingLicenceIssueInvalid": "Ugyldig udstedelsesdato for kørekort",
+      "drivingLicenceExpiryInvalid": "Ugyldig udløbsdato for kørekort",
+      "contactNameRequired": "Kontaktpersonens navn er påkrævet",
+      "contactEmailRequired": "Kontaktpersonens e-mailadresse er påkrævet",
+      "contactEmailInvalid": "Angiv en gyldig e-mailadresse til kontaktpersonen",
+      "invoiceNameRequired": "Fakturanavn er påkrævet",
+      "invoicePhoneRequired": "Fakturatelefonnummer er påkrævet",
+      "invoiceEmailRequired": "Faktura-e-mail er påkrævet",
+      "invoiceEmailInvalid": "Angiv en gyldig faktura-e-mailadresse",
+      "startPast": "Startdato kan ikke ligge i fortiden",
+      "startTooLate": "Startdato kan højst være inden for ét år",
+      "endBeforeStart": "Slutdato kan ikke være før startdato",
+      "endTooLate": "Slutdato kan højst være inden for ét år",
+      "deliveryPlaceTypeRequired": "Vælg om du angiver adresse til overnatningssted eller lufthavn",
+      "deliveryFieldRequired": "Påkrævet felt",
+      "invalidAdults": "Der kræves mindst én voksen",
+      "adultsInvalid": "Angiv antal voksne passagerer"
+    },
+    "fields": {
+      "rentalPeriod": {
+        "startDate": {
+          "invalid": "Ugyldig startdato",
+          "past": "Startdato kan ikke ligge i fortiden",
+          "tooLate": "Startdato kan højst være inden for ét år"
+        },
+        "endDate": {
+          "invalid": "Ugyldig slutdato",
+          "beforeStart": "Slutdato kan ikke være før startdato",
+          "tooLate": "Slutdato kan højst være inden for ét år"
+        }
+      },
+      "adults": {
+        "min": "Der kræves mindst én voksen"
+      },
+      "children": {
+        "age": {
+          "min": "Alder kan ikke være negativ",
+          "max": "Barnets alder må højst være 17 år"
+        },
+        "height": {
+          "min": "Højde kan ikke være negativ"
+        }
+      },
+      "driver": {
+        "firstName_1": {
+          "required": "Fornavn er påkrævet"
+        },
+        "lastName_1": {
+          "required": "Efternavn er påkrævet"
+        },
+        "location": {
+          "country": {
+            "required": "Land er påkrævet"
+          },
+          "postalCode": {
+            "required": "Postnummer er påkrævet"
+          },
+          "city": {
+            "required": "By er påkrævet"
+          },
+          "street": {
+            "required": "Gade er påkrævet"
+          },
+          "doorNumber": {
+            "required": "Husnummer er påkrævet"
+          }
+        },
+        "dateOfBirth": {
+          "invalid": "Ugyldig fødselsdato"
+        },
+        "placeOfBirth": {
+          "required": "Fødested er påkrævet"
+        },
+        "nameOfMother": {
+          "required": "Mors navn er påkrævet"
+        },
+        "phoneNumber": {
+          "required": "Telefonnummer er påkrævet",
+          "invalid": "Angiv et gyldigt telefonnummer"
+        },
+        "email": {
+          "required": "E-mailadresse er påkrævet",
+          "invalid": "Angiv en gyldig e-mailadresse"
+        },
+        "document": {
+          "number": {
+            "required": "Dokumentnummer er påkrævet"
+          },
+          "validFrom": {
+            "invalid": "Ugyldig udstedelsesdato for dokument"
+          },
+          "validUntil": {
+            "invalid": "Ugyldig udløbsdato for dokument"
+          },
+          "drivingLicenceNumber": {
+            "required": "Kørekortnummer er påkrævet"
+          },
+          "drivingLicenceValidFrom": {
+            "invalid": "Ugyldig udstedelsesdato for kørekort",
+            "minAge": "Kørekortet skal have været gyldigt i mindst 3 år"
+          },
+          "drivingLicenceValidUntil": {
+            "invalid": "Ugyldig udløbsdato for kørekort"
+          }
+        }
+      },
+      "contact": {
+        "name": {
+          "required": "Kontaktpersonens navn er påkrævet"
+        },
+        "email": {
+          "required": "Kontaktpersonens e-mailadresse er påkrævet",
+          "invalid": "Angiv en gyldig e-mailadresse til kontaktpersonen"
+        }
+      },
+      "invoice": {
+        "name": {
+          "required": "Fakturanavn er påkrævet"
+        },
+        "phoneNumber": {
+          "required": "Fakturatelefonnummer er påkrævet",
+          "invalid": "Angiv et gyldigt telefonnummer"
+        },
+        "email": {
+          "required": "Faktura-e-mail er påkrævet",
+          "invalid": "Angiv en gyldig faktura-e-mailadresse"
+        },
+        "location": {
+          "country": {
+            "required": "Land er påkrævet"
+          },
+          "postalCode": {
+            "required": "Postnummer er påkrævet"
+          },
+          "city": {
+            "required": "By er påkrævet"
+          },
+          "street": {
+            "required": "Gade er påkrævet"
+          },
+          "doorNumber": {
+            "required": "Husnummer er påkrævet"
+          }
+        }
+      },
+      "delivery": {
+        "placeType": {
+          "required": "Vælg om du angiver adresse til overnatningssted eller lufthavn"
+        },
+        "arrivalFlight": {
+          "required": "Angiv ankommende flynummer"
+        },
+        "departureFlight": {
+          "required": "Angiv flynummer for hjemrejsen"
+        },
+        "address": {
+          "country": {
+            "required": "Påkrævet felt"
+          },
+          "postalCode": {
+            "required": "Påkrævet felt"
+          },
+          "city": {
+            "required": "Påkrævet felt"
+          },
+          "street": {
+            "required": "Påkrævet felt"
+          },
+          "doorNumber": {
+            "required": "Påkrævet felt"
+          }
+        }
+      },
+      "consents": {
+        "privacy": {
+          "required": "For at gennemføre bookingen skal du acceptere privatlivspolitikken"
+        },
+        "terms": {
+          "required": "For at gennemføre bookingen skal du acceptere de generelle vilkår"
+        }
+      }
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Vælg venligst",
+    "selectAll": "Markér alle",
+    "close": "Luk",
+    "clear": "Ryd"
+  },
+  "NotFound": {
+    "label": "Er du faret vild?",
+    "title": "Den side, du leder efter, blev desværre ikke fundet",
+    "description": "Siden findes muligvis ikke længere, eller der er sket en tastefejl. Du kan fortsætte med at udforske via forsiden eller kontakte os.",
+    "badge": "Et nyt eventyr venter",
+    "cta": {
+      "home": {
+        "href": "dk",
+        "label": "Tilbage til forsiden"
+      },
+      "contact": {
+        "href": "dk/contact",
+        "label": "Kontakt os"
+      }
+    }
+  },
+  "GTC": {
+    "title": "Lejekontrakt",
+    "sections": [
+      {
+        "heading": "1. Aftaleparter og indgåelse af aftalen",
+        "paragraphs": [
+          "Denne kontrakt indgås mellem ZODIACSRENTACAR Thomy Fuerteventura SL. (herefter: Udlejer) og den fysiske eller juridiske person, der accepterer tilbuddet (herefter: Lejer).",
+          "Parterne accepterer, at bestemmelserne i Kontrakten er bindende og gyldige under hele lejens varighed, indtil den endelige registrering af tilbageleveringen af køretøjet.",
+          "Anmodning om tilbud og booking kan ske via websitet www.zodiacsrentacar.com samt via de ovenfor angivne kontaktkanaler.",
+          "Anmodningen om tilbud, bekræftelse af accept af tilbuddet og eventuel afvisning af bookingen sendes til den e-mailadresse, der er angivet i formularen.",
+          "Udlejer forbeholder sig retten til af driftsmæssige årsager – især ved manglende tilgængelighed af det ønskede køretøj – at afvise eller afslå en bookinganmodning, hvis den er ufuldstændig, upræcis eller ikke opfylder de gældende vilkår.",
+          "Den person, der er angivet i Kontrakten, den berettigede til bookingen og hovedføreren skal være den samme person; kontrakten kan ikke overdrages til tredjemand.",
+          "Af sikkerhedsmæssige grunde anmoder vi ikke om bank- eller finansielle oplysninger via platformen, men Lejer er forpligtet til at fremvise sådanne oplysninger (især kreditkort) ved afhentning af det lejede køretøj på kontoret.",
+          "Kreditkortet skal tilhøre Lejer og være gyldigt under hele lejens varighed samt i yderligere tre (3) måneder på De Kanariske Øer for at dække eventuelle efterfølgende omkostninger.",
+          "Vi accepterer de mest almindelige kreditkort (Visa/MC/Amex/Diners) og betalingskort udstedt af finansielle institutioner; debetkort accepteres ikke.",
+          "Udlejer accepterer et depositum på 500 € for lejeperioden, som refunderes inden for 15 kalenderdage efter tilbagelevering af køretøjet, forudsat at dets tilstand svarer til kontraktens bestemmelser.",
+          "Behandlingen af personoplysninger og øvrige juridiske vilkår vedrørende platformens drift er reguleret i GDPR-persondatapolitikken på Udlejers website. Lejer erklærer ved underskrivelse af denne kontrakt, at vedkommende har læst og accepteret denne politik."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Udlejers oplysninger:",
+            "items": [
+              "Firmanavn: ZODIACSRENTACAR (www.zodiacsrentacar.com)",
+              "Adresse: Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas, Spanien",
+              "Skatteidentifikationsnummer (CIF): B13702493",
+              "E-mailadresse: info@zodiacsrentacar.es",
+              "Hovedtelefonnummer: +34 683-192-422"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "2. Lejebetingelser og krav til førere",
+        "paragraphs": [
+          "Udlejer udlejer ikke køretøjer til førere under 25 år.",
+          "Brugere kan kun leje køretøjer fra Udlejer, hvis de opfylder følgende betingelser.",
+          "Opfyldelse af disse betingelser er obligatorisk, og der kan ikke gøres undtagelser.",
+          "Udlejer opkræver ikke gebyr hos brugere, som på grund af manglende opfyldelse af betingelserne ikke kan indgå aftale, da bookingen i sådanne tilfælde ikke kan gennemføres.",
+          "De samme betingelser gælder for eventuelle ekstra førere, som Lejer angiver.",
+          "Efter bekræftelse af bookingen har Udlejer ret til at annullere den i følgende tilfælde."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Betingelser for leje:",
+            "items": [
+              "Mindst femogtyve (25) år gamle.",
+              "Indehaver af et gyldigt kørekort i EU med mindst kategori B.",
+              "Mindst to (2) års dokumenteret køreerfaring fra udstedelsesdatoen for kørekortet på bookingtidspunktet."
+            ]
+          },
+          {
+            "type": "unordered",
+            "title": "Bookingen kan annulleres, hvis:",
+            "items": [
+              "det viser sig, at de oplysninger, kunden har angivet, er urigtige, usande eller ikke opdaterede.",
+              "gyldigheden af et påkrævet dokument udløber i lejeperioden.",
+              "Lejer overtræder lejebetingelserne."
+            ]
+          }
+        ],
+        "notes": [
+          "(*) I overensstemmelse med spansk lov... (her indgår et afsnit om spansk lovgivning, som af juridiske grunde forbliver uændret)."
+        ]
+      },
+      {
+        "heading": "3. Betingelser vedrørende det lejede køretøj",
+        "paragraphs": [
+          "Den reserverede bilmodel er vejledende og kan af Udlejer erstattes af et køretøj i samme eller højere kategori, der er tilgængeligt i flåden.",
+          "GPS-sporing: ved at underskrive lejekontrakten samtykker Lejer i, at køretøjet kan spores; geolokaliseringsdata bruges af Udlejer udelukkende til at sikre køretøjets sikkerhed og kontrollere, at lejebetingelserne overholdes.",
+          "Begrænsning af brug: køretøjet må ikke forlade den ø, hvor lejekontrakten er indgået, medmindre der indgås en særskilt aftale herom, som registreres i bookingsystemet.",
+          "Hvis lejekontrakten også omfatter Lanzarote, eller hvis afleveringsstedet er Lanzarote, anser Parterne disse betingelser for fuldt ud gældende også under disse omstændigheder.",
+          "Ved konstatering af en fejl eller funktionsforstyrrelse skal køretøjet straks standes på en trafiksikker måde i overensstemmelse med færdselsreglerne, og Udlejer skal straks underrettes.",
+          "Lejer er forpligtet til før lejeperiodens begyndelse at kontrollere, at alle obligatoriske tilbehør er til stede i køretøjet.",
+          "Lejer er ansvarlig fra afhentning til bekræftet tilbagelevering for lovlig og teknisk korrekt brug samt for at bevare køretøjets tilstand.",
+          "Hvis tilbageleveringen ikke sker på den måde, Udlejer har angivet (f.eks. uden personlig overdragelse), forlænges Lejers ansvar indtil køretøjets faktiske modtagelse er registreret, og dets tilstand er kontrolleret.",
+          "Omkostningerne ved udbedring af konstaterede skader og fejl bæres af Lejer."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "title": "Øvrige brugsregler:",
+            "items": [
+              "Lejer accepterer som bindende alle relevante nationale bestemmelser og love, herunder færdselsregler.",
+              "Køretøjet må ikke anvendes til ulovlige formål eller som middel til at begå lovovertrædelser.",
+              "Køretøjet må kun anvendes på offentlige veje med fast belægning.",
+              "Bemærk: hvis køretøjet har været brugt på ikke-asfalterede veje, skal Lejer bære alle omkostninger til punkteringer, bjærgning, transport og reparation på stedet.",
+              "Køretøjet må ikke anvendes til kommercielle eller reklameformål.",
+              "Kun brændstof anbefalet af producenten må anvendes; ved påfyldning af uforeneligt brændstof skal Udlejer straks informeres, og køretøjet må ikke startes.",
+              "Lejer skal sikre, at køretøjet ved parkering eller når det forlades, er fuldstændig aflåst, og at alle rimelige foranstaltninger er truffet for at forhindre uautoriseret brug.",
+              "Ved parkering skal parkeringsbremsen og et passende gear anvendes; på stigninger skal forhjulene drejes mod kantstenen.",
+              "Barnesæder stilles til rådighed af Udlejer ved afhentning, men korrekt montering og brug er altid Lejers ansvar.",
+              "Sportsudstyr (f.eks. surfbrætter) må ikke transporteres eller opbevares i køretøjets kabine.",
+              "Lejer er ansvarlig for, at bagage og surfbrætter er korrekt fastgjort til tagbøjlerne, hvis sådanne er lejet."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "4. Regler for afhentning og tilbagelevering",
+        "paragraphs": [
+          "Det lejede køretøj udleveres og tilbageleveres på det kontor, der er angivet i bookingen, på de datoer og tidspunkter, Udlejer har bekræftet.",
+          "Køretøjet må under ingen omstændigheder afleveres på en anden ø end den, der er angivet i kontrakten.",
+          "Køretøjet kan kun afhentes i kontorets åbningstid; tilbagelevering kan organiseres uden for åbningstid i henhold til de betingelser, der er angivet i bookingprocessen.",
+          "Tilbagelevering på lufthavnen uden for åbningstid eller før åbning er gratis; ved transport til andre steder kan der blive opkrævet et særskilt gebyr. Aftalte specialtilfælde registreres i bookingsystemet.",
+          "Kontorets åbningstider er normalt 10:00–13:00 og 16:00–20:00; præcis information kan fås via e-mail, WhatsApp eller telefon.",
+          "Ved forsinkelse eller aflysning af fly er Lejer forpligtet til rettidigt at informere Udlejer; undladelse heraf medfører, at Udlejer ikke kan garantere, at bookingen opretholdes.",
+          "Hvis det ikke er muligt at opretholde bookingen, forbeholder Udlejer sig retten til at annullere den og kan disponere over køretøjet uden erstatningspligt.",
+          "Køretøjet skal tilbageleveres i den tilstand, der blev registreret ved afhentning; i tilfælde af afvigelser skal Lejer dokumentere de indtrufne hændelser.",
+          "Der gives ingen refusion ved tidligere tilbagelevering.",
+          "Brændstof: køretøjet skal tilbageleveres med samme brændstofniveau som ved afhentning; ved underskud afholdes omkostningerne til tankning og servicegebyr af Lejer.",
+          "Ved eventuelt overskydende mængde brændstof kan vi ikke refundere forskellen.",
+          "Der må ikke efterlades personlige ejendele i køretøjet ved tilbagelevering; Udlejer påtager sig intet ansvar for efterladte genstande og kan hverken opbevare eller fremsende dem."
+        ]
+      },
+      {
+        "heading": "5. Tjenester og forsikring",
+        "paragraphs": [
+          "Den endelige pris for køretøjsbookingen omfatter følgende poster.",
+          "Der kræves ingen selvrisiko (depositum, kontant eller forhåndsgodkendelse på kort), bortset fra det depositum på 500 €, der er nævnt i punkt 1.",
+          "Det er vigtigt at bemærke, at i henhold til spanske færdselsregler er brug af godkendt barnestol obligatorisk for mindreårige under 135 cm."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Skatter (IGIC/IVA inkluderet).",
+              "Ubegrænset kilometertal.",
+              "Gratis anden chauffør.",
+              "Service på vores kontor (Calle Juan de Austria 111, 35600 Puerto de Rosario, Las Palmas).",
+              "Gratis afbestilling (se punkt 9).",
+              "Gratis babyautostole og selepuder (ikke ISOFIX).",
+              "Følgende forsikringer uden selvrisiko: kaskoforsikring (CDW), tyveriforsikring (TP), ansvarsforsikring over for tredjemand (TI)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "6. Situationer, som ikke er dækket af forsikringen",
+        "paragraphs": [
+          "Vigtigt! Ovenstående forsikring uden selvrisiko dækker ikke følgende situationer eller hændelser; for skader og omkostninger, der opstår i sådanne tilfælde, hæfter Lejer fuldt ud økonomisk."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Skader på dæk og hjul ved kørsel på ikke-asfalterede veje.",
+              "Tab, brud eller beskadigelse af bilnøglerne.",
+              "Påfyldning af forkert brændstof (brændstoftypen er angivet særskilt på hvert køretøj).",
+              "Uansvarlig kørsel eller ulykker under påvirkning af alkohol, narkotika eller andre giftige eller psykoaktive stoffer.",
+              "Ulykker og/eller skader ved terrænkørsel (uden fast belægning).",
+              "Bøder (parkering, hastighedsoverskridelse, færdselsforseelser)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "7. Valgfrie ekstra ydelser",
+        "paragraphs": [
+          "Som valgfrie eller supplerende ydelser kan Lejere leje følgende ekstraudstyr, som ikke er en del af køretøjets bookingpris.",
+          "Tagbøjler er egnet til transport af op til to surfbrætter ved korrekt fastgørelse.",
+          "Udlejer påtager sig under ingen omstændigheder ansvar for genstande transporteret på køretøjets tag eller for skader, som disse genstande forvolder på tredjeparter; Lejer hæfter fuldt ud for sådanne skader.",
+          "Alle grundlæggende og valgfrie ydelser står til rådighed for Lejer og garanteres i henhold til de generelle betingelser i aftalen med Udlejer."
+        ],
+        "lists": [
+          {
+            "type": "unordered",
+            "items": [
+              "Tagbøjler til transport af bagage til den pris, der er angivet på websitet; omfatter ikke reb eller stropper, men kun skinner og stænger til fastgørelse på køretøjet."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "8. Brændstofpolitik",
+        "paragraphs": [
+          "Lejer skal tilbagelevere køretøjet med samme mængde brændstof, som det blev modtaget med.",
+          "Hvis Lejer tanker køretøjet med forkert brændstof, er vedkommende ansvarlig for alle nødvendige reparationer og omkostninger."
+        ]
+      },
+      {
+        "heading": "9. Betalings- og refusionspolitik",
+        "paragraphs": [
+          "Udlejer tilbyder online betaling for at afregne lejeafgiften via websitet.",
+          "Bookingen anses for gennemført, når betalingen er foretaget med kreditkort, betalingskort eller bankkort.",
+          "Udbyder af online betalingstjenester: CAIXABANK (bankkonto: ES60 2100 1512 2602 0067 6927).",
+          "Refusionspolitik.",
+          "For at modtage refusion skal Lejer kontakte info@zodiacsrentacar.es eller ringe til +34 683 192 422 og oplyse IBAN-nummer og fulde navn.",
+          "Udlejer gennemfører bankoverførslen inden for 15 arbejdsdage."
+        ],
+        "lists": [
+          {
+            "type": "ordered",
+            "items": [
+              "Fuld refusion er kun mulig, hvis afbestillingen sker mindst 3 kalenderdage (72 timer) før lejeperiodens begyndelse.",
+              "Udlejer refunderer ikke nogen del af lejeafgiften, hvis køretøjet tilbageleveres tidligere end aftalt.",
+              "Refusion – hvis relevant – sker via bankoverførsel."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "10. Ændring af disse generelle betingelser",
+        "paragraphs": [
+          "Udlejer har ret til til enhver tid at ændre de Generelle betingelser, især for at tilpasse sig ændringer i lovgivningen eller for at justere den anvendte forretningspolitik."
+        ]
+      },
+      {
+        "heading": "11. Gældende lov og værneting",
+        "paragraphs": [
+          "I tilfælde af tvister, der udspringer af disse vilkår, frasiger Parterne sig enhver anden jurisdiktion og accepterer de kompetente domstole i Santa Cruz de Tenerife som enekompetente i overensstemmelse med gældende spansk lovgivning."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "title": "Ofte stillede spørgsmål",
+    "intro": "Vi har samlet de vigtigste oplysninger, så din billeje på Fuerteventura og Lanzarote kan forløbe så gnidningsfrit som muligt.",
+    "items": [
+      {
+        "question": "Hvordan kan jeg booke en bil?",
+        "answer": "Udfyld vores online tilbudsformular, så bekræfter vores medarbejdere bookingen inden for højst 24 timer. Hvis det haster, kan du også ringe til os eller skrive på WhatsApp."
+      },
+      {
+        "question": "Hvilke dokumenter skal jeg medbringe ved afhentning?",
+        "answer": "Ved afhentning skal du have et gyldigt kørekort med mindst 3 års køreerfaring samt pas eller ID-kort. Alle førere, der er anført i kontrakten, skal fremvise disse dokumenter ved afhentning."
+      },
+      {
+        "question": "Skal jeg betale et depositum?",
+        "answer": "Hvis du vælger fuld SSCP-forsikring, opkræver vi ikke depositum. Ved grundforsikring skal du regne med et depositum på 300–500 €, og visse ekstraudstyr (fx tagbøjler) kan kræve særskilt sikkerhed."
+      },
+      {
+        "question": "Hvor kan jeg hente bilen?",
+        "answer": "Du kan hente bilen i lufthavnen, på vores kontor i Puerto del Rosario eller ved dit overnatningssted på Fuerteventura og Lanzarote. Det præcise afhentningssted fremgår af bekræftelsen."
+      },
+      {
+        "question": "Kan jeg afbestille gratis?",
+        "answer": "Ja, du kan ændre eller afbestille din booking gebyrfrit op til 72 timer før lejeperiodens begyndelse. Hvis der sker ændringer tættere på, så kontakt os hurtigst muligt."
+      },
+      {
+        "question": "Hvad er minimumsalderen for at leje?",
+        "answer": "For de fleste af vores køretøjer kan vi tilbyde leje fra 23 års alderen. For yngre førere kræves individuel vurdering og eventuel tillægsafgift."
+      },
+      {
+        "question": "Kan jeg hente bilen i lufthavnen?",
+        "answer": "Ja, når du booker, kan du angive, at du ønsker afhentning eller transfer i lufthavnen."
+      },
+      {
+        "question": "Kan jeg aflevere bilen i lufthavnen?",
+        "answer": "Ja, du kan aflevere bilen i lufthavnen – aftal blot tidspunktet med os på forhånd."
+      },
+      {
+        "question": "Hvornår har I åbent?",
+        "answer": "Afhentning foregår normalt mellem 10:00 og 16:00, men vi er fleksible efter aftale. Du kan aflevere bilen når som helst."
+      },
+      {
+        "question": "Kan jeg aflevere bilen om aftenen eller om natten?",
+        "answer": "Ja. Når du henter bilen, forklarer vi altid, hvordan afleveringen foregår, så du trygt kan aflevere bilen på et hvilket som helst tidspunkt."
+      },
+      {
+        "question": "Er bilen fuldt forsikret?",
+        "answer": "Ja, ved skader på offentlige veje dækker forsikringen. Skader eller punkteringer på grusveje skal derimod erstattes af Lejer."
+      },
+      {
+        "question": "Skal jeg tanke bilen op, før jeg afleverer den?",
+        "answer": "Ja, du skal aflevere bilen med samme brændstofniveau, som da du hentede den. Hele vores flåde kører på 95-benzin."
+      },
+      {
+        "question": "Er der kilometerbegrænsning?",
+        "answer": "Nej, vi tilbyder ubegrænsede kilometer, som er inkluderet i lejeprisen."
+      },
+      {
+        "question": "Kan jeg betale med kredit- eller betalingskort?",
+        "answer": "Ja, vi accepterer både kreditkort og betalingskort."
+      },
+      {
+        "question": "Koster det ekstra at have en anden chauffør?",
+        "answer": "Nej, vi opkræver ikke ekstra gebyr for en anden chauffør."
+      },
+      {
+        "question": "Er der skjulte omkostninger ud over lejeprisen?",
+        "answer": "Nej, du betaler kun den bekræftede lejepris – der er ingen skjulte gebyrer."
+      },
+      {
+        "question": "Kan jeg få barnesæde i bilen?",
+        "answer": "Ja, vi tilbyder ISOFIX-barnesæder i flere størrelser – både til de mindste og større børn."
+      },
+      {
+        "question": "Skal jeg rengøre bilen før aflevering?",
+        "answer": "Det er ikke nødvendigt. Vi rengør og desinficerer alle tilbageleverede biler grundigt; dette er inkluderet i lejeprisen."
+      }
+    ]
+  }
+}

@@ -43,6 +43,8 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     deliveryPlaceTypeRequired:
       'Válaszd ki, hogy szállás vagy repülőtér címét adod meg',
     deliveryFieldRequired: 'Kötelező mező',
+    arrivalFlightRequired: 'Add meg az érkező járatszámot',
+    departureFlightRequired: 'Add meg a visszaút járatszámát',
   },
   fields: {
     rentalPeriod: {
@@ -172,6 +174,12 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     delivery: {
       placeType: {
         required: 'Válaszd ki, hogy szállás vagy repülőtér címét adod meg',
+      },
+      arrivalFlight: {
+        required: 'Add meg az érkező járatszámot',
+      },
+      departureFlight: {
+        required: 'Add meg a visszaút járatszámát',
       },
       address: {
         country: {
@@ -473,6 +481,8 @@ export function createRentSchema(
         .object({
           placeType: z.enum(['accommodation', 'airport']).optional(),
           locationName: z.string().max(200).optional(),
+          arrivalFlight: z.string().optional(),
+          departureFlight: z.string().optional(),
           address: z
             .object({
               country: z.string().optional(),
@@ -553,6 +563,14 @@ export function createRentSchema(
       const deliveryData = delivery ?? {};
       const placeType = deliveryData.placeType;
       const address = deliveryData.address ?? {};
+      const arrivalFlight =
+        typeof deliveryData.arrivalFlight === 'string'
+          ? deliveryData.arrivalFlight
+          : '';
+      const departureFlight =
+        typeof deliveryData.departureFlight === 'string'
+          ? deliveryData.departureFlight
+          : '';
 
       if (!placeType) {
         ctx.addIssue({
@@ -578,6 +596,22 @@ export function createRentSchema(
           });
         }
       });
+
+      if (arrivalFlight.trim().length === 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: message('fields.delivery.arrivalFlight.required'),
+          path: ['delivery', 'arrivalFlight'],
+        });
+      }
+
+      if (departureFlight.trim().length === 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: message('fields.delivery.departureFlight.required'),
+          path: ['delivery', 'departureFlight'],
+        });
+      }
 
       const childList = Array.isArray(children) ? children : [];
       if (childList.length > 0) {

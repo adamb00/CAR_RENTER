@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -18,7 +19,7 @@ export default function HomeIntro() {
     : [];
 
   return (
-    <section className='bg-white dark:bg-slate-900 py-16 md:py-24'>
+    <section className='py-16 md:py-24'>
       <div className='mx-auto flex max-w-7xl flex-col gap-20 px-4 md:px-8 lg:flex-row lg:items-start'>
         <div className='w-full space-y-5 lg:w-1/2'>
           {paragraphs.map((paragraph, index) => (
@@ -45,10 +46,22 @@ export default function HomeIntro() {
           >
             {t('cta')}
           </Link>
+          <div className='hidden lg:block'>
+            <div className='relative mt-6 h-96 w-full overflow-hidden rounded-2xl border border-slate-200/60 shadow-md dark:border-slate-700/70'>
+              <Image
+                src='/header_image.webp'
+                alt='Zodiacs Rent a Car – Scenic drive on Fuerteventura'
+                fill
+                className='object-cover object-center'
+                sizes='(min-width: 1024px) 420px, 100vw'
+                priority={false}
+              />
+            </div>
+          </div>
         </aside>
       </div>
       {detailSections.length > 0 && (
-        <article className='mx-auto mt-16 max-w-7xl space-y-12 px-4 md:px-8'>
+        <article className='mx-auto mt-16 max-w-7xl space-y-12 px-4 md:px-8 mb-12'>
           <header className='space-y-4 text-left'>
             {details.title && (
               <h2 className='text-2xl font-semibold uppercase tracking-wide text-slate-900 dark:text-slate-100'>

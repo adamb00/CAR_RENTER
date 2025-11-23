@@ -179,6 +179,14 @@ export function useSetDelivery(
       shouldDirty: false,
       shouldTouch: false,
     });
+    form.setValue('delivery.arrivalFlight', '', {
+      shouldDirty: false,
+      shouldTouch: false,
+    });
+    form.setValue('delivery.departureFlight', '', {
+      shouldDirty: false,
+      shouldTouch: false,
+    });
 
     (
       [
@@ -198,6 +206,8 @@ export function useSetDelivery(
     form.clearErrors([
       'delivery.placeType',
       'delivery.locationName',
+      'delivery.arrivalFlight',
+      'delivery.departureFlight',
       'delivery.address.country',
       'delivery.address.postalCode',
       'delivery.address.city',

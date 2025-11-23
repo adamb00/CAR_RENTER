@@ -1497,6 +1497,14 @@
         "dateRange": {
           "label": "Periodo de alquiler"
         },
+        "arrivalFlight": {
+          "label": "Número de vuelo de llegada",
+          "placeholder": "Ej. FR1234"
+        },
+        "departureFlight": {
+          "label": "Número de vuelo de regreso",
+          "placeholder": "Ej. FR5678"
+        },
         "partySize": {
           "label": "Número de viajeros",
           "placeholder": "¿Cuántas personas?"
@@ -1532,7 +1540,9 @@
         "privacyRequired": "Debes aceptar la política de privacidad",
         "termsRequired": "Debes aceptar los términos y condiciones",
         "rentalStartRequired": "Selecciona la fecha de inicio",
-        "rentalEndRequired": "Selecciona la fecha de devolución"
+        "rentalEndRequired": "Selecciona la fecha de devolución",
+        "arrivalFlightRequired": "Indica el número de vuelo de llegada",
+        "departureFlightRequired": "Indica el número de vuelo de regreso"
       }
     }
   },
@@ -1771,6 +1781,14 @@
             "accommodation": "Alojamiento",
             "airport": "Aeropuerto"
           },
+          "arrivalFlight": {
+            "label": "Número de vuelo de llegada",
+            "placeholder": "Ej. FR1234"
+          },
+          "departureFlight": {
+            "label": "Número de vuelo de regreso",
+            "placeholder": "Ej. FR5678"
+          },
           "country": {
             "label": "País",
             "placeholder": "País"
@@ -1979,6 +1997,12 @@
       "delivery": {
         "placeType": {
           "required": "Selecciona si indicas una dirección de alojamiento o de aeropuerto"
+        },
+        "arrivalFlight": {
+          "required": "Indica el número de vuelo de llegada"
+        },
+        "departureFlight": {
+          "required": "Indica el número de vuelo de regreso"
         },
         "address": {
           "country": {
