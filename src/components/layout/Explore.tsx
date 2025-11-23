@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 export default function Explore() {
   const t = useTranslations('Explore');
   return (
-    <div className='min-h-max h-full bg-gradient-to-br from-[var(--sky-dark)]/70 to-[var(--amber-light)]/70 -skew-y-10 md:-skew-y-6 flex-col flex items-center gap-10 justify-center p-2 md:p-10 py-20 md:py-40 mb-40'>
+    <div className='min-h-max h-full bg-gradient-to-br from-[var(--sky-dark)]/70 to-[var(--amber-light)]/70 -skew-y-10 md:-skew-y-6 flex-col flex items-center gap-10 justify-center p-2 md:p-10 py-20 md:py-40 my-40'>
       <div className='skew-y-10 md:skew-y-6 flex flex-col items-center justify-center min-h-max text-center p-0 md:p-6 gap-6'>
         <h3 className='block text-2xl md:text-4xl font-semibold uppercase leading-12 tracking-normal md:tracking-wider text-sky-dark dark:text-sky-light'>
           {t('title')}
