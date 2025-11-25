@@ -1,4 +1,4 @@
-import { cache } from 'react';
+import { unstable_cache as cache } from 'next/cache';
 
 import { getSupabaseServerClient } from '@/lib/supabase/server';
 
@@ -288,11 +288,15 @@ const fetchCars = async (): Promise<Car[]> => {
   return (data ?? []).map(mapCar);
 };
 
-export const getCars = cache(async (): Promise<Car[]> => {
-  return fetchCars();
-});
+export const getCars = cache(
+  async (): Promise<Car[]> => {
+    return fetchCars();
+  },
+  ['cars'],
+  { tags: ['cars'] }
+);
 
-export const getCarById = cache(async (id: string): Promise<Car | null> => {
+export const getCarById = async (id: string): Promise<Car | null> => {
   if (!id) return null;
 
   const client = getSupabaseServerClient();
@@ -324,4 +328,4 @@ export const getCarById = cache(async (id: string): Promise<Car | null> => {
   }
 
   return mapCar(data);
-});
+};

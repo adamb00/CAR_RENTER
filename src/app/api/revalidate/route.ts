@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 import { LOCALES } from '@/i18n/config';
 
@@ -13,9 +13,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const body = (await request.json().catch(() => null)) as { carId?: string; locales?: string[] } | null;
-    const targetLocales = Array.isArray(body?.locales) && body?.locales.length > 0 ? body.locales : LOCALES;
-    const carId = body?.carId;
+  const body = (await request.json().catch(() => null)) as { carId?: string; locales?: string[] } | null;
+  const targetLocales = Array.isArray(body?.locales) && body?.locales.length > 0 ? body.locales : LOCALES;
+  const carId = body?.carId;
+
+    // Invalidate data cache tags
+    revalidateTag('cars', 'default');
+    if (carId) {
+      revalidateTag(`car-${carId}`, 'default');
+    }
 
     targetLocales.forEach((locale) => {
       revalidatePath(`/${locale}/cars`);
