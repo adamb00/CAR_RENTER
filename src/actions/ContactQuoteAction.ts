@@ -12,8 +12,8 @@ export type ContactQuotePayload = {
   preferredChannel: 'email' | 'phone' | 'whatsapp' | 'viber';
   rentalStart?: string;
   rentalEnd?: string;
-  arrivalFlight: string;
-  departureFlight: string;
+  arrivalFlight?: string | null;
+  departureFlight?: string | null;
   partySize?: string;
   children?: string;
   carId?: string;
