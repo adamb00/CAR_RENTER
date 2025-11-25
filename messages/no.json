@@ -1245,7 +1245,8 @@
       "colors": "Tilgjengelige farger"
     },
     "buttons": {
-      "interested": "Interessert"
+      "interested": "Interessert",
+      "request_quote": "Be om tilbud"
     }
   },
   "Insurance": {
