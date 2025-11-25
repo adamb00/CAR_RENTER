@@ -1103,6 +1103,7 @@
     "form": {
       "title": "Cere o ofertă personalizată",
       "description": "Scrie-ne când și în ce condiții ai dori să închiriezi o mașină – îți răspundem în câteva ore.",
+      "selectedCar": "Mașina aleasă: {carName}",
       "fields": {
         "name": {
           "label": "Nume complet",
@@ -1131,11 +1132,11 @@
           "label": "Perioada de închiriere"
         },
         "arrivalFlight": {
-          "label": "Numărul zborului de sosire",
+          "label": "Numărul zborului de sosire (opțional)",
           "placeholder": "ex. FR1234"
         },
         "departureFlight": {
-          "label": "Numărul zborului de plecare",
+          "label": "Numărul zborului de plecare (opțional)",
           "placeholder": "ex. FR5678"
         },
         "partySize": {
@@ -1188,7 +1189,24 @@
       "manual": "Manuală",
       "automatic": "Automată",
       "per_day": "/ zi",
-      "from_price": "de la €{price}"
+      "from_price": "de la €{price}",
+      "weekly_price": "{price} / săptămână",
+      "available_from_week": "Disponibil de la {price} / săptămână"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Break",
+      "van": "Dubă",
+      "pickup": "Pickup",
+      "coupe": "Coupé"
+    },
+    "fuels": {
+      "petrol": "Benzină",
+      "diesel": "Motorină",
+      "electric": "Electric",
+      "hybrid": "Hibrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1219,7 +1237,8 @@
       "colors": "Culori disponibile"
     },
     "buttons": {
-      "interested": "Mă interesează"
+      "interested": "Mă interesează",
+      "request_quote": "Solicită ofertă"
     }
   },
   "Insurance": {
@@ -1455,7 +1474,12 @@
       "removeChild": "Elimină",
       "addDriver": "Adaugă șofer",
       "removeDriver": "Elimină șofer",
-      "submit": "Trimite rezervarea"
+      "submit": "Trimite rezervarea",
+      "flightNumberUnknown": "Momentan nu cunosc numerele zborurilor"
+    },
+    "missingFlightsDialog": {
+      "title": "Numerele zborurilor lipsesc",
+      "description": "Nu ai introdus încă numerele zborurilor de sosire și plecare. Adaugă-le mai jos sau confirmă că momentan nu le cunoști."
     },
     "searching": "Prelucrarea datelor...",
     "extras": {

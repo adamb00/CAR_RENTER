@@ -1109,6 +1109,7 @@
     "form": {
       "title": "Få et skræddersyet tilbud",
       "description": "Skriv, hvornår og på hvilke vilkår du ønsker at leje en bil – vi svarer inden for få timer.",
+      "selectedCar": "Valgt bil: {carName}",
       "fields": {
         "name": {
           "label": "Fulde navn",
@@ -1137,11 +1138,11 @@
           "label": "Lejeperiode"
         },
         "arrivalFlight": {
-          "label": "Ankommende flynummer",
+          "label": "Ankommende flynummer (valgfrit)",
           "placeholder": "f.eks. FR1234"
         },
         "departureFlight": {
-          "label": "Afrejsende flynummer",
+          "label": "Afrejsende flynummer (valgfrit)",
           "placeholder": "f.eks. FR5678"
         },
         "partySize": {
@@ -1194,7 +1195,24 @@
       "manual": "Manuel",
       "automatic": "Automatisk",
       "per_day": "/ dag",
-      "from_price": "fra €{price}"
+      "from_price": "fra €{price}",
+      "weekly_price": "{price} / uge",
+      "available_from_week": "Tilgængelig fra {price} / uge"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Stationcar",
+      "van": "Varevogn",
+      "pickup": "Pickup",
+      "coupe": "Coupé"
+    },
+    "fuels": {
+      "petrol": "Benzin",
+      "diesel": "Diesel",
+      "electric": "Elektrisk",
+      "hybrid": "Hybrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1225,7 +1243,8 @@
       "colors": "Tilgængelige farver"
     },
     "buttons": {
-      "interested": "Interesseret"
+      "interested": "Interesseret",
+      "request_quote": "Anmod om tilbud"
     }
   },
   "Insurance": {
@@ -1461,7 +1480,12 @@
       "removeChild": "Fjern",
       "addDriver": "Tilføj chauffør",
       "removeDriver": "Fjern chauffør",
-      "submit": "Send booking"
+      "submit": "Send booking",
+      "flightNumberUnknown": "I don't know the flight numbers right now"
+    },
+    "missingFlightsDialog": {
+      "title": "Flight numbers missing",
+      "description": "You haven't provided the arrival and departure flight numbers yet. Please add them below or confirm that you don't know them right now."
     },
     "searching": "Behandler data...",
     "extras": {

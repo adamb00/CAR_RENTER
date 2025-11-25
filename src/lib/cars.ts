@@ -9,96 +9,69 @@ const STORAGE_BUCKET =
     : 'images';
 const SUPABASE_STORAGE_URL = (process.env.SUPABASE_URL ?? '').replace(/\/$/, '');
 
-export const CAR_CATEGORIES = ['small', 'medium', 'large', 'suv'] as const;
 export const CAR_TRANSMISSIONS = ['manual', 'automatic'] as const;
 export const CAR_FUELS = ['petrol', 'diesel', 'electric', 'hybrid'] as const;
-export const CAR_STATUSES = ['available', 'rented', 'maintenance', 'inactive', 'reserved'] as const;
 export const CAR_BODY_TYPES = ['sedan', 'hatchback', 'suv', 'wagon', 'van', 'pickup', 'coupe'] as const;
-export const CAR_TIRE_TYPES = ['summer', 'winter', 'all_season'] as const;
 export const CAR_COLORS = ['milky_beige', 'white', 'silver_metal', 'blue', 'metal_blue', 'gray'] as const;
+export const CAR_COLOR_SWATCH: Record<CarColor, string> = {
+  milky_beige: '#f5efe6',
+  white: '#ffffff',
+  silver_metal: '#d9dfe5',
+  blue: '#2563eb',
+  metal_blue: '#1d3b72',
+  gray: '#94a3b8',
+};
 
-export type CarCategory = (typeof CAR_CATEGORIES)[number];
 export type CarTransmission = (typeof CAR_TRANSMISSIONS)[number];
 export type CarFuel = (typeof CAR_FUELS)[number];
-export type CarStatus = (typeof CAR_STATUSES)[number];
 export type CarBodyType = (typeof CAR_BODY_TYPES)[number];
-export type CarTireType = (typeof CAR_TIRE_TYPES)[number];
 export type CarColor = (typeof CAR_COLORS)[number];
 
+type SupabaseColorValue = {
+  name?: string | null;
+  key?: string | null;
+  value?: string | null;
+  color?: {
+    name?: string | null;
+    key?: string | null;
+    value?: string | null;
+  } | null;
+};
+
 type SupabaseCar = {
-  licensePlate: string;
-  category: CarCategory;
+  id: string;
   manufacturer: string;
   model: string;
-  year: number;
-  firstRegistration: string;
   bodyType: CarBodyType;
-  colors: string[] | null;
-  dailyPrices: number[] | null;
+  prices?: (number | string | null)[] | number | string | null;
   images: string[] | null;
-  description: string | null;
-  odometer: number;
   seats: number;
   smallLuggage: number;
   largeLuggage: number;
   transmission: CarTransmission;
   fuel: CarFuel;
-  vin: string;
-  engineNumber: string;
-  fleetJoinedAt: string;
-  status: CarStatus;
-  inspectionValidUntil: string;
-  tires: CarTireType;
-  nextServiceAt: string | null;
-  serviceNotes: string | null;
-  notes: string | null;
-  knownDamages: string | null;
+  colors?: (SupabaseColorValue | string)[] | null;
   createdAt: string;
   updatedAt: string;
 };
 
 export type Car = {
   id: string;
-  licensePlate: string;
   manufacturer: string;
   model: string;
   name: string;
-  year: number;
-  firstRegistration: string;
   bodyType: CarBodyType;
+  fuel: CarFuel;
+  transmission: CarTransmission;
   colors: CarColor[];
-  dailyPrices: number[];
-  pricePerDay: number;
-  image: string;
-  images: string[];
-  description: string | null;
-  odometer: number;
   seats: number;
   smallLuggage: number;
   largeLuggage: number;
-  category: CarCategory;
-  transmission: CarTransmission;
-  fuel: CarFuel;
-  vin: string;
-  engineNumber: string;
-  fleetJoinedAt: string;
-  status: CarStatus;
-  inspectionValidUntil: string;
-  tires: CarTireType;
-  nextServiceAt: string | null;
-  serviceNotes: string | null;
-  notes: string | null;
-  knownDamages: string | null;
+  image: string;
+  images: string[];
+  prices: number[];
   createdAt: string;
   updatedAt: string;
-};
-
-const COLOR_ALIASES: Record<string, CarColor> = {
-  silver_metallic: 'silver_metal',
-  metallic_blue: 'metal_blue',
-  blue_metallic: 'metal_blue',
-  blue_metal: 'metal_blue',
-  grey: 'gray',
 };
 
 const ensureArray = <T,>(value: T[] | null | undefined): T[] => {
@@ -135,81 +108,178 @@ const normalizeImages = (values: string[] | null): string[] => {
   return Array.from(new Set(images));
 };
 
-const normalizeColor = (value: string): CarColor | null => {
-  if ((CAR_COLORS as readonly string[]).includes(value)) {
-    return value as CarColor;
+const COLOR_ALIASES: Record<string, CarColor> = {
+  silver_metallic: 'silver_metal',
+  metallic_blue: 'metal_blue',
+  blue_metallic: 'metal_blue',
+  blue_metal: 'metal_blue',
+  grey: 'gray',
+};
+
+const normalizeColor = (value: string | null | undefined): CarColor | null => {
+  if (!value) return null;
+  const normalized = value.trim().toLowerCase().replace(/[\s-]+/g, '_');
+
+  if ((CAR_COLORS as readonly string[]).includes(normalized)) {
+    return normalized as CarColor;
   }
-  const alias = COLOR_ALIASES[value];
+
+  const alias = COLOR_ALIASES[normalized];
   return alias ?? null;
 };
 
-const normalizeColors = (values: string[] | null): CarColor[] => {
-  const colors = ensureArray(values)
-    .map((color) => normalizeColor(color))
-    .filter((color): color is CarColor => Boolean(color));
+const normalizeColors = (values: unknown): CarColor[] => {
+  if (!Array.isArray(values)) return [];
+
+  const colors = values
+    .map((color) => {
+      if (typeof color === 'string') return color;
+      if (!color || typeof color !== 'object') return null;
+
+      const candidate = color as SupabaseColorValue;
+      const nestedColor =
+        candidate.color ??
+        (candidate as { Color?: SupabaseColorValue | null }).Color ??
+        (candidate as { Colors?: SupabaseColorValue | null }).Colors;
+      return (
+        candidate.name ??
+        candidate.key ??
+        candidate.value ??
+        nestedColor?.name ??
+        nestedColor?.key ??
+        nestedColor?.value ??
+        null
+      );
+    })
+    .map((value) => normalizeColor(value))
+    .filter((value): value is CarColor => Boolean(value));
 
   return Array.from(new Set(colors));
 };
 
+const normalizePrices = (value: unknown): number[] => {
+  const prices: number[] = [];
+
+  const addIfNumber = (candidate: unknown) => {
+    if (typeof candidate === 'number' && Number.isFinite(candidate)) {
+      prices.push(candidate);
+      return;
+    }
+    if (typeof candidate === 'string') {
+      const parsed = Number(candidate);
+      if (Number.isFinite(parsed)) {
+        prices.push(parsed);
+      }
+    }
+  };
+
+  const extractFromObject = (obj: Record<string, unknown>) => {
+    const candidates = [
+      obj.price,
+      obj.amount,
+      obj.value,
+      obj.weekly,
+      obj.week,
+      (obj as { eur?: unknown }).eur,
+    ];
+    candidates.forEach(addIfNumber);
+    Object.values(obj).forEach(addIfNumber);
+  };
+
+  if (Array.isArray(value)) {
+    value.forEach((entry) => {
+      if (entry && typeof entry === 'object' && !Array.isArray(entry)) {
+        extractFromObject(entry as Record<string, unknown>);
+        return;
+      }
+      addIfNumber(entry);
+    });
+    return prices;
+  }
+
+  if (value && typeof value === 'object') {
+    extractFromObject(value as Record<string, unknown>);
+    return prices;
+  }
+
+  addIfNumber(value);
+
+  return prices;
+};
+
 const mapCar = (car: SupabaseCar): Car => {
-  const colors = normalizeColors(car.colors);
   const images = normalizeImages(car.images);
-  const rawDailyPrices = ensureArray(car.dailyPrices);
-  const dailyPrices = rawDailyPrices.filter(
-    (value): value is number => typeof value === 'number' && Number.isFinite(value)
+  const colors = normalizeColors(
+    car.colors ??
+      (car as { CarColors?: unknown }).CarColors ??
+      (car as { Colors?: unknown }).Colors ??
+      (car as { _CarColors?: unknown })._CarColors
   );
-  const pricePerDay = dailyPrices.length > 0 ? Math.min(...dailyPrices) : 0;
+  const rawPrices =
+    (car as { prices?: unknown; price?: unknown }).prices ??
+    (car as { price?: unknown }).price ??
+    (car as { Prices?: unknown }).Prices ??
+    (car as { PricesPerWeek?: unknown }).PricesPerWeek ??
+    (car as { weeklyPrices?: unknown }).weeklyPrices ??
+    (car as { weekly_prices?: unknown }).weekly_prices ??
+    (car as { monthlyPrices?: unknown }).monthlyPrices ??
+    (car as { monthly_prices?: unknown }).monthly_prices;
+  const prices = normalizePrices(rawPrices);
 
   const image = images.length > 0 ? images[0] : FALLBACK_IMAGE;
 
   return {
-    id: car.licensePlate,
-    licensePlate: car.licensePlate,
+    id: car.id,
     manufacturer: car.manufacturer,
     model: car.model,
     name: `${car.manufacturer} ${car.model}`.trim(),
-    year: car.year,
-    firstRegistration: car.firstRegistration,
     bodyType: car.bodyType,
+    fuel: car.fuel,
+    transmission: car.transmission,
     colors,
-    dailyPrices,
-    pricePerDay,
-    image,
-    images,
-    description: car.description,
-    odometer: car.odometer,
     seats: car.seats,
     smallLuggage: car.smallLuggage,
     largeLuggage: car.largeLuggage,
-    category: car.category,
-    transmission: car.transmission,
-    fuel: car.fuel,
-    vin: car.vin,
-    engineNumber: car.engineNumber,
-    fleetJoinedAt: car.fleetJoinedAt,
-    status: car.status,
-    inspectionValidUntil: car.inspectionValidUntil,
-    tires: car.tires,
-    nextServiceAt: car.nextServiceAt,
-    serviceNotes: car.serviceNotes,
-    notes: car.notes,
-    knownDamages: car.knownDamages,
+    image,
+    images,
+    prices,
     createdAt: car.createdAt,
     updatedAt: car.updatedAt,
   };
 };
 
-const fetchCars = async (statusFilter?: CarStatus): Promise<Car[]> => {
+const selectColumns = '*, _CarColors(Colors(*))';
+const isMissingColorsRelationError = (error: { message?: string; details?: string } | null) => {
+  const message = `${error?.message ?? ''} ${error?.details ?? ''}`.toLowerCase();
+  return (
+    message.includes("relationship between 'cars' and 'colors'") ||
+    message.includes('relationship between cars and colors') ||
+    message.includes('carcolors') ||
+    message.includes('_carcolors')
+  );
+};
+
+const fetchCars = async (): Promise<Car[]> => {
   const client = getSupabaseServerClient();
-  let query = client.from('Cars').select('*').order('manufacturer', { ascending: true }).order('model', {
-    ascending: true,
-  });
+  const { data, error } = await client
+    .from('Cars')
+    .select(selectColumns)
+    .order('manufacturer', { ascending: true })
+    .order('model', { ascending: true });
 
-  if (statusFilter) {
-    query = query.eq('status', statusFilter);
+  if (error && (error.code === '42703' || isMissingColorsRelationError(error))) {
+    const fallback = await client
+      .from('Cars')
+      .select('*')
+      .order('manufacturer', { ascending: true })
+      .order('model', { ascending: true });
+
+    if (fallback.error) {
+      throw new Error(`Failed to fetch cars from Supabase: ${fallback.error.message}`);
+    }
+
+    return (fallback.data ?? []).map(mapCar);
   }
-
-  const { data, error } = await query;
 
   if (error) {
     throw new Error(`Failed to fetch cars from Supabase: ${error.message}`);
@@ -219,14 +289,28 @@ const fetchCars = async (statusFilter?: CarStatus): Promise<Car[]> => {
 };
 
 export const getCars = cache(async (): Promise<Car[]> => {
-  return fetchCars('available');
+  return fetchCars();
 });
 
 export const getCarById = cache(async (id: string): Promise<Car | null> => {
   if (!id) return null;
 
   const client = getSupabaseServerClient();
-  const { data, error } = await client.from('Cars').select('*').eq('licensePlate', id).maybeSingle();
+  const { data, error } = await client.from('Cars').select(selectColumns).eq('id', id).maybeSingle();
+
+  if (error && (error.code === '42703' || isMissingColorsRelationError(error))) {
+    const fallback = await client.from('Cars').select('*').eq('id', id).maybeSingle();
+    if (fallback.error) {
+      if (fallback.error.code === 'PGRST116') {
+        return null;
+      }
+      throw new Error(`Failed to fetch car ${id} from Supabase: ${fallback.error.message}`);
+    }
+    if (!fallback.data) {
+      return null;
+    }
+    return mapCar(fallback.data as SupabaseCar);
+  }
 
   if (error) {
     if (error.code === 'PGRST116') {

@@ -1103,6 +1103,7 @@
     "form": {
       "title": "Poproś o spersonalizowaną ofertę",
       "description": "Napisz, kiedy i na jakich warunkach chcesz wynająć samochód – odpowiemy w ciągu kilku godzin.",
+      "selectedCar": "Wybrane auto: {carName}",
       "fields": {
         "name": {
           "label": "Imię i nazwisko",
@@ -1131,11 +1132,11 @@
           "label": "Okres wynajmu"
         },
         "arrivalFlight": {
-          "label": "Numer lotu przylotowego",
+          "label": "Numer lotu przylotowego (opcjonalnie)",
           "placeholder": "np. FR1234"
         },
         "departureFlight": {
-          "label": "Numer lotu powrotnego",
+          "label": "Numer lotu powrotnego (opcjonalnie)",
           "placeholder": "np. FR5678"
         },
         "partySize": {
@@ -1188,7 +1189,24 @@
       "manual": "Manualna",
       "automatic": "Automatyczna",
       "per_day": "/ dzień",
-      "from_price": "od €{price}"
+      "from_price": "od €{price}",
+      "weekly_price": "{price} / tydzień",
+      "available_from_week": "Dostępny już od {price} / tydzień"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Kombi",
+      "van": "Van",
+      "pickup": "Pickup",
+      "coupe": "Coupe"
+    },
+    "fuels": {
+      "petrol": "Benzyna",
+      "diesel": "Diesel",
+      "electric": "Elektryczny",
+      "hybrid": "Hybryda"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1219,7 +1237,8 @@
       "colors": "Dostępne kolory"
     },
     "buttons": {
-      "interested": "Jestem zainteresowany/a"
+      "interested": "Jestem zainteresowany/a",
+      "request_quote": "Poproś o ofertę"
     }
   },
   "Insurance": {
@@ -1455,7 +1474,12 @@
       "removeChild": "Usuń",
       "addDriver": "Dodaj kierowcę",
       "removeDriver": "Usuń kierowcę",
-      "submit": "Wyślij rezerwację"
+      "submit": "Wyślij rezerwację",
+      "flightNumberUnknown": "I don't know the flight numbers right now"
+    },
+    "missingFlightsDialog": {
+      "title": "Flight numbers missing",
+      "description": "You haven't provided the arrival and departure flight numbers yet. Please add them below or confirm that you don't know them right now."
     },
     "searching": "Przetwarzanie danych...",
     "extras": {

@@ -1104,6 +1104,7 @@
     "form": {
       "title": "Individuelles Angebot anfordern",
       "description": "Teile uns mit, wann und zu welchen Bedingungen du ein Auto mieten möchtest – wir melden uns innerhalb weniger Stunden bei dir.",
+      "selectedCar": "Ausgewähltes Auto: {carName}",
       "fields": {
         "name": {
           "label": "Vollständiger Name",
@@ -1132,11 +1133,11 @@
           "label": "Dauer der Miete"
         },
         "arrivalFlight": {
-          "label": "Ankunftsflugnummer",
+          "label": "Ankunftsflugnummer (optional)",
           "placeholder": "z. B. FR1234"
         },
         "departureFlight": {
-          "label": "Rückflugnummer",
+          "label": "Rückflugnummer (optional)",
           "placeholder": "z. B. FR5678"
         },
         "partySize": {
@@ -1189,7 +1190,24 @@
       "manual": "Schaltgetriebe",
       "automatic": "Automatik",
       "per_day": "/ Tag",
-      "from_price": "ab €{price}"
+      "from_price": "ab €{price}",
+      "weekly_price": "{price} / Woche",
+      "available_from_week": "Erhältlich ab {price} / Woche"
+    },
+    "bodyTypes": {
+      "sedan": "Limousine",
+      "hatchback": "Schrägheck",
+      "suv": "SUV",
+      "wagon": "Kombi",
+      "van": "Van",
+      "pickup": "Pickup",
+      "coupe": "Coupé"
+    },
+    "fuels": {
+      "petrol": "Benzin",
+      "diesel": "Diesel",
+      "electric": "Elektro",
+      "hybrid": "Hybrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1220,7 +1238,8 @@
       "colors": "Verfügbare Farben"
     },
     "buttons": {
-      "interested": "Ich interessiere mich"
+      "interested": "Ich interessiere mich",
+      "request_quote": "Angebot anfordern"
     }
   },
   "Insurance": {
@@ -1456,7 +1475,12 @@
       "removeChild": "Entfernen",
       "addDriver": "Fahrer hinzufügen",
       "removeDriver": "Fahrer entfernen",
-      "submit": "Buchung absenden"
+      "submit": "Buchung absenden",
+      "flightNumberUnknown": "Ich kenne die Flugnummern derzeit nicht"
+    },
+    "missingFlightsDialog": {
+      "title": "Fehlende Flugnummern",
+      "description": "Du hast die Ankunfts- und Abflugsnummern noch nicht angegeben. Trage sie unten ein oder bestätige, dass du sie derzeit nicht kennst."
     },
     "searching": "Daten werden verarbeitet...",
     "extras": {

@@ -9,7 +9,7 @@ import { MultiSelect } from '../MultiSelect';
 import SectionCard from '../SectionCard';
 import { DateRangePicker } from '../ui/date-range-picker';
 import { enUS } from 'date-fns/locale';
-import type { Car } from '@/lib/cars';
+import type { Car, CarColor } from '@/lib/cars';
 import {
   FormControl,
   FormField,
@@ -25,6 +25,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
+import { Input } from '../ui/input';
+import { Badge } from '../ui/badge';
+import { CAR_COLOR_SWATCH } from '@/lib/cars';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;
@@ -64,15 +67,30 @@ export default function BaseDetails({
   locale,
   form,
   car,
+  colorsLabel,
+  translateColor,
 }: {
   locale: string;
   form: UseFormReturn<RentFormValues>;
-  car: Pick<Car, 'id' | 'seats'>;
+  car: Pick<Car, 'id' | 'seats' | 'colors'>;
+  colorsLabel?: string;
+  translateColor?: (color: CarColor) => string;
 }) {
   const t = useTranslations('RentForm');
   const messages = useMessages();
   const dateLocale = DATE_LOCALE_MAP[locale] ?? 'en-US';
   const calendarLocale = CALENDAR_LOCALE_MAP[locale] ?? enUS;
+
+  const getBadgeStyle = (colorKey: CarColor) => {
+    const hex = CAR_COLOR_SWATCH[colorKey] ?? '#e5e7eb';
+    const rgb = hex.replace('#', '');
+    const r = parseInt(rgb.substring(0, 2), 16);
+    const g = parseInt(rgb.substring(2, 4), 16);
+    const b = parseInt(rgb.substring(4, 6), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    const textColor = luminance > 0.7 ? '#0f172a' : '#f8fafc';
+    return { backgroundColor: hex, color: textColor, borderColor: hex };
+  };
 
   const today = React.useMemo(() => {
     const current = new Date();
@@ -110,6 +128,25 @@ export default function BaseDetails({
       description={t('sections.booking.description')}
       contentClassName='space-y-8'
     >
+      {Array.isArray(car.colors) && car.colors.length > 0 ? (
+        <div className='rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-sm'>
+          <p className='font-semibold uppercase tracking-wide text-muted-foreground'>
+            {colorsLabel}
+          </p>
+          <div className='mt-2 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-foreground/90'>
+            {car.colors.map((color) => (
+              <Badge
+                key={`${car.id}-color-${color}`}
+                variant='outline'
+                className='border'
+                style={getBadgeStyle(color)}
+              >
+                {translateColor ? translateColor(color) : t(`colors.${color}`)}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      ) : null}
       <div className='grid gap-6 lg:grid-cols-3'>
         <div className='lg:col-span-1'>
           <FormField
@@ -202,6 +239,56 @@ export default function BaseDetails({
             )}
           />
         </div>
+      </div>
+      <div className='grid gap-4 md:grid-cols-2'>
+        <FormField
+          control={form.control}
+          name={'delivery.arrivalFlight'}
+          render={({ field }) => {
+            const value = typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem>
+                <FormLabel>
+                  {t('sections.delivery.fields.arrivalFlight.label')}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={t(
+                      'sections.delivery.fields.arrivalFlight.placeholder'
+                    )}
+                    value={value}
+                    onChange={(event) => field.onChange(event.target.value)}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <FormField
+          control={form.control}
+          name={'delivery.departureFlight'}
+          render={({ field }) => {
+            const value = typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem>
+                <FormLabel>
+                  {t('sections.delivery.fields.departureFlight.label')}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={t(
+                      'sections.delivery.fields.departureFlight.placeholder'
+                    )}
+                    value={value}
+                    onChange={(event) => field.onChange(event.target.value)}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
       </div>
       <p className='text-xs text-muted-foreground leading-relaxed'>
         {t('extras.packages.base')}

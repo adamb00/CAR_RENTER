@@ -1109,6 +1109,7 @@
       "form": {
         "title": "Richiedi un’offerta personalizzata",
         "description": "Scrivici quando e a quali condizioni desideri noleggiare un’auto – ti risponderemo entro poche ore.",
+        "selectedCar": "Auto selezionata: {carName}",
         "fields": {
           "name": {
             "label": "Nome e cognome",
@@ -1137,13 +1138,14 @@
             "label": "Periodo di noleggio"
           },
           "arrivalFlight": {
-            "label": "Numero del volo di arrivo",
-            "placeholder": "es. FR1234"
-          },
-          "departureFlight": {
-            "label": "Numero del volo di ritorno",
-            "placeholder": "es. FR5678"
-          },
+          "label": "Numero del volo di arrivo",
+          "label": "Numero del volo di arrivo (opzionale)",
+          "placeholder": "es. FR1234"
+        },
+        "departureFlight": {
+          "label": "Numero del volo di ritorno (opzionale)",
+          "placeholder": "es. FR5678"
+        },
           "partySize": {
             "label": "Numero di viaggiatori",
             "placeholder": "Quante persone viaggiano?"
@@ -1191,14 +1193,31 @@
       "p2": "<strong>Ti consigliamo di prenotare l’auto scelta in anticipo</strong>, così sarà sicuramente disponibile al tuo arrivo. Sfoglia le auto qui sotto, clicca sui dettagli e prenota comodamente online!",
       "labels": {
         "seats": "persone",
-        "manual": "Manuale",
-        "automatic": "Automatico",
+      "manual": "Manuale",
+      "automatic": "Automatico",
         "per_day": "/ giorno",
-        "from_price": "da €{price}"
+        "from_price": "da €{price}",
+        "weekly_price": "{price} / settimana",
+        "available_from_week": "Disponibile da {price} / settimana"
       },
-      "colors": {
-        "milky_beige": "Milky Beige",
-        "white": "Bianco",
+    "bodyTypes": {
+      "sedan": "Berlina",
+      "hatchback": "Compatta (hatchback)",
+      "suv": "SUV",
+      "wagon": "Station wagon",
+      "van": "Furgone",
+      "pickup": "Pickup",
+      "coupe": "Coupé"
+    },
+    "fuels": {
+      "petrol": "Benzina",
+      "diesel": "Diesel",
+      "electric": "Elettrico",
+      "hybrid": "Ibrido"
+    },
+    "colors": {
+      "milky_beige": "Milky Beige",
+      "white": "Bianco",
         "silver_metal": "Argento metallizzato",
         "blue": "Blu",
         "metal_blue": "Blu metallizzato",
@@ -1220,14 +1239,15 @@
         "back": "Torna alla flotta",
         "title": "Dettagli dell’auto",
         "category": "Categoria",
-        "luggage_large": "Valigia grande: {count}",
-        "luggage_small": "Valigia piccola: {count}",
-        "colors": "Colori disponibili"
-      },
-      "buttons": {
-        "interested": "Mi interessa"
-      }
+      "luggage_large": "Valigia grande: {count}",
+      "luggage_small": "Valigia piccola: {count}",
+      "colors": "Colori disponibili"
     },
+    "buttons": {
+      "interested": "Mi interessa",
+      "request_quote": "Richiedi offerta"
+    }
+  },
     "Insurance": {
       "title": "Assicurazione (SSCP)",
       "igic_note": "+15% IGIC non incluso. Massimo +30 € per noleggio.",
@@ -1456,13 +1476,18 @@
     },
     "RentForm": {
       "title": "Compila il modulo seguente per completare la prenotazione",
-      "buttons": {
-        "addChild": "Aggiungi bambino",
-        "removeChild": "Rimuovi",
-        "addDriver": "Aggiungi conducente",
-        "removeDriver": "Rimuovi conducente",
-        "submit": "Invia prenotazione"
-      },
+    "buttons": {
+      "addChild": "Aggiungi bambino",
+      "removeChild": "Rimuovi",
+      "addDriver": "Aggiungi conducente",
+      "removeDriver": "Rimuovi conducente",
+      "submit": "Invia prenotazione",
+      "flightNumberUnknown": "Al momento non conosco i numeri dei voli"
+    },
+    "missingFlightsDialog": {
+      "title": "Numeri di volo mancanti",
+      "description": "Non hai ancora indicato i numeri dei voli di arrivo e partenza. Inseriscili qui sotto oppure conferma che al momento non li conosci."
+    },
       "searching": "Elaborazione dei dati...",
       "extras": {
         "label": "Servizi extra",

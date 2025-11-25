@@ -27,7 +27,23 @@ import LegalConsents, {
 } from '@/components/rent/LegalConsents';
 import { trackFormSubmission } from '@/lib/analytics';
 import { Button } from '@/components/ui/button';
-import { Form } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 import { createEmptyDriver } from '@/hooks/useDrivers';
 import { usePersistRentForm } from '@/hooks/usePersistRentForm';
 import {
@@ -46,17 +62,20 @@ type RentFormResolvedValues = z.output<typeof RentSchema>;
 
 type RentPageClientProps = {
   locale: string;
-  car: Pick<Car, 'id' | 'seats'>;
+  car: Pick<Car, 'id' | 'seats' | 'colors'>;
 };
 
 export default function RentPageClient({ locale, car }: RentPageClientProps) {
   const t = useTranslations('RentForm');
+  const tCars = useTranslations('Cars');
   const tSchema = useTranslations('RentSchema');
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const { id } = car;
 
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [isMissingFlightsDialogOpen, setMissingFlightsDialogOpen] =
+    React.useState(false);
 
   // Find the first field name that has a validation error (dot notation, supports arrays)
   const firstErrorPath = (
@@ -121,7 +140,6 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
       }
     }
 
-    // If only `root` exists, return null so caller can handle section-level scrolling
     return null;
   };
 
@@ -251,12 +269,19 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
 
   const [placesReady, setPlacesReady] = React.useState(false);
   const { extrasSelected } = useWatchForm(form);
+  const arrivalFlightValue = form.watch('delivery.arrivalFlight');
+  const departureFlightValue = form.watch('delivery.departureFlight');
 
   const isDeliveryRequired = React.useMemo(
     () =>
       Array.isArray(extrasSelected) && extrasSelected.includes('kiszallitas'),
     [extrasSelected]
   );
+  const areFlightNumbersProvided =
+    typeof arrivalFlightValue === 'string' &&
+    arrivalFlightValue.trim().length > 0 &&
+    typeof departureFlightValue === 'string' &&
+    departureFlightValue.trim().length > 0;
 
   useWindowWithGoogle(setPlacesReady);
 
@@ -266,40 +291,91 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
 
   useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
 
-  const onSubmit = (data: RentFormValues) => {
-    const parsed: RentFormResolvedValues = rentSchema.parse(data);
-    const submissionMeta = {
-      locale,
-      carId: id,
-      rentalStart: parsed.rentalPeriod.startDate,
-      rentalEnd: parsed.rentalPeriod.endDate,
-      extrasCount: Array.isArray(extrasSelected) ? extrasSelected.length : 0,
-    };
+  const shouldAskForFlightNumbers = React.useCallback(
+    (values: RentFormResolvedValues) => {
+      const arrival =
+        typeof values.delivery?.arrivalFlight === 'string'
+          ? values.delivery.arrivalFlight.trim()
+          : '';
+      const departure =
+        typeof values.delivery?.departureFlight === 'string'
+          ? values.delivery.departureFlight.trim()
+          : '';
+      return arrival.length === 0 || departure.length === 0;
+    },
+    []
+  );
 
-    startTransition(async () => {
-      const res = await RentAction(parsed);
-      if (res.success) {
-        toast.success(t('toast.success'));
-        clearStoredValues();
-        trackFormSubmission({
-          formId: 'rent-request',
-          status: 'success',
-          ...submissionMeta,
-        });
-        setTimeout(() => {
-          router.push(`/${locale}`);
-        }, 2000);
-      } else {
-        toast.error(t('toast.error'));
-        trackFormSubmission({
-          formId: 'rent-request',
-          status: 'error',
-          errorMessage: res.error,
-          ...submissionMeta,
-        });
-      }
-    });
+  const submitRentRequest = React.useCallback(
+    (parsed: RentFormResolvedValues) => {
+      const submissionMeta = {
+        locale,
+        carId: id,
+        rentalStart: parsed.rentalPeriod.startDate,
+        rentalEnd: parsed.rentalPeriod.endDate,
+        extrasCount: Array.isArray(extrasSelected) ? extrasSelected.length : 0,
+      };
+
+      startTransition(async () => {
+        const res = await RentAction(parsed);
+        if (res.success) {
+          toast.success(t('toast.success'));
+          clearStoredValues();
+          trackFormSubmission({
+            formId: 'rent-request',
+            status: 'success',
+            ...submissionMeta,
+          });
+          setTimeout(() => {
+            router.push(`/${locale}`);
+          }, 2000);
+        } else {
+          toast.error(t('toast.error'));
+          trackFormSubmission({
+            formId: 'rent-request',
+            status: 'error',
+            errorMessage: res.error,
+            ...submissionMeta,
+          });
+        }
+      });
+    },
+    [
+      clearStoredValues,
+      extrasSelected,
+      id,
+      locale,
+      router,
+      startTransition,
+      t,
+    ]
+  );
+
+  type SubmitOptions = {
+    bypassFlightCheck?: boolean;
   };
+
+  const onSubmit = React.useCallback(
+    (data: RentFormValues, options?: SubmitOptions) => {
+      const parsed: RentFormResolvedValues = rentSchema.parse(data);
+      const shouldPrompt = shouldAskForFlightNumbers(parsed);
+
+      if (shouldPrompt && !options?.bypassFlightCheck) {
+        setMissingFlightsDialogOpen(true);
+        return;
+      }
+
+      setMissingFlightsDialogOpen(false);
+      submitRentRequest(parsed);
+    },
+    [rentSchema, shouldAskForFlightNumbers, submitRentRequest]
+  );
+
+  const createSubmitHandler = (options?: SubmitOptions) =>
+    form.handleSubmit(
+      (values) => onSubmit(values, options),
+      onInvalid
+    );
 
   const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
     () => [
@@ -350,7 +426,7 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
       ) : null}
       <form
         ref={formRef}
-        onSubmit={form.handleSubmit(onSubmit, onInvalid)}
+        onSubmit={createSubmitHandler()}
         className='relative flex flex-col max-w-8xl mx-auto px-0 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'
         aria-busy={isPending}
         noValidate
@@ -360,7 +436,13 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
         </h2>
         <section className='mt-10 space-y-8'>
           <div data-section='adults' tabIndex={-1} className='scroll-mt-28'>
-            <BaseDetails locale={locale} form={form} car={car} />
+            <BaseDetails
+              locale={locale}
+              form={form}
+              car={car}
+              colorsLabel={tCars('details.colors')}
+              translateColor={(color) => tCars(`colors.${color}`)}
+            />
           </div>
 
           <div data-section='children' tabIndex={-1} className='scroll-mt-28'>
@@ -404,6 +486,96 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
           {t('buttons.submit')}
         </Button>
       </form>
+      <Dialog
+        open={isMissingFlightsDialogOpen}
+        onOpenChange={setMissingFlightsDialogOpen}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t('missingFlightsDialog.title')}</DialogTitle>
+            <DialogDescription>
+              {t('missingFlightsDialog.description')}
+            </DialogDescription>
+          </DialogHeader>
+          <div className='grid gap-4 md:grid-cols-2'>
+            <FormField
+              control={form.control}
+              name={'delivery.arrivalFlight'}
+              render={({ field }) => {
+                const value =
+                  typeof field.value === 'string' ? field.value : '';
+                return (
+                  <FormItem>
+                    <FormLabel>
+                      {t('sections.delivery.fields.arrivalFlight.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t(
+                          'sections.delivery.fields.arrivalFlight.placeholder'
+                        )}
+                        value={value}
+                        onChange={(event) =>
+                          field.onChange(event.target.value)
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+            <FormField
+              control={form.control}
+              name={'delivery.departureFlight'}
+              render={({ field }) => {
+                const value =
+                  typeof field.value === 'string' ? field.value : '';
+                return (
+                  <FormItem>
+                    <FormLabel>
+                      {t('sections.delivery.fields.departureFlight.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t(
+                          'sections.delivery.fields.departureFlight.placeholder'
+                        )}
+                        value={value}
+                        onChange={(event) =>
+                          field.onChange(event.target.value)
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </div>
+          <DialogFooter className='sm:justify-between'>
+            <Button
+              type='button'
+              variant='outline'
+              disabled={isPending}
+              onClick={() => {
+                createSubmitHandler({ bypassFlightCheck: true })();
+              }}
+            >
+              {t('buttons.flightNumberUnknown')}
+            </Button>
+            <Button
+              type='button'
+              disabled={!areFlightNumbersProvided || isPending}
+              onClick={() => {
+                createSubmitHandler()();
+              }}
+            >
+              {t('buttons.submit')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </Form>
   );
 }

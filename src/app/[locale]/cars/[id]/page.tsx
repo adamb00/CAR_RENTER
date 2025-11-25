@@ -6,7 +6,13 @@ import type { Metadata } from 'next';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { getCarById, getCars } from '@/lib/cars';
+import CarImageCarousel from '@/components/cars/CarImageCarousel';
+import {
+  CAR_COLOR_SWATCH,
+  type CarColor,
+  getCarById,
+  getCars,
+} from '@/lib/cars';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { LOCALES } from '@/i18n/config';
 
@@ -14,6 +20,12 @@ type CarPageParams = {
   locale: string;
   id: string;
 };
+
+const formatLabel = (value: string) =>
+  value
+    .split('_')
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
 
 export async function generateMetadata({
   params,
@@ -24,11 +36,14 @@ export async function generateMetadata({
   const resolvedLocale = resolveLocale(locale);
   const car = await getCarById(id);
 
-  if (!car || car.status !== 'available') {
+  if (!car) {
     return {};
   }
 
-  const t = await getTranslations({ locale: resolvedLocale, namespace: 'CarDetail' });
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'CarDetail',
+  });
   const title = t('meta.title', { carName: car.name });
   const description = t('meta.description', { carName: car.name });
   const siteUrl = getSiteUrl();
@@ -40,10 +55,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: Object.fromEntries(
-        LOCALES.map((loc) => [
-          loc,
-          `${siteUrl}/${loc}/cars/${car.id}`,
-        ])
+        LOCALES.map((loc) => [loc, `${siteUrl}/${loc}/cars/${car.id}`])
       ),
     },
     openGraph: {
@@ -89,11 +101,72 @@ export default async function CarPage({
   const resolvedLocale = resolveLocale(locale);
   const car = await getCarById(id);
 
-  if (!car || car.status !== 'available') {
+  if (!car) {
     notFound();
   }
 
-  const t = await getTranslations({ locale: resolvedLocale, namespace: 'Cars' });
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'Cars',
+  });
+
+  const translateBodyType = (bodyType: string) => {
+    try {
+      return t(`bodyTypes.${bodyType}`);
+    } catch {
+      return formatLabel(bodyType);
+    }
+  };
+
+  const translateFuel = (fuel: string) => {
+    try {
+      return t(`fuels.${fuel}`);
+    } catch {
+      return formatLabel(fuel);
+    }
+  };
+
+  const translatedBodyType = translateBodyType(car.bodyType);
+  const translatedFuel = translateFuel(car.fuel);
+
+  const carouselImages =
+    car.images && car.images.length > 0
+      ? Array.from(new Set(car.images))
+      : [car.image];
+
+  const colorLabels = car.colors.map((colorKey) => ({
+    key: colorKey,
+    label: t(`colors.${colorKey}`),
+  }));
+
+  const getBadgeStyle = (colorKey: CarColor) => {
+    const hex = CAR_COLOR_SWATCH[colorKey] ?? '#e5e7eb';
+    const rgb = hex.replace('#', '');
+    const r = parseInt(rgb.substring(0, 2), 16);
+    const g = parseInt(rgb.substring(2, 4), 16);
+    const b = parseInt(rgb.substring(4, 6), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    const textColor = luminance > 0.7 ? '#0f172a' : '#f8fafc';
+    return { backgroundColor: hex, color: textColor, borderColor: hex };
+  };
+
+  const monthIndex = new Date().getMonth();
+  const formatWeeklyPrice = (price: number) =>
+    new Intl.NumberFormat(resolvedLocale, {
+      style: 'currency',
+      currency: 'EUR',
+      maximumFractionDigits: 0,
+    }).format(price);
+
+  const getWeeklyPrice = (prices: number[]): number | null => {
+    if (!Array.isArray(prices) || prices.length === 0) return null;
+    const direct = prices[monthIndex];
+    if (Number.isFinite(direct)) return direct as number;
+    const fallback = prices.find((p) => Number.isFinite(p));
+    if (Number.isFinite(fallback)) return fallback as number;
+    const first = prices[0];
+    return Number.isFinite(first) ? first : null;
+  };
 
   const detailItems = [
     {
@@ -102,7 +175,7 @@ export default async function CarPage({
     },
     {
       icon: Car,
-      label: `${t('details.category')}: ${t(`categories.${car.category}`)}`,
+      label: translatedBodyType,
     },
     {
       icon: Luggage,
@@ -112,7 +185,7 @@ export default async function CarPage({
       icon: Luggage,
       label: t('details.luggage_small', { count: car.smallLuggage }),
     },
-  ] as const;
+  ];
 
   return (
     <div className='relative mx-auto flex max-w-6xl flex-col px-4 pt-18 pb-16 sm:px-6 md:pt-22 lg:px-8 lg:pt-24'>
@@ -126,13 +199,7 @@ export default async function CarPage({
 
       <div className='mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]'>
         <div className='overflow-hidden rounded-2xl border border-border/60 bg-muted/20'>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={car.image}
-            alt={car.name}
-            className='h-full w-full object-contain bg-background'
-            loading='lazy'
-          />
+          <CarImageCarousel images={carouselImages} name={car.name} />
         </div>
 
         <div className='flex flex-col gap-6 rounded-2xl border border-border/60 bg-card/60 p-5 shadow-sm sm:p-6'>
@@ -140,16 +207,24 @@ export default async function CarPage({
             <h1 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
               {car.name}
             </h1>
-            <p className='mt-2 text-base text-muted-foreground'>
-              {t(`categories.${car.category}`)} •{' '}
-              {t(`transmissions.${car.transmission}`)}
-            </p>
-            <p className='mt-4 text-2xl font-semibold text-primary'>
-              {t('labels.from_price', { price: car.pricePerDay })}
-              <span className='ml-2 text-sm font-normal text-muted-foreground'>
-                {t('labels.per_day')}
-              </span>
-            </p>
+            {(() => {
+              const weeklyPrice = getWeeklyPrice(car.prices);
+              if (!Number.isFinite(weeklyPrice ?? NaN)) return null;
+              const formatted = formatWeeklyPrice(weeklyPrice as number);
+              return (
+                <p className='mt-2 text-base font-semibold text-amber-dark leading-snug'>
+                  {t('labels.available_from_week', { price: formatted })}
+                </p>
+              );
+            })()}
+
+            <div className='mt-3 flex flex-wrap gap-2'>
+              <Badge variant='outline'>{translatedBodyType}</Badge>
+              <Badge variant='outline'>{translatedFuel}</Badge>
+              <Badge variant='outline'>
+                {t(`transmissions.${car.transmission}`)}
+              </Badge>
+            </div>
           </div>
 
           <div>
@@ -171,24 +246,38 @@ export default async function CarPage({
             </div>
           </div>
 
-          <div>
-            <h2 className='text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground'>
-              {t('details.colors')}
-            </h2>
-            <div className='mt-3 flex flex-wrap gap-2'>
-              {car.colors.map((colorKey) => (
-                <Badge key={`${car.id}-${colorKey}`} variant='outline'>
-                  {t(`colors.${colorKey}`)}
-                </Badge>
-              ))}
+          {car.colors.length > 0 && (
+            <div>
+              <h2 className='text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground'>
+                {t('details.colors')}
+              </h2>
+              <div className='mt-3 flex flex-wrap items-center gap-2 text-sm text-foreground/90'>
+                {colorLabels.map(({ key, label }) => (
+                  <Badge
+                    key={`${car.id}-color-${key}`}
+                    variant='outline'
+                    className='border'
+                    style={getBadgeStyle(key)}
+                  >
+                    {label}
+                  </Badge>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <Button asChild className='mt-2 w-full sm:w-auto'>
-            <Link href={`/${resolvedLocale}/cars/${car.id}/rent`}>
-              {t('buttons.interested')}
-            </Link>
-          </Button>
+          <div className='mt-2 flex flex-col gap-3 sm:flex-row'>
+            <Button asChild className='w-full sm:w-auto'>
+              <Link href={`/${resolvedLocale}/cars/${car.id}/rent`}>
+                {t('buttons.interested')}
+              </Link>
+            </Button>
+            <Button asChild variant='outline' className='w-full sm:w-auto'>
+              <Link href={`/${resolvedLocale}/contact?carId=${car.id}`}>
+                {t('buttons.request_quote')}
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

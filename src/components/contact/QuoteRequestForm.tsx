@@ -83,12 +83,11 @@ const buildSchema = (t: ReturnType<typeof useTranslations<'Contact'>>) =>
     preferredChannel: z.enum(CHANNELS),
     rentalStart: z.string().min(1, t('form.errors.rentalStartRequired')),
     rentalEnd: z.string().min(1, t('form.errors.rentalEndRequired')),
-    arrivalFlight: z.string().min(1, t('form.errors.arrivalFlightRequired')),
-    departureFlight: z
-      .string()
-      .min(1, t('form.errors.departureFlightRequired')),
+    arrivalFlight: z.string().optional(),
+    departureFlight: z.string().optional(),
     partySize: z.string().optional(),
     children: z.string().optional(),
+    carId: z.string().optional(),
     consents: z.object({
       privacy: z
         .boolean()
@@ -101,7 +100,12 @@ const buildSchema = (t: ReturnType<typeof useTranslations<'Contact'>>) =>
 
 type QuoteRequestValues = z.infer<ReturnType<typeof buildSchema>> & FieldValues;
 
-export function QuoteRequestForm({ locale }: { locale: string }) {
+type QuoteRequestFormProps = {
+  locale: string;
+  selectedCar?: { id: string; name: string } | null;
+};
+
+export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps) {
   const t = useTranslations('Contact');
   const messages = useMessages();
   const [isPending, startTransition] = useTransition();
@@ -120,9 +124,10 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
       departureFlight: '',
       partySize: '',
       children: '',
+      carId: selectedCar?.id ?? '',
       consents: { privacy: false, terms: false },
     }),
-    []
+    [selectedCar?.id]
   );
 
   const form = useForm<QuoteRequestValues>({
@@ -230,11 +235,23 @@ export function QuoteRequestForm({ locale }: { locale: string }) {
         <p className='mt-2 text-base text-grey-dark-3 dark:text-grey-dark-2'>
           {t('form.description')}
         </p>
+        {selectedCar ? (
+          <p className='mt-3 text-sm font-medium text-amber-dark'>
+            {t('form.selectedCar', { carName: selectedCar.name })}
+          </p>
+        ) : null}
         <Form {...form}>
           <form
             className='mt-6 space-y-6'
             onSubmit={form.handleSubmit(onSubmit)}
           >
+            <FormField
+              control={form.control}
+              name='carId'
+              render={({ field }) => (
+                <input type='hidden' value={field.value ?? ''} onChange={field.onChange} />
+              )}
+            />
             <div className='grid gap-4 sm:grid-cols-2'>
               <FormField
                 control={form.control}

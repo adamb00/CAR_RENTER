@@ -2,8 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo';
 import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
+import { getCarById } from '@/lib/cars';
 
 type PageParams = { locale: string };
+type SearchParams = { carId?: string };
 
 export async function generateMetadata({
   params,
@@ -22,15 +24,23 @@ export async function generateMetadata({
 
 export default async function ContactPage({
   params,
+  searchParams,
 }: {
   params: Promise<PageParams>;
+  searchParams?: Promise<SearchParams>;
 }) {
   const { locale = 'hu' } = await params;
+  const resolvedSearchParams = (await searchParams) ?? {};
   const resolvedLocale = resolveLocale(locale);
   const t = await getTranslations({
     locale: resolvedLocale,
     namespace: 'Contact',
   });
+
+  const selectedCar =
+    resolvedSearchParams.carId && resolvedSearchParams.carId.trim()
+      ? await getCarById(resolvedSearchParams.carId.trim())
+      : null;
 
   return (
     <>
@@ -47,7 +57,12 @@ export default async function ContactPage({
           </p>
         </div>
       </div>
-      <QuoteRequestForm locale={resolvedLocale} />
+      <QuoteRequestForm
+        locale={resolvedLocale}
+        selectedCar={
+          selectedCar ? { id: selectedCar.id, name: `${selectedCar.manufacturer} ${selectedCar.model}`.trim() } : undefined
+        }
+      />
     </>
   );
 }

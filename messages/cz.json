@@ -1113,6 +1113,7 @@
     "form": {
       "title": "Požádej o nabídku na míru",
       "description": "Napiš, kdy a za jakých podmínek chceš auto půjčit – během několika hodin ti odpovíme.",
+      "selectedCar": "Vybrané auto: {carName}",
       "fields": {
         "name": {
           "label": "Celé jméno",
@@ -1141,11 +1142,11 @@
           "label": "Doba trvání pronájmu"
         },
         "arrivalFlight": {
-          "label": "Číslo příletového letu",
+          "label": "Číslo příletového letu (nepovinné)",
           "placeholder": "např. FR1234"
         },
         "departureFlight": {
-          "label": "Číslo odletového letu",
+          "label": "Číslo odletového letu (nepovinné)",
           "placeholder": "např. FR5678"
         },
         "partySize": {
@@ -1198,7 +1199,24 @@
       "manual": "Manuální",
       "automatic": "Automatická",
       "per_day": "/ den",
-      "from_price": "od €{price}"
+      "from_price": "od €{price}",
+      "weekly_price": "{price} / týden",
+      "available_from_week": "K dispozici už od {price} / týden"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Kombi",
+      "van": "Dodávka",
+      "pickup": "Pickup",
+      "coupe": "Kupé"
+    },
+    "fuels": {
+      "petrol": "Benzín",
+      "diesel": "Nafta",
+      "electric": "Elektromobil",
+      "hybrid": "Hybrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1229,7 +1247,8 @@
       "colors": "Dostupné barvy"
     },
     "buttons": {
-      "interested": "Mám zájem"
+      "interested": "Mám zájem",
+      "request_quote": "Zaslat nabídku"
     }
   },
   "Insurance": {
@@ -1465,7 +1484,12 @@
       "removeChild": "Odstranit",
       "addDriver": "Přidat řidiče",
       "removeDriver": "Odebrat řidiče",
-      "submit": "Odeslat rezervaci"
+      "submit": "Odeslat rezervaci",
+      "flightNumberUnknown": "I don't know the flight numbers right now"
+    },
+    "missingFlightsDialog": {
+      "title": "Flight numbers missing",
+      "description": "You haven't provided the arrival and departure flight numbers yet. Please add them below or confirm that you don't know them right now."
     },
     "searching": "Zpracovávání údajů...",
     "extras": {

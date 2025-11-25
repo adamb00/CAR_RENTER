@@ -1111,6 +1111,7 @@
     "form": {
       "title": "Be om et skreddersydd tilbud",
       "description": "Skriv når og på hvilke vilkår du ønsker å leie bil – vi svarer i løpet av noen timer.",
+      "selectedCar": "Valgt bil: {carName}",
       "fields": {
         "name": {
           "label": "Fullt navn",
@@ -1139,11 +1140,11 @@
           "label": "Leieperiode"
         },
         "arrivalFlight": {
-          "label": "Ankommende flynummer",
+          "label": "Ankommende flynummer (valgfritt)",
           "placeholder": "f.eks. FR1234"
         },
         "departureFlight": {
-          "label": "Flynummer for hjemreise",
+          "label": "Flynummer for hjemreise (valgfritt)",
           "placeholder": "f.eks. FR5678"
         },
         "partySize": {
@@ -1196,7 +1197,24 @@
       "manual": "Manuell",
       "automatic": "Automat",
       "per_day": "/ dag",
-      "from_price": "fra €{price}"
+      "from_price": "fra €{price}",
+      "weekly_price": "{price} / uke",
+      "available_from_week": "Tilgjengelig fra {price} / uke"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Stasjonsvogn",
+      "van": "Varebil",
+      "pickup": "Pickup",
+      "coupe": "Kupé"
+    },
+    "fuels": {
+      "petrol": "Bensin",
+      "diesel": "Diesel",
+      "electric": "Elektrisk",
+      "hybrid": "Hybrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1463,7 +1481,12 @@
       "removeChild": "Fjern",
       "addDriver": "Legg til sjåfør",
       "removeDriver": "Fjern sjåfør",
-      "submit": "Send reservasjon"
+      "submit": "Send reservasjon",
+      "flightNumberUnknown": "I don't know the flight numbers right now"
+    },
+    "missingFlightsDialog": {
+      "title": "Flight numbers missing",
+      "description": "You haven't provided the arrival and departure flight numbers yet. Please add them below or confirm that you don't know them right now."
     },
     "searching": "Behandler data...",
     "extras": {

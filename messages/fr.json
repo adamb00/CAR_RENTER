@@ -1103,6 +1103,7 @@
     "form": {
       "title": "Demande une offre personnalisée",
       "description": "Indique quand et dans quelles conditions tu souhaites louer une voiture – nous te répondons en quelques heures.",
+      "selectedCar": "Voiture choisie : {carName}",
       "fields": {
         "name": {
           "label": "Nom complet",
@@ -1131,11 +1132,11 @@
           "label": "Durée de la location"
         },
         "arrivalFlight": {
-          "label": "Numéro du vol d’arrivée",
+          "label": "Numéro du vol d’arrivée (optionnel)",
           "placeholder": "ex. FR1234"
         },
         "departureFlight": {
-          "label": "Numéro du vol de retour",
+          "label": "Numéro du vol de retour (optionnel)",
           "placeholder": "ex. FR5678"
         },
         "partySize": {
@@ -1188,7 +1189,24 @@
       "manual": "Manuelle",
       "automatic": "Automatique",
       "per_day": "/ jour",
-      "from_price": "à partir de €{price}"
+      "from_price": "à partir de €{price}",
+      "weekly_price": "{price} / semaine",
+      "available_from_week": "Disponible dès {price} / semaine"
+    },
+    "bodyTypes": {
+      "sedan": "Berline",
+      "hatchback": "Compacte (hatchback)",
+      "suv": "SUV",
+      "wagon": "Break",
+      "van": "Van",
+      "pickup": "Pickup",
+      "coupe": "Coupé"
+    },
+    "fuels": {
+      "petrol": "Essence",
+      "diesel": "Diesel",
+      "electric": "Électrique",
+      "hybrid": "Hybride"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1219,7 +1237,8 @@
       "colors": "Couleurs disponibles"
     },
     "buttons": {
-      "interested": "Intéressé"
+      "interested": "Intéressé",
+      "request_quote": "Demander une offre"
     }
   },
   "Insurance": {
@@ -1456,7 +1475,12 @@
       "removeChild": "Supprimer",
       "addDriver": "Ajouter un conducteur",
       "removeDriver": "Supprimer le conducteur",
-      "submit": "Envoyer la réservation"
+      "submit": "Envoyer la réservation",
+      "flightNumberUnknown": "Je ne connais pas encore les numéros de vol"
+    },
+    "missingFlightsDialog": {
+      "title": "Numéros de vol manquants",
+      "description": "Vous n'avez pas encore indiqué les numéros de vol d'arrivée et de départ. Ajoutez-les ci-dessous ou confirmez que vous ne les connaissez pas pour le moment."
     },
     "searching": "Traitement des données...",
     "extras": {

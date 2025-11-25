@@ -563,14 +563,6 @@ export function createRentSchema(
       const deliveryData = delivery ?? {};
       const placeType = deliveryData.placeType;
       const address = deliveryData.address ?? {};
-      const arrivalFlight =
-        typeof deliveryData.arrivalFlight === 'string'
-          ? deliveryData.arrivalFlight
-          : '';
-      const departureFlight =
-        typeof deliveryData.departureFlight === 'string'
-          ? deliveryData.departureFlight
-          : '';
 
       if (!placeType) {
         ctx.addIssue({
@@ -596,22 +588,6 @@ export function createRentSchema(
           });
         }
       });
-
-      if (arrivalFlight.trim().length === 0) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.delivery.arrivalFlight.required'),
-          path: ['delivery', 'arrivalFlight'],
-        });
-      }
-
-      if (departureFlight.trim().length === 0) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.delivery.departureFlight.required'),
-          path: ['delivery', 'departureFlight'],
-        });
-      }
 
       const childList = Array.isArray(children) ? children : [];
       if (childList.length > 0) {

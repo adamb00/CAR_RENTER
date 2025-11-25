@@ -22,7 +22,7 @@ export async function generateMetadata({
   const resolvedLocale = resolveLocale(locale);
   const car = await getCarById(id);
 
-  if (!car || car.status !== 'available') {
+  if (!car) {
     return {};
   }
 
@@ -87,13 +87,16 @@ export default async function RentPage({
   const resolvedLocale = resolveLocale(locale);
   const car = await getCarById(id);
 
-  if (!car || car.status !== 'available') {
+  if (!car) {
     notFound();
   }
 
   return (
     <NoSSR>
-      <RentPageClient locale={resolvedLocale} car={{ id: car.id, seats: car.seats }} />
+      <RentPageClient
+        locale={resolvedLocale}
+        car={{ id: car.id, seats: car.seats, colors: car.colors }}
+      />
     </NoSSR>
   );
 }

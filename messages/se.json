@@ -1104,6 +1104,7 @@
     "form": {
       "title": "Begär en personlig offert",
       "description": "Skriv när och på vilka villkor du vill hyra bil – vi svarar inom några timmar.",
+      "selectedCar": "Valt bil: {carName}",
       "fields": {
         "name": {
           "label": "Fullständigt namn",
@@ -1132,11 +1133,11 @@
           "label": "Hyresperiod"
         },
         "arrivalFlight": {
-          "label": "Ankommande flygnummer",
+          "label": "Ankommande flygnummer (valfritt)",
           "placeholder": "t.ex. FR1234"
         },
         "departureFlight": {
-          "label": "Hemresans flygnummer",
+          "label": "Hemresans flygnummer (valfritt)",
           "placeholder": "t.ex. FR5678"
         },
         "partySize": {
@@ -1189,7 +1190,24 @@
       "manual": "Manuell",
       "automatic": "Automat",
       "per_day": "/ dag",
-      "from_price": "från €{price}"
+      "from_price": "från €{price}",
+      "weekly_price": "{price} / vecka",
+      "available_from_week": "Tillgänglig från {price} / vecka"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Halvkombi",
+      "suv": "SUV",
+      "wagon": "Kombi",
+      "van": "Skåpbil",
+      "pickup": "Pickup",
+      "coupe": "Kupé"
+    },
+    "fuels": {
+      "petrol": "Bensin",
+      "diesel": "Diesel",
+      "electric": "Elektrisk",
+      "hybrid": "Hybrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1220,7 +1238,8 @@
       "colors": "Tillgängliga färger"
     },
     "buttons": {
-      "interested": "Intresserad"
+      "interested": "Intresserad",
+      "request_quote": "Be om offert"
     }
   },
   "Insurance": {
@@ -1456,7 +1475,12 @@
       "removeChild": "Ta bort",
       "addDriver": "Lägg till förare",
       "removeDriver": "Ta bort förare",
-      "submit": "Skicka bokning"
+      "submit": "Skicka bokning",
+      "flightNumberUnknown": "I don't know the flight numbers right now"
+    },
+    "missingFlightsDialog": {
+      "title": "Flight numbers missing",
+      "description": "You haven't provided the arrival and departure flight numbers yet. Please add them below or confirm that you don't know them right now."
     },
     "searching": "Bearbetar uppgifter...",
     "extras": {

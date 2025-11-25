@@ -1103,6 +1103,7 @@
     "form": {
       "title": "Request a personalised quote",
       "description": "Tell us when and under what conditions you’d like to rent a car – we’ll reply within a few hours.",
+      "selectedCar": "Selected car: {carName}",
       "fields": {
         "name": {
           "label": "Full name",
@@ -1131,11 +1132,11 @@
           "label": "Rental period"
         },
         "arrivalFlight": {
-          "label": "Arrival flight number",
+          "label": "Arrival flight number (optional)",
           "placeholder": "e.g. FR1234"
         },
         "departureFlight": {
-          "label": "Return flight number",
+          "label": "Return flight number (optional)",
           "placeholder": "e.g. FR5678"
         },
         "partySize": {
@@ -1188,7 +1189,24 @@
       "manual": "Manual",
       "automatic": "Automatic",
       "per_day": "/ day",
-      "from_price": "from €{price}"
+      "from_price": "from €{price}",
+      "weekly_price": "{price} / week",
+      "available_from_week": "Available from {price} / week"
+    },
+    "bodyTypes": {
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Wagon",
+      "van": "Van",
+      "pickup": "Pickup",
+      "coupe": "Coupe"
+    },
+    "fuels": {
+      "petrol": "Petrol",
+      "diesel": "Diesel",
+      "electric": "Electric",
+      "hybrid": "Hybrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1219,7 +1237,8 @@
       "colors": "Available colours"
     },
     "buttons": {
-      "interested": "I’m interested"
+      "interested": "I’m interested",
+      "request_quote": "Request quote"
     }
   },
   "Insurance": {
@@ -1455,7 +1474,12 @@
       "removeChild": "Remove",
       "addDriver": "Add driver",
       "removeDriver": "Remove driver",
-      "submit": "Submit booking"
+      "submit": "Submit booking",
+      "flightNumberUnknown": "I don't know the flight numbers right now"
+    },
+    "missingFlightsDialog": {
+      "title": "Flight numbers missing",
+      "description": "You haven't provided the arrival and departure flight numbers yet. Please add them below or confirm that you don't know them right now."
     },
     "searching": "Processing data...",
     "extras": {

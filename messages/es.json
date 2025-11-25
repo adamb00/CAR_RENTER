@@ -1142,7 +1142,24 @@
       "manual": "Manual",
       "automatic": "Automático",
       "per_day": "/ día",
-      "from_price": "Desde €{price}"
+      "from_price": "Desde €{price}",
+      "weekly_price": "{price} / semana",
+      "available_from_week": "Disponible desde {price} / semana"
+    },
+    "bodyTypes": {
+      "sedan": "Sedán",
+      "hatchback": "Hatchback",
+      "suv": "SUV",
+      "wagon": "Familiar",
+      "van": "Furgoneta",
+      "pickup": "Pickup",
+      "coupe": "Coupé"
+    },
+    "fuels": {
+      "petrol": "Gasolina",
+      "diesel": "Diésel",
+      "electric": "Eléctrico",
+      "hybrid": "Híbrido"
     },
     "colors": {
       "milky_beige": "Beige marfil",
@@ -1169,7 +1186,8 @@
       "colors": "Colores disponibles"
     },
     "buttons": {
-      "interested": "Me interesa"
+      "interested": "Me interesa",
+      "request_quote": "Solicitar oferta"
     },
     "transmissions": {
       "manual": "Manual",
@@ -1470,6 +1488,7 @@
     "form": {
       "title": "Solicita tu presupuesto personalizado",
       "description": "Indícanos las fechas y cuántas personas viajan y te enviaremos una propuesta adaptada en pocas horas.",
+      "selectedCar": "Coche elegido: {carName}",
       "fields": {
         "name": {
           "label": "Nombre completo",
@@ -1498,11 +1517,11 @@
           "label": "Periodo de alquiler"
         },
         "arrivalFlight": {
-          "label": "Número de vuelo de llegada",
+          "label": "Número de vuelo de llegada (opcional)",
           "placeholder": "Ej. FR1234"
         },
         "departureFlight": {
-          "label": "Número de vuelo de regreso",
+          "label": "Número de vuelo de regreso (opcional)",
           "placeholder": "Ej. FR5678"
         },
         "partySize": {
@@ -1559,7 +1578,12 @@
       "removeChild": "Eliminar",
       "addDriver": "Añadir conductor",
       "removeDriver": "Eliminar conductor",
-      "submit": "Enviar solicitud"
+      "submit": "Enviar solicitud",
+      "flightNumberUnknown": "Ahora mismo no conozco los números de vuelo"
+    },
+    "missingFlightsDialog": {
+      "title": "Faltan los números de vuelo",
+      "description": "Aún no has indicado los números de vuelo de llegada y salida. Añádelos a continuación o confirma que por ahora no los conoces."
     },
     "searching": "Proceso de datos...",
     "extras": {

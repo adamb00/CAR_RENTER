@@ -104,56 +104,7 @@ export default function Delivery({
           );
         }}
       />
-      <div className='grid gap-4 md:grid-cols-2'>
-        <FormField
-          control={form.control}
-          name={'delivery.arrivalFlight'}
-          render={({ field }) => {
-            const value = typeof field.value === 'string' ? field.value : '';
-            return (
-              <FormItem>
-                <FormLabel>
-                  {t('sections.delivery.fields.arrivalFlight.label')}
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t(
-                      'sections.delivery.fields.arrivalFlight.placeholder'
-                    )}
-                    value={value}
-                    onChange={(event) => field.onChange(event.target.value)}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
-        <FormField
-          control={form.control}
-          name={'delivery.departureFlight'}
-          render={({ field }) => {
-            const value = typeof field.value === 'string' ? field.value : '';
-            return (
-              <FormItem>
-                <FormLabel>
-                  {t('sections.delivery.fields.departureFlight.label')}
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t(
-                      'sections.delivery.fields.departureFlight.placeholder'
-                    )}
-                    value={value}
-                    onChange={(event) => field.onChange(event.target.value)}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
-      </div>
+
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
         <FormField
           control={form.control}

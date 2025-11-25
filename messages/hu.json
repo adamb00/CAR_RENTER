@@ -1103,6 +1103,7 @@
     "form": {
       "title": "Kérj személyre szabott ajánlatot",
       "description": "Írd meg, mikor és milyen feltételekkel szeretnél autót bérelni – néhány órán belül válaszolunk.",
+      "selectedCar": "Kiválasztott autó: {carName}",
       "fields": {
         "name": {
           "label": "Teljes név",
@@ -1131,11 +1132,11 @@
           "label": "Bérlés időtartama"
         },
         "arrivalFlight": {
-          "label": "Érkező járatszám",
+          "label": "Érkező járatszám (opcionális)",
           "placeholder": "pl. FR1234"
         },
         "departureFlight": {
-          "label": "Hazautazó járatszám",
+          "label": "Hazautazó járatszám (opcionális)",
           "placeholder": "pl. FR5678"
         },
         "partySize": {
@@ -1188,7 +1189,24 @@
       "manual": "Manuális",
       "automatic": "Automata",
       "per_day": "/ nap",
-      "from_price": "€{price}-tól"
+      "from_price": "€{price}-tól",
+      "weekly_price": "{price} / hét",
+      "available_from_week": "Elérhető már akár {price} / hét"
+    },
+    "bodyTypes": {
+      "sedan": "Szedán",
+      "hatchback": "Ferdehátú",
+      "suv": "SUV",
+      "wagon": "Kombi",
+      "van": "Kisbusz",
+      "pickup": "Pickup",
+      "coupe": "Kupé"
+    },
+    "fuels": {
+      "petrol": "Benzin",
+      "diesel": "Dízel",
+      "electric": "Elektromos",
+      "hybrid": "Hibrid"
     },
     "colors": {
       "milky_beige": "Milky Beige",
@@ -1219,7 +1237,8 @@
       "colors": "Elérhető színek"
     },
     "buttons": {
-      "interested": "Érdekel"
+      "interested": "Érdekel",
+      "request_quote": "Ajánlatkérés"
     }
   },
   "Insurance": {
@@ -1455,7 +1474,12 @@
       "removeChild": "Eltávolítás",
       "addDriver": "Sofőr hozzáadása",
       "removeDriver": "Sofőr eltávolítása",
-      "submit": "Foglalás elküldése"
+      "submit": "Foglalás elküldése",
+      "flightNumberUnknown": "Jelenleg nem tudom a járatszámokat"
+    },
+    "missingFlightsDialog": {
+      "title": "Hiányzó járatszámok",
+      "description": "Még nem adtad meg az érkezési és indulási járatszámot. Add meg őket alább vagy jelezd, hogy jelenleg nem tudod."
     },
     "searching": "Adatok feldolgozása...",
     "extras": {
