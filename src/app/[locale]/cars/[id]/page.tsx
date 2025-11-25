@@ -27,6 +27,8 @@ const formatLabel = (value: string) =>
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(' ');
 
+export const revalidate = 0;
+
 export async function generateMetadata({
   params,
 }: {

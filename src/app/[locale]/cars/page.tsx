@@ -10,6 +10,8 @@ import Link from 'next/link';
 
 type PageParams = { locale: string };
 
+export const revalidate = 0;
+
 export async function generateMetadata({
   params,
 }: {
