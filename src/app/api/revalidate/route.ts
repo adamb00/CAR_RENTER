@@ -30,20 +30,11 @@ export async function POST(request: Request) {
       revalidateTag(`car-${carId}`, 'default');
     }
 
-    console.log(
-      'Revalidating paths for locales:',
-      targetLocales,
-      'and carId:',
-      carId
-    );
-
     targetLocales.forEach((locale) => {
       revalidatePath(`/${locale}/cars`);
-      console.log('Revalidated path:', `/${locale}/cars`);
 
       if (carId) {
         revalidatePath(`/${locale}/cars/${carId}`);
-        console.log('Revalidated path:', `/${locale}/cars/${carId}`);
       }
     });
 
