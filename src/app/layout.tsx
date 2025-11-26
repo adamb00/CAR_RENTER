@@ -64,6 +64,9 @@ export async function generateMetadata({
       title: t('brand'),
       statusBarStyle: 'default',
     },
+    other: {
+      google: 'notranslate',
+    },
   };
 }
 
@@ -85,7 +88,12 @@ export default async function RootLayout({
   const hasGa = Boolean(gaMeasurementId);
 
   return (
-    <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
+    <html
+      lang={DEFAULT_LOCALE}
+      translate='no'
+      className='notranslate'
+      suppressHydrationWarning
+    >
       <Analytics />
       {hasGtm ? <GoogleTagManager gtmId={gtmId} /> : null}
       {hasGa ? <GoogleAnalytics gaId={gaMeasurementId} /> : null}
