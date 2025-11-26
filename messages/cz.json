@@ -645,7 +645,13 @@
       {
         "title": "VOP – smluvní podmínky",
         "description": "Oficiální smluvní podmínky (GTC) na Fuerteventuře a Lanzarote.",
-        "keywords": ["vop", "gtc", "smlouva", "právní", "lanzarote"],
+        "keywords": [
+          "vop",
+          "gtc",
+          "smlouva",
+          "právní",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -787,7 +793,6 @@
         "readingTime": "6 minut čtení",
         "author": "Zodiacs Rent a Car"
       },
-
       "sections": [
         {
           "id": "corralejo-dunes",
@@ -812,7 +817,6 @@
             "description": "Zastav se u <strong>Grandes Playas de Corralejo</strong> – ideální místo na fotky!"
           }
         },
-
         {
           "id": "betancuria",
           "icon": "🏞️",
@@ -845,7 +849,6 @@
             ]
           }
         },
-
         {
           "id": "ajuy",
           "icon": "🌋",
@@ -865,7 +868,6 @@
             }
           ]
         },
-
         {
           "id": "why-rent",
           "icon": "🚙",
@@ -882,7 +884,6 @@
             }
           ]
         },
-
         {
           "id": "sustainability",
           "icon": "🌿",
@@ -898,7 +899,6 @@
           "closing": "Fuerteventura ti poděkuje – a ráda tě uvítá zpět."
         }
       ],
-
       "cta": {
         "title": "Objev ostrov pohodlně a svobodně s půjčeným autem!",
         "paragraphs": [
@@ -917,7 +917,6 @@
         ]
       }
     },
-
     "fuerteventura-visszatero-aramlat-biztonsagos-furdozes": {
       "meta": {
         "title": "Pozor! Nebezpečné zpětné proudy – bezpečné koupání na Fuerteventuře",
@@ -939,7 +938,6 @@
           "alt": "Varovná cedule na divoké pláži Cofete"
         }
       },
-
       "hero": {
         "icon": "⚠️",
         "title": "Pozor! Nebezpečné zpětné proudy na Fuerteventuře – jak se koupat bezpečně",
@@ -951,7 +949,6 @@
         "readingTime": "7 minut čtení",
         "author": "Zodiacs Rent a Car"
       },
-
       "sections": [
         {
           "id": "rip-basics",
@@ -965,7 +962,6 @@
             "Proud netáhne ke dnu, ale směrem ven, a rychle unavuje."
           ]
         },
-
         {
           "id": "recognize-signs",
           "title": "Jak poznat nebezpečné místo",
@@ -984,7 +980,6 @@
             "description": "Vyfoť si značení na pláži, abys později věděl, co která vlajka znamená."
           }
         },
-
         {
           "id": "what-to-do",
           "title": "Co dělat, když tě proud zachytí?",
@@ -1000,7 +995,6 @@
           ],
           "closing": "Čím klidnější zůstaneš, tím vyšší šanci máš dostat se ven vlastní silou."
         },
-
         {
           "id": "personal-story",
           "title": "Osobní příběh: zachránil jsem tři děti na Cofete",
@@ -1013,17 +1007,17 @@
             "description": "Poznej pohyb oceánu a nauč to i svou rodinu."
           }
         },
-
         {
           "id": "did-you-know",
           "title": "Věděl jsi? Proud je rychlejší než profesionální plavec",
-          "paragraphs": ["V číslech je to nejsrozumitelnější:"],
+          "paragraphs": [
+            "V číslech je to nejsrozumitelnější:"
+          ],
           "bullets": [
             "Olimpijský plavec: cca 2,3 m/s.",
             "Zpětný proud: cca 2,4 m/s."
           ]
         },
-
         {
           "id": "respect-nature",
           "title": "Respektuj přírodu, chraň ostrov",
@@ -1036,7 +1030,6 @@
             "Drž se vyznačených cest."
           ]
         },
-
         {
           "id": "safe-travel",
           "title": "Cestuj chytře – s půjčeným autem",
@@ -1047,7 +1040,6 @@
           "closing": "Sdílej článek, ať se na ostrově koupe bezpečně co nejvíce lidí."
         }
       ],
-
       "cta": {
         "title": "Cestuj bezpečně s auty Zodiacs",
         "paragraphs": [
@@ -1066,7 +1058,6 @@
         ]
       }
     },
-
     "backToBlog": "Zpět na blog"
   },
   "WhatsApp": {
@@ -2277,5 +2268,47 @@
         "answer": "Není to nutné, každé vrácené vozidlo důkladně vyčistíme a vydezinfikujeme, což je zahrnuto v ceně pronájmu."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Děkujeme za vaši žádost o rezervaci",
+      "title": "Děkujeme za vaši žádost o rezervaci",
+      "intro": "Obdrželi jsme údaje a brzy vás budeme kontaktovat s potvrzením.",
+      "footerNote": "Pokud potřebujete údaje upravit, odpovězte na tento e-mail.",
+      "ctaLabel": "Přejít na web",
+      "rows": {
+        "period": "Termín",
+        "contactName": "Kontaktní osoba",
+        "contactEmail": "E-mail",
+        "phone": "Telefon",
+        "arrivalFlight": "Příletový let",
+        "departureFlight": "Odletový let"
+      }
+    },
+    "contactQuote": {
+      "subject": "Děkujeme za váš zájem",
+      "title": "Děkujeme za váš zájem",
+      "intro": "Obdrželi jsme vaši žádost a brzy se vám ozveme.",
+      "footerNote": "Pokud potřebujete údaje upravit, odpovězte na tento e-mail.",
+      "ctaLabel": "Pokračovat na webu",
+      "rows": {
+        "name": "Jméno",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "period": "Termín",
+        "preferredChannel": "Preferovaný kanál",
+        "arrivalFlight": "Příletový let",
+        "departureFlight": "Odletový let",
+        "partySize": "Počet cestujících",
+        "children": "Počet dětí",
+        "car": "Vybrané auto"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

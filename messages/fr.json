@@ -645,7 +645,13 @@
       {
         "title": "CGV – conditions générales de vente",
         "description": "Conditions contractuelles officielles (GTC) à Fuerteventura et Lanzarote.",
-        "keywords": ["cgv", "gtc", "contrat", "juridique", "lanzarote"],
+        "keywords": [
+          "cgv",
+          "gtc",
+          "contrat",
+          "juridique",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1467,7 +1473,6 @@
       "details": "Plus de détails :"
     }
   },
-
   "RentForm": {
     "title": "Veuillez remplir le formulaire ci-dessous pour finaliser votre réservation",
     "buttons": {
@@ -2268,5 +2273,47 @@
         "answer": "Ce n’est pas nécessaire, nous nettoyons et désinfectons soigneusement chaque véhicule après sa restitution ; ce service est inclus dans le prix de la location."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Merci pour votre demande de réservation",
+      "title": "Merci pour votre demande de réservation",
+      "intro": "Nous avons bien reçu vos informations et nous vous contacterons bientôt pour confirmer.",
+      "footerNote": "Si vous devez mettre à jour des informations, répondez à cet e-mail.",
+      "ctaLabel": "Visiter le site",
+      "rows": {
+        "period": "Dates",
+        "contactName": "Contact",
+        "contactEmail": "E-mail",
+        "phone": "Téléphone",
+        "arrivalFlight": "Vol d'arrivée",
+        "departureFlight": "Vol retour"
+      }
+    },
+    "contactQuote": {
+      "subject": "Merci pour votre demande",
+      "title": "Merci pour votre demande",
+      "intro": "Nous avons bien reçu votre demande et nous vous contacterons bientôt.",
+      "footerNote": "Si vous devez mettre à jour des informations, répondez à cet e-mail.",
+      "ctaLabel": "Continuer sur le site",
+      "rows": {
+        "name": "Nom",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "period": "Dates",
+        "preferredChannel": "Canal préféré",
+        "arrivalFlight": "Vol d'arrivée",
+        "departureFlight": "Vol retour",
+        "partySize": "Nombre de voyageurs",
+        "children": "Nombre d'enfants",
+        "car": "Véhicule choisi"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

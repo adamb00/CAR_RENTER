@@ -7,6 +7,7 @@ import { LOCALES } from '@/i18n/config';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { NoSSR } from '@/components/NoSSR';
 import RentPageClient from './client-page';
+import { getContactQuoteById } from '@/lib/contactQuotes';
 
 type PageParams = {
   locale: string;
@@ -80,12 +81,26 @@ export async function generateStaticParams(): Promise<PageParams[]> {
 
 export default async function RentPage({
   params,
+  searchParams,
 }: {
   params: Promise<PageParams>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const { locale, id } = await params;
+  const [{ locale, id }, resolvedSearchParams] = await Promise.all([
+    params,
+    searchParams,
+  ]);
   const resolvedLocale = resolveLocale(locale);
-  const car = await getCarById(id);
+  const quoteIdRaw = resolvedSearchParams?.quoteId;
+  const quoteId = Array.isArray(quoteIdRaw) ? quoteIdRaw[0] : quoteIdRaw;
+  const isValidQuoteId =
+    typeof quoteId === 'string' &&
+    /^[0-9a-fA-F-]{36}$/.test(quoteId ?? '');
+
+  const [car, quote] = await Promise.all([
+    getCarById(id),
+    isValidQuoteId ? getContactQuoteById(quoteId) : Promise.resolve(null),
+  ]);
 
   if (!car) {
     notFound();
@@ -96,6 +111,7 @@ export default async function RentPage({
       <RentPageClient
         locale={resolvedLocale}
         car={{ id: car.id, seats: car.seats, colors: car.colors }}
+        quotePrefill={quote && quote.carId && quote.carId !== car.id ? null : quote}
       />
     </NoSSR>
   );

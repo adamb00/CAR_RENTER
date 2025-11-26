@@ -645,7 +645,13 @@
       {
         "title": "ÁSZF – szerződési feltételek",
         "description": "A hivatalos szerződési feltételek (GTC) Fuerteventurán és Lanzarotén.",
-        "keywords": ["ászf", "gtc", "szerződés", "jogi", "lanzarote"],
+        "keywords": [
+          "ászf",
+          "gtc",
+          "szerződés",
+          "jogi",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -2267,5 +2273,47 @@
         "answer": "Nem szükséges, mi minden visszahozott autót alaposan kitakarítunk és fertőtlenítünk, ez benne van a bérleti díjban."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Köszönjük foglalási kérelmét",
+      "title": "Köszönjük a foglalási kérelmet!",
+      "intro": "Megkaptuk a részleteket, hamarosan felvesszük Önnel a kapcsolatot a visszaigazoláshoz.",
+      "footerNote": "Ha módosítani szeretné a megadott adatokat, válaszoljon erre az e-mailre.",
+      "ctaLabel": "Tovább a weboldalra",
+      "rows": {
+        "period": "Időszak",
+        "contactName": "Kapcsolattartó",
+        "contactEmail": "E-mail",
+        "phone": "Telefon",
+        "arrivalFlight": "Érkezési járat",
+        "departureFlight": "Visszaút járat"
+      }
+    },
+    "contactQuote": {
+      "subject": "Köszönjük az érdeklődést!",
+      "title": "Köszönjük az érdeklődést!",
+      "intro": "Megkaptuk az ajánlatkérését, hamarosan felvesszük Önnel a kapcsolatot.",
+      "footerNote": "Ha módosítani szeretné a megadott adatokat, válaszoljon erre az e-mailre.",
+      "ctaLabel": "Folytatás a weboldalon",
+      "rows": {
+        "name": "Név",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "period": "Időszak",
+        "preferredChannel": "Kapcsolatfelvétel módja",
+        "arrivalFlight": "Érkezési járat",
+        "departureFlight": "Hazautazó járat",
+        "partySize": "Utazók száma",
+        "children": "Gyermekek száma",
+        "car": "Kiválasztott autó"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

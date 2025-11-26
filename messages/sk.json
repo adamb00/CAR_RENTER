@@ -645,7 +645,13 @@
       {
         "title": "VOP – zmluvné podmienky",
         "description": "Oficiálne zmluvné podmienky (GTC) na Fuerteventure a Lanzarote.",
-        "keywords": ["vop", "gtc", "zmluva", "právne", "lanzarote"],
+        "keywords": [
+          "vop",
+          "gtc",
+          "zmluva",
+          "právne",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -2267,5 +2273,47 @@
         "answer": "Nie je to potrebné, každé vrátené vozidlo dôkladne vyčistíme a dezinfikujeme, je to zahrnuté v cene nájmu."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Ďakujeme za vašu žiadosť o rezerváciu",
+      "title": "Ďakujeme za vašu žiadosť o rezerváciu",
+      "intro": "Údaje sme dostali a čoskoro vás budeme kontaktovať s potvrdením.",
+      "footerNote": "Ak potrebujete údaje upraviť, odpovedzte na tento e-mail.",
+      "ctaLabel": "Prejsť na webstránku",
+      "rows": {
+        "period": "Termín",
+        "contactName": "Kontaktná osoba",
+        "contactEmail": "E-mail",
+        "phone": "Telefón",
+        "arrivalFlight": "Prílet",
+        "departureFlight": "Odlet"
+      }
+    },
+    "contactQuote": {
+      "subject": "Ďakujeme za váš záujem",
+      "title": "Ďakujeme za váš záujem",
+      "intro": "Dostali sme vašu žiadosť a čoskoro sa vám ozveme.",
+      "footerNote": "Ak potrebujete údaje upraviť, odpovedzte na tento e-mail.",
+      "ctaLabel": "Pokračovať na webe",
+      "rows": {
+        "name": "Meno",
+        "email": "E-mail",
+        "phone": "Telefón",
+        "period": "Termín",
+        "preferredChannel": "Preferovaný kanál",
+        "arrivalFlight": "Prílet",
+        "departureFlight": "Odlet",
+        "partySize": "Počet cestujúcich",
+        "children": "Počet detí",
+        "car": "Vybrané auto"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Telefón",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

@@ -593,7 +593,13 @@
       {
         "title": "Insurance",
         "description": "Details of insurance packages, coverage and excess.",
-        "keywords": ["insurance", "coverage", "excess", "claims", "lanzarote"],
+        "keywords": [
+          "insurance",
+          "coverage",
+          "excess",
+          "claims",
+          "lanzarote"
+        ],
         "path": "/{locale}/insurance",
         "id": "insurance"
       },
@@ -2267,5 +2273,47 @@
         "answer": "No, you don’t. We thoroughly clean and disinfect every returned car – this is included in the rental price."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Thank you for your booking request",
+      "title": "Thank you for your booking request",
+      "intro": "We received your details and will contact you soon to confirm.",
+      "footerNote": "If you need to update any details, please reply to this email.",
+      "ctaLabel": "Visit website",
+      "rows": {
+        "period": "Dates",
+        "contactName": "Contact person",
+        "contactEmail": "Email",
+        "phone": "Phone",
+        "arrivalFlight": "Arrival flight",
+        "departureFlight": "Return flight"
+      }
+    },
+    "contactQuote": {
+      "subject": "Thank you for your inquiry",
+      "title": "Thank you for your inquiry",
+      "intro": "We received your request and will contact you soon.",
+      "footerNote": "If you need to update any details, please reply to this email.",
+      "ctaLabel": "Continue on the website",
+      "rows": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "period": "Dates",
+        "preferredChannel": "Preferred channel",
+        "arrivalFlight": "Arrival flight",
+        "departureFlight": "Return flight",
+        "partySize": "Party size",
+        "children": "Children",
+        "car": "Selected car"
+      },
+      "channelLabels": {
+        "email": "Email",
+        "phone": "Phone",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

@@ -2273,5 +2273,47 @@
         "answer": "Det er ikke nødvendigt. Vi rengør og desinficerer alle tilbageleverede biler grundigt; dette er inkluderet i lejeprisen."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Tak for din bookingforespørgsel",
+      "title": "Tak for din bookingforespørgsel",
+      "intro": "Vi har modtaget dine oplysninger og kontakter dig snart for at bekræfte.",
+      "footerNote": "Hvis du skal ændre oplysninger, så svar på denne e-mail.",
+      "ctaLabel": "Gå til websitet",
+      "rows": {
+        "period": "Periode",
+        "contactName": "Kontaktperson",
+        "contactEmail": "E-mail",
+        "phone": "Telefon",
+        "arrivalFlight": "Ankomstfly",
+        "departureFlight": "Returfly"
+      }
+    },
+    "contactQuote": {
+      "subject": "Tak for din henvendelse",
+      "title": "Tak for din henvendelse",
+      "intro": "Vi har modtaget din forespørgsel og kontakter dig snart.",
+      "footerNote": "Hvis du skal ændre oplysninger, så svar på denne e-mail.",
+      "ctaLabel": "Fortsæt på websitet",
+      "rows": {
+        "name": "Navn",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "period": "Periode",
+        "preferredChannel": "Foretrukken kanal",
+        "arrivalFlight": "Ankomstfly",
+        "departureFlight": "Returfly",
+        "partySize": "Antal rejsende",
+        "children": "Antal børn",
+        "car": "Valgt bil"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

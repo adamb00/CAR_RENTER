@@ -2444,5 +2444,47 @@
         "answer": "No hace falta. Nosotros nos encargamos de limpiar y desinfectar cada vehículo tras la devolución; está incluido en la tarifa."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Gracias por su solicitud de reserva",
+      "title": "Gracias por su solicitud de reserva",
+      "intro": "Hemos recibido sus datos y nos pondremos en contacto pronto para confirmarlo.",
+      "footerNote": "Si necesita actualizar algún dato, responda a este correo.",
+      "ctaLabel": "Ir al sitio web",
+      "rows": {
+        "period": "Fechas",
+        "contactName": "Persona de contacto",
+        "contactEmail": "Correo electrónico",
+        "phone": "Teléfono",
+        "arrivalFlight": "Vuelo de llegada",
+        "departureFlight": "Vuelo de regreso"
+      }
+    },
+    "contactQuote": {
+      "subject": "Gracias por su interés",
+      "title": "Gracias por su interés",
+      "intro": "Hemos recibido su solicitud y nos pondremos en contacto pronto.",
+      "footerNote": "Si necesita actualizar algún dato, responda a este correo.",
+      "ctaLabel": "Continuar en el sitio web",
+      "rows": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "period": "Fechas",
+        "preferredChannel": "Canal preferido",
+        "arrivalFlight": "Vuelo de llegada",
+        "departureFlight": "Vuelo de regreso",
+        "partySize": "Número de viajeros",
+        "children": "Número de niños",
+        "car": "Coche seleccionado"
+      },
+      "channelLabels": {
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

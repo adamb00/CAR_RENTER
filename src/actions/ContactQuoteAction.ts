@@ -3,6 +3,9 @@
 import { getCarById } from '@/lib/cars';
 import { sendMail } from '@/lib/mailer';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
+import { renderBrandEmail } from '@/lib/emailTemplates';
+import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { getTranslations } from 'next-intl/server';
 
 export type ContactQuotePayload = {
   locale: string;
@@ -19,27 +22,25 @@ export type ContactQuotePayload = {
   carId?: string;
 };
 
-const CHANNEL_LABELS: Record<ContactQuotePayload['preferredChannel'], string> =
-  {
-    email: 'E-mail',
-    phone: 'Telefon',
-    whatsapp: 'WhatsApp',
-    viber: 'Viber',
-  };
-
 export async function submitContactQuote(payload: ContactQuotePayload) {
   try {
     const carInfo = payload.carId ? await getCarById(payload.carId) : null;
     const supabase = getSupabaseServerClient();
     const now = new Date().toISOString();
+    const siteUrl = getSiteUrl();
+    const resolvedLocale = resolveLocale(payload.locale);
+    const tEmail = await getTranslations({ locale: resolvedLocale, namespace: 'Emails' });
+    let quoteId: string | null = null;
+
+    const preferredChannelLabel = tEmail(
+      `contactQuote.channelLabels.${payload.preferredChannel}`
+    );
 
     const lines = [
       `Név: ${payload.name}`,
       `E-mail: ${payload.email}`,
       `Telefon: ${payload.phone}`,
-      `Előnyben részesített csatorna: ${
-        CHANNEL_LABELS[payload.preferredChannel]
-      }`,
+      `Előnyben részesített csatorna: ${preferredChannelLabel}`,
       `Bérlés: ${payload.rentalStart || 'n/a'} → ${payload.rentalEnd || 'n/a'}`,
       `Érkezési járatszám: ${payload.arrivalFlight || 'n/a'}`,
       `Hazautazó járatszám: ${payload.departureFlight || 'n/a'}`,
@@ -84,9 +85,14 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         : {}),
     };
 
-    const { error: insertError } = await supabase
+    const { data: inserted, error: insertError } = await supabase
       .from('ContactQuotes')
-      .insert(recordWithFlights);
+      .insert(recordWithFlights)
+      .select('id')
+      .single();
+    if (inserted?.id) {
+      quoteId = inserted.id as string;
+    }
     if (insertError) {
       const isMissingColumn =
         insertError.code === 'PGRST204' &&
@@ -95,7 +101,12 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       if (isMissingColumn) {
         const fallback = await supabase
           .from('ContactQuotes')
-          .insert(baseRecord);
+          .insert(baseRecord)
+          .select('id')
+          .single();
+        if (fallback.data?.id) {
+          quoteId = fallback.data.id as string;
+        }
         if (fallback.error) {
           console.error(
             'Failed to store contact quote in Supabase (fallback)',
@@ -112,6 +123,100 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       subject: `Kapcsolat oldal ajánlatkérés | ${payload.name}`,
       text: lines,
       replyTo: payload.email,
+    });
+
+    const rentLink = carInfo
+      ? `${siteUrl}/${resolvedLocale}/cars/${carInfo.id}/rent${
+          quoteId ? `?quoteId=${quoteId}` : ''
+        }`
+      : siteUrl;
+
+    const userRows = (
+      [
+        payload.rentalStart || payload.rentalEnd
+          ? {
+              label: tEmail('contactQuote.rows.period'),
+              value: `${payload.rentalStart || 'n/a'} → ${
+                payload.rentalEnd || 'n/a'
+              }`,
+            }
+          : null,
+        payload.preferredChannel
+          ? {
+              label: tEmail('contactQuote.rows.preferredChannel'),
+              value: preferredChannelLabel,
+            }
+          : null,
+        payload.arrivalFlight
+          ? {
+              label: tEmail('contactQuote.rows.arrivalFlight'),
+              value: payload.arrivalFlight,
+            }
+          : null,
+        payload.departureFlight
+          ? {
+              label: tEmail('contactQuote.rows.departureFlight'),
+              value: payload.departureFlight,
+            }
+          : null,
+        payload.partySize
+          ? { label: tEmail('contactQuote.rows.partySize'), value: payload.partySize }
+          : null,
+        payload.children
+          ? { label: tEmail('contactQuote.rows.children'), value: payload.children }
+          : null,
+        carInfo
+          ? {
+              label: tEmail('contactQuote.rows.car'),
+              value: `${carInfo.manufacturer} ${carInfo.model}`.trim(),
+            }
+          : null,
+      ] as ({ label: string; value: string } | null)[]
+    ).filter(Boolean) as { label: string; value: string }[];
+
+    await sendMail({
+      to: payload.email,
+      subject: tEmail('contactQuote.subject'),
+      text: [
+        tEmail('contactQuote.intro'),
+        payload.rentalStart || payload.rentalEnd
+          ? `${tEmail('contactQuote.rows.period')}: ${
+              payload.rentalStart || 'n/a'
+            } → ${payload.rentalEnd || 'n/a'}`
+          : '',
+        `${tEmail('contactQuote.rows.preferredChannel')}: ${preferredChannelLabel}`,
+        payload.arrivalFlight
+          ? `${tEmail('contactQuote.rows.arrivalFlight')}: ${payload.arrivalFlight}`
+          : '',
+        payload.departureFlight
+          ? `${tEmail('contactQuote.rows.departureFlight')}: ${payload.departureFlight}`
+          : '',
+        payload.partySize
+          ? `${tEmail('contactQuote.rows.partySize')}: ${payload.partySize}`
+          : '',
+        payload.children
+          ? `${tEmail('contactQuote.rows.children')}: ${payload.children}`
+          : '',
+        carInfo
+          ? `${tEmail('contactQuote.rows.car')}: ${carInfo.manufacturer} ${carInfo.model}`
+          : '',
+        `${tEmail('contactQuote.ctaLabel')}: ${rentLink}`,
+      ]
+        .filter(Boolean)
+        .join('\n'),
+      html: renderBrandEmail({
+        title: tEmail('contactQuote.title'),
+        intro: tEmail('contactQuote.intro'),
+        rows: [
+          { label: tEmail('contactQuote.rows.name'), value: payload.name },
+          { label: tEmail('contactQuote.rows.email'), value: payload.email },
+          { label: tEmail('contactQuote.rows.phone'), value: payload.phone },
+          ...userRows,
+        ],
+        cta: { label: tEmail('contactQuote.ctaLabel'), href: rentLink },
+        footerNote: tEmail('contactQuote.footerNote'),
+      }),
+      replyTo: process.env.MAIL_USER || undefined,
     });
 
     return { success: true };

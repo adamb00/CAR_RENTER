@@ -645,7 +645,13 @@
       {
         "title": "CGC – condiții generale de contract",
         "description": "Condiții generale de contract (GTC) oficiale pentru Fuerteventura și Lanzarote.",
-        "keywords": ["cgc", "gtc", "contract", "juridic", "lanzarote"],
+        "keywords": [
+          "cgc",
+          "gtc",
+          "contract",
+          "juridic",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -2267,5 +2273,47 @@
         "answer": "Nu este necesar; noi curățăm și dezinfectăm temeinic fiecare vehicul după returnare, acest lucru este inclus în tariful de închiriere."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Vă mulțumim pentru cererea de rezervare",
+      "title": "Vă mulțumim pentru cererea de rezervare",
+      "intro": "Am primit detaliile și vă vom contacta în curând pentru confirmare.",
+      "footerNote": "Dacă trebuie să modificați ceva, răspundeți la acest e-mail.",
+      "ctaLabel": "Accesați site-ul",
+      "rows": {
+        "period": "Perioadă",
+        "contactName": "Persoană de contact",
+        "contactEmail": "E-mail",
+        "phone": "Telefon",
+        "arrivalFlight": "Zbor de sosire",
+        "departureFlight": "Zbor de plecare"
+      }
+    },
+    "contactQuote": {
+      "subject": "Vă mulțumim pentru solicitare",
+      "title": "Vă mulțumim pentru solicitare",
+      "intro": "Am primit cererea și vă vom contacta în curând.",
+      "footerNote": "Dacă trebuie să modificați ceva, răspundeți la acest e-mail.",
+      "ctaLabel": "Continuați pe site",
+      "rows": {
+        "name": "Nume",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "period": "Perioadă",
+        "preferredChannel": "Canal preferat",
+        "arrivalFlight": "Zbor de sosire",
+        "departureFlight": "Zbor de plecare",
+        "partySize": "Număr de călători",
+        "children": "Număr de copii",
+        "car": "Mașină selectată"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

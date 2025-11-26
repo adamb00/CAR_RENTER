@@ -55,6 +55,7 @@ import { useWatchForm } from '@/hooks/useWatchForm';
 import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
 import { RentSchema, createRentSchema } from '@/schemas/RentSchema';
 import type { Car } from '@/lib/cars';
+import { type ContactQuoteRecord } from '@/lib/contactQuotes';
 import toast from 'react-hot-toast';
 
 type RentFormValues = z.input<typeof RentSchema> & FieldValues;
@@ -63,9 +64,189 @@ type RentFormResolvedValues = z.output<typeof RentSchema>;
 type RentPageClientProps = {
   locale: string;
   car: Pick<Car, 'id' | 'seats' | 'colors'>;
+  quotePrefill?: ContactQuoteRecord | null;
 };
 
-export default function RentPageClient({ locale, car }: RentPageClientProps) {
+const parsePositiveInt = (value?: string | number | null): number | undefined => {
+  if (typeof value === 'number') {
+    return Number.isFinite(value) && value > 0 ? value : undefined;
+  }
+  if (typeof value === 'string') {
+    const parsed = Number.parseInt(value, 10);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : undefined;
+  }
+  return undefined;
+};
+
+const splitName = (
+  fullName?: string | null
+): { firstName?: string; lastName?: string } => {
+  if (!fullName) return {};
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return {};
+  if (parts.length === 1) {
+    return { firstName: parts[0], lastName: parts[0] };
+  }
+  return {
+    firstName: parts[0],
+    lastName: parts.slice(1).join(' '),
+  };
+};
+
+const buildInitialValues = (
+  quote: ContactQuoteRecord | null | undefined,
+  locale: string
+): RentFormValues => {
+  const adultsFromQuote = parsePositiveInt(quote?.partySize);
+  const childrenCount = parsePositiveInt(quote?.children);
+  const childrenArray =
+    childrenCount && childrenCount > 0
+      ? Array.from({ length: childrenCount }).map(() => ({
+          age: undefined,
+          height: undefined,
+        }))
+      : [];
+  const driver = createEmptyDriver();
+  const { firstName, lastName } = splitName(quote?.name);
+
+  return {
+    locale,
+    extras: [],
+    adults: adultsFromQuote,
+    children: childrenArray,
+    rentalPeriod: {
+      startDate: quote?.rentalStart ?? '',
+      endDate: quote?.rentalEnd ?? '',
+    },
+    driver: [
+      {
+        ...driver,
+        firstName_1: firstName ?? driver.firstName_1,
+        lastName_1: lastName ?? driver.lastName_1,
+        phoneNumber: quote?.phone ?? driver.phoneNumber,
+        email: quote?.email ?? driver.email,
+      },
+    ],
+    contact: {
+      same: false,
+      name: quote?.name ?? '',
+      email: quote?.email ?? '',
+    },
+    invoice: {
+      same: false,
+      name: quote?.name ?? '',
+      phoneNumber: quote?.phone ?? '',
+      email: quote?.email ?? '',
+      location: {
+        country: '',
+        postalCode: '',
+        city: '',
+        street: '',
+        doorNumber: '',
+      },
+    },
+    delivery: {
+      placeType: undefined,
+      locationName: '',
+      arrivalFlight: quote?.arrivalFlight ?? '',
+      departureFlight: quote?.departureFlight ?? '',
+      address: {
+        country: '',
+        postalCode: '',
+        city: '',
+        street: '',
+        doorNumber: '',
+      },
+    },
+    tax: {
+      id: '',
+      companyName: '',
+    },
+    consents: {
+      privacy: false,
+      terms: false,
+    },
+  };
+};
+
+const mergeQuoteIntoValues = (
+  values: RentFormValues,
+  quote: ContactQuoteRecord
+): RentFormValues => {
+  const adultsFromQuote = parsePositiveInt(quote.partySize);
+  const childrenCount = parsePositiveInt(quote.children);
+  const childrenArray =
+    childrenCount && childrenCount > 0
+      ? Array.from({ length: childrenCount }).map((_, idx) => ({
+          age: values.children?.[idx]?.age,
+          height: values.children?.[idx]?.height,
+        }))
+      : values.children ?? [];
+
+  const { firstName, lastName } = splitName(quote.name);
+  const firstDriver = values.driver?.[0] ?? createEmptyDriver();
+  const restDrivers = values.driver?.slice(1) ?? [];
+
+  const delivery: NonNullable<RentFormValues['delivery']> =
+    values.delivery ?? {
+      placeType: undefined,
+      locationName: '',
+      arrivalFlight: '',
+      departureFlight: '',
+      address: {
+        country: '',
+        postalCode: '',
+        city: '',
+        street: '',
+        doorNumber: '',
+      },
+    };
+
+  return {
+    ...values,
+    locale: values.locale ?? quote.locale ?? values.locale,
+    adults: adultsFromQuote ?? values.adults,
+    children: childrenArray,
+    rentalPeriod: {
+      startDate: quote.rentalStart ?? values.rentalPeriod?.startDate ?? '',
+      endDate: quote.rentalEnd ?? values.rentalPeriod?.endDate ?? '',
+    },
+    driver: [
+      {
+        ...firstDriver,
+        firstName_1: firstName ?? firstDriver.firstName_1,
+        lastName_1: lastName ?? firstDriver.lastName_1,
+        phoneNumber: quote.phone ?? firstDriver.phoneNumber,
+        email: quote.email ?? firstDriver.email,
+      },
+      ...restDrivers,
+    ],
+    contact: {
+      ...values.contact,
+      same: false,
+      name: quote.name ?? values.contact?.name ?? '',
+      email: quote.email ?? values.contact?.email ?? '',
+    },
+    invoice: {
+      ...values.invoice,
+      name: quote.name ?? values.invoice?.name ?? '',
+      phoneNumber: quote.phone ?? values.invoice?.phoneNumber ?? '',
+      email: quote.email ?? values.invoice?.email ?? '',
+    },
+    delivery: {
+      ...delivery,
+      arrivalFlight: quote.arrivalFlight ?? delivery.arrivalFlight ?? '',
+      departureFlight:
+        quote.departureFlight ?? delivery.departureFlight ?? '',
+    },
+  };
+};
+
+export default function RentPageClient({
+  locale,
+  car,
+  quotePrefill,
+}: RentPageClientProps) {
   const t = useTranslations('RentForm');
   const tCars = useTranslations('Cars');
   const tSchema = useTranslations('RentSchema');
@@ -204,6 +385,10 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
   };
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
+  const defaultValues = React.useMemo(
+    () => buildInitialValues(quotePrefill, locale),
+    [locale, quotePrefill]
+  );
 
   const form = useForm<RentFormValues>({
     resolver: zodResolver(rentSchema) as Resolver<
@@ -211,55 +396,7 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
       Record<string, never>,
       RentFormResolvedValues
     >,
-    defaultValues: {
-      extras: [],
-      adults: undefined,
-      children: [],
-      rentalPeriod: {
-        startDate: '',
-        endDate: '',
-      },
-      driver: [createEmptyDriver()],
-      contact: {
-        same: false,
-        name: '',
-        email: '',
-      },
-      invoice: {
-        same: false,
-        name: '',
-        phoneNumber: '',
-        email: '',
-        location: {
-          country: '',
-          postalCode: '',
-          city: '',
-          street: '',
-          doorNumber: '',
-        },
-      },
-      delivery: {
-        placeType: undefined,
-        locationName: '',
-        arrivalFlight: '',
-        departureFlight: '',
-        address: {
-          country: '',
-          postalCode: '',
-          city: '',
-          street: '',
-          doorNumber: '',
-        },
-      },
-      tax: {
-        id: '',
-        companyName: '',
-      },
-      consents: {
-        privacy: false,
-        terms: false,
-      },
-    },
+    defaultValues,
   });
 
   const { clearStoredValues, isHydrated } = usePersistRentForm(form, {
@@ -291,6 +428,17 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
 
   useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
 
+  const hasAppliedQuotePrefill = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!quotePrefill || !isHydrated || hasAppliedQuotePrefill.current) {
+      return;
+    }
+    hasAppliedQuotePrefill.current = true;
+    const mergedValues = mergeQuoteIntoValues(form.getValues(), quotePrefill);
+    form.reset(mergedValues);
+  }, [form, isHydrated, quotePrefill]);
+
   const shouldAskForFlightNumbers = React.useCallback(
     (values: RentFormResolvedValues) => {
       const arrival =
@@ -317,7 +465,7 @@ export default function RentPageClient({ locale, car }: RentPageClientProps) {
       };
 
       startTransition(async () => {
-        const res = await RentAction(parsed);
+        const res = await RentAction({ ...parsed, locale });
         if (res.success) {
           toast.success(t('toast.success'));
           clearStoredValues();

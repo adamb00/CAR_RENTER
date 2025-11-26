@@ -666,7 +666,6 @@
     "home": "Hjem",
     "faq": "FAQ"
   },
-
   "LocaleToggle": {
     "ariaLabel": "Språkvelger"
   },
@@ -763,7 +762,6 @@
       }
     ]
   },
-
   "BlogPosts": {
     "fuerteventura-latnivalok-autoval": {
       "meta": {
@@ -2275,5 +2273,47 @@
         "answer": "Det er ikke nødvendig. Vi rengjør og desinfiserer alle biler grundig etter tilbakelevering; dette er inkludert i leieprisen."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Takk for din bookingforespørsel",
+      "title": "Takk for din bookingforespørsel",
+      "intro": "Vi har mottatt opplysningene og kontakter deg snart for å bekrefte.",
+      "footerNote": "Hvis du må endre opplysningene, svar på denne e-posten.",
+      "ctaLabel": "Gå til nettsiden",
+      "rows": {
+        "period": "Periode",
+        "contactName": "Kontaktperson",
+        "contactEmail": "E-post",
+        "phone": "Telefon",
+        "arrivalFlight": "Ankomstfly",
+        "departureFlight": "Returfly"
+      }
+    },
+    "contactQuote": {
+      "subject": "Takk for din henvendelse",
+      "title": "Takk for din henvendelse",
+      "intro": "Vi har mottatt forespørselen og kontakter deg snart.",
+      "footerNote": "Hvis du må endre opplysningene, svar på denne e-posten.",
+      "ctaLabel": "Fortsett på nettsiden",
+      "rows": {
+        "name": "Navn",
+        "email": "E-post",
+        "phone": "Telefon",
+        "period": "Periode",
+        "preferredChannel": "Foretrukket kanal",
+        "arrivalFlight": "Ankomstfly",
+        "departureFlight": "Returfly",
+        "partySize": "Antall reisende",
+        "children": "Antall barn",
+        "car": "Valgt bil"
+      },
+      "channelLabels": {
+        "email": "E-post",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

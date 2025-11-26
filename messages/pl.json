@@ -645,7 +645,13 @@
       {
         "title": "Ogólne warunki umowy (GTC)",
         "description": "Oficjalne ogólne warunki umowy (GTC) na Fuerteventurze i Lanzarote.",
-        "keywords": ["gtc", "ogólne warunki", "umowa", "prawne", "lanzarote"],
+        "keywords": [
+          "gtc",
+          "ogólne warunki",
+          "umowa",
+          "prawne",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -2267,5 +2273,47 @@
         "answer": "Nie jest to konieczne. Każdy zwrócony pojazd dokładnie czyścimy i dezynfekujemy, co jest wliczone w cenę najmu."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Dziękujemy za Twoje zapytanie rezerwacyjne",
+      "title": "Dziękujemy za Twoje zapytanie rezerwacyjne",
+      "intro": "Otrzymaliśmy dane i wkrótce skontaktujemy się w celu potwierdzenia.",
+      "footerNote": "Jeśli chcesz zmienić dane, odpowiedz na tego e-maila.",
+      "ctaLabel": "Przejdź na stronę",
+      "rows": {
+        "period": "Termin",
+        "contactName": "Osoba kontaktowa",
+        "contactEmail": "E-mail",
+        "phone": "Telefon",
+        "arrivalFlight": "Lot przylotowy",
+        "departureFlight": "Lot powrotny"
+      }
+    },
+    "contactQuote": {
+      "subject": "Dziękujemy za Twoje zapytanie",
+      "title": "Dziękujemy za Twoje zapytanie",
+      "intro": "Otrzymaliśmy Twoją prośbę i wkrótce się skontaktujemy.",
+      "footerNote": "Jeśli chcesz zmienić dane, odpowiedz na tego e-maila.",
+      "ctaLabel": "Kontynuuj na stronie",
+      "rows": {
+        "name": "Imię i nazwisko",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "period": "Termin",
+        "preferredChannel": "Preferowany kanał",
+        "arrivalFlight": "Lot przylotowy",
+        "departureFlight": "Lot powrotny",
+        "partySize": "Liczba podróżnych",
+        "children": "Liczba dzieci",
+        "car": "Wybrany samochód"
+      },
+      "channelLabels": {
+        "email": "E-mail",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }

@@ -275,6 +275,7 @@ export function createRentSchema(
 
   return z
     .object({
+      locale: z.string().optional(),
       extras: z.array(z.string()).optional(),
       rentalPeriod: z.object({
         startDate: z.string().refine((date) => !isNaN(Date.parse(date)), {

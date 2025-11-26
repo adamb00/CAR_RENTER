@@ -580,7 +580,13 @@
       {
         "title": "Cookiepolicy",
         "description": "Vilka cookies vi använder och hur du kan hantera ditt samtycke.",
-        "keywords": ["cookie", "kakor", "samtycke", "dataskydd", "lanzarote"],
+        "keywords": [
+          "cookie",
+          "kakor",
+          "samtycke",
+          "dataskydd",
+          "lanzarote"
+        ],
         "path": "/{locale}/cookie-policy",
         "id": "cookie-policy"
       },
@@ -756,7 +762,6 @@
       }
     ]
   },
-
   "BlogPosts": {
     "fuerteventura-latnivalok-autoval": {
       "meta": {
@@ -2268,5 +2273,47 @@
         "answer": "Nej, det behövs inte. Vi rengör och desinficerar alla återlämnade fordon grundligt, detta ingår i hyresavgiften."
       }
     ]
+  },
+  "Emails": {
+    "rent": {
+      "subject": "Tack för din bokningsförfrågan",
+      "title": "Tack för din bokningsförfrågan",
+      "intro": "Vi har fått dina uppgifter och kontaktar dig snart för att bekräfta.",
+      "footerNote": "Om du behöver uppdatera något, svara på detta mejl.",
+      "ctaLabel": "Gå till webbplatsen",
+      "rows": {
+        "period": "Period",
+        "contactName": "Kontaktperson",
+        "contactEmail": "E-post",
+        "phone": "Telefon",
+        "arrivalFlight": "Ankomstflyg",
+        "departureFlight": "Returflyg"
+      }
+    },
+    "contactQuote": {
+      "subject": "Tack för din förfrågan",
+      "title": "Tack för din förfrågan",
+      "intro": "Vi har tagit emot din förfrågan och kontaktar dig snart.",
+      "footerNote": "Om du behöver uppdatera något, svara på detta mejl.",
+      "ctaLabel": "Fortsätt på webbplatsen",
+      "rows": {
+        "name": "Namn",
+        "email": "E-post",
+        "phone": "Telefon",
+        "period": "Period",
+        "preferredChannel": "Föredragen kanal",
+        "arrivalFlight": "Ankomstflyg",
+        "departureFlight": "Returflyg",
+        "partySize": "Antal resenärer",
+        "children": "Antal barn",
+        "car": "Vald bil"
+      },
+      "channelLabels": {
+        "email": "E-post",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp",
+        "viber": "Viber"
+      }
+    }
   }
 }
