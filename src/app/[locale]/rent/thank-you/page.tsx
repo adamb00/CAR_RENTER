@@ -46,9 +46,6 @@ export default async function RentThankYouPage({
       >
         {tEmails('rent.ctaLabel')}
       </Link>
-      <p className='text-sm text-grey-dark-2 dark:text-grey-dark-3'>
-        {tEmails('rent.footerNote')}
-      </p>
     </div>
   );
 }
