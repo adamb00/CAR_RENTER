@@ -3,7 +3,7 @@
 import { getCarById } from '@/lib/cars';
 import { sendMail } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
-import { renderBrandEmail } from '@/lib/emailTemplates';
+import { renderBrandEmail, type EmailRow } from '@/lib/emailTemplates';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
@@ -214,12 +214,17 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       { label: 'Extras', value: extrasLabel },
       { label: 'Delivery', value: formatDeliverySummary(payload.delivery) },
       { label: 'Status', value: 'new' },
-    ];
+    ] as { label: string; value: string | null }[];
+
+    const sanitizedAdminRows: EmailRow[] = adminRows.map((row) => ({
+      label: row.label,
+      value: row.value ?? 'n/a',
+    }));
 
     const adminHtml = renderBrandEmail({
       title: 'New booking request', // admin-facing subject
       intro: `New contact quote submitted via the ${payload.locale.toUpperCase()} form.`,
-      rows: adminRows,
+      rows: sanitizedAdminRows,
       cta: { label: 'Open rental page', href: rentLink },
       footerNote: tEmail('contactQuote.footerNote'),
     });

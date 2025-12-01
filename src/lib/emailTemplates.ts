@@ -1,4 +1,4 @@
-type EmailRow = { label: string; value: string };
+export type EmailRow = { label: string; value: string };
 
 type EmailTemplateOptions = {
   title: string;
