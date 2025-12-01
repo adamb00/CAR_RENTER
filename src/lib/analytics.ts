@@ -1,5 +1,9 @@
 'use client';
 
+import { track } from '@vercel/analytics';
+
+type AllowedPropertyValues = string | number | boolean | null;
+
 type DataLayerEvent = {
   event: string;
   [key: string]: unknown;
@@ -13,6 +17,13 @@ declare global {
 
 const isBrowser = () => typeof window !== 'undefined';
 
+const normalizeTrackParams = (
+  params?: Record<string, unknown>
+): Record<string, AllowedPropertyValues> | undefined => {
+  if (!params) return undefined;
+  return params as Record<string, AllowedPropertyValues>;
+};
+
 export const pushToDataLayer = (payload: DataLayerEvent) => {
   if (!isBrowser()) return;
   window.dataLayer = window.dataLayer || [];
@@ -23,6 +34,9 @@ export const trackCustomEvent = (
   event: string,
   params?: Record<string, unknown>
 ) => {
+  if (isBrowser()) {
+    track(event, normalizeTrackParams(params));
+  }
   pushToDataLayer({
     event,
     ...params,

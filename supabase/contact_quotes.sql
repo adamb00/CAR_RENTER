@@ -17,10 +17,13 @@ create table if not exists public."ContactQuotes" (
   departureFlight text,
   partySize text,
   children text,
+  extras text[],
+  delivery jsonb,
   carId text,
   carName text,
   status text not null default 'new' check (status in ('new', 'in_progress', 'answered', 'closed')),
   updated text,
+  humanId text unique,
   "createdAt" timestamptz not null default timezone('utc', now()),
   "updatedAt" timestamptz not null default timezone('utc', now())
 );

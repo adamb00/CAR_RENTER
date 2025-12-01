@@ -24,7 +24,6 @@ export async function POST(request: Request) {
         : LOCALES;
     const carId = body?.carId;
 
-    // Invalidate data cache tags
     revalidateTag('cars', 'default');
     if (carId) {
       revalidateTag(`car-${carId}`, 'default');

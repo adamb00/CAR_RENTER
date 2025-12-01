@@ -67,7 +67,9 @@ type RentPageClientProps = {
   quotePrefill?: ContactQuoteRecord | null;
 };
 
-const parsePositiveInt = (value?: string | number | null): number | undefined => {
+const parsePositiveInt = (
+  value?: string | number | null
+): number | undefined => {
   if (typeof value === 'number') {
     return Number.isFinite(value) && value > 0 ? value : undefined;
   }
@@ -95,7 +97,8 @@ const splitName = (
 
 const buildInitialValues = (
   quote: ContactQuoteRecord | null | undefined,
-  locale: string
+  locale: string,
+  carId: string
 ): RentFormValues => {
   const adultsFromQuote = parsePositiveInt(quote?.partySize);
   const childrenCount = parsePositiveInt(quote?.children);
@@ -111,6 +114,8 @@ const buildInitialValues = (
 
   return {
     locale,
+    carId,
+    quoteId: quote?.id,
     extras: [],
     adults: adultsFromQuote,
     children: childrenArray,
@@ -187,26 +192,28 @@ const mergeQuoteIntoValues = (
   const firstDriver = values.driver?.[0] ?? createEmptyDriver();
   const restDrivers = values.driver?.slice(1) ?? [];
 
-  const delivery: NonNullable<RentFormValues['delivery']> =
-    values.delivery ?? {
-      placeType: undefined,
-      locationName: '',
-      arrivalFlight: '',
-      departureFlight: '',
-      address: {
-        country: '',
-        postalCode: '',
-        city: '',
-        street: '',
-        doorNumber: '',
-      },
-    };
+  const delivery: NonNullable<RentFormValues['delivery']> = values.delivery ?? {
+    placeType: undefined,
+    locationName: '',
+    arrivalFlight: '',
+    departureFlight: '',
+    address: {
+      country: '',
+      postalCode: '',
+      city: '',
+      street: '',
+      doorNumber: '',
+    },
+  };
 
   return {
     ...values,
     locale: values.locale ?? quote.locale ?? values.locale,
+    carId: values.carId ?? quote.carId ?? values.carId,
+    quoteId: values.quoteId ?? quote.id ?? values.quoteId,
     adults: adultsFromQuote ?? values.adults,
     children: childrenArray,
+    extras: quote.extras ?? values.extras,
     rentalPeriod: {
       startDate: quote.rentalStart ?? values.rentalPeriod?.startDate ?? '',
       endDate: quote.rentalEnd ?? values.rentalPeriod?.endDate ?? '',
@@ -235,9 +242,31 @@ const mergeQuoteIntoValues = (
     },
     delivery: {
       ...delivery,
+      placeType: ['accommodation', 'airport'].includes(
+        quote.delivery?.placeType as string
+      )
+        ? (quote.delivery?.placeType as 'accommodation' | 'airport')
+        : ['accommodation', 'airport'].includes(delivery.placeType as string)
+        ? (delivery.placeType as 'accommodation' | 'airport')
+        : undefined,
+      locationName: quote.delivery?.locationName ?? delivery.locationName ?? '',
+      address: {
+        country:
+          quote.delivery?.address?.country ?? delivery.address?.country ?? '',
+        postalCode:
+          quote.delivery?.address?.postalCode ??
+          delivery.address?.postalCode ??
+          '',
+        city: quote.delivery?.address?.city ?? delivery.address?.city ?? '',
+        street:
+          quote.delivery?.address?.street ?? delivery.address?.street ?? '',
+        doorNumber:
+          quote.delivery?.address?.doorNumber ??
+          delivery.address?.doorNumber ??
+          '',
+      },
       arrivalFlight: quote.arrivalFlight ?? delivery.arrivalFlight ?? '',
-      departureFlight:
-        quote.departureFlight ?? delivery.departureFlight ?? '',
+      departureFlight: quote.departureFlight ?? delivery.departureFlight ?? '',
     },
   };
 };
@@ -386,8 +415,8 @@ export default function RentPageClient({
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
   const defaultValues = React.useMemo(
-    () => buildInitialValues(quotePrefill, locale),
-    [locale, quotePrefill]
+    () => buildInitialValues(quotePrefill, locale, id),
+    [id, locale, quotePrefill]
   );
 
   const form = useForm<RentFormValues>({
@@ -465,7 +494,12 @@ export default function RentPageClient({
       };
 
       startTransition(async () => {
-        const res = await RentAction({ ...parsed, locale });
+        const res = await RentAction({
+          ...parsed,
+          locale,
+          carId: id,
+          quoteId: quotePrefill?.id ?? parsed.quoteId,
+        });
         if (res.success) {
           toast.success(t('toast.success'));
           clearStoredValues();
@@ -475,7 +509,7 @@ export default function RentPageClient({
             ...submissionMeta,
           });
           setTimeout(() => {
-            router.push(`/${locale}`);
+            router.push(`/${locale}/rent/thank-you`);
           }, 2000);
         } else {
           toast.error(t('toast.error'));
@@ -488,15 +522,7 @@ export default function RentPageClient({
         }
       });
     },
-    [
-      clearStoredValues,
-      extrasSelected,
-      id,
-      locale,
-      router,
-      startTransition,
-      t,
-    ]
+    [clearStoredValues, extrasSelected, id, locale, router, startTransition, t]
   );
 
   type SubmitOptions = {
@@ -520,10 +546,7 @@ export default function RentPageClient({
   );
 
   const createSubmitHandler = (options?: SubmitOptions) =>
-    form.handleSubmit(
-      (values) => onSubmit(values, options),
-      onInvalid
-    );
+    form.handleSubmit((values) => onSubmit(values, options), onInvalid);
 
   const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
     () => [
@@ -629,9 +652,9 @@ export default function RentPageClient({
         <Button
           disabled={isPending}
           type='submit'
-          className='self-end m-8 bg-sky-light text-sky-dark cursor-pointer hover:bg-sky-dark hover:border hover:text-white'
+          className='self-end m-8 px-6 py-2 text-base font-semibold uppercase tracking-[0.1em] bg-sky-light text-sky-dark border border-transparent transition hover:bg-sky-dark hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-dark/60'
         >
-          {t('buttons.submit')}
+          Foglalás véglegesítése
         </Button>
       </form>
       <Dialog
@@ -663,9 +686,7 @@ export default function RentPageClient({
                           'sections.delivery.fields.arrivalFlight.placeholder'
                         )}
                         value={value}
-                        onChange={(event) =>
-                          field.onChange(event.target.value)
-                        }
+                        onChange={(event) => field.onChange(event.target.value)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -690,9 +711,7 @@ export default function RentPageClient({
                           'sections.delivery.fields.departureFlight.placeholder'
                         )}
                         value={value}
-                        onChange={(event) =>
-                          field.onChange(event.target.value)
-                        }
+                        onChange={(event) => field.onChange(event.target.value)}
                       />
                     </FormControl>
                     <FormMessage />

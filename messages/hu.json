@@ -436,6 +436,11 @@
         "Zodiacs Rent a Car tanácsok"
       ]
     },
+    "rent": {
+      "title": "Ajánlatkérés megérkezett – Zodiacs Rent a Car",
+      "description": "Megkaptuk a foglalási kérelmedet, hamarosan személyre szabott részletekkel és a szerződéssel jelentkezünk.",
+      "ogImageAlt": "Köszönjük a Zodiacs Rent a Car csapatától"
+    },
     "gdpr": {
       "title": "GDPR adatkezelési tájékoztató – Zodiacs Rent a Car",
       "description": "Tudd meg, hogyan kezeljük a személyes adataidat, milyen jogalapokra támaszkodunk, és hogyan gyakorolhatod a jogaidat.",
@@ -735,7 +740,7 @@
     "readMore": "Cikk megnyitása",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "fuerteventura-latnivalok-autoval-3-kihagyhatatlan-hely",
         "title": "Fuerteventura látnivalók autóval – 3 kihagyhatatlan hely",
         "excerpt": "Corralejo dűnéi, Betancuria és Ajuy barlangjai: útikalauz, hogyan hozd ki a legtöbbet bérautóddal Fuerteventurán.",
         "category": "Útikalauz",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "figyelem-veszelyes-visszatero-aramlatok-fuerteventuran",
         "title": "Figyelem! Veszélyes visszatérő áramlatok Fuerteventurán",
         "excerpt": "Tanuld meg felismerni a rip current jeleit, hogy Cofete és a vad strandok élmény maradjanak, ne veszély.",
         "category": "Biztonság",
@@ -776,7 +781,7 @@
           "Ajuy barlangok",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval-3-kihagyhatatlan-hely",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Kilátás a Corralejo homokdűnéire Fuerteventurán"
@@ -937,7 +942,7 @@
           "tengeráramlat",
           "rip current felismerése"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/figyelem-veszelyes-visszatero-aramlatok-fuerteventuran",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Figyelmeztető tábla Cofete vad partján Fuerteventurán"
@@ -2280,7 +2285,7 @@
       "title": "Köszönjük a foglalási kérelmet!",
       "intro": "Megkaptuk a részleteket, hamarosan felvesszük Önnel a kapcsolatot a visszaigazoláshoz.",
       "footerNote": "Ha módosítani szeretné a megadott adatokat, válaszoljon erre az e-mailre.",
-      "ctaLabel": "Tovább a weboldalra",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Időszak",
         "contactName": "Kapcsolattartó",

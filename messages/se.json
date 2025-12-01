@@ -436,6 +436,11 @@
         "tips från Zodiacs Rent a Car"
       ]
     },
+    "rent": {
+      "title": "Förfrågan mottagen – Zodiacs Rent a Car",
+      "description": "Vi har mottagit din bokningsförfrågan och återkommer snart med personliga detaljer och avtalet.",
+      "ogImageAlt": "Tack från Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "GDPR-integritetspolicy – Zodiacs Rent a Car",
       "description": "Ta reda på hur vi behandlar dina personuppgifter, vilka rättsliga grunder vi använder och hur du kan utöva dina rättigheter.",
@@ -735,7 +740,7 @@
     "readMore": "Öppna artikel",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "sevardheter-pa-fuerteventura-med-bil-3-platser-du-inte-far-missa",
         "title": "Sevärdheter på Fuerteventura med bil – 3 platser du inte får missa",
         "excerpt": "Corralejo-sanden, Betancuria och Ajuy-grottorna: en reseguide till hur du får ut mesta möjliga av din hyrbil på Fuerteventura.",
         "category": "Reseguide",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "varning-farliga-aterstrommar-pa-fuerteventura",
         "title": "Varning! Farliga återströmmar på Fuerteventura",
         "excerpt": "Lär dig känna igen tecknen på rip currents så att Cofete och de vilda stränderna förblir en upplevelse – inte en fara.",
         "category": "Säkerhet",
@@ -776,7 +781,7 @@
           "Ajuy grottor",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/sevardheter-pa-fuerteventura-med-bil-3-platser-du-inte-far-missa",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Utsikt över sanddynerna vid Corralejo på Fuerteventura"
@@ -937,7 +942,7 @@
           "havströmmar",
           "känna igen rip current"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/varning-farliga-aterstrommar-pa-fuerteventura",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Varningsskylt på den vilda stranden Cofete på Fuerteventura"
@@ -2280,7 +2285,7 @@
       "title": "Tack för din bokningsförfrågan",
       "intro": "Vi har fått dina uppgifter och kontaktar dig snart för att bekräfta.",
       "footerNote": "Om du behöver uppdatera något, svara på detta mejl.",
-      "ctaLabel": "Gå till webbplatsen",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Period",
         "contactName": "Kontaktperson",

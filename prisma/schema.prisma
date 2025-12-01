@@ -1,0 +1,152 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model ContactQuote {
+  id               String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  locale           String
+  name             String
+  email            String
+  phone            String
+  preferredChannel String        @map("preferredchannel")
+  rentalStart      DateTime?     @map("rentalstart") @db.Date
+  rentalEnd        DateTime?     @map("rentalend") @db.Date
+  arrivalFlight    String?       @map("arrivalflight")
+  departureFlight  String?       @map("departureflight")
+  partySize        String?       @map("partysize")
+  children         String?
+  carId            String?       @map("carid")
+  carName          String?       @map("carname")
+  status           String        @default("new")
+  updated          String?
+  createdAt        DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @map("createdAt") @db.Timestamptz(6)
+  updatedAt        DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
+  humanId          String?       @unique
+  extras           String[]      @map("extras")
+  delivery         Json?
+  rentRequests     RentRequest[]
+
+  @@index([createdAt], map: "idx_contactquotes_created_at")
+  @@index([status], map: "idx_contactquotes_status")
+  @@map("ContactQuotes")
+}
+
+model RentRequest {
+  id           String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  locale       String
+  carId        String?       @map("carid")
+  quoteId      String?       @map("quoteid") @db.Uuid
+  contactName  String        @map("contactname")
+  contactEmail String        @map("contactemail")
+  contactPhone String?       @map("contactphone")
+  rentalStart  DateTime?     @map("rentalstart") @db.Date
+  rentalEnd    DateTime?     @map("rentalend") @db.Date
+  status       String        @default("new")
+  updated      String?
+  payload      Json?
+  createdAt    DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @map("createdAt") @db.Timestamptz(6)
+  updatedAt    DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
+  humanId      String?       @unique
+  contactQuote ContactQuote? @relation(fields: [quoteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([carId], map: "idx_rentrequests_car")
+  @@index([createdAt], map: "idx_rentrequests_created_at")
+  @@index([status], map: "idx_rentrequests_status")
+  @@map("RentRequests")
+}
+
+model Car {
+  id            String          @id
+  manufacturer  String
+  model         String
+  seats         Int
+  images        String[]        @default([]) @map("images")
+  createdAt     DateTime        @default(now()) @map("createdAt")
+  updatedAt     DateTime        @updatedAt @map("updatedAt")
+  smallLuggage  Int             @default(0) @map("smallLuggage")
+  largeLuggage  Int             @default(0) @map("largeLuggage")
+  bodyType      CarBodyType     @default(sedan)
+  fuel          CarFuel         @default(petrol)
+  transmission  CarTransmission @default(manual)
+  monthlyPrices Int[]           @default(dbgenerated("array_fill(0, ARRAY[12])"))
+  CarColors     CarColor[]
+
+  @@map("Cars")
+}
+
+model Color {
+  id        String     @id
+  name      String     @unique
+  createdAt DateTime   @default(now())
+  CarColors CarColor[]
+
+  @@map("Colors")
+}
+
+model CarColor {
+  A      String
+  B      String
+  Cars   Car    @relation(fields: [A], references: [id], onDelete: Cascade)
+  Colors Color  @relation(fields: [B], references: [id], onDelete: Cascade)
+
+  @@id([A, B], map: "_CarColors_AB_pkey")
+  @@index([B], map: "_CarColors_B_index")
+  @@map("_CarColors")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Accounts {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime
+  Users             Users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Users {
+  id        String     @id
+  email     String     @unique
+  password  String
+  createdAt DateTime   @default(now())
+  Accounts  Accounts[]
+}
+
+enum CarBodyType {
+  sedan
+  hatchback
+  suv
+  wagon
+  van
+  pickup
+  coupe
+}
+
+enum CarFuel {
+  petrol
+  diesel
+  electric
+  hybrid
+}
+
+enum CarTransmission {
+  manual
+  automatic
+}

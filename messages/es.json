@@ -803,7 +803,7 @@
     "readMore": "Abrir artículo",
     "posts": [
       {
-        "slug": "que-ver-en-fuerteventura-en-coche",
+        "slug": "que-ver-en-fuerteventura-en-coche-3-paradas-imprescindibles",
         "title": "Qué ver en Fuerteventura en coche – 3 paradas imprescindibles",
         "excerpt": "Las dunas de Corralejo, Betancuria y las cuevas de Ajuy: guía para aprovechar al máximo tu coche de alquiler en Fuerteventura.",
         "category": "Guía de viaje",
@@ -816,7 +816,7 @@
         }
       },
       {
-        "slug": "corrientes-peligrosas-fuerteventura",
+        "slug": "atencion-corrientes-de-retorno-peligrosas-en-fuerteventura",
         "title": "¡Atención! Corrientes de retorno peligrosas en Fuerteventura",
         "excerpt": "Aprende a identificar una rip current antes de entrar al Atlántico y disfruta de Cofete y las playas salvajes sin sustos.",
         "category": "Seguridad",
@@ -844,7 +844,7 @@
           "Cuevas de Ajuy",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/que-ver-en-fuerteventura-en-coche",
+        "canonical": "https://www.zodiacsrentacar.com/que-ver-en-fuerteventura-en-coche-3-paradas-imprescindibles",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Vista de las dunas de Corralejo en Fuerteventura"
@@ -1005,7 +1005,7 @@
           "corriente marina",
           "cómo detectar una rip current"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/atencion-corrientes-de-retorno-peligrosas-en-fuerteventura",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Cartel de advertencia en la playa de Cofete"
@@ -2356,6 +2356,11 @@
         "Zodiac Rent a Car blog"
       ]
     },
+    "rent": {
+      "title": "Solicitud recibida – Zodiacs Rent a Car",
+      "description": "Hemos recibido tu solicitud de reserva y pronto te responderemos con detalles personalizados y el contrato.",
+      "ogImageAlt": "Gracias de Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "Política de privacidad – Zodiacs Rent a Car",
       "description": "Conoce cómo protegemos tus datos personales, las bases legales aplicables y los derechos que puedes ejercer.",
@@ -2451,7 +2456,7 @@
       "title": "Gracias por su solicitud de reserva",
       "intro": "Hemos recibido sus datos y nos pondremos en contacto pronto para confirmarlo.",
       "footerNote": "Si necesita actualizar algún dato, responda a este correo.",
-      "ctaLabel": "Ir al sitio web",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Fechas",
         "contactName": "Persona de contacto",

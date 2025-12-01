@@ -436,6 +436,11 @@
         "sfaturi Zodiacs Rent a Car"
       ]
     },
+    "rent": {
+      "title": "Cerere primită – Zodiacs Rent a Car",
+      "description": "Am primit solicitarea ta de rezervare și revenim în curând cu detalii personalizate și contractul.",
+      "ogImageAlt": "Mulțumim din partea Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "Informații GDPR privind prelucrarea datelor – Zodiacs Rent a Car",
       "description": "Află cum îți prelucrăm datele personale, pe ce temei juridic ne bazăm și cum îți poți exercita drepturile.",
@@ -735,7 +740,7 @@
     "readMore": "Deschide articolul",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "obiective-de-vizitat-cu-masina-in-fuerteventura-3-locuri-de-neratat",
         "title": "Obiective de vizitat cu mașina în Fuerteventura – 3 locuri de neratat",
         "excerpt": "Dunele din Corralejo, Betancuria și peșterile din Ajuy: ghid despre cum să profiți la maximum de mașina închiriată în Fuerteventura.",
         "category": "Ghid de călătorie",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "atentie-curenturi-de-revenire-periculoase-in-fuerteventura",
         "title": "Atenție! Curenturi de revenire periculoase în Fuerteventura",
         "excerpt": "Învață să recunoști semnele curenților de tip rip current, ca plajele sălbatice precum Cofete să rămână o experiență plăcută, nu un pericol.",
         "category": "Siguranță",
@@ -776,7 +781,7 @@
           "peșterile Ajuy",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/obiective-de-vizitat-cu-masina-in-fuerteventura-3-locuri-de-neratat",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Priveliște către dunele de nisip Corralejo în Fuerteventura"
@@ -937,7 +942,7 @@
           "curenți marini",
           "recunoașterea rip current"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/atentie-curenturi-de-revenire-periculoase-in-fuerteventura",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Panou de avertizare pe coasta sălbatică Cofete din Fuerteventura"
@@ -2280,7 +2285,7 @@
       "title": "Vă mulțumim pentru cererea de rezervare",
       "intro": "Am primit detaliile și vă vom contacta în curând pentru confirmare.",
       "footerNote": "Dacă trebuie să modificați ceva, răspundeți la acest e-mail.",
-      "ctaLabel": "Accesați site-ul",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Perioadă",
         "contactName": "Persoană de contact",

@@ -436,6 +436,11 @@
         "conseils Zodiacs Rent a Car"
       ]
     },
+    "rent": {
+      "title": "Demande reçue – Zodiacs Rent a Car",
+      "description": "Nous avons bien reçu votre demande de réservation et vous répondrons bientôt avec les détails personnalisés et le contrat.",
+      "ogImageAlt": "Merci de Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "Information RGPD – Zodiacs Rent a Car",
       "description": "Découvre comment nous traitons tes données personnelles, sur quelles bases juridiques nous nous appuyons et comment exercer tes droits.",
@@ -735,7 +740,7 @@
     "readMore": "Ouvrir l’article",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "fuerteventura-en-voiture-3-lieux-incontournables",
         "title": "Fuerteventura en voiture – 3 lieux incontournables",
         "excerpt": "Les dunes de Corralejo, Betancuria et les grottes d’Ajuy : notre guide pour profiter au maximum de Fuerteventura en voiture de location.",
         "category": "Guide de voyage",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "attention-courants-de-retour-dangereux-a-fuerteventura",
         "title": "Attention ! Courants de retour dangereux à Fuerteventura",
         "excerpt": "Apprends à reconnaître les signes d’un rip current pour que Cofete et les plages sauvages restent un plaisir, pas un danger.",
         "category": "Sécurité",
@@ -776,7 +781,7 @@
           "grottes d’Ajuy",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-en-voiture-3-lieux-incontournables",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Vue sur les dunes de Corralejo à Fuerteventura"
@@ -937,7 +942,7 @@
           "courants marins",
           "reconnaître rip current"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/attention-courants-de-retour-dangereux-a-fuerteventura",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Panneau d’avertissement sur la plage sauvage de Cofete à Fuerteventura"
@@ -2280,7 +2285,7 @@
       "title": "Merci pour votre demande de réservation",
       "intro": "Nous avons bien reçu vos informations et nous vous contacterons bientôt pour confirmer.",
       "footerNote": "Si vous devez mettre à jour des informations, répondez à cet e-mail.",
-      "ctaLabel": "Visiter le site",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Dates",
         "contactName": "Contact",

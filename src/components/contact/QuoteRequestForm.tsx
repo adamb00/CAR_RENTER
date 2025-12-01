@@ -3,15 +3,22 @@
 import Link from 'next/link';
 import { useMemo, useState, useTransition } from 'react';
 import { useMessages, useTranslations } from 'next-intl';
-import { useForm, type FieldValues } from 'react-hook-form';
+import {
+  useForm,
+  type SubmitHandler,
+  type Resolver,
+  type FieldPath,
+} from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import toast from 'react-hot-toast';
 import { enUS } from 'date-fns/locale';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
 import { submitContactQuote } from '@/actions/ContactQuoteAction';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { MultiSelect } from '@/components/MultiSelect';
 import {
   Select,
   SelectContent,
@@ -30,10 +37,14 @@ import {
 import { DateRangePicker } from '@/components/ui/date-range-picker';
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
+import { EXTRA_VALUES } from '@/lib/extra_values';
 import LegalConsents, {
   type LegalConsentItem,
 } from '@/components/rent/LegalConsents';
 import { trackFormSubmission } from '@/lib/analytics';
+import { resolvePostalSelection } from '@/hooks/useResolvePostalSelection';
+import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
+import { useDelivery } from '@/hooks/useDelivery';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;
@@ -72,46 +83,137 @@ const formatDateValue = (date: Date): string => {
 type PreferredChannel = 'email' | 'phone' | 'whatsapp' | 'viber';
 const CHANNELS: PreferredChannel[] = ['email', 'phone', 'whatsapp', 'viber'];
 
-const buildSchema = (t: ReturnType<typeof useTranslations<'Contact'>>) =>
-  z.object({
-    name: z.string().min(1, t('form.errors.nameRequired')),
-    phone: z.string().min(1, t('form.errors.phoneRequired')),
-    email: z
-      .string()
-      .min(1, t('form.errors.emailRequired'))
-      .email(t('form.errors.emailInvalid')),
-    preferredChannel: z.enum(CHANNELS),
-    rentalStart: z.string().min(1, t('form.errors.rentalStartRequired')),
-    rentalEnd: z.string().min(1, t('form.errors.rentalEndRequired')),
-    arrivalFlight: z.string().optional(),
-    departureFlight: z.string().optional(),
-    partySize: z.string().optional(),
-    children: z.string().optional(),
-    carId: z.string().optional(),
-    consents: z.object({
-      privacy: z
-        .boolean()
-        .refine((val) => val, { message: t('form.errors.privacyRequired') }),
-      terms: z
-        .boolean()
-        .refine((val) => val, { message: t('form.errors.termsRequired') }),
-    }),
-  });
+type DeliveryInfo = {
+  placeType?: 'accommodation' | 'airport';
+  locationName?: string;
+  address?: {
+    country?: string;
+    postalCode?: string;
+    city?: string;
+    street?: string;
+    doorNumber?: string;
+  };
+};
 
-type QuoteRequestValues = z.infer<ReturnType<typeof buildSchema>> & FieldValues;
+const buildSchema = (
+  t: ReturnType<typeof useTranslations<'Contact'>>,
+  tRent: ReturnType<typeof useTranslations<'RentForm'>>,
+  deliveryFieldRequiredMessage: string
+) =>
+  z
+    .object({
+      name: z.string().min(1, t('form.errors.nameRequired')),
+      phone: z.string().min(1, t('form.errors.phoneRequired')),
+      email: z
+        .string()
+        .min(1, t('form.errors.emailRequired'))
+        .email(t('form.errors.emailInvalid')),
+      preferredChannel: z.enum(CHANNELS),
+      rentalStart: z.string().min(1, t('form.errors.rentalStartRequired')),
+      rentalEnd: z.string().min(1, t('form.errors.rentalEndRequired')),
+      arrivalFlight: z.string().optional(),
+      departureFlight: z.string().optional(),
+      partySize: z.string().optional(),
+      children: z.string().optional(),
+      carId: z.string().optional(),
+      extras: z.array(z.string()).default([]),
+      delivery: z
+        .object({
+          placeType: z.enum(['accommodation', 'airport']).optional(),
+          locationName: z.string().optional(),
+          address: z
+            .object({
+              country: z.string().optional(),
+              postalCode: z.string().optional(),
+              city: z.string().optional(),
+              street: z.string().optional(),
+              doorNumber: z.string().optional(),
+            })
+            .optional(),
+        })
+        .optional(),
+      consents: z.object({
+        privacy: z
+          .boolean()
+          .refine((val) => val, { message: t('form.errors.privacyRequired') }),
+        terms: z
+          .boolean()
+          .refine((val) => val, { message: t('form.errors.termsRequired') }),
+      }),
+    })
+    .superRefine((val, ctx) => {
+      const hasDelivery =
+        Array.isArray(val.extras) && val.extras.includes('kiszallitas');
+      if (!hasDelivery) return;
+
+      const messageRequired = deliveryFieldRequiredMessage;
+
+      if (!val.delivery?.placeType) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: tRent('errors.deliveryPlaceTypeRequired'),
+          path: ['delivery', 'placeType'],
+        });
+      }
+
+      const address = val.delivery?.address ?? {};
+      (['country', 'postalCode', 'city'] as const).forEach((key) => {
+        const raw = address[key];
+        if (!raw || (typeof raw === 'string' && raw.trim().length === 0)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: messageRequired,
+            path: ['delivery', 'address', key],
+          });
+        }
+      });
+    });
+
+type QuoteRequestSchema = ReturnType<typeof buildSchema>;
+export type QuoteRequestValues = z.infer<QuoteRequestSchema>;
 
 type QuoteRequestFormProps = {
   locale: string;
   selectedCar?: { id: string; name: string } | null;
 };
 
-export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps) {
+export function QuoteRequestForm({
+  locale,
+  selectedCar,
+}: QuoteRequestFormProps) {
   const t = useTranslations('Contact');
+  const tReF = useTranslations('RentForm');
+  const tRent = useTranslations('RentForm');
+  const tSchema = useTranslations('RentSchema');
   const messages = useMessages();
+  const deliveryFieldRequiredMessage = useMemo(() => {
+    const rentFormMessages =
+      messages?.RentForm as
+        | { errors?: { deliveryFieldRequired?: string } }
+        | undefined;
+    if (rentFormMessages?.errors?.deliveryFieldRequired) {
+      return rentFormMessages.errors.deliveryFieldRequired;
+    }
+
+    const rentSchemaMessages =
+      messages?.RentSchema as
+        | { errors?: { deliveryFieldRequired?: string } }
+        | undefined;
+    if (rentSchemaMessages?.errors?.deliveryFieldRequired) {
+      return rentSchemaMessages.errors.deliveryFieldRequired;
+    }
+
+    return tSchema('errors.deliveryFieldRequired');
+  }, [messages, tSchema]);
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [placesReady, setPlacesReady] = useState(false);
+  useWindowWithGoogle(setPlacesReady);
 
-  const schema = useMemo(() => buildSchema(t), [t]);
+  const schema = useMemo(
+    () => buildSchema(t, tRent, deliveryFieldRequiredMessage),
+    [t, tRent, deliveryFieldRequiredMessage]
+  );
   const defaultValues = useMemo(
     () => ({
       name: '',
@@ -125,17 +227,29 @@ export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps)
       partySize: '',
       children: '',
       carId: selectedCar?.id ?? '',
+      extras: [],
+      delivery: {
+        placeType: undefined,
+        locationName: '',
+        address: {
+          country: '',
+          postalCode: '',
+          city: '',
+          street: '',
+          doorNumber: '',
+        },
+      } as DeliveryInfo,
       consents: { privacy: false, terms: false },
     }),
     [selectedCar?.id]
   );
 
   const form = useForm<QuoteRequestValues>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema) as Resolver<QuoteRequestValues>,
     defaultValues,
   });
 
-  const onSubmit = (values: QuoteRequestValues) => {
+  const onSubmit: SubmitHandler<QuoteRequestValues> = (values) => {
     setStatus('idle');
     const submissionMeta = {
       locale,
@@ -167,6 +281,9 @@ export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps)
       }
     });
   };
+
+  const { deliveryLocationPath, handleDeliveryPostalSelect } =
+    useDelivery(form);
 
   const dateLocale = DATE_LOCALE_MAP[locale] ?? 'en-US';
   const calendarLocale = CALENDAR_LOCALE_MAP[locale] ?? enUS;
@@ -226,6 +343,21 @@ export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps)
     [locale, t]
   );
 
+  const extrasOptions = useMemo(
+    () =>
+      EXTRA_VALUES.map((value) => ({
+        value,
+        label: tRent(`extras.options.${value}`),
+      })),
+    [tRent]
+  );
+
+  const extrasSelected = form.watch('extras');
+  const isDeliveryRequired =
+    Array.isArray(extrasSelected) && extrasSelected.includes('kiszallitas');
+  const deliveryTitle = tRent('sections.delivery.title');
+  const deliveryDesc = tRent('sections.delivery.description');
+
   return (
     <div className='my-10 max-w-7xl mx-auto w-full'>
       <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8 shadow-sm'>
@@ -249,7 +381,11 @@ export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps)
               control={form.control}
               name='carId'
               render={({ field }) => (
-                <input type='hidden' value={field.value ?? ''} onChange={field.onChange} />
+                <input
+                  type='hidden'
+                  value={field.value ?? ''}
+                  onChange={field.onChange}
+                />
               )}
             />
             <div className='grid gap-4 sm:grid-cols-2'>
@@ -379,6 +515,31 @@ export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps)
               <input type='hidden' {...form.register('rentalEnd')} />
             </div>
 
+            <div>
+              <FormField
+                control={form.control}
+                name='extras'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{tRent('extras.label')}</FormLabel>
+                    <FormControl>
+                      <MultiSelect
+                        options={extrasOptions}
+                        defaultValue={field.value ?? []}
+                        onValueChange={field.onChange}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                    <div className='mt-2 text-xs text-muted-foreground space-y-1'>
+                      <p>{tRent('extras.packages.base')}</p>
+                      <p>{tRent('extras.packages.energy')}</p>
+                      <p>{tRent('extras.packages.lateArrival')}</p>
+                    </div>
+                  </FormItem>
+                )}
+              />
+            </div>
+
             <div className='grid gap-4 sm:grid-cols-2'>
               <FormField
                 control={form.control}
@@ -419,6 +580,300 @@ export function QuoteRequestForm({ locale, selectedCar }: QuoteRequestFormProps)
                 )}
               />
             </div>
+
+            {isDeliveryRequired ? (
+              <div className='rounded-2xl border border-border/60 bg-muted/30 p-4 space-y-4'>
+                <div>
+                  <h4 className='text-base font-semibold'>{deliveryTitle}</h4>
+                  <p className='text-sm text-muted-foreground'>
+                    {deliveryDesc}
+                  </p>
+                </div>
+                <div className='grid gap-4 sm:grid-cols-2'>
+                  <FormField
+                    control={form.control}
+                    name='delivery.placeType'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          {tRent('sections.delivery.fields.placeType.label')}
+                        </FormLabel>
+                        <FormControl>
+                          <Select
+                            value={field.value}
+                            onValueChange={field.onChange}
+                          >
+                            <SelectTrigger>
+                              <SelectValue
+                                placeholder={tRent(
+                                  'sections.delivery.fields.placeType.placeholder'
+                                )}
+                              />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value='accommodation'>
+                                {tRent(
+                                  'sections.delivery.fields.placeType.accommodation'
+                                )}
+                              </SelectItem>
+                              <SelectItem value='airport'>
+                                {tRent(
+                                  'sections.delivery.fields.placeType.airport'
+                                )}
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name='delivery.locationName'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          {tRent('sections.delivery.locationName.label')}
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder={tRent(
+                              'sections.delivery.locationName.placeholder'
+                            )}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className='grid gap-4 sm:grid-cols-2'>
+                  <FormField
+                    control={form.control}
+                    // name='delivery.address.country'
+                    name={deliveryLocationPath('country')}
+                    render={({ field }) => {
+                      const countryValue =
+                        typeof field.value === 'string' ? field.value : '';
+                      return (
+                        <FormItem>
+                          <FormLabel>
+                            {tRent('sections.delivery.fields.country.label')}
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              value={countryValue}
+                              placeholder={tRent(
+                                'sections.delivery.fields.country.placeholder'
+                              )}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+                  <FormField
+                    control={form.control}
+                    // name='delivery.address.postalCode'
+                    name={deliveryLocationPath('postalCode')}
+                    render={({ field }) => {
+                      const postalValue =
+                        typeof field.value === 'string' ? field.value : '';
+                      return (
+                        <FormItem>
+                          <FormLabel>
+                            {tRent('sections.delivery.fields.postalCode.label')}
+                          </FormLabel>
+                          <FormControl>
+                            {placesReady ? (
+                              <PlacesAutocomplete
+                                value={postalValue}
+                                onChange={(value) => {
+                                  field.onChange(value);
+                                }}
+                                onSelect={async (address, placeId) => {
+                                  const resolved =
+                                    await handleDeliveryPostalSelect(
+                                      address,
+                                      placeId
+                                    );
+                                  if (resolved) {
+                                    field.onChange(resolved);
+                                  }
+                                }}
+                                searchOptions={{ types: ['geocode'] }}
+                                debounce={200}
+                                highlightFirstSuggestion
+                              >
+                                {({
+                                  getInputProps,
+                                  suggestions,
+                                  getSuggestionItemProps,
+                                  loading,
+                                }) => (
+                                  <div className='relative'>
+                                    <Input
+                                      {...getInputProps({
+                                        placeholder: tRent(
+                                          'sections.drivers.fields.postalCode.placeholder'
+                                        ),
+                                        onBlur: field.onBlur,
+                                      })}
+                                    />
+                                    {(loading || suggestions.length > 0) && (
+                                      <div className='absolute z-50 mt-1 w-full overflow-hidden rounded-md border border-border/60 bg-background shadow-lg'>
+                                        {loading && (
+                                          <div className='px-3 py-2 text-sm text-muted-foreground'>
+                                            {tReF('searching')}
+                                          </div>
+                                        )}
+                                        {suggestions.map((suggestion) => {
+                                          const itemProps =
+                                            getSuggestionItemProps(suggestion, {
+                                              className:
+                                                'cursor-pointer px-3 py-2 text-sm hover:bg-accent',
+                                            });
+                                          const { key, ...restProps } =
+                                            itemProps as {
+                                              key?: React.Key;
+                                              [prop: string]: unknown;
+                                            };
+                                          const normalizedKey =
+                                            key != null
+                                              ? String(key)
+                                              : suggestion.placeId ??
+                                                suggestion.description;
+                                          return (
+                                            <div
+                                              key={normalizedKey}
+                                              {...restProps}
+                                            >
+                                              {suggestion.description}
+                                            </div>
+                                          );
+                                        })}
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+                              </PlacesAutocomplete>
+                            ) : (
+                              <Input
+                                placeholder={t(
+                                  'sections.drivers.fields.postalCode.placeholder'
+                                )}
+                                value={postalValue}
+                                onChange={(event) => {
+                                  field.onChange(event.target.value);
+                                }}
+                                onBlur={field.onBlur}
+                              />
+                            )}
+                            {/* <Input
+                            {...field}
+                            placeholder={tRent(
+                              'sections.delivery.fields.postalCode.placeholder'
+                            )}
+                            onBlur={async (event) => {
+                              field.onBlur();
+                              await fillAddressFromPostal();
+                            }}
+                          /> */}
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+                </div>
+                <div className='grid gap-4 sm:grid-cols-2'>
+                  <FormField
+                    control={form.control}
+                    // name='delivery.address.city'
+                    name={deliveryLocationPath('city')}
+                    render={({ field }) => {
+                      const cityValue =
+                        typeof field.value === 'string' ? field.value : '';
+                      return (
+                        <FormItem>
+                          <FormLabel>
+                            {tRent('sections.delivery.fields.city.label')}
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              value={cityValue}
+                              placeholder={tRent(
+                                'sections.delivery.fields.city.placeholder'
+                              )}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+                  <FormField
+                    control={form.control}
+                    // name='delivery.address.street'
+                    name={deliveryLocationPath('street')}
+                    render={({ field }) => {
+                      const streetValue =
+                        typeof field.value === 'string' ? field.value : '';
+                      return (
+                        <FormItem>
+                          <FormLabel>
+                            {tRent('sections.delivery.fields.street.label')}
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              value={streetValue}
+                              placeholder={tRent(
+                                'sections.delivery.fields.street.placeholder'
+                              )}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+                </div>
+                <div className='grid gap-4 sm:grid-cols-2'>
+                  <FormField
+                    control={form.control}
+                    // name='delivery.address.doorNumber'
+                    name={deliveryLocationPath('doorNumber')}
+                    render={({ field }) => {
+                      const doorValue =
+                        typeof field.value === 'string' ? field.value : '';
+                      return (
+                        <FormItem>
+                          <FormLabel>
+                            {tRent('sections.delivery.fields.doorNumber.label')}
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              value={doorValue}
+                              placeholder={tRent(
+                                'sections.delivery.fields.doorNumber.placeholder'
+                              )}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+                </div>
+              </div>
+            ) : null}
 
             <div className='grid gap-4 sm:grid-cols-2'>
               <FormField

@@ -2,10 +2,20 @@
 
 import { getCarById } from '@/lib/cars';
 import { sendMail } from '@/lib/mailer';
-import { getSupabaseServerClient } from '@/lib/supabase/server';
+import { prisma } from '@/lib/prisma';
 import { renderBrandEmail } from '@/lib/emailTemplates';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
+import { getNextHumanId } from '@/lib/humanId';
+import { STATUS_NEW } from '@/lib/requestStatus';
+
+const parseDateValue = (value?: string | null): Date | null => {
+  if (!value) return null;
+  const needsTimeSuffix = /^\d{4}-\d{2}-\d{2}$/.test(value.trim());
+  const isoValue = needsTimeSuffix ? `${value}T00:00:00.000Z` : value;
+  const parsed = new Date(isoValue);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+};
 
 export type ContactQuotePayload = {
   locale: string;
@@ -20,116 +30,207 @@ export type ContactQuotePayload = {
   partySize?: string;
   children?: string;
   carId?: string;
+  extras?: string[];
+  delivery?: {
+    placeType?: 'accommodation' | 'airport';
+    locationName?: string;
+    address?: {
+      country?: string;
+      postalCode?: string;
+      city?: string;
+      street?: string;
+      doorNumber?: string;
+    };
+  };
+};
+
+const formatDeliverySummary = (
+  delivery?: ContactQuotePayload['delivery']
+): string => {
+  if (!delivery) return 'n/a';
+  const parts: string[] = [];
+  if (delivery.placeType) {
+    parts.push(`Place type: ${delivery.placeType}`);
+  }
+  if (delivery.locationName) {
+    parts.push(`Location: ${delivery.locationName}`);
+  }
+  if (delivery.address) {
+    const chunks = [
+      delivery.address.country,
+      delivery.address.postalCode,
+      delivery.address.city,
+      delivery.address.street,
+      delivery.address.doorNumber,
+    ]
+      .filter((value) => typeof value === 'string' && value.trim().length > 0)
+      .map((value) => (value as string).trim());
+    if (chunks.length > 0) {
+      parts.push(`Address: ${chunks.join(', ')}`);
+    }
+  }
+  return parts.length > 0 ? parts.join('<br>') : 'n/a';
+};
+
+const buildDeliveryLines = (payload: ContactQuotePayload): string[] => {
+  if (!payload.extras?.includes('kiszallitas') || !payload.delivery) {
+    return [];
+  }
+
+  const address = payload.delivery.address;
+  const addressParts = address
+    ? [
+        address.country,
+        address.postalCode,
+        address.city,
+        address.street,
+        address.doorNumber,
+      ]
+        .filter((value) => typeof value === 'string' && value.trim().length > 0)
+        .map((value) => (value as string).trim())
+        .join(' ')
+    : '';
+
+  return [
+    `Kiszállítás típusa: ${payload.delivery.placeType ?? 'n/a'}`,
+    `Helyszín neve: ${payload.delivery.locationName ?? 'n/a'}`,
+    `Cím: ${addressParts || 'n/a'}`,
+  ];
 };
 
 export async function submitContactQuote(payload: ContactQuotePayload) {
   try {
     const carInfo = payload.carId ? await getCarById(payload.carId) : null;
-    const supabase = getSupabaseServerClient();
-    const now = new Date().toISOString();
     const siteUrl = getSiteUrl();
     const resolvedLocale = resolveLocale(payload.locale);
     const tEmail = await getTranslations({ locale: resolvedLocale, namespace: 'Emails' });
     let quoteId: string | null = null;
+    const humanId = await getNextHumanId('ContactQuotes');
 
     const preferredChannelLabel = tEmail(
       `contactQuote.channelLabels.${payload.preferredChannel}`
     );
+    const extrasLabel =
+      Array.isArray(payload.extras) && payload.extras.length > 0
+        ? payload.extras.join(', ')
+        : 'n/a';
+
+    const rentalStartDate = parseDateValue(payload.rentalStart);
+    const rentalEndDate = parseDateValue(payload.rentalEnd);
+
+    const created = await prisma.contactQuote.create({
+      data: {
+        locale: payload.locale,
+        name: payload.name,
+        email: payload.email,
+        phone: payload.phone,
+        preferredChannel: payload.preferredChannel,
+        rentalStart: rentalStartDate,
+        rentalEnd: rentalEndDate,
+        arrivalFlight: payload.arrivalFlight ?? null,
+        departureFlight: payload.departureFlight ?? null,
+        partySize: payload.partySize ?? null,
+        children: payload.children ?? null,
+        carId: payload.carId ?? null,
+        carName: carInfo
+          ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
+          : null,
+        extras: payload.extras ?? [],
+        delivery: payload.delivery ?? undefined,
+        status: STATUS_NEW,
+        updated: null,
+        humanId,
+      },
+      select: {
+        id: true,
+      },
+    });
+
+    quoteId = created.id;
+
+    const deliveryLines = buildDeliveryLines(payload);
+    const formattedPeriod = `${payload.rentalStart || 'n/a'} → ${
+      payload.rentalEnd || 'n/a'
+    }`;
+    const carDisplayName = carInfo
+      ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
+      : payload.carId ?? 'n/a';
+    const carLineValue = carInfo
+      ? `${carInfo.manufacturer} ${carInfo.model} (ID: ${carInfo.id})`
+      : carDisplayName;
 
     const lines = [
       `Név: ${payload.name}`,
       `E-mail: ${payload.email}`,
       `Telefon: ${payload.phone}`,
       `Előnyben részesített csatorna: ${preferredChannelLabel}`,
-      `Bérlés: ${payload.rentalStart || 'n/a'} → ${payload.rentalEnd || 'n/a'}`,
+      `Bérlés: ${formattedPeriod}`,
       `Érkezési járatszám: ${payload.arrivalFlight || 'n/a'}`,
       `Hazautazó járatszám: ${payload.departureFlight || 'n/a'}`,
       `Utazók száma: ${payload.partySize || 'n/a'}`,
       `Gyermekek száma: ${payload.children || '0'}`,
-      `Kiválasztott autó: ${
-        carInfo
-          ? `${carInfo.manufacturer} ${carInfo.model} (ID: ${carInfo.id})`
-          : payload.carId || 'n/a'
-      }`,
+      `Extra szolgáltatások: ${extrasLabel}`,
+      ...deliveryLines,
+      `Kiválasztott autó: ${carLineValue}`,
+      `Locale: ${payload.locale}`,
+      `Human ID: ${humanId}`,
+      `Quote ID: ${quoteId}`,
+      `Status: ${STATUS_NEW}`,
       `Beküldve a(z) ${payload.locale.toUpperCase()} nyelvű kapcsolat oldalon.`,
     ].join('\n');
-
-    // Persist request to Supabase (best-effort; email still sent even if insert fails)
-    const baseRecord = {
-      locale: payload.locale,
-      name: payload.name,
-      email: payload.email,
-      phone: payload.phone,
-      preferredchannel: payload.preferredChannel,
-      rentalstart: payload.rentalStart ?? null,
-      rentalend: payload.rentalEnd ?? null,
-      partysize: payload.partySize ?? null,
-      children: payload.children ?? null,
-      carid: payload.carId ?? null,
-      carname: carInfo
-        ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
-        : null,
-      status: 'new',
-      updated: null as string | null,
-      createdAt: now,
-      updatedAt: now,
-    };
-
-    const recordWithFlights = {
-      ...baseRecord,
-      ...(payload.arrivalFlight
-        ? { arrivalflight: payload.arrivalFlight }
-        : {}),
-      ...(payload.departureFlight
-        ? { departureflight: payload.departureFlight }
-        : {}),
-    };
-
-    const { data: inserted, error: insertError } = await supabase
-      .from('ContactQuotes')
-      .insert(recordWithFlights)
-      .select('id')
-      .single();
-    if (inserted?.id) {
-      quoteId = inserted.id as string;
-    }
-    if (insertError) {
-      const isMissingColumn =
-        insertError.code === 'PGRST204' &&
-        (insertError.message?.toLowerCase().includes('arrivalflight') ||
-          insertError.message?.toLowerCase().includes('departureflight'));
-      if (isMissingColumn) {
-        const fallback = await supabase
-          .from('ContactQuotes')
-          .insert(baseRecord)
-          .select('id')
-          .single();
-        if (fallback.data?.id) {
-          quoteId = fallback.data.id as string;
-        }
-        if (fallback.error) {
-          console.error(
-            'Failed to store contact quote in Supabase (fallback)',
-            fallback.error
-          );
-        }
-      } else {
-        console.error('Failed to store contact quote in Supabase', insertError);
-      }
-    }
-
-    await sendMail({
-      to: process.env.MAIL_USER || 'info@zodiacsrentacar.com',
-      subject: `Kapcsolat oldal ajánlatkérés | ${payload.name}`,
-      text: lines,
-      replyTo: payload.email,
-    });
 
     const rentLink = carInfo
       ? `${siteUrl}/${resolvedLocale}/cars/${carInfo.id}/rent${
           quoteId ? `?quoteId=${quoteId}` : ''
         }`
       : siteUrl;
+
+    const adminRows = [
+      { label: 'Quote ID', value: quoteId },
+      { label: 'Human ID', value: humanId },
+      { label: 'Locale', value: payload.locale },
+      { label: tEmail('contactQuote.rows.name'), value: payload.name },
+      { label: tEmail('contactQuote.rows.email'), value: payload.email },
+      { label: tEmail('contactQuote.rows.phone'), value: payload.phone },
+      { label: tEmail('contactQuote.rows.preferredChannel'), value: preferredChannelLabel },
+      { label: tEmail('contactQuote.rows.period'), value: formattedPeriod },
+      {
+        label: tEmail('contactQuote.rows.arrivalFlight'),
+        value: payload.arrivalFlight ?? 'n/a',
+      },
+      {
+        label: tEmail('contactQuote.rows.departureFlight'),
+        value: payload.departureFlight ?? 'n/a',
+      },
+      {
+        label: tEmail('contactQuote.rows.partySize'),
+        value: payload.partySize ?? 'n/a',
+      },
+      {
+        label: tEmail('contactQuote.rows.children'),
+        value: payload.children ?? '0',
+      },
+      { label: tEmail('contactQuote.rows.car'), value: carDisplayName },
+      { label: 'Extras', value: extrasLabel },
+      { label: 'Delivery', value: formatDeliverySummary(payload.delivery) },
+      { label: 'Status', value: 'new' },
+    ];
+
+    const adminHtml = renderBrandEmail({
+      title: 'New booking request', // admin-facing subject
+      intro: `New contact quote submitted via the ${payload.locale.toUpperCase()} form.`,
+      rows: adminRows,
+      cta: { label: 'Open rental page', href: rentLink },
+      footerNote: tEmail('contactQuote.footerNote'),
+    });
+
+    await sendMail({
+      to: process.env.MAIL_USER || 'info@zodiacsrentacar.com',
+      subject: `Kapcsolat oldal ajánlatkérés | ${payload.name}`,
+      text: lines,
+      html: adminHtml,
+      replyTo: payload.email,
+    });
 
     const userRows = (
       [

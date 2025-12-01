@@ -1,4 +1,3 @@
-// src/store/use-settings.ts
 'use client';
 import { create } from 'zustand';
 import { Settings, Mode } from '@/types/theme';

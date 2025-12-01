@@ -436,6 +436,11 @@
         "Zodiacs Rent a Car advice"
       ]
     },
+    "rent": {
+      "title": "Booking request received – Zodiacs Rent a Car",
+      "description": "We received your booking request and will reply soon with personalised details and the contract.",
+      "ogImageAlt": "Thank you from Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "GDPR privacy notice – Zodiacs Rent a Car",
       "description": "Learn how we handle your personal data, which legal bases we rely on and how you can exercise your rights.",
@@ -735,7 +740,7 @@
     "readMore": "Open article",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "fuerteventura-sights-by-car-3-must-see-spots",
         "title": "Fuerteventura sights by car – 3 must-see spots",
         "excerpt": "Corralejo dunes, Betancuria and Ajuy caves: a guide on how to get the most out of Fuerteventura with your rental car.",
         "category": "Travel guide",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "warning-dangerous-rip-currents-in-fuerteventura",
         "title": "Warning! Dangerous rip currents in Fuerteventura",
         "excerpt": "Learn to recognise the signs of rip currents so that Cofete and the wild beaches remain an experience, not a danger.",
         "category": "Safety",
@@ -776,7 +781,7 @@
           "Ajuy caves",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-sights-by-car-3-must-see-spots",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "View of the Corralejo sand dunes in Fuerteventura"
@@ -937,7 +942,7 @@
           "sea current",
           "recognising rip currents"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/warning-dangerous-rip-currents-in-fuerteventura",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Warning sign on the wild beach of Cofete in Fuerteventura"
@@ -2280,7 +2285,7 @@
       "title": "Thank you for your booking request",
       "intro": "We received your details and will contact you soon to confirm.",
       "footerNote": "If you need to update any details, please reply to this email.",
-      "ctaLabel": "Visit website",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Dates",
         "contactName": "Contact person",

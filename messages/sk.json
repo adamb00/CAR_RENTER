@@ -436,6 +436,11 @@
         "tipy Zodiacs Rent a Car"
       ]
     },
+    "rent": {
+      "title": "Žiadosť prijatá – Zodiacs Rent a Car",
+      "description": "Vašu rezerváciu sme obdržali a čoskoro sa ozveme s osobnými detailmi a zmluvou.",
+      "ogImageAlt": "Ďakujeme od Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "GDPR – Informácie o spracúvaní osobných údajov – Zodiacs Rent a Car",
       "description": "Zisti, ako spracúvame tvoje osobné údaje, na aké právne základy sa spoliehame a ako môžeš uplatniť svoje práva.",
@@ -735,7 +740,7 @@
     "readMore": "Otvoriť článok",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "fuerteventura-zaujimavosti-autom-3-miesta-ktore-netreba-vynechat",
         "title": "Fuerteventura – zaujímavosti autom – 3 miesta, ktoré netreba vynechať",
         "excerpt": "Duny Corralejo, Betancuria a jaskyne Ajuy: sprievodca, ako čo najlepšie využiť svoj prenajatý automobil na Fuerteventure.",
         "category": "Cestovný sprievodca",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "pozor-nebezpecne-spatne-prudy-na-fuerteventure",
         "title": "Pozor! Nebezpečné spätné prúdy na Fuerteventure",
         "excerpt": "Nauč sa rozpoznať príznaky rip current, aby boli Cofete a divoké pláže zážitkom – nie nebezpečenstvom.",
         "category": "Bezpečnosť",
@@ -776,7 +781,7 @@
           "jaskyne Ajuy",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-zaujimavosti-autom-3-miesta-ktore-netreba-vynechat",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Výhľad na piesočné duny Corralejo na Fuerteventure"
@@ -937,7 +942,7 @@
           "morský prúd",
           "rozpoznanie rip current"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/pozor-nebezpecne-spatne-prudy-na-fuerteventure",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Výstražná tabuľa na divokej pláži Cofete na Fuerteventure"
@@ -2280,7 +2285,7 @@
       "title": "Ďakujeme za vašu žiadosť o rezerváciu",
       "intro": "Údaje sme dostali a čoskoro vás budeme kontaktovať s potvrdením.",
       "footerNote": "Ak potrebujete údaje upraviť, odpovedzte na tento e-mail.",
-      "ctaLabel": "Prejsť na webstránku",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Termín",
         "contactName": "Kontaktná osoba",

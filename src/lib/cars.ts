@@ -1,6 +1,7 @@
 import { unstable_cache as cache } from 'next/cache';
 
-import { getSupabaseServerClient } from '@/lib/supabase/server';
+import type { Prisma } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 
 const FALLBACK_IMAGE = '/cars.webp';
 const STORAGE_BUCKET =
@@ -27,34 +28,6 @@ export type CarFuel = (typeof CAR_FUELS)[number];
 export type CarBodyType = (typeof CAR_BODY_TYPES)[number];
 export type CarColor = (typeof CAR_COLORS)[number];
 
-type SupabaseColorValue = {
-  name?: string | null;
-  key?: string | null;
-  value?: string | null;
-  color?: {
-    name?: string | null;
-    key?: string | null;
-    value?: string | null;
-  } | null;
-};
-
-type SupabaseCar = {
-  id: string;
-  manufacturer: string;
-  model: string;
-  bodyType: CarBodyType;
-  prices?: (number | string | null)[] | number | string | null;
-  images: string[] | null;
-  seats: number;
-  smallLuggage: number;
-  largeLuggage: number;
-  transmission: CarTransmission;
-  fuel: CarFuel;
-  colors?: (SupabaseColorValue | string)[] | null;
-  createdAt: string;
-  updatedAt: string;
-};
-
 export type Car = {
   id: string;
   manufacturer: string;
@@ -73,6 +46,16 @@ export type Car = {
   createdAt: string;
   updatedAt: string;
 };
+
+type PrismaCarWithColors = Prisma.CarGetPayload<{
+  include: {
+    CarColors: {
+      include: {
+        Colors: true;
+      };
+    };
+  };
+}>;
 
 const ensureArray = <T,>(value: T[] | null | undefined): T[] => {
   if (!value || !Array.isArray(value)) {
@@ -136,25 +119,42 @@ const normalizeColors = (values: unknown): CarColor[] => {
       if (typeof color === 'string') return color;
       if (!color || typeof color !== 'object') return null;
 
-      const candidate = color as SupabaseColorValue;
+      const candidate = color as Record<string, unknown>;
       const nestedColor =
-        candidate.color ??
-        (candidate as { Color?: SupabaseColorValue | null }).Color ??
-        (candidate as { Colors?: SupabaseColorValue | null }).Colors;
-      return (
+        candidate.color ?? candidate.Color ?? candidate.Colors;
+      const nestedRecord =
+        nestedColor && typeof nestedColor === 'object'
+          ? (nestedColor as Record<string, unknown>)
+          : null;
+
+      const value =
         candidate.name ??
         candidate.key ??
         candidate.value ??
-        nestedColor?.name ??
-        nestedColor?.key ??
-        nestedColor?.value ??
-        null
-      );
+        nestedRecord?.name ??
+        nestedRecord?.key ??
+        nestedRecord?.value ??
+        null;
+
+      return typeof value === 'string' ? value : null;
     })
     .map((value) => normalizeColor(value))
     .filter((value): value is CarColor => Boolean(value));
 
   return Array.from(new Set(colors));
+};
+
+const normalizeOption = <T extends string>(
+  value: string | null | undefined,
+  options: readonly T[]
+): T => {
+  if (typeof value !== 'string') {
+    return options[0];
+  }
+  const normalized = value.trim().toLowerCase().replace(/[\s-]+/g, '_');
+  return (options.includes(normalized as T)
+    ? (normalized as T)
+    : options[0]) as T;
 };
 
 const normalizePrices = (value: unknown): number[] => {
@@ -207,35 +207,33 @@ const normalizePrices = (value: unknown): number[] => {
   return prices;
 };
 
-const mapCar = (car: SupabaseCar): Car => {
-  const images = normalizeImages(car.images);
-  const colors = normalizeColors(
-    car.colors ??
-      (car as { CarColors?: unknown }).CarColors ??
-      (car as { Colors?: unknown }).Colors ??
-      (car as { _CarColors?: unknown })._CarColors
-  );
-  const rawPrices =
-    (car as { prices?: unknown; price?: unknown }).prices ??
-    (car as { price?: unknown }).price ??
-    (car as { Prices?: unknown }).Prices ??
-    (car as { PricesPerWeek?: unknown }).PricesPerWeek ??
-    (car as { weeklyPrices?: unknown }).weeklyPrices ??
-    (car as { weekly_prices?: unknown }).weekly_prices ??
-    (car as { monthlyPrices?: unknown }).monthlyPrices ??
-    (car as { monthly_prices?: unknown }).monthly_prices;
+const mapCar = (car: PrismaCarWithColors): Car => {
+  const images = normalizeImages(car.images ?? []);
+  const relationColors = car.CarColors?.map((relation) => relation.Colors?.name ?? null) ?? [];
+  const colors = normalizeColors(relationColors);
+  const rawPrices = car.monthlyPrices;
   const prices = normalizePrices(rawPrices);
 
   const image = images.length > 0 ? images[0] : FALLBACK_IMAGE;
+
+  const isoString = (value: Date | string | null | undefined) =>
+    value instanceof Date ? value.toISOString() : value ?? new Date().toISOString();
+
+  const normalizedBodyType = normalizeOption(car.bodyType, CAR_BODY_TYPES);
+  const normalizedFuel = normalizeOption(car.fuel, CAR_FUELS);
+  const normalizedTransmission = normalizeOption(
+    car.transmission,
+    CAR_TRANSMISSIONS
+  );
 
   return {
     id: car.id,
     manufacturer: car.manufacturer,
     model: car.model,
     name: `${car.manufacturer} ${car.model}`.trim(),
-    bodyType: car.bodyType,
-    fuel: car.fuel,
-    transmission: car.transmission,
+    bodyType: normalizedBodyType,
+    fuel: normalizedFuel,
+    transmission: normalizedTransmission,
     colors,
     seats: car.seats,
     smallLuggage: car.smallLuggage,
@@ -243,49 +241,36 @@ const mapCar = (car: SupabaseCar): Car => {
     image,
     images,
     prices,
-    createdAt: car.createdAt,
-    updatedAt: car.updatedAt,
+    createdAt: isoString(car.createdAt),
+    updatedAt: isoString(car.updatedAt),
   };
 };
 
-const selectColumns = '*, _CarColors(Colors(*))';
-const isMissingColorsRelationError = (error: { message?: string; details?: string } | null) => {
-  const message = `${error?.message ?? ''} ${error?.details ?? ''}`.toLowerCase();
-  return (
-    message.includes("relationship between 'cars' and 'colors'") ||
-    message.includes('relationship between cars and colors') ||
-    message.includes('carcolors') ||
-    message.includes('_carcolors')
-  );
-};
+const CAR_INCLUDE = {
+  CarColors: {
+    include: {
+      Colors: true,
+    },
+  },
+} as const;
 
 const fetchCars = async (): Promise<Car[]> => {
-  const client = getSupabaseServerClient();
-  const { data, error } = await client
-    .from('Cars')
-    .select(selectColumns)
-    .order('manufacturer', { ascending: true })
-    .order('model', { ascending: true });
+  const cars = await prisma.car.findMany({
+    include: CAR_INCLUDE,
+    orderBy: [
+      { manufacturer: 'asc' },
+      { model: 'asc' },
+    ],
+  });
+  return cars.map(mapCar);
+};
 
-  if (error && (error.code === '42703' || isMissingColorsRelationError(error))) {
-    const fallback = await client
-      .from('Cars')
-      .select('*')
-      .order('manufacturer', { ascending: true })
-      .order('model', { ascending: true });
-
-    if (fallback.error) {
-      throw new Error(`Failed to fetch cars from Supabase: ${fallback.error.message}`);
-    }
-
-    return (fallback.data ?? []).map(mapCar);
-  }
-
-  if (error) {
-    throw new Error(`Failed to fetch cars from Supabase: ${error.message}`);
-  }
-
-  return (data ?? []).map(mapCar);
+const fetchCarById = async (id: string): Promise<Car | null> => {
+  const car = await prisma.car.findUnique({
+    where: { id },
+    include: CAR_INCLUDE,
+  });
+  return car ? mapCar(car) : null;
 };
 
 export const getCars = cache(
@@ -299,33 +284,5 @@ export const getCars = cache(
 export const getCarById = async (id: string): Promise<Car | null> => {
   if (!id) return null;
 
-  const client = getSupabaseServerClient();
-  const { data, error } = await client.from('Cars').select(selectColumns).eq('id', id).maybeSingle();
-
-  if (error && (error.code === '42703' || isMissingColorsRelationError(error))) {
-    const fallback = await client.from('Cars').select('*').eq('id', id).maybeSingle();
-    if (fallback.error) {
-      if (fallback.error.code === 'PGRST116') {
-        return null;
-      }
-      throw new Error(`Failed to fetch car ${id} from Supabase: ${fallback.error.message}`);
-    }
-    if (!fallback.data) {
-      return null;
-    }
-    return mapCar(fallback.data as SupabaseCar);
-  }
-
-  if (error) {
-    if (error.code === 'PGRST116') {
-      return null;
-    }
-    throw new Error(`Failed to fetch car ${id} from Supabase: ${error.message}`);
-  }
-
-  if (!data) {
-    return null;
-  }
-
-  return mapCar(data);
+  return fetchCarById(id);
 };

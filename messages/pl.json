@@ -436,6 +436,11 @@
         "porady Zodiacs Rent a Car"
       ]
     },
+    "rent": {
+      "title": "Wniosek otrzymany – Zodiacs Rent a Car",
+      "description": "Otrzymaliśmy Twoje zapytanie rezerwacyjne i wkrótce odpowiemy z indywidualnymi szczegółami i umową.",
+      "ogImageAlt": "Dziękujemy od Zodiacs Rent a Car"
+    },
     "gdpr": {
       "title": "Polityka ochrony danych (GDPR) – Zodiacs Rent a Car",
       "description": "Dowiedz się, jak przetwarzamy Twoje dane osobowe, na jakich podstawach prawnych się opieramy i jak możesz korzystać ze swoich praw.",
@@ -735,7 +740,7 @@
     "readMore": "Otwórz artykuł",
     "posts": [
       {
-        "slug": "fuerteventura-latnivalok-autoval",
+        "slug": "fuerteventura-samochodem-3-miejsca-ktorych-nie-mozesz-pominac",
         "title": "Fuerteventura samochodem – 3 miejsca, których nie możesz pominąć",
         "excerpt": "Wydmy Corralejo, Betancuria i jaskinie Ajuy: przewodnik, jak najlepiej wykorzystać wynajęty samochód na Fuerteventurze.",
         "category": "Przewodnik",
@@ -748,7 +753,7 @@
         }
       },
       {
-        "slug": "fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "slug": "uwaga-niebezpieczne-prady-wsteczne-na-fuerteventurze",
         "title": "Uwaga! Niebezpieczne prądy wsteczne na Fuerteventurze",
         "excerpt": "Naucz się rozpoznawać oznaki rip current, aby Cofete i dzikie plaże pozostały wspomnieniem z przygody, a nie zagrożenia.",
         "category": "Bezpieczeństwo",
@@ -776,7 +781,7 @@
           "jaskinie Ajuy",
           "Zodiacs Rent a Car"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-latnivalok-autoval",
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-samochodem-3-miejsca-ktorych-nie-mozesz-pominac",
         "image": {
           "src": "/DSC00594.jpg",
           "alt": "Widok na wydmy Corralejo na Fuerteventurze"
@@ -937,7 +942,7 @@
           "prądy morskie",
           "rozpoznawanie rip current"
         ],
-        "canonical": "https://www.zodiacsrentacar.com/blog/fuerteventura-visszatero-aramlat-biztonsagos-furdozes",
+        "canonical": "https://www.zodiacsrentacar.com/uwaga-niebezpieczne-prady-wsteczne-na-fuerteventurze",
         "image": {
           "src": "/cofete.jpg",
           "alt": "Znak ostrzegawczy na dzikiej plaży Cofete na Fuerteventurze"
@@ -2280,7 +2285,7 @@
       "title": "Dziękujemy za Twoje zapytanie rezerwacyjne",
       "intro": "Otrzymaliśmy dane i wkrótce skontaktujemy się w celu potwierdzenia.",
       "footerNote": "Jeśli chcesz zmienić dane, odpowiedz na tego e-maila.",
-      "ctaLabel": "Przejdź na stronę",
+      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Termin",
         "contactName": "Osoba kontaktowa",

@@ -230,7 +230,9 @@ export function Navigation() {
       >
         <div className='absolute inset-0' aria-hidden />
         <ul className={'flex flex-col items-center justify-center text-center'}>
-          <Logo logo={logo} size='lg' />
+          <a href={normalizeHref('/')} className='curosr-pointer z-[3000]'>
+            <Logo logo={logo} size='lg' />
+          </a>
           {itemsMap.map((it, i) => (
             <li key={it.href + i} className='my-3 sm:my-4 z-[2500]'>
               <a
