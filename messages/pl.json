@@ -437,8 +437,8 @@
       ]
     },
     "rent": {
-      "title": "Wniosek otrzymany – Zodiacs Rent a Car",
-      "description": "Otrzymaliśmy Twoje zapytanie rezerwacyjne i wkrótce odpowiemy z indywidualnymi szczegółami i umową.",
+      "title": "Rezerwacja przyjęta – Zodiacs Rent a Car",
+      "description": "Otrzymaliśmy Twoją rezerwację i wkrótce prześlemy spersonalizowane szczegóły oraz umowę.",
       "ogImageAlt": "Dziękujemy od Zodiacs Rent a Car"
     },
     "gdpr": {
@@ -2281,9 +2281,9 @@
   },
   "Emails": {
     "rent": {
-      "subject": "Dziękujemy za Twoje zapytanie rezerwacyjne",
-      "title": "Dziękujemy za Twoje zapytanie rezerwacyjne",
-      "intro": "Otrzymaliśmy dane i wkrótce skontaktujemy się w celu potwierdzenia.",
+      "subject": "Dziękujemy za rezerwację",
+      "title": "Dziękujemy za rezerwację",
+      "intro": "Otrzymaliśmy dane i skontaktujemy się wkrótce w celu potwierdzenia.",
       "footerNote": "Jeśli chcesz zmienić dane, odpowiedz na tego e-maila.",
       "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {

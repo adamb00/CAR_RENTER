@@ -437,8 +437,8 @@
       ]
     },
     "rent": {
-      "title": "Ajánlatkérés megérkezett – Zodiacs Rent a Car",
-      "description": "Megkaptuk a foglalási kérelmedet, hamarosan személyre szabott részletekkel és a szerződéssel jelentkezünk.",
+      "title": "Foglalás megérkezett – Zodiacs Rent a Car",
+      "description": "Megkaptuk a foglalást, hamarosan személyre szabott részletekkel és a szerződéssel jelentkezünk.",
       "ogImageAlt": "Köszönjük a Zodiacs Rent a Car csapatától"
     },
     "gdpr": {
@@ -2281,8 +2281,8 @@
   },
   "Emails": {
     "rent": {
-      "subject": "Köszönjük foglalási kérelmét",
-      "title": "Köszönjük a foglalási kérelmet!",
+      "subject": "Köszönjük a foglalást",
+      "title": "Köszönjük a foglalást!",
       "intro": "Megkaptuk a részleteket, hamarosan felvesszük Önnel a kapcsolatot a visszaigazoláshoz.",
       "footerNote": "Ha módosítani szeretné a megadott adatokat, válaszoljon erre az e-mailre.",
       "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",

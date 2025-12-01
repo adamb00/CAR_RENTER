@@ -437,8 +437,8 @@
       ]
     },
     "rent": {
-      "title": "Forespørsel mottatt – Zodiacs Rent a Car",
-      "description": "Vi har mottatt forespørselen din og kommer snart tilbake med personlige detaljer og kontrakten.",
+      "title": "Booking mottatt – Zodiacs Rent a Car",
+      "description": "Vi har mottatt bookingen din og kommer snart tilbake med detaljer og kontrakt.",
       "ogImageAlt": "Takk fra Zodiacs Rent a Car"
     },
     "gdpr": {
@@ -2281,9 +2281,9 @@
   },
   "Emails": {
     "rent": {
-      "subject": "Takk for din bookingforespørsel",
-      "title": "Takk for din bookingforespørsel",
-      "intro": "Vi har mottatt opplysningene og kontakter deg snart for å bekrefte.",
+      "subject": "Takk for bookingen",
+      "title": "Takk for bookingen",
+      "intro": "Vi har mottatt informasjonen og kontakter deg snart for bekreftelse.",
       "footerNote": "Hvis du må endre opplysningene, svar på denne e-posten.",
       "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
