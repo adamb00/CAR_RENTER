@@ -7,7 +7,9 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "node scripts/create-prisma-types.js"
+    "prisma:sync": "node scripts/sync-prisma-client.cjs",
+    "prisma:generate": "pnpm prisma generate && pnpm prisma:sync",
+    "postinstall": "pnpm prisma:generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
