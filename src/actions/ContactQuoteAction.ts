@@ -103,7 +103,10 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     const carInfo = payload.carId ? await getCarById(payload.carId) : null;
     const siteUrl = getSiteUrl();
     const resolvedLocale = resolveLocale(payload.locale);
-    const tEmail = await getTranslations({ locale: resolvedLocale, namespace: 'Emails' });
+    const tEmail = await getTranslations({
+      locale: resolvedLocale,
+      namespace: 'Emails',
+    });
     let quoteId: string | null = null;
     const humanId = await getNextHumanId('ContactQuotes');
 
@@ -192,7 +195,10 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       { label: tEmail('contactQuote.rows.name'), value: payload.name },
       { label: tEmail('contactQuote.rows.email'), value: payload.email },
       { label: tEmail('contactQuote.rows.phone'), value: payload.phone },
-      { label: tEmail('contactQuote.rows.preferredChannel'), value: preferredChannelLabel },
+      {
+        label: tEmail('contactQuote.rows.preferredChannel'),
+        value: preferredChannelLabel,
+      },
       { label: tEmail('contactQuote.rows.period'), value: formattedPeriod },
       {
         label: tEmail('contactQuote.rows.arrivalFlight'),
@@ -227,6 +233,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       rows: sanitizedAdminRows,
       cta: { label: 'Open rental page', href: rentLink },
       footerNote: tEmail('contactQuote.footerNote'),
+      securityNote: tEmail('securityDisclaimer'),
     });
 
     await sendMail({
@@ -266,10 +273,16 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
             }
           : null,
         payload.partySize
-          ? { label: tEmail('contactQuote.rows.partySize'), value: payload.partySize }
+          ? {
+              label: tEmail('contactQuote.rows.partySize'),
+              value: payload.partySize,
+            }
           : null,
         payload.children
-          ? { label: tEmail('contactQuote.rows.children'), value: payload.children }
+          ? {
+              label: tEmail('contactQuote.rows.children'),
+              value: payload.children,
+            }
           : null,
         carInfo
           ? {
@@ -290,12 +303,18 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
               payload.rentalStart || 'n/a'
             } → ${payload.rentalEnd || 'n/a'}`
           : '',
-        `${tEmail('contactQuote.rows.preferredChannel')}: ${preferredChannelLabel}`,
+        `${tEmail(
+          'contactQuote.rows.preferredChannel'
+        )}: ${preferredChannelLabel}`,
         payload.arrivalFlight
-          ? `${tEmail('contactQuote.rows.arrivalFlight')}: ${payload.arrivalFlight}`
+          ? `${tEmail('contactQuote.rows.arrivalFlight')}: ${
+              payload.arrivalFlight
+            }`
           : '',
         payload.departureFlight
-          ? `${tEmail('contactQuote.rows.departureFlight')}: ${payload.departureFlight}`
+          ? `${tEmail('contactQuote.rows.departureFlight')}: ${
+              payload.departureFlight
+            }`
           : '',
         payload.partySize
           ? `${tEmail('contactQuote.rows.partySize')}: ${payload.partySize}`
@@ -304,7 +323,9 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           ? `${tEmail('contactQuote.rows.children')}: ${payload.children}`
           : '',
         carInfo
-          ? `${tEmail('contactQuote.rows.car')}: ${carInfo.manufacturer} ${carInfo.model}`
+          ? `${tEmail('contactQuote.rows.car')}: ${carInfo.manufacturer} ${
+              carInfo.model
+            }`
           : '',
         `${tEmail('contactQuote.ctaLabel')}: ${rentLink}`,
       ]
@@ -319,8 +340,9 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           { label: tEmail('contactQuote.rows.phone'), value: payload.phone },
           ...userRows,
         ],
-        cta: { label: tEmail('contactQuote.ctaLabel'), href: rentLink },
-        footerNote: tEmail('contactQuote.footerNote'),
+        // cta: { label: tEmail('contactQuote.ctaLabel'), href: rentLink },
+        // footerNote: tEmail('contactQuote.footerNote'),
+        securityNote: tEmail('securityDisclaimer'),
       }),
       replyTo: process.env.MAIL_USER || undefined,
     });

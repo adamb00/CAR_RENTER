@@ -2,73 +2,49 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo';
-import { prisma } from '@/lib/prisma';
-import { STATUS_DONE } from '@/lib/requestStatus';
 
-type PageParams = { locale: string };
+type PageParams = { locale: string; id: string };
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale, id } = await params;
   const resolvedLocale = resolveLocale(locale);
   return buildPageMetadata({
     locale: resolvedLocale,
-    pageKey: 'rent',
-    path: '/rent/thank-you',
+    pageKey: 'cars',
+    path: `/cars/${id}/rent/finish`,
     imagePath: '/header_image.webp',
   });
 }
 
-const RENT_ID_REGEX = /^[0-9a-fA-F-]{36}$/;
-
-export default async function RentThankYouPage({
+export default async function RentFinishPage({
   params,
-  searchParams,
 }: {
   params: Promise<PageParams>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const [{ locale = 'hu' }, resolvedSearchParams] = await Promise.all([
-    params,
-    searchParams,
-  ]);
+  const { locale } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const rentIdRaw = resolvedSearchParams?.rentId;
-  const rentId = Array.isArray(rentIdRaw) ? rentIdRaw[0] : rentIdRaw;
-  const isRentIdValid = typeof rentId === 'string' && RENT_ID_REGEX.test(rentId);
-
-  if (isRentIdValid) {
-    try {
-      await prisma.rentRequest.updateMany({
-        where: { id: rentId },
-        data: { status: STATUS_DONE, updated: 'rent-thank-you' },
-      });
-    } catch (error) {
-      console.error('Failed to mark rent request as closed', error);
-    }
-  }
-
-  const tEmails = await getTranslations({
+  const t = await getTranslations({
     locale: resolvedLocale,
-    namespace: 'Emails',
+    namespace: 'RentForm',
   });
 
   return (
     <div className='relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center space-y-8'>
       <h1 className='text-4xl sm:text-5xl md:text-6xl font-semibold text-sky-dark dark:text-amber-light'>
-        {tEmails('rent.title')}
+        {t('sections.booking.title')}
       </h1>
       <p className='text-lg sm:text-xl text-grey-dark-3 dark:text-grey-dark-2 max-w-3xl mx-auto'>
-        {tEmails('rent.intro')}
+        {t('sections.booking.description')}
       </p>
       <Link
         href={`/${resolvedLocale}/cars`}
         className='inline-flex items-center justify-center rounded-2xl bg-sky-dark px-6 py-3 text-base font-semibold text-white transition hover:bg-sky-dark/80 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-dark/60'
       >
-        {tEmails('rent.ctaLabel')}
+        {t('cta.bookNow')}
       </Link>
     </div>
   );

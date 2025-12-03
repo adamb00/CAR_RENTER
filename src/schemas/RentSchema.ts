@@ -338,6 +338,7 @@ export function createRentSchema(
             street: z
               .string()
               .min(1, message('fields.driver.location.street.required')),
+            streetType: z.string().optional(),
             doorNumber: z
               .string()
               .min(1, message('fields.driver.location.doorNumber.required')),
@@ -388,23 +389,7 @@ export function createRentSchema(
                 message: message(
                   'fields.driver.document.drivingLicenceValidFrom.invalid'
                 ),
-              })
-              .refine(
-                (date) => {
-                  if (!date) return false;
-                  const parsed = new Date(date);
-                  if (Number.isNaN(parsed.getTime())) return false;
-                  const cutoff = new Date();
-                  cutoff.setFullYear(cutoff.getFullYear() - 3);
-                  cutoff.setHours(0, 0, 0, 0);
-                  return parsed <= cutoff;
-                },
-                {
-                  message: message(
-                    'fields.driver.document.drivingLicenceValidFrom.minAge'
-                  ),
-                }
-              ),
+              }),
             drivingLicenceValidUntil: z
               .string()
               .refine((date) => !isNaN(Date.parse(date)), {
@@ -412,7 +397,6 @@ export function createRentSchema(
                   'fields.driver.document.drivingLicenceValidUntil.invalid'
                 ),
               }),
-            drivingLicenceIsOlderThan_3: z.boolean(),
             drivingLicenceCategory: z.enum([
               'AM',
               'A1',
@@ -430,6 +414,7 @@ export function createRentSchema(
               'DE',
               'T',
             ]),
+            drivingLicenceIsOlderThan_3: z.boolean().default(false),
           }),
         })
       ),
@@ -512,6 +497,7 @@ export function createRentSchema(
           .refine((value) => value === true, {
             message: message('fields.consents.terms.required'),
           }),
+        insurance: z.boolean().optional(),
       }),
     })
     .superRefine(({ rentalPeriod, extras, delivery, children }, ctx) => {

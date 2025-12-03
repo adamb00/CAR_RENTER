@@ -408,6 +408,31 @@ export default function Drivers({
             />
             <FormField
               control={form.control}
+              name={driverLocationPath(driverIndex, 'streetType')}
+              render={({ field }) => {
+                const streetTypeValue =
+                  typeof field.value === 'string' ? field.value : '';
+                return (
+                  <FormItem className='md:col-span-1'>
+                    <FormLabel>
+                      {t('sections.drivers.fields.streetType.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t(
+                          'sections.drivers.fields.streetType.placeholder'
+                        )}
+                        value={streetTypeValue}
+                        onChange={(event) => field.onChange(event.target.value)}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+            <FormField
+              control={form.control}
               name={driverLocationPath(driverIndex, 'doorNumber')}
               render={({ field }) => {
                 const doorValue =
@@ -525,31 +550,6 @@ export default function Drivers({
                 );
               }}
             />
-            {/* <FormField
-              control={form.control}
-              name={driverScalarPath(driverIndex, 'nameOfMother')}
-              render={({ field }) => {
-                const motherValue =
-                  typeof field.value === 'string' ? field.value : '';
-                return (
-                  <FormItem className='col-span-1'>
-                    <FormLabel>
-                      {t('sections.drivers.fields.nameOfMother.label')}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder={t(
-                          'sections.drivers.fields.nameOfMother.placeholder'
-                        )}
-                        value={motherValue}
-                        onChange={(event) => field.onChange(event.target.value)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            /> */}
           </section>
 
           <section id='contact' className='flex flex-col gap-4 md:flex-row'>

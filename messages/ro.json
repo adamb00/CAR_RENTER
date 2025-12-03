@@ -1248,7 +1248,7 @@
       "colors": "Culori disponibile"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Rezervă acum",
       "request_quote": "Solicită ofertă"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Detalii rezervare",
-        "description": "Alege serviciile extra dorite, stabilește perioada de închiriere și numărul pasagerilor adulți."
+        "description": "Alege serviciile extra dorite, stabilește perioada de închiriere și numărul pasagerilor adulți.",
+        "insuranceCheckbox": "Doresc să adaug asigurarea completă (fără garanție)",
+        "insuranceDepositNotice": "Cu asigurarea completă nu este necesară garanția.",
+        "insurancePriceLabel": "Prețul asigurării: {price}",
+        "insurancePricePending": "Îți vom comunica prețul asigurării prin e-mail."
       },
       "children": {
         "title": "Pasageri copii",
@@ -1567,14 +1571,18 @@
             "label": "Țară",
             "placeholder": "Țară"
           },
-          "street": {
-            "label": "Stradă",
-            "placeholder": "Stradă"
-          },
-          "doorNumber": {
-            "label": "Număr",
-            "placeholder": "Număr"
-          },
+    "street": {
+      "label": "Stradă",
+      "placeholder": "Stradă"
+    },
+    "streetType": {
+      "label": "Tip stradă / zonă (opțional)",
+      "placeholder": "ex. Bulevard, Piață"
+    },
+    "doorNumber": {
+      "label": "Număr",
+      "placeholder": "Număr"
+    },
           "dateOfBirth": {
             "label": "Data nașterii",
             "placeholder": "Alege data"
@@ -1624,14 +1632,14 @@
             "placeholder": "Alege categoria"
           },
           "drivingLicenceValidFrom": {
-            "label": "Data emiterii permisului",
+            "label": "Data eliberării permisului de conducere",
             "placeholder": "Alege data"
           },
           "drivingLicenceValidUntil": {
             "label": "Data expirării permisului",
             "placeholder": "Alege data"
           },
-          "drivingLicenceIsOlderThan3": "Declar că permisul meu are o vechime mai mare de 3 ani"
+          "drivingLicenceIsOlderThan3": "Dețin permisul de conducere de cel puțin 3 ani"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Declarații legale",
         "description": "Pentru finalizarea rezervării este necesar să accepți Politica de confidențialitate și Termenii și Condițiile Generale.",
         "privacyLabel": "Am citit și accept <link>Politica de confidențialitate</link>",
-        "termsLabel": "Am citit și accept <link>Termenii și Condițiile Generale</link>"
+        "termsLabel": "Am citit și accept <link>Termenii și Condițiile Generale</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Îți mulțumim! Te vom contacta în curând.",
       "error": "Ups, a apărut o eroare. Te rugăm să încerci din nou mai târziu."
+    },
+    "cta": {
+      "bookNow": "Închiriază o mașină acum"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Data emiterii permisului nu este validă",
-            "minAge": "Permisul trebuie să aibă o vechime de cel puțin 3 ani"
+            "minAge": "Permisul trebuie să aibă o vechime de cel puțin 3 ani",
+            "label": "Data eliberării permisului de conducere"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Data expirării permisului nu este validă"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Dacă nu tu ai inițiat această solicitare, te rugăm să ne anunți.",
     "rent": {
       "subject": "Mulțumim pentru rezervare",
       "title": "Mulțumim pentru rezervare",
       "intro": "Am primit datele și te contactăm în scurt timp pentru confirmare.",
       "footerNote": "Dacă trebuie să modificați ceva, răspundeți la acest e-mail.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Continuă pe site pentru a finaliza rezervarea",
       "rows": {
         "period": "Perioadă",
+        "adults": "Adulți",
+        "children": "Copii",
+        "extras": "Extraopțiuni",
         "contactName": "Persoană de contact",
         "contactEmail": "E-mail",
+        "driverName": "Șofer",
+        "driverPhone": "Telefon șofer",
+        "driverEmail": "Email șofer",
+        "deliveryType": "Tip livrare",
+        "deliveryLocation": "Locație livrare",
+        "deliveryAddress": "Adresă livrare",
         "phone": "Telefon",
         "arrivalFlight": "Zbor de sosire",
-        "departureFlight": "Zbor de plecare"
+        "departureFlight": "Zbor de plecare",
+        "invoiceName": "Nume facturare",
+        "invoiceEmail": "Email facturare",
+        "invoicePhone": "Telefon facturare",
+        "invoiceAddress": "Adresă facturare",
+        "carModel": "Model mașină",
+        "quoteId": "ID cerere"
       }
     },
     "contactQuote": {

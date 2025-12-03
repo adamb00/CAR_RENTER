@@ -1248,7 +1248,7 @@
       "colors": "Colori disponibili"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Prenota ora",
       "request_quote": "Richiedi offerta"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Dati della prenotazione",
-        "description": "Seleziona i servizi extra desiderati, indica la durata del noleggio e il numero di passeggeri adulti."
+        "description": "Seleziona i servizi extra desiderati, indica la durata del noleggio e il numero di passeggeri adulti.",
+        "insuranceCheckbox": "Desidero aggiungere l'assicurazione completa (nessun deposito richiesto)",
+        "insuranceDepositNotice": "Con l'assicurazione completa non è richiesto alcun deposito.",
+        "insurancePriceLabel": "Prezzo dell'assicurazione: {price}",
+        "insurancePricePending": "Ti informeremo via e-mail sul prezzo dell'assicurazione."
       },
       "children": {
         "title": "Passeggeri bambini",
@@ -1567,14 +1571,18 @@
             "label": "Paese",
             "placeholder": "Paese"
           },
-          "street": {
-            "label": "Via",
-            "placeholder": "Via"
-          },
-          "doorNumber": {
-            "label": "Numero civico",
-            "placeholder": "Numero civico"
-          },
+    "street": {
+      "label": "Via",
+      "placeholder": "Via"
+    },
+    "streetType": {
+      "label": "Tipologia di via / area (opzionale)",
+      "placeholder": "es. Viale, Piazza"
+    },
+    "doorNumber": {
+      "label": "Numero civico",
+      "placeholder": "Numero civico"
+    },
           "dateOfBirth": {
             "label": "Data di nascita",
             "placeholder": "Seleziona una data"
@@ -1631,7 +1639,7 @@
             "label": "Data di scadenza della patente",
             "placeholder": "Seleziona una data"
           },
-          "drivingLicenceIsOlderThan3": "Dichiaro che la mia patente è stata rilasciata da oltre 3 anni"
+          "drivingLicenceIsOlderThan3": "Possiedo la patente da almeno 3 anni"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Dichiarazioni legali",
         "description": "Per finalizzare la prenotazione devi accettare l’Informativa sul trattamento dei dati e i Termini e Condizioni Generali.",
         "privacyLabel": "Ho letto e accetto l’<link>Informativa sul trattamento dei dati</link>",
-        "termsLabel": "Ho letto e accetto i <link>Termini e Condizioni Generali</link>"
+        "termsLabel": "Ho letto e accetto i <link>Termini e Condizioni Generali</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Grazie! Ti contatteremo al più presto.",
       "error": "Ops, si è verificato un errore. Riprova più tardi."
+    },
+    "cta": {
+      "bookNow": "Noleggia un'auto ora"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Data di rilascio della patente non valida",
-            "minAge": "La patente deve essere stata rilasciata da almeno 3 anni"
+            "minAge": "La patente deve essere stata rilasciata da almeno 3 anni",
+            "label": "Data di rilascio della patente"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Data di scadenza della patente non valida"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Se non hai inoltrato tu questa richiesta, ti preghiamo di avvisarci.",
     "rent": {
       "subject": "Grazie per la tua prenotazione",
       "title": "Grazie per la tua prenotazione",
       "intro": "Abbiamo ricevuto i dati e ti contatteremo a breve per la conferma.",
       "footerNote": "Se desideri aggiornare qualche dato, rispondi a questa email.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Continua sul sito per finalizzare la prenotazione",
       "rows": {
         "period": "Date",
+        "adults": "Adulti",
+        "children": "Bambini",
+        "extras": "Extra",
         "contactName": "Referente",
         "contactEmail": "Email",
+        "driverName": "Conducente",
+        "driverPhone": "Telefono del conducente",
+        "driverEmail": "Email del conducente",
+        "deliveryType": "Tipo di consegna",
+        "deliveryLocation": "Luogo di consegna",
+        "deliveryAddress": "Indirizzo di consegna",
         "phone": "Telefono",
         "arrivalFlight": "Volo di arrivo",
-        "departureFlight": "Volo di ritorno"
+        "departureFlight": "Volo di ritorno",
+        "invoiceName": "Nome fatturazione",
+        "invoiceEmail": "Email fatturazione",
+        "invoicePhone": "Telefono fatturazione",
+        "invoiceAddress": "Indirizzo fatturazione",
+        "carModel": "Modello auto",
+        "quoteId": "ID richiesta"
       }
     },
     "contactQuote": {

@@ -45,7 +45,7 @@ export default async function ContactPage({
   return (
     <>
       <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40 '>
-        <h2 className='text-3xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-wide md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+        <h2 className='text-3xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-wide md:tracking-widest text-center bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
           {t('title')}
         </h2>
         <div className='mt-10 text-grey-dark-3 text-base md:text-lg tracking-wider'>
@@ -60,7 +60,12 @@ export default async function ContactPage({
       <QuoteRequestForm
         locale={resolvedLocale}
         selectedCar={
-          selectedCar ? { id: selectedCar.id, name: `${selectedCar.manufacturer} ${selectedCar.model}`.trim() } : undefined
+          selectedCar
+            ? {
+                id: selectedCar.id,
+                name: `${selectedCar.manufacturer} ${selectedCar.model}`.trim(),
+              }
+            : undefined
         }
       />
     </>

@@ -1,31 +1,22 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+import { enUS } from 'date-fns/locale';
+import { useMessages, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useMemo, useState, useTransition } from 'react';
-import { useMessages, useTranslations } from 'next-intl';
-import {
-  useForm,
-  type SubmitHandler,
-  type Resolver,
-  type FieldPath,
-} from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, type Resolver, type SubmitHandler } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { enUS } from 'date-fns/locale';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import { z } from 'zod';
 
 import { submitContactQuote } from '@/actions/ContactQuoteAction';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { MultiSelect } from '@/components/MultiSelect';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import LegalConsents, {
+  type LegalConsentItem,
+} from '@/components/rent/LegalConsents';
+import { Button } from '@/components/ui/button';
+import { DateRangePicker } from '@/components/ui/date-range-picker';
 import {
   Form,
   FormControl,
@@ -34,17 +25,21 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { DateRangePicker } from '@/components/ui/date-range-picker';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { useDelivery } from '@/hooks/useDelivery';
+import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
+import { trackFormSubmission } from '@/lib/analytics';
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
 import { EXTRA_VALUES } from '@/lib/extra_values';
-import LegalConsents, {
-  type LegalConsentItem,
-} from '@/components/rent/LegalConsents';
-import { trackFormSubmission } from '@/lib/analytics';
-import { resolvePostalSelection } from '@/hooks/useResolvePostalSelection';
-import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
-import { useDelivery } from '@/hooks/useDelivery';
+import { useRouter } from 'next/navigation';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;
@@ -98,7 +93,8 @@ type DeliveryInfo = {
 const buildSchema = (
   t: ReturnType<typeof useTranslations<'Contact'>>,
   tRent: ReturnType<typeof useTranslations<'RentForm'>>,
-  deliveryFieldRequiredMessage: string
+  deliveryFieldRequiredMessage: string,
+  tSchema: ReturnType<typeof useTranslations<'RentSchema'>>
 ) =>
   z
     .object({
@@ -151,7 +147,7 @@ const buildSchema = (
       if (!val.delivery?.placeType) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
-          message: tRent('errors.deliveryPlaceTypeRequired'),
+          message: tSchema('errors.deliveryPlaceTypeRequired'),
           path: ['delivery', 'placeType'],
         });
       }
@@ -187,32 +183,32 @@ export function QuoteRequestForm({
   const tSchema = useTranslations('RentSchema');
   const messages = useMessages();
   const deliveryFieldRequiredMessage = useMemo(() => {
-    const rentFormMessages =
-      messages?.RentForm as
-        | { errors?: { deliveryFieldRequired?: string } }
-        | undefined;
+    const rentFormMessages = messages?.RentForm as
+      | { errors?: { deliveryFieldRequired?: string } }
+      | undefined;
     if (rentFormMessages?.errors?.deliveryFieldRequired) {
       return rentFormMessages.errors.deliveryFieldRequired;
     }
 
-    const rentSchemaMessages =
-      messages?.RentSchema as
-        | { errors?: { deliveryFieldRequired?: string } }
-        | undefined;
+    const rentSchemaMessages = messages?.RentSchema as
+      | { errors?: { deliveryFieldRequired?: string } }
+      | undefined;
     if (rentSchemaMessages?.errors?.deliveryFieldRequired) {
       return rentSchemaMessages.errors.deliveryFieldRequired;
     }
 
     return tSchema('errors.deliveryFieldRequired');
   }, [messages, tSchema]);
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [placesReady, setPlacesReady] = useState(false);
   useWindowWithGoogle(setPlacesReady);
 
   const schema = useMemo(
-    () => buildSchema(t, tRent, deliveryFieldRequiredMessage),
-    [t, tRent, deliveryFieldRequiredMessage]
+    () =>
+      buildSchema(t, tRent, deliveryFieldRequiredMessage, tSchema),
+    [t, tRent, deliveryFieldRequiredMessage, tSchema]
   );
   const defaultValues = useMemo(
     () => ({
@@ -261,16 +257,17 @@ export function QuoteRequestForm({
     void _consents;
     startTransition(async () => {
       const result = await submitContactQuote({ locale, ...rest });
-      if (result.success) {
-        setStatus('success');
-        form.reset(defaultValues);
-        toast.success(t('form.feedback.success'));
-        trackFormSubmission({
-          formId: 'contact-quote',
-          status: 'success',
-          ...submissionMeta,
-        });
-      } else {
+        if (result.success) {
+          setStatus('success');
+          form.reset(defaultValues);
+          toast.success(t('form.feedback.success'));
+          trackFormSubmission({
+            formId: 'contact-quote',
+            status: 'success',
+            ...submissionMeta,
+          });
+          void router.push(`/${locale}/contact/thank-you`);
+        } else {
         setStatus('error');
         toast.error(t('form.feedback.error'));
         trackFormSubmission({

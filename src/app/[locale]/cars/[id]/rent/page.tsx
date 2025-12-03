@@ -27,7 +27,10 @@ export async function generateMetadata({
     return {};
   }
 
-  const t = await getTranslations({ locale: resolvedLocale, namespace: 'CarRent' });
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'CarRent',
+  });
   const title = t('meta.title', { carName: car.name });
   const description = t('meta.description', { carName: car.name });
   const siteUrl = getSiteUrl();
@@ -39,10 +42,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: Object.fromEntries(
-        LOCALES.map((loc) => [
-          loc,
-          `${siteUrl}/${loc}/cars/${car.id}/rent`,
-        ])
+        LOCALES.map((loc) => [loc, `${siteUrl}/${loc}/cars/${car.id}/rent`])
       ),
     },
     openGraph: {
@@ -94,8 +94,7 @@ export default async function RentPage({
   const quoteIdRaw = resolvedSearchParams?.quoteId;
   const quoteId = Array.isArray(quoteIdRaw) ? quoteIdRaw[0] : quoteIdRaw;
   const isValidQuoteId =
-    typeof quoteId === 'string' &&
-    /^[0-9a-fA-F-]{36}$/.test(quoteId ?? '');
+    typeof quoteId === 'string' && /^[0-9a-fA-F-]{36}$/.test(quoteId ?? '');
 
   const [car, quote] = await Promise.all([
     getCarById(id),
@@ -111,7 +110,9 @@ export default async function RentPage({
       <RentPageClient
         locale={resolvedLocale}
         car={{ id: car.id, seats: car.seats, colors: car.colors }}
-        quotePrefill={quote && quote.carId && quote.carId !== car.id ? null : quote}
+        quotePrefill={
+          quote && quote.carId && quote.carId !== car.id ? null : quote
+        }
       />
     </NoSSR>
   );

@@ -27,6 +27,7 @@ import LegalConsents, {
 } from '@/components/rent/LegalConsents';
 import { trackFormSubmission } from '@/lib/analytics';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   Form,
   FormControl,
@@ -170,6 +171,7 @@ const buildInitialValues = (
     consents: {
       privacy: false,
       terms: false,
+      insurance: false,
     },
   };
 };
@@ -277,6 +279,16 @@ export default function RentPageClient({
   quotePrefill,
 }: RentPageClientProps) {
   const t = useTranslations('RentForm');
+
+  const depositNotice = t('sections.booking.insuranceDepositNotice');
+  const insurancePriceRaw = quotePrefill?.bookingRequestData?.insurance;
+  const insurancePriceText =
+    typeof insurancePriceRaw === 'string' ? insurancePriceRaw.trim() : '';
+  const insurancePriceMessage = insurancePriceText
+    ? t('sections.booking.insurancePriceLabel', {
+        price: insurancePriceText,
+      })
+    : t('sections.booking.insurancePricePending');
   const tCars = useTranslations('Cars');
   const tSchema = useTranslations('RentSchema');
   const router = useRouter();
@@ -437,6 +449,7 @@ export default function RentPageClient({
   const { extrasSelected } = useWatchForm(form);
   const arrivalFlightValue = form.watch('delivery.arrivalFlight');
   const departureFlightValue = form.watch('delivery.departureFlight');
+  const insuranceOptIn = form.watch('consents.insurance');
 
   const isDeliveryRequired = React.useMemo(
     () =>
@@ -587,7 +600,7 @@ export default function RentPageClient({
   return (
     <Form {...form}>
       {isPending ? (
-        <div className='fixed inset-0 z-[5000] flex flex-col items-center justify-center gap-6 bg-black/70 backdrop-blur-sm text-white'>
+        <div className='fixed inset-0 z-5000 flex flex-col items-center justify-center gap-6 bg-black/70 backdrop-blur-sm text-white'>
           <div
             className='h-16 w-16 animate-spin rounded-full border-4 border-white/30 border-t-white'
             aria-hidden='true'
@@ -602,7 +615,7 @@ export default function RentPageClient({
         aria-busy={isPending}
         noValidate
       >
-        <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+        <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-widest text-center bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
           {t('title')}
         </h2>
         <section className='mt-10 space-y-8'>
@@ -638,7 +651,45 @@ export default function RentPageClient({
             </div>
           )}
 
-          <div data-section='consents' tabIndex={-1} className='scroll-mt-28'>
+          <div
+            data-section='consents'
+            tabIndex={-1}
+            className='scroll-mt-28 space-y-6'
+          >
+            <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8 shadow-sm space-y-4'>
+              <FormField
+                control={form.control}
+                name={'consents.insurance'}
+                render={({ field }) => (
+                  <FormItem className='flex flex-col gap-2'>
+                    <div className='flex items-center gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-sm'>
+                      <FormControl>
+                        <Checkbox
+                          checked={Boolean(field.value)}
+                          onCheckedChange={(checked) =>
+                            field.onChange(Boolean(checked))
+                          }
+                        />
+                      </FormControl>
+                      <div>
+                        <FormLabel className='font-medium leading-snug'>
+                          {t('sections.booking.insuranceCheckbox')}
+                        </FormLabel>
+                        <p className='mt-1 text-xs text-muted-foreground'>
+                          {insurancePriceMessage}
+                        </p>
+                      </div>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {Boolean(insuranceOptIn) ? (
+                <div className='rounded-2xl border border-amber-500/40 bg-amber-50/90 px-4 py-3 text-sm text-amber-900 shadow-sm dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-100'>
+                  {depositNotice}
+                </div>
+              ) : null}
+            </div>
             <LegalConsents
               form={form}
               items={consentItems}
@@ -652,9 +703,9 @@ export default function RentPageClient({
         <Button
           disabled={isPending}
           type='submit'
-          className='self-end m-8 px-6 py-2 text-base font-semibold uppercase tracking-[0.1em] bg-sky-light text-sky-dark border border-transparent transition hover:bg-sky-dark hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-dark/60'
+          className='self-end m-8 px-6 py-2 text-base font-semibold uppercase tracking-widest bg-sky-light text-sky-dark border border-transparent transition hover:bg-sky-dark hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-dark/60'
         >
-          Foglalás véglegesítése
+          {t('buttons.submit')}
         </Button>
       </form>
       <Dialog

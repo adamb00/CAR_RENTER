@@ -1248,7 +1248,7 @@
       "colors": "Available colours"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Book now",
       "request_quote": "Request quote"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Booking details",
-        "description": "Select the desired extra services, set the rental period and the number of adult passengers."
+        "description": "Select the desired extra services, set the rental period and the number of adult passengers.",
+        "insuranceCheckbox": "I would like to add full coverage insurance (no deposit required)",
+        "insuranceDepositNotice": "With full coverage insurance, no deposit is required.",
+        "insurancePriceLabel": "Insurance price: {price}",
+        "insurancePricePending": "We'll inform you about the insurance price via email."
       },
       "children": {
         "title": "Child passengers",
@@ -1567,14 +1571,18 @@
             "label": "Country",
             "placeholder": "Country"
           },
-          "street": {
-            "label": "Street",
-            "placeholder": "Street"
-          },
-          "doorNumber": {
-            "label": "House number",
-            "placeholder": "House number"
-          },
+    "street": {
+      "label": "Street",
+      "placeholder": "Street"
+    },
+    "streetType": {
+      "label": "Street type / area (optional)",
+      "placeholder": "e.g. Avenue, Square"
+    },
+    "doorNumber": {
+      "label": "House number",
+      "placeholder": "House number"
+    },
           "dateOfBirth": {
             "label": "Date of birth",
             "placeholder": "Select a date"
@@ -1631,7 +1639,7 @@
             "label": "Driving licence expiry date",
             "placeholder": "Select a date"
           },
-          "drivingLicenceIsOlderThan3": "I declare that my driving licence is more than 3 years old"
+          "drivingLicenceIsOlderThan3": "My driving licence is at least 3 years old"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Legal declarations",
         "description": "To finalise the booking, you must accept the Privacy Policy and the General Terms and Conditions.",
         "privacyLabel": "I have read and accept the <link>Privacy Policy</link>",
-        "termsLabel": "I have read and accept the <link>General Terms and Conditions</link>"
+        "termsLabel": "I have read and accept the <link>General Terms and Conditions</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Thank you! We will contact you shortly.",
       "error": "Whoops, something went wrong. Please try again later."
+    },
+    "cta": {
+      "bookNow": "Rent a car now"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Invalid driving licence issue date",
-            "minAge": "The driving licence must be at least 3 years old"
+            "minAge": "The driving licence must be at least 3 years old",
+            "label": "Driving licence issue date"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Invalid driving licence expiry date"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "If you didn't initiate this request, please let us know.",
     "rent": {
       "subject": "Thank you for your booking",
       "title": "Thank you for your booking",
       "intro": "We received the details and will contact you shortly with confirmation.",
       "footerNote": "If you need to update any details, please reply to this email.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Continue on the website to finalize your booking",
       "rows": {
         "period": "Dates",
+        "adults": "Adults",
+        "children": "Children",
+        "extras": "Extras",
         "contactName": "Contact person",
         "contactEmail": "Email",
+        "driverName": "Driver",
+        "driverPhone": "Driver phone",
+        "driverEmail": "Driver email",
+        "deliveryType": "Delivery type",
+        "deliveryLocation": "Delivery location",
+        "deliveryAddress": "Delivery address",
         "phone": "Phone",
         "arrivalFlight": "Arrival flight",
-        "departureFlight": "Return flight"
+        "departureFlight": "Return flight",
+        "invoiceName": "Invoice name",
+        "invoiceEmail": "Invoice email",
+        "invoicePhone": "Invoice phone",
+        "invoiceAddress": "Invoice address",
+        "carModel": "Car model",
+        "quoteId": "Quote ID"
       }
     },
     "contactQuote": {

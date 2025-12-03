@@ -49,6 +49,14 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     return parts.length > 0 ? parts.join(', ') : 'n/a';
   };
 
+  const normalizeRowValue = (value?: string | null): string => {
+    if (typeof value === 'string') {
+      const trimmed = value.trim();
+      return trimmed.length > 0 ? trimmed : 'n/a';
+    }
+    return 'n/a';
+  };
+
   const formatFriendlyDate = (value?: string): string => {
     if (!value) return 'n/a';
     const parsed = new Date(value);
@@ -76,9 +84,20 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
 
   const formatDeliveryType = (type?: string): string => {
     if (!type) return 'n/a';
-    if (type === 'airport') return 'Repülőtér';
-    if (type === 'accommodation') return 'Szállás';
+    if (type === 'airport') {
+      return tRentForm('sections.delivery.fields.placeType.airport');
+    }
+    if (type === 'accommodation') {
+      return tRentForm('sections.delivery.fields.placeType.accommodation');
+    }
     return type;
+  };
+
+  const toDateTime = (value?: string | null): string | null => {
+    if (!value) return null;
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return null;
+    return parsed.toISOString();
   };
 
   try {
@@ -91,8 +110,8 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
         contactName: validatedFields.data.contact.name,
         contactEmail: validatedFields.data.contact.email,
         contactPhone,
-        rentalStart: validatedFields.data.rentalPeriod.startDate,
-        rentalEnd: validatedFields.data.rentalPeriod.endDate,
+        rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
+        rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
         updated: null,
         payload: validatedFields.data,
       },
@@ -167,73 +186,55 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
       },
     ],
   });
+
+  const emailRowData = [
+    { key: 'period', value: period },
+    { key: 'adults', value: adultsCount },
+    { key: 'children', value: childrenCount },
+    { key: 'extras', value: extrasLabel },
+    { key: 'contactName', value: formData.contact.name },
+    { key: 'contactEmail', value: formData.contact.email },
+    { key: 'driverName', value: driverName },
+    { key: 'driverPhone', value: driverPhone },
+    { key: 'driverEmail', value: driverEmail },
+    { key: 'deliveryType', value: deliveryPlaceType },
+    { key: 'deliveryLocation', value: deliveryLocationName },
+    { key: 'deliveryAddress', value: deliveryAddress },
+    { key: 'arrivalFlight', value: arrivalFlight },
+    { key: 'departureFlight', value: departureFlight },
+    { key: 'invoiceName', value: invoiceName },
+    { key: 'invoiceEmail', value: invoiceEmail },
+    { key: 'invoicePhone', value: invoicePhone },
+    { key: 'invoiceAddress', value: invoiceAddress },
+    { key: 'carModel', value: carNameValue },
+    { key: 'quoteId', value: quoteIdValue },
+  ] as const;
+
+  const localizedRows = emailRowData.map(({ key, value }) => ({
+    label: tEmail(`rent.rows.${key}`),
+    value: normalizeRowValue(value),
+  }));
+
+  const emailTextLines = [
+    tEmail('rent.intro'),
+    '',
+    ...localizedRows.map(({ label, value }) => `${label}: ${value}`),
+  ];
+
   await sendMail({
     to:
       validatedFields.data.contact.email ||
       validatedFields.data.driver[0].email,
     subject: tEmail('rent.subject'),
-    text: [
-      tEmail('rent.intro'),
-      '',
-      `Időszak: ${period}`,
-      `Felnőttek: ${adultsCount}`,
-      `Gyermekek: ${childrenCount}`,
-      `Extrák: ${extrasLabel}`,
-      '',
-      `Kapcsolattartó: ${formData.contact.name}`,
-      `Kapcsolattartó e-mail: ${formData.contact.email}`,
-      `Sofőr neve: ${driverName}`,
-      `Sofőr telefonszám: ${driverPhone}`,
-      `Sofőr e-mail: ${driverEmail}`,
-      '',
-      `Szállítás: ${deliveryPlaceType}`,
-      `Szállítási helyszín: ${deliveryLocationName}`,
-      `Szállítási cím: ${deliveryAddress}`,
-      `Érkezési járat: ${arrivalFlight}`,
-      `Visszaúti járat: ${departureFlight}`,
-      '',
-      `Számla neve: ${invoiceName}`,
-      `Számla e-mail: ${invoiceEmail}`,
-      `Számla telefonszám: ${invoicePhone}`,
-      `Számla címe: ${invoiceAddress}`,
-      '',
-      `Autómodell: ${carNameValue}`,
-      `Ajánlatkérés ID: ${quoteIdValue}`,
-    ]
-      .filter(Boolean)
+    text: emailTextLines
+      .filter((line): line is string => typeof line === 'string')
       .join('\n'),
     html: renderBrandEmail({
       title: tEmail('rent.title'),
       intro: tEmail('rent.intro'),
-      rows: [
-        { label: 'Időszak', value: period },
-        { label: 'Felnőttek', value: adultsCount },
-        { label: 'Gyermekek', value: childrenCount },
-        { label: 'Extrák', value: extrasLabel },
-        { label: 'Kapcsolattartó', value: formData.contact.name },
-        { label: 'Kapcsolattartó e-mail', value: formData.contact.email },
-        { label: 'Sofőr', value: driverName },
-        { label: 'Sofőr telefon', value: driverPhone },
-        { label: 'Sofőr e-mail', value: driverEmail },
-        { label: 'Szállítás', value: deliveryPlaceType },
-        { label: 'Szállítási helyszín', value: deliveryLocationName },
-        { label: 'Szállítási cím', value: deliveryAddress },
-        {
-          label: 'Érkezési járat',
-          value: arrivalFlight,
-        },
-        {
-          label: 'Visszaúti járat',
-          value: departureFlight,
-        },
-        { label: 'Számlázás neve', value: invoiceName },
-        { label: 'Számlázás e-mail', value: invoiceEmail },
-        { label: 'Számlázás telefonszám', value: invoicePhone },
-        { label: 'Számlázás címe', value: invoiceAddress },
-        { label: 'Autómodell', value: carNameValue },
-        { label: 'Ajánlatkérés ID', value: quoteIdValue },
-      ],
+      rows: localizedRows,
       footerNote: tEmail('rent.footerNote'),
+      securityNote: tEmail('securityDisclaimer'),
     }),
   });
 

@@ -1248,7 +1248,7 @@
       "colors": "Dostupné farby"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Rezervovať",
       "request_quote": "Požiadať o ponuku"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Údaje o rezervácii",
-        "description": "Vyber požadované doplnkové služby, nastav trvanie prenájmu a počet dospelých cestujúcich."
+        "description": "Vyber požadované doplnkové služby, nastav trvanie prenájmu a počet dospelých cestujúcich.",
+        "insuranceCheckbox": "Chcem si pridať plné poistenie (bez kaucie)",
+        "insuranceDepositNotice": "Pri plnom poistení sa kaucia nevyžaduje.",
+        "insurancePriceLabel": "Cena poistenia: {price}",
+        "insurancePricePending": "O cene poistenia vás budeme informovať e-mailom."
       },
       "children": {
         "title": "Deti ako cestujúci",
@@ -1567,14 +1571,18 @@
             "label": "Krajina",
             "placeholder": "Krajina"
           },
-          "street": {
-            "label": "Ulica",
-            "placeholder": "Ulica"
-          },
-          "doorNumber": {
-            "label": "Číslo domu",
-            "placeholder": "Číslo domu"
-          },
+    "street": {
+      "label": "Ulica",
+      "placeholder": "Ulica"
+    },
+    "streetType": {
+      "label": "Typ ulice / priestranstva (voliteľné)",
+      "placeholder": "napr. námestie, alej"
+    },
+    "doorNumber": {
+      "label": "Číslo domu",
+      "placeholder": "Číslo domu"
+    },
           "dateOfBirth": {
             "label": "Dátum narodenia",
             "placeholder": "Vyber dátum"
@@ -1624,14 +1632,14 @@
             "placeholder": "Vyber skupinu"
           },
           "drivingLicenceValidFrom": {
-            "label": "Vodičský preukaz vydaný",
+            "label": "Dátum vydania vodičského preukazu",
             "placeholder": "Vyber dátum"
           },
           "drivingLicenceValidUntil": {
             "label": "Vodičský preukaz platný do",
             "placeholder": "Vyber dátum"
           },
-          "drivingLicenceIsOlderThan3": "Vyhlasujem, že môj vodičský preukaz je starší ako 3 roky"
+          "drivingLicenceIsOlderThan3": "Vodičský preukaz mám minimálne 3 roky"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Právne vyhlásenia",
         "description": "Na dokončenie rezervácie musíš prijať Zásady spracúvania osobných údajov a Všeobecné zmluvné podmienky.",
         "privacyLabel": "Prečítal(a) som si a súhlasím so <link>Zásadami spracúvania osobných údajov</link>",
-        "termsLabel": "Prečítal(a) som si a súhlasím s <link>Všeobecnými zmluvnými podmienkami</link>"
+        "termsLabel": "Prečítal(a) som si a súhlasím s <link>Všeobecnými zmluvnými podmienkami</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Ďakujeme! Čoskoro ťa budeme kontaktovať.",
       "error": "Ups, nastala chyba. Skús to prosím neskôr."
+    },
+    "cta": {
+      "bookNow": "Požičať auto teraz"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Neplatný dátum vydania vodičského preukazu",
-            "minAge": "Vodičský preukaz musí byť starý aspoň 3 roky"
+            "minAge": "Vodičský preukaz musí byť starý aspoň 3 roky",
+            "label": "Dátum vydania vodičského preukazu"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Neplatný dátum skončenia platnosti vodičského preukazu"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Ak ste túto žiadosť neodoslali vy, dajte nám prosím vedieť.",
     "rent": {
       "subject": "Ďakujeme za rezerváciu",
       "title": "Ďakujeme za rezerváciu",
       "intro": "Obdržali sme údaje a čoskoro vás kontaktujeme s potvrdením.",
       "footerNote": "Ak potrebujete údaje upraviť, odpovedzte na tento e-mail.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Pokračovať na web a dokončiť rezerváciu",
       "rows": {
         "period": "Termín",
+        "adults": "Dospelí",
+        "children": "Deti",
+        "extras": "Doplnky",
         "contactName": "Kontaktná osoba",
         "contactEmail": "E-mail",
+        "driverName": "Vodič",
+        "driverPhone": "Telefón vodiča",
+        "driverEmail": "E-mail vodiča",
+        "deliveryType": "Typ doručenia",
+        "deliveryLocation": "Miesto doručenia",
+        "deliveryAddress": "Adresa doručenia",
         "phone": "Telefón",
         "arrivalFlight": "Prílet",
-        "departureFlight": "Odlet"
+        "departureFlight": "Odlet",
+        "invoiceName": "Fakturačné meno",
+        "invoiceEmail": "Fakturačný e-mail",
+        "invoicePhone": "Fakturačný telefón",
+        "invoiceAddress": "Fakturačná adresa",
+        "carModel": "Model auta",
+        "quoteId": "ID dopytu"
       }
     },
     "contactQuote": {

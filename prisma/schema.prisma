@@ -30,6 +30,7 @@ model ContactQuote {
   humanId          String?       @unique
   extras           String[]      @map("extras")
   delivery         Json?
+  bookingRequestData Json?
   rentRequests     RentRequest[]
 
   @@index([createdAt], map: "idx_contactquotes_created_at")

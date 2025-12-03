@@ -1248,7 +1248,7 @@
       "colors": "Tilgængelige farver"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Book nu",
       "request_quote": "Anmod om tilbud"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Bookingoplysninger",
-        "description": "Vælg de ønskede ekstra services, angiv lejeperioden og antallet af voksne passagerer."
+        "description": "Vælg de ønskede ekstra services, angiv lejeperioden og antallet af voksne passagerer.",
+        "insuranceCheckbox": "Jeg vil gerne tilføje fuld kaskoforsikring (intet depositum kræves)",
+        "insuranceDepositNotice": "Med fuld kaskoforsikring kræves der ikke depositum.",
+        "insurancePriceLabel": "Forsikringspris: {price}",
+        "insurancePricePending": "Vi informerer dig om forsikringsprisen via e-mail."
       },
       "children": {
         "title": "Børn som medrejsende",
@@ -1567,14 +1571,18 @@
             "label": "Land",
             "placeholder": "Land"
           },
-          "street": {
-            "label": "Gade",
-            "placeholder": "Gade"
-          },
-          "doorNumber": {
-            "label": "Husnummer",
-            "placeholder": "Husnummer"
-          },
+    "street": {
+      "label": "Gade",
+      "placeholder": "Gade"
+    },
+    "streetType": {
+      "label": "Vejtype / område (valgfrit)",
+      "placeholder": "f.eks. Plads, Allé"
+    },
+    "doorNumber": {
+      "label": "Husnummer",
+      "placeholder": "Husnummer"
+    },
           "dateOfBirth": {
             "label": "Fødselsdato",
             "placeholder": "Vælg dato"
@@ -1624,14 +1632,14 @@
             "placeholder": "Vælg kategori"
           },
           "drivingLicenceValidFrom": {
-            "label": "Kørekort udstedt",
+            "label": "Dato for udstedelse af kørekort",
             "placeholder": "Vælg dato"
           },
           "drivingLicenceValidUntil": {
             "label": "Kørekort udløber",
             "placeholder": "Vælg dato"
           },
-          "drivingLicenceIsOlderThan3": "Jeg erklærer, at mit kørekort er mere end 3 år gammelt"
+          "drivingLicenceIsOlderThan3": "Mit kørekort er mindst 3 år gammelt"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Juridiske erklæringer",
         "description": "For at færdiggøre booking skal du acceptere privatlivspolitikken og de generelle vilkår og betingelser.",
         "privacyLabel": "Jeg har læst og accepterer <link>privatlivspolitikken</link>",
-        "termsLabel": "Jeg har læst og accepterer <link>de generelle vilkår og betingelser</link>"
+        "termsLabel": "Jeg har læst og accepterer <link>de generelle vilkår og betingelser</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Tak! Vi kontakter dig snarest.",
       "error": "Ups, der opstod en fejl. Prøv igen senere."
+    },
+    "cta": {
+      "bookNow": "Book en lejebil nu"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Ugyldig udstedelsesdato for kørekort",
-            "minAge": "Kørekortet skal have været gyldigt i mindst 3 år"
+            "minAge": "Kørekortet skal have været gyldigt i mindst 3 år",
+            "label": "Dato for udstedelse af kørekort"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Ugyldig udløbsdato for kørekort"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Hvis du ikke har indsendt denne forespørgsel, giv os venligst besked.",
     "rent": {
       "subject": "Tak for din booking",
       "title": "Tak for din booking",
       "intro": "Vi har modtaget oplysningerne og kontakter dig snart for bekræftelse.",
       "footerNote": "Hvis du skal ændre oplysninger, så svar på denne e-mail.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Fortsæt til websitet for at færdiggøre bookingen",
       "rows": {
         "period": "Periode",
+        "adults": "Voksne",
+        "children": "Børn",
+        "extras": "Ekstra services",
         "contactName": "Kontaktperson",
         "contactEmail": "E-mail",
+        "driverName": "Chauffør",
+        "driverPhone": "Chaufførens telefon",
+        "driverEmail": "Chaufførens e-mail",
+        "deliveryType": "Leveringstype",
+        "deliveryLocation": "Leveringssted",
+        "deliveryAddress": "Leveringsadresse",
         "phone": "Telefon",
         "arrivalFlight": "Ankomstfly",
-        "departureFlight": "Returfly"
+        "departureFlight": "Returfly",
+        "invoiceName": "Fakturanavn",
+        "invoiceEmail": "Faktura-e-mail",
+        "invoicePhone": "Fakturatelefon",
+        "invoiceAddress": "Fakturaadresse",
+        "carModel": "Bilmodel",
+        "quoteId": "Forespørgsels-ID"
       }
     },
     "contactQuote": {

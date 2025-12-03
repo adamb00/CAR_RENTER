@@ -1248,7 +1248,7 @@
       "colors": "Tillgängliga färger"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Boka nu",
       "request_quote": "Be om offert"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Bokningsuppgifter",
-        "description": "Välj önskade extra tjänster, ange hyresperioden och antalet vuxna resenärer."
+        "description": "Välj önskade extra tjänster, ange hyresperioden och antalet vuxna resenärer.",
+        "insuranceCheckbox": "Jag vill lägga till heltäckande försäkring (ingen deposition krävs)",
+        "insuranceDepositNotice": "Med heltäckande försäkring krävs ingen deposition.",
+        "insurancePriceLabel": "Försäkringspris: {price}",
+        "insurancePricePending": "Vi meddelar försäkringspriset via e-post."
       },
       "children": {
         "title": "Barn som reser med",
@@ -1567,14 +1571,18 @@
             "label": "Land",
             "placeholder": "Land"
           },
-          "street": {
-            "label": "Gata",
-            "placeholder": "Gata"
-          },
-          "doorNumber": {
-            "label": "Husnummer",
-            "placeholder": "Husnummer"
-          },
+    "street": {
+      "label": "Gata",
+      "placeholder": "Gata"
+    },
+    "streetType": {
+      "label": "Gatatyp / område (valfritt)",
+      "placeholder": "t.ex. Torg, Allé"
+    },
+    "doorNumber": {
+      "label": "Husnummer",
+      "placeholder": "Husnummer"
+    },
           "dateOfBirth": {
             "label": "Födelsedatum",
             "placeholder": "Välj datum"
@@ -1624,14 +1632,14 @@
             "placeholder": "Välj kategori"
           },
           "drivingLicenceValidFrom": {
-            "label": "Körkort utfärdat",
+            "label": "Datum för utfärdande av körkort",
             "placeholder": "Välj datum"
           },
           "drivingLicenceValidUntil": {
             "label": "Körkort giltigt till",
             "placeholder": "Välj datum"
           },
-          "drivingLicenceIsOlderThan3": "Jag intygar att jag har haft körkort i mer än 3 år"
+          "drivingLicenceIsOlderThan3": "Mitt körkort är minst 3 år gammalt"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Juridiska medgivanden",
         "description": "För att slutföra bokningen måste du godkänna integritetspolicyn och de allmänna villkoren.",
         "privacyLabel": "Jag har läst och godkänner <link>integritetspolicyn</link>",
-        "termsLabel": "Jag har läst och godkänner <link>allmänna villkor</link>"
+        "termsLabel": "Jag har läst och godkänner <link>allmänna villkor</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Tack! Vi kontaktar dig inom kort.",
       "error": "Hoppsan, något gick fel. Försök igen senare."
+    },
+    "cta": {
+      "bookNow": "Boka hyrbil nu"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Ogiltigt utfärdandedatum för körkortet",
-            "minAge": "Körkortet måste ha varit giltigt i minst 3 år"
+            "minAge": "Körkortet måste ha varit giltigt i minst 3 år",
+            "label": "Datum för utfärdande av körkort"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Ogiltigt utgångsdatum för körkortet"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Om du inte gjorde den här förfrågan ber vi dig meddela oss.",
     "rent": {
       "subject": "Tack för din bokning",
       "title": "Tack för din bokning",
       "intro": "Vi har mottagit uppgifterna och kontaktar dig snart för bekräftelse.",
       "footerNote": "Om du behöver uppdatera något, svara på detta mejl.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Fortsätt till webbplatsen för att slutföra bokningen",
       "rows": {
         "period": "Period",
+        "adults": "Vuxna",
+        "children": "Barn",
+        "extras": "Extra",
         "contactName": "Kontaktperson",
         "contactEmail": "E-post",
+        "driverName": "Förare",
+        "driverPhone": "Förarens telefon",
+        "driverEmail": "Förarens e-post",
+        "deliveryType": "Leveranssätt",
+        "deliveryLocation": "Leveransplats",
+        "deliveryAddress": "Leveransadress",
         "phone": "Telefon",
         "arrivalFlight": "Ankomstflyg",
-        "departureFlight": "Returflyg"
+        "departureFlight": "Returflyg",
+        "invoiceName": "Fakturanamn",
+        "invoiceEmail": "Faktura-e-post",
+        "invoicePhone": "Fakturatelefon",
+        "invoiceAddress": "Fakturaadress",
+        "carModel": "Bilmodell",
+        "quoteId": "Förfrågan-ID"
       }
     },
     "contactQuote": {

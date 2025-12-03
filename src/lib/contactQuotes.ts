@@ -28,6 +28,22 @@ export type ContactQuoteRecord = {
     };
   };
   status: RequestStatus;
+  bookingRequestData?: {
+    carId?: string;
+    locale?: string;
+    carName?: string;
+    deposit?: string;
+    adminName?: string;
+    extrasFee?: string;
+    insurance?: string;
+    rentalEnd?: string;
+    rentalFee?: string;
+    bookingLink?: string;
+    contactName?: string;
+    deliveryFee?: string;
+    rentalStart?: string;
+    contactEmail?: string;
+  };
 };
 
 const toIsoString = (
@@ -42,9 +58,7 @@ const toIsoString = (
   return null;
 };
 
-const normalizeDelivery = (
-  value: unknown
-): ContactQuoteRecord['delivery'] => {
+const normalizeDelivery = (value: unknown): ContactQuoteRecord['delivery'] => {
   if (!value || typeof value !== 'object') {
     return undefined;
   }
@@ -59,7 +73,8 @@ const normalizeDelivery = (
   if (typeof candidate.address === 'object' && candidate.address !== null) {
     const address = candidate.address as Record<string, unknown>;
     delivery.address = {
-      country: typeof address.country === 'string' ? address.country : undefined,
+      country:
+        typeof address.country === 'string' ? address.country : undefined,
       postalCode:
         typeof address.postalCode === 'string' ? address.postalCode : undefined,
       city: typeof address.city === 'string' ? address.city : undefined,
@@ -68,14 +83,50 @@ const normalizeDelivery = (
         typeof address.doorNumber === 'string' ? address.doorNumber : undefined,
     };
   }
-  if (
-    delivery.placeType ||
-    delivery.locationName ||
-    delivery.address
-  ) {
+  if (delivery.placeType || delivery.locationName || delivery.address) {
     return delivery;
   }
   return undefined;
+};
+
+const bookingRequestFields = [
+  'carId',
+  'locale',
+  'carName',
+  'deposit',
+  'adminName',
+  'extrasFee',
+  'insurance',
+  'rentalEnd',
+  'rentalFee',
+  'bookingLink',
+  'contactName',
+  'deliveryFee',
+  'rentalStart',
+  'contactEmail',
+] as const;
+
+const normalizeBookingRequestData = (
+  value: unknown
+): ContactQuoteRecord['bookingRequestData'] => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return undefined;
+  }
+
+  type BookingRequestData = NonNullable<ContactQuoteRecord['bookingRequestData']>;
+  const candidate = value as Record<string, unknown>;
+  const normalized: BookingRequestData = {};
+  let hasValue = false;
+
+  for (const field of bookingRequestFields) {
+    const rawValue = candidate[field];
+    if (typeof rawValue === 'string') {
+      normalized[field] = rawValue;
+      hasValue = true;
+    }
+  }
+
+  return hasValue ? normalized : undefined;
 };
 
 export async function getContactQuoteById(
@@ -100,6 +151,7 @@ export async function getContactQuoteById(
       children: true,
       carId: true,
       delivery: true,
+      bookingRequestData: true,
     },
   });
 
@@ -125,5 +177,6 @@ export async function getContactQuoteById(
     carId: record.carId ?? null,
     delivery: normalizeDelivery(record.delivery),
     status: record.status as RequestStatus,
+    bookingRequestData: normalizeBookingRequestData(record.bookingRequestData),
   };
 }

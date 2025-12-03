@@ -1186,7 +1186,7 @@
       "colors": "Colores disponibles"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Reservar ahora",
       "request_quote": "Solicitar oferta"
     },
     "transmissions": {
@@ -1616,7 +1616,11 @@
     "sections": {
       "booking": {
         "title": "Datos de la reserva",
-        "description": "Elige los extras, define la duración del alquiler y cuántos adultos viajarán."
+        "description": "Elige los extras, define la duración del alquiler y cuántos adultos viajarán.",
+        "insuranceCheckbox": "Quiero añadir el seguro a todo riesgo (sin depósito)",
+        "insuranceDepositNotice": "Con el seguro a todo riesgo no se requiere depósito.",
+        "insurancePriceLabel": "Precio del seguro: {price}",
+        "insurancePricePending": "Te informaremos del precio del seguro por correo electrónico."
       },
       "children": {
         "title": "Pasajeros menores",
@@ -1660,14 +1664,18 @@
             "label": "País",
             "placeholder": "País"
           },
-          "street": {
-            "label": "Calle",
-            "placeholder": "Calle"
-          },
-          "doorNumber": {
-            "label": "Número",
-            "placeholder": "Número"
-          },
+    "street": {
+      "label": "Calle",
+      "placeholder": "Calle"
+    },
+    "streetType": {
+      "label": "Tipo de vía / zona (opcional)",
+      "placeholder": "p. ej. Avenida, Plaza"
+    },
+    "doorNumber": {
+      "label": "Número",
+      "placeholder": "Número"
+    },
           "dateOfBirth": {
             "label": "Fecha de nacimiento",
             "placeholder": "Selecciona una fecha"
@@ -1717,14 +1725,14 @@
             "placeholder": "Selecciona la categoría"
           },
           "drivingLicenceValidFrom": {
-            "label": "Expedición del permiso",
+            "label": "Fecha de expedición del permiso de conducir",
             "placeholder": "Selecciona una fecha"
           },
           "drivingLicenceValidUntil": {
             "label": "Caducidad del permiso",
             "placeholder": "Selecciona una fecha"
           },
-          "drivingLicenceIsOlderThan3": "Declaro que mi permiso tiene más de 3 años"
+          "drivingLicenceIsOlderThan3": "Mi permiso de conducir tiene al menos 3 años"
         }
       },
       "contact": {
@@ -1839,12 +1847,16 @@
         "title": "Consentimientos legales",
         "description": "Para enviar la reserva debes aceptar la Política de Privacidad y los Términos y Condiciones.",
         "privacyLabel": "He leído y acepto la <link>Política de Privacidad</link>",
-        "termsLabel": "He leído y acepto los <link>Términos y Condiciones</link>"
+        "termsLabel": "He leído y acepto los <link>Términos y Condiciones</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "¡Gracias! Nos pondremos en contacto contigo en breve.",
       "error": "Ups, ha ocurrido un error. Por favor, inténtalo de nuevo más tarde."
+    },
+    "cta": {
+      "bookNow": "Reserva tu coche ahora"
     }
   },
   "RentSchema": {
@@ -1972,7 +1984,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Fecha de expedición del permiso no válida",
-            "minAge": "El permiso debe tener al menos 3 años"
+            "minAge": "El permiso debe tener al menos 3 años",
+            "label": "Fecha de expedición del permiso de conducir"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Fecha de caducidad del permiso no válida"
@@ -2451,19 +2464,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Si no realizaste esta solicitud, por favor avísanos.",
     "rent": {
       "subject": "Gracias por tu reserva",
       "title": "Gracias por tu reserva",
       "intro": "Hemos recibido tus datos y pronto nos pondremos en contacto para confirmarla.",
       "footerNote": "Si necesita actualizar algún dato, responda a este correo.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Continuar en la web para finalizar la reserva",
       "rows": {
         "period": "Fechas",
+        "adults": "Adultos",
+        "children": "Niños",
+        "extras": "Extras",
         "contactName": "Persona de contacto",
         "contactEmail": "Correo electrónico",
+        "driverName": "Conductor",
+        "driverPhone": "Teléfono del conductor",
+        "driverEmail": "Correo del conductor",
+        "deliveryType": "Tipo de entrega",
+        "deliveryLocation": "Lugar de entrega",
+        "deliveryAddress": "Dirección de entrega",
         "phone": "Teléfono",
         "arrivalFlight": "Vuelo de llegada",
-        "departureFlight": "Vuelo de regreso"
+        "departureFlight": "Vuelo de regreso",
+        "invoiceName": "Nombre de facturación",
+        "invoiceEmail": "Correo de facturación",
+        "invoicePhone": "Teléfono de facturación",
+        "invoiceAddress": "Dirección de facturación",
+        "carModel": "Modelo de coche",
+        "quoteId": "ID de solicitud"
       }
     },
     "contactQuote": {

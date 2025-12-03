@@ -1243,7 +1243,7 @@
       "colors": "Dostupné barvy"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Rezervovat",
       "request_quote": "Zaslat nabídku"
     }
   },
@@ -1518,7 +1518,11 @@
     "sections": {
       "booking": {
         "title": "Údaje o rezervaci",
-        "description": "Vyberte požadované doplňkové služby, nastavte dobu pronájmu a počet dospělých cestujících."
+        "description": "Vyberte požadované doplňkové služby, nastavte dobu pronájmu a počet dospělých cestujících.",
+        "insuranceCheckbox": "Chci přidat plné pojištění (bez nutnosti kauce)",
+        "insuranceDepositNotice": "S plným pojištěním není kauce vyžadována.",
+        "insurancePriceLabel": "Cena pojištění: {price}",
+        "insurancePricePending": "O ceně pojištění vás budeme informovat e-mailem."
       },
       "children": {
         "title": "Děti – cestující",
@@ -1562,14 +1566,18 @@
             "label": "Země",
             "placeholder": "Země"
           },
-          "street": {
-            "label": "Ulice",
-            "placeholder": "Ulice"
-          },
-          "doorNumber": {
-            "label": "Číslo popisné",
-            "placeholder": "Číslo popisné"
-          },
+    "street": {
+      "label": "Ulice",
+      "placeholder": "Ulice"
+    },
+    "streetType": {
+      "label": "Typ ulice / prostranství (volitelné)",
+      "placeholder": "např. náměstí, alej"
+    },
+    "doorNumber": {
+      "label": "Číslo popisné",
+      "placeholder": "Číslo popisné"
+    },
           "dateOfBirth": {
             "label": "Datum narození",
             "placeholder": "Vyberte datum"
@@ -1626,7 +1634,7 @@
             "label": "Datum platnosti řidičského průkazu",
             "placeholder": "Vyberte datum"
           },
-          "drivingLicenceIsOlderThan3": "Prohlašuji, že můj řidičský průkaz je starší než 3 roky"
+          "drivingLicenceIsOlderThan3": "Řidičský průkaz mám alespoň 3 roky"
         }
       },
       "contact": {
@@ -1741,12 +1749,16 @@
         "title": "Právní prohlášení",
         "description": "Pro dokončení rezervace je nutné přijmout Zásady zpracování osobních údajů a Všeobecné smluvní podmínky.",
         "privacyLabel": "Přečetl/a jsem si a souhlasím se <link>Zásadami zpracování osobních údajů</link>",
-        "termsLabel": "Přečetl/a jsem si a souhlasím s <link>Všeobecnými smluvními podmínkami</link>"
+        "termsLabel": "Přečetl/a jsem si a souhlasím s <link>Všeobecnými smluvními podmínkami</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Děkujeme! Brzy se ti ozveme.",
       "error": "Jejda, něco se pokazilo. Zkus to prosím později."
+    },
+    "cta": {
+      "bookNow": "Půjč si auto nyní"
     }
   },
   "RentSchema": {
@@ -1874,7 +1886,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Neplatné datum vydání řidičského průkazu",
-            "minAge": "Řidičský průkaz musí být starší než 3 roky"
+            "minAge": "Řidičský průkaz musí být starší než 3 roky",
+            "label": "Datum vydání řidičského průkazu"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Neplatné datum konce platnosti řidičského průkazu"
@@ -2275,19 +2288,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Pokud jste tuto žádost neodeslali, dejte nám prosím vědět.",
     "rent": {
       "subject": "Děkujeme za rezervaci",
       "title": "Děkujeme za rezervaci",
       "intro": "Obdrželi jsme vámi zaslané údaje a brzy vás kontaktujeme s potvrzením.",
       "footerNote": "Pokud potřebujete údaje upravit, odpovězte na tento e-mail.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Pokračovat na web a dokončit rezervaci",
       "rows": {
         "period": "Termín",
+        "adults": "Dospělí",
+        "children": "Děti",
+        "extras": "Extra služby",
         "contactName": "Kontaktní osoba",
         "contactEmail": "E-mail",
+        "driverName": "Řidič",
+        "driverPhone": "Telefon řidiče",
+        "driverEmail": "E-mail řidiče",
+        "deliveryType": "Typ doručení",
+        "deliveryLocation": "Místo doručení",
+        "deliveryAddress": "Adresa doručení",
         "phone": "Telefon",
         "arrivalFlight": "Příletový let",
-        "departureFlight": "Odletový let"
+        "departureFlight": "Odletový let",
+        "invoiceName": "Fakturační jméno",
+        "invoiceEmail": "Fakturační e-mail",
+        "invoicePhone": "Fakturační telefon",
+        "invoiceAddress": "Fakturační adresa",
+        "carModel": "Model vozu",
+        "quoteId": "ID poptávky"
       }
     },
     "contactQuote": {

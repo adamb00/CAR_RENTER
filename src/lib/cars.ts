@@ -281,8 +281,11 @@ export const getCars = cache(
   { tags: ['cars'] }
 );
 
-export const getCarById = async (id: string): Promise<Car | null> => {
-  if (!id) return null;
-
-  return fetchCarById(id);
-};
+export const getCarById = cache(
+  async (id: string): Promise<Car | null> => {
+    if (!id) return null;
+    return fetchCarById(id);
+  },
+  ['car-by-id'],
+  { tags: ['cars'] }
+);

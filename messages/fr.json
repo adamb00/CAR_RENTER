@@ -1248,7 +1248,7 @@
       "colors": "Couleurs disponibles"
     },
     "buttons": {
-      "interested": "Foglalás",
+      "interested": "Réserver maintenant",
       "request_quote": "Demander une offre"
     }
   },
@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Informations de réservation",
-        "description": "Sélectionnez les services supplémentaires souhaités, définissez la durée de location ainsi que le nombre de passagers adultes."
+        "description": "Sélectionnez les services supplémentaires souhaités, définissez la durée de location ainsi que le nombre de passagers adultes.",
+        "insuranceCheckbox": "Je souhaite ajouter l'assurance tous risques (aucune caution requise)",
+        "insuranceDepositNotice": "Avec l'assurance tous risques, aucune caution n'est demandée.",
+        "insurancePriceLabel": "Prix de l'assurance : {price}",
+        "insurancePricePending": "Nous vous communiquerons le prix de l'assurance par e-mail."
       },
       "children": {
         "title": "Passagers enfants",
@@ -1567,14 +1571,18 @@
             "label": "Pays",
             "placeholder": "Pays"
           },
-          "street": {
-            "label": "Rue",
-            "placeholder": "Rue"
-          },
-          "doorNumber": {
-            "label": "Numéro",
-            "placeholder": "Numéro"
-          },
+    "street": {
+      "label": "Rue",
+      "placeholder": "Rue"
+    },
+    "streetType": {
+      "label": "Type de voie / zone (optionnel)",
+      "placeholder": "ex. Avenue, Place"
+    },
+    "doorNumber": {
+      "label": "Numéro",
+      "placeholder": "Numéro"
+    },
           "dateOfBirth": {
             "label": "Date de naissance",
             "placeholder": "Choisir une date"
@@ -1624,14 +1632,14 @@
             "placeholder": "Choisir une catégorie"
           },
           "drivingLicenceValidFrom": {
-            "label": "Délivrance du permis",
+            "label": "Date de délivrance du permis de conduire",
             "placeholder": "Choisir une date"
           },
           "drivingLicenceValidUntil": {
             "label": "Expiration du permis",
             "placeholder": "Choisir une date"
           },
-          "drivingLicenceIsOlderThan3": "Je déclare que mon permis a plus de 3 ans"
+          "drivingLicenceIsOlderThan3": "Mon permis de conduire a au moins 3 ans"
         }
       },
       "contact": {
@@ -1746,12 +1754,16 @@
         "title": "Déclarations légales",
         "description": "Pour finaliser votre réservation, vous devez accepter la Politique de confidentialité et les Conditions générales.",
         "privacyLabel": "J’ai lu et j’accepte la <link>Politique de confidentialité</link>",
-        "termsLabel": "J’ai lu et j’accepte les <link>Conditions générales</link>"
+        "termsLabel": "J’ai lu et j’accepte les <link>Conditions générales</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Merci ! Nous vous contacterons très bientôt.",
       "error": "Oups, une erreur est survenue. Veuillez réessayer plus tard."
+    },
+    "cta": {
+      "bookNow": "Louer une voiture maintenant"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Date de délivrance du permis invalide",
-            "minAge": "Le permis doit avoir au moins 3 ans"
+            "minAge": "Le permis doit avoir au moins 3 ans",
+            "label": "Date de délivrance du permis de conduire"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Date d’expiration du permis invalide"
@@ -2280,19 +2293,35 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Si vous n'êtes pas à l'origine de cette demande, merci de nous en informer.",
     "rent": {
       "subject": "Merci pour votre réservation",
       "title": "Merci pour votre réservation",
       "intro": "Nous avons reçu vos informations et vous contacterons prochainement pour confirmer.",
       "footerNote": "Si vous devez mettre à jour des informations, répondez à cet e-mail.",
-      "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabel": "Continuer sur le site pour finaliser la réservation",
       "rows": {
         "period": "Dates",
+        "adults": "Adultes",
+        "children": "Enfants",
+        "extras": "Extras",
         "contactName": "Contact",
         "contactEmail": "E-mail",
+        "driverName": "Conducteur",
+        "driverPhone": "Téléphone du conducteur",
+        "driverEmail": "E-mail du conducteur",
+        "deliveryType": "Type de livraison",
+        "deliveryLocation": "Lieu de livraison",
+        "deliveryAddress": "Adresse de livraison",
         "phone": "Téléphone",
         "arrivalFlight": "Vol d'arrivée",
-        "departureFlight": "Vol retour"
+        "departureFlight": "Vol retour",
+        "invoiceName": "Nom de facturation",
+        "invoiceEmail": "E-mail de facturation",
+        "invoicePhone": "Téléphone de facturation",
+        "invoiceAddress": "Adresse de facturation",
+        "carModel": "Modèle de voiture",
+        "quoteId": "ID de demande"
       }
     },
     "contactQuote": {

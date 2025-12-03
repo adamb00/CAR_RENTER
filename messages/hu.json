@@ -1523,7 +1523,11 @@
     "sections": {
       "booking": {
         "title": "Foglalási adatok",
-        "description": "Válaszd ki a kívánt extra szolgáltatásokat, határozd meg a bérlés időtartamát és a felnőtt utasok számát."
+        "description": "Válaszd ki a kívánt extra szolgáltatásokat, határozd meg a bérlés időtartamát és a felnőtt utasok számát.",
+        "insuranceCheckbox": "Szeretném igénybe venni a teljes körű biztosítást (nem szükséges kaució)",
+        "insuranceDepositNotice": "Teljes körű biztosítás választása esetén nem kérünk kauciót.",
+        "insurancePriceLabel": "A biztosítás díja: {price}",
+        "insurancePricePending": "A biztosítás díjáról e-mailben tájékoztatunk."
       },
       "children": {
         "title": "Gyermek utasok",
@@ -1567,14 +1571,18 @@
             "label": "Ország",
             "placeholder": "Ország"
           },
-          "street": {
-            "label": "Utca",
-            "placeholder": "Utca"
-          },
-          "doorNumber": {
-            "label": "Házszám",
-            "placeholder": "Házszám"
-          },
+    "street": {
+      "label": "Utca",
+      "placeholder": "Utca"
+    },
+    "streetType": {
+      "label": "Közterület (opcionális)",
+      "placeholder": "Pl. tér, köz, park"
+    },
+    "doorNumber": {
+      "label": "Házszám",
+      "placeholder": "Házszám"
+    },
           "dateOfBirth": {
             "label": "Születési dátum",
             "placeholder": "Válassz dátumot"
@@ -1746,12 +1754,16 @@
         "title": "Jogi nyilatkozatok",
         "description": "A foglalás véglegesítéséhez el kell fogadnod az Adatkezelési tájékoztatót és az Általános Szerződési Feltételeket.",
         "privacyLabel": "Elolvastam és elfogadom az <link>Adatkezelési tájékoztatót</link>",
-        "termsLabel": "Elolvastam és elfogadom az <link>Általános Szerződési Feltételeket</link>"
+        "termsLabel": "Elolvastam és elfogadom az <link>Általános Szerződési Feltételeket</link>",
+        "legalNotice": "By submitting the booking you agree to our data handling outlined in the privacy notice."
       }
     },
     "toast": {
       "success": "Köszönjük! Hamarosan felvesszük veled a kapcsolatot.",
       "error": "Hoppá, valami hiba történt. Kérjük próbáld meg később."
+    },
+    "cta": {
+      "bookNow": "Bérelj autót most"
     }
   },
   "RentSchema": {
@@ -1879,7 +1891,8 @@
           },
           "drivingLicenceValidFrom": {
             "invalid": "Érvénytelen jogosítvány kiállítási dátum",
-            "minAge": "A jogosítványnak legalább 3 évesnek kell lennie"
+            "minAge": "A jogosítványnak legalább 3 évesnek kell lennie",
+            "label": "Jogosítvány kiállítás"
           },
           "drivingLicenceValidUntil": {
             "invalid": "Érvénytelen jogosítvány lejárati dátum"
@@ -2280,6 +2293,7 @@
     ]
   },
   "Emails": {
+    "securityDisclaimer": "Ha nem Ön indította ezt a kérést, kérjük jelezze nekünk.",
     "rent": {
       "subject": "Köszönjük a foglalást",
       "title": "Köszönjük a foglalást!",
@@ -2288,11 +2302,26 @@
       "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
         "period": "Időszak",
+        "adults": "Felnőttek",
+        "children": "Gyermekek",
+        "extras": "Extrák",
         "contactName": "Kapcsolattartó",
-        "contactEmail": "E-mail",
+        "contactEmail": "Kapcsolattartó e-mail",
+        "driverName": "Sofőr",
+        "driverPhone": "Sofőr telefon",
+        "driverEmail": "Sofőr e-mail",
+        "deliveryType": "Szállítás típusa",
+        "deliveryLocation": "Szállítási helyszín",
+        "deliveryAddress": "Szállítási cím",
         "phone": "Telefon",
         "arrivalFlight": "Érkezési járat",
-        "departureFlight": "Visszaút járat"
+        "departureFlight": "Visszaúti járat",
+        "invoiceName": "Számla név",
+        "invoiceEmail": "Számla e-mail",
+        "invoicePhone": "Számla telefonszám",
+        "invoiceAddress": "Számla cím",
+        "carModel": "Autómodell",
+        "quoteId": "Ajánlatkérés ID"
       }
     },
     "contactQuote": {

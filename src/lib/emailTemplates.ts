@@ -6,6 +6,7 @@ type EmailTemplateOptions = {
   rows?: EmailRow[];
   cta?: { label: string; href: string };
   footerNote?: string;
+  securityNote?: string;
 };
 
 export function renderBrandEmail({
@@ -14,6 +15,7 @@ export function renderBrandEmail({
   rows = [],
   cta,
   footerNote,
+  securityNote,
 }: EmailTemplateOptions): string {
   const brandNavy = '#023047';
   const brandAmber = '#fb8500';
@@ -64,7 +66,11 @@ export function renderBrandEmail({
           }
         </div>
       </div>
-      <p style="margin:14px 4px 0;font-size:12px;color:#6b7280;text-align:center;">Ha nem Ön indította ezt a kérést, kérjük jelezze nekünk.</p>
+      ${
+        securityNote
+          ? `<p style="margin:14px 4px 0;font-size:12px;color:#6b7280;text-align:center;">${securityNote}</p>`
+          : ''
+      }
     </div>
   </div>
   `;
