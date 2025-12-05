@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Ny",
-      "inProgress": "Pågår",
-      "answered": "Besvarad",
-      "closed": "Avslutad"
+      "formSubmitted": "Formulär skickat",
+      "accepted": "Accepterad",
+      "registered": "Registrerad",
+      "cancelled": "Avbokad"
     },
     "cancel": {
       "title": "Avboka denna reservation",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Bokningen har avbokats. Vårt team har informerats.",
       "modifySuccess": "Din begäran har skickats. Vi kontaktar dig snart.",
       "error": "Ett fel uppstod. Försök igen senare."
+    },
+    "cancelErrors": {
+      "invalid": "Ange ett giltigt bokningsnummer och en e-postadress.",
+      "notFound": "Vi kunde inte hitta en bokning med det numret.",
+      "mismatch": "E-postadressen matchar inte den här bokningen.",
+      "generic": "Vi kunde inte avboka bokningen. Försök igen senare."
     }
   }
 }

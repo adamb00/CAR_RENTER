@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Neu",
-      "inProgress": "In Bearbeitung",
-      "answered": "Beantwortet",
-      "closed": "Abgeschlossen"
+      "formSubmitted": "Formular eingereicht",
+      "accepted": "Akzeptiert",
+      "registered": "Registriert",
+      "cancelled": "Storniert"
     },
     "cancel": {
       "title": "Diese Buchung stornieren",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Deine Buchung wurde erfolgreich storniert. Unser Team wurde informiert.",
       "modifySuccess": "Deine Änderungsanfrage wurde gesendet. Wir melden uns bald.",
       "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut."
+    },
+    "cancelErrors": {
+      "invalid": "Bitte gib eine gültige Buchungsnummer und E-Mail-Adresse ein.",
+      "notFound": "Wir konnten keine Buchung mit dieser Nummer finden.",
+      "mismatch": "Die E-Mail-Adresse passt nicht zu dieser Buchung.",
+      "generic": "Die Buchung konnte nicht storniert werden. Bitte versuche es erneut."
     }
   }
 }

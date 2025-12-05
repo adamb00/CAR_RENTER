@@ -785,7 +785,8 @@ export default function RentPageClient({
                           {t('sections.booking.insuranceCheckbox')}
                         </FormLabel>
                         <p className='mt-1 text-xs text-muted-foreground'>
-                          {insurancePriceMessage}€
+                          {insurancePriceMessage}
+                          {insurancePriceRaw ? '€' : ''}
                         </p>
                       </div>
                     </div>

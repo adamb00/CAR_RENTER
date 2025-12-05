@@ -7,7 +7,7 @@ import { renderBrandEmail, type EmailRow } from '@/lib/emailTemplates';
 import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
-import { STATUS_NEW } from '@/lib/requestStatus';
+import { CONTACT_STATUS_NEW } from '@/lib/requestStatus';
 import { recordNotification } from '@/lib/notifications';
 
 const parseDateValue = (value?: string | null): Date | null => {
@@ -141,7 +141,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           : null,
         extras: payload.extras ?? [],
         delivery: payload.delivery ?? undefined,
-        status: STATUS_NEW,
+        status: CONTACT_STATUS_NEW,
         updated: null,
         humanId,
       },
@@ -179,7 +179,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       `Locale: ${payload.locale}`,
       `Human ID: ${humanId}`,
       `Quote ID: ${quoteId}`,
-      `Status: ${STATUS_NEW}`,
+      `Status: ${CONTACT_STATUS_NEW}`,
       `Beküldve a(z) ${payload.locale.toUpperCase()} nyelvű kapcsolat oldalon.`,
     ].join('\n');
 
@@ -202,7 +202,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         quoteId,
         humanId,
         locale: payload.locale,
-        status: STATUS_NEW,
+        status: CONTACT_STATUS_NEW,
         carId: payload.carId ?? null,
       },
     });

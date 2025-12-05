@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Nowa",
-      "inProgress": "W realizacji",
-      "answered": "Odpowiedziano",
-      "closed": "Zamknięta"
+      "formSubmitted": "Formularz wysłany",
+      "accepted": "Zaakceptowana",
+      "registered": "Zarejestrowana",
+      "cancelled": "Anulowana"
     },
     "cancel": {
       "title": "Anuluj tę rezerwację",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Rezerwacja została anulowana. Nasz zespół otrzymał powiadomienie.",
       "modifySuccess": "Twoja prośba została wysłana. Wkrótce się odezwiemy.",
       "error": "Wystąpił błąd. Spróbuj ponownie później."
+    },
+    "cancelErrors": {
+      "invalid": "Podaj poprawny numer rezerwacji i adres e-mail.",
+      "notFound": "Nie znaleziono rezerwacji o tym numerze.",
+      "mismatch": "Adres e-mail nie pasuje do tej rezerwacji.",
+      "generic": "Nie udało się anulować rezerwacji. Spróbuj ponownie."
     }
   }
 }

@@ -2379,9 +2379,10 @@
     },
     "status": {
       "new": "Nová",
-      "inProgress": "Zpracovává se",
-      "answered": "Zodpovězeno",
-      "closed": "Uzavřeno"
+      "formSubmitted": "Formulář odeslán",
+      "accepted": "Přijato",
+      "registered": "Registrováno",
+      "cancelled": "Zrušeno"
     },
     "cancel": {
       "title": "Zrušit tuto rezervaci",
@@ -2406,6 +2407,12 @@
       "cancelSuccess": "Rezervace byla úspěšně zrušena. Náš tým byl upozorněn.",
       "modifySuccess": "Žádost o změnu byla odeslána. Brzy se vám ozveme.",
       "error": "Došlo k chybě. Zkuste to prosím znovu později."
+    },
+    "cancelErrors": {
+      "invalid": "Zadejte platné číslo rezervace a e-mailovou adresu.",
+      "notFound": "Rezervaci s tímto číslem jsme nenašli.",
+      "mismatch": "E-mailová adresa neodpovídá této rezervaci.",
+      "generic": "Rezervaci se nepodařilo zrušit. Zkuste to prosím znovu."
     }
   }
 }

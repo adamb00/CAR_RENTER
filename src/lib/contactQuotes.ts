@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { RequestStatus } from '@/lib/requestStatus';
+import { type ContactStatus } from '@/lib/requestStatus';
 
 export type ContactQuoteRecord = {
   id: string;
@@ -27,7 +27,7 @@ export type ContactQuoteRecord = {
       doorNumber?: string;
     };
   };
-  status: RequestStatus;
+  status: ContactStatus;
   bookingRequestData?: {
     carId?: string;
     locale?: string;
@@ -176,7 +176,7 @@ export async function getContactQuoteById(
     children: record.children ?? null,
     carId: record.carId ?? null,
     delivery: normalizeDelivery(record.delivery),
-    status: record.status as RequestStatus,
+    status: record.status as ContactStatus,
     bookingRequestData: normalizeBookingRequestData(record.bookingRequestData),
   };
 }

@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "New",
-      "inProgress": "In progress",
-      "answered": "Answered",
-      "closed": "Closed"
+      "formSubmitted": "Form submitted",
+      "accepted": "Accepted",
+      "registered": "Registered",
+      "cancelled": "Cancelled"
     },
     "cancel": {
       "title": "Cancel this booking",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Your booking was cancelled successfully. Our team has been notified.",
       "modifySuccess": "Your request was sent. We will contact you soon.",
       "error": "Something went wrong. Please try again later."
+    },
+    "cancelErrors": {
+      "invalid": "Enter a valid booking ID and email address.",
+      "notFound": "We could not find a booking with this ID.",
+      "mismatch": "The email address does not match this booking.",
+      "generic": "We could not cancel the booking. Please try again."
     }
   }
 }

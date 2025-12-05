@@ -2555,9 +2555,10 @@
     },
     "status": {
       "new": "Nueva",
-      "inProgress": "En proceso",
-      "answered": "Respondida",
-      "closed": "Cerrada"
+      "formSubmitted": "Formulario enviado",
+      "accepted": "Aceptada",
+      "registered": "Registrada",
+      "cancelled": "Cancelada"
     },
     "cancel": {
       "title": "Cancelar esta reserva",
@@ -2582,6 +2583,12 @@
       "cancelSuccess": "La reserva se canceló correctamente. Nuestro equipo ha sido informado.",
       "modifySuccess": "Tu solicitud se envió correctamente. Nos pondremos en contacto contigo pronto.",
       "error": "Ha ocurrido un error. Inténtalo más tarde."
+    },
+    "cancelErrors": {
+      "invalid": "Introduce un número de reserva y un correo electrónico válidos.",
+      "notFound": "No encontramos ninguna reserva con ese número.",
+      "mismatch": "El correo electrónico no coincide con esta reserva.",
+      "generic": "No pudimos cancelar la reserva. Inténtalo de nuevo."
     }
   }
 }

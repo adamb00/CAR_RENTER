@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Új",
-      "inProgress": "Folyamatban",
-      "answered": "Megválaszolva",
-      "closed": "Lezárva"
+      "formSubmitted": "Foglalási űrlap kitöltve",
+      "accepted": "Elfogadva",
+      "registered": "Regisztrálva",
+      "cancelled": "Lemondva"
     },
     "cancel": {
       "title": "Foglalás lemondása",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "A foglalást sikeresen lemondtad, értesítettük a kollégákat.",
       "modifySuccess": "A módosítási kérésedet továbbítottuk, hamarosan jelentkezünk.",
       "error": "Hiba történt. Kérjük, próbáld meg később."
+    },
+    "cancelErrors": {
+      "invalid": "Adj meg érvényes foglalási azonosítót és e-mail címet.",
+      "notFound": "Nem találunk ilyen azonosítójú foglalást.",
+      "mismatch": "Az e-mail cím nem egyezik a foglaláshoz tartozóval.",
+      "generic": "Nem sikerült lemondani a foglalást. Kérjük, próbáld meg később."
     }
   }
 }

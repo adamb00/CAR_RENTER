@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Nouă",
-      "inProgress": "În curs",
-      "answered": "Răspuns trimis",
-      "closed": "Închisă"
+      "formSubmitted": "Formular trimis",
+      "accepted": "Acceptată",
+      "registered": "Înregistrată",
+      "cancelled": "Anulată"
     },
     "cancel": {
       "title": "Anulează această rezervare",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Rezervarea a fost anulată. Echipa noastră a fost informată.",
       "modifySuccess": "Solicitarea a fost trimisă. Te vom contacta în curând.",
       "error": "A apărut o eroare. Te rugăm să încerci din nou."
+    },
+    "cancelErrors": {
+      "invalid": "Introdu un ID de rezervare și un e-mail valide.",
+      "notFound": "Nu am găsit nicio rezervare cu acest ID.",
+      "mismatch": "Adresa de e-mail nu se potrivește acestei rezervări.",
+      "generic": "Nu am reușit să anulăm rezervarea. Încearcă din nou."
     }
   }
 }

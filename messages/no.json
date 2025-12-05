@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Ny",
-      "inProgress": "Under behandling",
-      "answered": "Besvart",
-      "closed": "Avsluttet"
+      "formSubmitted": "Skjema sendt",
+      "accepted": "Akseptert",
+      "registered": "Registrert",
+      "cancelled": "Kansellert"
     },
     "cancel": {
       "title": "Avbestill denne reservasjonen",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Bestillingen ble avbestilt. Teamet vårt har fått beskjed.",
       "modifySuccess": "Endringsforespørselen er sendt. Vi kontakter deg snart.",
       "error": "Noe gikk galt. Prøv igjen senere."
+    },
+    "cancelErrors": {
+      "invalid": "Skriv inn et gyldig reservasjonsnummer og en e-postadresse.",
+      "notFound": "Vi fant ingen reservasjon med dette nummeret.",
+      "mismatch": "E-postadressen samsvarer ikke med denne reservasjonen.",
+      "generic": "Vi klarte ikke å kansellere reservasjonen. Prøv igjen senere."
     }
   }
 }

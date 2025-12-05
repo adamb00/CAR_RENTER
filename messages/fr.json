@@ -2383,10 +2383,11 @@
       "departureFlight": "Vol retour"
     },
     "status": {
-      "new": "Nouveau",
-      "inProgress": "En cours",
-      "answered": "Répondu",
-      "closed": "Clôturé"
+      "new": "Nouvelle",
+      "formSubmitted": "Formulaire envoyé",
+      "accepted": "Acceptée",
+      "registered": "Enregistrée",
+      "cancelled": "Annulée"
     },
     "cancel": {
       "title": "Annuler cette réservation",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Votre réservation a été annulée avec succès. Notre équipe a été informée.",
       "modifySuccess": "Votre demande a été envoyée. Nous vous contacterons très vite.",
       "error": "Une erreur est survenue. Veuillez réessayer plus tard."
+    },
+    "cancelErrors": {
+      "invalid": "Saisissez un numéro de réservation et une adresse e-mail valides.",
+      "notFound": "Impossible de trouver une réservation avec ce numéro.",
+      "mismatch": "L’adresse e-mail ne correspond pas à cette réservation.",
+      "generic": "Impossible d’annuler la réservation. Veuillez réessayer."
     }
   }
 }

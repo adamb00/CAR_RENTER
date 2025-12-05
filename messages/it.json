@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Nuova",
-      "inProgress": "In corso",
-      "answered": "Risposta inviata",
-      "closed": "Chiusa"
+      "formSubmitted": "Modulo inviato",
+      "accepted": "Accettata",
+      "registered": "Registrata",
+      "cancelled": "Annullata"
     },
     "cancel": {
       "title": "Annulla questa prenotazione",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "La prenotazione è stata annullata con successo. Il nostro team è stato informato.",
       "modifySuccess": "La tua richiesta è stata inviata. Ti contatteremo a breve.",
       "error": "Si è verificato un errore. Riprova più tardi."
+    },
+    "cancelErrors": {
+      "invalid": "Inserisci un numero di prenotazione e un’e-mail validi.",
+      "notFound": "Non abbiamo trovato alcuna prenotazione con questo numero.",
+      "mismatch": "L’e-mail non corrisponde a questa prenotazione.",
+      "generic": "Non è stato possibile annullare la prenotazione. Riprova."
     }
   }
 }

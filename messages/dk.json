@@ -2384,9 +2384,10 @@
     },
     "status": {
       "new": "Ny",
-      "inProgress": "Under behandling",
-      "answered": "Besvaret",
-      "closed": "Afsluttet"
+      "formSubmitted": "Formular indsendt",
+      "accepted": "Accepteret",
+      "registered": "Registreret",
+      "cancelled": "Annulleret"
     },
     "cancel": {
       "title": "Annullér denne booking",
@@ -2411,6 +2412,12 @@
       "cancelSuccess": "Din booking er annulleret. Vores team er blevet informeret.",
       "modifySuccess": "Din anmodning er sendt. Vi kontakter dig snarest.",
       "error": "Der opstod en fejl. Prøv igen senere."
+    },
+    "cancelErrors": {
+      "invalid": "Angiv et gyldigt bookingnummer og en e-mailadresse.",
+      "notFound": "Vi kunne ikke finde en booking med dette nummer.",
+      "mismatch": "E-mailadressen matcher ikke denne booking.",
+      "generic": "Vi kunne ikke annullere bookingen. Prøv igen."
     }
   }
 }

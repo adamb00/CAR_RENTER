@@ -2,7 +2,7 @@ import { getCarById } from '@/lib/cars';
 import { renderBrandEmail, type EmailRow } from '@/lib/emailTemplates';
 import { sendMail } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
-import { STATUS_DONE } from '@/lib/requestStatus';
+import { RENT_STATUS_REGISTERED } from '@/lib/requestStatus';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo';
 import { RentFormValues } from '@/schemas/RentSchema';
 import type { Prisma } from '@prisma/client';
@@ -92,8 +92,8 @@ export default async function RentThankYouPage({
 
       if (rentRecord) {
         const updateResult = await prisma.rentRequest.updateMany({
-          where: { id: rentId, status: { not: STATUS_DONE } },
-          data: { status: STATUS_DONE, updated: 'rent-thank-you' },
+          where: { id: rentId, status: { not: RENT_STATUS_REGISTERED } },
+          data: { status: RENT_STATUS_REGISTERED, updated: 'rent-thank-you' },
         });
 
         if (updateResult.count > 0) {

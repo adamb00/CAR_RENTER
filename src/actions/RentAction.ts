@@ -10,9 +10,14 @@ import { getTranslations } from 'next-intl/server';
 import { DEFAULT_LOCALE } from '@/i18n/config';
 import { prisma } from '@/lib/prisma';
 import { getNextHumanId } from '@/lib/humanId';
-import { STATUS_DONE } from '@/lib/requestStatus';
+import {
+  CONTACT_STATUS_QUOTE_ACCEPTED,
+  RENT_STATUS_FORM_SUBMITTED,
+  RENT_STATUS_REGISTERED,
+} from '@/lib/requestStatus';
 import { getCarById } from '@/lib/cars';
 import { recordNotification } from '@/lib/notifications';
+import { appendRentUpdateLog } from '@/lib/rentUpdateLog';
 
 export const RentAction = async (values: z.infer<RentFormValues>) => {
   const validatedFields = await RentSchema.safeParseAsync(values);
@@ -103,9 +108,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     return parsed.toISOString();
   };
 
-  const computeReminderDate = (
-    value?: string | null
-  ): Date | undefined => {
+  const computeReminderDate = (value?: string | null): Date | undefined => {
     if (!value) return undefined;
     const parsed = new Date(value);
     if (Number.isNaN(parsed.getTime())) {
@@ -138,6 +141,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           rentalStart: true,
           rentalEnd: true,
           payload: true,
+          updated: true,
         },
       });
       if (!existingRent) {
@@ -147,14 +151,18 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
       const previousPayload = isRentFormValues(existingRent.payload)
         ? (existingRent.payload as RentFormValues)
         : null;
-      const rentChanges = summarizeRentChanges(previousPayload, validatedFields.data, {
-        contactName: existingRent.contactName,
-        contactEmail: existingRent.contactEmail,
-        contactPhone: existingRent.contactPhone,
-        rentalStart: existingRent.rentalStart,
-        rentalEnd: existingRent.rentalEnd,
-      });
-      const updatedMarker = JSON.stringify({
+      const rentChanges = summarizeRentChanges(
+        previousPayload,
+        validatedFields.data,
+        {
+          contactName: existingRent.contactName,
+          contactEmail: existingRent.contactEmail,
+          contactPhone: existingRent.contactPhone,
+          rentalStart: existingRent.rentalStart,
+          rentalEnd: existingRent.rentalEnd,
+        }
+      );
+      const updatedMarker = appendRentUpdateLog(existingRent.updated ?? null, {
         action: 'self-service:modify',
         rentId: rentIdFromPayload,
         changes: rentChanges,
@@ -185,8 +193,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
         metadata: {
           rentId: rentIdFromPayload,
           humanId,
-          quoteId:
-            validatedFields.data.quoteId ?? existingRent.quoteId ?? null,
+          quoteId: validatedFields.data.quoteId ?? existingRent.quoteId ?? null,
           carId: validatedFields.data.carId ?? null,
           rentalStart: validatedFields.data.rentalPeriod.startDate,
           rentalEnd: validatedFields.data.rentalPeriod.endDate,
@@ -214,6 +221,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           contactPhone,
           rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
           rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
+          status: RENT_STATUS_FORM_SUBMITTED,
           updated: null,
           payload: validatedFields.data,
         },
@@ -246,7 +254,10 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
         try {
           await prisma.contactQuote.update({
             where: { id: validatedFields.data.quoteId },
-            data: { status: STATUS_DONE, updated: 'RentAction' },
+            data: {
+              status: CONTACT_STATUS_QUOTE_ACCEPTED,
+              updated: 'RentAction',
+            },
           });
         } catch (updateQuoteError) {
           console.error(
@@ -443,9 +454,7 @@ function normalizeValue(value: unknown): string | null {
   }
 }
 
-function flattenRentForm(
-  value: RentFormValues | null
-): NormalizedRecord {
+function flattenRentForm(value: RentFormValues | null): NormalizedRecord {
   const record: NormalizedRecord = {};
   if (!value) {
     return record;
@@ -456,11 +465,7 @@ function flattenRentForm(
   return record;
 }
 
-function flattenValue(
-  value: unknown,
-  path: string,
-  record: NormalizedRecord
-) {
+function flattenValue(value: unknown, path: string, record: NormalizedRecord) {
   if (value === null || value === undefined) {
     record[path] = null;
     return;
