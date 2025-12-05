@@ -401,113 +401,110 @@ function summarizeRentChanges(
   next: RentFormValues,
   fallback: RentSnapshotFallbacks
 ): RentChangeMap {
-  const normalize = (value: unknown): string | null => {
-    if (value === null || value === undefined) return null;
-    if (value instanceof Date) return value.toISOString();
-    if (typeof value === 'string') {
-      const trimmed = value.trim();
-      return trimmed.length > 0 ? trimmed : null;
-    }
-    if (typeof value === 'number' || typeof value === 'boolean') {
-      return String(value);
-    }
-    if (Array.isArray(value)) {
-      const normalizedItems = value
-        .map((item) => normalize(item))
-        .filter((item): item is string => Boolean(item));
-      return normalizedItems.length > 0 ? normalizedItems.join(', ') : null;
-    }
-    try {
-      return JSON.stringify(value);
-    } catch {
-      return String(value);
-    }
-  };
-
+  const previousRecord = flattenRentForm(previous);
+  applyFallbackValues(previousRecord, fallback);
+  const nextRecord = flattenRentForm(next);
+  const ignoredKeys = new Set(['rentId']);
   const changes: RentChangeMap = {};
-  const recordChange = (
-    key: string,
-    before: unknown,
-    after: unknown
-  ): void => {
-    const previousValue = normalize(before);
-    const nextValue = normalize(after);
-    if (previousValue === nextValue) {
-      return;
-    }
-    changes[key] = {
-      before: previousValue,
-      after: nextValue,
-    };
-  };
+  const allKeys = new Set([
+    ...Object.keys(previousRecord),
+    ...Object.keys(nextRecord),
+  ]);
 
-  recordChange(
-    'contact.name',
-    previous?.contact?.name ?? fallback.contactName ?? null,
-    next.contact?.name ?? null
-  );
-  recordChange(
-    'contact.email',
-    previous?.contact?.email ?? fallback.contactEmail ?? null,
-    next.contact?.email ?? null
-  );
-
-  const prevDriver = previous?.driver?.[0];
-  const nextDriver = next.driver?.[0];
-  recordChange(
-    'driver.phoneNumber',
-    prevDriver?.phoneNumber ?? fallback.contactPhone ?? null,
-    nextDriver?.phoneNumber ?? null
-  );
-  recordChange(
-    'driver.email',
-    prevDriver?.email ?? fallback.contactEmail ?? null,
-    nextDriver?.email ?? null
-  );
-
-  recordChange(
-    'rentalPeriod.startDate',
-    previous?.rentalPeriod?.startDate ?? fallback.rentalStart ?? null,
-    next.rentalPeriod?.startDate ?? null
-  );
-  recordChange(
-    'rentalPeriod.endDate',
-    previous?.rentalPeriod?.endDate ?? fallback.rentalEnd ?? null,
-    next.rentalPeriod?.endDate ?? null
-  );
-
-  recordChange(
-    'delivery.arrivalFlight',
-    previous?.delivery?.arrivalFlight ?? null,
-    next.delivery?.arrivalFlight ?? null
-  );
-  recordChange(
-    'delivery.departureFlight',
-    previous?.delivery?.departureFlight ?? null,
-    next.delivery?.departureFlight ?? null
-  );
-
-  recordChange(
-    'invoice.name',
-    previous?.invoice?.name ?? null,
-    next.invoice?.name ?? null
-  );
-  recordChange(
-    'invoice.email',
-    previous?.invoice?.email ?? null,
-    next.invoice?.email ?? null
-  );
-  recordChange(
-    'invoice.phoneNumber',
-    previous?.invoice?.phoneNumber ?? null,
-    next.invoice?.phoneNumber ?? null
-  );
-
-  recordChange(
-    'extras.items',
-    Array.isArray(previous?.extras) ? previous?.extras : null,
-    Array.isArray(next.extras) ? next.extras : null
-  );
+  for (const key of allKeys) {
+    if (ignoredKeys.has(key)) continue;
+    const before = previousRecord[key] ?? null;
+    const after = nextRecord[key] ?? null;
+    if (before === after) continue;
+    changes[key] = { before, after };
+  }
 
   return changes;
+}
+
+type NormalizedRecord = Record<string, string | null>;
+
+function normalizeValue(value: unknown): string | null {
+  if (value === null || value === undefined) return null;
+  if (value instanceof Date) {
+    return Number.isNaN(value.getTime()) ? null : value.toISOString();
+  }
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  }
+  if (typeof value === 'number' || typeof value === 'boolean') {
+    return String(value);
+  }
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return String(value);
+  }
+}
+
+function flattenRentForm(
+  value: RentFormValues | null
+): NormalizedRecord {
+  const record: NormalizedRecord = {};
+  if (!value) {
+    return record;
+  }
+  Object.entries(value as Record<string, unknown>).forEach(([key, nested]) => {
+    flattenValue(nested, key, record);
+  });
+  return record;
+}
+
+function flattenValue(
+  value: unknown,
+  path: string,
+  record: NormalizedRecord
+) {
+  if (value === null || value === undefined) {
+    record[path] = null;
+    return;
+  }
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      record[path] = null;
+      return;
+    }
+    value.forEach((item, index) => {
+      flattenValue(item, `${path}.${index}`, record);
+    });
+    return;
+  }
+  if (typeof value === 'object') {
+    const entries = Object.entries(value as Record<string, unknown>);
+    if (entries.length === 0) {
+      record[path] = null;
+      return;
+    }
+    entries.forEach(([key, nested]) => {
+      flattenValue(nested, `${path}.${key}`, record);
+    });
+    return;
+  }
+  record[path] = normalizeValue(value);
+}
+
+function applyFallbackValues(
+  record: NormalizedRecord,
+  fallback: RentSnapshotFallbacks
+) {
+  const apply = (key: string, value: unknown) => {
+    const normalized = normalizeValue(value);
+    if (normalized === null) return;
+    if (record[key] === undefined) {
+      record[key] = normalized;
+    }
+  };
+
+  apply('contact.name', fallback.contactName);
+  apply('contact.email', fallback.contactEmail);
+  apply('driver.0.phoneNumber', fallback.contactPhone);
+  apply('driver.0.email', fallback.contactEmail);
+  apply('rentalPeriod.startDate', fallback.rentalStart);
+  apply('rentalPeriod.endDate', fallback.rentalEnd);
 }

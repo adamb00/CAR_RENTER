@@ -98,19 +98,6 @@ export default async function RentThankYouPage({
 
         if (updateResult.count > 0) {
           await sendRentCompletionEmail(rentRecord, resolvedLocale);
-          // await recordNotification({
-          //   type: 'rent_request',
-          //   title: 'Bérlés lezárva',
-          //   description: `${rentRecord.contactName} (${rentRecord.contactEmail}) befejezte a folyamatot a köszönő oldalon.`,
-          //   href: `/${rentRecord.id}`,
-          //   tone: 'success',
-          //   referenceId: rentRecord.id,
-          //   metadata: {
-          //     rentId,
-          //     humanId: rentRecord.humanId,
-          //     origin: 'rent-thank-you',
-          //   },
-          // });
         }
       }
     } catch (error) {
