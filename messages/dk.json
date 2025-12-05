@@ -2301,6 +2301,7 @@
       "footerNote": "Hvis du skal ændre oplysninger, så svar på denne e-mail.",
       "ctaLabel": "Fortsæt til websitet for at færdiggøre bookingen",
       "rows": {
+        "humanId": "Bookingreference",
         "period": "Periode",
         "adults": "Voksne",
         "children": "Børn",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Fakturatelefon",
         "invoiceAddress": "Fakturaadresse",
         "carModel": "Bilmodel",
-        "quoteId": "Forespørgsels-ID"
+        "quoteId": "Forespørgsels-ID",
+        "deposit": "Depositum",
+        "rentalFee": "Lejepris",
+        "insurance": "Forsikring",
+        "extrasFee": "Ekstraudgift",
+        "deliveryFee": "Leveringsgebyr",
+        "bookingLink": "Bookinglink",
+        "adminName": "Ansvarlig kontaktperson"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Administrer din booking – Zodiacs Rent a Car",
+      "description": "Annuller din booking eller send en ændringsforespørgsel online.",
+      "kicker": "Bookingadministration"
+    },
+    "title": "Administrer din booking",
+    "description": "Annullér reservationen eller fortæl os, hvad der skal ændres. Vores team vender tilbage hurtigst muligt.",
+    "tabs": {
+      "cancel": "Annullér booking",
+      "modify": "Anmod om ændring"
+    },
+    "summary": {
+      "heading": "Overblik over booking",
+      "bookingId": "Referencenummer",
+      "status": "Status",
+      "car": "Bil",
+      "period": "Lejeperiode",
+      "contactEmail": "Kontakt-e-mail",
+      "contactPhone": "Kontakttelefon",
+      "arrivalFlight": "Ankomstrute",
+      "departureFlight": "Returfly"
+    },
+    "status": {
+      "new": "Ny",
+      "inProgress": "Under behandling",
+      "answered": "Besvaret",
+      "closed": "Afsluttet"
+    },
+    "cancel": {
+      "title": "Annullér denne booking",
+      "description": "Bekræft venligst, at du ønsker at annullere. Vi giver dig besked, når annulleringen er gennemført.",
+      "reasonLabel": "Årsag (valgfrit)",
+      "reasonPlaceholder": "Fortæl os, hvorfor du vil annullere",
+      "helper": "Hvis du allerede har betalt et depositum, kontakter vi dig om de næste skridt.",
+      "button": "Annullér booking"
+    },
+    "modify": {
+      "title": "Anmod om ændring",
+      "description": "Opdater dine kontaktoplysninger eller beskriv nye datoer, ekstraudstyr eller leveringsoplysninger.",
+      "contactEmailLabel": "Kontakt-e-mail",
+      "contactPhoneLabel": "Telefonnummer",
+      "arrivalLabel": "Ankomstrute (valgfrit)",
+      "departureLabel": "Returfly (valgfrit)",
+      "messageLabel": "Hvad skal vi ændre?",
+      "messagePlaceholder": "Beskriv nye datoer, ekstraudstyr, leveringsadresse eller andre noter.",
+      "button": "Send anmodning"
+    },
+    "alerts": {
+      "cancelSuccess": "Din booking er annulleret. Vores team er blevet informeret.",
+      "modifySuccess": "Din anmodning er sendt. Vi kontakter dig snarest.",
+      "error": "Der opstod en fejl. Prøv igen senere."
     }
   }
 }

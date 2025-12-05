@@ -275,6 +275,10 @@ export function createRentSchema(
 
   return z
     .object({
+      rentId: z
+        .string()
+        .uuid()
+        .optional(),
       locale: z.string().optional(),
       carId: z.string().optional(),
       quoteId: z.string().optional(),

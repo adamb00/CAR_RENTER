@@ -8,11 +8,17 @@ import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { NoSSR } from '@/components/NoSSR';
 import RentPageClient from './client-page';
 import { getContactQuoteById } from '@/lib/contactQuotes';
+import { prisma } from '@/lib/prisma';
+import type { RentFormValues } from '@/schemas/RentSchema';
 
 type PageParams = {
   locale: string;
   id: string;
 };
+type ManageSection = 'contact' | 'travel' | 'invoice';
+type ManageMode = 'modify';
+
+const RENT_ID_REGEX = /^[0-9a-fA-F-]{36}$/;
 
 export async function generateMetadata({
   params,
@@ -105,6 +111,69 @@ export default async function RentPage({
     notFound();
   }
 
+  const pickSingleValue = (
+    value: string | string[] | undefined
+  ): string | undefined => (Array.isArray(value) ? value[0] : value);
+  const rentIdRaw = pickSingleValue(resolvedSearchParams?.rentId);
+  let fallbackAction: string | undefined;
+  let rentIdCandidate = rentIdRaw;
+  if (typeof rentIdCandidate === 'string' && rentIdCandidate.includes('?')) {
+    const [idSegment, rest] = rentIdCandidate.split('?');
+    rentIdCandidate = idSegment;
+    if (!resolvedSearchParams?.action && rest) {
+      const search = new URLSearchParams(rest);
+      fallbackAction = search.get('action') ?? undefined;
+    }
+  }
+  const rentId =
+    typeof rentIdCandidate === 'string' && RENT_ID_REGEX.test(rentIdCandidate)
+      ? rentIdCandidate
+      : null;
+  const actionRaw =
+    pickSingleValue(resolvedSearchParams?.action) ?? fallbackAction;
+  const allowedSections = new Set<ManageSection>([
+    'contact',
+    'travel',
+    'invoice',
+  ]);
+  let manageSection: ManageSection | null = null;
+  let manageMode: ManageMode | null = null;
+  if (actionRaw === 'modify') {
+    manageMode = 'modify';
+  } else if (
+    typeof actionRaw === 'string' &&
+    allowedSections.has(actionRaw as ManageSection)
+  ) {
+    manageSection = actionRaw as ManageSection;
+  }
+
+  let rentPrefill: RentFormValues | null = null;
+  if (rentId && manageMode === 'modify') {
+    try {
+      const rentRecord = await prisma.rentRequest.findUnique({
+        where: { id: rentId },
+        select: { id: true, carId: true, payload: true },
+      });
+      if (rentRecord?.payload && typeof rentRecord.payload === 'object') {
+        const cloned = JSON.parse(
+          JSON.stringify(rentRecord.payload)
+        ) as RentFormValues;
+        const payloadCarId =
+          rentRecord.carId ?? (typeof cloned.carId === 'string' ? cloned.carId : null);
+        if (!payloadCarId || payloadCarId === car.id) {
+          rentPrefill = {
+            ...cloned,
+            rentId,
+            carId: car.id,
+            locale: resolvedLocale,
+          };
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load rent request for editing', error);
+    }
+  }
+
   return (
     <NoSSR>
       <RentPageClient
@@ -113,6 +182,16 @@ export default async function RentPage({
         quotePrefill={
           quote && quote.carId && quote.carId !== car.id ? null : quote
         }
+        manageContext={
+          rentId
+            ? {
+                rentId,
+                section: manageSection ?? undefined,
+                mode: manageMode ?? undefined,
+              }
+            : undefined
+        }
+        rentPrefill={rentPrefill ?? undefined}
       />
     </NoSSR>
   );

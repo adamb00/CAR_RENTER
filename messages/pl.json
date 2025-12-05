@@ -2301,6 +2301,7 @@
       "footerNote": "Jeśli chcesz zmienić dane, odpowiedz na tego e-maila.",
       "ctaLabel": "Przejdź na stronę, aby dokończyć rezerwację",
       "rows": {
+        "humanId": "Numer rezerwacji",
         "period": "Termin",
         "adults": "Dorośli",
         "children": "Dzieci",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Telefon do faktury",
         "invoiceAddress": "Adres do faktury",
         "carModel": "Model auta",
-        "quoteId": "ID zapytania"
+        "quoteId": "ID zapytania",
+        "deposit": "Depozyt",
+        "rentalFee": "Cena wynajmu",
+        "insurance": "Ubezpieczenie",
+        "extrasFee": "Koszt dodatków",
+        "deliveryFee": "Opłata za dostawę",
+        "bookingLink": "Link do rezerwacji",
+        "adminName": "Opiekun zamówienia"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Zarządzaj rezerwacją – Zodiacs Rent a Car",
+      "description": "Anuluj rezerwację lub wyślij prośbę o zmianę online.",
+      "kicker": "Zarządzanie rezerwacją"
+    },
+    "title": "Zarządzaj rezerwacją",
+    "description": "Anuluj rezerwację lub opisz, co należy zmienić. Nasz zespół odezwie się tak szybko, jak to możliwe.",
+    "tabs": {
+      "cancel": "Anuluj rezerwację",
+      "modify": "Poproś o zmianę"
+    },
+    "summary": {
+      "heading": "Podsumowanie rezerwacji",
+      "bookingId": "Numer referencyjny",
+      "status": "Status",
+      "car": "Samochód",
+      "period": "Okres wynajmu",
+      "contactEmail": "E-mail kontaktowy",
+      "contactPhone": "Telefon kontaktowy",
+      "arrivalFlight": "Lot przylotowy",
+      "departureFlight": "Lot powrotny"
+    },
+    "status": {
+      "new": "Nowa",
+      "inProgress": "W realizacji",
+      "answered": "Odpowiedziano",
+      "closed": "Zamknięta"
+    },
+    "cancel": {
+      "title": "Anuluj tę rezerwację",
+      "description": "Potwierdź proszę, że chcesz anulować. Po zakończeniu procesu wyślemy potwierdzenie.",
+      "reasonLabel": "Powód (opcjonalnie)",
+      "reasonPlaceholder": "Napisz, dlaczego chcesz anulować",
+      "helper": "Jeśli wpłaciłeś kaucję, skontaktujemy się w sprawie kolejnych kroków.",
+      "button": "Anuluj rezerwację"
+    },
+    "modify": {
+      "title": "Poproś o zmianę",
+      "description": "Zaktualizuj dane kontaktowe lub opisz nowe terminy, dodatki czy miejsce dostawy.",
+      "contactEmailLabel": "E-mail kontaktowy",
+      "contactPhoneLabel": "Numer telefonu",
+      "arrivalLabel": "Lot przylotowy (opcjonalnie)",
+      "departureLabel": "Lot powrotny (opcjonalnie)",
+      "messageLabel": "Co mamy zmienić?",
+      "messagePlaceholder": "Opisz nowe terminy, dodatki, adres dostawy lub inne informacje.",
+      "button": "Wyślij prośbę"
+    },
+    "alerts": {
+      "cancelSuccess": "Rezerwacja została anulowana. Nasz zespół otrzymał powiadomienie.",
+      "modifySuccess": "Twoja prośba została wysłana. Wkrótce się odezwiemy.",
+      "error": "Wystąpił błąd. Spróbuj ponownie później."
     }
   }
 }

@@ -9,7 +9,6 @@ export const InquireAction = async (values: InquireFormValues) => {
       subject: `Ajánlatkérés | ${values.fullName} részére`,
       text: `
         E-mail cím: ${values.email}
-        Üzenet: ${values.message}
       `,
     });
     return { success: true };

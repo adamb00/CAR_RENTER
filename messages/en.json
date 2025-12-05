@@ -2301,6 +2301,7 @@
       "footerNote": "If you need to update any details, please reply to this email.",
       "ctaLabel": "Continue on the website to finalize your booking",
       "rows": {
+        "humanId": "Booking reference",
         "period": "Dates",
         "adults": "Adults",
         "children": "Children",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Invoice phone",
         "invoiceAddress": "Invoice address",
         "carModel": "Car model",
-        "quoteId": "Quote ID"
+        "quoteId": "Quote ID",
+        "deposit": "Deposit",
+        "rentalFee": "Rental fee",
+        "insurance": "Insurance",
+        "extrasFee": "Extras fee",
+        "deliveryFee": "Delivery fee",
+        "bookingLink": "Booking link",
+        "adminName": "Assigned agent"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Manage your booking – Zodiacs Rent a Car",
+      "description": "Cancel your booking or send a modification request in just a few clicks.",
+      "kicker": "Booking management"
+    },
+    "title": "Manage your booking",
+    "description": "Cancel your reservation or let us know what needs to change. Our team will review your request as quickly as possible.",
+    "tabs": {
+      "cancel": "Cancel booking",
+      "modify": "Request changes"
+    },
+    "summary": {
+      "heading": "Booking overview",
+      "bookingId": "Reference",
+      "status": "Status",
+      "car": "Car",
+      "period": "Rental period",
+      "contactEmail": "Contact email",
+      "contactPhone": "Contact phone",
+      "arrivalFlight": "Arrival flight",
+      "departureFlight": "Return flight"
+    },
+    "status": {
+      "new": "New",
+      "inProgress": "In progress",
+      "answered": "Answered",
+      "closed": "Closed"
+    },
+    "cancel": {
+      "title": "Cancel this booking",
+      "description": "Please confirm that you really want to cancel. We will notify you once the cancellation is fully processed.",
+      "reasonLabel": "Reason (optional)",
+      "reasonPlaceholder": "Tell us why you need to cancel",
+      "helper": "If you already paid a deposit, our colleague will contact you about the next steps.",
+      "button": "Cancel booking"
+    },
+    "modify": {
+      "title": "Request a change",
+      "description": "Update your contact details or describe the new dates, extras or delivery details you need.",
+      "contactEmailLabel": "Contact email",
+      "contactPhoneLabel": "Phone number",
+      "arrivalLabel": "Arrival flight (optional)",
+      "departureLabel": "Return flight (optional)",
+      "messageLabel": "What should we change?",
+      "messagePlaceholder": "Describe the new dates, extras, delivery address or any other important note.",
+      "button": "Send request"
+    },
+    "alerts": {
+      "cancelSuccess": "Your booking was cancelled successfully. Our team has been notified.",
+      "modifySuccess": "Your request was sent. We will contact you soon.",
+      "error": "Something went wrong. Please try again later."
     }
   }
 }

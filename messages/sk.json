@@ -2301,6 +2301,7 @@
       "footerNote": "Ak potrebujete údaje upraviť, odpovedzte na tento e-mail.",
       "ctaLabel": "Pokračovať na web a dokončiť rezerváciu",
       "rows": {
+        "humanId": "Číslo rezervácie",
         "period": "Termín",
         "adults": "Dospelí",
         "children": "Deti",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Fakturačný telefón",
         "invoiceAddress": "Fakturačná adresa",
         "carModel": "Model auta",
-        "quoteId": "ID dopytu"
+        "quoteId": "ID dopytu",
+        "deposit": "Záloha",
+        "rentalFee": "Cena prenájmu",
+        "insurance": "Poistenie",
+        "extrasFee": "Cena doplnkov",
+        "deliveryFee": "Poplatok za doručenie",
+        "bookingLink": "Odkaz na rezerváciu",
+        "adminName": "Zodpovedná osoba"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Spravuj svoju rezerváciu – Zodiacs Rent a Car",
+      "description": "Zruš rezerváciu alebo odošli žiadosť o zmenu online.",
+      "kicker": "Správa rezervácie"
+    },
+    "title": "Spravuj svoju rezerváciu",
+    "description": "Zruš rezerváciu alebo nám napíš, čo je potrebné upraviť. Náš tím sa ti čo najskôr ozve.",
+    "tabs": {
+      "cancel": "Zrušiť rezerváciu",
+      "modify": "Požiadať o zmenu"
+    },
+    "summary": {
+      "heading": "Prehľad rezervácie",
+      "bookingId": "Referenčné číslo",
+      "status": "Stav",
+      "car": "Vozidlo",
+      "period": "Termín prenájmu",
+      "contactEmail": "Kontaktný e-mail",
+      "contactPhone": "Kontaktný telefón",
+      "arrivalFlight": "Príletový let",
+      "departureFlight": "Odletový let"
+    },
+    "status": {
+      "new": "Nová",
+      "inProgress": "Spracúva sa",
+      "answered": "Zodpovedané",
+      "closed": "Ukončená"
+    },
+    "cancel": {
+      "title": "Zrušiť túto rezerváciu",
+      "description": "Potvrď prosím, že chceš rezerváciu zrušiť. Po dokončení ti pošleme potvrdenie.",
+      "reasonLabel": "Dôvod (voliteľné)",
+      "reasonPlaceholder": "Napíš, prečo chceš rezerváciu zrušiť",
+      "helper": "Ak si už zaplatil zálohu, budeme ťa kontaktovať s ďalším postupom.",
+      "button": "Zrušiť rezerváciu"
+    },
+    "modify": {
+      "title": "Požiadať o zmenu",
+      "description": "Aktualizuj kontakty alebo popíš nové termíny, doplnky či doručenie.",
+      "contactEmailLabel": "Kontaktný e-mail",
+      "contactPhoneLabel": "Telefónne číslo",
+      "arrivalLabel": "Príletový let (voliteľné)",
+      "departureLabel": "Odletový let (voliteľné)",
+      "messageLabel": "Čo máme zmeniť?",
+      "messagePlaceholder": "Popíš nové termíny, doplnky, adresu doručenia alebo iné poznámky.",
+      "button": "Odoslať žiadosť"
+    },
+    "alerts": {
+      "cancelSuccess": "Rezervácia bola úspešne zrušená. Náš tím bol informovaný.",
+      "modifySuccess": "Žiadosť o zmenu bola odoslaná. Čoskoro sa ozveme.",
+      "error": "Vyskytla sa chyba. Skús to prosím neskôr."
     }
   }
 }

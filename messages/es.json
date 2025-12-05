@@ -2472,6 +2472,7 @@
       "footerNote": "Si necesita actualizar algún dato, responda a este correo.",
       "ctaLabel": "Continuar en la web para finalizar la reserva",
       "rows": {
+        "humanId": "Referencia de reserva",
         "period": "Fechas",
         "adults": "Adultos",
         "children": "Niños",
@@ -2492,7 +2493,14 @@
         "invoicePhone": "Teléfono de facturación",
         "invoiceAddress": "Dirección de facturación",
         "carModel": "Modelo de coche",
-        "quoteId": "ID de solicitud"
+        "quoteId": "ID de solicitud",
+        "deposit": "Depósito",
+        "rentalFee": "Precio del alquiler",
+        "insurance": "Seguro",
+        "extrasFee": "Coste de extras",
+        "deliveryFee": "Gasto de entrega",
+        "bookingLink": "Enlace de reserva",
+        "adminName": "Asesor asignado"
       }
     },
     "contactQuote": {
@@ -2519,6 +2527,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Gestiona tu reserva – Zodiacs Rent a Car",
+      "description": "Cancela tu reserva o envía una solicitud de cambio online.",
+      "kicker": "Gestión de reservas"
+    },
+    "title": "Gestiona tu reserva",
+    "description": "Cancela la reserva o cuéntanos qué necesitas modificar. Nuestro equipo te responderá lo antes posible.",
+    "tabs": {
+      "cancel": "Cancelar reserva",
+      "modify": "Solicitar cambios"
+    },
+    "summary": {
+      "heading": "Resumen de la reserva",
+      "bookingId": "Referencia",
+      "status": "Estado",
+      "car": "Vehículo",
+      "period": "Periodo de alquiler",
+      "contactEmail": "Correo de contacto",
+      "contactPhone": "Teléfono de contacto",
+      "arrivalFlight": "Vuelo de llegada",
+      "departureFlight": "Vuelo de regreso"
+    },
+    "status": {
+      "new": "Nueva",
+      "inProgress": "En proceso",
+      "answered": "Respondida",
+      "closed": "Cerrada"
+    },
+    "cancel": {
+      "title": "Cancelar esta reserva",
+      "description": "Confirma que realmente deseas cancelar. Te avisaremos cuando la cancelación esté finalizada.",
+      "reasonLabel": "Motivo (opcional)",
+      "reasonPlaceholder": "Cuéntanos por qué necesitas cancelar",
+      "helper": "Si ya abonaste una fianza, nuestro equipo te contactará con los siguientes pasos.",
+      "button": "Cancelar reserva"
+    },
+    "modify": {
+      "title": "Solicitar un cambio",
+      "description": "Actualiza tus datos de contacto o describe las nuevas fechas, extras o entrega que necesitas.",
+      "contactEmailLabel": "Correo de contacto",
+      "contactPhoneLabel": "Teléfono",
+      "arrivalLabel": "Vuelo de llegada (opcional)",
+      "departureLabel": "Vuelo de regreso (opcional)",
+      "messageLabel": "¿Qué debemos cambiar?",
+      "messagePlaceholder": "Describe nuevas fechas, extras, dirección de entrega u otra información relevante.",
+      "button": "Enviar solicitud"
+    },
+    "alerts": {
+      "cancelSuccess": "La reserva se canceló correctamente. Nuestro equipo ha sido informado.",
+      "modifySuccess": "Tu solicitud se envió correctamente. Nos pondremos en contacto contigo pronto.",
+      "error": "Ha ocurrido un error. Inténtalo más tarde."
     }
   }
 }

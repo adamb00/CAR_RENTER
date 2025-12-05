@@ -43,9 +43,11 @@ export function usePersistRentForm(
   {
     locale,
     carId,
+    enabled = true,
   }: {
     locale: string;
     carId: string;
+    enabled?: boolean;
   }
 ) {
   const storageKey = React.useMemo(
@@ -53,12 +55,17 @@ export function usePersistRentForm(
     [locale, carId]
   );
 
-  const [hydrated, setHydrated] = React.useState(false);
+  const persistenceEnabled = enabled !== false;
+  const [hydrated, setHydrated] = React.useState(!persistenceEnabled);
   const writeTimeoutRef = React.useRef<number | null>(null);
   const immediateFlushRef = React.useRef<number | null>(null);
   const suppressNextSaveRef = React.useRef(false);
 
   React.useEffect(() => {
+    if (!persistenceEnabled) {
+      setHydrated(true);
+      return;
+    }
     if (!isBrowser()) return;
 
     try {
@@ -86,10 +93,10 @@ export function usePersistRentForm(
     } finally {
       setHydrated(true);
     }
-  }, [form, storageKey]);
+  }, [form, persistenceEnabled, storageKey]);
 
   React.useEffect(() => {
-    if (!hydrated || !isBrowser()) return;
+    if (!persistenceEnabled || !hydrated || !isBrowser()) return;
 
     const saveValues = (values: RentFormValues) => {
       if (!isBrowser()) return;
@@ -220,7 +227,7 @@ export function usePersistRentForm(
       }
       flushValues(latestValues);
     };
-  }, [form, hydrated, storageKey, carId, locale]);
+  }, [carId, form, hydrated, locale, persistenceEnabled, storageKey]);
 
   const clearStoredValues = React.useCallback(() => {
     if (!isBrowser()) return;

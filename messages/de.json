@@ -2301,6 +2301,7 @@
       "footerNote": "Wenn Sie Angaben ändern möchten, antworten Sie bitte auf diese E-Mail.",
       "ctaLabel": "Weiter zur Website, um die Buchung abzuschließen",
       "rows": {
+        "humanId": "Buchungsreferenz",
         "period": "Zeitraum",
         "adults": "Erwachsene",
         "children": "Kinder",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Rechnungstelefon",
         "invoiceAddress": "Rechnungsadresse",
         "carModel": "Automodell",
-        "quoteId": "Anfrage-ID"
+        "quoteId": "Anfrage-ID",
+        "deposit": "Kaution",
+        "rentalFee": "Mietpreis",
+        "insurance": "Versicherung",
+        "extrasFee": "Gebühr für Extras",
+        "deliveryFee": "Liefergebühr",
+        "bookingLink": "Buchungslink",
+        "adminName": "Zuständiger Ansprechpartner"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Buchung verwalten – Zodiacs Rent a Car",
+      "description": "Storniere deine Buchung oder sende uns Änderungswünsche ganz einfach online.",
+      "kicker": "Buchung verwalten"
+    },
+    "title": "Buchung verwalten",
+    "description": "Storniere deine Reservierung oder teile uns mit, was geändert werden soll. Unser Team meldet sich so schnell wie möglich.",
+    "tabs": {
+      "cancel": "Buchung stornieren",
+      "modify": "Änderung anfragen"
+    },
+    "summary": {
+      "heading": "Buchungsübersicht",
+      "bookingId": "Referenz",
+      "status": "Status",
+      "car": "Fahrzeug",
+      "period": "Mietzeitraum",
+      "contactEmail": "Kontakt-E-Mail",
+      "contactPhone": "Kontakt-Telefon",
+      "arrivalFlight": "Ankunftsflug",
+      "departureFlight": "Rückflug"
+    },
+    "status": {
+      "new": "Neu",
+      "inProgress": "In Bearbeitung",
+      "answered": "Beantwortet",
+      "closed": "Abgeschlossen"
+    },
+    "cancel": {
+      "title": "Diese Buchung stornieren",
+      "description": "Bitte bestätige, dass du die Buchung wirklich stornieren möchtest. Nach Abschluss erhältst du eine Bestätigung.",
+      "reasonLabel": "Grund (optional)",
+      "reasonPlaceholder": "Warum möchtest du stornieren?",
+      "helper": "Wenn du bereits eine Kaution bezahlt hast, melden wir uns mit den nächsten Schritten.",
+      "button": "Buchung stornieren"
+    },
+    "modify": {
+      "title": "Änderung anfordern",
+      "description": "Aktualisiere deine Kontaktdaten oder beschreibe neue Termine, Extras oder Lieferdetails.",
+      "contactEmailLabel": "Kontakt-E-Mail",
+      "contactPhoneLabel": "Telefonnummer",
+      "arrivalLabel": "Ankunftsflug (optional)",
+      "departureLabel": "Rückflug (optional)",
+      "messageLabel": "Was sollen wir ändern?",
+      "messagePlaceholder": "Beschreibe neue Termine, Extras, Lieferadresse oder andere Hinweise.",
+      "button": "Anfrage senden"
+    },
+    "alerts": {
+      "cancelSuccess": "Deine Buchung wurde erfolgreich storniert. Unser Team wurde informiert.",
+      "modifySuccess": "Deine Änderungsanfrage wurde gesendet. Wir melden uns bald.",
+      "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut."
     }
   }
 }

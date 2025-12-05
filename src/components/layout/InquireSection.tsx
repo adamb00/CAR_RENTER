@@ -1,18 +1,18 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useTransition } from 'react';
-import { useTranslations } from 'next-intl';
-import { useForm } from 'react-hook-form';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { InquireAction } from '@/actions/InquireAction';
-import toast from 'react-hot-toast';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import React, { useTransition } from 'react';
+import { useForm } from 'react-hook-form';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
 export type InquireFormValues = {
   fullName: string;
   email: string;
-  message: string;
+  // message: string;
 };
 
 type FloatingFieldProps = React.ComponentPropsWithoutRef<typeof Input> & {
@@ -66,29 +66,36 @@ FloatingField.displayName = 'FloatingField';
 export default function Inquire() {
   const t = useTranslations('Inquire');
   const [isPending, startTransition] = useTransition();
+  const { locale } = useParams();
 
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<InquireFormValues>();
+  const watchedFullName = watch('fullName') ?? '';
+  const watchedEmail = watch('email') ?? '';
+  const contactHref = `/${locale}/contact?email=${encodeURIComponent(
+    watchedEmail
+  )}&name=${encodeURIComponent(watchedFullName)}`;
 
-  const onSubmit = async (data: InquireFormValues) => {
-    startTransition(async () => {
-      const res = await InquireAction(data);
-      if (res && res.success) {
-        toast.success(t('toast.success'));
-        reset({
-          fullName: '',
-          email: '',
-          message: '',
-        });
-      } else {
-        toast.error(t('toast.error'));
-      }
-    });
-  };
+  // const onSubmit = async (data: InquireFormValues) => {
+  // startTransition(async () => {
+  //   const res = await InquireAction(data);
+  //   if (res && res.success) {
+  //     toast.success(t('toast.success'));
+  //     reset({
+  //       fullName: '',
+  //       email: '',
+  //       // message: '',
+  //     });
+  //   } else {
+  //     toast.error(t('toast.error'));
+  //   }
+  // });
+  // };
 
   return (
     <section
@@ -100,7 +107,7 @@ export default function Inquire() {
         <div className='relative grid grid-cols-1 lg:grid-cols-2 w-full gap-8  items-center min-h-[26rem] xl:min-h-[40rem]'>
           {/* Form */}
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            // onSubmit={handleSubmit(onSubmit)}
             className='relative z-[20] space-y-6 p-6 md:p-10 bg-transparent  rounded-md h-full m-0 flex items-center md:items-start flex-col justify-center w-full transition-colors'
           >
             <h3 className='text-2xl md:text-3xl leading-tight tracking-[0.1em] font-bold text-sky-dark dark:text-sky-light uppercase'>
@@ -135,21 +142,23 @@ export default function Inquire() {
               })}
               error={errors.email?.message}
             />
-            <FloatingField
+            {/* <FloatingField
               label={t('fields.message.label')}
               {...register('message', {
                 required: t('fields.message.required'),
               })}
               error={errors.message?.message}
-            />
+            /> */}
 
-            <button
-              type='submit'
-              disabled={isSubmitting || isPending}
-              className='w-full md:w-auto px-6 rounded-3xl bg-sky dark:bg-sky-light cursor-pointer tracking-widest text-white dark:text-sky-dark font-semibold py-3 transition hover:bg-sky-light dark:hover:bg-sky disabled:opacity-50 shadow'
-            >
-              {isSubmitting ? t('submit.submitting') : t('submit.idle')}
-            </button>
+            <Link href={contactHref}>
+              <button
+                type='submit'
+                disabled={isSubmitting || isPending}
+                className='w-full md:w-auto px-6 rounded-3xl bg-sky dark:bg-sky-light cursor-pointer tracking-widest text-white dark:text-sky-dark font-semibold py-3 transition hover:bg-sky-light dark:hover:bg-sky disabled:opacity-50 shadow'
+              >
+                {isSubmitting ? t('submit.submitting') : t('submit.idle')}
+              </button>
+            </Link>
           </form>
 
           {/* Kép */}
@@ -163,7 +172,7 @@ export default function Inquire() {
             />
             {/* Mobile overlay: subtle whitish tint over image */}
             <div className='absolute inset-0 md:hidden bg-white/90 dark:bg-white/20' />
-            <div className='absolute inset-0 hidden md:block bg-gradient-to-tr from-transparent to-black/10 dark:to-black/30' />
+            <div className='absolute inset-0 hidden md:block bg-linear-to-tr from-transparent to-black/10 dark:to-black/30' />
           </div>
         </div>
       </div>

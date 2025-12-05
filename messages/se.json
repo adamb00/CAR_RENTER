@@ -2301,6 +2301,7 @@
       "footerNote": "Om du behöver uppdatera något, svara på detta mejl.",
       "ctaLabel": "Fortsätt till webbplatsen för att slutföra bokningen",
       "rows": {
+        "humanId": "Bokningsreferens",
         "period": "Period",
         "adults": "Vuxna",
         "children": "Barn",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Fakturatelefon",
         "invoiceAddress": "Fakturaadress",
         "carModel": "Bilmodell",
-        "quoteId": "Förfrågan-ID"
+        "quoteId": "Förfrågan-ID",
+        "deposit": "Deposition",
+        "rentalFee": "Hyreskostnad",
+        "insurance": "Försäkring",
+        "extrasFee": "Kostnad för tillval",
+        "deliveryFee": "Leveransavgift",
+        "bookingLink": "Bokningslänk",
+        "adminName": "Ansvarig kontaktperson"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Hantera din bokning – Zodiacs Rent a Car",
+      "description": "Avboka eller skicka en ändringsförfrågan direkt online.",
+      "kicker": "Bokningshantering"
+    },
+    "title": "Hantera din bokning",
+    "description": "Avboka din reservation eller berätta vilka ändringar som behövs. Vårt team återkommer så snart som möjligt.",
+    "tabs": {
+      "cancel": "Avboka",
+      "modify": "Begär ändring"
+    },
+    "summary": {
+      "heading": "Översikt",
+      "bookingId": "Referensnummer",
+      "status": "Status",
+      "car": "Bil",
+      "period": "Hyresperiod",
+      "contactEmail": "Kontakt-e-post",
+      "contactPhone": "Kontaktnummer",
+      "arrivalFlight": "Ankomstflyg",
+      "departureFlight": "Returflyg"
+    },
+    "status": {
+      "new": "Ny",
+      "inProgress": "Pågår",
+      "answered": "Besvarad",
+      "closed": "Avslutad"
+    },
+    "cancel": {
+      "title": "Avboka denna reservation",
+      "description": "Bekräfta att du vill avboka. Vi meddelar dig när processen är klar.",
+      "reasonLabel": "Orsak (valfri)",
+      "reasonPlaceholder": "Berätta varför du avbokar",
+      "helper": "Om du redan har betalat deposition kontaktar vi dig om nästa steg.",
+      "button": "Avboka"
+    },
+    "modify": {
+      "title": "Begär en ändring",
+      "description": "Uppdatera dina kontaktuppgifter eller beskriv nya datum, tillval eller leveransdetaljer.",
+      "contactEmailLabel": "Kontakt-e-post",
+      "contactPhoneLabel": "Telefonnummer",
+      "arrivalLabel": "Ankomstflyg (valfritt)",
+      "departureLabel": "Returflyg (valfritt)",
+      "messageLabel": "Vad ska ändras?",
+      "messagePlaceholder": "Beskriv nya datum, tillval, leveransadress eller andra viktiga detaljer.",
+      "button": "Skicka begäran"
+    },
+    "alerts": {
+      "cancelSuccess": "Bokningen har avbokats. Vårt team har informerats.",
+      "modifySuccess": "Din begäran har skickats. Vi kontaktar dig snart.",
+      "error": "Ett fel uppstod. Försök igen senare."
     }
   }
 }

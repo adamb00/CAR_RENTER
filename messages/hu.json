@@ -2301,6 +2301,7 @@
       "footerNote": "Ha módosítani szeretné a megadott adatokat, válaszoljon erre az e-mailre.",
       "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
       "rows": {
+        "humanId": "Foglalási azonosító",
         "period": "Időszak",
         "adults": "Felnőttek",
         "children": "Gyermekek",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Számla telefonszám",
         "invoiceAddress": "Számla cím",
         "carModel": "Autómodell",
-        "quoteId": "Ajánlatkérés ID"
+        "quoteId": "Ajánlatkérés ID",
+        "deposit": "Kaució",
+        "rentalFee": "Bérleti díj",
+        "insurance": "Biztosítás",
+        "extrasFee": "Extrák díja",
+        "deliveryFee": "Kiszállítás díja",
+        "bookingLink": "Foglalási link",
+        "adminName": "Ügyintéző"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Foglalás kezelése – Zodiacs Rent a Car",
+      "description": "Itt tudod lemondani vagy módosítást kérni néhány kattintással.",
+      "kicker": "Foglalás kezelése"
+    },
+    "title": "Foglalás kezelése",
+    "description": "Mondd le a foglalást vagy írd meg, min kell változtatni. Csapatunk a lehető leghamarabb felveszi veled a kapcsolatot.",
+    "tabs": {
+      "cancel": "Foglalás lemondása",
+      "modify": "Módosítás kérése"
+    },
+    "summary": {
+      "heading": "Foglalás összegzése",
+      "bookingId": "Foglalási azonosító",
+      "status": "Állapot",
+      "car": "Autó",
+      "period": "Bérlési időszak",
+      "contactEmail": "Kapcsolattartó e-mail",
+      "contactPhone": "Kapcsolattartó telefon",
+      "arrivalFlight": "Érkezési járat",
+      "departureFlight": "Hazautazó járat"
+    },
+    "status": {
+      "new": "Új",
+      "inProgress": "Folyamatban",
+      "answered": "Megválaszolva",
+      "closed": "Lezárva"
+    },
+    "cancel": {
+      "title": "Foglalás lemondása",
+      "description": "Erősítsd meg, hogy valóban törölni szeretnéd a foglalást. A feldolgozás után e-mailben értesítünk.",
+      "reasonLabel": "Indoklás (opcionális)",
+      "reasonPlaceholder": "Írd le, miért szeretnéd lemondani",
+      "helper": "Ha már befizettél kauciót, kollégánk egyeztet veled a további lépésekről.",
+      "button": "Foglalás lemondása"
+    },
+    "modify": {
+      "title": "Módosítás kérése",
+      "description": "Frissítsd az elérhetőségeidet vagy írd le, milyen dátumot, extrát, kiszállítást szeretnél módosítani.",
+      "contactEmailLabel": "Kapcsolattartó e-mail",
+      "contactPhoneLabel": "Telefonszám",
+      "arrivalLabel": "Érkezési járat (opcionális)",
+      "departureLabel": "Hazautazó járat (opcionális)",
+      "messageLabel": "Mit módosítsunk?",
+      "messagePlaceholder": "Írd le az új dátumokat, extrákat, címet vagy bármilyen megjegyzést.",
+      "button": "Kérés elküldése"
+    },
+    "alerts": {
+      "cancelSuccess": "A foglalást sikeresen lemondtad, értesítettük a kollégákat.",
+      "modifySuccess": "A módosítási kérésedet továbbítottuk, hamarosan jelentkezünk.",
+      "error": "Hiba történt. Kérjük, próbáld meg később."
     }
   }
 }

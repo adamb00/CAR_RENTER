@@ -2301,6 +2301,7 @@
       "footerNote": "Dacă trebuie să modificați ceva, răspundeți la acest e-mail.",
       "ctaLabel": "Continuă pe site pentru a finaliza rezervarea",
       "rows": {
+        "humanId": "Referință rezervare",
         "period": "Perioadă",
         "adults": "Adulți",
         "children": "Copii",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Telefon facturare",
         "invoiceAddress": "Adresă facturare",
         "carModel": "Model mașină",
-        "quoteId": "ID cerere"
+        "quoteId": "ID cerere",
+        "deposit": "Depozit",
+        "rentalFee": "Cost închiriere",
+        "insurance": "Asigurare",
+        "extrasFee": "Cost extraopțiuni",
+        "deliveryFee": "Taxă livrare",
+        "bookingLink": "Link rezervare",
+        "adminName": "Agent responsabil"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Gestionează rezervarea – Zodiacs Rent a Car",
+      "description": "Anulează rezervarea sau trimite o cerere de modificare online.",
+      "kicker": "Gestionarea rezervării"
+    },
+    "title": "Gestionează rezervarea",
+    "description": "Anulează rezervarea sau spune-ne ce trebuie schimbat. Echipa noastră îți va răspunde cât mai rapid.",
+    "tabs": {
+      "cancel": "Anulează rezervarea",
+      "modify": "Solicită modificări"
+    },
+    "summary": {
+      "heading": "Sumar rezervare",
+      "bookingId": "Număr referință",
+      "status": "Stare",
+      "car": "Mașină",
+      "period": "Perioadă de închiriere",
+      "contactEmail": "E-mail de contact",
+      "contactPhone": "Telefon de contact",
+      "arrivalFlight": "Zbor de sosire",
+      "departureFlight": "Zbor de plecare"
+    },
+    "status": {
+      "new": "Nouă",
+      "inProgress": "În curs",
+      "answered": "Răspuns trimis",
+      "closed": "Închisă"
+    },
+    "cancel": {
+      "title": "Anulează această rezervare",
+      "description": "Confirmă că vrei să anulezi rezervarea. Te anunțăm imediat ce procesul este finalizat.",
+      "reasonLabel": "Motiv (opțional)",
+      "reasonPlaceholder": "Spune-ne de ce anulezi",
+      "helper": "Dacă ai plătit deja o garanție, colegii noștri te vor contacta pentru pașii următori.",
+      "button": "Anulează rezervarea"
+    },
+    "modify": {
+      "title": "Solicită o modificare",
+      "description": "Actualizează datele de contact sau descrie noile perioade, extraopțiuni sau detalii de livrare.",
+      "contactEmailLabel": "E-mail de contact",
+      "contactPhoneLabel": "Număr de telefon",
+      "arrivalLabel": "Zbor de sosire (opțional)",
+      "departureLabel": "Zbor de plecare (opțional)",
+      "messageLabel": "Ce trebuie schimbat?",
+      "messagePlaceholder": "Descrie noile date, extraopțiuni, adresa de livrare sau alte informații.",
+      "button": "Trimite solicitarea"
+    },
+    "alerts": {
+      "cancelSuccess": "Rezervarea a fost anulată. Echipa noastră a fost informată.",
+      "modifySuccess": "Solicitarea a fost trimisă. Te vom contacta în curând.",
+      "error": "A apărut o eroare. Te rugăm să încerci din nou."
     }
   }
 }

@@ -239,7 +239,7 @@ export default async function CarPage({
                   key={label}
                   className='flex items-center gap-3 rounded-lg border border-border/60 bg-background/60 p-3'
                 >
-                  <Icon className='h-5 w-5 flex-shrink-0 text-primary' />
+                  <Icon className='h-5 w-5 shrink-0 text-primary' />
                   <span className='text-sm font-medium text-foreground/90'>
                     {label}
                   </span>

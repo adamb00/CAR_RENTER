@@ -171,11 +171,16 @@ export type QuoteRequestValues = z.infer<QuoteRequestSchema>;
 type QuoteRequestFormProps = {
   locale: string;
   selectedCar?: { id: string; name: string } | null;
+  prefill?: {
+    name?: string;
+    email?: string;
+  };
 };
 
 export function QuoteRequestForm({
   locale,
   selectedCar,
+  prefill,
 }: QuoteRequestFormProps) {
   const t = useTranslations('Contact');
   const tReF = useTranslations('RentForm');
@@ -210,11 +215,16 @@ export function QuoteRequestForm({
       buildSchema(t, tRent, deliveryFieldRequiredMessage, tSchema),
     [t, tRent, deliveryFieldRequiredMessage, tSchema]
   );
+  const sanitizedPrefillName =
+    typeof prefill?.name === 'string' ? prefill.name.trim() : '';
+  const sanitizedPrefillEmail =
+    typeof prefill?.email === 'string' ? prefill.email.trim() : '';
+
   const defaultValues = useMemo(
     () => ({
-      name: '',
+      name: sanitizedPrefillName,
       phone: '',
-      email: '',
+      email: sanitizedPrefillEmail,
       preferredChannel: 'email' as PreferredChannel,
       rentalStart: '',
       rentalEnd: '',
@@ -237,7 +247,7 @@ export function QuoteRequestForm({
       } as DeliveryInfo,
       consents: { privacy: false, terms: false },
     }),
-    [selectedCar?.id]
+    [sanitizedPrefillEmail, sanitizedPrefillName, selectedCar?.id]
   );
 
   const form = useForm<QuoteRequestValues>({

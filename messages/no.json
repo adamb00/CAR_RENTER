@@ -2301,6 +2301,7 @@
       "footerNote": "Hvis du må endre opplysningene, svar på denne e-posten.",
       "ctaLabel": "Fortsett til nettstedet for å fullføre bestillingen",
       "rows": {
+        "humanId": "Bestillingsreferanse",
         "period": "Periode",
         "adults": "Voksne",
         "children": "Barn",
@@ -2321,7 +2322,14 @@
         "invoicePhone": "Fakturatelefon",
         "invoiceAddress": "Fakturaadresse",
         "carModel": "Bilmodell",
-        "quoteId": "Forespørsels-ID"
+        "quoteId": "Forespørsels-ID",
+        "deposit": "Depositum",
+        "rentalFee": "Leiepris",
+        "insurance": "Forsikring",
+        "extrasFee": "Pris for ekstrautstyr",
+        "deliveryFee": "Leveringsgebyr",
+        "bookingLink": "Bestillingslenke",
+        "adminName": "Ansvarlig kontaktperson"
       }
     },
     "contactQuote": {
@@ -2348,6 +2356,61 @@
         "whatsapp": "WhatsApp",
         "viber": "Viber"
       }
+    }
+  }
+  ,
+  "RentManage": {
+    "meta": {
+      "title": "Administrer bestillingen – Zodiacs Rent a Car",
+      "description": "Avbestill eller send en endringsforespørsel direkte på nett.",
+      "kicker": "Bestillingsadministrasjon"
+    },
+    "title": "Administrer bestillingen",
+    "description": "Avbestill reservasjonen eller fortell oss hva som må endres. Teamet vårt tar kontakt så snart som mulig.",
+    "tabs": {
+      "cancel": "Avbestill",
+      "modify": "Be om endring"
+    },
+    "summary": {
+      "heading": "Oversikt over bestillingen",
+      "bookingId": "Referanse",
+      "status": "Status",
+      "car": "Bil",
+      "period": "Leieperiode",
+      "contactEmail": "Kontakt-e-post",
+      "contactPhone": "Kontakttelefon",
+      "arrivalFlight": "Ankomstrute",
+      "departureFlight": "Returfly"
+    },
+    "status": {
+      "new": "Ny",
+      "inProgress": "Under behandling",
+      "answered": "Besvart",
+      "closed": "Avsluttet"
+    },
+    "cancel": {
+      "title": "Avbestill denne reservasjonen",
+      "description": "Bekreft at du ønsker å avbestille. Du får beskjed når prosessen er ferdig.",
+      "reasonLabel": "Årsak (valgfritt)",
+      "reasonPlaceholder": "Fortell hvorfor du avbestiller",
+      "helper": "Hvis du allerede har betalt depositum, tar vi kontakt om neste steg.",
+      "button": "Avbestill"
+    },
+    "modify": {
+      "title": "Be om endring",
+      "description": "Oppdater kontaktinformasjonen din eller beskriv nye datoer, ekstrautstyr eller leveringsdetaljer.",
+      "contactEmailLabel": "Kontakt-e-post",
+      "contactPhoneLabel": "Telefonnummer",
+      "arrivalLabel": "Ankomstrute (valgfritt)",
+      "departureLabel": "Returfly (valgfritt)",
+      "messageLabel": "Hva skal endres?",
+      "messagePlaceholder": "Beskriv nye datoer, ekstrautstyr, leveringsadresse eller andre kommentarer.",
+      "button": "Send forespørsel"
+    },
+    "alerts": {
+      "cancelSuccess": "Bestillingen ble avbestilt. Teamet vårt har fått beskjed.",
+      "modifySuccess": "Endringsforespørselen er sendt. Vi kontakter deg snart.",
+      "error": "Noe gikk galt. Prøv igjen senere."
     }
   }
 }

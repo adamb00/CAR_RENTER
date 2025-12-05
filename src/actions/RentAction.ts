@@ -12,6 +12,7 @@ import { prisma } from '@/lib/prisma';
 import { getNextHumanId } from '@/lib/humanId';
 import { STATUS_DONE } from '@/lib/requestStatus';
 import { getCarById } from '@/lib/cars';
+import { recordNotification } from '@/lib/notifications';
 
 export const RentAction = async (values: z.infer<RentFormValues>) => {
   const validatedFields = await RentSchema.safeParseAsync(values);
@@ -26,7 +27,9 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
   const pdfBuffer = await buildRentPdf(validatedFields.data);
   const pdfFileName = `berles-${validatedFields.data.rentalPeriod.startDate}-${validatedFields.data.contact.name}.pdf`;
   const contactPhone = validatedFields.data.driver?.[0]?.phoneNumber ?? null;
-  const humanId = await getNextHumanId('RentRequests');
+  const rentIdFromPayload = validatedFields.data.rentId ?? null;
+  const isModifyRequest = Boolean(rentIdFromPayload);
+  let humanId: string | null = null;
 
   type DeliveryAddress =
     | NonNullable<RentFormValues['delivery']>['address']
@@ -100,34 +103,161 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     return parsed.toISOString();
   };
 
-  try {
-    await prisma.rentRequest.create({
-      data: {
-        locale,
-        carId: validatedFields.data.carId ?? null,
-        quoteId: validatedFields.data.quoteId ?? null,
-        humanId,
-        contactName: validatedFields.data.contact.name,
-        contactEmail: validatedFields.data.contact.email,
-        contactPhone,
-        rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
-        rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
-        updated: null,
-        payload: validatedFields.data,
-      },
-    });
-    if (validatedFields.data.quoteId) {
-      try {
-        await prisma.contactQuote.update({
-          where: { id: validatedFields.data.quoteId },
-          data: { status: STATUS_DONE, updated: 'RentAction' },
-        });
-      } catch (updateQuoteError) {
-        console.error('Failed to mark contact quote as done', updateQuoteError);
-      }
+  const computeReminderDate = (
+    value?: string | null
+  ): Date | undefined => {
+    if (!value) return undefined;
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+      return undefined;
     }
-  } catch (error) {
-    console.error('Failed to store rent request', error);
+    const reminderTime = parsed.getTime() - 48 * 60 * 60 * 1000;
+    return new Date(reminderTime);
+  };
+
+  const requestedPeriod = `${formatFriendlyDate(
+    validatedFields.data.rentalPeriod.startDate
+  )} → ${formatFriendlyDate(validatedFields.data.rentalPeriod.endDate)}`;
+
+  let rentRecordId: string | null = rentIdFromPayload;
+  const rentReminderAt = computeReminderDate(
+    validatedFields.data.rentalPeriod.startDate
+  );
+
+  if (isModifyRequest && rentIdFromPayload) {
+    try {
+      const existingRent = await prisma.rentRequest.findUnique({
+        where: { id: rentIdFromPayload },
+        select: {
+          id: true,
+          humanId: true,
+          quoteId: true,
+          contactName: true,
+          contactEmail: true,
+          contactPhone: true,
+          rentalStart: true,
+          rentalEnd: true,
+          payload: true,
+        },
+      });
+      if (!existingRent) {
+        return { error: 'A megadott foglalás nem található.' };
+      }
+      humanId = existingRent.humanId ?? existingRent.id;
+      const previousPayload = isRentFormValues(existingRent.payload)
+        ? (existingRent.payload as RentFormValues)
+        : null;
+      const rentChanges = summarizeRentChanges(previousPayload, validatedFields.data, {
+        contactName: existingRent.contactName,
+        contactEmail: existingRent.contactEmail,
+        contactPhone: existingRent.contactPhone,
+        rentalStart: existingRent.rentalStart,
+        rentalEnd: existingRent.rentalEnd,
+      });
+      const updatedMarker = JSON.stringify({
+        action: 'self-service:modify',
+        rentId: rentIdFromPayload,
+        changes: rentChanges,
+      });
+      await prisma.rentRequest.update({
+        where: { id: rentIdFromPayload },
+        data: {
+          locale,
+          carId: validatedFields.data.carId ?? null,
+          quoteId: validatedFields.data.quoteId ?? null,
+          contactName: validatedFields.data.contact.name,
+          contactEmail: validatedFields.data.contact.email,
+          contactPhone,
+          rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
+          rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
+          updated: updatedMarker,
+          payload: validatedFields.data,
+        },
+      });
+
+      await recordNotification({
+        type: 'rent_request',
+        title: 'Bérlés módosítva',
+        description: `${validatedFields.data.contact.name} (${validatedFields.data.contact.email}) frissítette a foglalását – ${requestedPeriod}`,
+        href: `/${rentIdFromPayload}`,
+        tone: 'info',
+        referenceId: rentIdFromPayload,
+        metadata: {
+          rentId: rentIdFromPayload,
+          humanId,
+          quoteId:
+            validatedFields.data.quoteId ?? existingRent.quoteId ?? null,
+          carId: validatedFields.data.carId ?? null,
+          rentalStart: validatedFields.data.rentalPeriod.startDate,
+          rentalEnd: validatedFields.data.rentalPeriod.endDate,
+          action: 'modify',
+          changes: rentChanges,
+        },
+      });
+    } catch (error) {
+      console.error('Failed to update rent request', error);
+      return {
+        error: 'Nem sikerült módosítani a foglalást. Kérjük, próbáld újra.',
+      };
+    }
+  } else {
+    humanId = await getNextHumanId('RentRequests');
+    try {
+      const createdRent = await prisma.rentRequest.create({
+        data: {
+          locale,
+          carId: validatedFields.data.carId ?? null,
+          quoteId: validatedFields.data.quoteId ?? null,
+          humanId,
+          contactName: validatedFields.data.contact.name,
+          contactEmail: validatedFields.data.contact.email,
+          contactPhone,
+          rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
+          rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
+          updated: null,
+          payload: validatedFields.data,
+        },
+        select: { id: true },
+      });
+      rentRecordId = createdRent.id;
+
+      const rentNotificationHref = rentRecordId ? `/${rentRecordId}` : '/';
+
+      await recordNotification({
+        type: 'rent_request',
+        title: 'Új bérlési igény érkezett',
+        description: `${validatedFields.data.contact.name} (${validatedFields.data.contact.email}) – ${requestedPeriod}`,
+        href: rentNotificationHref,
+        tone: 'success',
+        referenceId: createdRent.id,
+        notifyAt: rentReminderAt,
+        metadata: {
+          rentId: createdRent.id,
+          humanId,
+          quoteId: validatedFields.data.quoteId ?? null,
+          carId: validatedFields.data.carId ?? null,
+          rentalStart: validatedFields.data.rentalPeriod.startDate,
+          rentalEnd: validatedFields.data.rentalPeriod.endDate,
+          action: 'create',
+        },
+      });
+
+      if (validatedFields.data.quoteId) {
+        try {
+          await prisma.contactQuote.update({
+            where: { id: validatedFields.data.quoteId },
+            data: { status: STATUS_DONE, updated: 'RentAction' },
+          });
+        } catch (updateQuoteError) {
+          console.error(
+            'Failed to mark contact quote as done',
+            updateQuoteError
+          );
+        }
+      }
+    } catch (error) {
+      console.error('Failed to store rent request', error);
+    }
   }
 
   const formData = validatedFields.data;
@@ -238,5 +368,146 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     }),
   });
 
-  return { success: true };
+  return {
+    success: true,
+    rentId: rentRecordId ?? rentIdFromPayload ?? undefined,
+  };
 };
+
+type RentSnapshotFallbacks = {
+  contactName?: string | null;
+  contactEmail?: string | null;
+  contactPhone?: string | null;
+  rentalStart?: Date | string | null;
+  rentalEnd?: Date | string | null;
+};
+
+type RentChangeMap = Record<
+  string,
+  {
+    before: string | null;
+    after: string | null;
+  }
+>;
+
+const isRentFormValues = (value: unknown): value is RentFormValues => {
+  if (!value || typeof value !== 'object') return false;
+  const candidate = value as Record<string, unknown>;
+  return 'contact' in candidate && 'rentalPeriod' in candidate;
+};
+
+function summarizeRentChanges(
+  previous: RentFormValues | null,
+  next: RentFormValues,
+  fallback: RentSnapshotFallbacks
+): RentChangeMap {
+  const normalize = (value: unknown): string | null => {
+    if (value === null || value === undefined) return null;
+    if (value instanceof Date) return value.toISOString();
+    if (typeof value === 'string') {
+      const trimmed = value.trim();
+      return trimmed.length > 0 ? trimmed : null;
+    }
+    if (typeof value === 'number' || typeof value === 'boolean') {
+      return String(value);
+    }
+    if (Array.isArray(value)) {
+      const normalizedItems = value
+        .map((item) => normalize(item))
+        .filter((item): item is string => Boolean(item));
+      return normalizedItems.length > 0 ? normalizedItems.join(', ') : null;
+    }
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return String(value);
+    }
+  };
+
+  const changes: RentChangeMap = {};
+  const recordChange = (
+    key: string,
+    before: unknown,
+    after: unknown
+  ): void => {
+    const previousValue = normalize(before);
+    const nextValue = normalize(after);
+    if (previousValue === nextValue) {
+      return;
+    }
+    changes[key] = {
+      before: previousValue,
+      after: nextValue,
+    };
+  };
+
+  recordChange(
+    'contact.name',
+    previous?.contact?.name ?? fallback.contactName ?? null,
+    next.contact?.name ?? null
+  );
+  recordChange(
+    'contact.email',
+    previous?.contact?.email ?? fallback.contactEmail ?? null,
+    next.contact?.email ?? null
+  );
+
+  const prevDriver = previous?.driver?.[0];
+  const nextDriver = next.driver?.[0];
+  recordChange(
+    'driver.phoneNumber',
+    prevDriver?.phoneNumber ?? fallback.contactPhone ?? null,
+    nextDriver?.phoneNumber ?? null
+  );
+  recordChange(
+    'driver.email',
+    prevDriver?.email ?? fallback.contactEmail ?? null,
+    nextDriver?.email ?? null
+  );
+
+  recordChange(
+    'rentalPeriod.startDate',
+    previous?.rentalPeriod?.startDate ?? fallback.rentalStart ?? null,
+    next.rentalPeriod?.startDate ?? null
+  );
+  recordChange(
+    'rentalPeriod.endDate',
+    previous?.rentalPeriod?.endDate ?? fallback.rentalEnd ?? null,
+    next.rentalPeriod?.endDate ?? null
+  );
+
+  recordChange(
+    'delivery.arrivalFlight',
+    previous?.delivery?.arrivalFlight ?? null,
+    next.delivery?.arrivalFlight ?? null
+  );
+  recordChange(
+    'delivery.departureFlight',
+    previous?.delivery?.departureFlight ?? null,
+    next.delivery?.departureFlight ?? null
+  );
+
+  recordChange(
+    'invoice.name',
+    previous?.invoice?.name ?? null,
+    next.invoice?.name ?? null
+  );
+  recordChange(
+    'invoice.email',
+    previous?.invoice?.email ?? null,
+    next.invoice?.email ?? null
+  );
+  recordChange(
+    'invoice.phoneNumber',
+    previous?.invoice?.phoneNumber ?? null,
+    next.invoice?.phoneNumber ?? null
+  );
+
+  recordChange(
+    'extras.items',
+    Array.isArray(previous?.extras) ? previous?.extras : null,
+    Array.isArray(next.extras) ? next.extras : null
+  );
+
+  return changes;
+}

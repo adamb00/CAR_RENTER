@@ -5,7 +5,7 @@ import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
 import { getCarById } from '@/lib/cars';
 
 type PageParams = { locale: string };
-type SearchParams = { carId?: string };
+type SearchParams = { carId?: string; name?: string; email?: string };
 
 export async function generateMetadata({
   params,
@@ -41,6 +41,16 @@ export default async function ContactPage({
     resolvedSearchParams.carId && resolvedSearchParams.carId.trim()
       ? await getCarById(resolvedSearchParams.carId.trim())
       : null;
+  const contactPrefill = {
+    name:
+      typeof resolvedSearchParams.name === 'string'
+        ? resolvedSearchParams.name
+        : '',
+    email:
+      typeof resolvedSearchParams.email === 'string'
+        ? resolvedSearchParams.email
+        : '',
+  };
 
   return (
     <>
@@ -67,6 +77,7 @@ export default async function ContactPage({
               }
             : undefined
         }
+        prefill={contactPrefill}
       />
     </>
   );

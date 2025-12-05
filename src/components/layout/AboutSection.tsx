@@ -14,7 +14,7 @@ export default function AboutSection() {
         </h2>
       </div>
 
-      <div className='mx-auto max-w-[114rem] px-4 md:px-12'>
+      <div className='mx-auto max-w-456 px-4 md:px-12'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-6'>
           <div className='place-self-center'>
             <h3 className='uppercase font-extrabold text-lg text-grey-dark-3 text-start mb-2'>

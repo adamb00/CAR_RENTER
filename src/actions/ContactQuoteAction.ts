@@ -8,6 +8,7 @@ import { getSiteUrl, resolveLocale } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
 import { STATUS_NEW } from '@/lib/requestStatus';
+import { recordNotification } from '@/lib/notifications';
 
 const parseDateValue = (value?: string | null): Date | null => {
   if (!value) return null;
@@ -187,6 +188,24 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           quoteId ? `?quoteId=${quoteId}` : ''
         }`
       : siteUrl;
+
+    const notificationHref = quoteId ? `/quotes/${quoteId}` : '/quote';
+
+    await recordNotification({
+      type: 'contact_quote',
+      title: 'Új ajánlatkérés érkezett',
+      description: `${payload.name} (${payload.email}) – ${formattedPeriod}`,
+      href: notificationHref,
+      tone: 'success',
+      referenceId: quoteId,
+      metadata: {
+        quoteId,
+        humanId,
+        locale: payload.locale,
+        status: STATUS_NEW,
+        carId: payload.carId ?? null,
+      },
+    });
 
     const adminRows = [
       { label: 'Quote ID', value: quoteId },

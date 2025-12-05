@@ -41,7 +41,7 @@ export default async function RentFinishPage({
         {t('sections.booking.description')}
       </p>
       <Link
-        href={`/${resolvedLocale}/cars`}
+        href={`/${resolvedLocale}`}
         className='inline-flex items-center justify-center rounded-2xl bg-sky-dark px-6 py-3 text-base font-semibold text-white transition hover:bg-sky-dark/80 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-dark/60'
       >
         {t('cta.bookNow')}

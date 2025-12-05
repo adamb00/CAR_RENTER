@@ -66,6 +66,12 @@ type RentPageClientProps = {
   locale: string;
   car: Pick<Car, 'id' | 'seats' | 'colors'>;
   quotePrefill?: ContactQuoteRecord | null;
+  manageContext?: {
+    rentId: string;
+    section?: 'contact' | 'travel' | 'invoice';
+    mode?: 'modify';
+  };
+  rentPrefill?: RentFormValues | null;
 };
 
 const parsePositiveInt = (
@@ -117,6 +123,7 @@ const buildInitialValues = (
     locale,
     carId,
     quoteId: quote?.id,
+    rentId: undefined,
     extras: [],
     adults: adultsFromQuote,
     children: childrenArray,
@@ -213,6 +220,7 @@ const mergeQuoteIntoValues = (
     locale: values.locale ?? quote.locale ?? values.locale,
     carId: values.carId ?? quote.carId ?? values.carId,
     quoteId: values.quoteId ?? quote.id ?? values.quoteId,
+    rentId: values.rentId,
     adults: adultsFromQuote ?? values.adults,
     children: childrenArray,
     extras: quote.extras ?? values.extras,
@@ -277,8 +285,11 @@ export default function RentPageClient({
   locale,
   car,
   quotePrefill,
+  manageContext,
+  rentPrefill,
 }: RentPageClientProps) {
   const t = useTranslations('RentForm');
+  const tManage = useTranslations('RentManage');
 
   const depositNotice = t('sections.booking.insuranceDepositNotice');
   const insurancePriceRaw = quotePrefill?.bookingRequestData?.insurance;
@@ -294,6 +305,9 @@ export default function RentPageClient({
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const { id } = car;
+  const manageRentId = manageContext?.rentId;
+  const isModifyMode =
+    manageContext?.mode === 'modify' && Boolean(manageRentId);
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isMissingFlightsDialogOpen, setMissingFlightsDialogOpen] =
@@ -426,10 +440,17 @@ export default function RentPageClient({
   };
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
-  const defaultValues = React.useMemo(
-    () => buildInitialValues(quotePrefill, locale, id),
-    [id, locale, quotePrefill]
-  );
+  const defaultValues = React.useMemo(() => {
+    if (rentPrefill) {
+      return {
+        ...rentPrefill,
+        locale,
+        carId: id,
+        rentId: rentPrefill.rentId ?? manageRentId,
+      };
+    }
+    return buildInitialValues(quotePrefill, locale, id);
+  }, [id, locale, manageRentId, quotePrefill, rentPrefill]);
 
   const form = useForm<RentFormValues>({
     resolver: zodResolver(rentSchema) as Resolver<
@@ -440,10 +461,17 @@ export default function RentPageClient({
     defaultValues,
   });
 
-  const { clearStoredValues, isHydrated } = usePersistRentForm(form, {
-    locale,
-    carId: id,
-  });
+  const { clearStoredValues, isHydrated } = usePersistRentForm(
+    form,
+    React.useMemo(
+      () => ({
+        locale,
+        carId: id,
+        enabled: !isModifyMode,
+      }),
+      [id, isModifyMode, locale]
+    )
+  );
 
   const [placesReady, setPlacesReady] = React.useState(false);
   const { extrasSelected } = useWatchForm(form);
@@ -470,16 +498,70 @@ export default function RentPageClient({
 
   useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
 
+  React.useEffect(() => {
+    if (!manageContext?.section) {
+      return;
+    }
+    const SECTION_TARGET: Record<'contact' | 'travel' | 'invoice', string> = {
+      contact: 'contact',
+      invoice: 'invoice',
+      travel: 'delivery',
+    };
+    const targetSection = SECTION_TARGET[manageContext.section];
+    if (!targetSection) {
+      return;
+    }
+
+    let scrollTimeout: number | null = null;
+    let highlightTimeout: number | null = null;
+    const focusSection = () => {
+      const root = formRef.current ?? document;
+      const element = root.querySelector(
+        `[data-section="${targetSection}"]`
+      ) as HTMLElement | null;
+      if (!element) {
+        return;
+      }
+      const yOffset = -100;
+      const rect = element.getBoundingClientRect();
+      const scrollTop = window.pageYOffset + rect.top + yOffset;
+      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+      element.classList.add('ring-2', 'ring-sky-500/70');
+      highlightTimeout = window.setTimeout(() => {
+        element.classList.remove('ring-2', 'ring-sky-500/70');
+      }, 1500);
+    };
+    if (document.readyState === 'complete') {
+      focusSection();
+    } else {
+      scrollTimeout = window.setTimeout(focusSection, 150);
+    }
+
+    return () => {
+      if (scrollTimeout) {
+        window.clearTimeout(scrollTimeout);
+      }
+      if (highlightTimeout) {
+        window.clearTimeout(highlightTimeout);
+      }
+    };
+  }, [manageContext]);
+
   const hasAppliedQuotePrefill = React.useRef(false);
 
   React.useEffect(() => {
-    if (!quotePrefill || !isHydrated || hasAppliedQuotePrefill.current) {
+    if (
+      rentPrefill ||
+      !quotePrefill ||
+      !isHydrated ||
+      hasAppliedQuotePrefill.current
+    ) {
       return;
     }
     hasAppliedQuotePrefill.current = true;
     const mergedValues = mergeQuoteIntoValues(form.getValues(), quotePrefill);
     form.reset(mergedValues);
-  }, [form, isHydrated, quotePrefill]);
+  }, [form, isHydrated, quotePrefill, rentPrefill]);
 
   const shouldAskForFlightNumbers = React.useCallback(
     (values: RentFormResolvedValues) => {
@@ -504,11 +586,18 @@ export default function RentPageClient({
         rentalStart: parsed.rentalPeriod.startDate,
         rentalEnd: parsed.rentalPeriod.endDate,
         extrasCount: Array.isArray(extrasSelected) ? extrasSelected.length : 0,
+        mode: isModifyMode ? 'modify' : 'create',
       };
 
       startTransition(async () => {
-        const res = await RentAction({
+        const rentIdPayload =
+          (isModifyMode && manageRentId) || parsed.rentId || undefined;
+        const actionPayload: RentFormResolvedValues = {
           ...parsed,
+        };
+        actionPayload.rentId = rentIdPayload;
+        const res = await RentAction({
+          ...actionPayload,
           locale,
           carId: id,
           quoteId: quotePrefill?.id ?? parsed.quoteId,
@@ -516,13 +605,21 @@ export default function RentPageClient({
         if (res.success) {
           toast.success(t('toast.success'));
           clearStoredValues();
+          const resultingRentId = res.rentId ?? rentIdPayload ?? undefined;
           trackFormSubmission({
             formId: 'rent-request',
             status: 'success',
+            rentId: resultingRentId,
             ...submissionMeta,
           });
+          const nextUrl =
+            isModifyMode && resultingRentId
+              ? `/${locale}/rent/thank-you`
+              : resultingRentId
+              ? `/${locale}/rent/thank-you?rentId=${resultingRentId}`
+              : `/${locale}/rent/thank-you`;
           setTimeout(() => {
-            router.push(`/${locale}/rent/thank-you`);
+            router.push(nextUrl);
           }, 2000);
         } else {
           toast.error(t('toast.error'));
@@ -530,12 +627,24 @@ export default function RentPageClient({
             formId: 'rent-request',
             status: 'error',
             errorMessage: res.error,
+            rentId: rentIdPayload ?? manageRentId ?? undefined,
             ...submissionMeta,
           });
         }
       });
     },
-    [clearStoredValues, extrasSelected, id, locale, router, startTransition, t]
+    [
+      clearStoredValues,
+      extrasSelected,
+      id,
+      isModifyMode,
+      locale,
+      manageRentId,
+      quotePrefill,
+      router,
+      startTransition,
+      t,
+    ]
   );
 
   type SubmitOptions = {
@@ -676,7 +785,7 @@ export default function RentPageClient({
                           {t('sections.booking.insuranceCheckbox')}
                         </FormLabel>
                         <p className='mt-1 text-xs text-muted-foreground'>
-                          {insurancePriceMessage}
+                          {insurancePriceMessage}€
                         </p>
                       </div>
                     </div>
@@ -705,7 +814,7 @@ export default function RentPageClient({
           type='submit'
           className='self-end m-8 px-6 py-2 text-base font-semibold uppercase tracking-widest bg-sky-light text-sky-dark border border-transparent transition hover:bg-sky-dark hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-dark/60'
         >
-          {t('buttons.submit')}
+          {isModifyMode ? tManage('modify.button') : t('buttons.submit')}
         </Button>
       </form>
       <Dialog
