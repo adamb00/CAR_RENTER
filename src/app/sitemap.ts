@@ -21,7 +21,11 @@ const STATIC_PATHS = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const cars = await getCars();
+  const cars =
+    (await getCars().catch((error) => {
+      console.error('Failed to load cars for sitemap generation', error);
+      return [] as Awaited<ReturnType<typeof getCars>>;
+    })) ?? [];
 
   const staticEntries = STATIC_PATHS.flatMap((path) =>
     LOCALES.map((locale) => {
@@ -50,10 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: now,
         alternates: {
           languages: Object.fromEntries(
-            LOCALES.map((l) => [
-              l,
-              `${HOST}/${l}${path}`,
-            ])
+            LOCALES.map((l) => [l, `${HOST}/${l}${path}`])
           ),
         },
       };
