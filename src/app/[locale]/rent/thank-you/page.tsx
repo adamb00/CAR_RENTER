@@ -1,15 +1,14 @@
-import Link from 'next/link';
-import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { getCarById } from '@/lib/cars';
+import { renderBrandEmail, type EmailRow } from '@/lib/emailTemplates';
+import { sendMail } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
 import { STATUS_DONE } from '@/lib/requestStatus';
-import { sendMail } from '@/lib/mailer';
-import { renderBrandEmail, type EmailRow } from '@/lib/emailTemplates';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo';
 import { RentFormValues } from '@/schemas/RentSchema';
-import { getCarById } from '@/lib/cars';
 import type { Prisma } from '@prisma/client';
-import { recordNotification } from '@/lib/notifications';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 
 type PageParams = { locale: string };
 
@@ -99,19 +98,19 @@ export default async function RentThankYouPage({
 
         if (updateResult.count > 0) {
           await sendRentCompletionEmail(rentRecord, resolvedLocale);
-          await recordNotification({
-            type: 'rent_request',
-            title: 'Bérlés lezárva',
-            description: `${rentRecord.contactName} (${rentRecord.contactEmail}) befejezte a folyamatot a köszönő oldalon.`,
-            href: `/${rentRecord.id}`,
-            tone: 'success',
-            referenceId: rentRecord.id,
-            metadata: {
-              rentId,
-              humanId: rentRecord.humanId,
-              origin: 'rent-thank-you',
-            },
-          });
+          // await recordNotification({
+          //   type: 'rent_request',
+          //   title: 'Bérlés lezárva',
+          //   description: `${rentRecord.contactName} (${rentRecord.contactEmail}) befejezte a folyamatot a köszönő oldalon.`,
+          //   href: `/${rentRecord.id}`,
+          //   tone: 'success',
+          //   referenceId: rentRecord.id,
+          //   metadata: {
+          //     rentId,
+          //     humanId: rentRecord.humanId,
+          //     origin: 'rent-thank-you',
+          //   },
+          // });
         }
       }
     } catch (error) {
