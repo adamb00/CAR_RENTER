@@ -1,4 +1,3 @@
-// src/app/api/set-locale/route.ts
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { LOCALES, type Locale } from '@/i18n/config';
@@ -28,13 +27,13 @@ export async function POST(req: Request) {
   }
 
   const locale = raw as Locale;
-  const jar = await cookies(); // ❗ nincs await
+  const jar = await cookies();
 
   jar.set('NEXT_LOCALE', locale, {
     path: '/',
-    maxAge: 60 * 60 * 24 * 365, // 1 év
+    maxAge: 60 * 60 * 24 * 365,
     sameSite: 'lax',
-    httpOnly: true, // JS ne olvassa; a middleware-nek elég a requestben
+    httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
   });
 

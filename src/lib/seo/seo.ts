@@ -122,3 +122,73 @@ export async function buildPageMetadata(options: {
     },
   };
 }
+
+type BuildMetadataFromContentOptions = {
+  locale: Locale;
+  path?: string;
+  title: string;
+  description: string;
+  imagePath?: string;
+  imageAlt?: string;
+  keywords?: string[];
+};
+
+export function buildMetadataFromContent({
+  locale,
+  path = '',
+  title,
+  description,
+  imagePath = '/logo_white.png',
+  imageAlt,
+  keywords,
+}: BuildMetadataFromContentOptions): Metadata {
+  const siteUrl = getSiteUrl();
+  const normalizedPath =
+    !path || path === '/' ? '' : path.startsWith('/') ? path : `/${path}`;
+  const url = `${siteUrl}/${locale}${normalizedPath}`;
+  const finalImageAlt = imageAlt ?? title;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: Object.fromEntries(
+        LOCALES.map((loc) => [loc, `${siteUrl}/${loc}${normalizedPath}`])
+      ),
+    },
+    openGraph: {
+      type: 'website',
+      locale,
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: `${siteUrl}${imagePath}`,
+          width: 1200,
+          height: 630,
+          alt: finalImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${siteUrl}${imagePath}`],
+    },
+    keywords,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
+}

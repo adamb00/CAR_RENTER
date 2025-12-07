@@ -6,54 +6,13 @@ import { useLocale, useMessages, useTranslations } from 'next-intl';
 import { Search } from 'lucide-react';
 import clsx from 'clsx';
 import { SEARCH_ENTRY_CONFIG } from '@/lib/search/config';
-
-type RawSearchEntry = {
-  id?: string;
-  title: string;
-  description?: string;
-  keywords?: string[];
-  path: string;
-};
-
-type GlobalSearchProps = {
-  className?: string;
-  onNavigate?: () => void;
-};
-
-type SearchMessages = {
-  entries?: RawSearchEntry[];
-};
-
-type MessagesShape = Record<string, unknown>;
-
-const normalizeText = (value: string) =>
-  value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '');
-
-const flattenStrings = (value: unknown): string[] => {
-  if (typeof value === 'string') return [value];
-  if (Array.isArray(value)) {
-    return value.flatMap((item) => flattenStrings(item));
-  }
-  if (value && typeof value === 'object') {
-    return Object.values(value as Record<string, unknown>).flatMap((item) =>
-      flattenStrings(item)
-    );
-  }
-  return [];
-};
-
-const getValueByPath = (obj: MessagesShape | null, path: string) => {
-  if (!obj) return undefined;
-  return path.split('.').reduce<unknown>((acc, key) => {
-    if (acc && typeof acc === 'object') {
-      return (acc as MessagesShape)[key];
-    }
-    return undefined;
-  }, obj);
-};
+import {
+  GlobalSearchProps,
+  MessagesShape,
+  SearchMessages,
+} from './navigation.types';
+import { normalizeText } from '@/lib/format';
+import { flattenStrings, getValueByPath } from '../blog/helper';
 
 export function GlobalSearch({ className, onNavigate }: GlobalSearchProps) {
   const t = useTranslations('Search');
@@ -174,7 +133,7 @@ export function GlobalSearch({ className, onNavigate }: GlobalSearchProps) {
           className={clsx(
             'fixed left-4 right-4 top-[calc(env(safe-area-inset-top,0px)+80px)]',
             'sm:absolute sm:left-auto sm:right-0 sm:top-[calc(100%+0.75rem)] sm:w-[min(90vw,26rem)]',
-            'z-[2600]'
+            'z-2600'
           )}
           aria-label={t('ariaLabel')}
         >

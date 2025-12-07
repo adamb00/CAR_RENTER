@@ -44,8 +44,7 @@ export default function Footer() {
         dark:bg-grey-light-2 dark:text-grey-dark-2
       '
     >
-      <div className='mx-auto max-w-screen-xl px-4 py-10 sm:px-6 md:py-12 lg:px-8'>
-        {/* Felső sor: logó / márka */}
+      <div className='mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-12 lg:px-8'>
         <div className='flex items-center justify-center'>
           <Logo logo={logo} />
         </div>

@@ -1,35 +1,12 @@
 import { BlogImage } from '@/components/blog/BlogImage';
 import { Locale } from '@/i18n/config';
-import { getSiteUrl } from '@/lib/seo';
-import { type BlogPostComponentProps } from '@/lib/blog/types';
+import { getSiteUrl } from '@/lib/seo/seo';
+
 import Link from 'next/link';
-
-type ResolvedLink = {
-  href: string;
-  label: string;
-};
-
-const resolveHref = (href: string, locale: Locale): string =>
-  href.includes('{locale}') ? href.replace('{locale}', locale) : href;
-
-const isExternal = (href: string) => href.startsWith('http');
-
-const toResolvedLink = (link: ResolvedLink, locale: Locale): ResolvedLink => ({
-  ...link,
-  href: resolveHref(link.href, locale),
-});
-
-const escapeForJson = (value: string) =>
-  value
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026');
-
-const fallbackTitleFromSlug = (slug: string) =>
-  slug
-    .split('-')
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
+import { buildBlogPostJsonLdString } from '@/lib/jsonId/jsonld';
+import { BlogPostComponentProps } from '@/app/[locale]/blog/blog.type';
+import { fallbackTitleFromSlug, toResolvedLink } from './helper';
+import { isExternal } from 'util/types';
 
 const SECTION_IMAGES: Record<
   string,
@@ -57,47 +34,15 @@ const SECTION_IMAGES: Record<
 
 export default function Post_2({ locale, slug, post }: BlogPostComponentProps) {
   const siteUrl = getSiteUrl();
-  const postUrl = `${siteUrl}/${locale}/blog/${slug}`;
-  const imageUrl = `${siteUrl}${post.meta.image?.src ?? '/header_image.webp'}`;
-  const articleBody = post.sections
-    .flatMap((section) => section.paragraphs)
-    .join('\n\n');
 
   const heroTitle = post.hero.title ?? fallbackTitleFromSlug(slug);
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.meta.title,
-    description: post.meta.description,
-    datePublished: post.hero.publishDateISO,
-    dateModified: post.hero.publishDateISO,
-    inLanguage: locale,
-    author: {
-      '@type': 'Organization',
-      name: post.hero.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: post.hero.author,
-      url: siteUrl,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteUrl}/logo_white.png`,
-      },
-    },
-    image: {
-      '@type': 'ImageObject',
-      url: imageUrl,
-      caption: post.meta.image?.alt ?? post.meta.title,
-    },
-    mainEntityOfPage: postUrl,
-    url: postUrl,
-    articleSection: post.hero.category,
-    articleBody,
-  };
-
-  const jsonLdString = escapeForJson(JSON.stringify(jsonLd, null, 2));
+  const jsonLdString = buildBlogPostJsonLdString({
+    locale,
+    siteUrl,
+    slug,
+    post,
+  });
   const backHref = `/${locale}/blog`;
 
   return (
@@ -122,7 +67,7 @@ export default function Post_2({ locale, slug, post }: BlogPostComponentProps) {
         </div>
         <header className='mt-8'>
           <h1 className='mt-4 flex items-center gap-3 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-sky-dark dark:text-grey-light-1'>
-            <span className='inline-block bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+            <span className='inline-block bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
               {heroTitle}
             </span>
           </h1>

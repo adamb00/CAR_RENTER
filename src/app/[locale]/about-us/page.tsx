@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 
 type PageParams = { locale: string };
 
@@ -36,7 +36,7 @@ export default async function AboutUsPage({
   return (
     <>
       <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40'>
-        <h1 className='block text-5xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-widest lg:tracking-[0.3em] text-center my-10 bg-gradient-to-r from-sky-light/90 to-sky-dark/80 bg-clip-text text-transparent'>
+        <h1 className='block text-5xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-widest lg:tracking-[0.3em] text-center my-10 bg-linear-to-r from-sky-light/90 to-sky-dark/80 bg-clip-text text-transparent'>
           {t('headline')}
         </h1>
 
@@ -46,7 +46,7 @@ export default async function AboutUsPage({
           </h2>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 my-16 sm:my-20 gap-8 lg:gap-12 items-center justify-center'>
-          <div className='lg:order-none flex flex-col gap-6 sm:gap-8 md:gap-10 px-2 sm:px-4 md:px-6'>
+          <div className='lg:order-0 flex flex-col gap-6 sm:gap-8 md:gap-10 px-2 sm:px-4 md:px-6'>
             <div className='mb-6 order-1'>
               <h3 className='uppercase font-extrabold text-base sm:text-lg md:text-xl text-grey-dark-3 text-start mb-2'>
                 {t('why_title')}
@@ -66,7 +66,7 @@ export default async function AboutUsPage({
               </p>
             </div>
           </div>
-          <div className='order-2 lg:order-none relative w-full rounded-md overflow-hidden min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem]'>
+          <div className='order-2 lg:order-0 relative w-full rounded-md overflow-hidden min-h-64 sm:min-h-80 md:min-h-96 lg:min-h-112'>
             <Image
               src='/DSC00594.jpg'
               fill
@@ -77,7 +77,7 @@ export default async function AboutUsPage({
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 my-16 sm:my-20 gap-8 lg:gap-12 items-center justify-center'>
-          <div className='order-2 lg:order-none relative w-full rounded-md overflow-hidden min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem]'>
+          <div className='order-2 lg:order-0 relative w-full rounded-md overflow-hidden min-h-64 sm:min-h-80 md:min-h-96 lg:min-h-112'>
             <Image
               src='/DSC00603.jpg'
               fill
@@ -86,7 +86,7 @@ export default async function AboutUsPage({
               className='h-full w-full object-cover md:rounded-md md:shadow-lg'
             />
           </div>
-          <div className='lg:order-none text-start lg:text-end flex flex-col gap-6 sm:gap-8 md:gap-10 px-2 sm:px-4 md:px-6'>
+          <div className='lg:order-0 text-start lg:text-end flex flex-col gap-6 sm:gap-8 md:gap-10 px-2 sm:px-4 md:px-6'>
             <div className='mb-6 order-1 '>
               <h3 className='uppercase font-extrabold text-base sm:text-lg md:text-xl text-grey-dark-3 mb-2'>
                 {t('delivery_title')}
@@ -118,7 +118,7 @@ export default async function AboutUsPage({
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </p>
-          <div className='order-2 mt-8 lg:order-none relative w-full rounded-md overflow-hidden min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem]'>
+          <div className='order-2 mt-8 lg:order-0 relative w-full rounded-md overflow-hidden min-h-64 sm:min-h-80 md:min-h-96 lg:min-h-112'>
             <Image
               src='/DSC00259.jpg'
               fill
@@ -128,7 +128,7 @@ export default async function AboutUsPage({
             />
           </div>
         </div>
-        <div className='text-center text-lg !my-8 text-sky-dark hover:scale-110 duration-200'>
+        <div className='text-center text-lg my-8! text-sky-dark hover:scale-110 duration-200'>
           <Link
             href={`/${resolvedLocale}/cars`}
             className='hover:border-b pb-2 px-4 leading-snug'

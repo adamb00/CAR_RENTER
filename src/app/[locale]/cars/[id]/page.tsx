@@ -13,8 +13,9 @@ import {
   getCarById,
   getCars,
 } from '@/lib/cars';
-import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { resolveLocale } from '@/lib/seo/seo';
 import { LOCALES } from '@/i18n/config';
+import { buildCarMetadata } from '@/lib/seo/metadata';
 
 type CarPageParams = {
   locale: string;
@@ -42,46 +43,11 @@ export async function generateMetadata({
     return {};
   }
 
-  const t = await getTranslations({
+  return buildCarMetadata({
     locale: resolvedLocale,
     namespace: 'CarDetail',
+    car,
   });
-  const title = t('meta.title', { carName: car.name });
-  const description = t('meta.description', { carName: car.name });
-  const siteUrl = getSiteUrl();
-  const url = `${siteUrl}/${resolvedLocale}/cars/${car.id}`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: url,
-      languages: Object.fromEntries(
-        LOCALES.map((loc) => [loc, `${siteUrl}/${loc}/cars/${car.id}`])
-      ),
-    },
-    openGraph: {
-      type: 'website',
-      locale: resolvedLocale,
-      url,
-      title,
-      description,
-      images: [
-        {
-          url: `${siteUrl}${car.image}`,
-          width: 1200,
-          height: 630,
-          alt: t('meta.imageAlt', { carName: car.name }),
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [`${siteUrl}${car.image}`],
-    },
-  };
 }
 
 export async function generateStaticParams(): Promise<CarPageParams[]> {

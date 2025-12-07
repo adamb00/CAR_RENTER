@@ -22,8 +22,7 @@ export function Header() {
     >
       <HeaderCarousel />
 
-      {/* Gradiens overlay (a saját változóidra támaszkodva) */}
-      <div className='absolute inset-0 bg-gradient-to-br from-[var(--amber-light)]/30 to-[var(--sky-dark)]/30' />
+      <div className='absolute inset-0 bg-linear-to-br from-(--amber-light)/30 to-(--sky-dark)/30' />
 
       {/* Középre igazított tartalom */}
       <div className='absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 text-center px-4 w-full'>

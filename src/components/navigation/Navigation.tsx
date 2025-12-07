@@ -79,14 +79,14 @@ export function Navigation() {
       <nav
         suppressHydrationWarning
         className={clsx(
-          'hidden xl:flex fixed z-[2400] left-1/2 -translate-x-1/2',
-          'transition-all duration-300 max-h-[5rem]',
+          'hidden xl:flex fixed z-2400 left-1/2 -translate-x-1/2',
+          'transition-all duration-300 max-h-20',
           navHidden
             ? '-top-24 opacity-0 pointer-events-none'
-            : 'top-4 opacity-100 max-h-[5rem]',
+            : 'top-4 opacity-100 max-h-20',
           'w-[92%] max-w-6xl items-center justify-between rounded-full',
-          'bg-sky-light/80 backdrop-blur supports-[backdrop-filter]:bg-sky-light/70',
-          'px-4 shadow-lg max-h-[5rem]'
+          'bg-sky-light/80 backdrop-blur supports-backdrop-filter:bg-sky-light/70',
+          'px-4 shadow-lg max-h-20'
         )}
       >
         <a
@@ -136,7 +136,7 @@ export function Navigation() {
 
       {/* MOBILE: hamburger trigger + expanding circle (md hidden) */}
       <div
-        className='fixed z-[2400] xl:hidden'
+        className='fixed z-2400 xl:hidden'
         style={{
           top: 'calc(env(safe-area-inset-top, 0px) + 1rem)',
           right: 'calc(env(safe-area-inset-right, 0px) + 1rem)',
@@ -153,7 +153,7 @@ export function Navigation() {
           <div
             className={clsx(
               'h-12 w-12 sm:h-14 sm:w-14 rounded-full',
-              'transition-transform duration-[800ms] ease-[cubic-bezier(0.86,0,0.07,1)]',
+              'transition-transform duration-800 ease-[cubic-bezier(0.86,0,0.07,1)]',
               open ? 'scale-[120]' : 'scale-0',
               'origin-center'
             )}
@@ -171,7 +171,7 @@ export function Navigation() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className={clsx(
-            'relative z-[2400] h-14 w-14 sm:h-16 sm:w-16 rounded-full',
+            'relative z-2400 h-14 w-14 sm:h-16 sm:w-16 rounded-full',
             'flex items-center justify-center',
             'border border-border shadow-lg',
             'bg-card text-card-foreground'
@@ -222,7 +222,7 @@ export function Navigation() {
         id={ctrlId}
         aria-hidden={!open}
         className={clsx(
-          'xl:hidden fixed inset-0 z-[2400] transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
+          'xl:hidden fixed inset-0 z-2400 transition-opacity duration-500 flex items-center justify-center h-[50%] top-[50%] -translate-y-[50%]',
           open
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
@@ -230,11 +230,11 @@ export function Navigation() {
       >
         <div className='absolute inset-0' aria-hidden />
         <ul className={'flex flex-col items-center justify-center text-center'}>
-          <a href={normalizeHref('/')} className='curosr-pointer z-[3000]'>
+          <a href={normalizeHref('/')} className='curosr-pointer z-3000'>
             <Logo logo={logo} size='lg' />
           </a>
           {itemsMap.map((it, i) => (
-            <li key={it.href + i} className='my-3 sm:my-4 z-[2500]'>
+            <li key={it.href + i} className='my-3 sm:my-4 z-2500'>
               <a
                 href={it.href}
                 onClick={() => setOpen(false)}

@@ -5,7 +5,7 @@ import { sendMail } from '@/lib/mailer';
 import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
 import z from 'zod';
 import { renderBrandEmail } from '@/lib/emailTemplates';
-import { resolveLocale } from '@/lib/seo';
+import { resolveLocale } from '@/lib/seo/seo';
 import { getTranslations } from 'next-intl/server';
 import { DEFAULT_LOCALE } from '@/i18n/config';
 import { prisma } from '@/lib/prisma';

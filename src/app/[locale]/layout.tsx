@@ -40,11 +40,9 @@ export default async function LocaleLayout(props: {
       <GoogleMapsScript locale={safeLocale} />
       <div className='app-shell p-2 md:p-8 lg:p-12'>
         <ThemeProvider>
-          {/* Navigation is responsible for desktop navbar + mobile hamburger */}
           <Navigation />
-          {/* Mobile-only locale + theme toggles (hidden on md and up) */}
           <div
-            className='fixed xl:hidden z-[2200] flex items-center gap-2'
+            className='fixed xl:hidden z-2200 flex items-center gap-2'
             style={{
               top: 'calc(env(safe-area-inset-top, 0px) + 18px)',
               right: 'calc(env(safe-area-inset-right, 0px) + 88px)',

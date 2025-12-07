@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CAR_COLOR_SWATCH, type CarColor, getCars } from '@/lib/cars';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import CarImageCarousel from '@/components/cars/CarImageCarousel';
 import { Luggage, User } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -72,7 +72,7 @@ export default async function CarsPage({
 
   return (
     <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'>
-      <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+      <h2 className='text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-relaxed tracking-normal md:tracking-widest text-center bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
         {t('title')}
       </h2>
       <div className='mt-10 text-grey-dark-3 text-base md:text-lg tracking-wider'>
@@ -89,7 +89,7 @@ export default async function CarsPage({
             key={car.id}
             className='group rounded-lg border border-border/60 bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200'
           >
-            <div className='relative aspect-square md:aspect-[4/3] lg:aspect-[16/10] bg-muted/30 overflow-hidden'>
+            <div className='relative aspect-square md:aspect-4/3 lg:aspect-16/10 bg-muted/30 overflow-hidden'>
               <Link
                 href={`/${resolvedLocale}/cars/${car.id}`}
                 className='absolute inset-0'

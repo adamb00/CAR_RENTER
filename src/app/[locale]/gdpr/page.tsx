@@ -1,30 +1,10 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
+import { ContactSection, ContentSection } from './gdpr.types';
+import { ensureArray } from './helpers';
 
 type PageParams = { locale: string };
-
-type ContentList = {
-  title?: string;
-  items?: string[];
-};
-
-type ContentSection = {
-  heading: string;
-  paragraphs?: string[];
-  lists?: ContentList[];
-  notes?: string[];
-};
-
-type ContactSection = {
-  title: string;
-  paragraphs?: string[];
-  channels?: string[];
-};
-
-function ensureArray<T>(value: unknown): T[] {
-  return Array.isArray(value) ? (value as T[]) : [];
-}
 
 export async function generateMetadata({
   params,
@@ -69,7 +49,7 @@ export default async function GDPRPage({
   return (
     <div className='relative mx-auto mb-10 max-w-6xl px-4 pt-24 sm:px-6 sm:pt-28 md:pt-32 lg:px-8 lg:pt-36'>
       <h1 className='text-center text-3xl uppercase leading-tight tracking-wide text-transparent sm:text-4xl md:text-5xl lg:text-6xl'>
-        <span className='bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text'>
+        <span className='bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text'>
           {t('title')}
         </span>
       </h1>

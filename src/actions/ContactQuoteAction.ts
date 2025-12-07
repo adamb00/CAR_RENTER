@@ -4,11 +4,12 @@ import { getCarById } from '@/lib/cars';
 import { sendMail } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
 import { renderBrandEmail, type EmailRow } from '@/lib/emailTemplates';
-import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { getSiteUrl, resolveLocale } from '@/lib/seo/seo';
 import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
 import { CONTACT_STATUS_NEW } from '@/lib/requestStatus';
 import { recordNotification } from '@/lib/notifications';
+import { ContactQuotePayload } from './ContactQuoteAction.type';
 
 const parseDateValue = (value?: string | null): Date | null => {
   if (!value) return null;
@@ -16,33 +17,6 @@ const parseDateValue = (value?: string | null): Date | null => {
   const isoValue = needsTimeSuffix ? `${value}T00:00:00.000Z` : value;
   const parsed = new Date(isoValue);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
-};
-
-export type ContactQuotePayload = {
-  locale: string;
-  name: string;
-  email: string;
-  phone: string;
-  preferredChannel: 'email' | 'phone' | 'whatsapp' | 'viber';
-  rentalStart?: string;
-  rentalEnd?: string;
-  arrivalFlight?: string | null;
-  departureFlight?: string | null;
-  partySize?: string;
-  children?: string;
-  carId?: string;
-  extras?: string[];
-  delivery?: {
-    placeType?: 'accommodation' | 'airport';
-    locationName?: string;
-    address?: {
-      country?: string;
-      postalCode?: string;
-      city?: string;
-      street?: string;
-      doorNumber?: string;
-    };
-  };
 };
 
 const formatDeliverySummary = (
@@ -247,7 +221,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     }));
 
     const adminHtml = renderBrandEmail({
-      title: 'New booking request', // admin-facing subject
+      title: 'New booking request',
       intro: `New contact quote submitted via the ${payload.locale.toUpperCase()} form.`,
       rows: sanitizedAdminRows,
       cta: { label: 'Open rental page', href: rentLink },
@@ -359,8 +333,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           { label: tEmail('contactQuote.rows.phone'), value: payload.phone },
           ...userRows,
         ],
-        // cta: { label: tEmail('contactQuote.ctaLabel'), href: rentLink },
-        // footerNote: tEmail('contactQuote.footerNote'),
+
         securityNote: tEmail('securityDisclaimer'),
       }),
       replyTo: process.env.MAIL_USER || undefined,

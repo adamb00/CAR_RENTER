@@ -1,8 +1,10 @@
+import { JSONIdString } from '@/lib/jsonId/jsonld';
+import { buildPageMetadata, getSiteUrl, resolveLocale } from '@/lib/seo/seo';
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Metadata } from 'next';
-import { buildPageMetadata, getSiteUrl, resolveLocale } from '@/lib/seo';
-import { getTranslations } from 'next-intl/server';
+import { BlogPost } from './blog.type';
 
 type PageParams = { locale: string };
 
@@ -21,33 +23,11 @@ export async function generateMetadata({
   });
 }
 
-type BlogPostImage = {
-  src: string;
-  alt?: string;
-};
-
-type BlogPost = {
-  slug?: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  readTime: string;
-  publishDate: string;
-  publishDateISO?: string;
-  image?: BlogPostImage;
-};
-
 const accentGradients = [
   'from-sky-dark/80 via-sky-light/60 to-amber-dark/80',
   'from-amber-dark/70 via-sky-dark/60 to-amber-light/70',
   'from-sky-light/80 via-amber-light/60 to-sky-dark/70',
 ];
-
-const escapeForJson = (value: string) =>
-  value
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026');
 
 export default async function BlogPage({
   params,
@@ -85,55 +65,15 @@ export default async function BlogPage({
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/${resolvedLocale}/blog`;
 
-  const postsForJsonLd = posts
-    .filter((post) => post.slug)
-    .map((post, index) => {
-      const url = `${pageUrl}/${post.slug}`;
-      const isoDate = post.publishDateISO ?? post.publishDate;
-      const imageUrl = `${siteUrl}${post.image?.src ?? '/header_image.webp'}`;
-      return {
-        '@type': 'BlogPosting',
-        '@id': `${url}#blogPosting`,
-        position: index + 1,
-        headline: post.title,
-        description: post.excerpt,
-        datePublished: isoDate,
-        dateModified: isoDate,
-        inLanguage: resolvedLocale,
-        mainEntityOfPage: url,
-        image: {
-          '@type': 'ImageObject',
-          url: imageUrl,
-          caption: post.image?.alt ?? post.title,
-        },
-        author: {
-          '@type': 'Organization',
-          name: brand,
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: brand,
-          url: siteUrl,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${siteUrl}/logo_white.png`,
-          },
-        },
-      };
-    });
-
-  const blogJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    '@id': `${pageUrl}#blog`,
-    name: title,
+  const jsonLdString = JSONIdString({
+    posts,
+    locale: resolvedLocale,
+    pageUrl,
+    siteUrl,
+    brand,
+    title,
     description: intro,
-    inLanguage: resolvedLocale,
-    url: pageUrl,
-    blogPost: postsForJsonLd,
-  };
-
-  const jsonLdString = escapeForJson(JSON.stringify(blogJsonLd, null, 2));
+  });
 
   return (
     <>
@@ -143,7 +83,7 @@ export default async function BlogPage({
       />
       <section className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-16'>
         <header className='text-center max-w-3xl mx-auto'>
-          <h1 className='text-3xl uppercase sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide md:tracking-[0.08em] bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+          <h1 className='text-3xl uppercase sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide md:tracking-[0.08em] bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
             {title}
           </h1>
           <p className='mt-6 text-base md:text-lg text-grey-dark-3 dark:text-grey-dark-2'>
@@ -165,11 +105,11 @@ export default async function BlogPage({
                 className='group relative flex h-full flex-col overflow-hidden rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:border-amber-light/40'
               >
                 <span
-                  className={`absolute left-6 right-6 top-0 h-1 rounded-b-full bg-gradient-to-r ${gradient}`}
+                  className={`absolute left-6 right-6 top-0 h-1 rounded-b-full bg-linear-to-r ${gradient}`}
                   aria-hidden='true'
                 />
                 {post.image ? (
-                  <div className='relative mt-4 aspect-[4/3] overflow-hidden rounded-2xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-grey-light-1/20 dark:bg-grey-dark-3/40'>
+                  <div className='relative mt-4 aspect-4/3 overflow-hidden rounded-2xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-grey-light-1/20 dark:bg-grey-dark-3/40'>
                     <Image
                       src={post.image.src}
                       alt={imageAlt}

@@ -1,7 +1,7 @@
 import '@/app/_style/globals.css';
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider';
 import { DEFAULT_LOCALE, LOCALES } from '@/i18n/config';
-import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { getSiteUrl, resolveLocale } from '@/lib/seo/seo';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';

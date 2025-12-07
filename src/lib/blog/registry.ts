@@ -1,7 +1,8 @@
+import { BlogPostRenderer } from '@/app/[locale]/blog/blog.type';
 import Post_1 from '@/components/blog/post_1';
 import Post_2 from '@/components/blog/post_2';
 import type { Locale } from '@/i18n/config';
-import type { BlogPostRenderer } from '@/lib/blog/types';
+// import type { BlogPostRenderer } from '@/lib/blog/types';
 import type { BlogSlugDefinition } from '@/lib/blog/slugs';
 import {
   BLOG_SLUGS,
@@ -59,4 +60,4 @@ export const getRendererBySlug = (
   return def?.component;
 };
 
-export type { BlogPostComponentProps } from '@/lib/blog/types';
+// export type { BlogPostComponentProps } from '@/lib/blog/types';

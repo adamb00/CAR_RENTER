@@ -1,7 +1,7 @@
 'use server';
 
 import { Locale } from '@/i18n/config';
-import { getSiteUrl } from '@/lib/seo';
+import { getSiteUrl } from '@/lib/seo/seo';
 import { getTranslations } from 'next-intl/server';
 
 const CONTACT_EMAIL = 'info@zodiacsrentacar.com';
@@ -93,13 +93,7 @@ export async function StructuredData({ locale }: StructuredDataProps) {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-        ],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '08:00',
         closes: '20:00',
       },

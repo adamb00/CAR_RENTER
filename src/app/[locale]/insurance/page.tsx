@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import React from 'react';
-import { getTranslations } from 'next-intl/server';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import type { Metadata } from 'next';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 
 type PageParams = { locale: string };
 
@@ -28,18 +27,17 @@ export default async function Insurance({
 }) {
   const { locale = 'hu' } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const t = await getTranslations({ locale: resolvedLocale, namespace: 'Insurance' });
-  const tf = await getTranslations({ locale: resolvedLocale, namespace: 'Footer' });
+  const t = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'Insurance',
+  });
+  const tf = await getTranslations({
+    locale: resolvedLocale,
+    namespace: 'Footer',
+  });
   return (
     <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-40 mb-10'>
-      {/* <Link
-        href='/'
-        className='absolute -left-8 sm:left-0 md:-left-8 -top-4 sm:top-0 md:-top-8 z-[1200]'
-      >
-        <Logo size='sm' />
-      </Link> */}
-
-      <h1 className='text-3xl uppercase sm:text-4xl md:text-5xl lg:text-6xl leading-relaxed tracking-wide md:tracking-[0.1em] text-center bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+      <h1 className='text-3xl uppercase sm:text-4xl md:text-5xl lg:text-6xl leading-relaxed tracking-wide md:tracking-widest text-center bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
         {t('title')}
       </h1>
       <p className='mt-3 text-center text-xs text-muted-foreground'>

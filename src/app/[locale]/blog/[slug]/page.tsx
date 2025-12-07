@@ -3,20 +3,15 @@ import {
   getPostDefinitionBySlug,
   getSlugForLocale,
 } from '@/lib/blog/registry';
-import type { BlogPostData, BlogPostMeta } from '@/lib/blog/types';
-import { getSiteUrl, resolveLocale } from '@/lib/seo';
+
+import { getSiteUrl, resolveLocale } from '@/lib/seo/seo';
 import { DEFAULT_LOCALE, LOCALES } from '@/i18n/config';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { BlogPostData, BlogPostMeta, BlogSummaryPost } from '../blog.type';
 
 type PageParams = { locale: string; slug: string };
-
-type BlogSummaryPost = {
-  slug: string;
-  title?: string;
-  category?: string;
-};
 
 const isBlogSummaryPost = (value: unknown): value is BlogSummaryPost => {
   if (!value || typeof value !== 'object') return false;

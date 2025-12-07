@@ -1,51 +1,25 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useMemo, useRef, useTransition } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import {
-  useForm,
-  type FieldErrors,
-  type FieldError,
-  type FieldValues,
-  type Resolver,
-} from 'react-hook-form';
-import { z } from 'zod';
+import { useForm, type Resolver } from 'react-hook-form';
 
-import { RentAction } from '@/actions/RentAction';
 import BaseDetails from '@/components/rent/BaseDetails';
 import Children from '@/components/rent/Children';
+import Consents from '@/components/rent/Consents';
 import Contact from '@/components/rent/Contact';
 import Delivery from '@/components/rent/Delivery';
+import RentDialog from '@/components/rent/Dialog';
 import Drivers from '@/components/rent/Drivers';
 import Invoice from '@/components/rent/Invoice';
 import LegalConsents, {
   type LegalConsentItem,
 } from '@/components/rent/LegalConsents';
-import { trackFormSubmission } from '@/lib/analytics';
 import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { createEmptyDriver } from '@/hooks/useDrivers';
+import { Form } from '@/components/ui/form';
 import { usePersistRentForm } from '@/hooks/usePersistRentForm';
 import {
   useSetContact,
@@ -54,232 +28,16 @@ import {
 } from '@/hooks/useSetForm';
 import { useWatchForm } from '@/hooks/useWatchForm';
 import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
-import { RentSchema, createRentSchema } from '@/schemas/RentSchema';
-import type { Car } from '@/lib/cars';
-import { type ContactQuoteRecord } from '@/lib/contactQuotes';
-import toast from 'react-hot-toast';
-
-type RentFormValues = z.input<typeof RentSchema> & FieldValues;
-type RentFormResolvedValues = z.output<typeof RentSchema>;
-
-type RentPageClientProps = {
-  locale: string;
-  car: Pick<Car, 'id' | 'seats' | 'colors'>;
-  quotePrefill?: ContactQuoteRecord | null;
-  manageContext?: {
-    rentId: string;
-    section?: 'contact' | 'travel' | 'invoice';
-    mode?: 'modify';
-  };
-  rentPrefill?: RentFormValues | null;
-};
-
-const parsePositiveInt = (
-  value?: string | number | null
-): number | undefined => {
-  if (typeof value === 'number') {
-    return Number.isFinite(value) && value > 0 ? value : undefined;
-  }
-  if (typeof value === 'string') {
-    const parsed = Number.parseInt(value, 10);
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : undefined;
-  }
-  return undefined;
-};
-
-const splitName = (
-  fullName?: string | null
-): { firstName?: string; lastName?: string } => {
-  if (!fullName) return {};
-  const parts = fullName.trim().split(/\s+/).filter(Boolean);
-  if (parts.length === 0) return {};
-  if (parts.length === 1) {
-    return { firstName: parts[0], lastName: parts[0] };
-  }
-  return {
-    firstName: parts[0],
-    lastName: parts.slice(1).join(' '),
-  };
-};
-
-const buildInitialValues = (
-  quote: ContactQuoteRecord | null | undefined,
-  locale: string,
-  carId: string
-): RentFormValues => {
-  const adultsFromQuote = parsePositiveInt(quote?.partySize);
-  const childrenCount = parsePositiveInt(quote?.children);
-  const childrenArray =
-    childrenCount && childrenCount > 0
-      ? Array.from({ length: childrenCount }).map(() => ({
-          age: undefined,
-          height: undefined,
-        }))
-      : [];
-  const driver = createEmptyDriver();
-  const { firstName, lastName } = splitName(quote?.name);
-
-  return {
-    locale,
-    carId,
-    quoteId: quote?.id,
-    rentId: undefined,
-    extras: [],
-    adults: adultsFromQuote,
-    children: childrenArray,
-    rentalPeriod: {
-      startDate: quote?.rentalStart ?? '',
-      endDate: quote?.rentalEnd ?? '',
-    },
-    driver: [
-      {
-        ...driver,
-        firstName_1: firstName ?? driver.firstName_1,
-        lastName_1: lastName ?? driver.lastName_1,
-        phoneNumber: quote?.phone ?? driver.phoneNumber,
-        email: quote?.email ?? driver.email,
-      },
-    ],
-    contact: {
-      same: false,
-      name: quote?.name ?? '',
-      email: quote?.email ?? '',
-    },
-    invoice: {
-      same: false,
-      name: quote?.name ?? '',
-      phoneNumber: quote?.phone ?? '',
-      email: quote?.email ?? '',
-      location: {
-        country: '',
-        postalCode: '',
-        city: '',
-        street: '',
-        doorNumber: '',
-      },
-    },
-    delivery: {
-      placeType: undefined,
-      locationName: '',
-      arrivalFlight: quote?.arrivalFlight ?? '',
-      departureFlight: quote?.departureFlight ?? '',
-      address: {
-        country: '',
-        postalCode: '',
-        city: '',
-        street: '',
-        doorNumber: '',
-      },
-    },
-    tax: {
-      id: '',
-      companyName: '',
-    },
-    consents: {
-      privacy: false,
-      terms: false,
-      insurance: false,
-    },
-  };
-};
-
-const mergeQuoteIntoValues = (
-  values: RentFormValues,
-  quote: ContactQuoteRecord
-): RentFormValues => {
-  const adultsFromQuote = parsePositiveInt(quote.partySize);
-  const childrenCount = parsePositiveInt(quote.children);
-  const childrenArray =
-    childrenCount && childrenCount > 0
-      ? Array.from({ length: childrenCount }).map((_, idx) => ({
-          age: values.children?.[idx]?.age,
-          height: values.children?.[idx]?.height,
-        }))
-      : values.children ?? [];
-
-  const { firstName, lastName } = splitName(quote.name);
-  const firstDriver = values.driver?.[0] ?? createEmptyDriver();
-  const restDrivers = values.driver?.slice(1) ?? [];
-
-  const delivery: NonNullable<RentFormValues['delivery']> = values.delivery ?? {
-    placeType: undefined,
-    locationName: '',
-    arrivalFlight: '',
-    departureFlight: '',
-    address: {
-      country: '',
-      postalCode: '',
-      city: '',
-      street: '',
-      doorNumber: '',
-    },
-  };
-
-  return {
-    ...values,
-    locale: values.locale ?? quote.locale ?? values.locale,
-    carId: values.carId ?? quote.carId ?? values.carId,
-    quoteId: values.quoteId ?? quote.id ?? values.quoteId,
-    rentId: values.rentId,
-    adults: adultsFromQuote ?? values.adults,
-    children: childrenArray,
-    extras: quote.extras ?? values.extras,
-    rentalPeriod: {
-      startDate: quote.rentalStart ?? values.rentalPeriod?.startDate ?? '',
-      endDate: quote.rentalEnd ?? values.rentalPeriod?.endDate ?? '',
-    },
-    driver: [
-      {
-        ...firstDriver,
-        firstName_1: firstName ?? firstDriver.firstName_1,
-        lastName_1: lastName ?? firstDriver.lastName_1,
-        phoneNumber: quote.phone ?? firstDriver.phoneNumber,
-        email: quote.email ?? firstDriver.email,
-      },
-      ...restDrivers,
-    ],
-    contact: {
-      ...values.contact,
-      same: false,
-      name: quote.name ?? values.contact?.name ?? '',
-      email: quote.email ?? values.contact?.email ?? '',
-    },
-    invoice: {
-      ...values.invoice,
-      name: quote.name ?? values.invoice?.name ?? '',
-      phoneNumber: quote.phone ?? values.invoice?.phoneNumber ?? '',
-      email: quote.email ?? values.invoice?.email ?? '',
-    },
-    delivery: {
-      ...delivery,
-      placeType: ['accommodation', 'airport'].includes(
-        quote.delivery?.placeType as string
-      )
-        ? (quote.delivery?.placeType as 'accommodation' | 'airport')
-        : ['accommodation', 'airport'].includes(delivery.placeType as string)
-        ? (delivery.placeType as 'accommodation' | 'airport')
-        : undefined,
-      locationName: quote.delivery?.locationName ?? delivery.locationName ?? '',
-      address: {
-        country:
-          quote.delivery?.address?.country ?? delivery.address?.country ?? '',
-        postalCode:
-          quote.delivery?.address?.postalCode ??
-          delivery.address?.postalCode ??
-          '',
-        city: quote.delivery?.address?.city ?? delivery.address?.city ?? '',
-        street:
-          quote.delivery?.address?.street ?? delivery.address?.street ?? '',
-        doorNumber:
-          quote.delivery?.address?.doorNumber ??
-          delivery.address?.doorNumber ??
-          '',
-      },
-      arrivalFlight: quote.arrivalFlight ?? delivery.arrivalFlight ?? '',
-      departureFlight: quote.departureFlight ?? delivery.departureFlight ?? '',
-    },
-  };
-};
+import { createRentSchema } from '@/schemas/RentSchema';
+import { buildInitialValues } from './build-initial-values';
+import { buildConsentItems } from './consent-items';
+import { createSubmitHandler } from './create-submit-handler';
+import { mergeQuoteIntoValues } from './merge-quote-into-values';
+import {
+  RentFormResolvedValues,
+  RentFormValues,
+  RentPageClientProps,
+} from './rent.types';
 
 export default function RentPageClient({
   locale,
@@ -290,19 +48,10 @@ export default function RentPageClient({
 }: RentPageClientProps) {
   const t = useTranslations('RentForm');
   const tManage = useTranslations('RentManage');
+  const router = useRouter();
 
-  const depositNotice = t('sections.booking.insuranceDepositNotice');
-  const insurancePriceRaw = quotePrefill?.bookingRequestData?.insurance;
-  const insurancePriceText =
-    typeof insurancePriceRaw === 'string' ? insurancePriceRaw.trim() : '';
-  const insurancePriceMessage = insurancePriceText
-    ? t('sections.booking.insurancePriceLabel', {
-        price: insurancePriceText,
-      })
-    : t('sections.booking.insurancePricePending');
   const tCars = useTranslations('Cars');
   const tSchema = useTranslations('RentSchema');
-  const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const { id } = car;
   const manageRentId = manageContext?.rentId;
@@ -312,132 +61,6 @@ export default function RentPageClient({
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isMissingFlightsDialogOpen, setMissingFlightsDialogOpen] =
     React.useState(false);
-
-  // Find the first field name that has a validation error (dot notation, supports arrays)
-  const firstErrorPath = (
-    errs: FieldErrors<RentFormValues> | undefined,
-    path = ''
-  ): string | null => {
-    if (!errs) return null;
-
-    // Narrowers
-    const isPlainObject = (v: unknown): v is Record<string, unknown> =>
-      typeof v === 'object' && v !== null && !Array.isArray(v);
-    const isFieldError = (v: unknown): v is FieldError =>
-      isPlainObject(v) && ('type' in v || 'message' in v);
-
-    // Skip RHF/Zod meta keys that are not actual fields
-    const SKIP_KEYS = new Set(['root', '_errors']);
-
-    // Deterministic priority for top-level groups (matches your UI order)
-    const PRIORITY = [
-      'adults',
-      'children',
-      'driver',
-      'contact',
-      'invoice',
-      'delivery',
-      'rentalPeriod',
-      'extras',
-      'tax',
-      'consents',
-    ];
-
-    const keys = Object.keys(errs as Record<string, unknown>)
-      .filter((k) => !SKIP_KEYS.has(k) && !(k.startsWith && k.startsWith('_')))
-      .sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
-
-    for (const key of keys) {
-      const next = (errs as Record<string, unknown>)[key];
-      const nextPath = path ? `${path}.${key}` : key;
-      if (next == null) continue;
-
-      if (isFieldError(next)) {
-        return nextPath;
-      }
-
-      if (Array.isArray(next)) {
-        for (let i = 0; i < next.length; i++) {
-          const nested = firstErrorPath(
-            next[i] as unknown as FieldErrors<RentFormValues>,
-            `${nextPath}.${i}`
-          );
-          if (nested) return nested;
-        }
-        continue;
-      }
-
-      if (isPlainObject(next)) {
-        const nested = firstErrorPath(
-          next as unknown as FieldErrors<RentFormValues>,
-          nextPath
-        );
-        if (nested) return nested;
-      }
-    }
-
-    return null;
-  };
-
-  // Scroll smoothly to the first invalid field and focus it; fallback to its section
-  const scrollToFirstError = (name: string) => {
-    const root: Document | HTMLElement = formRef.current ?? document;
-    let el = (root as HTMLElement | Document).querySelector(
-      `[name="${name}"]`
-    ) as HTMLElement | null;
-
-    if (!el) {
-      const sectionName = name.split('.')[0];
-      el = (root as HTMLElement | Document).querySelector(
-        `[data-section="${sectionName}"]`
-      ) as HTMLElement | null;
-    }
-
-    if (el) {
-      const yOffset = -100; // optional offset for sticky header
-      const rect = el.getBoundingClientRect();
-      const scrollTop = window.pageYOffset + rect.top + yOffset;
-
-      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
-
-      // fallback for browsers that ignore behavior: 'smooth'
-      setTimeout(() => {
-        try {
-          el.focus?.();
-        } catch {
-          /* ignore focus errors */
-        }
-      }, 400);
-    }
-  };
-
-  const onInvalid = (errors: FieldErrors<RentFormValues>) => {
-    const first = firstErrorPath(errors);
-    if (first) {
-      scrollToFirstError(first);
-    } else {
-      // No concrete field found (likely `root` error): fall back to first section with any error
-      const ORDER: (keyof RentFormValues)[] = [
-        'adults',
-        'children',
-        'driver',
-        'contact',
-        'invoice',
-        'delivery',
-        'rentalPeriod',
-        'extras',
-        'tax',
-        'consents',
-      ];
-      const firstSection = ORDER.find((k) =>
-        Boolean((errors as FieldErrors<RentFormValues>)[k])
-      );
-      if (firstSection) {
-        scrollToFirstError(String(firstSection));
-      }
-    }
-    toast.error(t('toast.error'));
-  };
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
   const defaultValues = React.useMemo(() => {
@@ -475,20 +98,12 @@ export default function RentPageClient({
 
   const [placesReady, setPlacesReady] = React.useState(false);
   const { extrasSelected } = useWatchForm(form);
-  const arrivalFlightValue = form.watch('delivery.arrivalFlight');
-  const departureFlightValue = form.watch('delivery.departureFlight');
-  const insuranceOptIn = form.watch('consents.insurance');
 
   const isDeliveryRequired = React.useMemo(
     () =>
       Array.isArray(extrasSelected) && extrasSelected.includes('kiszallitas'),
     [extrasSelected]
   );
-  const areFlightNumbersProvided =
-    typeof arrivalFlightValue === 'string' &&
-    arrivalFlightValue.trim().length > 0 &&
-    typeof departureFlightValue === 'string' &&
-    departureFlightValue.trim().length > 0;
 
   useWindowWithGoogle(setPlacesReady);
 
@@ -497,55 +112,6 @@ export default function RentPageClient({
   useSetInvoice(form, { enabled: isHydrated });
 
   useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
-
-  React.useEffect(() => {
-    if (!manageContext?.section) {
-      return;
-    }
-    const SECTION_TARGET: Record<'contact' | 'travel' | 'invoice', string> = {
-      contact: 'contact',
-      invoice: 'invoice',
-      travel: 'delivery',
-    };
-    const targetSection = SECTION_TARGET[manageContext.section];
-    if (!targetSection) {
-      return;
-    }
-
-    let scrollTimeout: number | null = null;
-    let highlightTimeout: number | null = null;
-    const focusSection = () => {
-      const root = formRef.current ?? document;
-      const element = root.querySelector(
-        `[data-section="${targetSection}"]`
-      ) as HTMLElement | null;
-      if (!element) {
-        return;
-      }
-      const yOffset = -100;
-      const rect = element.getBoundingClientRect();
-      const scrollTop = window.pageYOffset + rect.top + yOffset;
-      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
-      element.classList.add('ring-2', 'ring-sky-500/70');
-      highlightTimeout = window.setTimeout(() => {
-        element.classList.remove('ring-2', 'ring-sky-500/70');
-      }, 1500);
-    };
-    if (document.readyState === 'complete') {
-      focusSection();
-    } else {
-      scrollTimeout = window.setTimeout(focusSection, 150);
-    }
-
-    return () => {
-      if (scrollTimeout) {
-        window.clearTimeout(scrollTimeout);
-      }
-      if (highlightTimeout) {
-        window.clearTimeout(highlightTimeout);
-      }
-    };
-  }, [manageContext]);
 
   const hasAppliedQuotePrefill = React.useRef(false);
 
@@ -563,147 +129,48 @@ export default function RentPageClient({
     form.reset(mergedValues);
   }, [form, isHydrated, quotePrefill, rentPrefill]);
 
-  const shouldAskForFlightNumbers = React.useCallback(
-    (values: RentFormResolvedValues) => {
-      const arrival =
-        typeof values.delivery?.arrivalFlight === 'string'
-          ? values.delivery.arrivalFlight.trim()
-          : '';
-      const departure =
-        typeof values.delivery?.departureFlight === 'string'
-          ? values.delivery.departureFlight.trim()
-          : '';
-      return arrival.length === 0 || departure.length === 0;
-    },
-    []
+  const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
+    () => buildConsentItems({ locale, t }),
+    [locale, t]
   );
 
-  const submitRentRequest = React.useCallback(
-    (parsed: RentFormResolvedValues) => {
-      const submissionMeta = {
-        locale,
-        carId: id,
-        rentalStart: parsed.rentalPeriod.startDate,
-        rentalEnd: parsed.rentalPeriod.endDate,
-        extrasCount: Array.isArray(extrasSelected) ? extrasSelected.length : 0,
-        mode: isModifyMode ? 'modify' : 'create',
-      };
-
-      startTransition(async () => {
-        const rentIdPayload =
-          (isModifyMode && manageRentId) || parsed.rentId || undefined;
-        const actionPayload: RentFormResolvedValues = {
-          ...parsed,
-        };
-        actionPayload.rentId = rentIdPayload;
-        const res = await RentAction({
-          ...actionPayload,
+  const createSubmitHandlerFn = React.useMemo(
+    () =>
+      createSubmitHandler({
+        form,
+        rentSchema,
+        openMissingFlightsDialog: () => setMissingFlightsDialogOpen(true),
+        closeMissingFlightsDialog: () => setMissingFlightsDialogOpen(false),
+        startTransition,
+        context: {
           locale,
           carId: id,
-          quoteId: quotePrefill?.id ?? parsed.quoteId,
-        });
-        if (res.success) {
-          toast.success(t('toast.success'));
-          clearStoredValues();
-          const resultingRentId = res.rentId ?? rentIdPayload ?? undefined;
-          trackFormSubmission({
-            formId: 'rent-request',
-            status: 'success',
-            rentId: resultingRentId,
-            ...submissionMeta,
-          });
-          const nextUrl =
-            isModifyMode && resultingRentId
-              ? `/${locale}/rent/thank-you`
-              : resultingRentId
-              ? `/${locale}/rent/thank-you?rentId=${resultingRentId}`
-              : `/${locale}/rent/thank-you`;
-          setTimeout(() => {
-            router.push(nextUrl);
-          }, 2000);
-        } else {
-          toast.error(t('toast.error'));
-          trackFormSubmission({
-            formId: 'rent-request',
-            status: 'error',
-            errorMessage: res.error,
-            rentId: rentIdPayload ?? manageRentId ?? undefined,
-            ...submissionMeta,
-          });
-        }
-      });
-    },
+          extrasSelected,
+          isModifyMode,
+          manageRentId,
+          quoteId: quotePrefill?.id ?? null,
+          successMessage: t('toast.success'),
+          errorMessage: t('toast.error'),
+        },
+        clearStoredValues,
+        routerPush: (url) => router.push(url),
+        manageContext,
+      }),
     [
       clearStoredValues,
       extrasSelected,
+      form,
       id,
       isModifyMode,
       locale,
       manageRentId,
       quotePrefill,
+      rentSchema,
       router,
       startTransition,
       t,
+      manageContext,
     ]
-  );
-
-  type SubmitOptions = {
-    bypassFlightCheck?: boolean;
-  };
-
-  const onSubmit = React.useCallback(
-    (data: RentFormValues, options?: SubmitOptions) => {
-      const parsed: RentFormResolvedValues = rentSchema.parse(data);
-      const shouldPrompt = shouldAskForFlightNumbers(parsed);
-
-      if (shouldPrompt && !options?.bypassFlightCheck) {
-        setMissingFlightsDialogOpen(true);
-        return;
-      }
-
-      setMissingFlightsDialogOpen(false);
-      submitRentRequest(parsed);
-    },
-    [rentSchema, shouldAskForFlightNumbers, submitRentRequest]
-  );
-
-  const createSubmitHandler = (options?: SubmitOptions) =>
-    form.handleSubmit((values) => onSubmit(values, options), onInvalid);
-
-  const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
-    () => [
-      {
-        name: 'consents.privacy',
-        label: t.rich('sections.consents.privacyLabel', {
-          link: (chunks) => (
-            <Link
-              href={`/${locale}/gdpr`}
-              target='_blank'
-              rel='noreferrer'
-              className='underline underline-offset-2'
-            >
-              {chunks}
-            </Link>
-          ),
-        }),
-      },
-      {
-        name: 'consents.terms',
-        label: t.rich('sections.consents.termsLabel', {
-          link: (chunks) => (
-            <Link
-              href={`/${locale}/gtc`}
-              target='_blank'
-              rel='noreferrer'
-              className='underline underline-offset-2'
-            >
-              {chunks}
-            </Link>
-          ),
-        }),
-      },
-    ],
-    [locale, t]
   );
 
   return (
@@ -719,7 +186,7 @@ export default function RentPageClient({
       ) : null}
       <form
         ref={formRef}
-        onSubmit={createSubmitHandler()}
+        onSubmit={createSubmitHandlerFn()}
         className='relative flex flex-col max-w-8xl mx-auto px-0 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'
         aria-busy={isPending}
         noValidate
@@ -765,41 +232,8 @@ export default function RentPageClient({
             tabIndex={-1}
             className='scroll-mt-28 space-y-6'
           >
-            <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8 shadow-sm space-y-4'>
-              <FormField
-                control={form.control}
-                name={'consents.insurance'}
-                render={({ field }) => (
-                  <FormItem className='flex flex-col gap-2'>
-                    <div className='flex items-center gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-sm'>
-                      <FormControl>
-                        <Checkbox
-                          checked={Boolean(field.value)}
-                          onCheckedChange={(checked) =>
-                            field.onChange(Boolean(checked))
-                          }
-                        />
-                      </FormControl>
-                      <div>
-                        <FormLabel className='font-medium leading-snug'>
-                          {t('sections.booking.insuranceCheckbox')}
-                        </FormLabel>
-                        <p className='mt-1 text-xs text-muted-foreground'>
-                          {insurancePriceMessage}
-                          {insurancePriceRaw ? '€' : ''}
-                        </p>
-                      </div>
-                    </div>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              {Boolean(insuranceOptIn) ? (
-                <div className='rounded-2xl border border-amber-500/40 bg-amber-50/90 px-4 py-3 text-sm text-amber-900 shadow-sm dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-100'>
-                  {depositNotice}
-                </div>
-              ) : null}
-            </div>
+            <Consents form={form} quotePrefill={quotePrefill} />
+
             <LegalConsents
               form={form}
               items={consentItems}
@@ -818,92 +252,13 @@ export default function RentPageClient({
           {isModifyMode ? tManage('modify.button') : t('buttons.submit')}
         </Button>
       </form>
-      <Dialog
+      <RentDialog
+        form={form}
+        isPending={isPending}
         open={isMissingFlightsDialogOpen}
         onOpenChange={setMissingFlightsDialogOpen}
-      >
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>{t('missingFlightsDialog.title')}</DialogTitle>
-            <DialogDescription>
-              {t('missingFlightsDialog.description')}
-            </DialogDescription>
-          </DialogHeader>
-          <div className='grid gap-4 md:grid-cols-2'>
-            <FormField
-              control={form.control}
-              name={'delivery.arrivalFlight'}
-              render={({ field }) => {
-                const value =
-                  typeof field.value === 'string' ? field.value : '';
-                return (
-                  <FormItem>
-                    <FormLabel>
-                      {t('sections.delivery.fields.arrivalFlight.label')}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder={t(
-                          'sections.delivery.fields.arrivalFlight.placeholder'
-                        )}
-                        value={value}
-                        onChange={(event) => field.onChange(event.target.value)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            />
-            <FormField
-              control={form.control}
-              name={'delivery.departureFlight'}
-              render={({ field }) => {
-                const value =
-                  typeof field.value === 'string' ? field.value : '';
-                return (
-                  <FormItem>
-                    <FormLabel>
-                      {t('sections.delivery.fields.departureFlight.label')}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder={t(
-                          'sections.delivery.fields.departureFlight.placeholder'
-                        )}
-                        value={value}
-                        onChange={(event) => field.onChange(event.target.value)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            />
-          </div>
-          <DialogFooter className='sm:justify-between'>
-            <Button
-              type='button'
-              variant='outline'
-              disabled={isPending}
-              onClick={() => {
-                createSubmitHandler({ bypassFlightCheck: true })();
-              }}
-            >
-              {t('buttons.flightNumberUnknown')}
-            </Button>
-            <Button
-              type='button'
-              disabled={!areFlightNumbersProvided || isPending}
-              onClick={() => {
-                createSubmitHandler()();
-              }}
-            >
-              {t('buttons.submit')}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+        createSubmitHandler={createSubmitHandlerFn}
+      />
     </Form>
   );
 }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 
 type PageParams = { locale: string };
 

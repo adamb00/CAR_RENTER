@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import HomeClient from './HomeClient';
 
 type PageParams = { locale: string };

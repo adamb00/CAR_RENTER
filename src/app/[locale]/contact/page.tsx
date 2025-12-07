@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
 import { getCarById } from '@/lib/cars';
 

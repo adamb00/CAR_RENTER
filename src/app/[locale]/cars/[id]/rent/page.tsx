@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
 
 import { getCarById, getCars } from '@/lib/cars';
 import { LOCALES } from '@/i18n/config';
-import { getSiteUrl, resolveLocale } from '@/lib/seo';
+import { resolveLocale } from '@/lib/seo/seo';
 import { NoSSR } from '@/components/NoSSR';
 import RentPageClient from './client-page';
 import { getContactQuoteById } from '@/lib/contactQuotes';
 import { prisma } from '@/lib/prisma';
 import type { RentFormValues } from '@/schemas/RentSchema';
+import { buildCarMetadata } from '@/lib/seo/metadata';
 
 type PageParams = {
   locale: string;
@@ -33,46 +33,12 @@ export async function generateMetadata({
     return {};
   }
 
-  const t = await getTranslations({
+  return buildCarMetadata({
     locale: resolvedLocale,
     namespace: 'CarRent',
+    car,
+    pathSuffix: '/rent',
   });
-  const title = t('meta.title', { carName: car.name });
-  const description = t('meta.description', { carName: car.name });
-  const siteUrl = getSiteUrl();
-  const url = `${siteUrl}/${resolvedLocale}/cars/${car.id}/rent`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: url,
-      languages: Object.fromEntries(
-        LOCALES.map((loc) => [loc, `${siteUrl}/${loc}/cars/${car.id}/rent`])
-      ),
-    },
-    openGraph: {
-      type: 'website',
-      locale: resolvedLocale,
-      url,
-      title,
-      description,
-      images: [
-        {
-          url: `${siteUrl}${car.image}`,
-          width: 1200,
-          height: 630,
-          alt: t('meta.imageAlt', { carName: car.name }),
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [`${siteUrl}${car.image}`],
-    },
-  };
 }
 
 export async function generateStaticParams(): Promise<PageParams[]> {
@@ -159,7 +125,8 @@ export default async function RentPage({
           JSON.stringify(rentRecord.payload)
         ) as RentFormValues;
         const payloadCarId =
-          rentRecord.carId ?? (typeof cloned.carId === 'string' ? cloned.carId : null);
+          rentRecord.carId ??
+          (typeof cloned.carId === 'string' ? cloned.carId : null);
         if (!payloadCarId || payloadCarId === car.id) {
           rentPrefill = {
             ...cloned,

@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { buildPageMetadata, resolveLocale } from '@/lib/seo';
+import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 
 type PageParams = { locale: string };
 
@@ -52,7 +52,7 @@ export default async function CookiePolicyPage({
   return (
     <div className='relative mx-auto mb-10 max-w-6xl px-4 pt-24 sm:px-6 sm:pt-28 md:pt-32 lg:px-8 lg:pt-36'>
       <h1 className='text-center text-3xl uppercase leading-tight tracking-wide text-transparent sm:text-4xl md:text-5xl lg:text-6xl'>
-        <span className='bg-gradient-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text'>
+        <span className='bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text'>
           {t('title')}
         </span>
       </h1>
