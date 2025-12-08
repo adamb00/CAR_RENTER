@@ -1,7 +1,5 @@
 import { PreferredChannel } from '@/components/contact/quote.types';
 import { RentFormValues } from '@/schemas/RentSchema';
-import { useMemo } from 'react';
-import { DATE_LOCALE_MAP } from './date_locale_map';
 
 export const SECTION_ORDER: (keyof RentFormValues)[] = [
   'adults',
@@ -45,14 +43,16 @@ export const EXTRA_VALUES = [
   'esti_erkezes_csomag',
 ] as const;
 
-export const today = useMemo(() => {
+const startOfToday = () => {
   const current = new Date();
   current.setHours(0, 0, 0, 0);
   return current;
-}, []);
+};
 
-export const oneYearAhead = useMemo(() => {
+export const today = startOfToday();
+
+export const oneYearAhead = (() => {
   const future = new Date(today);
   future.setFullYear(future.getFullYear() + 1);
   return future;
-}, [today]);
+})();

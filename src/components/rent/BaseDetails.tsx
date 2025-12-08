@@ -1,15 +1,17 @@
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
+import type { Car, CarColor } from '@/lib/cars';
+import { CAR_COLOR_SWATCH } from '@/lib/cars';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
-import { EXTRA_VALUES } from '@/lib/extra_values';
+
 import { RentFormValues } from '@/schemas/RentSchema';
+import { enUS } from 'date-fns/locale';
 import { useMessages, useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { MultiSelect } from '../MultiSelect';
 import SectionCard from '../SectionCard';
+import { Badge } from '../ui/badge';
 import { DateRangePicker } from '../ui/date-range-picker';
-import { enUS } from 'date-fns/locale';
-import type { Car, CarColor } from '@/lib/cars';
 import {
   FormControl,
   FormField,
@@ -17,6 +19,7 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
+import { Input } from '../ui/input';
 import {
   Select,
   SelectContent,
@@ -25,9 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import { Input } from '../ui/input';
-import { Badge } from '../ui/badge';
-import { CAR_COLOR_SWATCH } from '@/lib/cars';
+import { EXTRA_VALUES } from '@/lib/constants';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;

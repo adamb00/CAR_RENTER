@@ -27,6 +27,7 @@ import type {
   PreferredChannel,
   QuoteRequestFormProps,
 } from './quote.types';
+import QuoteRentalStart from './QuoteRentalStart';
 
 export type { QuoteRequestValues } from '@/schemas/QuoteSchema';
 
@@ -109,6 +110,8 @@ export function QuoteRequestForm({
     resolver: zodResolver(schema) as Resolver<QuoteRequestValues>,
     defaultValues,
   });
+
+  console.log(form.formState.errors);
 
   const onSubmit: SubmitHandler<QuoteRequestValues> = (values) => {
     setStatus('idle');
@@ -193,6 +196,8 @@ export function QuoteRequestForm({
             <QuoteName form={form} />
 
             <QuoteContact form={form} />
+
+            <QuoteRentalStart form={form} locale={locale} />
 
             <QuoteExtras form={form} />
 

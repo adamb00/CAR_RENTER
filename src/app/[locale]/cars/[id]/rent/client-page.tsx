@@ -31,7 +31,7 @@ import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
 import { createRentSchema } from '@/schemas/RentSchema';
 import { buildInitialValues } from './build-initial-values';
 import { buildConsentItems } from './consent-items';
-import { createSubmitHandler } from './create-submit-handler';
+import { useCreateSubmitHandler } from './create-submit-handler';
 import { mergeQuoteIntoValues } from './merge-quote-into-values';
 import {
   RentFormResolvedValues,
@@ -134,44 +134,27 @@ export default function RentPageClient({
     [locale, t]
   );
 
-  const createSubmitHandlerFn = React.useMemo(
-    () =>
-      createSubmitHandler({
-        form,
-        rentSchema,
-        openMissingFlightsDialog: () => setMissingFlightsDialogOpen(true),
-        closeMissingFlightsDialog: () => setMissingFlightsDialogOpen(false),
-        startTransition,
-        context: {
-          locale,
-          carId: id,
-          extrasSelected,
-          isModifyMode,
-          manageRentId,
-          quoteId: quotePrefill?.id ?? null,
-          successMessage: t('toast.success'),
-          errorMessage: t('toast.error'),
-        },
-        clearStoredValues,
-        routerPush: (url) => router.push(url),
-        manageContext,
-      }),
-    [
-      clearStoredValues,
-      extrasSelected,
-      form,
-      id,
-      isModifyMode,
+  const createSubmitHandlerFn = useCreateSubmitHandler({
+    form,
+    rentSchema,
+    formRef,
+    openMissingFlightsDialog: () => setMissingFlightsDialogOpen(true),
+    closeMissingFlightsDialog: () => setMissingFlightsDialogOpen(false),
+    startTransition,
+    context: {
       locale,
+      carId: id,
+      extrasSelected,
+      isModifyMode,
       manageRentId,
-      quotePrefill,
-      rentSchema,
-      router,
-      startTransition,
-      t,
-      manageContext,
-    ]
-  );
+      quoteId: quotePrefill?.id ?? null,
+      successMessage: t('toast.success'),
+      errorMessage: t('toast.error'),
+    },
+    clearStoredValues,
+    routerPush: (url) => router.push(url),
+    manageContext,
+  });
 
   return (
     <Form {...form}>

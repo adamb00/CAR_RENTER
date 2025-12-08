@@ -1,23 +1,22 @@
 'use server';
 
-import { buildRentPdf } from '@/lib/build-rent-pdf';
-import { sendMail } from '@/lib/mailer';
-import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
-import z from 'zod';
-import { renderBrandEmail } from '@/lib/emailTemplates';
-import { resolveLocale } from '@/lib/seo/seo';
-import { getTranslations } from 'next-intl/server';
 import { DEFAULT_LOCALE } from '@/i18n/config';
-import { prisma } from '@/lib/prisma';
+import { buildRentPdf } from '@/lib/build-rent-pdf';
+import { getCarById } from '@/lib/cars';
+import { renderBrandEmail } from '@/lib/emailTemplates';
 import { getNextHumanId } from '@/lib/humanId';
+import { sendMail } from '@/lib/mailer';
+import { recordNotification } from '@/lib/notifications';
+import { prisma } from '@/lib/prisma';
+import { appendRentUpdateLog } from '@/lib/rentUpdateLog';
 import {
   CONTACT_STATUS_QUOTE_ACCEPTED,
   RENT_STATUS_FORM_SUBMITTED,
-  RENT_STATUS_REGISTERED,
 } from '@/lib/requestStatus';
-import { getCarById } from '@/lib/cars';
-import { recordNotification } from '@/lib/notifications';
-import { appendRentUpdateLog } from '@/lib/rentUpdateLog';
+import { resolveLocale } from '@/lib/seo/seo';
+import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
+import { getTranslations } from 'next-intl/server';
+import z from 'zod';
 
 export const RentAction = async (values: z.infer<RentFormValues>) => {
   const validatedFields = await RentSchema.safeParseAsync(values);

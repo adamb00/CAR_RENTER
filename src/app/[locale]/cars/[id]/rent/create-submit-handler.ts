@@ -31,6 +31,7 @@ type SubmitContext = {
 type CreateSubmitHandlerParams = {
   form: UseFormReturn<RentFormValues>;
   rentSchema: { parse: (values: RentFormValues) => RentFormResolvedValues };
+  formRef: React.RefObject<HTMLFormElement | null>;
   openMissingFlightsDialog: () => void;
   closeMissingFlightsDialog: () => void;
   startTransition: TransitionStartFunction;
@@ -44,9 +45,10 @@ type CreateSubmitHandlerParams = {
   };
 };
 
-export function createSubmitHandler({
+export function useCreateSubmitHandler({
   form,
   rentSchema,
+  formRef,
   openMissingFlightsDialog,
   closeMissingFlightsDialog,
   startTransition,
@@ -56,8 +58,6 @@ export function createSubmitHandler({
   manageContext,
 }: CreateSubmitHandlerParams) {
   const t = useTranslations('RentForm');
-
-  const formRef = React.useRef<HTMLFormElement | null>(null);
 
   const { onInvalid, scrollToSection } = useFormErrorNavigation<RentFormValues>(
     {
@@ -86,77 +86,103 @@ export function createSubmitHandler({
     []
   );
 
-  const submitRentRequest = (parsed: RentFormResolvedValues) => {
-    const submissionMeta = {
-      locale: context.locale,
-      carId: context.carId,
-      rentalStart: parsed.rentalPeriod.startDate,
-      rentalEnd: parsed.rentalPeriod.endDate,
-      extrasCount: Array.isArray(context.extrasSelected)
-        ? context.extrasSelected.length
-        : 0,
-      mode: context.isModifyMode ? 'modify' : 'create',
-    };
-
-    startTransition(async () => {
-      const rentIdPayload =
-        (context.isModifyMode && context.manageRentId) ||
-        parsed.rentId ||
-        undefined;
-      const actionPayload: RentFormResolvedValues = { ...parsed };
-      actionPayload.rentId = rentIdPayload;
-      const res = await RentAction({
-        ...actionPayload,
+  const submitRentRequest = React.useCallback(
+    (parsed: RentFormResolvedValues) => {
+      const submissionMeta = {
         locale: context.locale,
         carId: context.carId,
-        quoteId: context.quoteId ?? parsed.quoteId,
+        rentalStart: parsed.rentalPeriod.startDate,
+        rentalEnd: parsed.rentalPeriod.endDate,
+        extrasCount: Array.isArray(context.extrasSelected)
+          ? context.extrasSelected.length
+          : 0,
+        mode: context.isModifyMode ? 'modify' : 'create',
+      };
+
+      startTransition(async () => {
+        const rentIdPayload =
+          (context.isModifyMode && context.manageRentId) ||
+          parsed.rentId ||
+          undefined;
+        const actionPayload: RentFormResolvedValues = { ...parsed };
+        actionPayload.rentId = rentIdPayload;
+        const res = await RentAction({
+          ...actionPayload,
+          locale: context.locale,
+          carId: context.carId,
+          quoteId: context.quoteId ?? parsed.quoteId,
+        });
+        if (res.success) {
+          toast.success(context.successMessage);
+          clearStoredValues();
+          const resultingRentId = res.rentId ?? rentIdPayload ?? undefined;
+          trackFormSubmission({
+            formId: 'rent-request',
+            status: 'success',
+            rentId: resultingRentId,
+            ...submissionMeta,
+          });
+          const nextUrl =
+            context.isModifyMode && resultingRentId
+              ? `/${context.locale}/rent/thank-you`
+              : resultingRentId
+              ? `/${context.locale}/rent/thank-you?rentId=${resultingRentId}`
+              : `/${context.locale}/rent/thank-you`;
+          setTimeout(() => {
+            routerPush(nextUrl);
+          }, 2000);
+        } else {
+          toast.error(context.errorMessage);
+          trackFormSubmission({
+            formId: 'rent-request',
+            status: 'error',
+            errorMessage: res.error,
+            rentId: rentIdPayload ?? context.manageRentId ?? undefined,
+            ...submissionMeta,
+          });
+        }
       });
-      if (res.success) {
-        toast.success(context.successMessage);
-        clearStoredValues();
-        const resultingRentId = res.rentId ?? rentIdPayload ?? undefined;
-        trackFormSubmission({
-          formId: 'rent-request',
-          status: 'success',
-          rentId: resultingRentId,
-          ...submissionMeta,
-        });
-        const nextUrl =
-          context.isModifyMode && resultingRentId
-            ? `/${context.locale}/rent/thank-you`
-            : resultingRentId
-            ? `/${context.locale}/rent/thank-you?rentId=${resultingRentId}`
-            : `/${context.locale}/rent/thank-you`;
-        setTimeout(() => {
-          routerPush(nextUrl);
-        }, 2000);
-      } else {
-        toast.error(context.errorMessage);
-        trackFormSubmission({
-          formId: 'rent-request',
-          status: 'error',
-          errorMessage: res.error,
-          rentId: rentIdPayload ?? context.manageRentId ?? undefined,
-          ...submissionMeta,
-        });
-      }
-    });
-  };
+    },
+    [
+      clearStoredValues,
+      context.carId,
+      context.errorMessage,
+      context.extrasSelected,
+      context.isModifyMode,
+      context.locale,
+      context.manageRentId,
+      context.quoteId,
+      context.successMessage,
+      routerPush,
+      startTransition,
+    ]
+  );
 
-  return (options?: SubmitOptions) =>
-    form.handleSubmit((values) => {
-      const parsed = rentSchema.parse(values);
-      const shouldPrompt = shouldAskForFlightNumbers(parsed);
+  return React.useCallback(
+    (options?: SubmitOptions) =>
+      form.handleSubmit((values) => {
+        const parsed = rentSchema.parse(values);
+        const shouldPrompt = shouldAskForFlightNumbers(parsed);
 
-      if (shouldPrompt && !options?.bypassFlightCheck) {
-        openMissingFlightsDialog();
-        return;
-      }
+        if (shouldPrompt && !options?.bypassFlightCheck) {
+          openMissingFlightsDialog();
+          return;
+        }
 
-      closeMissingFlightsDialog();
-      submitRentRequest(parsed);
-    }, onInvalid);
+        closeMissingFlightsDialog();
+        submitRentRequest(parsed);
+      }, onInvalid),
+    [
+      closeMissingFlightsDialog,
+      form,
+      onInvalid,
+      openMissingFlightsDialog,
+      rentSchema,
+      shouldAskForFlightNumbers,
+      submitRentRequest,
+    ]
+  );
 }
 
-export type CreateSubmitHandler = ReturnType<typeof createSubmitHandler>;
+export type CreateSubmitHandler = ReturnType<typeof useCreateSubmitHandler>;
 export type { SubmitOptions, SubmitContext };

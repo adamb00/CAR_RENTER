@@ -1,9 +1,6 @@
 import { RENT_ID_REGEX } from '@/lib/constants';
 import { prisma } from '@/lib/prisma';
-import {
-  RENT_STATUS_ACCEPTED,
-  RENT_STATUS_REGISTERED,
-} from '@/lib/requestStatus';
+import { RENT_STATUS_ACCEPTED } from '@/lib/requestStatus';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
