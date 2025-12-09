@@ -67,7 +67,7 @@ function withLocaleCookie(res: NextResponse, locale: Locale) {
 function buildLocalizedPath(
   pathname: string,
   locale: Locale,
-  existingLocale: Locale | null,
+  existingLocale: Locale | null
 ): string {
   if (existingLocale) {
     const segments = pathname.split('/');
@@ -83,10 +83,14 @@ function buildLocalizedPath(
 function redirectToLocale(
   req: NextRequest,
   locale: Locale,
-  existingLocale: Locale | null,
+  existingLocale: Locale | null
 ) {
   const url = req.nextUrl.clone();
-  url.pathname = buildLocalizedPath(req.nextUrl.pathname, locale, existingLocale);
+  url.pathname = buildLocalizedPath(
+    req.nextUrl.pathname,
+    locale,
+    existingLocale
+  );
   const res = NextResponse.redirect(url);
   return withLocaleCookie(res, locale);
 }
@@ -115,15 +119,25 @@ export function proxy(req: NextRequest) {
     | undefined;
   const validCookie = cookieLocale && LOCALES.includes(cookieLocale);
 
-  if (pathLocale) {
-    if (!validCookie) {
-      const detected = detectLocaleFromRequest(req) ?? DEFAULT_LOCALE;
-      if (detected !== pathLocale) {
-        return redirectToLocale(req, detected, pathLocale);
-      }
-    }
+  // if (pathLocale) {
+  //   if (!validCookie) {
+  //     const detected = detectLocaleFromRequest(req) ?? DEFAULT_LOCALE;
+  //     if (detected !== pathLocale) {
+  //       return redirectToLocale(req, detected, pathLocale);
+  //     }
+  //   }
 
+  //   const res = NextResponse.next();
+  //   if (!validCookie || cookieLocale !== pathLocale) {
+  //     return withLocaleCookie(res, pathLocale);
+  //   }
+
+  //   return res;
+  // }
+
+  if (pathLocale) {
     const res = NextResponse.next();
+
     if (!validCookie || cookieLocale !== pathLocale) {
       return withLocaleCookie(res, pathLocale);
     }
