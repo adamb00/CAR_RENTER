@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 export default withNextIntl({
   images: {
+    unoptimized: true,
     qualities: [75, 85],
   },
   experimental: {
