@@ -107,7 +107,7 @@ const BLOG_SLUG_DEFINITIONS: BlogSlugDefinition[] = [
 
 export const getLocalesForDefinition = (
   definition: BlogSlugDefinition
-): Locale[] =>
+): readonly Locale[] =>
   definition.locales && definition.locales.length > 0
     ? definition.locales
     : LOCALES;
