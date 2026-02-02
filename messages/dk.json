@@ -740,6 +740,19 @@
     "readMore": "Åbn artikel",
     "posts": [
       {
+        "slug": "fuerteventuras-smukkeste-strande-i-lejebil",
+        "title": "Fuerteventuras smukkeste strande – sådan oplever du dem med lejebil",
+        "excerpt": "Fra Corralejo-klitterne til Sotavento-lagunerne: tips til at udforske øens strande fleksibelt med lejebil.",
+        "category": "Rejseguide",
+        "readTime": "8 min læsetid",
+        "publishDate": "30. januar 2026",
+        "publishDateISO": "2026-01-30",
+        "image": {
+          "src": "https://waximdqzopehmgjcpudg.supabase.co/storage/v1/object/public/images/blog_3/Coraleo%201.jpeg",
+          "alt": "Corralejo-klitter og turkis vand på Fuerteventura"
+        }
+      },
+      {
         "slug": "sevaerdigheder-pa-fuerteventura-i-bil-3-steder-du-ikke-ma-ga-glip-af",
         "title": "Seværdigheder på Fuerteventura i bil – 3 steder du ikke må gå glip af",
         "excerpt": "Corralejo-klitterne, Betancuria og Ajuy-grotterne: en rejseguide til, hvordan du får mest muligt ud af din lejebil på Fuerteventura.",
@@ -768,6 +781,160 @@
     ]
   },
   "BlogPosts": {
+    "fuerteventura-legszebb-strandjai-berelt-autoval": {
+      "meta": {
+        "title": "Fuerteventuras smukkeste strande – sådan oplever du dem med lejebil | Zodiacs Rent a Car",
+        "description": "Oplev Fuerteventuras smukkeste strande i lejebil! Corralejo-klitterne, El Cotillo-lagunerne, Sotavento og Cofete i en fleksibel strandrute.",
+        "keywords": [
+          "Fuerteventura strande",
+          "biludlejning Fuerteventura",
+          "lejebil Fuerteventura",
+          "Corralejo klitter",
+          "El Cotillo",
+          "Sotavento",
+          "Costa Calma",
+          "Cofete",
+          "Jandía",
+          "Fuerteventura rejseguide"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventuras-smukkeste-strande-i-lejebil",
+        "image": {
+          "src": "https://waximdqzopehmgjcpudg.supabase.co/storage/v1/object/public/images/blog_3/Coraleo%201.jpeg",
+          "alt": "Hvide klitter og turkis Atlanterhav på Fuerteventura"
+        }
+      },
+      "hero": {
+        "icon": "🌊",
+        "title": "Fuerteventuras smukkeste strande – sådan oplever du dem med lejebil",
+        "category": "Rejseguide",
+        "subtitle": "Fuerteventura er Kanarieøernes strandø af en grund: sandstrækninger, krystalklart Atlanterhav, vindformede klitter og vilde, uberørte landskaber følger hinanden.",
+        "description": "Hvis du kun går ned til stranden foran hotellet, ser du ikke øens ægte ansigt. Nøglen er <strong>biludlejning på Fuerteventura</strong>, så du kan udforske de smukkeste strande i dit eget tempo.",
+        "publishDate": "30. januar 2026",
+        "publishDateISO": "2026-01-30",
+        "readingTime": "8 min læsetid",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "why-rent",
+          "title": "Hvorfor er lejebil på Fuerteventura næsten et must?",
+          "paragraphs": [
+            "Fuerteventura er en lang og smal ø, hvor de fleste spektakulære strande ligger uden for byerne og langt fra hinanden.",
+            "Den offentlige transport er ikke indrettet til strandture: at nå en enkelt strand kan tage en halv dag med skift, gåture og køreplaner.",
+            "En velvalgt <strong>lejebil på Fuerteventura</strong> er ikke bare ekstra komfort – det er en del af oplevelsen."
+          ],
+          "bullets": [
+            "De fleste af de bedste strande ligger uden for byerne.",
+            "Busserne kører sjældent, og stoppestederne ligger ofte langt fra kysten.",
+            "Afstandene mellem strandene er store, så der er kun få på en dag.",
+            "Med lejebil stopper du der, hvor kysten er smukkest.",
+            "Hvis det er for blæsende eller overfyldt, kører du videre på få minutter.",
+            "Du kan besøge flere ikoniske steder på én dag.",
+            "Du kan nemt transportere strandudstyr, børn og surf- eller kiteudstyr."
+          ]
+        },
+        {
+          "id": "corralejo-dunes",
+          "title": "Corralejo og klitterne – hvidt sand, turkis vand",
+          "paragraphs": [
+            "I nord ligger <strong>Corralejo Natural Park</strong>, hvor enorme klitter og lange hvide sandstrande strækker sig langs havet.",
+            "Landskabet minder ofte mere om Afrika eller Caribien end om Europa.",
+            "Mange tager hertil allerede på ankomstdagen – derfor er <strong>lejebil i lufthavnen på Fuerteventura</strong> så populært."
+          ],
+          "bullets": [
+            "Kyststrækningen er lang med flere stop.",
+            "Det er nemt at finde mindre travle områder.",
+            "Hvis det blæser meget ét sted, er du på en anden strand på få minutter.",
+            "Til fotos kan du stoppe frit ved klitterne."
+          ]
+        },
+        {
+          "id": "el-cotillo",
+          "title": "El Cotillo – laguner og rolige strande",
+          "paragraphs": [
+            "På vestkysten ligger El Cotillo, en charmerende lille fiskerby med en helt anden stemning end de store resorter.",
+            "I nord findes flere lave lagunebugter, spredt og svære at opleve uden bil.",
+            "Med lejebil er beach hopping let: du ser den første lagune, hvis den er fuld, kører du videre, og du kan endda kombinere det med Corralejo på en dagstur."
+          ],
+          "bullets": [
+            "Ideel for familier.",
+            "Godt for mindre erfarne svømmere på grund af lavt vand.",
+            "For dem der søger mere rolige steder."
+          ]
+        },
+        {
+          "id": "sotavento-costa-calma",
+          "title": "Sotavento og Costa Calma – de berømte laguner i syd",
+          "paragraphs": [
+            "I syd nær Costa Calma ligger den legendariske <strong>Sotavento Beach</strong>, kendt for sine lavvandede laguner dannet af tidevandet.",
+            "På bestemte tidspunkter opstår spejlblankt vand mellem sandbankerne – udsigten føles næsten uvirkelig.",
+            "Området er også populært blandt surfere og kitere – at rejse med udstyr uden bil er næsten umuligt."
+          ],
+          "bullets": [
+            "Lagunerne dannes ikke altid ens på grund af tidevand.",
+            "Vindforholdene kan ændre sig hurtigt.",
+            "Nogle gange er nærliggende, beskyttede strande mere behagelige."
+          ]
+        },
+        {
+          "id": "cofete",
+          "title": "Cofete – Fuerteventuras vilde side",
+          "paragraphs": [
+            "Cofete er en af øens mest kendte og samtidig mest vilde strande på Jandía-halvøen. Bjerge, enorme uberørte kyststrækninger og dramatiske landskaber kendetegner stedet.",
+            "Det er mere en naturoplevelse end en bekvem badetur; med bil får du en frihed, som organiserede ture ikke giver."
+          ],
+          "bullets": [
+            "En del af adgangsvejen er grusvej.",
+            "Der er ujævne strækninger.",
+            "Det er ikke en klassisk, anlagt strand."
+          ],
+          "tip": {
+            "title": "Vigtigt",
+            "description": "Afklar altid hvilke vejtyper aftalen dækker, da skader på grusveje normalt ikke er dækket af forsikringen."
+          }
+        },
+        {
+          "id": "route-plan",
+          "title": "Sådan planlægger du en strandrute på Fuerteventura",
+          "paragraphs": [
+            "En velplanlagt rute inkluderer nord, vest og syd, så du oplever hele øens karakter.",
+            "Sammen viser de en blanding af ferieområder, rolige bugter, sporty strande og vilde landskaber."
+          ],
+          "bullets": [
+            "Nord: Corralejo + klitter",
+            "Vest: El Cotillo-laguner",
+            "Syd: Costa Calma + Sotavento",
+            "Ekstra dag: Jandía-halvøen, udsigtspunkter, Cofete-området"
+          ]
+        },
+        {
+          "id": "freedom",
+          "title": "Lejebil på Fuerteventura: nøglen til frihed",
+          "paragraphs": [
+            "Ø-oplevelsen handler ikke kun om strande – det handler om ikke at tjekke køreplaner, ikke være bundet til andre og tage af sted, når du vil.",
+            "Uanset om du henter bilen i lufthavnen eller ved din indkvartering, er pointen den samme: med den rigtige lejebil bliver øens smukkeste strande til en sammenhængende rute, ikke spredte punkter på kortet."
+          ],
+          "closing": "Hvis du rejser til Fuerteventura, er en af de bedste beslutninger at sørge for den rette bil fra starten."
+        }
+      ],
+      "cta": {
+        "title": "Start din strandrute med lejebil!",
+        "paragraphs": [
+          "Oplev Corralejo-klitterne, El Cotillo-lagunerne og den sporty sydkyst i dit eget tempo.",
+          "<strong>Zodiacs Rent a Car</strong> – biludlejning på Fuerteventura gjort enkelt og hurtigt, med pålidelige biler og lokale tips."
+        ],
+        "buttons": [
+          {
+            "label": "Se vores biler",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Book online med få klik",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
     "fuerteventura-latnivalok-autoval": {
       "meta": {
         "title": "Seværdigheder på Fuerteventura i bil – 3 steder du ikke må gå glip af med lejebil | Zodiacs Rent a Car",

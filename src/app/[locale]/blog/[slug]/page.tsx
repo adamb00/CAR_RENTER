@@ -1,7 +1,9 @@
 import {
   BLOG_POSTS,
+  getLocalesForPost,
   getPostDefinitionBySlug,
   getSlugForLocale,
+  isLocaleSupportedForPost,
 } from '@/lib/blog/registry';
 
 import { getSiteUrl, resolveLocale } from '@/lib/seo/seo';
@@ -20,8 +22,8 @@ const isBlogSummaryPost = (value: unknown): value is BlogSummaryPost => {
 };
 
 export async function generateStaticParams() {
-  return LOCALES.flatMap((locale) =>
-    BLOG_POSTS.map((post) => ({
+  return BLOG_POSTS.flatMap((post) =>
+    getLocalesForPost(post).map((locale) => ({
       locale,
       slug: getSlugForLocale(post, locale),
     }))
@@ -38,7 +40,7 @@ export async function generateMetadata({
   const resolvedLocale = resolveLocale(locale);
 
   const postDefinition = getPostDefinitionBySlug(slug);
-  if (!postDefinition) {
+  if (!postDefinition || !isLocaleSupportedForPost(postDefinition, resolvedLocale)) {
     return {};
   }
 
@@ -112,7 +114,7 @@ export default async function BlogPostPage({
   const resolvedLocale = resolveLocale(locale);
 
   const postDefinition = getPostDefinitionBySlug(slug);
-  if (!postDefinition) {
+  if (!postDefinition || !isLocaleSupportedForPost(postDefinition, resolvedLocale)) {
     notFound();
   }
 

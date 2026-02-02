@@ -1,12 +1,15 @@
 import { BlogPostRenderer } from '@/app/[locale]/blog/blog.type';
 import Post_1 from '@/components/blog/post_1';
 import Post_2 from '@/components/blog/post_2';
+import Post_3 from '@/components/blog/post_3';
 import type { Locale } from '@/i18n/config';
 // import type { BlogPostRenderer } from '@/lib/blog/types';
 import type { BlogSlugDefinition } from '@/lib/blog/slugs';
 import {
   BLOG_SLUGS,
+  getLocalesForDefinition,
   getSlugForLocale as getSlugForLocaleBase,
+  isLocaleSupportedForDefinition,
   resolveLocalizedSlug,
 } from '@/lib/blog/slugs';
 
@@ -17,6 +20,7 @@ export type BlogPostDefinition = BlogSlugDefinition & {
 const COMPONENT_MAP: Record<string, BlogPostRenderer> = {
   'fuerteventura-latnivalok-autoval': Post_1,
   'fuerteventura-visszatero-aramlat-biztonsagos-furdozes': Post_2,
+  'fuerteventura-legszebb-strandjai-berelt-autoval': Post_3,
 };
 
 export const BLOG_POSTS: BlogPostDefinition[] = BLOG_SLUGS.map((definition) => {
@@ -50,6 +54,14 @@ export const getPostDefinitionBySlug = (slug: string) => SLUG_TO_POST[slug];
 
 export const getSlugForLocale = (post: BlogPostDefinition, locale: Locale) =>
   getSlugForLocaleBase(post, locale);
+
+export const getLocalesForPost = (post: BlogPostDefinition) =>
+  getLocalesForDefinition(post);
+
+export const isLocaleSupportedForPost = (
+  post: BlogPostDefinition,
+  locale: Locale
+) => isLocaleSupportedForDefinition(post, locale);
 
 export { resolveLocalizedSlug };
 

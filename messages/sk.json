@@ -740,6 +740,19 @@
     "readMore": "Otvoriť článok",
     "posts": [
       {
+        "slug": "najkrajsie-plaze-fuerteventury-autom-z-pozicovne",
+        "title": "Najkrajšie pláže Fuerteventury – ako ich prejsť s požičaným autom",
+        "excerpt": "Od dún v Corraleju po lagúny v Sotavente: tipy, ako flexibilne preskúmať pláže ostrova s autom z požičovne.",
+        "category": "Cestovný sprievodca",
+        "readTime": "8 min čítania",
+        "publishDate": "30. január 2026",
+        "publishDateISO": "2026-01-30",
+        "image": {
+          "src": "https://waximdqzopehmgjcpudg.supabase.co/storage/v1/object/public/images/blog_3/Coraleo%201.jpeg",
+          "alt": "Duny Corralejo a tyrkysová voda na Fuerteventure"
+        }
+      },
+      {
         "slug": "fuerteventura-zaujimavosti-autom-3-miesta-ktore-netreba-vynechat",
         "title": "Fuerteventura – zaujímavosti autom – 3 miesta, ktoré netreba vynechať",
         "excerpt": "Duny Corralejo, Betancuria a jaskyne Ajuy: sprievodca, ako čo najlepšie využiť svoj prenajatý automobil na Fuerteventure.",
@@ -768,6 +781,160 @@
     ]
   },
   "BlogPosts": {
+    "fuerteventura-legszebb-strandjai-berelt-autoval": {
+      "meta": {
+        "title": "Najkrajšie pláže Fuerteventury – ako ich prejsť s požičaným autom | Zodiacs Rent a Car",
+        "description": "Objav najkrajšie pláže Fuerteventury s autom z požičovne! Duny Corralejo, lagúny El Cotillo, Sotavento a Cofete v flexibilnej trase od pláže k pláži.",
+        "keywords": [
+          "pláže Fuerteventury",
+          "prenájom auta Fuerteventura",
+          "auto z požičovne Fuerteventura",
+          "duny Corralejo",
+          "El Cotillo",
+          "Sotavento",
+          "Costa Calma",
+          "Cofete",
+          "Jandía",
+          "sprievodca Fuerteventura"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/najkrajsie-plaze-fuerteventury-autom-z-pozicovne",
+        "image": {
+          "src": "https://waximdqzopehmgjcpudg.supabase.co/storage/v1/object/public/images/blog_3/Coraleo%201.jpeg",
+          "alt": "Biele duny a tyrkysový Atlantik na Fuerteventure"
+        }
+      },
+      "hero": {
+        "icon": "🌊",
+        "title": "Najkrajšie pláže Fuerteventury – ako ich prejsť s požičaným autom",
+        "category": "Cestovný sprievodca",
+        "subtitle": "Fuerteventura nie je náhodou plážovým ostrovom Kanár: pieskové úseky, krištáľovo čistý Atlantik, vetrom tvarované duny a divoká, nedotknutá krajina sa striedajú.",
+        "description": "Ak sa prejdeš len na pláž pred hotelom, pravú tvár ostrova neuvidíš. Kľúčom je <strong>prenájom auta na Fuerteventure</strong>, aby si mohol objavovať najkrajšie pláže vlastným tempom.",
+        "publishDate": "30. január 2026",
+        "publishDateISO": "2026-01-30",
+        "readingTime": "8 min čítania",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "why-rent",
+          "title": "Prečo je prenájom auta na Fuerteventure takmer povinnosť?",
+          "paragraphs": [
+            "Fuerteventura je dlhý a úzky ostrov, kde sa väčšina najkrajších pláží nachádza mimo miest a ďaleko od seba.",
+            "Verejná doprava nie je prispôsobená plážovým výletom: dostať sa na jediný úsek môže znamenať pol dňa s prestupmi, chôdzou a cestovnými poriadkami.",
+            "Dobre zvolený <strong>prenájom auta na Fuerteventure</strong> nie je luxus, ale súčasť zážitku."
+          ],
+          "bullets": [
+            "Väčšina top pláží je mimo miest.",
+            "Autobusy chodia zriedka a zastávky sú často ďaleko od pobrežia.",
+            "Vzdialenosti medzi plážami sú veľké, za deň sa stihne len niekoľko.",
+            "S prenajatým autom zastavíš tam, kde je pobrežie najkrajšie.",
+            "Ak je príliš veterno alebo plno, o pár minút si na inej pláži.",
+            "Za jeden deň môžeš vidieť viac ikonických miest.",
+            "Pohodlne vezieš plážové vybavenie, deti aj surf alebo kite výstroj."
+          ]
+        },
+        {
+          "id": "corralejo-dunes",
+          "title": "Corralejo a duny – biely piesok, tyrkysová voda",
+          "paragraphs": [
+            "Na severe ostrova sa nachádza <strong>Prírodný park Corralejo</strong>, kde sa pozdĺž oceánu tiahnu obrovské duny a dlhé biele pláže.",
+            "Krajina často pripomína skôr Afriku alebo Karibik než Európu.",
+            "Mnohí sem vyrážajú hneď v deň príletu – preto je populárny <strong>prenájom auta na letisku na Fuerteventure</strong>."
+          ],
+          "bullets": [
+            "Pobrežie je dlhé a má viacero zastávok.",
+            "Ľahko nájdeš menej preplnené miesta.",
+            "Ak na jednom mieste silno fúka, o pár minút si na inej pláži.",
+            "Na fotenie môžeš zastaviť priamo pri dunách."
+          ]
+        },
+        {
+          "id": "el-cotillo",
+          "title": "El Cotillo – lagúny a pokojné pláže",
+          "paragraphs": [
+            "Na západnom pobreží leží El Cotillo, malé a útulné rybárske mestečko s úplne iným charakterom než veľké rezorty.",
+            "Na severe je viacero plytkých lagúnových zátok, roztrúsených a bez auta ťažko dostupných.",
+            "S autom z požičovne je plážový hopping jednoduchý: pozrieš prvú lagúnu, ak je plná, pokračuješ ďalej a môžeš to spojiť aj s Corralejom."
+          ],
+          "bullets": [
+            "Skvelé pre rodiny.",
+            "Vhodné pre menej skúsených plavcov vďaka plytkej vode.",
+            "Pre tých, ktorí hľadajú pokojnejšie miesta."
+          ]
+        },
+        {
+          "id": "sotavento-costa-calma",
+          "title": "Sotavento a Costa Calma – slávne lagúny na juhu",
+          "paragraphs": [
+            "Na juhu pri Costa Calma leží legendárna <strong>pláž Sotavento</strong>, známa plytkými lagúnami vytvorenými prílivom a odlivom.",
+            "V určitých obdobiach sa medzi pieskovými lavicami objaví zrkadlovo hladká voda – výhľad pôsobí až neskutočne.",
+            "Oblasť je obľúbená u surferov a kiterov – cestovať s výbavou bez auta je takmer nemožné."
+          ],
+          "bullets": [
+            "Lagúny sa nevytvárajú vždy rovnako kvôli prílivu a odlivu.",
+            "Veterné podmienky sa môžu rýchlo meniť.",
+            "Niekedy sú bližšie chránené pláže príjemnejšie."
+          ]
+        },
+        {
+          "id": "cofete",
+          "title": "Cofete – divoká stránka Fuerteventury",
+          "paragraphs": [
+            "Cofete je jedna z najznámejších a zároveň najdivokejších pláží ostrova na polostrove Jandía. Charakterizujú ju hory, obrovské nedotknuté pobrežie a dramatická krajina.",
+            "Je to skôr prírodný zážitok než pohodlné kúpanie; s autom získaš slobodu, ktorú organizované výlety neponúkajú."
+          ],
+          "bullets": [
+            "Časť prístupovej cesty je nespevnená.",
+            "Sú tu hrboľaté úseky.",
+            "Nejde o klasickú vybavenú pláž."
+          ],
+          "tip": {
+            "title": "Dôležité",
+            "description": "Vždy si over, aké typy ciest pokrýva zmluva, pretože škody na nespevnených cestách zvyčajne poistenie nekryje."
+          }
+        },
+        {
+          "id": "route-plan",
+          "title": "Ako naplánovať plážový okruh na Fuerteventure",
+          "paragraphs": [
+            "Dobre naplánovaná trasa zahŕňa sever, západ a juh, aby si spoznal celý charakter ostrova.",
+            "Spolu ukazujú mix turistických zón, pokojné zátoky, športové pláže a divokú prírodu."
+          ],
+          "bullets": [
+            "Sever: Corralejo + duny",
+            "Západ: lagúny El Cotillo",
+            "Juh: Costa Calma + Sotavento",
+            "Samostatný deň: polostrov Jandía, vyhliadky, okolie Cofete"
+          ]
+        },
+        {
+          "id": "freedom",
+          "title": "Prenájom auta na Fuerteventure: kľúč k slobode",
+          "paragraphs": [
+            "Zážitok z ostrova nie je len o plážach – je o tom, že nemusíš pozerať cestovné poriadky, nie si viazaný na iných a vyrážaš, kedy chceš.",
+            "Či už auto prevezmeš na letisku alebo pri ubytovaní, pointa je rovnaká: s vhodným autom sa najkrajšie pláže zmenia na súvislú trasu, nie na roztrúsené body na mape."
+          ],
+          "closing": "Ak cestuješ na Fuerteventuru, jedným z najlepších rozhodnutí je zabezpečiť si správne auto hneď na začiatku."
+        }
+      ],
+      "cta": {
+        "title": "Vyraz na plážový okruh s prenajatým autom!",
+        "paragraphs": [
+          "Objav duny Corralejo, lagúny El Cotillo a športové južné pobrežie vlastným tempom.",
+          "<strong>Zodiacs Rent a Car</strong> – prenájom auta na Fuerteventure jednoducho, rýchlo, so spoľahlivými autami a lokálnymi tipmi."
+        ],
+        "buttons": [
+          {
+            "label": "Pozri si naše autá",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Rezervuj online na pár klikov",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
     "fuerteventura-latnivalok-autoval": {
       "meta": {
         "title": "Fuerteventura – zaujímavosti autom – 3 miesta, ktoré netreba vynechať | Zodiacs Rent a Car",

@@ -740,6 +740,19 @@
     "readMore": "Cikk megnyitása",
     "posts": [
       {
+        "slug": "fuerteventura-legszebb-strandjai-berelt-autoval",
+        "title": "Fuerteventura legszebb strandjai – így járd be őket bérelt autóval",
+        "excerpt": "Corralejo dűnéitől Sotavento lagúnáiig: tippek, hogyan fedezd fel a sziget strandjait rugalmasan, bérelt autóval.",
+        "category": "Útikalauz",
+        "readTime": "8 perc olvasás",
+        "publishDate": "2026. január 30.",
+        "publishDateISO": "2026-01-30",
+        "image": {
+          "src": "https://waximdqzopehmgjcpudg.supabase.co/storage/v1/object/public/images/blog_3/Coraleo%201.jpeg",
+          "alt": "Fuerteventura homokdűnéi és türkiz víz Corralejo közelében"
+        }
+      },
+      {
         "slug": "fuerteventura-latnivalok-autoval-3-kihagyhatatlan-hely",
         "title": "Fuerteventura látnivalók autóval – 3 kihagyhatatlan hely",
         "excerpt": "Corralejo dűnéi, Betancuria és Ajuy barlangjai: útikalauz, hogyan hozd ki a legtöbbet bérautóddal Fuerteventurán.",
@@ -768,6 +781,160 @@
     ]
   },
   "BlogPosts": {
+    "fuerteventura-legszebb-strandjai-berelt-autoval": {
+      "meta": {
+        "title": "Fuerteventura legszebb strandjai – így járd be őket bérelt autóval | Zodiacs Rent a Car",
+        "description": "Fedezd fel Fuerteventura legszebb strandjait bérelt autóval! Corralejo dűnéi, El Cotillo lagúnái, Sotavento és Cofete egy rugalmas, strandról strandra útvonalon.",
+        "keywords": [
+          "Fuerteventura strandjai",
+          "autóbérlés Fuerteventurán",
+          "bérautó Fuerteventura",
+          "Corralejo dűnék",
+          "El Cotillo",
+          "Sotavento",
+          "Costa Calma",
+          "Cofete",
+          "Jandía",
+          "Fuerteventura útikalauz"
+        ],
+        "canonical": "https://www.zodiacsrentacar.com/fuerteventura-legszebb-strandjai-berelt-autoval",
+        "image": {
+          "src": "https://waximdqzopehmgjcpudg.supabase.co/storage/v1/object/public/images/blog_3/Coraleo%201.jpeg",
+          "alt": "Fehér homokdűnék és türkiz Atlanti-óceán Fuerteventurán"
+        }
+      },
+      "hero": {
+        "icon": "🌊",
+        "title": "Fuerteventura legszebb strandjai – így járd be őket bérelt autóval",
+        "category": "Útikalauz",
+        "subtitle": "Fuerteventura nem véletlenül a Kanári-szigetek strand-szigete: homokos partszakaszok, kristálytiszta Atlanti-óceán, szél formálta dűnék és vad, érintetlen tájak váltják egymást.",
+        "description": "Ha csak a szállodád előtti strandra sétálsz le, a sziget igazi arcát nem fogod látni. A felfedezés kulcsa az <strong>autóbérlés Fuerteventurán</strong>, így saját tempóban járhatod be a legszebb strandokat.",
+        "publishDate": "2026. január 30.",
+        "publishDateISO": "2026-01-30",
+        "readingTime": "8 perc olvasás",
+        "author": "Zodiacs Rent a Car"
+      },
+      "sections": [
+        {
+          "id": "why-rent",
+          "title": "Miért szinte kötelező az autóbérlés Fuerteventurán?",
+          "paragraphs": [
+            "Fuerteventura hosszú, keskeny sziget, ahol a látványos strandok nagy része a településeken kívül található, és egymástól is távol helyezkedik el.",
+            "A tömegközlekedés nem a strandtúrákra van optimalizálva: egyetlen partszakasz elérése is fél napos szervezést jelenthet átszállásokkal, gyaloglással és menetrendhez igazodással.",
+            "Egy jól megválasztott <strong>Fuerteventura autóbérlés</strong> nem extra kényelmi szolgáltatás, hanem az élmény része."
+          ],
+          "bullets": [
+            "A legszebb strandok többsége a városokon kívül található.",
+            "A buszok ritkán járnak, a megállók pedig gyakran távol vannak a parttól.",
+            "A strandok között nagyok a távolságok, így egy nap alatt kevés hely fér bele.",
+            "Bérelt autóval ott állsz meg, ahol a legszebb a part.",
+            "Ha túl szeles vagy zsúfolt a strand, pár perc alatt továbbmész.",
+            "Egy nap alatt több ikonikus helyet is megnézhetsz.",
+            "Kényelmesen viszed a strandfelszerelést, gyerekeket, szörf- vagy kite felszerelést."
+          ]
+        },
+        {
+          "id": "corralejo-dunes",
+          "title": "Corralejo és a dűnék – fehér homok, türkiz víz",
+          "paragraphs": [
+            "A sziget északi részén található a <strong>Corralejo Natural Park</strong>, ahol hatalmas homokdűnék és hosszú, fehér homokos strandok húzódnak az óceán mentén.",
+            "A táj sokszor inkább Afrikára vagy a Karib-térségre emlékeztet, mint Európára.",
+            "Sokan már érkezés napján ide indulnak – ezért népszerű a <strong>reptéri autóbérlés Fuerteventurán</strong>, amikor a landolás után azonnal útnak lehet indulni."
+          ],
+          "bullets": [
+            "A partszakasz hosszú, több különálló megállóval.",
+            "Könnyen találsz kevésbé zsúfolt részt.",
+            "Ha az egyik helyen erős a szél, pár perc alatt másik strandra gurulsz.",
+            "Fotózásnál szabadon megállhatsz a dűnék mellett."
+          ]
+        },
+        {
+          "id": "el-cotillo",
+          "title": "El Cotillo – lagúnák és nyugodt strandok",
+          "paragraphs": [
+            "A sziget nyugati oldalán fekvő El Cotillo egy hangulatos, kisebb halászfalu, amely teljesen más karakter, mint a nagyobb üdülőközpontok.",
+            "Az északi részen több, egymástól elszórt, sekély vizű lagúnás öböl található, amelyek autó nélkül nehezen járhatók be.",
+            "Bérelt autóval könnyű a klasszikus strandhop: megnézed az első lagúnát, ha megtelt, továbbmész, és akár Corralejo-val is összekötheted egy egynapos kirándulás során."
+          ],
+          "bullets": [
+            "Családoknak és gyerekekkel utazóknak.",
+            "Gyengébb úszóknak, sekély víz miatt.",
+            "Azoknak, akik csendesebb, nyugodtabb helyet keresnek."
+          ]
+        },
+        {
+          "id": "sotavento-costa-calma",
+          "title": "Sotavento és Costa Calma – a híres lagúnák délen",
+          "paragraphs": [
+            "A déli részen, Costa Calma közelében található a legendás <strong>Sotavento Beach</strong>, amely a dagály-apály miatt kialakuló sekély lagúnáiról ismert.",
+            "Bizonyos időszakokban a homokpadok között tükörsima vízfelület jelenik meg – látványban szinte földöntúli.",
+            "A terület ráadásul népszerű a szörfösök és kite-osok körében is – felszereléssel utazva szinte elképzelhetetlen a kényelmes közlekedés autó nélkül."
+          ],
+          "bullets": [
+            "A lagúnák nem mindig ugyanúgy alakulnak a vízállás miatt.",
+            "A szélviszonyok gyorsan változhatnak.",
+            "Néha a közeli, védettebb partok kellemesebbek."
+          ]
+        },
+        {
+          "id": "cofete",
+          "title": "Cofete – Fuerteventura vad oldala",
+          "paragraphs": [
+            "Cofete a sziget egyik legismertebb, ugyanakkor legvadabb strandja, a Jandía-félszigeten. Hegyek, hatalmas, érintetlen partszakasz és drámai táj jellemzi.",
+            "Ez inkább természetélmény, mint kényelmes fürdőzés: autóval azonban olyan szabadságot ad, amit szervezett kirándulással nem kapsz meg."
+          ],
+          "bullets": [
+            "Az odavezető út egy része földút.",
+            "Rázósabb szakaszok is előfordulnak.",
+            "Nem klasszikus, kiépített strand."
+          ],
+          "tip": {
+            "title": "Fontos",
+            "description": "Az autóbérlésnél mindig tisztázd, hogy a szerződés milyen úttípusokra vonatkozik, mert a nem szilárd burkolatú utakon keletkezett károkat a biztosítások jellemzően nem fedezik."
+          }
+        },
+        {
+          "id": "route-plan",
+          "title": "Hogyan tervezz strandtúrát Fuerteventurán?",
+          "paragraphs": [
+            "Egy jól összerakott útvonalban észak, nyugat és dél is helyet kap, így a sziget teljes arcát megismerheted.",
+            "Ezek együtt adják Fuerteventura hangulatát: üdülőövezetek, nyugodt öblök, sportos strandok és vad tájak."
+          ],
+          "bullets": [
+            "Észak: Corralejo + dűnék",
+            "Nyugat: El Cotillo lagúnák",
+            "Dél: Costa Calma + Sotavento",
+            "Külön nap: Jandía-félsziget, kilátópontok, Cofete környéke"
+          ]
+        },
+        {
+          "id": "freedom",
+          "title": "Autóbérlés Fuerteventurán: a szabadság kulcsa",
+          "paragraphs": [
+            "A sziget élménye nem csak a strandokról szól, hanem arról is, hogy nem kell menetrendet nézned, nem vagy másokhoz kötve, és akkor indulsz, amikor szeretnél.",
+            "Akár a reptérről indulnál, akár a szállásodnál vennéd át az autót, a lényeg ugyanaz: egy jól megválasztott bérautóval a sziget legszebb strandjai nem elszórt pontok a térképen, hanem egy összefüggő, élményekkel teli útvonal részei lesznek."
+          ],
+          "closing": "Ha Fuerteventurára utazol, az egyik legjobb döntésed az lesz, hogy már az elején gondoskodsz a megfelelő autóról."
+        }
+      ],
+      "cta": {
+        "title": "Indulj el a strandok nyomában bérautóval!",
+        "paragraphs": [
+          "Fedezd fel Corralejo dűnéit, az El Cotillo lagúnákat és a déli, sportos partszakaszokat saját ritmusodban.",
+          "<strong>Zodiacs Rent a Car</strong> – autóbérlés Fuerteventurán egyszerűen, gyors ügyintézéssel, megbízható autókkal és helyi tippekkel."
+        ],
+        "buttons": [
+          {
+            "label": "Nézd meg bérautóinkat",
+            "href": "/{locale}/cars"
+          },
+          {
+            "label": "Foglalj online néhány kattintással",
+            "href": "/{locale}/inquire"
+          }
+        ]
+      }
+    },
     "fuerteventura-latnivalok-autoval": {
       "meta": {
         "title": "Fuerteventura látnivalók autóval – 3 kihagyhatatlan hely bérautóval | Zodiacs Rent a Car",

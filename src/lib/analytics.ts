@@ -60,17 +60,29 @@ type FormSubmissionPayload = {
   [key: string]: unknown;
 };
 
+const GOOGLE_ADS_CONVERSION_EVENT = 'conversion_event_submit_lead_form';
+
 export const trackFormSubmission = ({
   formId,
   status,
   ...rest
 }: FormSubmissionPayload) =>
-  trackCustomEvent('form_submission', {
-    event_category: 'form',
-    form_id: formId,
-    form_status: status,
-    ...rest,
-  });
+  (() => {
+    trackCustomEvent('form_submission', {
+      event_category: 'form',
+      form_id: formId,
+      form_status: status,
+      ...rest,
+    });
+
+    if (status === 'success') {
+      pushToDataLayer({
+        event: GOOGLE_ADS_CONVERSION_EVENT,
+        form_id: formId,
+        ...rest,
+      });
+    }
+  })();
 
 export const trackFormStart = (
   formId: string,
