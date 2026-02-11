@@ -1,5 +1,5 @@
 import { ContactQuoteRecord } from '@/lib/contactQuotes';
-import { RentFormValues } from '@/schemas/RentSchema';
+import { PAYMENT_METHOD_VALUES, RentFormValues } from '@/schemas/RentSchema';
 import { useTranslations } from 'next-intl';
 import { UseFormReturn } from 'react-hook-form';
 import { Checkbox } from '../ui/checkbox';
@@ -10,6 +10,14 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '../ui/select';
 
 export default function Consents({
   form,
@@ -19,7 +27,10 @@ export default function Consents({
   quotePrefill?: ContactQuoteRecord | null;
 }) {
   const t = useTranslations('RentForm');
-  const insurancePriceRaw = quotePrefill?.bookingRequestData?.insurance;
+  const bookingData = Array.isArray(quotePrefill?.bookingRequestData)
+    ? quotePrefill?.bookingRequestData[0]
+    : quotePrefill?.bookingRequestData;
+  const insurancePriceRaw = bookingData?.insurance;
 
   const insurancePriceText =
     typeof insurancePriceRaw === 'string' ? insurancePriceRaw.trim() : '';
@@ -61,6 +72,7 @@ export default function Consents({
           </FormItem>
         )}
       />
+
       {Boolean(insuranceOptIn) ? (
         <div className='rounded-2xl border border-amber-500/40 bg-amber-50/90 px-4 py-3 text-sm text-amber-900 shadow-sm dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-100'>
           {t('sections.booking.insuranceDepositNotice')}

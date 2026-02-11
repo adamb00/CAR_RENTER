@@ -1,9 +1,9 @@
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
-import type { Car, CarColor } from '@/lib/cars';
-import { CAR_COLOR_SWATCH } from '@/lib/cars';
+import type { Car, CarColor } from '@/lib/cars-shared';
+import { CAR_COLOR_SWATCH } from '@/lib/cars-shared';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
 
-import { RentFormValues } from '@/schemas/RentSchema';
+import { PAYMENT_METHOD_VALUES, RentFormValues } from '@/schemas/RentSchema';
 import { enUS } from 'date-fns/locale';
 import { useMessages, useTranslations } from 'next-intl';
 import React from 'react';
@@ -28,7 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import { EXTRA_VALUES } from '@/lib/constants';
+import { EXTRA_VALUES, RENTAL_DAYS_OPTIONS } from '@/lib/constants';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;
@@ -111,7 +111,7 @@ export default function BaseDetails({
         value,
         label: t(`extras.options.${value}`),
       })),
-    [t]
+    [t],
   );
 
   const dateRangePickerMessages = (
@@ -148,7 +148,7 @@ export default function BaseDetails({
           </div>
         </div>
       ) : null}
-      <div className='grid gap-6 lg:grid-cols-3'>
+      <div className='grid gap-6 lg:grid-cols-4'>
         <div className='lg:col-span-1'>
           <FormField
             control={form.control}
@@ -208,6 +208,39 @@ export default function BaseDetails({
         <div className='lg:col-span-1'>
           <FormField
             control={form.control}
+            name='rentalDays'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='text-sm font-medium'>
+                  {t('rentalDays.label')}
+                </FormLabel>
+                <FormControl>
+                  <Select
+                    value={field.value ? String(field.value) : undefined}
+                    onValueChange={(value) => field.onChange(Number(value))}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('rentalDays.placeholder')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {RENTAL_DAYS_OPTIONS.map((day) => (
+                          <SelectItem key={day} value={String(day)}>
+                            {day}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className='lg:col-span-1'>
+          <FormField
+            control={form.control}
             name='adults'
             render={({ field }) => (
               <FormItem>
@@ -229,7 +262,7 @@ export default function BaseDetails({
                             <SelectItem key={num} value={String(num)}>
                               {num}
                             </SelectItem>
-                          )
+                          ),
                         )}
                       </SelectGroup>
                     </SelectContent>
@@ -241,7 +274,7 @@ export default function BaseDetails({
           />
         </div>
       </div>
-      <div className='grid gap-4 md:grid-cols-2'>
+      <div className='grid gap-4 md:grid-cols-3'>
         <FormField
           control={form.control}
           name={'delivery.arrivalFlight'}
@@ -255,7 +288,7 @@ export default function BaseDetails({
                 <FormControl>
                   <Input
                     placeholder={t(
-                      'sections.delivery.fields.arrivalFlight.placeholder'
+                      'sections.delivery.fields.arrivalFlight.placeholder',
                     )}
                     value={value}
                     onChange={(event) => field.onChange(event.target.value)}
@@ -279,11 +312,52 @@ export default function BaseDetails({
                 <FormControl>
                   <Input
                     placeholder={t(
-                      'sections.delivery.fields.departureFlight.placeholder'
+                      'sections.delivery.fields.departureFlight.placeholder',
                     )}
                     value={value}
                     onChange={(event) => field.onChange(event.target.value)}
                   />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <FormField
+          control={form.control}
+          name={'consents.paymentMethod'}
+          render={({ field }) => {
+            const paymentMethodValue =
+              typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem className='max-w-full'>
+                <FormLabel className='text-sm font-medium'>
+                  {t('sections.booking.paymentMethod.label')}
+                </FormLabel>
+                <FormControl>
+                  <Select
+                    value={paymentMethodValue || undefined}
+                    onValueChange={(value) => field.onChange(value)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue
+                        placeholder={t(
+                          'sections.booking.paymentMethod.placeholder',
+                        )}
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {PAYMENT_METHOD_VALUES.map((value) => (
+                          <SelectItem key={value} value={value}>
+                            {t(
+                              `sections.booking.paymentMethod.options.${value}`,
+                            )}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </FormControl>
                 <FormMessage />
               </FormItem>

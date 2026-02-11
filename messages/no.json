@@ -1309,6 +1309,10 @@
         "dateRange": {
           "label": "Leieperiode"
         },
+        "rentalDays": {
+          "label": "Antall dager",
+          "placeholder": "Velg antall dager"
+        },
         "arrivalFlight": {
           "label": "Ankommende flynummer (valgfritt)",
           "placeholder": "f.eks. FR1234"
@@ -1353,6 +1357,7 @@
         "termsRequired": "Du må godta de generelle vilkårene",
         "rentalStartRequired": "Velg startdato for leien",
         "rentalEndRequired": "Velg sluttdato for leien",
+        "rentalDaysRequired": "Velg antall dager",
         "arrivalFlightRequired": "Oppgi ankommende flynummer",
         "departureFlightRequired": "Oppgi flynummer for hjemreisen"
       }
@@ -1679,6 +1684,10 @@
     "rentalPeriod": {
       "label": "Leieperiode"
     },
+    "rentalDays": {
+      "label": "Antall dager",
+      "placeholder": "Velg antall dager"
+    },
     "dateRangePicker": {
       "cancel": "Avbryt",
       "apply": "Lagre"
@@ -1694,7 +1703,17 @@
         "insuranceCheckbox": "Jeg ønsker å legge til full kaskoforsikring (ingen depositum kreves)",
         "insuranceDepositNotice": "Med full kaskoforsikring kreves det ikke depositum.",
         "insurancePriceLabel": "Forsikringspris: {price}",
-        "insurancePricePending": "Vi informerer deg om forsikringsprisen på e-post."
+        "insurancePricePending": "Vi informerer deg om forsikringsprisen på e-post.",
+        "paymentMethod": {
+          "label": "Betalingsmåte",
+          "placeholder": "Velg betalingsmåte",
+          "options": {
+            "advance_transfer": "Bankoverføring på forhånd",
+            "cash_on_pickup": "Kontant ved henting",
+            "card_on_pickup": "Kort ved henting",
+            "instant_transfer_on_pickup": "Umiddelbar overføring ved henting"
+          }
+        }
       },
       "children": {
         "title": "Barn som reisende",
@@ -1882,10 +1901,11 @@
         },
         "fields": {
           "placeType": {
-            "label": "Type sted",
-            "placeholder": "Velg sted",
-            "accommodation": "Overnattingssted",
-            "airport": "Flyplass"
+            "label": "Hentested",
+            "placeholder": "Velg hentested",
+            "airport": "Henting på flyplassen",
+            "accommodation": "Henting på hotellet",
+            "office": "Henting på kontoret"
           },
           "arrivalFlight": {
             "label": "Ankommende flynummer",
@@ -1972,7 +1992,7 @@
       "startTooLate": "Startdato kan maksimalt være innen ett år",
       "endBeforeStart": "Sluttdato kan ikke være før startdato",
       "endTooLate": "Sluttdato kan maksimalt være innen ett år",
-      "deliveryPlaceTypeRequired": "Velg om du oppgir adresse til overnattingssted eller flyplass",
+      "deliveryPlaceTypeRequired": "Velg hentested",
       "deliveryFieldRequired": "Påkrevd felt",
       "invalidAdults": "Minst én voksen er nødvendig",
       "adultsInvalid": "Oppgi antall voksne passasjerer"
@@ -1989,6 +2009,9 @@
           "beforeStart": "Sluttdato kan ikke være før startdato",
           "tooLate": "Sluttdato kan maksimalt være innen ett år"
         }
+      },
+      "rentalDays": {
+        "required": "Velg antall dager"
       },
       "adults": {
         "min": "Minst én voksen er nødvendig"
@@ -2107,7 +2130,7 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Velg om du oppgir adresse til overnattingssted eller flyplass"
+          "required": "Velg hentested"
         },
         "arrivalFlight": {
           "required": "Oppgi ankommende flynummer"
@@ -2139,6 +2162,9 @@
         },
         "terms": {
           "required": "For å fullføre bestillingen må du godta de generelle vilkårene"
+        },
+        "paymentMethod": {
+          "required": "Velg betalingsmåte"
         }
       }
     }
@@ -2467,9 +2493,11 @@
       "intro": "Vi har mottatt informasjonen og kontakter deg snart for bekreftelse.",
       "footerNote": "Hvis du må endre opplysningene, svar på denne e-posten.",
       "ctaLabel": "Fortsett til nettstedet for å fullføre bestillingen",
+      "ctaLabelFinalized": "Fortsett til nettstedet",
       "rows": {
         "humanId": "Bestillingsreferanse",
         "period": "Periode",
+        "rentalDays": "Antall dager",
         "adults": "Voksne",
         "children": "Barn",
         "extras": "Ekstra",
@@ -2510,6 +2538,7 @@
         "email": "E-post",
         "phone": "Telefon",
         "period": "Periode",
+        "rentalDays": "Antall dager",
         "preferredChannel": "Foretrukket kanal",
         "arrivalFlight": "Ankomstfly",
         "departureFlight": "Returfly",

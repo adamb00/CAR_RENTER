@@ -11,7 +11,7 @@ import { prisma } from '@/lib/prisma';
 import { appendRentUpdateLog } from '@/lib/rentUpdateLog';
 import {
   CONTACT_STATUS_QUOTE_ACCEPTED,
-  RENT_STATUS_FORM_SUBMITTED,
+  RENT_STATUS_NEW,
 } from '@/lib/requestStatus';
 import { resolveLocale } from '@/lib/seo/seo';
 import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
@@ -50,13 +50,16 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
       address.doorNumber,
     ]
       .filter(
-        (segment) => typeof segment === 'string' && segment.trim().length > 0
+        (segment) => typeof segment === 'string' && segment.trim().length > 0,
       )
       .map((segment) => (segment as string).trim());
     return parts.length > 0 ? parts.join(', ') : 'n/a';
   };
 
-  const normalizeRowValue = (value?: string | null): string => {
+  const normalizeRowValue = (value?: string | number | null): string => {
+    if (typeof value === 'number') {
+      return Number.isFinite(value) ? String(value) : 'n/a';
+    }
     if (typeof value === 'string') {
       const trimmed = value.trim();
       return trimmed.length > 0 ? trimmed : 'n/a';
@@ -97,6 +100,9 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     if (type === 'accommodation') {
       return tRentForm('sections.delivery.fields.placeType.accommodation');
     }
+    if (type === 'office') {
+      return tRentForm('sections.delivery.fields.placeType.office');
+    }
     return type;
   };
 
@@ -105,6 +111,11 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     const parsed = new Date(value);
     if (Number.isNaN(parsed.getTime())) return null;
     return parsed.toISOString();
+  };
+
+  const normalizeRentalDays = (value?: number | null): number | null => {
+    if (typeof value !== 'number') return null;
+    return Number.isFinite(value) && value > 0 ? value : null;
   };
 
   const computeReminderDate = (value?: string | null): Date | undefined => {
@@ -118,12 +129,12 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
   };
 
   const requestedPeriod = `${formatFriendlyDate(
-    validatedFields.data.rentalPeriod.startDate
+    validatedFields.data.rentalPeriod.startDate,
   )} → ${formatFriendlyDate(validatedFields.data.rentalPeriod.endDate)}`;
 
   let rentRecordId: string | null = rentIdFromPayload;
   const rentReminderAt = computeReminderDate(
-    validatedFields.data.rentalPeriod.startDate
+    validatedFields.data.rentalPeriod.startDate,
   );
 
   if (isModifyRequest && rentIdFromPayload) {
@@ -159,13 +170,14 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           contactPhone: existingRent.contactPhone,
           rentalStart: existingRent.rentalStart,
           rentalEnd: existingRent.rentalEnd,
-        }
+        },
       );
       const updatedMarker = appendRentUpdateLog(existingRent.updated ?? null, {
         action: 'self-service:modify',
         rentId: rentIdFromPayload,
         changes: rentChanges,
       });
+
       await prisma.rentRequest.update({
         where: { id: rentIdFromPayload },
         data: {
@@ -177,6 +189,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           contactPhone,
           rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
           rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
+          rentalDays: normalizeRentalDays(validatedFields.data.rentalDays),
           updated: updatedMarker,
           payload: validatedFields.data,
         },
@@ -220,7 +233,8 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           contactPhone,
           rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
           rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
-          status: RENT_STATUS_FORM_SUBMITTED,
+          rentalDays: normalizeRentalDays(validatedFields.data.rentalDays),
+          status: RENT_STATUS_NEW,
           updated: null,
           payload: validatedFields.data,
         },
@@ -250,18 +264,21 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
       });
 
       if (validatedFields.data.quoteId) {
+        console.log('val', validatedFields.data);
+
         try {
           await prisma.contactQuote.update({
             where: { id: validatedFields.data.quoteId },
             data: {
               status: CONTACT_STATUS_QUOTE_ACCEPTED,
+              offerAccepted: validatedFields.data.offer ?? null,
               updated: 'RentAction',
             },
           });
         } catch (updateQuoteError) {
           console.error(
             'Failed to mark contact quote as done',
-            updateQuoteError
+            updateQuoteError,
           );
         }
       }
@@ -272,8 +289,9 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
 
   const formData = validatedFields.data;
   const period = `${formatFriendlyDate(
-    formData.rentalPeriod.startDate
+    formData.rentalPeriod.startDate,
   )} → ${formatFriendlyDate(formData.rentalPeriod.endDate)}`;
+  const rentalDaysValue = formData.rentalDays ?? 'n/a';
   const extrasLabel = formatExtrasLabel(formData.extras);
   const adultsCount =
     formData.adults !== undefined && formData.adults !== null
@@ -288,7 +306,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
     primaryDriver?.firstName_1,
     primaryDriver?.lastName_1,
   ].filter(
-    (segment) => typeof segment === 'string' && segment.trim().length > 0
+    (segment) => typeof segment === 'string' && segment.trim().length > 0,
   );
   const driverName =
     driverNameSegments.length > 0 ? driverNameSegments.join(' ') : 'n/a';
@@ -312,7 +330,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
       : null;
   const carNameValue = selectedCar
     ? `${selectedCar.manufacturer} ${selectedCar.model}`
-    : formData.carId ?? 'n/a';
+    : (formData.carId ?? 'n/a');
 
   await sendMail({
     to: process.env.MAIL_USER || 'info@zodiacsrentacar.com',
@@ -329,6 +347,7 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
 
   const emailRowData = [
     { key: 'period', value: period },
+    { key: 'rentalDays', value: rentalDaysValue },
     { key: 'adults', value: adultsCount },
     { key: 'children', value: childrenCount },
     { key: 'extras', value: extrasLabel },
@@ -409,7 +428,7 @@ const isRentFormValues = (value: unknown): value is RentFormValues => {
 function summarizeRentChanges(
   previous: RentFormValues | null,
   next: RentFormValues,
-  fallback: RentSnapshotFallbacks
+  fallback: RentSnapshotFallbacks,
 ): RentChangeMap {
   const previousRecord = flattenRentForm(previous);
   applyFallbackValues(previousRecord, fallback);
@@ -495,7 +514,7 @@ function flattenValue(value: unknown, path: string, record: NormalizedRecord) {
 
 function applyFallbackValues(
   record: NormalizedRecord,
-  fallback: RentSnapshotFallbacks
+  fallback: RentSnapshotFallbacks,
 ) {
   const apply = (key: string, value: unknown) => {
     const normalized = normalizeValue(value);

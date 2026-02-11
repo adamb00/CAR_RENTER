@@ -650,13 +650,7 @@
       {
         "title": "ÁSZF – szerződési feltételek",
         "description": "A hivatalos szerződési feltételek (GTC) Fuerteventurán és Lanzarotén.",
-        "keywords": [
-          "ászf",
-          "gtc",
-          "szerződés",
-          "jogi",
-          "lanzarote"
-        ],
+        "keywords": ["ászf", "gtc", "szerződés", "jogi", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1309,6 +1303,10 @@
         "dateRange": {
           "label": "Bérlés időtartama"
         },
+        "rentalDays": {
+          "label": "Napok száma",
+          "placeholder": "Válaszd ki a napok számát"
+        },
         "arrivalFlight": {
           "label": "Érkező járatszám (opcionális)",
           "placeholder": "pl. FR1234"
@@ -1353,6 +1351,7 @@
         "termsRequired": "Az ÁSZF elfogadása kötelező",
         "rentalStartRequired": "Válaszd ki a bérlés kezdő napját",
         "rentalEndRequired": "Válaszd ki a bérlés befejező napját",
+        "rentalDaysRequired": "Kérjük válaszd ki a napok számát",
         "arrivalFlightRequired": "Add meg az érkező járat számát",
         "departureFlightRequired": "Add meg a visszaút járatszámát"
       }
@@ -1679,6 +1678,10 @@
     "rentalPeriod": {
       "label": "Bérlési időszak"
     },
+    "rentalDays": {
+      "label": "Napok száma",
+      "placeholder": "Válaszd ki a napok számát"
+    },
     "dateRangePicker": {
       "cancel": "Mégse",
       "apply": "Mentés"
@@ -1694,7 +1697,17 @@
         "insuranceCheckbox": "Szeretném igénybe venni a teljes körű biztosítást (nem szükséges kaució)",
         "insuranceDepositNotice": "Teljes körű biztosítás választása esetén nem kérünk kauciót.",
         "insurancePriceLabel": "A biztosítás díja: {price}",
-        "insurancePricePending": "A biztosítás díjáról e-mailben tájékoztatunk."
+        "insurancePricePending": "A biztosítás díjáról e-mailben tájékoztatunk.",
+        "paymentMethod": {
+          "label": "Fizetési mód",
+          "placeholder": "Válaszd ki a fizetési módot",
+          "options": {
+            "advance_transfer": "Előre utalás",
+            "cash_on_pickup": "Készpénz átvételkor",
+            "card_on_pickup": "Bankkártya átvételkor",
+            "instant_transfer_on_pickup": "Azonnali utalás átvételkor"
+          }
+        }
       },
       "children": {
         "title": "Gyermek utasok",
@@ -1738,18 +1751,18 @@
             "label": "Ország",
             "placeholder": "Ország"
           },
-    "street": {
-      "label": "Utca",
-      "placeholder": "Utca"
-    },
-    "streetType": {
-      "label": "Közterület (opcionális)",
-      "placeholder": "Pl. tér, köz, park"
-    },
-    "doorNumber": {
-      "label": "Házszám",
-      "placeholder": "Házszám"
-    },
+          "street": {
+            "label": "Utca",
+            "placeholder": "Utca"
+          },
+          "streetType": {
+            "label": "Közterület (opcionális)",
+            "placeholder": "Pl. tér, köz, park"
+          },
+          "doorNumber": {
+            "label": "Házszám",
+            "placeholder": "Házszám"
+          },
           "dateOfBirth": {
             "label": "Születési dátum",
             "placeholder": "Válassz dátumot"
@@ -1882,10 +1895,11 @@
         },
         "fields": {
           "placeType": {
-            "label": "Helyszín típusa",
-            "placeholder": "Válassz helyszínt",
-            "accommodation": "Szállás",
-            "airport": "Repülőtér"
+            "label": "Átvétel helye",
+            "placeholder": "Válassz átvételi helyet",
+            "airport": "Átvétel a reptéren",
+            "accommodation": "Átvétel a szállodánál",
+            "office": "Átvétel az irodánál"
           },
           "arrivalFlight": {
             "label": "Érkező járatszám",
@@ -1972,7 +1986,7 @@
       "startTooLate": "A kezdődátum legfeljebb egy éven belül lehet",
       "endBeforeStart": "A záródátum nem lehet a kezdődátum előtt",
       "endTooLate": "A záródátum legfeljebb egy éven belül lehet",
-      "deliveryPlaceTypeRequired": "Válaszd ki, hogy szállás vagy repülőtér címét adod meg",
+      "deliveryPlaceTypeRequired": "Válaszd ki az átvétel helyét",
       "deliveryFieldRequired": "Kötelező mező",
       "invalidAdults": "Legalább egy felnőtt szükséges",
       "adultsInvalid": "Kérjük add meg a felnőtt utasok számát"
@@ -1989,6 +2003,9 @@
           "beforeStart": "A záródátum nem lehet a kezdődátum előtt",
           "tooLate": "A záródátum legfeljebb egy éven belül lehet"
         }
+      },
+      "rentalDays": {
+        "required": "A napok számának megadása kötelező"
       },
       "adults": {
         "min": "Legalább egy felnőtt szükséges"
@@ -2107,7 +2124,7 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Válaszd ki, hogy szállás vagy repülőtér címét adod meg"
+          "required": "Válaszd ki az átvétel helyét"
         },
         "arrivalFlight": {
           "required": "Add meg az érkező járatszámot"
@@ -2139,6 +2156,9 @@
         },
         "terms": {
           "required": "A foglaláshoz el kell fogadnod az Általános Szerződési Feltételeket"
+        },
+        "paymentMethod": {
+          "required": "A fizetési mód kiválasztása kötelező"
         }
       }
     }
@@ -2467,9 +2487,11 @@
       "intro": "Megkaptuk a részleteket, hamarosan felvesszük Önnel a kapcsolatot a visszaigazoláshoz.",
       "footerNote": "Ha módosítani szeretné a megadott adatokat, válaszoljon erre az e-mailre.",
       "ctaLabel": "Tovább a weboldalra a foglalás véglegesítéséhez",
+      "ctaLabelFinalized": "Tovább a weboldalra",
       "rows": {
         "humanId": "Foglalási azonosító",
         "period": "Időszak",
+        "rentalDays": "Napok száma",
         "adults": "Felnőttek",
         "children": "Gyermekek",
         "extras": "Extrák",
@@ -2510,6 +2532,7 @@
         "email": "E-mail",
         "phone": "Telefon",
         "period": "Időszak",
+        "rentalDays": "Napok száma",
         "preferredChannel": "Kapcsolatfelvétel módja",
         "arrivalFlight": "Érkezési járat",
         "departureFlight": "Hazautazó járat",
@@ -2524,8 +2547,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Foglalás kezelése – Zodiacs Rent a Car",

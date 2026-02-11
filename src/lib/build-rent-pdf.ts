@@ -22,8 +22,9 @@ const DELIVERY_TYPE_LABELS: Record<
   Exclude<DeliveryPlaceType, undefined>,
   string
 > = {
-  accommodation: 'Szállás',
-  airport: 'Repülőtér',
+  accommodation: 'Átvétel a szállodánál',
+  airport: 'Átvétel a reptéren',
+  office: 'Átvétel az irodánál',
 };
 
 const FONT_REGULAR_PATH = path.join(
@@ -127,6 +128,7 @@ export async function buildRentPdf(data: RentData): Promise<Buffer> {
   addSectionTitle('Bérlés adatai');
   addField('Kezdés dátuma', formatDate(data.rentalPeriod.startDate));
   addField('Zárás dátuma', formatDate(data.rentalPeriod.endDate));
+  addField('Napok száma', formatOptional(data.rentalDays));
   addField('Felnőttek száma', data.adults);
   addField(
     'Gyermekek száma',
@@ -171,7 +173,7 @@ export async function buildRentPdf(data: RentData): Promise<Buffer> {
   }
 
   if (data.delivery) {
-    addSectionTitle('Kiszállítás');
+    addSectionTitle('Átvétel');
     addField(
       'Típus',
       data.delivery.placeType

@@ -35,6 +35,8 @@ export default async function RentThankYouPage({
     params,
     searchParams,
   ]);
+
+  console.log(resolvedSearchParams);
   const resolvedLocale = resolveLocale(locale);
   const rentIdRaw = resolvedSearchParams?.rentId;
   const rentId = Array.isArray(rentIdRaw) ? rentIdRaw[0] : rentIdRaw;
@@ -60,15 +62,14 @@ export default async function RentThankYouPage({
         },
       });
 
-      if (rentRecord) {
+      if (rentRecord && resolvedSearchParams.finalize === 'true') {
         const updateResult = await prisma.rentRequest.updateMany({
           where: { id: rentId, status: { not: RENT_STATUS_ACCEPTED } },
           data: { status: RENT_STATUS_ACCEPTED, updated: 'rent-thank-you' },
         });
-
-        if (updateResult.count > 0) {
-          await sendRentCompletionEmail(rentRecord, resolvedLocale);
-        }
+        // if (updateResult.count > 0) {
+        //   await sendRentCompletionEmail(rentRecord, resolvedLocale);
+        // }
       }
     } catch (error) {
       console.error('Failed to finalize rent request', error);
@@ -85,15 +86,26 @@ export default async function RentThankYouPage({
       <h1 className='text-4xl sm:text-5xl md:text-6xl font-semibold text-sky-dark dark:text-amber-light'>
         {tEmails('rent.title')}
       </h1>
-      <p className='text-lg sm:text-xl text-grey-dark-3 dark:text-grey-dark-2 max-w-3xl mx-auto'>
-        {tEmails('rent.intro')}
-      </p>
-      <Link
-        href={`/${resolvedLocale}`}
-        className='inline-flex items-center justify-center rounded-2xl bg-sky-dark px-6 py-3 text-base font-semibold text-white transition hover:bg-sky-dark/80 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-dark/60'
-      >
-        {tEmails('rent.ctaLabel')}
-      </Link>
+      {resolvedSearchParams.finalize !== 'true' ? (
+        <>
+          <p className='text-lg sm:text-xl text-grey-dark-3 dark:text-grey-dark-2 max-w-3xl mx-auto'>
+            {tEmails('rent.intro')}
+          </p>
+          <Link
+            href={`/${resolvedLocale}`}
+            className='inline-flex items-center justify-center rounded-2xl bg-sky-dark px-6 py-3 text-base font-semibold text-white transition hover:bg-sky-dark/80 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-dark/60'
+          >
+            {tEmails('rent.ctaLabel')}
+          </Link>
+        </>
+      ) : (
+        <Link
+          href={`/${resolvedLocale}`}
+          className='inline-flex items-center justify-center rounded-2xl bg-sky-dark px-6 py-3 text-base font-semibold text-white transition hover:bg-sky-dark/80 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-dark/60'
+        >
+          {tEmails('rent.ctaLabelFinalized')}
+        </Link>
+      )}
     </div>
   );
 }

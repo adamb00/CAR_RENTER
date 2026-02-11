@@ -6,6 +6,7 @@ export type ContactQuotePayload = {
   preferredChannel: 'email' | 'phone' | 'whatsapp' | 'viber';
   rentalStart?: string;
   rentalEnd?: string;
+  rentalDays?: number;
   arrivalFlight?: string | null;
   departureFlight?: string | null;
   partySize?: string;
@@ -13,7 +14,7 @@ export type ContactQuotePayload = {
   carId?: string;
   extras?: string[];
   delivery?: {
-    placeType?: 'accommodation' | 'airport';
+    placeType?: 'accommodation' | 'airport' | 'office';
     locationName?: string;
     address?: {
       country?: string;

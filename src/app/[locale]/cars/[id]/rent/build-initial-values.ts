@@ -10,6 +10,8 @@ export const buildInitialValues = (
 ): RentFormValues => {
   const adultsFromQuote = parsePositiveInt(quote?.partySize);
   const childrenCount = parsePositiveInt(quote?.children);
+  const rentalDaysFromQuote =
+    typeof quote?.rentalDays === 'number' ? quote.rentalDays : undefined;
   const childrenArray =
     childrenCount && childrenCount > 0
       ? Array.from({ length: childrenCount }).map(() => ({
@@ -32,6 +34,7 @@ export const buildInitialValues = (
       startDate: quote?.rentalStart ?? '',
       endDate: quote?.rentalEnd ?? '',
     },
+    rentalDays: rentalDaysFromQuote,
     driver: [
       {
         ...driver,
@@ -80,6 +83,7 @@ export const buildInitialValues = (
       privacy: false,
       terms: false,
       insurance: false,
+      paymentMethod: '',
     },
   };
 };

@@ -1,5 +1,5 @@
 export type DeliveryInfo = {
-  placeType?: 'accommodation' | 'airport';
+  placeType?: 'accommodation' | 'airport' | 'office';
   locationName?: string;
   address?: {
     country?: string;

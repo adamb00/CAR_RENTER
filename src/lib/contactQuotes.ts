@@ -1,6 +1,23 @@
 import { prisma } from '@/lib/prisma';
 import { type ContactStatus } from '@/lib/requestStatus';
 
+type BookingRequestRecord = {
+  carId?: string;
+  locale?: string;
+  carName?: string;
+  deposit?: string;
+  adminName?: string;
+  extrasFee?: string;
+  insurance?: string;
+  rentalEnd?: string;
+  rentalFee?: string;
+  bookingLink?: string;
+  contactName?: string;
+  deliveryFee?: string;
+  rentalStart?: string;
+  contactEmail?: string;
+};
+
 export type ContactQuoteRecord = {
   id: string;
   locale: string;
@@ -11,6 +28,7 @@ export type ContactQuoteRecord = {
   extras: string[];
   rentalStart?: string | null;
   rentalEnd?: string | null;
+  rentalDays?: number | null;
   arrivalFlight?: string | null;
   departureFlight?: string | null;
   partySize?: string | null;
@@ -28,22 +46,7 @@ export type ContactQuoteRecord = {
     };
   };
   status: ContactStatus;
-  bookingRequestData?: {
-    carId?: string;
-    locale?: string;
-    carName?: string;
-    deposit?: string;
-    adminName?: string;
-    extrasFee?: string;
-    insurance?: string;
-    rentalEnd?: string;
-    rentalFee?: string;
-    bookingLink?: string;
-    contactName?: string;
-    deliveryFee?: string;
-    rentalStart?: string;
-    contactEmail?: string;
-  };
+  bookingRequestData?: BookingRequestRecord | BookingRequestRecord[];
 };
 
 const toIsoString = (
@@ -109,24 +112,39 @@ const bookingRequestFields = [
 const normalizeBookingRequestData = (
   value: unknown
 ): ContactQuoteRecord['bookingRequestData'] => {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+  if (!value || typeof value !== 'object') {
     return undefined;
   }
 
-  type BookingRequestData = NonNullable<ContactQuoteRecord['bookingRequestData']>;
-  const candidate = value as Record<string, unknown>;
-  const normalized: BookingRequestData = {};
-  let hasValue = false;
+  const normalizeRecord = (
+    candidate: Record<string, unknown>
+  ): BookingRequestRecord | null => {
+    const normalized: BookingRequestRecord = {};
+    let hasValue = false;
 
-  for (const field of bookingRequestFields) {
-    const rawValue = candidate[field];
-    if (typeof rawValue === 'string') {
-      normalized[field] = rawValue;
-      hasValue = true;
+    for (const field of bookingRequestFields) {
+      const rawValue = candidate[field];
+      if (typeof rawValue === 'string') {
+        normalized[field] = rawValue;
+        hasValue = true;
+      }
     }
+
+    return hasValue ? normalized : null;
+  };
+
+  if (Array.isArray(value)) {
+    const items = value
+      .map((entry) =>
+        entry && typeof entry === 'object' && !Array.isArray(entry)
+          ? normalizeRecord(entry as Record<string, unknown>)
+          : null
+      )
+      .filter(Boolean) as BookingRequestRecord[];
+    return items.length > 0 ? items : undefined;
   }
 
-  return hasValue ? normalized : undefined;
+  return normalizeRecord(value as Record<string, unknown>) ?? undefined;
 };
 
 export async function getContactQuoteById(
@@ -143,8 +161,9 @@ export async function getContactQuoteById(
       preferredChannel: true,
       extras: true,
       status: true,
-      rentalStart: true,
-      rentalEnd: true,
+    rentalStart: true,
+    rentalEnd: true,
+    rentalDays: true,
       arrivalFlight: true,
       departureFlight: true,
       partySize: true,
@@ -170,6 +189,7 @@ export async function getContactQuoteById(
     extras: record.extras ?? [],
     rentalStart: toIsoString(record.rentalStart),
     rentalEnd: toIsoString(record.rentalEnd),
+    rentalDays: record.rentalDays ?? null,
     arrivalFlight: record.arrivalFlight ?? null,
     departureFlight: record.departureFlight ?? null,
     partySize: record.partySize ?? null,

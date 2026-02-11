@@ -9,6 +9,7 @@ export const SECTION_ORDER: (keyof RentFormValues)[] = [
   'invoice',
   'delivery',
   'rentalPeriod',
+  'rentalDays',
   'extras',
   'tax',
   'consents',
@@ -37,11 +38,12 @@ export const CHANNELS: PreferredChannel[] = [
 export const EXTRA_VALUES = [
   'szorfo_deszka_rogzito',
   'gyerekules',
-  'kiszallitas',
   'alap_csomag',
   'energia_csomag',
   'esti_erkezes_csomag',
 ] as const;
+
+export const RENTAL_DAYS_OPTIONS = Array.from({ length: 365 }, (_, i) => i + 1);
 
 const startOfToday = () => {
   const current = new Date();

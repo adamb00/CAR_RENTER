@@ -26,6 +26,10 @@ export const buildQuoteRequestSchema = ({
       preferredChannel: z.enum(CHANNELS),
       rentalStart: z.string().min(1, t('form.errors.rentalStartRequired')),
       rentalEnd: z.string().min(1, t('form.errors.rentalEndRequired')),
+      rentalDays: z
+        .coerce
+        .number({ message: t('form.errors.rentalDaysRequired') })
+        .min(1, t('form.errors.rentalDaysRequired')),
       arrivalFlight: z.string().optional(),
       departureFlight: z.string().optional(),
       partySize: z.string().optional(),
@@ -34,7 +38,9 @@ export const buildQuoteRequestSchema = ({
       extras: z.array(z.string()).default([]),
       delivery: z
         .object({
-          placeType: z.enum(['accommodation', 'airport']).optional(),
+          placeType: z
+            .enum(['accommodation', 'airport', 'office'])
+            .optional(),
           locationName: z.string().optional(),
           address: z
             .object({
@@ -57,11 +63,9 @@ export const buildQuoteRequestSchema = ({
       }),
     })
     .superRefine((val, ctx) => {
-      const hasDelivery =
-        Array.isArray(val.extras) && val.extras.includes('kiszallitas');
-      if (!hasDelivery) return;
+      const placeType = val.delivery?.placeType;
 
-      if (!val.delivery?.placeType) {
+      if (!placeType) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: tSchema('errors.deliveryPlaceTypeRequired'),
@@ -69,17 +73,22 @@ export const buildQuoteRequestSchema = ({
         });
       }
 
-      const address = val.delivery?.address ?? {};
-      (['country', 'postalCode', 'city'] as const).forEach((key) => {
-        const raw = address[key];
-        if (!raw || (typeof raw === 'string' && raw.trim().length === 0)) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: deliveryFieldRequiredMessage,
-            path: ['delivery', 'address', key],
-          });
-        }
-      });
+      const requiresAddress =
+        placeType === 'accommodation' || placeType === 'airport';
+
+      if (requiresAddress) {
+        const address = val.delivery?.address ?? {};
+        (['country', 'postalCode', 'city'] as const).forEach((key) => {
+          const raw = address[key];
+          if (!raw || (typeof raw === 'string' && raw.trim().length === 0)) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: deliveryFieldRequiredMessage,
+              path: ['delivery', 'address', key],
+            });
+          }
+        });
+      }
     });
 
 export type QuoteRequestSchema = ReturnType<typeof buildQuoteRequestSchema>;

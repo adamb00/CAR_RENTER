@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CAR_COLOR_SWATCH, type CarColor, getCars } from '@/lib/cars';
+import { CAR_COLOR_SWATCH, type CarColor } from '@/lib/cars-shared';
+import { getCars } from '@/lib/cars';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import CarImageCarousel from '@/components/cars/CarImageCarousel';
 import { Luggage, User } from 'lucide-react';

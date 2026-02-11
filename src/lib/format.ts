@@ -84,6 +84,9 @@ export const formatDeliveryType = (
       'sections.delivery.fields.placeType.accommodation'
     );
   }
+  if (type === 'office') {
+    return translateRentForm('sections.delivery.fields.placeType.office');
+  }
   return typeof type === 'string' && type.trim().length > 0 ? type : 'n/a';
 };
 
@@ -93,7 +96,12 @@ export const parseBookingData = (
   if (!raw || typeof raw !== 'object') {
     return {};
   }
-  const record = raw as Record<string, unknown>;
+  const record = Array.isArray(raw)
+    ? (raw[0] as Record<string, unknown> | undefined)
+    : (raw as Record<string, unknown>);
+  if (!record || typeof record !== 'object') {
+    return {};
+  }
   const result: Partial<Record<BookingDataKey, string>> = {};
   BOOKING_DATA_FIELDS.forEach((key) => {
     const value = record[key];

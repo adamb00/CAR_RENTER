@@ -65,6 +65,12 @@ export default async function RentPage({
   const resolvedLocale = resolveLocale(locale);
   const quoteIdRaw = resolvedSearchParams?.quoteId;
   const quoteId = Array.isArray(quoteIdRaw) ? quoteIdRaw[0] : quoteIdRaw;
+  const offerRaw = resolvedSearchParams?.offer;
+  const offerParam = Array.isArray(offerRaw) ? offerRaw[0] : offerRaw;
+  const offerIndex =
+    typeof offerParam === 'string' && offerParam.trim().length > 0
+      ? Number.parseInt(offerParam, 10)
+      : NaN;
   const isValidQuoteId =
     typeof quoteId === 'string' && /^[0-9a-fA-F-]{36}$/.test(quoteId ?? '');
 
@@ -141,14 +147,46 @@ export default async function RentPage({
     }
   }
 
+  const normalizedQuote =
+    quote && Array.isArray(quote.bookingRequestData)
+      ? (() => {
+          const offers = quote.bookingRequestData;
+          const safeIndex =
+            Number.isFinite(offerIndex) && offerIndex >= 0
+              ? offerIndex
+              : 0;
+          const selected = offers[safeIndex] ?? offers[0] ?? null;
+          return {
+            ...quote,
+            bookingRequestData: selected ?? undefined,
+          };
+        })()
+      : quote;
+
+  const selectedOfferCarId =
+    normalizedQuote &&
+    normalizedQuote.bookingRequestData &&
+    !Array.isArray(normalizedQuote.bookingRequestData)
+      ? normalizedQuote.bookingRequestData.carId
+      : undefined;
+
+  const canUseQuotePrefill = (() => {
+    if (!normalizedQuote) return false;
+    if (selectedOfferCarId) {
+      return selectedOfferCarId === car.id;
+    }
+    if (normalizedQuote.carId) {
+      return normalizedQuote.carId === car.id;
+    }
+    return true;
+  })();
+
   return (
     <NoSSR>
       <RentPageClient
         locale={resolvedLocale}
         car={{ id: car.id, seats: car.seats, colors: car.colors }}
-        quotePrefill={
-          quote && quote.carId && quote.carId !== car.id ? null : quote
-        }
+        quotePrefill={canUseQuotePrefill ? normalizedQuote : null}
         manageContext={
           rentId
             ? {

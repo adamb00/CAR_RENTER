@@ -1,4 +1,4 @@
-import { Car } from '@/lib/cars';
+import { Car } from '@/lib/cars-shared';
 import { ContactQuoteRecord } from '@/lib/contactQuotes';
 import { RentSchema } from '@/schemas/RentSchema';
 import { FieldValues } from 'react-hook-form';

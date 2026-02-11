@@ -21,11 +21,7 @@ import LegalConsents, {
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { usePersistRentForm } from '@/hooks/usePersistRentForm';
-import {
-  useSetContact,
-  useSetDelivery,
-  useSetInvoice,
-} from '@/hooks/useSetForm';
+import { useSetContact, useSetInvoice } from '@/hooks/useSetForm';
 import { useWatchForm } from '@/hooks/useWatchForm';
 import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
 import { createRentSchema } from '@/schemas/RentSchema';
@@ -38,6 +34,7 @@ import {
   RentFormValues,
   RentPageClientProps,
 } from './rent.types';
+import { useSearchParams } from 'next/navigation';
 
 export default function RentPageClient({
   locale,
@@ -61,6 +58,10 @@ export default function RentPageClient({
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isMissingFlightsDialogOpen, setMissingFlightsDialogOpen] =
     React.useState(false);
+
+  const searchParams = useSearchParams();
+
+  const offer = searchParams.get('offer');
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
   const defaultValues = React.useMemo(() => {
@@ -92,26 +93,18 @@ export default function RentPageClient({
         carId: id,
         enabled: !isModifyMode,
       }),
-      [id, isModifyMode, locale]
-    )
+      [id, isModifyMode, locale],
+    ),
   );
 
   const [placesReady, setPlacesReady] = React.useState(false);
   const { extrasSelected } = useWatchForm(form);
-
-  const isDeliveryRequired = React.useMemo(
-    () =>
-      Array.isArray(extrasSelected) && extrasSelected.includes('kiszallitas'),
-    [extrasSelected]
-  );
 
   useWindowWithGoogle(setPlacesReady);
 
   useSetContact(form, { enabled: isHydrated });
 
   useSetInvoice(form, { enabled: isHydrated });
-
-  useSetDelivery(form, isDeliveryRequired, { enabled: isHydrated });
 
   const hasAppliedQuotePrefill = React.useRef(false);
 
@@ -131,7 +124,7 @@ export default function RentPageClient({
 
   const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
     () => buildConsentItems({ locale, t }),
-    [locale, t]
+    [locale, t],
   );
 
   const createSubmitHandlerFn = useCreateSubmitHandler({
@@ -148,6 +141,7 @@ export default function RentPageClient({
       isModifyMode,
       manageRentId,
       quoteId: quotePrefill?.id ?? null,
+      offer: offer ? Number(offer) : 0,
       successMessage: t('toast.success'),
       errorMessage: t('toast.error'),
     },
@@ -204,11 +198,9 @@ export default function RentPageClient({
             <Invoice form={form} placesReady={placesReady} />
           </div>
 
-          {isDeliveryRequired && (
-            <div data-section='delivery' tabIndex={-1} className='scroll-mt-28'>
-              <Delivery form={form} placesReady={placesReady} />
-            </div>
-          )}
+          <div data-section='delivery' tabIndex={-1} className='scroll-mt-28'>
+            <Delivery form={form} placesReady={placesReady} />
+          </div>
 
           <div
             data-section='consents'

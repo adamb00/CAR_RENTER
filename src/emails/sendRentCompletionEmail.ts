@@ -27,7 +27,7 @@ const isRentPayload = (value: unknown): value is RentFormValues => {
 
 export async function sendRentCompletionEmail(
   rentRequest: RentCompletionRecord,
-  locale: string
+  locale: string,
 ) {
   if (!isRentPayload(rentRequest.payload)) {
     return;
@@ -46,12 +46,13 @@ export async function sendRentCompletionEmail(
 
   const carName = carInfo
     ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
-    : payload.carId ?? rentRequest.carId ?? 'n/a';
+    : (payload.carId ?? rentRequest.carId ?? 'n/a');
 
   const period = `${formatFriendlyDate(
     payload.rentalPeriod?.startDate,
-    locale
+    locale,
   )} → ${formatFriendlyDate(payload.rentalPeriod?.endDate, locale)}`;
+  const rentalDaysValue = String(payload.rentalDays ?? 'n/a');
   const adultsCount =
     payload.adults !== undefined && payload.adults !== null
       ? String(payload.adults)
@@ -65,7 +66,7 @@ export async function sendRentCompletionEmail(
     primaryDriver?.firstName_1,
     primaryDriver?.lastName_1,
   ].filter(
-    (segment) => typeof segment === 'string' && segment.trim().length > 0
+    (segment) => typeof segment === 'string' && segment.trim().length > 0,
   );
   const driverName =
     driverNameSegments.length > 0 ? driverNameSegments.join(' ') : 'n/a';
@@ -74,7 +75,7 @@ export async function sendRentCompletionEmail(
   const driverEmail = primaryDriver?.email ?? rentRequest.contactEmail;
   const deliveryType = formatDeliveryType(
     payload.delivery?.placeType,
-    tRentForm
+    tRentForm,
   );
   const deliveryLocationName = payload.delivery?.locationName ?? 'n/a';
   const deliveryAddress = formatAddress(payload.delivery?.address ?? undefined);
@@ -89,7 +90,7 @@ export async function sendRentCompletionEmail(
   const arrivalFlight = payload.delivery?.arrivalFlight ?? 'n/a';
   const departureFlight = payload.delivery?.departureFlight ?? 'n/a';
   const bookingData = parseBookingData(
-    rentRequest.contactQuote?.bookingRequestData
+    rentRequest.contactQuote?.bookingRequestData,
   );
 
   const rows: EmailRow[] = [
@@ -98,6 +99,10 @@ export async function sendRentCompletionEmail(
       value: normalizeRowValue(rentRequest.humanId ?? rentRequest.id),
     },
     { label: tEmails('rent.rows.period'), value: normalizeRowValue(period) },
+    {
+      label: tEmails('rent.rows.rentalDays'),
+      value: normalizeRowValue(rentalDaysValue),
+    },
     { label: tEmails('rent.rows.carModel'), value: normalizeRowValue(carName) },
     {
       label: tEmails('rent.rows.adults'),
@@ -114,13 +119,13 @@ export async function sendRentCompletionEmail(
     {
       label: tEmails('rent.rows.contactName'),
       value: normalizeRowValue(
-        payload.contact?.name ?? rentRequest.contactName
+        payload.contact?.name ?? rentRequest.contactName,
       ),
     },
     {
       label: tEmails('rent.rows.contactEmail'),
       value: normalizeRowValue(
-        payload.contact?.email ?? rentRequest.contactEmail
+        payload.contact?.email ?? rentRequest.contactEmail,
       ),
     },
     {

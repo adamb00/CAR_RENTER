@@ -1309,6 +1309,10 @@
         "dateRange": {
           "label": "Durée de la location"
         },
+        "rentalDays": {
+          "label": "Nombre de jours",
+          "placeholder": "Sélectionnez le nombre de jours"
+        },
         "arrivalFlight": {
           "label": "Numéro du vol d’arrivée (optionnel)",
           "placeholder": "ex. FR1234"
@@ -1353,6 +1357,7 @@
         "termsRequired": "L’acceptation des CGV est obligatoire",
         "rentalStartRequired": "Choisis la date de début de location",
         "rentalEndRequired": "Choisis la date de fin de location",
+        "rentalDaysRequired": "Veuillez sélectionner le nombre de jours",
         "arrivalFlightRequired": "Merci d’indiquer le numéro de vol d’arrivée",
         "departureFlightRequired": "Merci d’indiquer le numéro du vol retour"
       }
@@ -1679,6 +1684,10 @@
     "rentalPeriod": {
       "label": "Période de location"
     },
+    "rentalDays": {
+      "label": "Nombre de jours",
+      "placeholder": "Sélectionnez le nombre de jours"
+    },
     "dateRangePicker": {
       "cancel": "Annuler",
       "apply": "Enregistrer"
@@ -1694,7 +1703,17 @@
         "insuranceCheckbox": "Je souhaite ajouter l'assurance tous risques (aucune caution requise)",
         "insuranceDepositNotice": "Avec l'assurance tous risques, aucune caution n'est demandée.",
         "insurancePriceLabel": "Prix de l'assurance : {price}",
-        "insurancePricePending": "Nous vous communiquerons le prix de l'assurance par e-mail."
+        "insurancePricePending": "Nous vous communiquerons le prix de l'assurance par e-mail.",
+        "paymentMethod": {
+          "label": "Mode de paiement",
+          "placeholder": "Sélectionnez le mode de paiement",
+          "options": {
+            "advance_transfer": "Virement bancaire anticipé",
+            "cash_on_pickup": "Espèces à la remise",
+            "card_on_pickup": "Carte à la remise",
+            "instant_transfer_on_pickup": "Virement instantané à la remise"
+          }
+        }
       },
       "children": {
         "title": "Passagers enfants",
@@ -1882,10 +1901,11 @@
         },
         "fields": {
           "placeType": {
-            "label": "Type de lieu",
-            "placeholder": "Sélectionner un lieu",
-            "accommodation": "Hébergement",
-            "airport": "Aéroport"
+            "label": "Lieu de prise en charge",
+            "placeholder": "Sélectionnez le lieu de prise en charge",
+            "airport": "Prise en charge à l'aéroport",
+            "accommodation": "Prise en charge à l'hôtel",
+            "office": "Prise en charge au bureau"
           },
           "arrivalFlight": {
             "label": "Numéro du vol d’arrivée",
@@ -1972,7 +1992,7 @@
       "startTooLate": "La date de début doit être dans l’année à venir",
       "endBeforeStart": "La date de fin ne peut pas être avant la date de début",
       "endTooLate": "La date de fin doit être dans l’année à venir",
-      "deliveryPlaceTypeRequired": "Veuillez sélectionner si vous fournissez une adresse d’hébergement ou d’aéroport",
+      "deliveryPlaceTypeRequired": "Veuillez sélectionner le lieu de prise en charge",
       "deliveryFieldRequired": "Champ obligatoire",
       "invalidAdults": "Au moins un adulte est requis",
       "adultsInvalid": "Veuillez indiquer le nombre d’adultes"
@@ -1989,6 +2009,9 @@
           "beforeStart": "La date de fin ne peut pas être avant la date de début",
           "tooLate": "La date de fin doit être dans l’année à venir"
         }
+      },
+      "rentalDays": {
+        "required": "Veuillez sélectionner le nombre de jours"
       },
       "adults": {
         "min": "Au moins un adulte est requis"
@@ -2107,7 +2130,7 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Veuillez sélectionner si vous fournissez une adresse d’hébergement ou d’aéroport"
+          "required": "Veuillez sélectionner le lieu de prise en charge"
         },
         "arrivalFlight": {
           "required": "Veuillez indiquer le numéro du vol d’arrivée"
@@ -2139,6 +2162,9 @@
         },
         "terms": {
           "required": "Vous devez accepter les Conditions générales pour finaliser la réservation"
+        },
+        "paymentMethod": {
+          "required": "Sélectionnez un mode de paiement"
         }
       }
     }
@@ -2467,9 +2493,11 @@
       "intro": "Nous avons reçu vos informations et vous contacterons prochainement pour confirmer.",
       "footerNote": "Si vous devez mettre à jour des informations, répondez à cet e-mail.",
       "ctaLabel": "Continuer sur le site pour finaliser la réservation",
+      "ctaLabelFinalized": "Continuer sur le site",
       "rows": {
         "humanId": "Référence de réservation",
         "period": "Dates",
+        "rentalDays": "Nombre de jours",
         "adults": "Adultes",
         "children": "Enfants",
         "extras": "Extras",
@@ -2510,6 +2538,7 @@
         "email": "E-mail",
         "phone": "Téléphone",
         "period": "Dates",
+        "rentalDays": "Nombre de jours",
         "preferredChannel": "Canal préféré",
         "arrivalFlight": "Vol d'arrivée",
         "departureFlight": "Vol retour",

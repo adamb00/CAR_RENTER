@@ -40,8 +40,7 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     startTooLate: 'A kezdődátum legfeljebb egy éven belül lehet',
     endBeforeStart: 'A záródátum nem lehet a kezdődátum előtt',
     endTooLate: 'A záródátum legfeljebb egy éven belül lehet',
-    deliveryPlaceTypeRequired:
-      'Válaszd ki, hogy szállás vagy repülőtér címét adod meg',
+    deliveryPlaceTypeRequired: 'Válaszd ki az átvétel helyét',
     deliveryFieldRequired: 'Kötelező mező',
     arrivalFlightRequired: 'Add meg az érkező járatszámot',
     departureFlightRequired: 'Add meg a visszaút járatszámát',
@@ -58,6 +57,9 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
         beforeStart: 'A záródátum nem lehet a kezdődátum előtt',
         tooLate: 'A záródátum legfeljebb egy éven belül lehet',
       },
+    },
+    rentalDays: {
+      required: 'A napok számának megadása kötelező',
     },
     adults: {
       min: 'Legalább egy felnőtt szükséges',
@@ -173,7 +175,7 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     },
     delivery: {
       placeType: {
-        required: 'Válaszd ki, hogy szállás vagy repülőtér címét adod meg',
+        required: 'Válaszd ki az átvétel helyét',
       },
       arrivalFlight: {
         required: 'Add meg az érkező járatszámot',
@@ -208,11 +210,23 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
         required:
           'A foglalás véglegesítéséhez el kell fogadnod az Általános Szerződési Feltételeket',
       },
+      paymentMethod: {
+        required: 'A fizetési mód kiválasztása kötelező',
+      },
     },
   },
 } as const;
 
 type RentSchemaMessages = typeof DEFAULT_RENT_SCHEMA_MESSAGES;
+
+export const PAYMENT_METHOD_VALUES = [
+  'advance_transfer',
+  'cash_on_pickup',
+  'card_on_pickup',
+  'instant_transfer_on_pickup',
+] as const;
+
+export type PaymentMethodValue = (typeof PAYMENT_METHOD_VALUES)[number];
 
 type DotNestedKeys<T> = T extends string
   ? never
@@ -228,7 +242,7 @@ export type RentSchemaTranslate = (path: RentSchemaMessagePath) => string;
 
 function lookupMessage(
   messages: RentSchemaMessages,
-  path: RentSchemaMessagePath
+  path: RentSchemaMessagePath,
 ): string {
   const segments = path.split('.');
   let current: unknown = messages;
@@ -258,7 +272,7 @@ type DeliveryAddressKey =
   | 'doorNumber';
 
 export function createRentSchema(
-  translate: RentSchemaTranslate = defaultTranslate
+  translate: RentSchemaTranslate = defaultTranslate,
 ) {
   const message = (path: RentSchemaMessagePath) => translate(path);
 
@@ -275,13 +289,11 @@ export function createRentSchema(
 
   return z
     .object({
-      rentId: z
-        .string()
-        .uuid()
-        .optional(),
+      rentId: z.string().uuid().optional(),
       locale: z.string().optional(),
       carId: z.string().optional(),
       quoteId: z.string().optional(),
+      offer: z.number().optional(),
       extras: z.array(z.string()).optional(),
       rentalPeriod: z.object({
         startDate: z.string().refine((date) => !isNaN(Date.parse(date)), {
@@ -291,6 +303,9 @@ export function createRentSchema(
           message: message('fields.rentalPeriod.endDate.invalid'),
         }),
       }),
+      rentalDays: z.coerce
+        .number({ message: message('fields.rentalDays.required') })
+        .min(1, message('fields.rentalDays.required')),
       adults: z.coerce
         .number({ message: message('errors.adultsInvalid') })
         .refine((value) => Number.isFinite(value), {
@@ -310,13 +325,13 @@ export function createRentSchema(
               ])
               .optional()
               .transform((val) =>
-                val === '' || val === undefined ? undefined : Number(val)
+                val === '' || val === undefined ? undefined : Number(val),
               ),
             height: z
               .number()
               .min(0, message('fields.children.height.min'))
               .optional(),
-          })
+          }),
         )
         .default([]),
       driver: z.array(
@@ -385,20 +400,20 @@ export function createRentSchema(
               .string()
               .min(
                 1,
-                message('fields.driver.document.drivingLicenceNumber.required')
+                message('fields.driver.document.drivingLicenceNumber.required'),
               ),
             drivingLicenceValidFrom: z
               .string()
               .refine((date) => !isNaN(Date.parse(date)), {
                 message: message(
-                  'fields.driver.document.drivingLicenceValidFrom.invalid'
+                  'fields.driver.document.drivingLicenceValidFrom.invalid',
                 ),
               }),
             drivingLicenceValidUntil: z
               .string()
               .refine((date) => !isNaN(Date.parse(date)), {
                 message: message(
-                  'fields.driver.document.drivingLicenceValidUntil.invalid'
+                  'fields.driver.document.drivingLicenceValidUntil.invalid',
                 ),
               }),
             drivingLicenceCategory: z.enum([
@@ -420,7 +435,7 @@ export function createRentSchema(
             ]),
             drivingLicenceIsOlderThan_3: z.boolean().default(false),
           }),
-        })
+        }),
       ),
       contact: z.object({
         same: z.boolean(),
@@ -471,7 +486,9 @@ export function createRentSchema(
       }),
       delivery: z
         .object({
-          placeType: z.enum(['accommodation', 'airport']).optional(),
+          placeType: z
+            .enum(['accommodation', 'airport', 'office'])
+            .optional(),
           locationName: z.string().max(200).optional(),
           arrivalFlight: z.string().optional(),
           departureFlight: z.string().optional(),
@@ -491,20 +508,26 @@ export function createRentSchema(
         companyName: z.string().optional(),
       }),
       consents: z.object({
-        privacy: z
-          .boolean()
-          .refine((value) => value === true, {
-            message: message('fields.consents.privacy.required'),
-          }),
-        terms: z
-          .boolean()
-          .refine((value) => value === true, {
-            message: message('fields.consents.terms.required'),
-          }),
+        privacy: z.boolean().refine((value) => value === true, {
+          message: message('fields.consents.privacy.required'),
+        }),
+        terms: z.boolean().refine((value) => value === true, {
+          message: message('fields.consents.terms.required'),
+        }),
         insurance: z.boolean().optional(),
+        paymentMethod: z
+          .string()
+          .min(1, message('fields.consents.paymentMethod.required'))
+          .refine(
+            (value) =>
+              PAYMENT_METHOD_VALUES.includes(value as PaymentMethodValue),
+            {
+              message: message('fields.consents.paymentMethod.required'),
+            },
+          ),
       }),
     })
-    .superRefine(({ rentalPeriod, extras, delivery, children }, ctx) => {
+    .superRefine(({ rentalPeriod, delivery, children }, ctx) => {
       const start = new Date(rentalPeriod.startDate);
       const end = new Date(rentalPeriod.endDate);
 
@@ -546,13 +569,6 @@ export function createRentSchema(
         });
       }
 
-      const extrasList = Array.isArray(extras) ? extras : [];
-      const deliveryRequired = extrasList.includes('kiszallitas');
-
-      if (!deliveryRequired) {
-        return;
-      }
-
       const deliveryData = delivery ?? {};
       const placeType = deliveryData.placeType;
       const address = deliveryData.address ?? {};
@@ -565,22 +581,27 @@ export function createRentSchema(
         });
       }
 
-      // Csak a kötelező címmezők (street és doorNumber opcionális marad)
-      const requiredAddressKeys: DeliveryAddressKey[] = [
-        'country',
-        'postalCode',
-        'city',
-      ];
-      requiredAddressKeys.forEach((key) => {
-        const value = address[key];
-        if (typeof value !== 'string' || value.trim().length === 0) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: message(deliveryAddressMessages[key]),
-            path: ['delivery', 'address', key],
-          });
-        }
-      });
+      const requiresAddress =
+        placeType === 'accommodation' || placeType === 'airport';
+
+      if (requiresAddress) {
+        // Csak a kötelező címmezők (street és doorNumber opcionális marad)
+        const requiredAddressKeys: DeliveryAddressKey[] = [
+          'country',
+          'postalCode',
+          'city',
+        ];
+        requiredAddressKeys.forEach((key) => {
+          const value = address[key];
+          if (typeof value !== 'string' || value.trim().length === 0) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: message(deliveryAddressMessages[key]),
+              path: ['delivery', 'address', key],
+            });
+          }
+        });
+      }
 
       const childList = Array.isArray(children) ? children : [];
       if (childList.length > 0) {

@@ -7,12 +7,8 @@ import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import CarImageCarousel from '@/components/cars/CarImageCarousel';
-import {
-  CAR_COLOR_SWATCH,
-  type CarColor,
-  getCarById,
-  getCars,
-} from '@/lib/cars';
+import { CAR_COLOR_SWATCH, type CarColor } from '@/lib/cars-shared';
+import { getCarById, getCars } from '@/lib/cars';
 import { resolveLocale } from '@/lib/seo/seo';
 import { LOCALES } from '@/i18n/config';
 import { buildCarMetadata } from '@/lib/seo/metadata';
@@ -56,7 +52,7 @@ export async function generateStaticParams(): Promise<CarPageParams[]> {
     cars.map((car) => ({
       locale,
       id: car.id,
-    }))
+    })),
   );
 }
 

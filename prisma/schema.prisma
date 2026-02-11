@@ -3,9 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
 }
 
 model ContactQuote {
@@ -17,6 +15,7 @@ model ContactQuote {
   preferredChannel   String        @map("preferredchannel")
   rentalStart        DateTime?     @map("rentalstart") @db.Date
   rentalEnd          DateTime?     @map("rentalend") @db.Date
+  rentalDays         Int?          @map("rentaldays")
   arrivalFlight      String?       @map("arrivalflight")
   departureFlight    String?       @map("departureflight")
   partySize          String?       @map("partysize")
@@ -31,6 +30,7 @@ model ContactQuote {
   extras             String[]      @map("extras")
   delivery           Json?
   bookingRequestData Json?
+  offerAccepted      Int?          @map("offerAccepted")
   rentRequests       RentRequest[]
 
   @@index([createdAt], map: "idx_contactquotes_created_at")
@@ -48,6 +48,7 @@ model RentRequest {
   contactPhone String?       @map("contactphone")
   rentalStart  DateTime?     @map("rentalstart") @db.Date
   rentalEnd    DateTime?     @map("rentalend") @db.Date
+  rentalDays   Int?          @map("rentaldays")
   status       String        @default("new")
   updated      String?
   payload      Json?
@@ -76,6 +77,7 @@ model Car {
   fuel          CarFuel         @default(petrol)
   transmission  CarTransmission @default(manual)
   monthlyPrices Int[]           @default(dbgenerated("array_fill(0, ARRAY[12])"))
+  FleetVehicles FleetVehicles[]
   CarColors     CarColor[]
 
   @@map("Cars")
@@ -149,6 +151,27 @@ model Notification {
   @@index([read, createdAt], map: "idx_notifications_read_created")
 }
 
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model FleetVehicles {
+  id                String      @id
+  carId             String
+  plate             String      @unique
+  odometer          Int         @default(0)
+  status            FleetStatus @default(available)
+  year              Int?
+  firstRegistration DateTime?
+  location          String?
+  vin               String?
+  engineNumber      String?
+  addedAt           DateTime    @default(now())
+  inspectionExpiry  DateTime?
+  notes             String?
+  damages           String?
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime
+  Cars              Car         @relation(fields: [carId], references: [id], onDelete: Cascade)
+}
+
 enum CarBodyType {
   sedan
   hatchback
@@ -169,4 +192,11 @@ enum CarFuel {
 enum CarTransmission {
   manual
   automatic
+}
+
+enum FleetStatus {
+  available
+  rented
+  reserved
+  maintenance
 }

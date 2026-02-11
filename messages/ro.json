@@ -1309,6 +1309,10 @@
         "dateRange": {
           "label": "Perioada de închiriere"
         },
+        "rentalDays": {
+          "label": "Număr de zile",
+          "placeholder": "Selectează numărul de zile"
+        },
         "arrivalFlight": {
           "label": "Numărul zborului de sosire (opțional)",
           "placeholder": "ex. FR1234"
@@ -1353,6 +1357,7 @@
         "termsRequired": "Acceptarea Termenilor și Condițiilor este obligatorie",
         "rentalStartRequired": "Te rugăm să selectezi data de început a închirierii",
         "rentalEndRequired": "Te rugăm să selectezi data de sfârșit a închirierii",
+        "rentalDaysRequired": "Selectează numărul de zile",
         "arrivalFlightRequired": "Te rugăm să introduci numărul zborului de sosire",
         "departureFlightRequired": "Te rugăm să introduci numărul zborului de plecare"
       }
@@ -1679,6 +1684,10 @@
     "rentalPeriod": {
       "label": "Perioada de închiriere"
     },
+    "rentalDays": {
+      "label": "Număr de zile",
+      "placeholder": "Selectează numărul de zile"
+    },
     "dateRangePicker": {
       "cancel": "Anulează",
       "apply": "Salvează"
@@ -1694,7 +1703,17 @@
         "insuranceCheckbox": "Doresc să adaug asigurarea completă (fără garanție)",
         "insuranceDepositNotice": "Cu asigurarea completă nu este necesară garanția.",
         "insurancePriceLabel": "Prețul asigurării: {price}",
-        "insurancePricePending": "Îți vom comunica prețul asigurării prin e-mail."
+        "insurancePricePending": "Îți vom comunica prețul asigurării prin e-mail.",
+        "paymentMethod": {
+          "label": "Metoda de plată",
+          "placeholder": "Selectați metoda de plată",
+          "options": {
+            "advance_transfer": "Transfer bancar în avans",
+            "cash_on_pickup": "Numerar la preluare",
+            "card_on_pickup": "Card la preluare",
+            "instant_transfer_on_pickup": "Transfer instant la preluare"
+          }
+        }
       },
       "children": {
         "title": "Pasageri copii",
@@ -1882,10 +1901,11 @@
         },
         "fields": {
           "placeType": {
-            "label": "Tip locație",
-            "placeholder": "Alege locația",
-            "accommodation": "Cazare",
-            "airport": "Aeroport"
+            "label": "Loc de preluare",
+            "placeholder": "Selectează locul de preluare",
+            "airport": "Preluare la aeroport",
+            "accommodation": "Preluare la hotel",
+            "office": "Preluare la birou"
           },
           "arrivalFlight": {
             "label": "Numărul zborului de sosire",
@@ -1972,7 +1992,7 @@
       "startTooLate": "Data de început poate fi cel mult peste un an",
       "endBeforeStart": "Data de sfârșit nu poate fi anterioară datei de început",
       "endTooLate": "Data de sfârșit poate fi cel mult peste un an",
-      "deliveryPlaceTypeRequired": "Te rugăm să alegi dacă introduci adresa unei cazări sau a unui aeroport",
+      "deliveryPlaceTypeRequired": "Selectează locul de preluare",
       "deliveryFieldRequired": "Câmp obligatoriu",
       "invalidAdults": "Este necesar cel puțin un adult",
       "adultsInvalid": "Te rugăm să introduci numărul pasagerilor adulți"
@@ -1989,6 +2009,9 @@
           "beforeStart": "Data de sfârșit nu poate fi anterioară datei de început",
           "tooLate": "Data de sfârșit poate fi cel mult peste un an"
         }
+      },
+      "rentalDays": {
+        "required": "Selectează numărul de zile"
       },
       "adults": {
         "min": "Este necesar cel puțin un adult"
@@ -2107,7 +2130,7 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Te rugăm să alegi dacă introduci adresa unei cazări sau a unui aeroport"
+          "required": "Selectează locul de preluare"
         },
         "arrivalFlight": {
           "required": "Te rugăm să introduci numărul zborului de sosire"
@@ -2139,6 +2162,9 @@
         },
         "terms": {
           "required": "Pentru rezervare trebuie să accepți Termenii și Condițiile Generale"
+        },
+        "paymentMethod": {
+          "required": "Selectați metoda de plată"
         }
       }
     }
@@ -2467,9 +2493,11 @@
       "intro": "Am primit datele și te contactăm în scurt timp pentru confirmare.",
       "footerNote": "Dacă trebuie să modificați ceva, răspundeți la acest e-mail.",
       "ctaLabel": "Continuă pe site pentru a finaliza rezervarea",
+      "ctaLabelFinalized": "Continuă pe site",
       "rows": {
         "humanId": "Referință rezervare",
         "period": "Perioadă",
+        "rentalDays": "Număr de zile",
         "adults": "Adulți",
         "children": "Copii",
         "extras": "Extraopțiuni",
@@ -2510,6 +2538,7 @@
         "email": "E-mail",
         "phone": "Telefon",
         "period": "Perioadă",
+        "rentalDays": "Număr de zile",
         "preferredChannel": "Canal preferat",
         "arrivalFlight": "Zbor de sosire",
         "departureFlight": "Zbor de plecare",

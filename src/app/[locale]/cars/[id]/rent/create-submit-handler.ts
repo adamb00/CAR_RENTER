@@ -26,6 +26,7 @@ type SubmitContext = {
   quoteId?: string | null;
   successMessage: string;
   errorMessage: string;
+  offer?: number;
 };
 
 type CreateSubmitHandlerParams = {
@@ -36,6 +37,7 @@ type CreateSubmitHandlerParams = {
   closeMissingFlightsDialog: () => void;
   startTransition: TransitionStartFunction;
   context: SubmitContext;
+  offer?: number;
   clearStoredValues: () => void;
   routerPush: (url: string) => void;
   manageContext?: {
@@ -64,7 +66,7 @@ export function useCreateSubmitHandler({
       formRef,
       sectionOrder: SECTION_ORDER,
       onError: () => toast.error(t('toast.error')),
-    }
+    },
   );
   useManageSectionFocus({
     section: manageContext?.section,
@@ -83,7 +85,7 @@ export function useCreateSubmitHandler({
           : '';
       return arrival.length === 0 || departure.length === 0;
     },
-    []
+    [],
   );
 
   const submitRentRequest = React.useCallback(
@@ -106,6 +108,9 @@ export function useCreateSubmitHandler({
           undefined;
         const actionPayload: RentFormResolvedValues = { ...parsed };
         actionPayload.rentId = rentIdPayload;
+        if (Number.isInteger(context.offer)) {
+          actionPayload.offer = context.offer;
+        }
         const res = await RentAction({
           ...actionPayload,
           locale: context.locale,
@@ -126,8 +131,8 @@ export function useCreateSubmitHandler({
             context.isModifyMode && resultingRentId
               ? `/${context.locale}/rent/thank-you`
               : resultingRentId
-              ? `/${context.locale}/rent/thank-you?rentId=${resultingRentId}`
-              : `/${context.locale}/rent/thank-you`;
+                ? `/${context.locale}/rent/thank-you?rentId=${resultingRentId}`
+                : `/${context.locale}/rent/thank-you`;
           setTimeout(() => {
             routerPush(nextUrl);
           }, 2000);
@@ -155,7 +160,7 @@ export function useCreateSubmitHandler({
       context.successMessage,
       routerPush,
       startTransition,
-    ]
+    ],
   );
 
   return React.useCallback(
@@ -180,7 +185,7 @@ export function useCreateSubmitHandler({
       rentSchema,
       shouldAskForFlightNumbers,
       submitRentRequest,
-    ]
+    ],
   );
 }
 

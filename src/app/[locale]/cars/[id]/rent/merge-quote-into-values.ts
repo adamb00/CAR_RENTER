@@ -48,6 +48,7 @@ export const mergeQuoteIntoValues = (
       startDate: quote.rentalStart ?? values.rentalPeriod?.startDate ?? '',
       endDate: quote.rentalEnd ?? values.rentalPeriod?.endDate ?? '',
     },
+    rentalDays: quote.rentalDays ?? values.rentalDays,
     driver: [
       {
         ...firstDriver,
@@ -72,12 +73,17 @@ export const mergeQuoteIntoValues = (
     },
     delivery: {
       ...delivery,
-      placeType: ['accommodation', 'airport'].includes(
+      placeType: ['accommodation', 'airport', 'office'].includes(
         quote.delivery?.placeType as string
       )
-        ? (quote.delivery?.placeType as 'accommodation' | 'airport')
-        : ['accommodation', 'airport'].includes(delivery.placeType as string)
-        ? (delivery.placeType as 'accommodation' | 'airport')
+        ? (quote.delivery?.placeType as
+            | 'accommodation'
+            | 'airport'
+            | 'office')
+        : ['accommodation', 'airport', 'office'].includes(
+              delivery.placeType as string
+            )
+          ? (delivery.placeType as 'accommodation' | 'airport' | 'office')
         : undefined,
       locationName: quote.delivery?.locationName ?? delivery.locationName ?? '',
       address: {

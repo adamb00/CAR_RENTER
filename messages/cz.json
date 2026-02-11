@@ -1304,6 +1304,10 @@
         "dateRange": {
           "label": "Doba trvání pronájmu"
         },
+        "rentalDays": {
+          "label": "Počet dní",
+          "placeholder": "Vyberte počet dní"
+        },
         "arrivalFlight": {
           "label": "Číslo příletového letu (nepovinné)",
           "placeholder": "např. FR1234"
@@ -1348,6 +1352,7 @@
         "termsRequired": "Souhlas s VOP je povinný",
         "rentalStartRequired": "Vyber začátek pronájmu",
         "rentalEndRequired": "Vyber konec pronájmu",
+        "rentalDaysRequired": "Vyberte počet dní",
         "arrivalFlightRequired": "Zadej číslo příletového letu",
         "departureFlightRequired": "Zadej číslo odletového letu"
       }
@@ -1674,6 +1679,10 @@
     "rentalPeriod": {
       "label": "Doba pronájmu"
     },
+    "rentalDays": {
+      "label": "Počet dní",
+      "placeholder": "Vyberte počet dní"
+    },
     "dateRangePicker": {
       "cancel": "Zrušit",
       "apply": "Uložit"
@@ -1689,7 +1698,17 @@
         "insuranceCheckbox": "Chci přidat plné pojištění (bez nutnosti kauce)",
         "insuranceDepositNotice": "S plným pojištěním není kauce vyžadována.",
         "insurancePriceLabel": "Cena pojištění: {price}",
-        "insurancePricePending": "O ceně pojištění vás budeme informovat e-mailem."
+        "insurancePricePending": "O ceně pojištění vás budeme informovat e-mailem.",
+        "paymentMethod": {
+          "label": "Způsob platby",
+          "placeholder": "Vyberte způsob platby",
+          "options": {
+            "advance_transfer": "Platba převodem předem",
+            "cash_on_pickup": "Hotově při převzetí",
+            "card_on_pickup": "Kartou při převzetí",
+            "instant_transfer_on_pickup": "Okamžitý převod při převzetí"
+          }
+        }
       },
       "children": {
         "title": "Děti – cestující",
@@ -1877,10 +1896,11 @@
         },
         "fields": {
           "placeType": {
-            "label": "Typ místa",
-            "placeholder": "Vyberte místo",
-            "accommodation": "Ubytování",
-            "airport": "Letiště"
+            "label": "Místo převzetí",
+            "placeholder": "Vyberte místo převzetí",
+            "airport": "Převzetí na letišti",
+            "accommodation": "Převzetí v hotelu",
+            "office": "Převzetí v kanceláři"
           },
           "arrivalFlight": {
             "label": "Číslo příletového letu",
@@ -1967,7 +1987,7 @@
       "startTooLate": "Datum začátku může být nejvýše do jednoho roku",
       "endBeforeStart": "Datum ukončení nemůže být před datem začátku",
       "endTooLate": "Datum ukončení může být nejvýše do jednoho roku",
-      "deliveryPlaceTypeRequired": "Vyberte, zda zadáváte adresu ubytování nebo letiště",
+      "deliveryPlaceTypeRequired": "Vyberte místo převzetí",
       "deliveryFieldRequired": "Povinné pole",
       "invalidAdults": "Je potřeba alespoň jeden dospělý",
       "adultsInvalid": "Zadejte počet dospělých cestujících"
@@ -1984,6 +2004,9 @@
           "beforeStart": "Datum ukončení nemůže být před datem začátku",
           "tooLate": "Datum ukončení může být nejvýše do jednoho roku"
         }
+      },
+      "rentalDays": {
+        "required": "Vyberte počet dní"
       },
       "adults": {
         "min": "Je potřeba alespoň jeden dospělý"
@@ -2102,7 +2125,7 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Vyberte, zda zadáváte adresu ubytování nebo letiště"
+          "required": "Vyberte místo převzetí"
         },
         "arrivalFlight": {
           "required": "Zadejte číslo příletového letu"
@@ -2134,6 +2157,9 @@
         },
         "terms": {
           "required": "Pro dokončení rezervace je nutné přijmout Všeobecné smluvní podmínky"
+        },
+        "paymentMethod": {
+          "required": "Vyberte způsob platby"
         }
       }
     }
@@ -2462,9 +2488,11 @@
       "intro": "Obdrželi jsme vámi zaslané údaje a brzy vás kontaktujeme s potvrzením.",
       "footerNote": "Pokud potřebujete údaje upravit, odpovězte na tento e-mail.",
       "ctaLabel": "Pokračovat na web a dokončit rezervaci",
+      "ctaLabelFinalized": "Pokračovat na web",
       "rows": {
         "humanId": "Číslo rezervace",
         "period": "Termín",
+        "rentalDays": "Počet dní",
         "adults": "Dospělí",
         "children": "Děti",
         "extras": "Extra služby",
@@ -2505,6 +2533,7 @@
         "email": "E-mail",
         "phone": "Telefon",
         "period": "Termín",
+        "rentalDays": "Počet dní",
         "preferredChannel": "Preferovaný kanál",
         "arrivalFlight": "Příletový let",
         "departureFlight": "Odletový let",

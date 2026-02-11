@@ -28,6 +28,7 @@ import type {
   QuoteRequestFormProps,
 } from './quote.types';
 import QuoteRentalStart from './QuoteRentalStart';
+import QuoteRentalDays from './QuoteRentalDays';
 
 export type { QuoteRequestValues } from '@/schemas/QuoteSchema';
 
@@ -84,6 +85,7 @@ export function QuoteRequestForm({
       preferredChannel: 'email' as PreferredChannel,
       rentalStart: '',
       rentalEnd: '',
+      rentalDays: undefined,
       arrivalFlight: '',
       departureFlight: '',
       partySize: '',
@@ -158,10 +160,6 @@ export function QuoteRequestForm({
     [locale, t]
   );
 
-  const extrasSelected = form.watch('extras');
-  const isDeliveryRequired =
-    Array.isArray(extrasSelected) && extrasSelected.includes('kiszallitas');
-
   return (
     <div className='my-10 max-w-7xl mx-auto w-full'>
       <div className='rounded-3xl border border-grey-light-2/60 dark:border-grey-dark-2/50 bg-white/90 dark:bg-transparent backdrop-blur px-6 py-6 sm:px-8 sm:py-8 shadow-sm'>
@@ -199,13 +197,13 @@ export function QuoteRequestForm({
 
             <QuoteRentalStart form={form} locale={locale} />
 
+            <QuoteRentalDays form={form} />
+
             <QuoteExtras form={form} />
 
             <QuoteFlights form={form} />
 
-            {isDeliveryRequired ? (
-              <QuoteDelivery form={form} placesReady={placesReady} />
-            ) : null}
+            <QuoteDelivery form={form} placesReady={placesReady} />
 
             <QuotePartySize form={form} />
             <LegalConsents

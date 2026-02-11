@@ -19,13 +19,18 @@ const parseDateValue = (value?: string | null): Date | null => {
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 };
 
+const normalizeRentalDays = (value?: number | null): number | null => {
+  if (typeof value !== 'number') return null;
+  return Number.isFinite(value) && value > 0 ? value : null;
+};
+
 const formatDeliverySummary = (
   delivery?: ContactQuotePayload['delivery']
 ): string => {
   if (!delivery) return 'n/a';
   const parts: string[] = [];
   if (delivery.placeType) {
-    parts.push(`Place type: ${delivery.placeType}`);
+    parts.push(`Pickup location: ${delivery.placeType}`);
   }
   if (delivery.locationName) {
     parts.push(`Location: ${delivery.locationName}`);
@@ -47,8 +52,16 @@ const formatDeliverySummary = (
   return parts.length > 0 ? parts.join('<br>') : 'n/a';
 };
 
+const formatPickupPlaceType = (type?: string): string => {
+  if (!type) return 'n/a';
+  if (type === 'airport') return 'Átvétel a reptéren';
+  if (type === 'accommodation') return 'Átvétel a szállodánál';
+  if (type === 'office') return 'Átvétel az irodánál';
+  return type;
+};
+
 const buildDeliveryLines = (payload: ContactQuotePayload): string[] => {
-  if (!payload.extras?.includes('kiszallitas') || !payload.delivery) {
+  if (!payload.delivery?.placeType) {
     return [];
   }
 
@@ -67,7 +80,7 @@ const buildDeliveryLines = (payload: ContactQuotePayload): string[] => {
     : '';
 
   return [
-    `Kiszállítás típusa: ${payload.delivery.placeType ?? 'n/a'}`,
+    `Átvétel helye: ${formatPickupPlaceType(payload.delivery.placeType)}`,
     `Helyszín neve: ${payload.delivery.locationName ?? 'n/a'}`,
     `Cím: ${addressParts || 'n/a'}`,
   ];
@@ -95,6 +108,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
 
     const rentalStartDate = parseDateValue(payload.rentalStart);
     const rentalEndDate = parseDateValue(payload.rentalEnd);
+    const rentalDays = normalizeRentalDays(payload.rentalDays);
 
     const created = await prisma.contactQuote.create({
       data: {
@@ -105,6 +119,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         preferredChannel: payload.preferredChannel,
         rentalStart: rentalStartDate,
         rentalEnd: rentalEndDate,
+        rentalDays,
         arrivalFlight: payload.arrivalFlight ?? null,
         departureFlight: payload.departureFlight ?? null,
         partySize: payload.partySize ?? null,
@@ -143,6 +158,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       `Telefon: ${payload.phone}`,
       `Előnyben részesített csatorna: ${preferredChannelLabel}`,
       `Bérlés: ${formattedPeriod}`,
+      `Napok száma: ${payload.rentalDays || 'n/a'}`,
       `Érkezési járatszám: ${payload.arrivalFlight || 'n/a'}`,
       `Hazautazó járatszám: ${payload.departureFlight || 'n/a'}`,
       `Utazók száma: ${payload.partySize || 'n/a'}`,
@@ -193,6 +209,10 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         value: preferredChannelLabel,
       },
       { label: tEmail('contactQuote.rows.period'), value: formattedPeriod },
+      {
+        label: tEmail('contactQuote.rows.rentalDays'),
+        value: payload.rentalDays ?? 'n/a',
+      },
       {
         label: tEmail('contactQuote.rows.arrivalFlight'),
         value: payload.arrivalFlight ?? 'n/a',
@@ -247,6 +267,12 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
               }`,
             }
           : null,
+        payload.rentalDays
+          ? {
+              label: tEmail('contactQuote.rows.rentalDays'),
+              value: payload.rentalDays,
+            }
+          : null,
         payload.preferredChannel
           ? {
               label: tEmail('contactQuote.rows.preferredChannel'),
@@ -295,6 +321,9 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           ? `${tEmail('contactQuote.rows.period')}: ${
               payload.rentalStart || 'n/a'
             } → ${payload.rentalEnd || 'n/a'}`
+          : '',
+        payload.rentalDays
+          ? `${tEmail('contactQuote.rows.rentalDays')}: ${payload.rentalDays}`
           : '',
         `${tEmail(
           'contactQuote.rows.preferredChannel'

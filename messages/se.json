@@ -1309,6 +1309,10 @@
         "dateRange": {
           "label": "Hyresperiod"
         },
+        "rentalDays": {
+          "label": "Antal dagar",
+          "placeholder": "Välj antal dagar"
+        },
         "arrivalFlight": {
           "label": "Ankommande flygnummer (valfritt)",
           "placeholder": "t.ex. FR1234"
@@ -1353,6 +1357,7 @@
         "termsRequired": "Du måste godkänna de allmänna villkoren",
         "rentalStartRequired": "Välj startdatum för hyran",
         "rentalEndRequired": "Välj slutdatum för hyran",
+        "rentalDaysRequired": "Välj antal dagar",
         "arrivalFlightRequired": "Ange ankommande flygnummer",
         "departureFlightRequired": "Ange flygnummer för hemresan"
       }
@@ -1679,6 +1684,10 @@
     "rentalPeriod": {
       "label": "Hyresperiod"
     },
+    "rentalDays": {
+      "label": "Antal dagar",
+      "placeholder": "Välj antal dagar"
+    },
     "dateRangePicker": {
       "cancel": "Avbryt",
       "apply": "Spara"
@@ -1694,7 +1703,17 @@
         "insuranceCheckbox": "Jag vill lägga till heltäckande försäkring (ingen deposition krävs)",
         "insuranceDepositNotice": "Med heltäckande försäkring krävs ingen deposition.",
         "insurancePriceLabel": "Försäkringspris: {price}",
-        "insurancePricePending": "Vi meddelar försäkringspriset via e-post."
+        "insurancePricePending": "Vi meddelar försäkringspriset via e-post.",
+        "paymentMethod": {
+          "label": "Betalningsmetod",
+          "placeholder": "Välj betalningsmetod",
+          "options": {
+            "advance_transfer": "Banköverföring i förväg",
+            "cash_on_pickup": "Kontant vid upphämtning",
+            "card_on_pickup": "Kort vid upphämtning",
+            "instant_transfer_on_pickup": "Omedelbar överföring vid upphämtning"
+          }
+        }
       },
       "children": {
         "title": "Barn som reser med",
@@ -1882,10 +1901,11 @@
         },
         "fields": {
           "placeType": {
-            "label": "Platsens typ",
-            "placeholder": "Välj plats",
-            "accommodation": "Boende",
-            "airport": "Flygplats"
+            "label": "Upphämtningsplats",
+            "placeholder": "Välj upphämtningsplats",
+            "airport": "Upphämtning på flygplatsen",
+            "accommodation": "Upphämtning på hotellet",
+            "office": "Upphämtning på kontoret"
           },
           "arrivalFlight": {
             "label": "Ankommande flightnummer",
@@ -1972,7 +1992,7 @@
       "startTooLate": "Startdatum kan högst vara inom ett år",
       "endBeforeStart": "Slutdatum kan inte vara före startdatum",
       "endTooLate": "Slutdatum kan högst vara inom ett år",
-      "deliveryPlaceTypeRequired": "Välj om du anger adress till boende eller flygplats",
+      "deliveryPlaceTypeRequired": "Välj upphämtningsplats",
       "deliveryFieldRequired": "Obligatoriskt fält",
       "invalidAdults": "Minst en vuxen krävs",
       "adultsInvalid": "Ange antalet vuxna passagerare"
@@ -1989,6 +2009,9 @@
           "beforeStart": "Slutdatum kan inte vara före startdatum",
           "tooLate": "Slutdatum kan högst vara inom ett år"
         }
+      },
+      "rentalDays": {
+        "required": "Välj antal dagar"
       },
       "adults": {
         "min": "Minst en vuxen krävs"
@@ -2107,7 +2130,7 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Välj om du anger adress till boende eller flygplats"
+          "required": "Välj upphämtningsplats"
         },
         "arrivalFlight": {
           "required": "Ange ankommende flygnummer"
@@ -2139,6 +2162,9 @@
         },
         "terms": {
           "required": "För att boka måste du godkänna de allmänna villkoren"
+        },
+        "paymentMethod": {
+          "required": "Välj betalningsmetod"
         }
       }
     }
@@ -2467,9 +2493,11 @@
       "intro": "Vi har mottagit uppgifterna och kontaktar dig snart för bekräftelse.",
       "footerNote": "Om du behöver uppdatera något, svara på detta mejl.",
       "ctaLabel": "Fortsätt till webbplatsen för att slutföra bokningen",
+      "ctaLabelFinalized": "Fortsätt till webbplatsen",
       "rows": {
         "humanId": "Bokningsreferens",
         "period": "Period",
+        "rentalDays": "Antal dagar",
         "adults": "Vuxna",
         "children": "Barn",
         "extras": "Extra",
@@ -2510,6 +2538,7 @@
         "email": "E-post",
         "phone": "Telefon",
         "period": "Period",
+        "rentalDays": "Antal dagar",
         "preferredChannel": "Föredragen kanal",
         "arrivalFlight": "Ankomstflyg",
         "departureFlight": "Returflyg",
