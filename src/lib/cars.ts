@@ -39,11 +39,7 @@ export type {
 
 type PrismaCarWithColors = Prisma.CarGetPayload<{
   include: {
-    CarColors: {
-      include: {
-        Colors: true;
-      };
-    };
+    Colors: true;
   };
 }>;
 
@@ -199,7 +195,7 @@ const normalizePrices = (value: unknown): number[] => {
 
 const mapCar = (car: PrismaCarWithColors): Car => {
   const images = normalizeImages(car.images ?? []);
-  const relationColors = car.CarColors?.map((relation) => relation.Colors?.name ?? null) ?? [];
+  const relationColors = car.Colors?.map((color) => color.name ?? null) ?? [];
   const colors = normalizeColors(relationColors);
   const rawPrices = car.monthlyPrices;
   const prices = normalizePrices(rawPrices);
@@ -237,11 +233,7 @@ const mapCar = (car: PrismaCarWithColors): Car => {
 };
 
 const CAR_INCLUDE = {
-  CarColors: {
-    include: {
-      Colors: true,
-    },
-  },
+  Colors: true,
 } as const;
 
 const fetchCars = async (): Promise<Car[]> => {

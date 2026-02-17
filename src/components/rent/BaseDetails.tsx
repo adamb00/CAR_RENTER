@@ -113,6 +113,23 @@ export default function BaseDetails({
       })),
     [t],
   );
+  const arrivalHourOptions = React.useMemo(
+    () => Array.from({ length: 24 }, (_, idx) => String(idx).padStart(2, '0')),
+    [],
+  );
+  const arrivalMinuteOptions = React.useMemo(
+    () =>
+      Array.from({ length: 12 }, (_, idx) =>
+        String(idx * 5).padStart(2, '0'),
+      ),
+    [],
+  );
+  const isHungarianLocale = locale.toLowerCase().startsWith('hu');
+  const arrivalHourLabel = isHungarianLocale
+    ? 'Érkezés (óra)'
+    : 'Arrival (hour)';
+  const arrivalMinuteLabel =
+    isHungarianLocale ? 'Érkezés (perc)' : 'Arrival (minute)';
 
   const dateRangePickerMessages = (
     messages?.RentForm as Record<string, unknown> | null
@@ -274,7 +291,7 @@ export default function BaseDetails({
           />
         </div>
       </div>
-      <div className='grid gap-4 md:grid-cols-3'>
+      <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-5'>
         <FormField
           control={form.control}
           name={'delivery.arrivalFlight'}
@@ -317,6 +334,74 @@ export default function BaseDetails({
                     value={value}
                     onChange={(event) => field.onChange(event.target.value)}
                   />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <FormField
+          control={form.control}
+          name={'delivery.arrivalHour'}
+          render={({ field }) => {
+            const value = typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem>
+                <FormLabel>{arrivalHourLabel}</FormLabel>
+                <FormControl>
+                  <Select
+                    value={value || undefined}
+                    onValueChange={(selectedValue) =>
+                      field.onChange(selectedValue)
+                    }
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder='HH' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {arrivalHourOptions.map((hour) => (
+                          <SelectItem key={hour} value={hour}>
+                            {hour}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <FormField
+          control={form.control}
+          name={'delivery.arrivalMinute'}
+          render={({ field }) => {
+            const value = typeof field.value === 'string' ? field.value : '';
+            return (
+              <FormItem>
+                <FormLabel>{arrivalMinuteLabel}</FormLabel>
+                <FormControl>
+                  <Select
+                    value={value || undefined}
+                    onValueChange={(selectedValue) =>
+                      field.onChange(selectedValue)
+                    }
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder='MM' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {arrivalMinuteOptions.map((minute) => (
+                          <SelectItem key={minute} value={minute}>
+                            {minute}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </FormControl>
                 <FormMessage />
               </FormItem>

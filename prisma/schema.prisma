@@ -15,7 +15,6 @@ model ContactQuote {
   preferredChannel   String        @map("preferredchannel")
   rentalStart        DateTime?     @map("rentalstart") @db.Date
   rentalEnd          DateTime?     @map("rentalend") @db.Date
-  rentalDays         Int?          @map("rentaldays")
   arrivalFlight      String?       @map("arrivalflight")
   departureFlight    String?       @map("departureflight")
   partySize          String?       @map("partysize")
@@ -30,6 +29,7 @@ model ContactQuote {
   extras             String[]      @map("extras")
   delivery           Json?
   bookingRequestData Json?
+  rentalDays         Int?          @map("rentaldays")
   offerAccepted      Int?          @map("offerAccepted")
   rentRequests       RentRequest[]
 
@@ -39,23 +39,25 @@ model ContactQuote {
 }
 
 model RentRequest {
-  id           String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  locale       String
-  carId        String?       @map("carid")
-  quoteId      String?       @map("quoteid") @db.Uuid
-  contactName  String        @map("contactname")
-  contactEmail String        @map("contactemail")
-  contactPhone String?       @map("contactphone")
-  rentalStart  DateTime?     @map("rentalstart") @db.Date
-  rentalEnd    DateTime?     @map("rentalend") @db.Date
-  rentalDays   Int?          @map("rentaldays")
-  status       String        @default("new")
-  updated      String?
-  payload      Json?
-  createdAt    DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @map("createdAt") @db.Timestamptz(6)
-  updatedAt    DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
-  humanId      String?       @unique
-  contactQuote ContactQuote? @relation(fields: [quoteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  id               String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  locale           String
+  carId            String?            @map("carid")
+  quoteId          String?            @map("quoteid") @db.Uuid
+  contactName      String             @map("contactname")
+  contactEmail     String             @map("contactemail")
+  contactPhone     String?            @map("contactphone")
+  rentalStart      DateTime?          @map("rentalstart") @db.Date
+  rentalEnd        DateTime?          @map("rentalend") @db.Date
+  status           String             @default("new")
+  updated          String?
+  payload          Json?
+  createdAt        DateTime           @default(dbgenerated("timezone('utc'::text, now())")) @map("createdAt") @db.Timestamptz(6)
+  updatedAt        DateTime           @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
+  humanId          String?            @unique
+  rentalDays       Int?               @map("rentaldays")
+  BookingContracts BookingContracts?
+  contactQuote     ContactQuote?      @relation(fields: [quoteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  VehicleHandovers VehicleHandovers[]
 
   @@index([carId], map: "idx_rentrequests_car")
   @@index([createdAt], map: "idx_rentrequests_created_at")
@@ -78,29 +80,18 @@ model Car {
   transmission  CarTransmission @default(manual)
   monthlyPrices Int[]           @default(dbgenerated("array_fill(0, ARRAY[12])"))
   FleetVehicles FleetVehicles[]
-  CarColors     CarColor[]
+  Colors        Color[]         @relation("CarColors")
 
   @@map("Cars")
 }
 
 model Color {
-  id        String     @id
-  name      String     @unique
-  createdAt DateTime   @default(now())
-  CarColors CarColor[]
+  id        String   @id
+  name      String   @unique
+  createdAt DateTime @default(now())
+  Cars      Car[]    @relation("CarColors")
 
   @@map("Colors")
-}
-
-model CarColor {
-  A      String
-  B      String
-  Cars   Car    @relation(fields: [A], references: [id], onDelete: Cascade)
-  Colors Color  @relation(fields: [B], references: [id], onDelete: Cascade)
-
-  @@id([A, B], map: "_CarColors_AB_pkey")
-  @@index([B], map: "_CarColors_B_index")
-  @@map("_CarColors")
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
@@ -153,23 +144,66 @@ model Notification {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model FleetVehicles {
-  id                String      @id
-  carId             String
-  plate             String      @unique
-  odometer          Int         @default(0)
-  status            FleetStatus @default(available)
-  year              Int?
-  firstRegistration DateTime?
-  location          String?
-  vin               String?
-  engineNumber      String?
-  addedAt           DateTime    @default(now())
-  inspectionExpiry  DateTime?
-  notes             String?
-  damages           String?
-  createdAt         DateTime    @default(now())
-  updatedAt         DateTime
-  Cars              Car         @relation(fields: [carId], references: [id], onDelete: Cascade)
+  id                 String             @id
+  carId              String
+  plate              String             @unique
+  odometer           Int                @default(0)
+  status             FleetStatus        @default(available)
+  year               Int?
+  firstRegistration  DateTime?
+  location           String?
+  vin                String?
+  engineNumber       String?
+  addedAt            DateTime           @default(now())
+  inspectionExpiry   DateTime?
+  notes              String?
+  damages            String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime
+  damagesImages      String[]           @default([])
+  lastServiceAt      DateTime?
+  lastServiceMileage Int?
+  serviceIntervalKm  Int?
+  Cars               Car                @relation(fields: [carId], references: [id], onDelete: Cascade)
+  VehicleHandovers   VehicleHandovers[]
+}
+
+model VehicleHandovers {
+  id             String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  bookingId      String            @db.Uuid
+  fleetVehicleId String
+  direction      HandoverDirection @default(out)
+  handoverAt     DateTime          @default(now())
+  handoverBy     String?
+  mileage        Int?
+  notes          String?
+  damages        String?
+  damagesImages  String[]          @default([])
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime
+  RentRequests   RentRequest       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  FleetVehicles  FleetVehicles     @relation(fields: [fleetVehicleId], references: [id], onDelete: Cascade)
+
+  @@index([bookingId])
+  @@index([fleetVehicleId])
+}
+
+model BookingContracts {
+  id                  String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  bookingId           String      @unique @db.Uuid
+  signerName          String
+  signerEmail         String?
+  contractVersion     String      @default("v1")
+  contractText        String
+  signatureData       String
+  signedAt            DateTime    @default(now())
+  pdfSentAt           DateTime?
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime
+  lessorSignatureData String?
+  RentRequests        RentRequest @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  @@index([bookingId])
 }
 
 enum CarBodyType {
@@ -199,4 +233,9 @@ enum FleetStatus {
   rented
   reserved
   maintenance
+}
+
+enum HandoverDirection {
+  out
+  in
 }

@@ -490,8 +490,32 @@ export function createRentSchema(
             .enum(['accommodation', 'airport', 'office'])
             .optional(),
           locationName: z.string().max(200).optional(),
-          arrivalFlight: z.string().optional(),
-          departureFlight: z.string().optional(),
+          arrivalHour: z
+            .string()
+            .trim()
+            .min(1, message('errors.deliveryFieldRequired'))
+            .refine((value) => /^(?:[01]\d|2[0-3])$/.test(value), {
+              message: message('errors.deliveryFieldRequired'),
+            }),
+          arrivalMinute: z
+            .string()
+            .trim()
+            .min(1, message('errors.deliveryFieldRequired'))
+            .refine(
+              (value) =>
+                /^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(value),
+              {
+                message: message('errors.deliveryFieldRequired'),
+              },
+            ),
+          arrivalFlight: z
+            .string()
+            .trim()
+            .min(1, message('fields.delivery.arrivalFlight.required')),
+          departureFlight: z
+            .string()
+            .trim()
+            .min(1, message('fields.delivery.departureFlight.required')),
           address: z
             .object({
               country: z.string().optional(),
@@ -569,9 +593,8 @@ export function createRentSchema(
         });
       }
 
-      const deliveryData = delivery ?? {};
-      const placeType = deliveryData.placeType;
-      const address = deliveryData.address ?? {};
+      const placeType = delivery?.placeType;
+      const address = delivery?.address ?? {};
 
       if (!placeType) {
         ctx.addIssue({

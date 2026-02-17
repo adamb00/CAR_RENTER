@@ -24,6 +24,8 @@ export const mergeQuoteIntoValues = (
   const delivery: NonNullable<RentFormValues['delivery']> = values.delivery ?? {
     placeType: undefined,
     locationName: '',
+    arrivalHour: '',
+    arrivalMinute: '',
     arrivalFlight: '',
     departureFlight: '',
     address: {
@@ -86,6 +88,8 @@ export const mergeQuoteIntoValues = (
           ? (delivery.placeType as 'accommodation' | 'airport' | 'office')
         : undefined,
       locationName: quote.delivery?.locationName ?? delivery.locationName ?? '',
+      arrivalHour: delivery.arrivalHour ?? '',
+      arrivalMinute: delivery.arrivalMinute ?? '',
       address: {
         country:
           quote.delivery?.address?.country ?? delivery.address?.country ?? '',

@@ -65,6 +65,8 @@ export const buildInitialValues = (
     delivery: {
       placeType: undefined,
       locationName: '',
+      arrivalHour: '',
+      arrivalMinute: '',
       arrivalFlight: quote?.arrivalFlight ?? '',
       departureFlight: quote?.departureFlight ?? '',
       address: {
