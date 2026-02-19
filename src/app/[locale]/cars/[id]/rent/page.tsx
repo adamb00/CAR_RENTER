@@ -7,7 +7,7 @@ import { resolveLocale } from '@/lib/seo/seo';
 import { NoSSR } from '@/components/NoSSR';
 import RentPageClient from './client-page';
 import { getContactQuoteById } from '@/lib/contactQuotes';
-import { parseRentPayload } from '@/lib/rentPayload';
+import { parseCompactRentPayload } from '@/lib/rentPayload';
 import { prisma } from '@/lib/prisma';
 import type { RentFormValues } from '@/schemas/RentSchema';
 import { buildCarMetadata } from '@/lib/seo/metadata';
@@ -167,82 +167,73 @@ export default async function RentPage({
         },
       });
       if (rentRecord) {
-        const { legacy, compact } = parseRentPayload(rentRecord.payload);
-        const payloadCarId = rentRecord.carId ?? legacy?.carId ?? null;
+        const compact = parseCompactRentPayload(rentRecord.payload);
+        const payloadCarId = rentRecord.carId;
 
         if (!payloadCarId || payloadCarId === car.id) {
-          if (legacy) {
-            rentPrefill = {
-              ...legacy,
-              rentId,
-              carId: car.id,
-              locale: resolvedLocale,
-            };
-          } else {
-            const prefill = buildInitialValues(null, resolvedLocale, car.id);
-            const deliveryDetails = rentRecord.BookingDeliveryDetails;
+          const prefill = buildInitialValues(null, resolvedLocale, car.id);
+          const deliveryDetails = rentRecord.BookingDeliveryDetails;
 
-            prefill.rentId = rentId;
-            prefill.locale = resolvedLocale;
-            prefill.carId = car.id;
-            prefill.quoteId = rentRecord.quoteId ?? undefined;
-            prefill.contact = {
-              same: false,
-              name: rentRecord.contactName ?? '',
-              email: rentRecord.contactEmail ?? '',
-            };
-            prefill.driver =
-              Array.isArray(compact?.driver) && compact.driver.length > 0
-                ? compact.driver
-                : prefill.driver;
-            prefill.driver[0].phoneNumber =
-              rentRecord.contactPhone ?? prefill.driver[0].phoneNumber ?? '';
-            prefill.driver[0].email =
-              rentRecord.contactEmail ?? prefill.driver[0].email ?? '';
-            prefill.rentalPeriod = {
-              startDate: toDateInputValue(rentRecord.rentalStart),
-              endDate: toDateInputValue(rentRecord.rentalEnd),
-            };
-            prefill.rentalDays =
-              typeof rentRecord.rentalDays === 'number'
-                ? rentRecord.rentalDays
-                : undefined;
-            prefill.delivery = {
-              placeType: toPlaceType(deliveryDetails?.placeType),
-              locationName: deliveryDetails?.locationName ?? '',
-              arrivalHour: deliveryDetails?.arrivalHour ?? '',
-              arrivalMinute: deliveryDetails?.arrivalMinute ?? '',
-              arrivalFlight: deliveryDetails?.arrivalFlight ?? '',
-              departureFlight: deliveryDetails?.departureFlight ?? '',
-              address: {
-                country: compact?.deliveryAddress?.country ?? '',
-                postalCode: compact?.deliveryAddress?.postalCode ?? '',
-                city: compact?.deliveryAddress?.city ?? '',
-                street: compact?.deliveryAddress?.street ?? '',
-                doorNumber: compact?.deliveryAddress?.doorNumber ?? '',
-              },
-            };
-            prefill.adults =
-              typeof compact?.adults === 'number'
-                ? compact.adults
-                : prefill.adults;
-            prefill.children = Array.isArray(compact?.children)
-              ? compact.children
-              : prefill.children;
-            prefill.extras = Array.isArray(compact?.extras)
-              ? compact.extras
-              : prefill.extras;
-            prefill.invoice = compact?.invoice ?? {
-              ...prefill.invoice,
-              name: prefill.contact.name,
-              email: prefill.contact.email,
-              phoneNumber: rentRecord.contactPhone ?? '',
-            };
-            prefill.tax = compact?.tax ?? prefill.tax;
-            prefill.consents = compact?.consents ?? prefill.consents;
+          prefill.rentId = rentId;
+          prefill.locale = resolvedLocale;
+          prefill.carId = car.id;
+          prefill.quoteId = rentRecord.quoteId ?? undefined;
+          prefill.contact = {
+            same: false,
+            name: rentRecord.contactName ?? '',
+            email: rentRecord.contactEmail ?? '',
+          };
+          prefill.driver =
+            Array.isArray(compact?.driver) && compact.driver.length > 0
+              ? compact.driver
+              : prefill.driver;
+          prefill.driver[0].phoneNumber =
+            rentRecord.contactPhone ?? prefill.driver[0].phoneNumber ?? '';
+          prefill.driver[0].email =
+            rentRecord.contactEmail ?? prefill.driver[0].email ?? '';
+          prefill.rentalPeriod = {
+            startDate: toDateInputValue(rentRecord.rentalStart),
+            endDate: toDateInputValue(rentRecord.rentalEnd),
+          };
+          prefill.rentalDays =
+            typeof rentRecord.rentalDays === 'number'
+              ? rentRecord.rentalDays
+              : undefined;
+          prefill.delivery = {
+            placeType: toPlaceType(deliveryDetails?.placeType),
+            locationName: deliveryDetails?.locationName ?? '',
+            arrivalHour: deliveryDetails?.arrivalHour ?? '',
+            arrivalMinute: deliveryDetails?.arrivalMinute ?? '',
+            arrivalFlight: deliveryDetails?.arrivalFlight ?? '',
+            departureFlight: deliveryDetails?.departureFlight ?? '',
+            address: {
+              country: compact?.deliveryAddress?.country ?? '',
+              postalCode: compact?.deliveryAddress?.postalCode ?? '',
+              city: compact?.deliveryAddress?.city ?? '',
+              street: compact?.deliveryAddress?.street ?? '',
+              doorNumber: compact?.deliveryAddress?.doorNumber ?? '',
+            },
+          };
+          prefill.adults =
+            typeof compact?.adults === 'number'
+              ? compact.adults
+              : prefill.adults;
+          prefill.children = Array.isArray(compact?.children)
+            ? compact.children
+            : prefill.children;
+          prefill.extras = Array.isArray(compact?.extras)
+            ? compact.extras
+            : prefill.extras;
+          prefill.invoice = compact?.invoice ?? {
+            ...prefill.invoice,
+            name: prefill.contact.name,
+            email: prefill.contact.email,
+            phoneNumber: rentRecord.contactPhone ?? '',
+          };
+          prefill.tax = compact?.tax ?? prefill.tax;
+          prefill.consents = compact?.consents ?? prefill.consents;
 
-            rentPrefill = prefill;
-          }
+          rentPrefill = prefill;
         }
       }
     } catch (error) {

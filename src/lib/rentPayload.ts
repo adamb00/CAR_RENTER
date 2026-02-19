@@ -19,16 +19,6 @@ export type CompactRentPayload = {
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 
-export const isLegacyRentPayload = (value: unknown): value is RentFormValues => {
-  if (!isRecord(value)) return false;
-  return (
-    'contact' in value &&
-    'driver' in value &&
-    'rentalPeriod' in value &&
-    'invoice' in value
-  );
-};
-
 export const isCompactRentPayload = (
   value: unknown,
 ): value is CompactRentPayload => {
@@ -36,17 +26,11 @@ export const isCompactRentPayload = (
   return value.v === 2;
 };
 
-export const parseRentPayload = (value: unknown): {
-  legacy: RentFormValues | null;
-  compact: CompactRentPayload | null;
-} => {
-  if (isLegacyRentPayload(value)) {
-    return { legacy: value, compact: null };
-  }
-  if (isCompactRentPayload(value)) {
-    return { legacy: null, compact: value };
-  }
-  return { legacy: null, compact: null };
+export const parseCompactRentPayload = (
+  value: unknown,
+): CompactRentPayload | null => {
+  if (isCompactRentPayload(value)) return value;
+  return null;
 };
 
 export const buildCompactRentPayload = (

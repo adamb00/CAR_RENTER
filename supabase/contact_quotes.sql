@@ -1,7 +1,7 @@
 -- ContactQuotes table and helpers
 -- Run this SQL in your Supabase project (SQL editor or migration)
+-- This version is aligned with /car_renter_admin Prisma migrations.
 
--- Ensure UUID generation is available
 create extension if not exists "pgcrypto";
 
 create table if not exists public."ContactQuotes" (
@@ -19,14 +19,32 @@ create table if not exists public."ContactQuotes" (
   children text,
   extras text[],
   delivery jsonb,
+  "bookingRequestData" jsonb,
+  rentalDays integer,
+  "offerAccepted" integer,
   carId text,
   carName text,
-  status text not null default 'new' check (status in ('new', 'in_progress', 'answered', 'closed')),
+  status text not null default 'new',
   updated text,
   humanId text unique,
   "createdAt" timestamptz not null default timezone('utc', now()),
   "updatedAt" timestamptz not null default timezone('utc', now())
 );
+
+alter table public."ContactQuotes"
+  add column if not exists "bookingRequestData" jsonb,
+  add column if not exists rentalDays integer,
+  add column if not exists "offerAccepted" integer;
+
+alter table public."ContactQuotes"
+  alter column status set default 'new';
+
+alter table public."ContactQuotes"
+  drop constraint if exists "ContactQuotes_status_check";
+
+alter table public."ContactQuotes"
+  add constraint "ContactQuotes_status_check"
+  check (status in ('new', 'quote_sent', 'quote_accepted'));
 
 create or replace function public.set_contactquotes_updated_at()
 returns trigger as $$

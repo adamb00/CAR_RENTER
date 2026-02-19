@@ -11,7 +11,7 @@ import {
   parseBookingData,
 } from '@/lib/format';
 import { sendMail } from '@/lib/mailer';
-import { parseRentPayload } from '@/lib/rentPayload';
+import { parseCompactRentPayload } from '@/lib/rentPayload';
 import { getTranslations } from 'next-intl/server';
 
 const toDateString = (value: Date | null): string | undefined => {
@@ -23,9 +23,7 @@ export async function sendRentCompletionEmail(
   rentRequest: RentCompletionRecord,
   locale: string,
 ) {
-  const { legacy, compact } = parseRentPayload(rentRequest.payload);
-  const legacyPayload = legacy;
-  const compactPayload = compact;
+  const compactPayload = parseCompactRentPayload(rentRequest.payload);
   const [tEmails, tRentForm] = await Promise.all([
     getTranslations({ locale, namespace: 'Emails' }),
     getTranslations({ locale, namespace: 'RentForm' }),
@@ -53,7 +51,7 @@ export async function sendRentCompletionEmail(
     Array.isArray(compactPayload?.children) && compactPayload.children.length > 0
       ? String(compactPayload.children.length)
       : '0';
-  const primaryDriver = legacyPayload?.driver?.[0] ?? compactPayload?.driver?.[0];
+  const primaryDriver = compactPayload?.driver?.[0];
   const driverNameSegments = [
     primaryDriver?.firstName_1,
     primaryDriver?.lastName_1,
@@ -72,17 +70,15 @@ export async function sendRentCompletionEmail(
   );
   const deliveryLocationName = delivery?.locationName ?? 'n/a';
   const deliveryAddress = formatAddress(compactPayload?.deliveryAddress ?? undefined);
-  const invoice = legacyPayload?.invoice ?? compactPayload?.invoice;
-  const payloadContactName = legacyPayload?.contact?.name;
-  const payloadContactEmail = legacyPayload?.contact?.email;
+  const invoice = compactPayload?.invoice;
   const invoiceName =
-    invoice?.name ?? payloadContactName ?? rentRequest.contactName;
+    invoice?.name ?? rentRequest.contactName;
   const invoiceEmail =
-    invoice?.email ?? payloadContactEmail ?? rentRequest.contactEmail;
+    invoice?.email ?? rentRequest.contactEmail;
   const invoicePhone = invoice?.phoneNumber ?? 'n/a';
   const invoiceAddress = formatAddress(invoice?.location ?? undefined);
   const extrasLabel = formatExtrasLabel(
-    legacyPayload?.extras ?? compactPayload?.extras,
+    compactPayload?.extras,
     tRentForm,
   );
   const arrivalFlight = delivery?.arrivalFlight ?? 'n/a';
@@ -116,11 +112,11 @@ export async function sendRentCompletionEmail(
     },
     {
       label: tEmails('rent.rows.contactName'),
-      value: normalizeRowValue(payloadContactName ?? rentRequest.contactName),
+      value: normalizeRowValue(rentRequest.contactName),
     },
     {
       label: tEmails('rent.rows.contactEmail'),
-      value: normalizeRowValue(payloadContactEmail ?? rentRequest.contactEmail),
+      value: normalizeRowValue(rentRequest.contactEmail),
     },
     {
       label: tEmails('rent.rows.driverName'),
@@ -187,7 +183,6 @@ export async function sendRentCompletionEmail(
   });
 
   const recipient =
-    payloadContactEmail ||
     rentRequest.contactEmail ||
     primaryDriver?.email;
 
