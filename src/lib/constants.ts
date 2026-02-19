@@ -52,6 +52,11 @@ const startOfToday = () => {
 };
 
 export const today = startOfToday();
+export const tomorrow = (() => {
+  const next = new Date(today);
+  next.setDate(next.getDate() + 1);
+  return next;
+})();
 
 export const oneYearAhead = (() => {
   const future = new Date(today);

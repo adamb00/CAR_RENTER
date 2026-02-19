@@ -11,57 +11,49 @@ import {
   parseBookingData,
 } from '@/lib/format';
 import { sendMail } from '@/lib/mailer';
-import { RentFormValues } from '@/schemas/RentSchema';
+import { parseRentPayload } from '@/lib/rentPayload';
 import { getTranslations } from 'next-intl/server';
 
-const isRentPayload = (value: unknown): value is RentFormValues => {
-  if (!value || typeof value !== 'object') return false;
-  const candidate = value as Record<string, unknown>;
-  return (
-    'contact' in candidate &&
-    'driver' in candidate &&
-    'rentalPeriod' in candidate &&
-    'invoice' in candidate
-  );
+const toDateString = (value: Date | null): string | undefined => {
+  if (!value) return undefined;
+  return value.toISOString().slice(0, 10);
 };
 
 export async function sendRentCompletionEmail(
   rentRequest: RentCompletionRecord,
   locale: string,
 ) {
-  if (!isRentPayload(rentRequest.payload)) {
-    return;
-  }
-
-  const payload = rentRequest.payload;
+  const { legacy, compact } = parseRentPayload(rentRequest.payload);
+  const legacyPayload = legacy;
+  const compactPayload = compact;
   const [tEmails, tRentForm] = await Promise.all([
     getTranslations({ locale, namespace: 'Emails' }),
     getTranslations({ locale, namespace: 'RentForm' }),
   ]);
 
   const carInfo =
-    payload.carId || rentRequest.carId
-      ? await getCarById((payload.carId ?? rentRequest.carId) as string)
+    rentRequest.carId
+      ? await getCarById(rentRequest.carId)
       : null;
 
   const carName = carInfo
     ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
-    : (payload.carId ?? rentRequest.carId ?? 'n/a');
+    : (rentRequest.carId ?? 'n/a');
 
   const period = `${formatFriendlyDate(
-    payload.rentalPeriod?.startDate,
+    toDateString(rentRequest.rentalStart),
     locale,
-  )} → ${formatFriendlyDate(payload.rentalPeriod?.endDate, locale)}`;
-  const rentalDaysValue = String(payload.rentalDays ?? 'n/a');
+  )} → ${formatFriendlyDate(toDateString(rentRequest.rentalEnd), locale)}`;
+  const rentalDaysValue = String(rentRequest.rentalDays ?? 'n/a');
   const adultsCount =
-    payload.adults !== undefined && payload.adults !== null
-      ? String(payload.adults)
+    compactPayload?.adults !== undefined && compactPayload.adults !== null
+      ? String(compactPayload.adults)
       : 'n/a';
   const childrenCount =
-    Array.isArray(payload.children) && payload.children.length > 0
-      ? String(payload.children.length)
+    Array.isArray(compactPayload?.children) && compactPayload.children.length > 0
+      ? String(compactPayload.children.length)
       : '0';
-  const primaryDriver = payload.driver?.[0];
+  const primaryDriver = legacyPayload?.driver?.[0] ?? compactPayload?.driver?.[0];
   const driverNameSegments = [
     primaryDriver?.firstName_1,
     primaryDriver?.lastName_1,
@@ -73,22 +65,28 @@ export async function sendRentCompletionEmail(
   const driverPhone =
     primaryDriver?.phoneNumber ?? rentRequest.contactPhone ?? 'n/a';
   const driverEmail = primaryDriver?.email ?? rentRequest.contactEmail;
+  const delivery = rentRequest.BookingDeliveryDetails;
   const deliveryType = formatDeliveryType(
-    payload.delivery?.placeType,
+    delivery?.placeType,
     tRentForm,
   );
-  const deliveryLocationName = payload.delivery?.locationName ?? 'n/a';
-  const deliveryAddress = formatAddress(payload.delivery?.address ?? undefined);
-  const invoice = payload.invoice;
+  const deliveryLocationName = delivery?.locationName ?? 'n/a';
+  const deliveryAddress = formatAddress(compactPayload?.deliveryAddress ?? undefined);
+  const invoice = legacyPayload?.invoice ?? compactPayload?.invoice;
+  const payloadContactName = legacyPayload?.contact?.name;
+  const payloadContactEmail = legacyPayload?.contact?.email;
   const invoiceName =
-    invoice?.name ?? payload.contact?.name ?? rentRequest.contactName;
+    invoice?.name ?? payloadContactName ?? rentRequest.contactName;
   const invoiceEmail =
-    invoice?.email ?? payload.contact?.email ?? rentRequest.contactEmail;
+    invoice?.email ?? payloadContactEmail ?? rentRequest.contactEmail;
   const invoicePhone = invoice?.phoneNumber ?? 'n/a';
   const invoiceAddress = formatAddress(invoice?.location ?? undefined);
-  const extrasLabel = formatExtrasLabel(payload.extras, tRentForm);
-  const arrivalFlight = payload.delivery?.arrivalFlight ?? 'n/a';
-  const departureFlight = payload.delivery?.departureFlight ?? 'n/a';
+  const extrasLabel = formatExtrasLabel(
+    legacyPayload?.extras ?? compactPayload?.extras,
+    tRentForm,
+  );
+  const arrivalFlight = delivery?.arrivalFlight ?? 'n/a';
+  const departureFlight = delivery?.departureFlight ?? 'n/a';
   const bookingData = parseBookingData(
     rentRequest.contactQuote?.bookingRequestData,
   );
@@ -118,15 +116,11 @@ export async function sendRentCompletionEmail(
     },
     {
       label: tEmails('rent.rows.contactName'),
-      value: normalizeRowValue(
-        payload.contact?.name ?? rentRequest.contactName,
-      ),
+      value: normalizeRowValue(payloadContactName ?? rentRequest.contactName),
     },
     {
       label: tEmails('rent.rows.contactEmail'),
-      value: normalizeRowValue(
-        payload.contact?.email ?? rentRequest.contactEmail,
-      ),
+      value: normalizeRowValue(payloadContactEmail ?? rentRequest.contactEmail),
     },
     {
       label: tEmails('rent.rows.driverName'),
@@ -178,7 +172,7 @@ export async function sendRentCompletionEmail(
     },
     {
       label: tEmails('rent.rows.quoteId'),
-      value: normalizeRowValue(payload.quoteId ?? rentRequest.quoteId ?? 'n/a'),
+      value: normalizeRowValue(rentRequest.quoteId ?? 'n/a'),
     },
   ];
 
@@ -193,9 +187,9 @@ export async function sendRentCompletionEmail(
   });
 
   const recipient =
-    payload.contact?.email ||
+    payloadContactEmail ||
     rentRequest.contactEmail ||
-    payload.driver?.[0]?.email;
+    primaryDriver?.email;
 
   if (!recipient) {
     return;

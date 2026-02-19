@@ -261,6 +261,32 @@ function lookupMessage(
   return typeof current === 'string' ? current : path;
 }
 
+function parseComparableDate(value: string): Date | null {
+  const segments = value.split('-');
+  if (segments.length === 3) {
+    const [yearRaw, monthRaw, dayRaw] = segments;
+    const year = Number.parseInt(yearRaw, 10);
+    const month = Number.parseInt(monthRaw, 10);
+    const day = Number.parseInt(dayRaw, 10);
+    if (
+      Number.isFinite(year) &&
+      Number.isFinite(month) &&
+      Number.isFinite(day)
+    ) {
+      const localDate = new Date(year, month - 1, day);
+      localDate.setHours(0, 0, 0, 0);
+      if (!Number.isNaN(localDate.getTime())) {
+        return localDate;
+      }
+    }
+  }
+
+  const fallback = new Date(value);
+  if (Number.isNaN(fallback.getTime())) return null;
+  fallback.setHours(0, 0, 0, 0);
+  return fallback;
+}
+
 const defaultTranslate: RentSchemaTranslate = (path) =>
   lookupMessage(DEFAULT_RENT_SCHEMA_MESSAGES, path);
 
@@ -552,8 +578,8 @@ export function createRentSchema(
       }),
     })
     .superRefine(({ rentalPeriod, delivery, children }, ctx) => {
-      const start = new Date(rentalPeriod.startDate);
-      const end = new Date(rentalPeriod.endDate);
+      const start = parseComparableDate(rentalPeriod.startDate);
+      const end = parseComparableDate(rentalPeriod.endDate);
 
       const today = new Date();
       today.setHours(0, 0, 0, 0);
@@ -561,7 +587,7 @@ export function createRentSchema(
       const maxDate = new Date(today);
       maxDate.setFullYear(maxDate.getFullYear() + 1);
 
-      if (start < today) {
+      if (start && start <= today) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: message('fields.rentalPeriod.startDate.past'),
@@ -569,7 +595,7 @@ export function createRentSchema(
         });
       }
 
-      if (start > maxDate) {
+      if (start && start > maxDate) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: message('fields.rentalPeriod.startDate.tooLate'),
@@ -577,7 +603,7 @@ export function createRentSchema(
         });
       }
 
-      if (end < start) {
+      if (start && end && end < start) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: message('fields.rentalPeriod.endDate.beforeStart'),
@@ -585,7 +611,7 @@ export function createRentSchema(
         });
       }
 
-      if (end > maxDate) {
+      if (end && end > maxDate) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: message('fields.rentalPeriod.endDate.tooLate'),

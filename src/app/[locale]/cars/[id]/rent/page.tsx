@@ -7,9 +7,11 @@ import { resolveLocale } from '@/lib/seo/seo';
 import { NoSSR } from '@/components/NoSSR';
 import RentPageClient from './client-page';
 import { getContactQuoteById } from '@/lib/contactQuotes';
+import { parseRentPayload } from '@/lib/rentPayload';
 import { prisma } from '@/lib/prisma';
 import type { RentFormValues } from '@/schemas/RentSchema';
 import { buildCarMetadata } from '@/lib/seo/metadata';
+import { buildInitialValues } from './build-initial-values';
 
 type PageParams = {
   locale: string;
@@ -19,6 +21,22 @@ type ManageSection = 'contact' | 'travel' | 'invoice';
 type ManageMode = 'modify';
 
 const RENT_ID_REGEX = /^[0-9a-fA-F-]{36}$/;
+
+const toDateInputValue = (value: Date | string | null | undefined): string => {
+  if (!value) return '';
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return '';
+  return parsed.toISOString().slice(0, 10);
+};
+
+const toPlaceType = (
+  value: string | null | undefined,
+): 'accommodation' | 'airport' | 'office' | undefined => {
+  if (value === 'accommodation' || value === 'airport' || value === 'office') {
+    return value;
+  }
+  return undefined;
+};
 
 export async function generateMetadata({
   params,
@@ -124,22 +142,107 @@ export default async function RentPage({
     try {
       const rentRecord = await prisma.rentRequest.findUnique({
         where: { id: rentId },
-        select: { id: true, carId: true, payload: true },
+        select: {
+          id: true,
+          locale: true,
+          carId: true,
+          quoteId: true,
+          contactName: true,
+          contactEmail: true,
+          contactPhone: true,
+          rentalStart: true,
+          rentalEnd: true,
+          rentalDays: true,
+          payload: true,
+          BookingDeliveryDetails: {
+            select: {
+              placeType: true,
+              locationName: true,
+              arrivalFlight: true,
+              departureFlight: true,
+              arrivalHour: true,
+              arrivalMinute: true,
+            },
+          },
+        },
       });
-      if (rentRecord?.payload && typeof rentRecord.payload === 'object') {
-        const cloned = JSON.parse(
-          JSON.stringify(rentRecord.payload)
-        ) as RentFormValues;
-        const payloadCarId =
-          rentRecord.carId ??
-          (typeof cloned.carId === 'string' ? cloned.carId : null);
+      if (rentRecord) {
+        const { legacy, compact } = parseRentPayload(rentRecord.payload);
+        const payloadCarId = rentRecord.carId ?? legacy?.carId ?? null;
+
         if (!payloadCarId || payloadCarId === car.id) {
-          rentPrefill = {
-            ...cloned,
-            rentId,
-            carId: car.id,
-            locale: resolvedLocale,
-          };
+          if (legacy) {
+            rentPrefill = {
+              ...legacy,
+              rentId,
+              carId: car.id,
+              locale: resolvedLocale,
+            };
+          } else {
+            const prefill = buildInitialValues(null, resolvedLocale, car.id);
+            const deliveryDetails = rentRecord.BookingDeliveryDetails;
+
+            prefill.rentId = rentId;
+            prefill.locale = resolvedLocale;
+            prefill.carId = car.id;
+            prefill.quoteId = rentRecord.quoteId ?? undefined;
+            prefill.contact = {
+              same: false,
+              name: rentRecord.contactName ?? '',
+              email: rentRecord.contactEmail ?? '',
+            };
+            prefill.driver =
+              Array.isArray(compact?.driver) && compact.driver.length > 0
+                ? compact.driver
+                : prefill.driver;
+            prefill.driver[0].phoneNumber =
+              rentRecord.contactPhone ?? prefill.driver[0].phoneNumber ?? '';
+            prefill.driver[0].email =
+              rentRecord.contactEmail ?? prefill.driver[0].email ?? '';
+            prefill.rentalPeriod = {
+              startDate: toDateInputValue(rentRecord.rentalStart),
+              endDate: toDateInputValue(rentRecord.rentalEnd),
+            };
+            prefill.rentalDays =
+              typeof rentRecord.rentalDays === 'number'
+                ? rentRecord.rentalDays
+                : undefined;
+            prefill.delivery = {
+              placeType: toPlaceType(deliveryDetails?.placeType),
+              locationName: deliveryDetails?.locationName ?? '',
+              arrivalHour: deliveryDetails?.arrivalHour ?? '',
+              arrivalMinute: deliveryDetails?.arrivalMinute ?? '',
+              arrivalFlight: deliveryDetails?.arrivalFlight ?? '',
+              departureFlight: deliveryDetails?.departureFlight ?? '',
+              address: {
+                country: compact?.deliveryAddress?.country ?? '',
+                postalCode: compact?.deliveryAddress?.postalCode ?? '',
+                city: compact?.deliveryAddress?.city ?? '',
+                street: compact?.deliveryAddress?.street ?? '',
+                doorNumber: compact?.deliveryAddress?.doorNumber ?? '',
+              },
+            };
+            prefill.adults =
+              typeof compact?.adults === 'number'
+                ? compact.adults
+                : prefill.adults;
+            prefill.children = Array.isArray(compact?.children)
+              ? compact.children
+              : prefill.children;
+            prefill.extras = Array.isArray(compact?.extras)
+              ? compact.extras
+              : prefill.extras;
+            prefill.invoice = compact?.invoice ?? {
+              ...prefill.invoice,
+              name: prefill.contact.name,
+              email: prefill.contact.email,
+              phoneNumber: rentRecord.contactPhone ?? '',
+            };
+            prefill.tax = compact?.tax ?? prefill.tax;
+            prefill.consents = compact?.consents ?? prefill.consents;
+
+            rentPrefill = prefill;
+          }
         }
       }
     } catch (error) {

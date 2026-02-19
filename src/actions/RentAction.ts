@@ -13,12 +13,196 @@ import {
   CONTACT_STATUS_QUOTE_ACCEPTED,
   RENT_STATUS_NEW,
 } from '@/lib/requestStatus';
+import { buildCompactRentPayload } from '@/lib/rentPayload';
 import { resolveLocale } from '@/lib/seo/seo';
 import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
 import { getTranslations } from 'next-intl/server';
-import z from 'zod';
 
-export const RentAction = async (values: z.infer<RentFormValues>) => {
+type PricingSnapshotInput = {
+  rentalFee: string | null;
+  insurance: string | null;
+  deposit: string | null;
+  deliveryFee: string | null;
+  extrasFee: string | null;
+  tip: string | null;
+};
+
+type BookingRequestPricingRecord = Partial<
+  Record<keyof PricingSnapshotInput, unknown>
+>;
+
+const PRICING_FIELDS: (keyof PricingSnapshotInput)[] = [
+  'rentalFee',
+  'insurance',
+  'deposit',
+  'deliveryFee',
+  'extrasFee',
+  'tip',
+];
+
+const normalizeText = (value: unknown): string | null => {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : null;
+};
+
+const hasAnyValue = (values: Array<string | null>): boolean =>
+  values.some((value) => typeof value === 'string' && value.length > 0);
+
+type DeliveryAddressInput =
+  | NonNullable<RentFormValues['delivery']>['address']
+  | null
+  | undefined;
+
+const formatDeliveryAddressLine = (
+  address?: DeliveryAddressInput,
+): string | null => {
+  const normalized = [
+    normalizeText(address?.country),
+    normalizeText(address?.postalCode),
+    normalizeText(address?.city),
+    normalizeText(address?.street),
+    normalizeText(address?.doorNumber),
+  ].filter((segment): segment is string => Boolean(segment));
+
+  return normalized.length > 0 ? normalized.join(', ') : null;
+};
+
+const selectBookingRequestRecord = (
+  raw: unknown,
+  offerIndex?: number,
+): BookingRequestPricingRecord | null => {
+  if (!raw || typeof raw !== 'object') return null;
+  if (Array.isArray(raw)) {
+    const safeIndex =
+      typeof offerIndex === 'number' &&
+      Number.isInteger(offerIndex) &&
+      offerIndex >= 0
+        ? offerIndex
+        : 0;
+    const selected = raw[safeIndex] ?? raw[0];
+    if (!selected || typeof selected !== 'object' || Array.isArray(selected)) {
+      return null;
+    }
+    return selected as BookingRequestPricingRecord;
+  }
+  return raw as BookingRequestPricingRecord;
+};
+
+const parsePricingSnapshot = (
+  raw: unknown,
+  offerIndex?: number,
+): PricingSnapshotInput | null => {
+  const record = selectBookingRequestRecord(raw, offerIndex);
+  if (!record) return null;
+
+  const snapshot = PRICING_FIELDS.reduce<PricingSnapshotInput>(
+    (acc, key) => {
+      acc[key] = normalizeText(record[key]);
+      return acc;
+    },
+    {
+      rentalFee: null,
+      insurance: null,
+      deposit: null,
+      deliveryFee: null,
+      extrasFee: null,
+      tip: null,
+    },
+  );
+
+  return hasAnyValue(Object.values(snapshot)) ? snapshot : null;
+};
+
+const loadPricingSnapshot = async (
+  quoteId: string | undefined,
+  offerIndex?: number,
+): Promise<PricingSnapshotInput | null | undefined> => {
+  if (!quoteId) return undefined;
+
+  try {
+    const quote = await prisma.contactQuote.findUnique({
+      where: { id: quoteId },
+      select: { bookingRequestData: true },
+    });
+
+    return parsePricingSnapshot(quote?.bookingRequestData, offerIndex);
+  } catch (error) {
+    console.error('Failed to load pricing snapshot from quote', error);
+    return null;
+  }
+};
+
+const syncBookingAuxTables = async (
+  bookingId: string,
+  formData: RentFormValues,
+  pricingSnapshot: PricingSnapshotInput | null | undefined,
+): Promise<void> => {
+  const prismaAny = prisma as any;
+  const deliveryTable = prismaAny?.bookingDeliveryDetails;
+  const pricingTable = prismaAny?.bookingPricingSnapshots;
+
+  if (
+    !deliveryTable ||
+    typeof deliveryTable.upsert !== 'function' ||
+    !pricingTable ||
+    typeof pricingTable.upsert !== 'function'
+  ) {
+    return;
+  }
+
+  try {
+    const delivery = formData.delivery;
+    const deliveryData = {
+      placeType: normalizeText(delivery?.placeType),
+      locationName: normalizeText(delivery?.locationName),
+      addressLine: formatDeliveryAddressLine(delivery?.address),
+      arrivalFlight: normalizeText(delivery?.arrivalFlight),
+      departureFlight: normalizeText(delivery?.departureFlight),
+      arrivalHour: normalizeText(delivery?.arrivalHour),
+      arrivalMinute: normalizeText(delivery?.arrivalMinute),
+    };
+    const hasDeliveryData = hasAnyValue(Object.values(deliveryData));
+
+    if (hasDeliveryData) {
+      await deliveryTable.upsert({
+        where: { bookingId },
+        update: {
+          ...deliveryData,
+          updatedAt: new Date(),
+        },
+        create: {
+          bookingId,
+          ...deliveryData,
+        },
+      });
+    } else if (typeof deliveryTable.deleteMany === 'function') {
+      await deliveryTable.deleteMany({ where: { bookingId } });
+    }
+
+    if (pricingSnapshot !== undefined) {
+      if (pricingSnapshot) {
+        await pricingTable.upsert({
+          where: { bookingId },
+          update: {
+            ...pricingSnapshot,
+            updatedAt: new Date(),
+          },
+          create: {
+            bookingId,
+            ...pricingSnapshot,
+          },
+        });
+      } else if (typeof pricingTable.deleteMany === 'function') {
+        await pricingTable.deleteMany({ where: { bookingId } });
+      }
+    }
+  } catch (error) {
+    console.error('Failed to sync booking aux tables', error);
+  }
+};
+
+export const RentAction = async (values: RentFormValues) => {
   const validatedFields = await RentSchema.safeParseAsync(values);
 
   if (!validatedFields.success) {
@@ -34,6 +218,10 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
   const rentIdFromPayload = validatedFields.data.rentId ?? null;
   const isModifyRequest = Boolean(rentIdFromPayload);
   let humanId: string | null = null;
+  const pricingSnapshot = await loadPricingSnapshot(
+    validatedFields.data.quoteId,
+    validatedFields.data.offer,
+  );
 
   type DeliveryAddress =
     | NonNullable<RentFormValues['delivery']>['address']
@@ -143,6 +331,8 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
         where: { id: rentIdFromPayload },
         select: {
           id: true,
+          locale: true,
+          carId: true,
           humanId: true,
           quoteId: true,
           contactName: true,
@@ -150,7 +340,17 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           contactPhone: true,
           rentalStart: true,
           rentalEnd: true,
-          payload: true,
+          rentalDays: true,
+          BookingDeliveryDetails: {
+            select: {
+              placeType: true,
+              locationName: true,
+              arrivalFlight: true,
+              departureFlight: true,
+              arrivalHour: true,
+              arrivalMinute: true,
+            },
+          },
           updated: true,
         },
       });
@@ -158,19 +358,9 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
         return { error: 'A megadott foglalás nem található.' };
       }
       humanId = existingRent.humanId ?? existingRent.id;
-      const previousPayload = isRentFormValues(existingRent.payload)
-        ? (existingRent.payload as RentFormValues)
-        : null;
       const rentChanges = summarizeRentChanges(
-        previousPayload,
-        validatedFields.data,
-        {
-          contactName: existingRent.contactName,
-          contactEmail: existingRent.contactEmail,
-          contactPhone: existingRent.contactPhone,
-          rentalStart: existingRent.rentalStart,
-          rentalEnd: existingRent.rentalEnd,
-        },
+        toCoreRentSnapshotFromRecord(existingRent),
+        toCoreRentSnapshotFromForm(validatedFields.data, locale),
       );
       const updatedMarker = appendRentUpdateLog(existingRent.updated ?? null, {
         action: 'self-service:modify',
@@ -191,9 +381,14 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
           rentalDays: normalizeRentalDays(validatedFields.data.rentalDays),
           updated: updatedMarker,
-          payload: validatedFields.data,
+          payload: buildCompactRentPayload(validatedFields.data),
         },
       });
+      await syncBookingAuxTables(
+        rentIdFromPayload,
+        validatedFields.data,
+        pricingSnapshot,
+      );
 
       await recordNotification({
         type: 'rent_request',
@@ -236,11 +431,16 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
           rentalDays: normalizeRentalDays(validatedFields.data.rentalDays),
           status: RENT_STATUS_NEW,
           updated: null,
-          payload: validatedFields.data,
+          payload: buildCompactRentPayload(validatedFields.data),
         },
         select: { id: true },
       });
       rentRecordId = createdRent.id;
+      await syncBookingAuxTables(
+        createdRent.id,
+        validatedFields.data,
+        pricingSnapshot,
+      );
 
       const rentNotificationHref = rentRecordId ? `/${rentRecordId}` : '/';
 
@@ -284,6 +484,9 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
       }
     } catch (error) {
       console.error('Failed to store rent request', error);
+      return {
+        error: 'Nem sikerült rögzíteni a foglalást. Kérjük, próbáld újra.',
+      };
     }
   }
 
@@ -403,14 +606,6 @@ export const RentAction = async (values: z.infer<RentFormValues>) => {
   };
 };
 
-type RentSnapshotFallbacks = {
-  contactName?: string | null;
-  contactEmail?: string | null;
-  contactPhone?: string | null;
-  rentalStart?: Date | string | null;
-  rentalEnd?: Date | string | null;
-};
-
 type RentChangeMap = Record<
   string,
   {
@@ -419,31 +614,41 @@ type RentChangeMap = Record<
   }
 >;
 
-const isRentFormValues = (value: unknown): value is RentFormValues => {
-  if (!value || typeof value !== 'object') return false;
-  const candidate = value as Record<string, unknown>;
-  return 'contact' in candidate && 'rentalPeriod' in candidate;
+type CoreRentSnapshot = Record<string, string | null>;
+
+type ExistingRentRecord = {
+  locale: string;
+  carId: string | null;
+  quoteId: string | null;
+  contactName: string;
+  contactEmail: string;
+  contactPhone: string | null;
+  rentalStart: Date | null;
+  rentalEnd: Date | null;
+  rentalDays: number | null;
+  BookingDeliveryDetails: {
+    placeType: string | null;
+    locationName: string | null;
+    arrivalFlight: string | null;
+    departureFlight: string | null;
+    arrivalHour: string | null;
+    arrivalMinute: string | null;
+  } | null;
 };
 
 function summarizeRentChanges(
-  previous: RentFormValues | null,
-  next: RentFormValues,
-  fallback: RentSnapshotFallbacks,
+  previous: CoreRentSnapshot,
+  next: CoreRentSnapshot,
 ): RentChangeMap {
-  const previousRecord = flattenRentForm(previous);
-  applyFallbackValues(previousRecord, fallback);
-  const nextRecord = flattenRentForm(next);
-  const ignoredKeys = new Set(['rentId']);
   const changes: RentChangeMap = {};
   const allKeys = new Set([
-    ...Object.keys(previousRecord),
-    ...Object.keys(nextRecord),
+    ...Object.keys(previous),
+    ...Object.keys(next),
   ]);
 
   for (const key of allKeys) {
-    if (ignoredKeys.has(key)) continue;
-    const before = previousRecord[key] ?? null;
-    const after = nextRecord[key] ?? null;
+    const before = previous[key] ?? null;
+    const after = next[key] ?? null;
     if (before === after) continue;
     changes[key] = { before, after };
   }
@@ -451,83 +656,80 @@ function summarizeRentChanges(
   return changes;
 }
 
-type NormalizedRecord = Record<string, string | null>;
-
 function normalizeValue(value: unknown): string | null {
   if (value === null || value === undefined) return null;
-  if (value instanceof Date) {
-    return Number.isNaN(value.getTime()) ? null : value.toISOString();
-  }
   if (typeof value === 'string') {
-    const trimmed = value.trim();
-    return trimmed.length > 0 ? trimmed : null;
+    const normalized = value.trim();
+    return normalized.length > 0 ? normalized : null;
   }
   if (typeof value === 'number' || typeof value === 'boolean') {
     return String(value);
   }
-  try {
-    return JSON.stringify(value);
-  } catch {
-    return String(value);
-  }
+  return null;
 }
 
-function flattenRentForm(value: RentFormValues | null): NormalizedRecord {
-  const record: NormalizedRecord = {};
-  if (!value) {
-    return record;
+function normalizeDate(value: Date | string | null | undefined): string | null {
+  if (!value) return null;
+  if (value instanceof Date) {
+    if (Number.isNaN(value.getTime())) return null;
+    return value.toISOString().slice(0, 10);
   }
-  Object.entries(value as Record<string, unknown>).forEach(([key, nested]) => {
-    flattenValue(nested, key, record);
-  });
-  return record;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    const trimmed = value.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  }
+  return parsed.toISOString().slice(0, 10);
 }
 
-function flattenValue(value: unknown, path: string, record: NormalizedRecord) {
-  if (value === null || value === undefined) {
-    record[path] = null;
-    return;
-  }
-  if (Array.isArray(value)) {
-    if (value.length === 0) {
-      record[path] = null;
-      return;
-    }
-    value.forEach((item, index) => {
-      flattenValue(item, `${path}.${index}`, record);
-    });
-    return;
-  }
-  if (typeof value === 'object') {
-    const entries = Object.entries(value as Record<string, unknown>);
-    if (entries.length === 0) {
-      record[path] = null;
-      return;
-    }
-    entries.forEach(([key, nested]) => {
-      flattenValue(nested, `${path}.${key}`, record);
-    });
-    return;
-  }
-  record[path] = normalizeValue(value);
-}
-
-function applyFallbackValues(
-  record: NormalizedRecord,
-  fallback: RentSnapshotFallbacks,
-) {
-  const apply = (key: string, value: unknown) => {
-    const normalized = normalizeValue(value);
-    if (normalized === null) return;
-    if (record[key] === undefined) {
-      record[key] = normalized;
-    }
+function toCoreRentSnapshotFromRecord(record: ExistingRentRecord): CoreRentSnapshot {
+  return {
+    locale: normalizeValue(record.locale),
+    carId: normalizeValue(record.carId),
+    quoteId: normalizeValue(record.quoteId),
+    contactName: normalizeValue(record.contactName),
+    contactEmail: normalizeValue(record.contactEmail),
+    contactPhone: normalizeValue(record.contactPhone),
+    rentalStart: normalizeDate(record.rentalStart),
+    rentalEnd: normalizeDate(record.rentalEnd),
+    rentalDays: normalizeValue(record.rentalDays),
+    deliveryPlaceType: normalizeValue(record.BookingDeliveryDetails?.placeType),
+    deliveryLocationName: normalizeValue(
+      record.BookingDeliveryDetails?.locationName,
+    ),
+    deliveryArrivalFlight: normalizeValue(
+      record.BookingDeliveryDetails?.arrivalFlight,
+    ),
+    deliveryDepartureFlight: normalizeValue(
+      record.BookingDeliveryDetails?.departureFlight,
+    ),
+    deliveryArrivalHour: normalizeValue(record.BookingDeliveryDetails?.arrivalHour),
+    deliveryArrivalMinute: normalizeValue(
+      record.BookingDeliveryDetails?.arrivalMinute,
+    ),
   };
+}
 
-  apply('contact.name', fallback.contactName);
-  apply('contact.email', fallback.contactEmail);
-  apply('driver.0.phoneNumber', fallback.contactPhone);
-  apply('driver.0.email', fallback.contactEmail);
-  apply('rentalPeriod.startDate', fallback.rentalStart);
-  apply('rentalPeriod.endDate', fallback.rentalEnd);
+function toCoreRentSnapshotFromForm(
+  values: RentFormValues,
+  locale: string,
+): CoreRentSnapshot {
+  const delivery = values.delivery;
+  return {
+    locale: normalizeValue(locale),
+    carId: normalizeValue(values.carId),
+    quoteId: normalizeValue(values.quoteId),
+    contactName: normalizeValue(values.contact?.name),
+    contactEmail: normalizeValue(values.contact?.email),
+    contactPhone: normalizeValue(values.driver?.[0]?.phoneNumber),
+    rentalStart: normalizeDate(values.rentalPeriod?.startDate),
+    rentalEnd: normalizeDate(values.rentalPeriod?.endDate),
+    rentalDays: normalizeValue(values.rentalDays),
+    deliveryPlaceType: normalizeValue(delivery?.placeType),
+    deliveryLocationName: normalizeValue(delivery?.locationName),
+    deliveryArrivalFlight: normalizeValue(delivery?.arrivalFlight),
+    deliveryDepartureFlight: normalizeValue(delivery?.departureFlight),
+    deliveryArrivalHour: normalizeValue(delivery?.arrivalHour),
+    deliveryArrivalMinute: normalizeValue(delivery?.arrivalMinute),
+  };
 }

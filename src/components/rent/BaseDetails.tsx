@@ -104,6 +104,11 @@ export default function BaseDetails({
     future.setFullYear(future.getFullYear() + 1);
     return future;
   }, [today]);
+  const tomorrow = React.useMemo(() => {
+    const nextDay = new Date(today);
+    nextDay.setDate(nextDay.getDate() + 1);
+    return nextDay;
+  }, [today]);
 
   const extrasOptions = React.useMemo(
     () =>
@@ -201,7 +206,7 @@ export default function BaseDetails({
                     initialDateFrom={parseDateValue(field.value?.startDate)}
                     initialDateTo={parseDateValue(field.value?.endDate)}
                     showCompare={false}
-                    minDate={today}
+                    minDate={tomorrow}
                     maxDate={oneYearAhead}
                     onUpdate={({ range }) => {
                       if (range?.from && range?.to) {

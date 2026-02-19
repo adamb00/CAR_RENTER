@@ -53,9 +53,23 @@ export default async function RentThankYouPage({
           contactEmail: true,
           contactName: true,
           contactPhone: true,
+          rentalStart: true,
+          rentalEnd: true,
+          rentalDays: true,
           payload: true,
           carId: true,
           quoteId: true,
+          BookingDeliveryDetails: {
+            select: {
+              placeType: true,
+              locationName: true,
+              addressLine: true,
+              arrivalFlight: true,
+              departureFlight: true,
+              arrivalHour: true,
+              arrivalMinute: true,
+            },
+          },
           contactQuote: {
             select: { bookingRequestData: true },
           },
