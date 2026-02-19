@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionCard from '../SectionCard';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   FormControl,
   FormField,
@@ -21,6 +21,31 @@ import {
 import { Input } from '../ui/input';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import { useDelivery } from '@/hooks/useDelivery';
+import AccommodationAutocompleteInput from './AccommodationAutocompleteInput';
+import type { AccommodationSuggestion } from '@/lib/accommodations/types';
+import AirportAutocompleteInput from './AirportAutocompleteInput';
+import type { AirportSuggestion } from '@/lib/airports/types';
+
+const normalizeIsland = (value: string): 'lanzarote' | 'fuerteventura' | null => {
+  const normalized = value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+
+  if (normalized.includes('lanzarote')) return 'lanzarote';
+  if (normalized.includes('fuerteventura')) return 'fuerteventura';
+  return null;
+};
+
+const fallbackPostalCodeByIsland = (
+  island: string
+): string => {
+  const islandKey = normalizeIsland(island);
+  if (islandKey === 'lanzarote') return '35500';
+  if (islandKey === 'fuerteventura') return '35600';
+  return '00000';
+};
 
 export default function Delivery({
   form,
@@ -30,12 +55,97 @@ export default function Delivery({
   placesReady: boolean;
 }) {
   const t = useTranslations('RentForm');
+  const locale = useLocale();
+  const accommodationNoResultLabel = locale.toLowerCase().startsWith('hu')
+    ? 'Nincs talalat a hivatalos szallaslistaban'
+    : 'No matching accommodation found';
+  const airportNoResultLabel = locale.toLowerCase().startsWith('hu')
+    ? 'Nincs talalat a lanzarotei vagy fuerteventurai repterek kozott'
+    : 'No matching Lanzarote or Fuerteventura airport found';
 
   const { deliveryLocationPath, handleDeliveryPostalSelect } =
     useDelivery(form);
   const placeTypeValue = form.watch('delivery.placeType');
   const shouldShowDeliveryDetails =
     placeTypeValue === 'accommodation' || placeTypeValue === 'airport';
+  const shouldUseAccommodationList = placeTypeValue === 'accommodation';
+  const shouldUseAirportList = placeTypeValue === 'airport';
+
+  const clearDeliverySelectionFields = React.useCallback(() => {
+    const resetOptions = {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: false,
+    } as const;
+
+    form.setValue('delivery.locationName', '', resetOptions);
+    (
+      ['country', 'postalCode', 'city', 'street', 'doorNumber'] as const
+    ).forEach((key) => {
+      form.setValue(deliveryLocationPath(key), '', resetOptions);
+    });
+
+    form.clearErrors([
+      'delivery.locationName',
+      'delivery.address.country',
+      'delivery.address.postalCode',
+      'delivery.address.city',
+      'delivery.address.street',
+      'delivery.address.doorNumber',
+    ]);
+  }, [deliveryLocationPath, form]);
+
+  const handleAccommodationSelect = React.useCallback(
+    (accommodation: AccommodationSuggestion) => {
+      const options = {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      } as const;
+      const country = accommodation.country || 'Spain';
+      const city =
+        accommodation.municipality ||
+        accommodation.locality ||
+        accommodation.island ||
+        'Fuerteventura';
+      const postalCode =
+        accommodation.postalCode ||
+        fallbackPostalCodeByIsland(accommodation.island);
+
+      clearDeliverySelectionFields();
+      form.setValue('delivery.locationName', accommodation.name, options);
+      form.setValue(deliveryLocationPath('country'), country, options);
+      form.setValue(deliveryLocationPath('postalCode'), postalCode, options);
+      form.setValue(deliveryLocationPath('city'), city, options);
+      if (accommodation.address) {
+        form.setValue(deliveryLocationPath('street'), accommodation.address, options);
+      }
+    },
+    [clearDeliverySelectionFields, deliveryLocationPath, form]
+  );
+
+  const handleAirportSelect = React.useCallback(
+    (airport: AirportSuggestion) => {
+      const options = {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      } as const;
+
+      const code = airport.iataCode || airport.ident;
+      const locationName = code ? `${airport.name} (${code})` : airport.name;
+      const country = airport.country || 'Spain';
+      const city = airport.municipality || airport.name || 'Fuerteventura';
+      const postalCode = fallbackPostalCodeByIsland(airport.island);
+
+      clearDeliverySelectionFields();
+      form.setValue('delivery.locationName', locationName, options);
+      form.setValue(deliveryLocationPath('country'), country, options);
+      form.setValue(deliveryLocationPath('postalCode'), postalCode, options);
+      form.setValue(deliveryLocationPath('city'), city, options);
+    },
+    [clearDeliverySelectionFields, deliveryLocationPath, form]
+  );
 
   React.useEffect(() => {
     if (shouldShowDeliveryDetails) return;
@@ -139,13 +249,39 @@ export default function Delivery({
                     {t('sections.delivery.locationName.label')}
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder={t(
-                        'sections.delivery.locationName.placeholder'
-                      )}
-                      value={nameValue}
-                      onChange={(event) => field.onChange(event.target.value)}
-                    />
+                    {shouldUseAccommodationList ? (
+                      <AccommodationAutocompleteInput
+                        placeholder={t(
+                          'sections.delivery.locationName.placeholder'
+                        )}
+                        value={nameValue}
+                        onChange={(value) => field.onChange(value)}
+                        onBlur={field.onBlur}
+                        onSelect={handleAccommodationSelect}
+                        searchingLabel={t('searching')}
+                        noResultLabel={accommodationNoResultLabel}
+                      />
+                    ) : shouldUseAirportList ? (
+                      <AirportAutocompleteInput
+                        placeholder={t(
+                          'sections.delivery.locationName.placeholder'
+                        )}
+                        value={nameValue}
+                        onChange={(value) => field.onChange(value)}
+                        onBlur={field.onBlur}
+                        onSelect={handleAirportSelect}
+                        searchingLabel={t('searching')}
+                        noResultLabel={airportNoResultLabel}
+                      />
+                    ) : (
+                      <Input
+                        placeholder={t(
+                          'sections.delivery.locationName.placeholder'
+                        )}
+                        value={nameValue}
+                        onChange={(event) => field.onChange(event.target.value)}
+                      />
+                    )}
                   </FormControl>
                   <FormMessage />
                 </FormItem>

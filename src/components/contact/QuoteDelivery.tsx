@@ -1,7 +1,6 @@
-import { useTranslations } from 'next-intl';
-import React, { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import React from 'react';
 import {
-  Form,
   FormControl,
   FormField,
   FormItem,
@@ -21,6 +20,31 @@ import {
 import { Input } from '../ui/input';
 import { useDelivery } from '@/hooks/useDelivery';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import AccommodationAutocompleteInput from '../rent/AccommodationAutocompleteInput';
+import type { AccommodationSuggestion } from '@/lib/accommodations/types';
+import AirportAutocompleteInput from '../rent/AirportAutocompleteInput';
+import type { AirportSuggestion } from '@/lib/airports/types';
+
+const normalizeIsland = (
+  value: string,
+): 'lanzarote' | 'fuerteventura' | null => {
+  const normalized = value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+
+  if (normalized.includes('lanzarote')) return 'lanzarote';
+  if (normalized.includes('fuerteventura')) return 'fuerteventura';
+  return null;
+};
+
+const fallbackPostalCodeByIsland = (island: string): string => {
+  const islandKey = normalizeIsland(island);
+  if (islandKey === 'lanzarote') return '35500';
+  if (islandKey === 'fuerteventura') return '35600';
+  return '00000';
+};
 
 export default function QuoteDelivery({
   form,
@@ -30,8 +54,14 @@ export default function QuoteDelivery({
   placesReady: boolean;
 }) {
   const t = useTranslations('Contact');
-  const tReF = useTranslations('RentForm');
+  const locale = useLocale();
   const tRent = useTranslations('RentForm');
+  const accommodationNoResultLabel = locale.toLowerCase().startsWith('hu')
+    ? 'Nincs talalat a hivatalos szallaslistaban'
+    : 'No matching accommodation found';
+  const airportNoResultLabel = locale.toLowerCase().startsWith('hu')
+    ? 'Nincs talalat a lanzarotei vagy fuerteventurai repterek kozott'
+    : 'No matching Lanzarote or Fuerteventura airport found';
 
   const deliveryTitle = tRent('sections.delivery.title');
   const deliveryDesc = tRent('sections.delivery.description');
@@ -41,6 +71,99 @@ export default function QuoteDelivery({
   const placeTypeValue = form.watch('delivery.placeType');
   const shouldShowDeliveryDetails =
     placeTypeValue === 'accommodation' || placeTypeValue === 'airport';
+  const shouldUseAccommodationList = placeTypeValue === 'accommodation';
+  const shouldUseAirportList = placeTypeValue === 'airport';
+
+  const clearDeliverySelectionFields = React.useCallback(() => {
+    const resetOptions = {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: false,
+    } as const;
+
+    form.setValue('delivery.locationName', '', resetOptions);
+    (
+      ['country', 'postalCode', 'city', 'street', 'doorNumber'] as const
+    ).forEach((key) => {
+      form.setValue(deliveryLocationPath(key), '', resetOptions);
+    });
+
+    form.clearErrors([
+      'delivery.locationName',
+      'delivery.address.country',
+      'delivery.address.postalCode',
+      'delivery.address.city',
+      'delivery.address.street',
+      'delivery.address.doorNumber',
+    ]);
+  }, [deliveryLocationPath, form]);
+
+  const handleAccommodationSelect = React.useCallback(
+    (accommodation: AccommodationSuggestion) => {
+      const options = {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      } as const;
+      const country = accommodation.country || 'Spain';
+      const city =
+        accommodation.municipality ||
+        accommodation.locality ||
+        accommodation.island ||
+        'Fuerteventura';
+      const postalCode =
+        accommodation.postalCode ||
+        fallbackPostalCodeByIsland(accommodation.island);
+
+      clearDeliverySelectionFields();
+      form.setValue('delivery.locationName', accommodation.name, options);
+      form.setValue(deliveryLocationPath('country'), country, options);
+      form.setValue(deliveryLocationPath('postalCode'), postalCode, options);
+      form.setValue(deliveryLocationPath('city'), city, options);
+      if (accommodation.address) {
+        form.setValue(
+          deliveryLocationPath('street'),
+          accommodation.address.split(', Nº')[0] ||
+            accommodation.address.split(', ')[0] ||
+            accommodation.address,
+          options,
+        );
+        form.setValue(
+          deliveryLocationPath('doorNumber'),
+          accommodation.address.split(', Nº')[1]?.trim() ||
+            accommodation.address.split(',')[1] ||
+            '',
+          options,
+        );
+      }
+    },
+    [clearDeliverySelectionFields, deliveryLocationPath, form],
+  );
+
+  const handleAirportSelect = React.useCallback(
+    (airport: AirportSuggestion) => {
+      const options = {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      } as const;
+
+      console.log(airport);
+
+      const code = airport.iataCode || airport.ident;
+      const locationName = code ? `${airport.name} (${code})` : airport.name;
+      const country = airport.country || 'Spain';
+      const city = airport.municipality || airport.name || 'Fuerteventura';
+      const postalCode = fallbackPostalCodeByIsland(airport.island);
+
+      clearDeliverySelectionFields();
+      form.setValue('delivery.locationName', locationName, options);
+      form.setValue(deliveryLocationPath('country'), country, options);
+      form.setValue(deliveryLocationPath('postalCode'), postalCode, options);
+      form.setValue(deliveryLocationPath('city'), city, options);
+    },
+    [clearDeliverySelectionFields, deliveryLocationPath, form],
+  );
 
   React.useEffect(() => {
     if (shouldShowDeliveryDetails) return;
@@ -52,13 +175,7 @@ export default function QuoteDelivery({
     });
 
     (
-      [
-        'country',
-        'postalCode',
-        'city',
-        'street',
-        'doorNumber',
-      ] as const
+      ['country', 'postalCode', 'city', 'street', 'doorNumber'] as const
     ).forEach((key) => {
       form.setValue(deliveryLocationPath(key), '', {
         shouldDirty: false,
@@ -96,7 +213,7 @@ export default function QuoteDelivery({
                   <SelectTrigger>
                     <SelectValue
                       placeholder={tRent(
-                        'sections.delivery.fields.placeType.placeholder'
+                        'sections.delivery.fields.placeType.placeholder',
                       )}
                     />
                   </SelectTrigger>
@@ -106,7 +223,7 @@ export default function QuoteDelivery({
                     </SelectItem>
                     <SelectItem value='accommodation'>
                       {tRent(
-                        'sections.delivery.fields.placeType.accommodation'
+                        'sections.delivery.fields.placeType.accommodation',
                       )}
                     </SelectItem>
                     <SelectItem value='office'>
@@ -129,12 +246,38 @@ export default function QuoteDelivery({
                   {tRent('sections.delivery.locationName.label')}
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    {...field}
-                    placeholder={tRent(
-                      'sections.delivery.locationName.placeholder'
-                    )}
-                  />
+                  {shouldUseAccommodationList ? (
+                    <AccommodationAutocompleteInput
+                      placeholder={tRent(
+                        'sections.delivery.locationName.placeholder',
+                      )}
+                      value={field.value ?? ''}
+                      onChange={(value) => field.onChange(value)}
+                      onBlur={field.onBlur}
+                      onSelect={handleAccommodationSelect}
+                      searchingLabel={tRent('searching')}
+                      noResultLabel={accommodationNoResultLabel}
+                    />
+                  ) : shouldUseAirportList ? (
+                    <AirportAutocompleteInput
+                      placeholder={tRent(
+                        'sections.delivery.locationName.placeholder',
+                      )}
+                      value={field.value ?? ''}
+                      onChange={(value) => field.onChange(value)}
+                      onBlur={field.onBlur}
+                      onSelect={handleAirportSelect}
+                      searchingLabel={tRent('searching')}
+                      noResultLabel={airportNoResultLabel}
+                    />
+                  ) : (
+                    <Input
+                      {...field}
+                      placeholder={tRent(
+                        'sections.delivery.locationName.placeholder',
+                      )}
+                    />
+                  )}
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -161,7 +304,7 @@ export default function QuoteDelivery({
                         {...field}
                         value={countryValue}
                         placeholder={tRent(
-                          'sections.delivery.fields.country.placeholder'
+                          'sections.delivery.fields.country.placeholder',
                         )}
                       />
                     </FormControl>
@@ -191,7 +334,7 @@ export default function QuoteDelivery({
                           onSelect={async (address, placeId) => {
                             const resolved = await handleDeliveryPostalSelect(
                               address,
-                              placeId
+                              placeId,
                             );
                             if (resolved) {
                               field.onChange(resolved);
@@ -211,7 +354,7 @@ export default function QuoteDelivery({
                               <Input
                                 {...getInputProps({
                                   placeholder: tRent(
-                                    'sections.drivers.fields.postalCode.placeholder'
+                                    'sections.drivers.fields.postalCode.placeholder',
                                   ),
                                   onBlur: field.onBlur,
                                 })}
@@ -220,7 +363,7 @@ export default function QuoteDelivery({
                                 <div className='absolute z-50 mt-1 w-full overflow-hidden rounded-md border border-border/60 bg-background shadow-lg'>
                                   {loading && (
                                     <div className='px-3 py-2 text-sm text-muted-foreground'>
-                                      {tReF('searching')}
+                                      {tRent('searching')}
                                     </div>
                                   )}
                                   {suggestions.map((suggestion) => {
@@ -229,7 +372,7 @@ export default function QuoteDelivery({
                                       {
                                         className:
                                           'cursor-pointer px-3 py-2 text-sm hover:bg-accent',
-                                      }
+                                      },
                                     );
                                     const { key, ...restProps } = itemProps as {
                                       key?: React.Key;
@@ -238,8 +381,8 @@ export default function QuoteDelivery({
                                     const normalizedKey =
                                       key != null
                                         ? String(key)
-                                        : suggestion.placeId ??
-                                          suggestion.description;
+                                        : (suggestion.placeId ??
+                                          suggestion.description);
                                     return (
                                       <div key={normalizedKey} {...restProps}>
                                         {suggestion.description}
@@ -254,7 +397,7 @@ export default function QuoteDelivery({
                       ) : (
                         <Input
                           placeholder={t(
-                            'sections.drivers.fields.postalCode.placeholder'
+                            'sections.drivers.fields.postalCode.placeholder',
                           )}
                           value={postalValue}
                           onChange={(event) => {
@@ -288,7 +431,7 @@ export default function QuoteDelivery({
                         {...field}
                         value={cityValue}
                         placeholder={tRent(
-                          'sections.delivery.fields.city.placeholder'
+                          'sections.delivery.fields.city.placeholder',
                         )}
                       />
                     </FormControl>
@@ -313,7 +456,7 @@ export default function QuoteDelivery({
                         {...field}
                         value={streetValue}
                         placeholder={tRent(
-                          'sections.delivery.fields.street.placeholder'
+                          'sections.delivery.fields.street.placeholder',
                         )}
                       />
                     </FormControl>
@@ -341,7 +484,7 @@ export default function QuoteDelivery({
                         {...field}
                         value={doorValue}
                         placeholder={tRent(
-                          'sections.delivery.fields.doorNumber.placeholder'
+                          'sections.delivery.fields.doorNumber.placeholder',
                         )}
                       />
                     </FormControl>
