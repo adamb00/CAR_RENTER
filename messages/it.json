@@ -1935,6 +1935,14 @@
             "label": "Numero civico (opzionale)",
             "placeholder": "Numero civico"
           }
+        },
+        "airportSelect": {
+          "label": "Aeroporto",
+          "placeholder": "Seleziona aeroporto",
+          "options": {
+            "lanzarote": "Aeroporto di Lanzarote",
+            "fuerteventura": "Aeroporto di Fuerteventura"
+          }
         }
       },
       "consents": {

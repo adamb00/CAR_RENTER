@@ -1935,6 +1935,14 @@
             "label": "Număr (opțional)",
             "placeholder": "Număr"
           }
+        },
+        "airportSelect": {
+          "label": "Aeroport",
+          "placeholder": "Selectează aeroportul",
+          "options": {
+            "lanzarote": "Aeroportul Lanzarote",
+            "fuerteventura": "Aeroportul Fuerteventura"
+          }
         }
       },
       "consents": {

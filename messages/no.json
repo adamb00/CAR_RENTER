@@ -1935,6 +1935,14 @@
             "label": "Husnummer (valgfritt)",
             "placeholder": "Husnummer"
           }
+        },
+        "airportSelect": {
+          "label": "Flyplass",
+          "placeholder": "Velg flyplass",
+          "options": {
+            "lanzarote": "Lanzarote lufthavn",
+            "fuerteventura": "Fuerteventura lufthavn"
+          }
         }
       },
       "consents": {

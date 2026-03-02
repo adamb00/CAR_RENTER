@@ -1930,6 +1930,14 @@
             "label": "Číslo popisné (volitelné)",
             "placeholder": "Číslo popisné"
           }
+        },
+        "airportSelect": {
+          "label": "Letiště",
+          "placeholder": "Vyberte letiště",
+          "options": {
+            "lanzarote": "Letiště Lanzarote",
+            "fuerteventura": "Letiště Fuerteventura"
+          }
         }
       },
       "consents": {

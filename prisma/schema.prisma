@@ -55,6 +55,7 @@ model RentRequest {
   updatedAt               DateTime                 @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
   humanId                 String?                  @unique
   rentalDays              Int?                     @map("rentaldays")
+  archivedAt              DateTime?                @db.Timestamptz(6)
   BookingContracts        BookingContracts?
   BookingDeliveryDetails  BookingDeliveryDetails?
   BookingHandoverCosts    BookingHandoverCosts[]

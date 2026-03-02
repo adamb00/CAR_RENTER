@@ -1929,6 +1929,14 @@
             "label": "Házszám (Opcionális)",
             "placeholder": "Házszám"
           }
+        },
+        "airportSelect": {
+          "label": "Repülőtér",
+          "placeholder": "Válassz repülőteret",
+          "options": {
+            "lanzarote": "Lanzarote repülőtér",
+            "fuerteventura": "Fuerteventura repülőtér"
+          }
         }
       },
       "consents": {

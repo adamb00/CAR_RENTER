@@ -1935,6 +1935,14 @@
             "label": "House number (optional)",
             "placeholder": "House number"
           }
+        },
+        "airportSelect": {
+          "label": "Airport",
+          "placeholder": "Select airport",
+          "options": {
+            "lanzarote": "Lanzarote Airport",
+            "fuerteventura": "Fuerteventura Airport"
+          }
         }
       },
       "consents": {

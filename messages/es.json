@@ -2028,6 +2028,14 @@
             "label": "Número (opcional)",
             "placeholder": "Número"
           }
+        },
+        "airportSelect": {
+          "label": "Aeropuerto",
+          "placeholder": "Selecciona aeropuerto",
+          "options": {
+            "lanzarote": "Aeropuerto de Lanzarote",
+            "fuerteventura": "Aeropuerto de Fuerteventura"
+          }
         }
       },
       "consents": {

@@ -22,29 +22,7 @@ import { useDelivery } from '@/hooks/useDelivery';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import AccommodationAutocompleteInput from '../rent/AccommodationAutocompleteInput';
 import type { AccommodationSuggestion } from '@/lib/accommodations/types';
-import AirportAutocompleteInput from '../rent/AirportAutocompleteInput';
-import type { AirportSuggestion } from '@/lib/airports/types';
-
-const normalizeIsland = (
-  value: string,
-): 'lanzarote' | 'fuerteventura' | null => {
-  const normalized = value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim();
-
-  if (normalized.includes('lanzarote')) return 'lanzarote';
-  if (normalized.includes('fuerteventura')) return 'fuerteventura';
-  return null;
-};
-
-const fallbackPostalCodeByIsland = (island: string): string => {
-  const islandKey = normalizeIsland(island);
-  if (islandKey === 'lanzarote') return '35500';
-  if (islandKey === 'fuerteventura') return '35600';
-  return '00000';
-};
+import { FIXED_AIRPORT_OPTIONS } from '@/lib/airports/fixed-airports';
 
 export default function QuoteDelivery({
   form,
@@ -59,9 +37,6 @@ export default function QuoteDelivery({
   const accommodationNoResultLabel = locale.toLowerCase().startsWith('hu')
     ? 'Nincs talalat a hivatalos szallaslistaban'
     : 'No matching accommodation found';
-  const airportNoResultLabel = locale.toLowerCase().startsWith('hu')
-    ? 'Nincs talalat a lanzarotei vagy fuerteventurai repterek kozott'
-    : 'No matching Lanzarote or Fuerteventura airport found';
 
   const deliveryTitle = tRent('sections.delivery.title');
   const deliveryDesc = tRent('sections.delivery.description');
@@ -69,10 +44,11 @@ export default function QuoteDelivery({
   const { deliveryLocationPath, handleDeliveryPostalSelect } =
     useDelivery(form);
   const placeTypeValue = form.watch('delivery.placeType');
-  const shouldShowDeliveryDetails =
+  const shouldShowLocationField =
     placeTypeValue === 'accommodation' || placeTypeValue === 'airport';
+  const shouldShowAddressFields = placeTypeValue === 'accommodation';
   const shouldUseAccommodationList = placeTypeValue === 'accommodation';
-  const shouldUseAirportList = placeTypeValue === 'airport';
+  const shouldUseAirportSelect = placeTypeValue === 'airport';
 
   const clearDeliverySelectionFields = React.useCallback(() => {
     const resetOptions = {
@@ -113,7 +89,11 @@ export default function QuoteDelivery({
         'Fuerteventura';
       const postalCode =
         accommodation.postalCode ||
-        fallbackPostalCodeByIsland(accommodation.island);
+        (accommodation.island === 'lanzarote'
+          ? '35500'
+          : accommodation.island === 'fuerteventura'
+            ? '35600'
+            : '00000');
 
       clearDeliverySelectionFields();
       form.setValue('delivery.locationName', accommodation.name, options);
@@ -140,33 +120,42 @@ export default function QuoteDelivery({
     [clearDeliverySelectionFields, deliveryLocationPath, form],
   );
 
-  const handleAirportSelect = React.useCallback(
-    (airport: AirportSuggestion) => {
+  const handleFixedAirportSelect = React.useCallback(
+    (locationName: string) => {
+      const selectedAirport = FIXED_AIRPORT_OPTIONS.find(
+        (airport) => airport.locationName === locationName,
+      );
+      if (!selectedAirport) return;
+
       const options = {
         shouldDirty: true,
         shouldTouch: true,
         shouldValidate: true,
       } as const;
 
-      console.log(airport);
-
-      const code = airport.iataCode || airport.ident;
-      const locationName = code ? `${airport.name} (${code})` : airport.name;
-      const country = airport.country || 'Spain';
-      const city = airport.municipality || airport.name || 'Fuerteventura';
-      const postalCode = fallbackPostalCodeByIsland(airport.island);
-
       clearDeliverySelectionFields();
-      form.setValue('delivery.locationName', locationName, options);
-      form.setValue(deliveryLocationPath('country'), country, options);
-      form.setValue(deliveryLocationPath('postalCode'), postalCode, options);
-      form.setValue(deliveryLocationPath('city'), city, options);
+      form.setValue(
+        'delivery.locationName',
+        selectedAirport.locationName,
+        options,
+      );
+      form.setValue(
+        deliveryLocationPath('country'),
+        selectedAirport.country,
+        options,
+      );
+      form.setValue(
+        deliveryLocationPath('postalCode'),
+        selectedAirport.postalCode,
+        options,
+      );
+      form.setValue(deliveryLocationPath('city'), selectedAirport.city, options);
     },
     [clearDeliverySelectionFields, deliveryLocationPath, form],
   );
 
   React.useEffect(() => {
-    if (shouldShowDeliveryDetails) return;
+    if (shouldShowLocationField) return;
 
     form.setValue('delivery.locationName', '', {
       shouldDirty: false,
@@ -192,7 +181,7 @@ export default function QuoteDelivery({
       'delivery.address.street',
       'delivery.address.doorNumber',
     ]);
-  }, [deliveryLocationPath, form, shouldShowDeliveryDetails]);
+  }, [deliveryLocationPath, form, shouldShowLocationField]);
   return (
     <div className='rounded-2xl border border-border/60 bg-muted/30 p-4 space-y-4'>
       <div>
@@ -209,7 +198,13 @@ export default function QuoteDelivery({
                 {tRent('sections.delivery.fields.placeType.label')}
               </FormLabel>
               <FormControl>
-                <Select value={field.value} onValueChange={field.onChange}>
+                <Select
+                  value={field.value}
+                  onValueChange={(value) => {
+                    field.onChange(value);
+                    clearDeliverySelectionFields();
+                  }}
+                >
                   <SelectTrigger>
                     <SelectValue
                       placeholder={tRent(
@@ -226,9 +221,9 @@ export default function QuoteDelivery({
                         'sections.delivery.fields.placeType.accommodation',
                       )}
                     </SelectItem>
-                    <SelectItem value='office'>
+                    {/* <SelectItem value='office'>
                       {tRent('sections.delivery.fields.placeType.office')}
-                    </SelectItem>
+                    </SelectItem> */}
                   </SelectContent>
                 </Select>
               </FormControl>
@@ -236,14 +231,16 @@ export default function QuoteDelivery({
             </FormItem>
           )}
         />
-        {shouldShowDeliveryDetails ? (
+        {shouldShowLocationField ? (
           <FormField
             control={form.control}
             name='delivery.locationName'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>
-                  {tRent('sections.delivery.locationName.label')}
+                  {shouldUseAirportSelect
+                    ? tRent('sections.delivery.airportSelect.label')
+                    : tRent('sections.delivery.locationName.label')}
                 </FormLabel>
                 <FormControl>
                   {shouldUseAccommodationList ? (
@@ -258,18 +255,37 @@ export default function QuoteDelivery({
                       searchingLabel={tRent('searching')}
                       noResultLabel={accommodationNoResultLabel}
                     />
-                  ) : shouldUseAirportList ? (
-                    <AirportAutocompleteInput
-                      placeholder={tRent(
-                        'sections.delivery.locationName.placeholder',
-                      )}
-                      value={field.value ?? ''}
-                      onChange={(value) => field.onChange(value)}
-                      onBlur={field.onBlur}
-                      onSelect={handleAirportSelect}
-                      searchingLabel={tRent('searching')}
-                      noResultLabel={airportNoResultLabel}
-                    />
+                  ) : shouldUseAirportSelect ? (
+                    <Select
+                      value={
+                        FIXED_AIRPORT_OPTIONS.some(
+                          (airport) => airport.locationName === field.value,
+                        )
+                          ? field.value
+                          : undefined
+                      }
+                      onValueChange={handleFixedAirportSelect}
+                    >
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={tRent(
+                            'sections.delivery.airportSelect.placeholder',
+                          )}
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {FIXED_AIRPORT_OPTIONS.map((airport) => (
+                          <SelectItem
+                            key={airport.id}
+                            value={airport.locationName}
+                          >
+                            {tRent(
+                              `sections.delivery.airportSelect.options.${airport.id}`,
+                            )}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   ) : (
                     <Input
                       {...field}
@@ -285,7 +301,7 @@ export default function QuoteDelivery({
           />
         ) : null}
       </div>
-      {shouldShowDeliveryDetails ? (
+      {shouldShowAddressFields ? (
         <>
           <div className='grid gap-4 sm:grid-cols-2'>
             <FormField

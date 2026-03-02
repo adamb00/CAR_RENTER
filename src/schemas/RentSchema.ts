@@ -1,5 +1,6 @@
 import validator from 'validator';
 import { z } from 'zod';
+import { isFixedAirportLocationName } from '@/lib/airports/fixed-airports';
 
 const DEFAULT_RENT_SCHEMA_MESSAGES = {
   errors: {
@@ -620,6 +621,7 @@ export function createRentSchema(
       }
 
       const placeType = delivery?.placeType;
+      const locationName = delivery?.locationName;
       const address = delivery?.address ?? {};
 
       if (!placeType) {
@@ -630,8 +632,22 @@ export function createRentSchema(
         });
       }
 
-      const requiresAddress =
-        placeType === 'accommodation' || placeType === 'airport';
+      if (placeType === 'airport') {
+        const normalizedLocationName =
+          typeof locationName === 'string' ? locationName.trim() : '';
+        if (
+          normalizedLocationName.length === 0 ||
+          !isFixedAirportLocationName(normalizedLocationName)
+        ) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('errors.deliveryFieldRequired'),
+            path: ['delivery', 'locationName'],
+          });
+        }
+      }
+
+      const requiresAddress = placeType === 'accommodation';
 
       if (requiresAddress) {
         // Csak a kötelező címmezők (street és doorNumber opcionális marad)

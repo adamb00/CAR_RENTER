@@ -1935,6 +1935,14 @@
             "label": "Numer domu (opcjonalnie)",
             "placeholder": "Numer domu"
           }
+        },
+        "airportSelect": {
+          "label": "Lotnisko",
+          "placeholder": "Wybierz lotnisko",
+          "options": {
+            "lanzarote": "Lotnisko Lanzarote",
+            "fuerteventura": "Lotnisko Fuerteventura"
+          }
         }
       },
       "consents": {

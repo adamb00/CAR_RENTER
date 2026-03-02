@@ -1935,6 +1935,14 @@
             "label": "Husnummer (valfritt)",
             "placeholder": "Husnummer"
           }
+        },
+        "airportSelect": {
+          "label": "Flygplats",
+          "placeholder": "Välj flygplats",
+          "options": {
+            "lanzarote": "Lanzarote flygplats",
+            "fuerteventura": "Fuerteventura flygplats"
+          }
         }
       },
       "consents": {

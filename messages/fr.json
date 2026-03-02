@@ -1935,6 +1935,14 @@
             "label": "Numéro (optionnel)",
             "placeholder": "Numéro"
           }
+        },
+        "airportSelect": {
+          "label": "Aéroport",
+          "placeholder": "Sélectionnez un aéroport",
+          "options": {
+            "lanzarote": "Aéroport de Lanzarote",
+            "fuerteventura": "Aéroport de Fuerteventura"
+          }
         }
       },
       "consents": {

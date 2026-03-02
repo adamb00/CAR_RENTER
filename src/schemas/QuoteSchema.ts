@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 import { CHANNELS } from '@/lib/constants';
+import { isFixedAirportLocationName } from '@/lib/airports/fixed-airports';
 
 type TranslationFn = (key: string, values?: Record<string, any>) => string;
 
@@ -131,6 +132,7 @@ export const buildQuoteRequestSchema = ({
       }
 
       const placeType = val.delivery?.placeType;
+      const locationName = val.delivery?.locationName;
 
       if (!placeType) {
         ctx.addIssue({
@@ -140,8 +142,22 @@ export const buildQuoteRequestSchema = ({
         });
       }
 
-      const requiresAddress =
-        placeType === 'accommodation' || placeType === 'airport';
+      if (placeType === 'airport') {
+        const normalizedLocationName =
+          typeof locationName === 'string' ? locationName.trim() : '';
+        if (
+          normalizedLocationName.length === 0 ||
+          !isFixedAirportLocationName(normalizedLocationName)
+        ) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: deliveryFieldRequiredMessage,
+            path: ['delivery', 'locationName'],
+          });
+        }
+      }
+
+      const requiresAddress = placeType === 'accommodation';
 
       if (requiresAddress) {
         const address = val.delivery?.address ?? {};
