@@ -228,6 +228,7 @@ insert into public."BookingDeliveryDetails" (
   "departureFlight",
   "arrivalHour",
   "arrivalMinute",
+  "island",
   "updatedAt"
 )
 select
@@ -247,6 +248,25 @@ select
   nullif(btrim(rr.payload->'delivery'->>'departureFlight'), ''),
   nullif(btrim(rr.payload->'delivery'->>'arrivalHour'), ''),
   nullif(btrim(rr.payload->'delivery'->>'arrivalMinute'), ''),
+  case
+    when lower(coalesce(rr.payload->'delivery'->>'locationName', '')) like '%lanzarote%' then 'Lanzarote'
+    when lower(coalesce(rr.payload->'delivery'->>'locationName', '')) like '%fuerteventura%' then 'Fuerteventura'
+    when regexp_replace(
+      coalesce(rr.payload->'delivery'->'address'->>'postalCode', ''),
+      '[^0-9]',
+      '',
+      'g'
+    ) like '355%' then 'Lanzarote'
+    when regexp_replace(
+      coalesce(rr.payload->'delivery'->'address'->>'postalCode', ''),
+      '[^0-9]',
+      '',
+      'g'
+    ) like '356%' then 'Fuerteventura'
+    when lower(coalesce(rr.payload->'delivery'->'address'->>'city', '')) like '%lanzarote%' then 'Lanzarote'
+    when lower(coalesce(rr.payload->'delivery'->'address'->>'city', '')) like '%fuerteventura%' then 'Fuerteventura'
+    else null
+  end,
   timezone('utc', now())
 from public."RentRequests" rr
 where rr.payload is not null
@@ -260,6 +280,7 @@ set
   "departureFlight" = excluded."departureFlight",
   "arrivalHour" = excluded."arrivalHour",
   "arrivalMinute" = excluded."arrivalMinute",
+  "island" = excluded."island",
   "updatedAt" = timezone('utc', now());
 
 with extracted as (

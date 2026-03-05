@@ -16,6 +16,7 @@ import {
 import { buildCompactRentPayload } from '@/lib/rentPayload';
 import { resolveLocale } from '@/lib/seo/seo';
 import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
+import { getFixedAirportByLocationName } from '@/lib/airports/fixed-airports';
 import { getTranslations } from 'next-intl/server';
 
 type PricingSnapshotInput = {
@@ -66,6 +67,97 @@ const formatDeliveryAddressLine = (
   ].filter((segment): segment is string => Boolean(segment));
 
   return normalized.length > 0 ? normalized.join(', ') : null;
+};
+
+type SupportedIsland = 'Lanzarote' | 'Fuerteventura';
+
+const normalizeForSearch = (value: string): string =>
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const LANZAROTE_MARKERS = [
+  'lanzarote',
+  'arrecife',
+  'haria',
+  'san bartolome',
+  'teguise',
+  'tias',
+  'tinajo',
+  'yaiza',
+] as const;
+
+const FUERTEVENTURA_MARKERS = [
+  'fuerteventura',
+  'antigua',
+  'betancuria',
+  'la oliva',
+  'pajara',
+  'puerto del rosario',
+  'tuineje',
+] as const;
+
+const resolveIslandFromText = (value?: string | null): SupportedIsland | null => {
+  const normalized = normalizeText(value);
+  if (!normalized) return null;
+  const searchable = normalizeForSearch(normalized);
+
+  if (LANZAROTE_MARKERS.some((marker) => searchable.includes(marker))) {
+    return 'Lanzarote';
+  }
+
+  if (FUERTEVENTURA_MARKERS.some((marker) => searchable.includes(marker))) {
+    return 'Fuerteventura';
+  }
+
+  return null;
+};
+
+const resolveIslandFromPostalCode = (
+  value?: string | null,
+): SupportedIsland | null => {
+  const normalized = normalizeText(value);
+  if (!normalized) return null;
+  const digits = normalized.replace(/\D/g, '');
+
+  if (digits.startsWith('355')) {
+    return 'Lanzarote';
+  }
+
+  if (digits.startsWith('356')) {
+    return 'Fuerteventura';
+  }
+
+  return null;
+};
+
+const resolveBookingDeliveryIsland = (
+  delivery?: RentFormValues['delivery'],
+): SupportedIsland | null => {
+  if (!delivery) return null;
+
+  const locationName = normalizeText(delivery.locationName);
+  const placeType = normalizeText(delivery.placeType);
+
+  if (placeType === 'airport') {
+    const fixedAirport = getFixedAirportByLocationName(locationName);
+    if (fixedAirport?.id === 'lanzarote') return 'Lanzarote';
+    if (fixedAirport?.id === 'fuerteventura') return 'Fuerteventura';
+  }
+
+  const byPostalCode = resolveIslandFromPostalCode(delivery.address?.postalCode);
+  if (byPostalCode) return byPostalCode;
+
+  const byText =
+    resolveIslandFromText(locationName) ??
+    resolveIslandFromText(delivery.address?.city) ??
+    resolveIslandFromText(delivery.address?.street) ??
+    resolveIslandFromText(delivery.address?.country);
+
+  return byText;
 };
 
 const selectBookingRequestRecord = (
@@ -161,6 +253,7 @@ const syncBookingAuxTables = async (
       departureFlight: normalizeText(delivery?.departureFlight),
       arrivalHour: normalizeText(delivery?.arrivalHour),
       arrivalMinute: normalizeText(delivery?.arrivalMinute),
+      island: resolveBookingDeliveryIsland(delivery),
     };
     const hasDeliveryData = hasAnyValue(Object.values(deliveryData));
 
