@@ -31,6 +31,7 @@ model ContactQuote {
   bookingRequestData Json?
   rentalDays         Int?          @map("rentaldays")
   offerAccepted      Int?          @map("offerAccepted")
+  signerName         String?
   rentRequests       RentRequest[]
 
   @@index([createdAt], map: "idx_contactquotes_created_at")
@@ -58,6 +59,7 @@ model RentRequest {
   archivedAt              DateTime?                @db.Timestamptz(6)
   assignedFleetPlate      String?
   assignedFleetVehicleId  String?
+  signerName              String?
   BookingContracts        BookingContracts?
   BookingDeliveryDetails  BookingDeliveryDetails?
   BookingHandoverCosts    BookingHandoverCosts[]
@@ -188,6 +190,7 @@ model VehicleHandovers {
   damagesImages  String[]          @default([])
   createdAt      DateTime          @default(now())
   updatedAt      DateTime
+  rangeKm        Int?
   RentRequests   RentRequest       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
   FleetVehicles  FleetVehicles     @relation(fields: [fleetVehicleId], references: [id], onDelete: Cascade)
 
@@ -302,4 +305,5 @@ enum HandoverCostType {
   fuel
   ferry
   cleaning
+  commission
 }
