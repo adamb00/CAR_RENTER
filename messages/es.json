@@ -1804,7 +1804,8 @@
             "advance_transfer": "Transferencia bancaria por adelantado",
             "cash_on_pickup": "Efectivo al recoger",
             "card_on_pickup": "Tarjeta al recoger",
-            "instant_transfer_on_pickup": "Transferencia instantánea al recoger"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

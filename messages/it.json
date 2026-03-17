@@ -1711,7 +1711,8 @@
             "advance_transfer": "Bonifico anticipato",
             "cash_on_pickup": "Contanti alla consegna",
             "card_on_pickup": "Carta alla consegna",
-            "instant_transfer_on_pickup": "Bonifico istantaneo alla consegna"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

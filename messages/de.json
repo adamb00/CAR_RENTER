@@ -1711,7 +1711,8 @@
             "advance_transfer": "Vorausüberweisung",
             "cash_on_pickup": "Barzahlung bei Abholung",
             "card_on_pickup": "Kartenzahlung bei Abholung",
-            "instant_transfer_on_pickup": "Sofortüberweisung bei Abholung"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

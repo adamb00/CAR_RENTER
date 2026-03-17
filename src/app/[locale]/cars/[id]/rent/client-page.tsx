@@ -24,7 +24,10 @@ import { usePersistRentForm } from '@/hooks/usePersistRentForm';
 import { useSetContact, useSetInvoice } from '@/hooks/useSetForm';
 import { useWatchForm } from '@/hooks/useWatchForm';
 import { useWindowWithGoogle } from '@/hooks/useWindowWithGoogle';
-import { createRentSchema } from '@/schemas/RentSchema';
+import {
+  createRentSchema,
+  normalizePaymentMethodValue,
+} from '@/schemas/RentSchema';
 import { buildInitialValues } from './build-initial-values';
 import { buildConsentItems } from './consent-items';
 import { useCreateSubmitHandler } from './create-submit-handler';
@@ -71,6 +74,12 @@ export default function RentPageClient({
         locale,
         carId: id,
         rentId: rentPrefill.rentId ?? manageRentId,
+        consents: {
+          ...rentPrefill.consents,
+          paymentMethod: normalizePaymentMethodValue(
+            rentPrefill.consents?.paymentMethod,
+          ),
+        },
       };
     }
     return buildInitialValues(quotePrefill, locale, id);

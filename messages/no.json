@@ -1711,7 +1711,8 @@
             "advance_transfer": "Bankoverføring på forhånd",
             "cash_on_pickup": "Kontant ved henting",
             "card_on_pickup": "Kort ved henting",
-            "instant_transfer_on_pickup": "Umiddelbar overføring ved henting"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { RentFormValues } from '@/schemas/RentSchema';
+import {
+  normalizePaymentMethodValue,
+  RentFormValues,
+} from '@/schemas/RentSchema';
 import { UseFormReturn } from 'react-hook-form';
 
 const STORAGE_PREFIX = 'rent-form';
@@ -38,6 +41,29 @@ const ensureAdultsNumber = (values: RentFormValues): RentFormValues => {
   return values;
 };
 
+const ensurePaymentMethodValue = (values: RentFormValues): RentFormValues => {
+  const currentPaymentMethod =
+    (values as unknown as { consents?: { paymentMethod?: unknown } }).consents
+      ?.paymentMethod ?? '';
+  const normalizedPaymentMethod =
+    normalizePaymentMethodValue(currentPaymentMethod);
+
+  if (normalizedPaymentMethod !== currentPaymentMethod) {
+    return {
+      ...values,
+      consents: {
+        ...values.consents,
+        paymentMethod: normalizedPaymentMethod,
+      },
+    };
+  }
+
+  return values;
+};
+
+const sanitizeStoredValues = (values: RentFormValues): RentFormValues =>
+  ensurePaymentMethodValue(ensureAdultsNumber(values));
+
 export function usePersistRentForm(
   form: UseFormReturn<RentFormValues>,
   {
@@ -75,7 +101,7 @@ export function usePersistRentForm(
       const parsed = JSON.parse(raw) as StoredRentForm | null;
       if (parsed?.version !== STORAGE_VERSION || !parsed?.values) return;
 
-      const sanitized = ensureAdultsNumber(parsed.values);
+      const sanitized = sanitizeStoredValues(parsed.values);
       form.reset(sanitized);
 
       const restoredAdults = coerceAdults(
@@ -103,7 +129,7 @@ export function usePersistRentForm(
       const payload: StoredRentForm = {
         version: STORAGE_VERSION,
         timestamp: Date.now(),
-        values: ensureAdultsNumber(values),
+        values: sanitizeStoredValues(values),
         car: carId,
         locale,
       };

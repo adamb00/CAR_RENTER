@@ -140,7 +140,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.lastName1.placeholder'
+                          'sections.drivers.fields.lastName1.placeholder',
                         )}
                         value={lastNameValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -165,7 +165,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.lastName2.placeholder'
+                          'sections.drivers.fields.lastName2.placeholder',
                         )}
                         value={lastNameValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -190,7 +190,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.firstName1.placeholder'
+                          'sections.drivers.fields.firstName1.placeholder',
                         )}
                         value={firstNameValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -215,7 +215,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.firstName2.placeholder'
+                          'sections.drivers.fields.firstName2.placeholder',
                         )}
                         value={firstNameValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -251,7 +251,7 @@ export default function Drivers({
                             const resolved = await handlePostalSelect(
                               driverIndex,
                               address,
-                              placeId
+                              placeId,
                             );
                             if (resolved) {
                               field.onChange(resolved);
@@ -271,7 +271,7 @@ export default function Drivers({
                               <Input
                                 {...getInputProps({
                                   placeholder: t(
-                                    'sections.drivers.fields.postalCode.placeholder'
+                                    'sections.drivers.fields.postalCode.placeholder',
                                   ),
                                   onBlur: field.onBlur,
                                 })}
@@ -289,7 +289,7 @@ export default function Drivers({
                                       {
                                         className:
                                           'cursor-pointer px-3 py-2 text-sm hover:bg-accent',
-                                      }
+                                      },
                                     );
                                     const { key, ...restProps } = itemProps as {
                                       key?: React.Key;
@@ -298,8 +298,8 @@ export default function Drivers({
                                     const normalizedKey =
                                       key != null
                                         ? String(key)
-                                        : suggestion.placeId ??
-                                          suggestion.description;
+                                        : (suggestion.placeId ??
+                                          suggestion.description);
                                     return (
                                       <div key={normalizedKey} {...restProps}>
                                         {suggestion.description}
@@ -314,7 +314,7 @@ export default function Drivers({
                       ) : (
                         <Input
                           placeholder={t(
-                            'sections.drivers.fields.postalCode.placeholder'
+                            'sections.drivers.fields.postalCode.placeholder',
                           )}
                           value={postalValue}
                           onChange={(event) => {
@@ -344,7 +344,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.city.placeholder'
+                          'sections.drivers.fields.city.placeholder',
                         )}
                         value={cityValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -370,7 +370,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.country.placeholder'
+                          'sections.drivers.fields.country.placeholder',
                         )}
                         value={countryValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -395,7 +395,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.street.placeholder'
+                          'sections.drivers.fields.street.placeholder',
                         )}
                         value={streetValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -420,7 +420,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.streetType.placeholder'
+                          'sections.drivers.fields.streetType.placeholder',
                         )}
                         value={streetTypeValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -445,7 +445,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.doorNumber.placeholder'
+                          'sections.drivers.fields.doorNumber.placeholder',
                         )}
                         value={doorValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -461,7 +461,7 @@ export default function Drivers({
             id='bornData'
             className='grid grid-cols-1 gap-4 md:grid-cols-3'
           >
-            <FormField
+            {/* <FormField
               control={form.control}
               name={driverScalarPath(driverIndex, 'placeOfBirth')}
               render={({ field }) => {
@@ -485,7 +485,10 @@ export default function Drivers({
                   </FormItem>
                 );
               }}
-            />
+            /> */}
+          </section>
+
+          <section id='contact' className='flex flex-col gap-4 md:flex-row'>
             <FormField
               control={form.control}
               name={driverScalarPath(driverIndex, 'dateOfBirth')}
@@ -497,7 +500,7 @@ export default function Drivers({
                   : undefined;
 
                 return (
-                  <FormItem className='col-span-1'>
+                  <FormItem className='md:flex-1'>
                     <FormLabel>
                       {t('sections.drivers.fields.dateOfBirth.label')}
                     </FormLabel>
@@ -508,7 +511,7 @@ export default function Drivers({
                             variant={'outline'}
                             className={cn(
                               'w-auto pl-3 text-left font-normal',
-                              !selectedDate && 'text-muted-foreground'
+                              !selectedDate && 'text-muted-foreground',
                             )}
                           >
                             {selectedDate ? (
@@ -518,7 +521,7 @@ export default function Drivers({
                             ) : (
                               <span>
                                 {t(
-                                  'sections.drivers.fields.dateOfBirth.placeholder'
+                                  'sections.drivers.fields.dateOfBirth.placeholder',
                                 )}
                               </span>
                             )}
@@ -535,7 +538,7 @@ export default function Drivers({
                           toYear={maxExpiryDate.getFullYear()}
                           onSelect={(date) =>
                             field.onChange(
-                              date ? format(date, 'yyyy-MM-dd') : ''
+                              date ? format(date, 'yyyy-MM-dd') : '',
                             )
                           }
                           disabled={(date) =>
@@ -550,9 +553,6 @@ export default function Drivers({
                 );
               }}
             />
-          </section>
-
-          <section id='contact' className='flex flex-col gap-4 md:flex-row'>
             <FormField
               control={form.control}
               name={driverScalarPath(driverIndex, 'phoneNumber')}
@@ -567,7 +567,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.phoneNumber.placeholder'
+                          'sections.drivers.fields.phoneNumber.placeholder',
                         )}
                         value={phoneValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -592,7 +592,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.fields.email.placeholder'
+                          'sections.drivers.fields.email.placeholder',
                         )}
                         value={emailValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -606,7 +606,7 @@ export default function Drivers({
           </section>
           <section
             id='document'
-            className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 '
+            className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 '
           >
             <FormField
               control={form.control}
@@ -627,7 +627,7 @@ export default function Drivers({
                         <SelectTrigger>
                           <SelectValue
                             placeholder={t(
-                              'sections.drivers.documents.type.placeholder'
+                              'sections.drivers.documents.type.placeholder',
                             )}
                           />
                         </SelectTrigger>
@@ -662,7 +662,7 @@ export default function Drivers({
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.documents.number.placeholder'
+                          'sections.drivers.documents.number.placeholder',
                         )}
                         value={numberValue}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -673,7 +673,7 @@ export default function Drivers({
                 );
               }}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name={driverDocumentPath(driverIndex, 'validFrom')}
               render={({ field }) => {
@@ -694,7 +694,7 @@ export default function Drivers({
                             variant={'outline'}
                             className={cn(
                               'w-auto pl-3 text-left font-normal',
-                              !selectedDate && 'text-muted-foreground'
+                              !selectedDate && 'text-muted-foreground',
                             )}
                           >
                             {selectedDate ? (
@@ -704,7 +704,7 @@ export default function Drivers({
                             ) : (
                               <span>
                                 {t(
-                                  'sections.drivers.documents.validFrom.placeholder'
+                                  'sections.drivers.documents.validFrom.placeholder',
                                 )}
                               </span>
                             )}
@@ -719,7 +719,7 @@ export default function Drivers({
                           locale={calendarLocale}
                           onSelect={(date) =>
                             field.onChange(
-                              date ? format(date, 'yyyy-MM-dd') : ''
+                              date ? format(date, 'yyyy-MM-dd') : '',
                             )
                           }
                           disabled={(date) => date < new Date('1900-01-01')}
@@ -731,7 +731,7 @@ export default function Drivers({
                   </FormItem>
                 );
               }}
-            />
+            /> */}
             <FormField
               control={form.control}
               name={driverDocumentPath(driverIndex, 'validUntil')}
@@ -739,7 +739,7 @@ export default function Drivers({
                 const untilValue =
                   typeof field.value === 'string' ? field.value : '';
                 const issuedRaw = form.getValues(
-                  driverDocumentPath(driverIndex, 'validFrom')
+                  driverDocumentPath(driverIndex, 'validFrom'),
                 );
                 const issuedDate =
                   typeof issuedRaw === 'string' && issuedRaw
@@ -760,7 +760,7 @@ export default function Drivers({
                             variant={'outline'}
                             className={cn(
                               'w-auto pl-3 text-left font-normal',
-                              !selectedDate && 'text-muted-foreground'
+                              !selectedDate && 'text-muted-foreground',
                             )}
                           >
                             {selectedDate ? (
@@ -770,7 +770,7 @@ export default function Drivers({
                             ) : (
                               <span>
                                 {t(
-                                  'sections.drivers.documents.validUntil.placeholder'
+                                  'sections.drivers.documents.validUntil.placeholder',
                                 )}
                               </span>
                             )}
@@ -787,7 +787,7 @@ export default function Drivers({
                           toYear={maxExpiryDate.getFullYear()}
                           onSelect={(date) =>
                             field.onChange(
-                              date ? format(date, 'yyyy-MM-dd') : ''
+                              date ? format(date, 'yyyy-MM-dd') : '',
                             )
                           }
                           disabled={(date) => {
@@ -811,7 +811,7 @@ export default function Drivers({
 
           <section
             id='drivingLicence'
-            className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4'
+            className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'
           >
             <FormField
               control={form.control}
@@ -823,13 +823,13 @@ export default function Drivers({
                   <FormItem className='col-span-1'>
                     <FormLabel>
                       {t(
-                        'sections.drivers.documents.drivingLicenceNumber.label'
+                        'sections.drivers.documents.drivingLicenceNumber.label',
                       )}
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder={t(
-                          'sections.drivers.documents.drivingLicenceNumber.placeholder'
+                          'sections.drivers.documents.drivingLicenceNumber.placeholder',
                         )}
                         value={licenceNumber}
                         onChange={(event) => field.onChange(event.target.value)}
@@ -850,7 +850,7 @@ export default function Drivers({
                   <FormItem className='col-span-1'>
                     <FormLabel>
                       {t(
-                        'sections.drivers.documents.drivingLicenceCategory.label'
+                        'sections.drivers.documents.drivingLicenceCategory.label',
                       )}
                     </FormLabel>
                     <FormControl>
@@ -861,7 +861,7 @@ export default function Drivers({
                         <SelectTrigger>
                           <SelectValue
                             placeholder={t(
-                              'sections.drivers.documents.drivingLicenceCategory.placeholder'
+                              'sections.drivers.documents.drivingLicenceCategory.placeholder',
                             )}
                           />
                         </SelectTrigger>
@@ -897,7 +897,7 @@ export default function Drivers({
                 );
               }}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name={driverDocumentPath(driverIndex, 'drivingLicenceValidFrom')}
               render={({ field }) => {
@@ -910,7 +910,7 @@ export default function Drivers({
                   <FormItem className='col-span-1'>
                     <FormLabel>
                       {t(
-                        'sections.drivers.documents.drivingLicenceValidFrom.label'
+                        'sections.drivers.documents.drivingLicenceValidFrom.label',
                       )}
                     </FormLabel>
                     <Popover>
@@ -920,7 +920,7 @@ export default function Drivers({
                             variant={'outline'}
                             className={cn(
                               'w-full pl-3 text-left font-normal',
-                              !selectedDate && 'text-muted-foreground'
+                              !selectedDate && 'text-muted-foreground',
                             )}
                           >
                             {selectedDate ? (
@@ -930,7 +930,7 @@ export default function Drivers({
                             ) : (
                               <span>
                                 {t(
-                                  'sections.drivers.documents.drivingLicenceValidFrom.placeholder'
+                                  'sections.drivers.documents.drivingLicenceValidFrom.placeholder',
                                 )}
                               </span>
                             )}
@@ -945,7 +945,7 @@ export default function Drivers({
                           locale={calendarLocale}
                           onSelect={(date) =>
                             field.onChange(
-                              date ? format(date, 'yyyy-MM-dd') : ''
+                              date ? format(date, 'yyyy-MM-dd') : '',
                             )
                           }
                           disabled={(date) =>
@@ -959,7 +959,7 @@ export default function Drivers({
                   </FormItem>
                 );
               }}
-            />
+            /> */}
             <FormField
               control={form.control}
               name={driverDocumentPath(driverIndex, 'drivingLicenceValidUntil')}
@@ -967,7 +967,7 @@ export default function Drivers({
                 const licenceUntil =
                   typeof field.value === 'string' ? field.value : '';
                 const licenceFromRaw = form.getValues(
-                  driverDocumentPath(driverIndex, 'drivingLicenceValidFrom')
+                  driverDocumentPath(driverIndex, 'drivingLicenceValidFrom'),
                 );
                 const licenceFromDate =
                   typeof licenceFromRaw === 'string' && licenceFromRaw
@@ -980,7 +980,7 @@ export default function Drivers({
                   <FormItem className='col-span-1'>
                     <FormLabel>
                       {t(
-                        'sections.drivers.documents.drivingLicenceValidUntil.label'
+                        'sections.drivers.documents.drivingLicenceValidUntil.label',
                       )}
                     </FormLabel>
                     <Popover>
@@ -990,7 +990,7 @@ export default function Drivers({
                             variant={'outline'}
                             className={cn(
                               'w-full pl-3 text-left font-normal',
-                              !selectedDate && 'text-muted-foreground'
+                              !selectedDate && 'text-muted-foreground',
                             )}
                           >
                             {selectedDate ? (
@@ -1000,7 +1000,7 @@ export default function Drivers({
                             ) : (
                               <span>
                                 {t(
-                                  'sections.drivers.documents.drivingLicenceValidUntil.placeholder'
+                                  'sections.drivers.documents.drivingLicenceValidUntil.placeholder',
                                 )}
                               </span>
                             )}
@@ -1017,7 +1017,7 @@ export default function Drivers({
                           toYear={maxExpiryDate.getFullYear()}
                           onSelect={(date) =>
                             field.onChange(
-                              date ? format(date, 'yyyy-MM-dd') : ''
+                              date ? format(date, 'yyyy-MM-dd') : '',
                             )
                           }
                           disabled={(date) => {
@@ -1042,7 +1042,7 @@ export default function Drivers({
             control={form.control}
             name={driverDocumentPath(
               driverIndex,
-              'drivingLicenceIsOlderThan_3'
+              'drivingLicenceIsOlderThan_3',
             )}
             render={({ field }) => (
               <FormItem className='flex items-center gap-3 rounded-md border border-border/40 bg-muted/30 p-3'>

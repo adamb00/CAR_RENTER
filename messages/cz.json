@@ -1706,7 +1706,8 @@
             "advance_transfer": "Platba převodem předem",
             "cash_on_pickup": "Hotově při převzetí",
             "card_on_pickup": "Kartou při převzetí",
-            "instant_transfer_on_pickup": "Okamžitý převod při převzetí"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

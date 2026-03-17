@@ -224,10 +224,19 @@ export const PAYMENT_METHOD_VALUES = [
   'advance_transfer',
   'cash_on_pickup',
   'card_on_pickup',
-  'instant_transfer_on_pickup',
+  'bizum_on_pickup',
+  'revolut_on_pickup',
 ] as const;
 
 export type PaymentMethodValue = (typeof PAYMENT_METHOD_VALUES)[number];
+
+export const normalizePaymentMethodValue = (
+  value: unknown,
+): PaymentMethodValue | '' =>
+  typeof value === 'string' &&
+  PAYMENT_METHOD_VALUES.includes(value as PaymentMethodValue)
+    ? (value as PaymentMethodValue)
+    : '';
 
 type DotNestedKeys<T> = T extends string
   ? never
@@ -569,13 +578,9 @@ export function createRentSchema(
         paymentMethod: z
           .string()
           .min(1, message('fields.consents.paymentMethod.required'))
-          .refine(
-            (value) =>
-              PAYMENT_METHOD_VALUES.includes(value as PaymentMethodValue),
-            {
-              message: message('fields.consents.paymentMethod.required'),
-            },
-          ),
+          .refine((value) => normalizePaymentMethodValue(value) !== '', {
+            message: message('fields.consents.paymentMethod.required'),
+          }),
       }),
     })
     .superRefine(({ rentalPeriod, delivery, children }, ctx) => {

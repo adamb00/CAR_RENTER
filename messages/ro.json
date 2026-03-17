@@ -1711,7 +1711,8 @@
             "advance_transfer": "Transfer bancar în avans",
             "cash_on_pickup": "Numerar la preluare",
             "card_on_pickup": "Card la preluare",
-            "instant_transfer_on_pickup": "Transfer instant la preluare"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

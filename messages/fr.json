@@ -1711,7 +1711,8 @@
             "advance_transfer": "Virement bancaire anticipé",
             "cash_on_pickup": "Espèces à la remise",
             "card_on_pickup": "Carte à la remise",
-            "instant_transfer_on_pickup": "Virement instantané à la remise"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },

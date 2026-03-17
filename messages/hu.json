@@ -1705,7 +1705,8 @@
             "advance_transfer": "Előre utalás",
             "cash_on_pickup": "Készpénz átvételkor",
             "card_on_pickup": "Bankkártya átvételkor",
-            "instant_transfer_on_pickup": "Azonnali utalás átvételkor"
+            "bizum_on_pickup": "Bizum",
+            "revolut_on_pickup": "Revolut"
           }
         }
       },
