@@ -73,6 +73,8 @@ export function useCreateSubmitHandler({
     scrollToSection,
   });
 
+  console.log('form', form.formState.errors);
+
   const shouldAskForFlightNumbers = React.useCallback(
     (values: RentFormResolvedValues) => {
       const arrival =

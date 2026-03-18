@@ -47,6 +47,11 @@ const normalizeText = (value: unknown): string | null => {
   return trimmed.length > 0 ? trimmed : null;
 };
 
+const normalizeEmail = (value: unknown): string | null => {
+  const normalized = normalizeText(value);
+  return normalized ? normalized.toLowerCase() : null;
+};
+
 const hasAnyValue = (values: Array<string | null>): boolean =>
   values.some((value) => typeof value === 'string' && value.length > 0);
 
@@ -295,6 +300,45 @@ const syncBookingAuxTables = async (
   }
 };
 
+const syncRenterFromRentForm = async (
+  formData: RentFormValues,
+): Promise<string | null> => {
+  const prismaAny = prisma as any;
+  const rentersTable = prismaAny?.renters;
+
+  if (!rentersTable || typeof rentersTable.upsert !== 'function') {
+    return null;
+  }
+
+  const email = normalizeEmail(formData.contact?.email);
+  if (!email) {
+    return null;
+  }
+
+  const renterData = {
+    name: normalizeText(formData.contact?.name) ?? email,
+    email,
+    phone:
+      normalizeText(formData.driver?.[0]?.phoneNumber) ??
+      normalizeText(formData.invoice?.phoneNumber),
+    taxId: normalizeText(formData.tax?.id),
+    companyName: normalizeText(formData.tax?.companyName),
+    paymentMethod: normalizeText(formData.consents?.paymentMethod),
+  };
+
+  const renter = await rentersTable.upsert({
+    where: { email },
+    update: {
+      ...renterData,
+      updatedAt: new Date(),
+    },
+    create: renterData,
+    select: { id: true },
+  });
+
+  return renter.id;
+};
+
 export const RentAction = async (values: RentFormValues) => {
   const validatedFields = await RentSchema.safeParseAsync(values);
 
@@ -308,6 +352,7 @@ export const RentAction = async (values: RentFormValues) => {
   const pdfBuffer = await buildRentPdf(validatedFields.data);
   const pdfFileName = `berles-${validatedFields.data.rentalPeriod.startDate}-${validatedFields.data.contact.name}.pdf`;
   const contactPhone = validatedFields.data.driver?.[0]?.phoneNumber ?? null;
+  const normalizedContactEmail = normalizeEmail(validatedFields.data.contact.email);
   const rentIdFromPayload = validatedFields.data.rentId ?? null;
   const isModifyRequest = Boolean(rentIdFromPayload);
   let humanId: string | null = null;
@@ -460,6 +505,7 @@ export const RentAction = async (values: RentFormValues) => {
         rentId: rentIdFromPayload,
         changes: rentChanges,
       });
+      const renterId = await syncRenterFromRentForm(validatedFields.data);
 
       await prisma.rentRequest.update({
         where: { id: rentIdFromPayload },
@@ -468,11 +514,13 @@ export const RentAction = async (values: RentFormValues) => {
           carId: validatedFields.data.carId ?? null,
           quoteId: validatedFields.data.quoteId ?? null,
           contactName: validatedFields.data.contact.name,
-          contactEmail: validatedFields.data.contact.email,
+          contactEmail:
+            normalizedContactEmail ?? validatedFields.data.contact.email,
           contactPhone,
           rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
           rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
           rentalDays: normalizeRentalDays(validatedFields.data.rentalDays),
+          renterId,
           updated: updatedMarker,
           payload: buildCompactRentPayload(validatedFields.data),
         },
@@ -510,6 +558,7 @@ export const RentAction = async (values: RentFormValues) => {
   } else {
     humanId = await getNextHumanId('RentRequests');
     try {
+      const renterId = await syncRenterFromRentForm(validatedFields.data);
       const createdRent = await prisma.rentRequest.create({
         data: {
           locale,
@@ -517,11 +566,13 @@ export const RentAction = async (values: RentFormValues) => {
           quoteId: validatedFields.data.quoteId ?? null,
           humanId,
           contactName: validatedFields.data.contact.name,
-          contactEmail: validatedFields.data.contact.email,
+          contactEmail:
+            normalizedContactEmail ?? validatedFields.data.contact.email,
           contactPhone,
           rentalStart: toDateTime(validatedFields.data.rentalPeriod.startDate),
           rentalEnd: toDateTime(validatedFields.data.rentalPeriod.endDate),
           rentalDays: normalizeRentalDays(validatedFields.data.rentalDays),
+          renterId,
           status: RENT_STATUS_NEW,
           updated: null,
           payload: buildCompactRentPayload(validatedFields.data),

@@ -19,7 +19,7 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     streetRequired: 'Az utca megadása kötelező',
     doorNumberRequired: 'A házszám megadása kötelező',
     invalidDateOfBirth: 'Érvénytelen születési dátum',
-    placeOfBirthRequired: 'A születési hely megadása kötelező',
+    // placeOfBirthRequired: 'A születési hely megadása kötelező',
     phoneRequired: 'A telefonszám megadása kötelező',
     phoneInvalid: 'Adj meg érvényes telefonszámot',
     emailRequired: 'Az email cím megadása kötelező',
@@ -101,9 +101,9 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
       dateOfBirth: {
         invalid: 'Érvénytelen születési dátum',
       },
-      placeOfBirth: {
-        required: 'A születési hely megadása kötelező',
-      },
+      // placeOfBirth: {
+      //   required: 'A születési hely megadása kötelező',
+      // },
 
       phoneNumber: {
         required: 'A telefonszám megadása kötelező',
@@ -117,19 +117,19 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
         number: {
           required: 'Az okmány számának megadása kötelező',
         },
-        validFrom: {
-          invalid: 'Érvénytelen okmány kiállítási dátum',
-        },
+        // validFrom: {
+        //   invalid: 'Érvénytelen okmány kiállítási dátum',
+        // },
         validUntil: {
           invalid: 'Érvénytelen okmány lejárati dátum',
         },
         drivingLicenceNumber: {
           required: 'A jogosítvány számát kötelező megadni',
         },
-        drivingLicenceValidFrom: {
-          invalid: 'Érvénytelen jogosítvány kiállítási dátum',
-          minAge: 'A jogosítványnak legalább 3 évesnek kell lennie',
-        },
+        // drivingLicenceValidFrom: {
+        //   invalid: 'Érvénytelen jogosítvány kiállítási dátum',
+        //   minAge: 'A jogosítványnak legalább 3 évesnek kell lennie',
+        // },
         drivingLicenceValidUntil: {
           invalid: 'Érvénytelen jogosítvány lejárati dátum',
         },
@@ -401,9 +401,9 @@ export function createRentSchema(
           dateOfBirth: z.string().refine((date) => !isNaN(Date.parse(date)), {
             message: message('fields.driver.dateOfBirth.invalid'),
           }),
-          placeOfBirth: z
-            .string()
-            .min(1, message('fields.driver.placeOfBirth.required')),
+          // placeOfBirth: z
+          //   .string()
+          //   .min(1, message('fields.driver.placeOfBirth.required')),
           nameOfMother: z.string().optional(),
           phoneNumber: z
             .string()
@@ -426,9 +426,9 @@ export function createRentSchema(
             number: z
               .string()
               .min(1, message('fields.driver.document.number.required')),
-            validFrom: z.string().refine((date) => !isNaN(Date.parse(date)), {
-              message: message('fields.driver.document.validFrom.invalid'),
-            }),
+            // validFrom: z.string().refine((date) => !isNaN(Date.parse(date)), {
+            //   message: message('fields.driver.document.validFrom.invalid'),
+            // }),
             validUntil: z.string().refine((date) => !isNaN(Date.parse(date)), {
               message: message('fields.driver.document.validUntil.invalid'),
             }),
@@ -438,13 +438,13 @@ export function createRentSchema(
                 1,
                 message('fields.driver.document.drivingLicenceNumber.required'),
               ),
-            drivingLicenceValidFrom: z
-              .string()
-              .refine((date) => !isNaN(Date.parse(date)), {
-                message: message(
-                  'fields.driver.document.drivingLicenceValidFrom.invalid',
-                ),
-              }),
+            // drivingLicenceValidFrom: z
+            //   .string()
+            //   .refine((date) => !isNaN(Date.parse(date)), {
+            //     message: message(
+            //       'fields.driver.document.drivingLicenceValidFrom.invalid',
+            //     ),
+            //   }),
             drivingLicenceValidUntil: z
               .string()
               .refine((date) => !isNaN(Date.parse(date)), {
@@ -522,9 +522,7 @@ export function createRentSchema(
       }),
       delivery: z
         .object({
-          placeType: z
-            .enum(['accommodation', 'airport', 'office'])
-            .optional(),
+          placeType: z.enum(['accommodation', 'airport', 'office']).optional(),
           locationName: z.string().max(200).optional(),
           arrivalHour: z
             .string()

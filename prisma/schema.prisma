@@ -60,17 +60,20 @@ model RentRequest {
   assignedFleetPlate      String?
   assignedFleetVehicleId  String?
   signerName              String?
+  renterId                String?                  @db.Uuid
   BookingContracts        BookingContracts?
   BookingDeliveryDetails  BookingDeliveryDetails?
   BookingHandoverCosts    BookingHandoverCosts[]
   BookingPricingSnapshots BookingPricingSnapshots?
   contactQuote            ContactQuote?            @relation(fields: [quoteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Renters                 Renters?                 @relation(fields: [renterId], references: [id])
   VehicleHandovers        VehicleHandovers[]
 
   @@index([carId], map: "idx_rentrequests_car")
   @@index([createdAt], map: "idx_rentrequests_created_at")
   @@index([status], map: "idx_rentrequests_status")
   @@index([assignedFleetVehicleId], map: "idx_rentrequests_assigned_fleet_vehicle")
+  @@index([renterId], map: "idx_rentrequests_renter")
   @@map("RentRequests")
 }
 
@@ -264,6 +267,21 @@ model BookingPricingSnapshots {
   RentRequests RentRequest @relation(fields: [bookingId], references: [id], onDelete: Cascade)
 
   @@index([bookingId], map: "idx_booking_pricing_booking_id")
+}
+
+model Renters {
+  id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String
+  email         String?       @unique
+  phone         String?
+  taxId         String?
+  companyName   String?
+  paymentMethod String?
+  createdAt     DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
+  updatedAt     DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
+  RentRequests  RentRequest[]
+
+  @@index([name], map: "idx_renters_name")
 }
 
 enum CarBodyType {

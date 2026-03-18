@@ -74,6 +74,7 @@ export default function Children({
                         type='number'
                         inputMode='numeric'
                         min={0}
+                        step={0.5}
                         max={17}
                         value={field.value || ''}
                         onChange={(event) =>
@@ -103,7 +104,7 @@ export default function Children({
                           field.onChange(
                             event.target.value === ''
                               ? undefined
-                              : Number(event.target.value)
+                              : Number(event.target.value),
                           )
                         }
                       />
