@@ -213,10 +213,7 @@ export async function buildRentPdf(data: RentData): Promise<Buffer> {
       .filter(Boolean)
       .join(' ');
     addField('Név', fullName);
-    addField(
-      'Születési hely, idő',
-      `${driver.placeOfBirth}, ${formatDate(driver.dateOfBirth)}`
-    );
+    addField('Születési idő', formatDate(driver.dateOfBirth));
     addField('Édesanya neve', formatOptional(driver.nameOfMother));
     addField('Telefon', driver.phoneNumber);
     addField('Email', driver.email);
@@ -229,18 +226,11 @@ export async function buildRentPdf(data: RentData): Promise<Buffer> {
       driver.document.type === 'passport' ? 'Útlevél' : 'Személyi igazolvány'
     );
     addField('Okmányszám', driver.document.number);
-    addField(
-      'Okmány érvényesség',
-      `${formatDate(driver.document.validFrom)} - ${formatDate(
-        driver.document.validUntil
-      )}`
-    );
+    addField('Okmány érvényes eddig', formatDate(driver.document.validUntil));
     addField('Jogosítvány száma', driver.document.drivingLicenceNumber);
     addField(
-      'Jogosítvány érvényesség',
-      `${formatDate(driver.document.drivingLicenceValidFrom)} - ${formatDate(
-        driver.document.drivingLicenceValidUntil
-      )}`
+      'Jogosítvány érvényes eddig',
+      formatDate(driver.document.drivingLicenceValidUntil)
     );
     addField(
       'Jogosítvány 3 évnél régebbi',

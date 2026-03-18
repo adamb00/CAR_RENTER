@@ -738,13 +738,6 @@ export default function Drivers({
               render={({ field }) => {
                 const untilValue =
                   typeof field.value === 'string' ? field.value : '';
-                const issuedRaw = form.getValues(
-                  driverDocumentPath(driverIndex, 'validFrom'),
-                );
-                const issuedDate =
-                  typeof issuedRaw === 'string' && issuedRaw
-                    ? parse(issuedRaw, 'yyyy-MM-dd', new Date())
-                    : undefined;
                 const selectedDate = untilValue
                   ? parse(untilValue, 'yyyy-MM-dd', new Date())
                   : undefined;
@@ -792,11 +785,9 @@ export default function Drivers({
                           }
                           disabled={(date) => {
                             const earliest = date < new Date('1900-01-01');
-                            const beforeIssued =
-                              issuedDate != null && date < issuedDate;
                             const beyondMax =
                               maxExpiryDate != null && date > maxExpiryDate;
-                            return earliest || beforeIssued || beyondMax;
+                            return earliest || beyondMax;
                           }}
                           captionLayout='dropdown'
                         />
@@ -966,13 +957,6 @@ export default function Drivers({
               render={({ field }) => {
                 const licenceUntil =
                   typeof field.value === 'string' ? field.value : '';
-                const licenceFromRaw = form.getValues(
-                  driverDocumentPath(driverIndex, 'drivingLicenceValidFrom'),
-                );
-                const licenceFromDate =
-                  typeof licenceFromRaw === 'string' && licenceFromRaw
-                    ? parse(licenceFromRaw, 'yyyy-MM-dd', new Date())
-                    : undefined;
                 const selectedDate = licenceUntil
                   ? parse(licenceUntil, 'yyyy-MM-dd', new Date())
                   : undefined;
@@ -1022,11 +1006,9 @@ export default function Drivers({
                           }
                           disabled={(date) => {
                             const earliest = date < new Date('1900-01-01');
-                            const beforeIssued =
-                              licenceFromDate != null && date < licenceFromDate;
                             const beyondMax =
                               maxExpiryDate != null && date > maxExpiryDate;
-                            return earliest || beforeIssued || beyondMax;
+                            return earliest || beyondMax;
                           }}
                           captionLayout='dropdown'
                         />
