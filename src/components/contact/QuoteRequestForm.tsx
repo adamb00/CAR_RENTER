@@ -35,6 +35,7 @@ export type { QuoteRequestValues } from '@/schemas/QuoteSchema';
 export function QuoteRequestForm({
   locale,
   selectedCar,
+  availableCars,
   prefill,
 }: QuoteRequestFormProps) {
   const t = useTranslations('Contact');
@@ -70,7 +71,7 @@ export function QuoteRequestForm({
         tSchema,
         deliveryFieldRequiredMessage,
       }),
-    [t, tSchema, deliveryFieldRequiredMessage]
+    [t, tSchema, deliveryFieldRequiredMessage],
   );
   const sanitizedPrefillName =
     typeof prefill?.name === 'string' ? prefill.name.trim() : '';
@@ -91,6 +92,7 @@ export function QuoteRequestForm({
       partySize: '',
       children: '',
       carId: selectedCar?.id ?? '',
+      carType: selectedCar?.name ?? '',
       extras: [],
       delivery: {
         placeType: undefined,
@@ -105,15 +107,19 @@ export function QuoteRequestForm({
       } as DeliveryInfo,
       consents: { privacy: false, terms: false },
     }),
-    [sanitizedPrefillEmail, sanitizedPrefillName, selectedCar?.id]
+    [
+      sanitizedPrefillEmail,
+      sanitizedPrefillName,
+      selectedCar?.id,
+      selectedCar?.name,
+    ],
   );
 
   const form = useForm<QuoteRequestValues>({
     resolver: zodResolver(schema) as Resolver<QuoteRequestValues>,
     defaultValues,
   });
-
-  console.log(form.formState.errors);
+  const selectedCarName = form.watch('carType');
 
   const onSubmit: SubmitHandler<QuoteRequestValues> = (values) => {
     setStatus('idle');
@@ -122,6 +128,7 @@ export function QuoteRequestForm({
       preferredChannel: values.preferredChannel,
       hasChildren: Boolean(values.children && values.children !== '0'),
       hasPartySize: Boolean(values.partySize),
+      selectedCar: selectedCarName,
     };
     const { consents: _consents, ...rest } = values;
     void _consents;
@@ -157,7 +164,7 @@ export function QuoteRequestForm({
         privacyTranslationKey: 'form.consents.privacy',
         termsTranslationKey: 'form.consents.terms',
       }),
-    [locale, t]
+    [locale, t],
   );
 
   return (
@@ -169,11 +176,7 @@ export function QuoteRequestForm({
         <p className='mt-2 text-base text-grey-dark-3 dark:text-grey-dark-2'>
           {t('form.description')}
         </p>
-        {selectedCar ? (
-          <p className='mt-3 text-sm font-medium text-amber-dark'>
-            {t('form.selectedCar', { carName: selectedCar.name })}
-          </p>
-        ) : null}
+
         <Form {...form}>
           <form
             className='mt-6 space-y-6'
@@ -195,11 +198,13 @@ export function QuoteRequestForm({
 
             <QuoteContact form={form} />
 
-            <QuoteRentalStart form={form} locale={locale} />
+            <div className='grid grid-cols-2 gap-4'>
+              <QuoteRentalStart form={form} locale={locale} />
 
-            <QuoteRentalDays form={form} />
+              <QuoteRentalDays form={form} />
+            </div>
 
-            <QuoteExtras form={form} />
+            <QuoteExtras form={form} availableCars={availableCars} />
 
             <QuoteFlights form={form} />
 

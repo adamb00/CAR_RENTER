@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Antal barn",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Biltyp",
+          "placeholder": "Välj biltyp",
+          "option": "{carName} • {seats} säten • {smallLuggage} små resväskor • {largeLuggage} stora resväskor"
         }
       },
       "channels": {

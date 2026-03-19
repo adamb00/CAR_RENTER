@@ -1322,6 +1322,11 @@
         "children": {
           "label": "Gyermekek száma",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Autótípus",
+          "placeholder": "Válassz autótípust",
+          "option": "{carName} • {seats} férőhely • {smallLuggage} kisbőrönd • {largeLuggage} nagybőrönd"
         }
       },
       "channels": {

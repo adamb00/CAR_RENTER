@@ -1,4 +1,5 @@
 import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
+import { getCars } from '@/lib/cars';
 import { resolveLocale, buildPageMetadata } from '@/lib/seo/seo';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
@@ -37,6 +38,13 @@ export default async function OfficesPage({
     title: string;
     description?: string;
   };
+  const availableCars = (await getCars()).map((car) => ({
+    id: car.id,
+    name: `${car.manufacturer} ${car.model}`.trim(),
+    seats: car.seats,
+    smallLuggage: car.smallLuggage,
+    largeLuggage: car.largeLuggage,
+  }));
   const schedule = tGeneralRental.raw('schedule') as Record<string, string>;
   const scheduleItems = Object.entries(schedule)
     .filter(([key]) => key.startsWith('i'))
@@ -84,7 +92,7 @@ export default async function OfficesPage({
         </div>
       </section>
 
-      <QuoteRequestForm locale={resolvedLocale} />
+      <QuoteRequestForm locale={resolvedLocale} availableCars={availableCars} />
     </>
   );
 }

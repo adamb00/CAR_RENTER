@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Numero di bambini",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Tipo di auto",
+          "placeholder": "Seleziona un tipo di auto",
+          "option": "{carName} • {seats} posti • {smallLuggage} valigie piccole • {largeLuggage} valigie grandi"
         }
       },
       "channels": {

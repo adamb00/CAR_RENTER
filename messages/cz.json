@@ -1323,6 +1323,11 @@
         "children": {
           "label": "Počet dětí",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Typ auta",
+          "placeholder": "Vyberte typ auta",
+          "option": "{carName} • {seats} míst • {smallLuggage} malé kufry • {largeLuggage} velké kufry"
         }
       },
       "channels": {

@@ -17,10 +17,14 @@ import {
 
 const FALLBACK_IMAGE = '/cars.webp';
 const STORAGE_BUCKET =
-  process.env.SUPABASE_STORAGE_BUCKET && process.env.SUPABASE_STORAGE_BUCKET.trim().length > 0
+  process.env.SUPABASE_STORAGE_BUCKET &&
+  process.env.SUPABASE_STORAGE_BUCKET.trim().length > 0
     ? process.env.SUPABASE_STORAGE_BUCKET.trim()
     : 'images';
-const SUPABASE_STORAGE_URL = (process.env.SUPABASE_URL ?? '').replace(/\/$/, '');
+const SUPABASE_STORAGE_URL = (process.env.SUPABASE_URL ?? '').replace(
+  /\/$/,
+  '',
+);
 
 export {
   CAR_COLORS,
@@ -29,13 +33,7 @@ export {
   CAR_FUELS,
   CAR_TRANSMISSIONS,
 };
-export type {
-  Car,
-  CarBodyType,
-  CarColor,
-  CarFuel,
-  CarTransmission,
-};
+export type { Car, CarBodyType, CarColor, CarFuel, CarTransmission };
 
 type PrismaCarWithColors = Prisma.CarGetPayload<{
   include: {
@@ -43,7 +41,7 @@ type PrismaCarWithColors = Prisma.CarGetPayload<{
   };
 }>;
 
-const ensureArray = <T,>(value: T[] | null | undefined): T[] => {
+const ensureArray = <T>(value: T[] | null | undefined): T[] => {
   if (!value || !Array.isArray(value)) {
     return [];
   }
@@ -52,7 +50,9 @@ const ensureArray = <T,>(value: T[] | null | undefined): T[] => {
 
 const isAbsoluteUrl = (value: string) => /^https?:\/\//i.test(value);
 
-const buildPublicImageUrl = (value: string | null | undefined): string | null => {
+const buildPublicImageUrl = (
+  value: string | null | undefined,
+): string | null => {
   if (!value) return null;
   const trimmed = value.trim();
   if (!trimmed) return null;
@@ -87,7 +87,10 @@ const COLOR_ALIASES: Record<string, CarColor> = {
 
 const normalizeColor = (value: string | null | undefined): CarColor | null => {
   if (!value) return null;
-  const normalized = value.trim().toLowerCase().replace(/[\s-]+/g, '_');
+  const normalized = value
+    .trim()
+    .toLowerCase()
+    .replace(/[\s-]+/g, '_');
 
   if ((CAR_COLORS as readonly string[]).includes(normalized)) {
     return normalized as CarColor;
@@ -132,15 +135,18 @@ const normalizeColors = (values: unknown): CarColor[] => {
 
 const normalizeOption = <T extends string>(
   value: string | null | undefined,
-  options: readonly T[]
+  options: readonly T[],
 ): T => {
   if (typeof value !== 'string') {
     return options[0];
   }
-  const normalized = value.trim().toLowerCase().replace(/[\s-]+/g, '_');
-  return (options.includes(normalized as T)
-    ? (normalized as T)
-    : options[0]) as T;
+  const normalized = value
+    .trim()
+    .toLowerCase()
+    .replace(/[\s-]+/g, '_');
+  return (
+    options.includes(normalized as T) ? (normalized as T) : options[0]
+  ) as T;
 };
 
 const normalizePrices = (value: unknown): number[] => {
@@ -203,13 +209,15 @@ const mapCar = (car: PrismaCarWithColors): Car => {
   const image = images.length > 0 ? images[0] : FALLBACK_IMAGE;
 
   const isoString = (value: Date | string | null | undefined) =>
-    value instanceof Date ? value.toISOString() : value ?? new Date().toISOString();
+    value instanceof Date
+      ? value.toISOString()
+      : (value ?? new Date().toISOString());
 
   const normalizedBodyType = normalizeOption(car.bodyType, CAR_BODY_TYPES);
   const normalizedFuel = normalizeOption(car.fuel, CAR_FUELS);
   const normalizedTransmission = normalizeOption(
     car.transmission,
-    CAR_TRANSMISSIONS
+    CAR_TRANSMISSIONS,
   );
 
   return {
@@ -236,13 +244,10 @@ const CAR_INCLUDE = {
   Colors: true,
 } as const;
 
-const fetchCars = async (): Promise<Car[]> => {
+export const fetchCars = async (): Promise<Car[]> => {
   const cars = await prisma.car.findMany({
     include: CAR_INCLUDE,
-    orderBy: [
-      { manufacturer: 'asc' },
-      { model: 'asc' },
-    ],
+    orderBy: [{ manufacturer: 'asc' }, { model: 'asc' }],
   });
   return cars.map(mapCar);
 };
@@ -260,7 +265,7 @@ export const getCars = cache(
     return fetchCars();
   },
   ['cars'],
-  { tags: ['cars'] }
+  { tags: ['cars'] },
 );
 
 export const getCarById = cache(
@@ -269,5 +274,5 @@ export const getCarById = cache(
     return fetchCarById(id);
   },
   ['car-by-id'],
-  { tags: ['cars'] }
+  { tags: ['cars'] },
 );

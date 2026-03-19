@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Antall barn",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Biltype",
+          "placeholder": "Velg biltype",
+          "option": "{carName} • {seats} seter • {smallLuggage} små kofferter • {largeLuggage} store kofferter"
         }
       },
       "channels": {

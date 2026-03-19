@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Anzahl der Kinder",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Autotyp",
+          "placeholder": "Autotyp auswählen",
+          "option": "{carName} • {seats} Sitzplätze • {smallLuggage} kleine Koffer • {largeLuggage} große Koffer"
         }
       },
       "channels": {

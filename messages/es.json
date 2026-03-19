@@ -1702,6 +1702,11 @@
         "children": {
           "label": "Número de niños",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Tipo de coche",
+          "placeholder": "Selecciona un tipo de coche",
+          "option": "{carName} • {seats} plazas • {smallLuggage} maletas pequeñas • {largeLuggage} maletas grandes"
         }
       },
       "channels": {

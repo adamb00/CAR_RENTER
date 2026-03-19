@@ -39,12 +39,18 @@ export default function QuoteRentalDays({
               onValueChange={(value) => field.onChange(Number(value))}
             >
               <SelectTrigger>
-                <SelectValue placeholder={t('form.fields.rentalDays.placeholder')} />
+                <SelectValue
+                  placeholder={t('form.fields.rentalDays.placeholder')}
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   {RENTAL_DAYS_OPTIONS.map((day) => (
-                    <SelectItem key={day} value={String(day)}>
+                    <SelectItem
+                      key={day}
+                      className='hover:bg-sky-light!'
+                      value={String(day)}
+                    >
                       {day}
                     </SelectItem>
                   ))}

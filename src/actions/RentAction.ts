@@ -315,6 +315,7 @@ const syncRenterFromRentForm = async (
     return null;
   }
 
+  const primaryDriver = formData.driver?.[0] ?? null;
   const renterData = {
     name: normalizeText(formData.contact?.name) ?? email,
     email,
@@ -324,6 +325,7 @@ const syncRenterFromRentForm = async (
     taxId: normalizeText(formData.tax?.id),
     companyName: normalizeText(formData.tax?.companyName),
     paymentMethod: normalizeText(formData.consents?.paymentMethod),
+    primaryDriver,
   };
 
   const renter = await rentersTable.upsert({

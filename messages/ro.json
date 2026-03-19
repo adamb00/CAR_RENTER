@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Numărul de copii",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Tip mașină",
+          "placeholder": "Selectează tipul de mașină",
+          "option": "{carName} • {seats} locuri • {smallLuggage} bagaje mici • {largeLuggage} bagaje mari"
         }
       },
       "channels": {

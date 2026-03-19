@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Antal børn",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Biltype",
+          "placeholder": "Vælg biltype",
+          "option": "{carName} • {seats} sæder • {smallLuggage} små kufferter • {largeLuggage} store kufferter"
         }
       },
       "channels": {

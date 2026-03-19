@@ -1328,6 +1328,11 @@
         "children": {
           "label": "Number of children",
           "placeholder": "0"
+        },
+        "carType": {
+          "label": "Car type",
+          "placeholder": "Select a car type",
+          "option": "{carName} • {seats, plural, one {# seat} other {# seats}} • {smallLuggage, plural, one {# small suitcase} other {# small suitcases}} • {largeLuggage, plural, one {# large suitcase} other {# large suitcases}}"
         }
       },
       "channels": {

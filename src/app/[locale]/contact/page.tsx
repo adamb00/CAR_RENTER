@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
-import { getCarById } from '@/lib/cars';
+import { getCars } from '@/lib/cars';
 
 type PageParams = { locale: string };
 type SearchParams = { carId?: string; name?: string; email?: string };
@@ -37,9 +37,18 @@ export default async function ContactPage({
     namespace: 'Contact',
   });
 
+  const availableCars = (await getCars()).map((car) => ({
+    id: car.id,
+    name: `${car.manufacturer} ${car.model}`.trim(),
+    seats: car.seats,
+    smallLuggage: car.smallLuggage,
+    largeLuggage: car.largeLuggage,
+  }));
   const selectedCar =
     resolvedSearchParams.carId && resolvedSearchParams.carId.trim()
-      ? await getCarById(resolvedSearchParams.carId.trim())
+      ? (availableCars.find(
+          (car) => car.id === resolvedSearchParams.carId?.trim(),
+        ) ?? null)
       : null;
   const contactPrefill = {
     name:
@@ -71,12 +80,10 @@ export default async function ContactPage({
         locale={resolvedLocale}
         selectedCar={
           selectedCar
-            ? {
-                id: selectedCar.id,
-                name: `${selectedCar.manufacturer} ${selectedCar.model}`.trim(),
-              }
+            ? { id: selectedCar.id, name: selectedCar.name }
             : undefined
         }
+        availableCars={availableCars}
         prefill={contactPrefill}
       />
     </>

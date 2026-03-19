@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CAR_COLOR_SWATCH, type CarColor } from '@/lib/cars-shared';
-import { getCars } from '@/lib/cars';
+import { fetchCars, getCars } from '@/lib/cars';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import CarImageCarousel from '@/components/cars/CarImageCarousel';
 import { Luggage, User } from 'lucide-react';
@@ -35,7 +35,7 @@ export default async function CarsPage({
 }) {
   const { locale = 'hu' } = await params;
   const resolvedLocale = resolveLocale(locale);
-  const cars = await getCars();
+  const cars = await fetchCars();
 
   const t = await getTranslations({
     locale: resolvedLocale,
