@@ -32,6 +32,7 @@ model ContactQuote {
   rentalDays         Int?          @map("rentaldays")
   offerAccepted      Int?          @map("offerAccepted")
   signerName         String?
+  offerSent          DateTime?     @db.Date
   rentRequests       RentRequest[]
 
   @@index([createdAt], map: "idx_contactquotes_created_at")
@@ -272,7 +273,7 @@ model BookingPricingSnapshots {
 model Renters {
   id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name          String
-  email         String?       @unique
+  email         String?
   phone         String?
   taxId         String?
   companyName   String?

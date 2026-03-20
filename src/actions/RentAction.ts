@@ -306,7 +306,7 @@ const syncRenterFromRentForm = async (
   const prismaAny = prisma as any;
   const rentersTable = prismaAny?.renters;
 
-  if (!rentersTable || typeof rentersTable.upsert !== 'function') {
+  if (!rentersTable || typeof rentersTable.create !== 'function') {
     return null;
   }
 
@@ -328,13 +328,8 @@ const syncRenterFromRentForm = async (
     primaryDriver,
   };
 
-  const renter = await rentersTable.upsert({
-    where: { email },
-    update: {
-      ...renterData,
-      updatedAt: new Date(),
-    },
-    create: renterData,
+  const renter = await rentersTable.create({
+    data: renterData,
     select: { id: true },
   });
 
