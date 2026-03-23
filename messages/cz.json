@@ -450,6 +450,11 @@
       "title": "Informace o používání cookies – Zodiacs Rent a Car",
       "description": "Přehled používaných souborů cookie, jejich účelů a nastavení souhlasu.",
       "ogImageAlt": "Dokument týkající se souborů cookie"
+    },
+    "rentContract": {
+      "title": "Nájemní smlouva – Zodiacs Rent a Car",
+      "description": "Zkontrolujte, stáhněte a podepište svou nájemní smlouvu online.",
+      "ogImageAlt": "Dokument nájemní smlouvy"
     }
   },
   "AboutSection": {
@@ -1758,18 +1763,18 @@
             "label": "Země",
             "placeholder": "Země"
           },
-    "street": {
-      "label": "Ulice",
-      "placeholder": "Ulice"
-    },
-    "streetType": {
-      "label": "Typ ulice / prostranství (volitelné)",
-      "placeholder": "např. náměstí, alej"
-    },
-    "doorNumber": {
-      "label": "Číslo popisné",
-      "placeholder": "Číslo popisné"
-    },
+          "street": {
+            "label": "Ulice",
+            "placeholder": "Ulice"
+          },
+          "streetType": {
+            "label": "Typ ulice / prostranství (volitelné)",
+            "placeholder": "např. náměstí, alej"
+          },
+          "doorNumber": {
+            "label": "Číslo popisné",
+            "placeholder": "Číslo popisné"
+          },
           "dateOfBirth": {
             "label": "Datum narození",
             "placeholder": "Vyberte datum"
@@ -2562,8 +2567,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Správa rezervace – Zodiacs Rent a Car",
@@ -2623,6 +2627,57 @@
       "notFound": "Rezervaci s tímto číslem jsme nenašli.",
       "mismatch": "E-mailová adresa neodpovídá této rezervaci.",
       "generic": "Rezervaci se nepodařilo zrušit. Zkuste to prosím znovu."
+    }
+  },
+  "RentContract": {
+    "title": "Nájemní smlouva",
+    "description": "Zkontrolujte smlouvu, stáhněte si kopii PDF a potom ji podepište a odešlete zpět.",
+    "bookingId": "ID rezervace: {id}",
+    "actions": {
+      "downloadPdf": "Stáhnout PDF"
+    },
+    "completed": {
+      "title": "Smlouva už byla vrácena",
+      "summary": "Podepsal(a): {name}",
+      "summaryWithDate": "Podepsal(a): {name} • {date}",
+      "unknownSigner": "Neznámý podepisující"
+    },
+    "form": {
+      "signerName": "Jméno podepisujícího",
+      "email": "E-mail",
+      "signature": "Podpis",
+      "clear": "Vymazat",
+      "submitIdle": "Podepsat a odeslat zpět",
+      "submitPending": "Odesílání..."
+    },
+    "contractText": "Text smlouvy",
+    "errors": {
+      "invalid": {
+        "title": "Neplatný odkaz",
+        "description": "Tento odkaz na smlouvu není platný."
+      },
+      "expired": {
+        "title": "Odkaz vypršel",
+        "description": "Platnost tohoto odkazu na smlouvu vypršela. Požádejte o nový."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Jméno podepisujícího je povinné.",
+      "signatureRequired": "Podpis je povinný."
+    },
+    "actionErrors": {
+      "invalidContractData": "Neplatné údaje smlouvy.",
+      "invalidLink": "Odkaz na smlouvu není platný.",
+      "alreadyReturned": "Tato smlouva už byla vrácena.",
+      "expiredLink": "Platnost odkazu na smlouvu vypršela.",
+      "signer_name_required": "Jméno podepisujícího je povinné.",
+      "invalid_signature_format": "Neplatný formát podpisu nájemce.",
+      "already_signed": "Tato smlouva už byla podepsána.",
+      "booking_not_found": "Rezervace nebyla nalezena.",
+      "finalize_failed": "Smlouvu se nepodařilo dokončit."
+    },
+    "actionSuccess": {
+      "returned": "Smlouva byla úspěšně podepsána a odeslána zpět."
     }
   }
 }

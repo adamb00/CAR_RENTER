@@ -450,6 +450,11 @@
       "title": "Politique de gestion des cookies – Zodiacs Rent a Car",
       "description": "Vue d’ensemble des cookies que nous utilisons, de leurs finalités et des paramètres de consentement.",
       "ogImageAlt": "Document d’information relatif aux cookies"
+    },
+    "rentContract": {
+      "title": "Contrat de location – Zodiacs Rent a Car",
+      "description": "Consultez, téléchargez et signez en ligne votre contrat de location.",
+      "ogImageAlt": "Document de contrat de location"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Pays",
             "placeholder": "Pays"
           },
-    "street": {
-      "label": "Rue",
-      "placeholder": "Rue"
-    },
-    "streetType": {
-      "label": "Type de voie / zone (optionnel)",
-      "placeholder": "ex. Avenue, Place"
-    },
-    "doorNumber": {
-      "label": "Numéro",
-      "placeholder": "Numéro"
-    },
+          "street": {
+            "label": "Rue",
+            "placeholder": "Rue"
+          },
+          "streetType": {
+            "label": "Type de voie / zone (optionnel)",
+            "placeholder": "ex. Avenue, Place"
+          },
+          "doorNumber": {
+            "label": "Numéro",
+            "placeholder": "Numéro"
+          },
           "dateOfBirth": {
             "label": "Date de naissance",
             "placeholder": "Choisir une date"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Gérer votre réservation – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Impossible de trouver une réservation avec ce numéro.",
       "mismatch": "L’adresse e-mail ne correspond pas à cette réservation.",
       "generic": "Impossible d’annuler la réservation. Veuillez réessayer."
+    }
+  },
+  "RentContract": {
+    "title": "Contrat de location",
+    "description": "Consultez le contrat, téléchargez une copie PDF, puis signez-le et renvoyez-le.",
+    "bookingId": "Numéro de réservation : {id}",
+    "actions": {
+      "downloadPdf": "Télécharger le PDF"
+    },
+    "completed": {
+      "title": "Le contrat a déjà été renvoyé",
+      "summary": "Signé par : {name}",
+      "summaryWithDate": "Signé par : {name} • {date}",
+      "unknownSigner": "Signataire inconnu"
+    },
+    "form": {
+      "signerName": "Nom du signataire",
+      "email": "E-mail",
+      "signature": "Signature",
+      "clear": "Effacer",
+      "submitIdle": "Signer et renvoyer",
+      "submitPending": "Envoi..."
+    },
+    "contractText": "Texte du contrat",
+    "errors": {
+      "invalid": {
+        "title": "Lien invalide",
+        "description": "Ce lien de contrat n'est pas valide."
+      },
+      "expired": {
+        "title": "Lien expiré",
+        "description": "Ce lien de contrat a expiré. Veuillez en demander un nouveau."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Le nom du signataire est obligatoire.",
+      "signatureRequired": "La signature est obligatoire."
+    },
+    "actionErrors": {
+      "invalidContractData": "Données de contrat invalides.",
+      "invalidLink": "Le lien du contrat n'est pas valide.",
+      "alreadyReturned": "Ce contrat a déjà été renvoyé.",
+      "expiredLink": "Le lien du contrat a expiré.",
+      "signer_name_required": "Le nom du signataire est obligatoire.",
+      "invalid_signature_format": "Format de signature du locataire invalide.",
+      "already_signed": "Ce contrat a déjà été signé.",
+      "booking_not_found": "Réservation introuvable.",
+      "finalize_failed": "Échec de finalisation du contrat."
+    },
+    "actionSuccess": {
+      "returned": "Le contrat a été signé et renvoyé avec succès."
     }
   }
 }

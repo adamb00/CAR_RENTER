@@ -450,6 +450,11 @@
       "title": "Cookie-Richtlinie – Zodiacs Rent a Car",
       "description": "Überblick über die von uns verwendeten Cookies, ihre Zwecke und deine Einwilligungseinstellungen.",
       "ogImageAlt": "Dokument mit Cookie-Informationen"
+    },
+    "rentContract": {
+      "title": "Mietvertrag – Zodiacs Rent a Car",
+      "description": "Prüfe, lade herunter und unterschreibe deinen Mietvertrag online.",
+      "ogImageAlt": "Mietvertragsdokument"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Land",
             "placeholder": "Land"
           },
-    "street": {
-      "label": "Straße",
-      "placeholder": "Straße"
-    },
-    "streetType": {
-      "label": "Straßentyp / Bereich (optional)",
-      "placeholder": "z. B. Platz, Allee"
-    },
-    "doorNumber": {
-      "label": "Hausnummer",
-      "placeholder": "Hausnummer"
-    },
+          "street": {
+            "label": "Straße",
+            "placeholder": "Straße"
+          },
+          "streetType": {
+            "label": "Straßentyp / Bereich (optional)",
+            "placeholder": "z. B. Platz, Allee"
+          },
+          "doorNumber": {
+            "label": "Hausnummer",
+            "placeholder": "Hausnummer"
+          },
           "dateOfBirth": {
             "label": "Geburtsdatum",
             "placeholder": "Datum wählen"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Buchung verwalten – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Wir konnten keine Buchung mit dieser Nummer finden.",
       "mismatch": "Die E-Mail-Adresse passt nicht zu dieser Buchung.",
       "generic": "Die Buchung konnte nicht storniert werden. Bitte versuche es erneut."
+    }
+  },
+  "RentContract": {
+    "title": "Mietvertrag",
+    "description": "Prüfe den Vertrag, lade eine PDF-Kopie herunter und unterschreibe und sende ihn zurück.",
+    "bookingId": "Buchungsnummer: {id}",
+    "actions": {
+      "downloadPdf": "PDF herunterladen"
+    },
+    "completed": {
+      "title": "Der Vertrag wurde bereits zurückgesendet",
+      "summary": "Unterzeichnet von: {name}",
+      "summaryWithDate": "Unterzeichnet von: {name} • {date}",
+      "unknownSigner": "Unbekannter Unterzeichner"
+    },
+    "form": {
+      "signerName": "Name des Unterzeichners",
+      "email": "E-Mail",
+      "signature": "Unterschrift",
+      "clear": "Löschen",
+      "submitIdle": "Unterschreiben und zurücksenden",
+      "submitPending": "Wird gesendet..."
+    },
+    "contractText": "Vertragstext",
+    "errors": {
+      "invalid": {
+        "title": "Ungültiger Link",
+        "description": "Dieser Vertragslink ist ungültig."
+      },
+      "expired": {
+        "title": "Abgelaufener Link",
+        "description": "Dieser Vertragslink ist abgelaufen. Bitte fordere einen neuen an."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Name des Unterzeichners ist erforderlich.",
+      "signatureRequired": "Unterschrift ist erforderlich."
+    },
+    "actionErrors": {
+      "invalidContractData": "Ungültige Vertragsdaten.",
+      "invalidLink": "Der Vertragslink ist ungültig.",
+      "alreadyReturned": "Dieser Vertrag wurde bereits zurückgesendet.",
+      "expiredLink": "Der Vertragslink ist abgelaufen.",
+      "signer_name_required": "Name des Unterzeichners ist erforderlich.",
+      "invalid_signature_format": "Ungültiges Format der Unterschrift des Mieters.",
+      "already_signed": "Dieser Vertrag wurde bereits unterschrieben.",
+      "booking_not_found": "Buchung nicht gefunden.",
+      "finalize_failed": "Der Vertrag konnte nicht abgeschlossen werden."
+    },
+    "actionSuccess": {
+      "returned": "Der Vertrag wurde erfolgreich unterschrieben und zurückgesendet."
     }
   }
 }

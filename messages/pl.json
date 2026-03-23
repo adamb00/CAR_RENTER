@@ -450,6 +450,11 @@
       "title": "Polityka cookies – Zodiacs Rent a Car",
       "description": "Przegląd używanych przez nas plików cookie, ich celów oraz możliwości zarządzania zgodą.",
       "ogImageAlt": "Dokument informacyjny o plikach cookie"
+    },
+    "rentContract": {
+      "title": "Umowa najmu – Zodiacs Rent a Car",
+      "description": "Zapoznaj się, pobierz i podpisz online swoją umowę najmu.",
+      "ogImageAlt": "Dokument umowy najmu"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Kraj",
             "placeholder": "Kraj"
           },
-    "street": {
-      "label": "Ulica",
-      "placeholder": "Ulica"
-    },
-    "streetType": {
-      "label": "Typ ulicy / obszaru (opcjonalnie)",
-      "placeholder": "np. Aleja, Plac"
-    },
-    "doorNumber": {
-      "label": "Numer domu",
-      "placeholder": "Numer domu"
-    },
+          "street": {
+            "label": "Ulica",
+            "placeholder": "Ulica"
+          },
+          "streetType": {
+            "label": "Typ ulicy / obszaru (opcjonalnie)",
+            "placeholder": "np. Aleja, Plac"
+          },
+          "doorNumber": {
+            "label": "Numer domu",
+            "placeholder": "Numer domu"
+          },
           "dateOfBirth": {
             "label": "Data urodzenia",
             "placeholder": "Wybierz datę"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Zarządzaj rezerwacją – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Nie znaleziono rezerwacji o tym numerze.",
       "mismatch": "Adres e-mail nie pasuje do tej rezerwacji.",
       "generic": "Nie udało się anulować rezerwacji. Spróbuj ponownie."
+    }
+  },
+  "RentContract": {
+    "title": "Umowa najmu",
+    "description": "Zapoznaj się z umową, pobierz kopię PDF, a następnie podpisz ją i odeślij.",
+    "bookingId": "ID rezerwacji: {id}",
+    "actions": {
+      "downloadPdf": "Pobierz PDF"
+    },
+    "completed": {
+      "title": "Umowa została już odesłana",
+      "summary": "Podpisał(a): {name}",
+      "summaryWithDate": "Podpisał(a): {name} • {date}",
+      "unknownSigner": "Nieznany podpisujący"
+    },
+    "form": {
+      "signerName": "Imię i nazwisko podpisującego",
+      "email": "E-mail",
+      "signature": "Podpis",
+      "clear": "Wyczyść",
+      "submitIdle": "Podpisz i odeślij",
+      "submitPending": "Wysyłanie..."
+    },
+    "contractText": "Treść umowy",
+    "errors": {
+      "invalid": {
+        "title": "Nieprawidłowy link",
+        "description": "Ten link do umowy jest nieprawidłowy."
+      },
+      "expired": {
+        "title": "Wygasły link",
+        "description": "Ten link do umowy wygasł. Poproś o nowy."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Imię i nazwisko podpisującego jest wymagane.",
+      "signatureRequired": "Podpis jest wymagany."
+    },
+    "actionErrors": {
+      "invalidContractData": "Nieprawidłowe dane umowy.",
+      "invalidLink": "Link do umowy jest nieprawidłowy.",
+      "alreadyReturned": "Ta umowa została już odesłana.",
+      "expiredLink": "Link do umowy wygasł.",
+      "signer_name_required": "Imię i nazwisko podpisującego jest wymagane.",
+      "invalid_signature_format": "Nieprawidłowy format podpisu najemcy.",
+      "already_signed": "Ta umowa została już podpisana.",
+      "booking_not_found": "Nie znaleziono rezerwacji.",
+      "finalize_failed": "Nie udało się sfinalizować umowy."
+    },
+    "actionSuccess": {
+      "returned": "Umowa została podpisana i odesłana pomyślnie."
     }
   }
 }

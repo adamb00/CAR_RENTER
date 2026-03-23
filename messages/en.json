@@ -450,6 +450,11 @@
       "title": "Cookie policy – Zodiacs Rent a Car",
       "description": "Overview of the cookies we use, their purposes and consent settings.",
       "ogImageAlt": "Cookie information document"
+    },
+    "rentContract": {
+      "title": "Rental agreement – Zodiacs Rent a Car",
+      "description": "Review, download and sign your rental agreement online.",
+      "ogImageAlt": "Rental agreement document"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Country",
             "placeholder": "Country"
           },
-    "street": {
-      "label": "Street",
-      "placeholder": "Street"
-    },
-    "streetType": {
-      "label": "Street type / area (optional)",
-      "placeholder": "e.g. Avenue, Square"
-    },
-    "doorNumber": {
-      "label": "House number",
-      "placeholder": "House number"
-    },
+          "street": {
+            "label": "Street",
+            "placeholder": "Street"
+          },
+          "streetType": {
+            "label": "Street type / area (optional)",
+            "placeholder": "e.g. Avenue, Square"
+          },
+          "doorNumber": {
+            "label": "House number",
+            "placeholder": "House number"
+          },
           "dateOfBirth": {
             "label": "Date of birth",
             "placeholder": "Select a date"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Manage your booking – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "We could not find a booking with this ID.",
       "mismatch": "The email address does not match this booking.",
       "generic": "We could not cancel the booking. Please try again."
+    }
+  },
+  "RentContract": {
+    "title": "Rental agreement",
+    "description": "Review the agreement, download a PDF copy, then sign and send it back.",
+    "bookingId": "Booking ID: {id}",
+    "actions": {
+      "downloadPdf": "Download PDF"
+    },
+    "completed": {
+      "title": "The contract has already been returned",
+      "summary": "Signed by: {name}",
+      "summaryWithDate": "Signed by: {name} • {date}",
+      "unknownSigner": "Unknown signer"
+    },
+    "form": {
+      "signerName": "Signer name",
+      "email": "Email",
+      "signature": "Signature",
+      "clear": "Clear",
+      "submitIdle": "Sign and return",
+      "submitPending": "Sending..."
+    },
+    "contractText": "Contract text",
+    "errors": {
+      "invalid": {
+        "title": "Invalid link",
+        "description": "This contract link is not valid."
+      },
+      "expired": {
+        "title": "Expired link",
+        "description": "This contract link has expired. Please request a new one."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Signer name is required.",
+      "signatureRequired": "Signature is required."
+    },
+    "actionErrors": {
+      "invalidContractData": "Invalid contract data.",
+      "invalidLink": "The contract link is not valid.",
+      "alreadyReturned": "This contract has already been returned.",
+      "expiredLink": "The contract link has expired.",
+      "signer_name_required": "Signer name is required.",
+      "invalid_signature_format": "Invalid renter signature format.",
+      "already_signed": "This contract has already been signed.",
+      "booking_not_found": "Booking not found.",
+      "finalize_failed": "Failed to finalize the contract."
+    },
+    "actionSuccess": {
+      "returned": "The contract was signed and returned successfully."
     }
   }
 }

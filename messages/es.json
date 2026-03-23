@@ -1856,18 +1856,18 @@
             "label": "País",
             "placeholder": "País"
           },
-    "street": {
-      "label": "Calle",
-      "placeholder": "Calle"
-    },
-    "streetType": {
-      "label": "Tipo de vía / zona (opcional)",
-      "placeholder": "p. ej. Avenida, Plaza"
-    },
-    "doorNumber": {
-      "label": "Número",
-      "placeholder": "Número"
-    },
+          "street": {
+            "label": "Calle",
+            "placeholder": "Calle"
+          },
+          "streetType": {
+            "label": "Tipo de vía / zona (opcional)",
+            "placeholder": "p. ej. Avenida, Plaza"
+          },
+          "doorNumber": {
+            "label": "Número",
+            "placeholder": "Número"
+          },
           "dateOfBirth": {
             "label": "Fecha de nacimiento",
             "placeholder": "Selecciona una fecha"
@@ -2590,6 +2590,11 @@
       "title": "Política de cookies – Zodiacs Rent a Car",
       "description": "Información clara sobre las cookies que utilizamos, sus finalidades y la forma de modificar tu consentimiento.",
       "ogImageAlt": "Aviso informativo sobre cookies"
+    },
+    "rentContract": {
+      "title": "Contrato de alquiler – Zodiacs Rent a Car",
+      "description": "Revisa, descarga y firma online tu contrato de alquiler.",
+      "ogImageAlt": "Documento del contrato de alquiler"
     }
   },
   "FAQ": {
@@ -2738,8 +2743,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Gestiona tu reserva – Zodiacs Rent a Car",
@@ -2799,6 +2803,57 @@
       "notFound": "No encontramos ninguna reserva con ese número.",
       "mismatch": "El correo electrónico no coincide con esta reserva.",
       "generic": "No pudimos cancelar la reserva. Inténtalo de nuevo."
+    }
+  },
+  "RentContract": {
+    "title": "Contrato de alquiler",
+    "description": "Revisa el contrato, descarga una copia en PDF y luego fírmalo y devuélvelo.",
+    "bookingId": "ID de reserva: {id}",
+    "actions": {
+      "downloadPdf": "Descargar PDF"
+    },
+    "completed": {
+      "title": "El contrato ya ha sido devuelto",
+      "summary": "Firmado por: {name}",
+      "summaryWithDate": "Firmado por: {name} • {date}",
+      "unknownSigner": "Firmante desconocido"
+    },
+    "form": {
+      "signerName": "Nombre del firmante",
+      "email": "Correo electrónico",
+      "signature": "Firma",
+      "clear": "Borrar",
+      "submitIdle": "Firmar y devolver",
+      "submitPending": "Enviando..."
+    },
+    "contractText": "Texto del contrato",
+    "errors": {
+      "invalid": {
+        "title": "Enlace no válido",
+        "description": "Este enlace del contrato no es válido."
+      },
+      "expired": {
+        "title": "Enlace caducado",
+        "description": "Este enlace del contrato ha caducado. Solicita uno nuevo."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "El nombre del firmante es obligatorio.",
+      "signatureRequired": "La firma es obligatoria."
+    },
+    "actionErrors": {
+      "invalidContractData": "Datos de contrato no válidos.",
+      "invalidLink": "El enlace del contrato no es válido.",
+      "alreadyReturned": "Este contrato ya ha sido devuelto.",
+      "expiredLink": "El enlace del contrato ha caducado.",
+      "signer_name_required": "El nombre del firmante es obligatorio.",
+      "invalid_signature_format": "Formato de firma del arrendatario no válido.",
+      "already_signed": "Este contrato ya ha sido firmado.",
+      "booking_not_found": "Reserva no encontrada.",
+      "finalize_failed": "No se pudo finalizar el contrato."
+    },
+    "actionSuccess": {
+      "returned": "El contrato se firmó y se devolvió correctamente."
     }
   }
 }

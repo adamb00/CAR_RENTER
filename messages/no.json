@@ -450,6 +450,11 @@
       "title": "Cookie-erklæring – Zodiacs Rent a Car",
       "description": "Oversikt over hvilke informasjonskapsler vi bruker, formålet med dem og hvordan du kan administrere samtykket ditt.",
       "ogImageAlt": "Informasjonsdokument om informasjonskapsler"
+    },
+    "rentContract": {
+      "title": "Leieavtale – Zodiacs Rent a Car",
+      "description": "Gå gjennom, last ned og signer leieavtalen din på nett.",
+      "ogImageAlt": "Leieavtaledokument"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Land",
             "placeholder": "Land"
           },
-    "street": {
-      "label": "Gate",
-      "placeholder": "Gate"
-    },
-    "streetType": {
-      "label": "Vegtype / område (valgfritt)",
-      "placeholder": "f.eks. Plass, Allé"
-    },
-    "doorNumber": {
-      "label": "Husnummer",
-      "placeholder": "Husnummer"
-    },
+          "street": {
+            "label": "Gate",
+            "placeholder": "Gate"
+          },
+          "streetType": {
+            "label": "Vegtype / område (valgfritt)",
+            "placeholder": "f.eks. Plass, Allé"
+          },
+          "doorNumber": {
+            "label": "Husnummer",
+            "placeholder": "Husnummer"
+          },
           "dateOfBirth": {
             "label": "Fødselsdato",
             "placeholder": "Velg dato"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Administrer bestillingen – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Vi fant ingen reservasjon med dette nummeret.",
       "mismatch": "E-postadressen samsvarer ikke med denne reservasjonen.",
       "generic": "Vi klarte ikke å kansellere reservasjonen. Prøv igjen senere."
+    }
+  },
+  "RentContract": {
+    "title": "Leieavtale",
+    "description": "Gå gjennom avtalen, last ned en PDF-kopi, signer og send den tilbake.",
+    "bookingId": "Bestillings-ID: {id}",
+    "actions": {
+      "downloadPdf": "Last ned PDF"
+    },
+    "completed": {
+      "title": "Kontrakten er allerede returnert",
+      "summary": "Signert av: {name}",
+      "summaryWithDate": "Signert av: {name} • {date}",
+      "unknownSigner": "Ukjent signatar"
+    },
+    "form": {
+      "signerName": "Signatarens navn",
+      "email": "E-post",
+      "signature": "Signatur",
+      "clear": "Tøm",
+      "submitIdle": "Signer og returner",
+      "submitPending": "Sender..."
+    },
+    "contractText": "Kontraktstekst",
+    "errors": {
+      "invalid": {
+        "title": "Ugyldig lenke",
+        "description": "Denne kontraktslenken er ikke gyldig."
+      },
+      "expired": {
+        "title": "Utløpt lenke",
+        "description": "Denne kontraktslenken har utløpt. Be om en ny."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Signatarens navn er påkrevd.",
+      "signatureRequired": "Signatur er påkrevd."
+    },
+    "actionErrors": {
+      "invalidContractData": "Ugyldige kontraktsdata.",
+      "invalidLink": "Kontraktslenken er ikke gyldig.",
+      "alreadyReturned": "Denne kontrakten er allerede returnert.",
+      "expiredLink": "Kontraktslenken har utløpt.",
+      "signer_name_required": "Signatarens navn er påkrevd.",
+      "invalid_signature_format": "Ugyldig signaturformat for leietaker.",
+      "already_signed": "Denne kontrakten er allerede signert.",
+      "booking_not_found": "Bestillingen ble ikke funnet.",
+      "finalize_failed": "Kunne ikke fullføre kontrakten."
+    },
+    "actionSuccess": {
+      "returned": "Kontrakten ble signert og returnert."
     }
   }
 }

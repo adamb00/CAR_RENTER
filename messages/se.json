@@ -450,6 +450,11 @@
       "title": "Cookiepolicy – Zodiacs Rent a Car",
       "description": "Översikt över de cookies vi använder, deras syften och hur du kan hantera ditt samtycke.",
       "ogImageAlt": "Information om cookies"
+    },
+    "rentContract": {
+      "title": "Hyresavtal – Zodiacs Rent a Car",
+      "description": "Granska, ladda ner och signera ditt hyresavtal online.",
+      "ogImageAlt": "Hyresavtalsdokument"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Land",
             "placeholder": "Land"
           },
-    "street": {
-      "label": "Gata",
-      "placeholder": "Gata"
-    },
-    "streetType": {
-      "label": "Gatatyp / område (valfritt)",
-      "placeholder": "t.ex. Torg, Allé"
-    },
-    "doorNumber": {
-      "label": "Husnummer",
-      "placeholder": "Husnummer"
-    },
+          "street": {
+            "label": "Gata",
+            "placeholder": "Gata"
+          },
+          "streetType": {
+            "label": "Gatatyp / område (valfritt)",
+            "placeholder": "t.ex. Torg, Allé"
+          },
+          "doorNumber": {
+            "label": "Husnummer",
+            "placeholder": "Husnummer"
+          },
           "dateOfBirth": {
             "label": "Födelsedatum",
             "placeholder": "Välj datum"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Hantera din bokning – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Vi kunde inte hitta en bokning med det numret.",
       "mismatch": "E-postadressen matchar inte den här bokningen.",
       "generic": "Vi kunde inte avboka bokningen. Försök igen senare."
+    }
+  },
+  "RentContract": {
+    "title": "Hyresavtal",
+    "description": "Granska avtalet, ladda ner en PDF-kopia och signera och skicka tillbaka det.",
+    "bookingId": "Boknings-ID: {id}",
+    "actions": {
+      "downloadPdf": "Ladda ner PDF"
+    },
+    "completed": {
+      "title": "Avtalet har redan skickats tillbaka",
+      "summary": "Signerat av: {name}",
+      "summaryWithDate": "Signerat av: {name} • {date}",
+      "unknownSigner": "Okänd undertecknare"
+    },
+    "form": {
+      "signerName": "Undertecknarens namn",
+      "email": "E-post",
+      "signature": "Signatur",
+      "clear": "Rensa",
+      "submitIdle": "Signera och skicka tillbaka",
+      "submitPending": "Skickar..."
+    },
+    "contractText": "Avtalstext",
+    "errors": {
+      "invalid": {
+        "title": "Ogiltig länk",
+        "description": "Den här avtalslänken är inte giltig."
+      },
+      "expired": {
+        "title": "Utgången länk",
+        "description": "Den här avtalslänken har gått ut. Be om en ny."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Undertecknarens namn krävs.",
+      "signatureRequired": "Signatur krävs."
+    },
+    "actionErrors": {
+      "invalidContractData": "Ogiltiga avtalsuppgifter.",
+      "invalidLink": "Avtalslänken är inte giltig.",
+      "alreadyReturned": "Det här avtalet har redan skickats tillbaka.",
+      "expiredLink": "Avtalslänken har gått ut.",
+      "signer_name_required": "Undertecknarens namn krävs.",
+      "invalid_signature_format": "Ogiltigt signaturformat för hyrestagaren.",
+      "already_signed": "Det här avtalet har redan signerats.",
+      "booking_not_found": "Bokningen hittades inte.",
+      "finalize_failed": "Det gick inte att slutföra avtalet."
+    },
+    "actionSuccess": {
+      "returned": "Avtalet signerades och skickades tillbaka."
     }
   }
 }

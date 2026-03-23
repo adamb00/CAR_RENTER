@@ -450,6 +450,11 @@
       "title": "Informativa sui cookie – Zodiacs Rent a Car",
       "description": "Panoramica sui cookie che utilizziamo, sulle loro finalità e sulle impostazioni di consenso.",
       "ogImageAlt": "Informativa relativa ai cookie"
+    },
+    "rentContract": {
+      "title": "Contratto di noleggio – Zodiacs Rent a Car",
+      "description": "Controlla, scarica e firma online il tuo contratto di noleggio.",
+      "ogImageAlt": "Documento del contratto di noleggio"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Paese",
             "placeholder": "Paese"
           },
-    "street": {
-      "label": "Via",
-      "placeholder": "Via"
-    },
-    "streetType": {
-      "label": "Tipologia di via / area (opzionale)",
-      "placeholder": "es. Viale, Piazza"
-    },
-    "doorNumber": {
-      "label": "Numero civico",
-      "placeholder": "Numero civico"
-    },
+          "street": {
+            "label": "Via",
+            "placeholder": "Via"
+          },
+          "streetType": {
+            "label": "Tipologia di via / area (opzionale)",
+            "placeholder": "es. Viale, Piazza"
+          },
+          "doorNumber": {
+            "label": "Numero civico",
+            "placeholder": "Numero civico"
+          },
           "dateOfBirth": {
             "label": "Data di nascita",
             "placeholder": "Seleziona una data"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Gestisci la tua prenotazione – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Non abbiamo trovato alcuna prenotazione con questo numero.",
       "mismatch": "L’e-mail non corrisponde a questa prenotazione.",
       "generic": "Non è stato possibile annullare la prenotazione. Riprova."
+    }
+  },
+  "RentContract": {
+    "title": "Contratto di noleggio",
+    "description": "Controlla il contratto, scarica una copia PDF, poi firmalo e rimandalo indietro.",
+    "bookingId": "ID prenotazione: {id}",
+    "actions": {
+      "downloadPdf": "Scarica PDF"
+    },
+    "completed": {
+      "title": "Il contratto è già stato restituito",
+      "summary": "Firmato da: {name}",
+      "summaryWithDate": "Firmato da: {name} • {date}",
+      "unknownSigner": "Firmatario sconosciuto"
+    },
+    "form": {
+      "signerName": "Nome del firmatario",
+      "email": "E-mail",
+      "signature": "Firma",
+      "clear": "Cancella",
+      "submitIdle": "Firma e restituisci",
+      "submitPending": "Invio in corso..."
+    },
+    "contractText": "Testo del contratto",
+    "errors": {
+      "invalid": {
+        "title": "Link non valido",
+        "description": "Questo link del contratto non è valido."
+      },
+      "expired": {
+        "title": "Link scaduto",
+        "description": "Questo link del contratto è scaduto. Richiedine uno nuovo."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Il nome del firmatario è obbligatorio.",
+      "signatureRequired": "La firma è obbligatoria."
+    },
+    "actionErrors": {
+      "invalidContractData": "Dati del contratto non validi.",
+      "invalidLink": "Il link del contratto non è valido.",
+      "alreadyReturned": "Questo contratto è già stato restituito.",
+      "expiredLink": "Il link del contratto è scaduto.",
+      "signer_name_required": "Il nome del firmatario è obbligatorio.",
+      "invalid_signature_format": "Formato della firma del noleggiante non valido.",
+      "already_signed": "Questo contratto è già stato firmato.",
+      "booking_not_found": "Prenotazione non trovata.",
+      "finalize_failed": "Impossibile finalizzare il contratto."
+    },
+    "actionSuccess": {
+      "returned": "Il contratto è stato firmato e restituito con successo."
     }
   }
 }

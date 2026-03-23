@@ -450,6 +450,11 @@
       "title": "Informații despre cookie-uri – Zodiacs Rent a Car",
       "description": "Prezentare generală a cookie-urilor pe care le folosim, scopul lor și setările de consimțământ.",
       "ogImageAlt": "Document informativ despre cookie-uri"
+    },
+    "rentContract": {
+      "title": "Contract de închiriere – Zodiacs Rent a Car",
+      "description": "Revizuiește, descarcă și semnează online contractul tău de închiriere.",
+      "ogImageAlt": "Document contract de închiriere"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Țară",
             "placeholder": "Țară"
           },
-    "street": {
-      "label": "Stradă",
-      "placeholder": "Stradă"
-    },
-    "streetType": {
-      "label": "Tip stradă / zonă (opțional)",
-      "placeholder": "ex. Bulevard, Piață"
-    },
-    "doorNumber": {
-      "label": "Număr",
-      "placeholder": "Număr"
-    },
+          "street": {
+            "label": "Stradă",
+            "placeholder": "Stradă"
+          },
+          "streetType": {
+            "label": "Tip stradă / zonă (opțional)",
+            "placeholder": "ex. Bulevard, Piață"
+          },
+          "doorNumber": {
+            "label": "Număr",
+            "placeholder": "Număr"
+          },
           "dateOfBirth": {
             "label": "Data nașterii",
             "placeholder": "Alege data"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Gestionează rezervarea – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Nu am găsit nicio rezervare cu acest ID.",
       "mismatch": "Adresa de e-mail nu se potrivește acestei rezervări.",
       "generic": "Nu am reușit să anulăm rezervarea. Încearcă din nou."
+    }
+  },
+  "RentContract": {
+    "title": "Contract de închiriere",
+    "description": "Revizuiește contractul, descarcă o copie PDF, apoi semnează-l și trimite-l înapoi.",
+    "bookingId": "ID rezervare: {id}",
+    "actions": {
+      "downloadPdf": "Descarcă PDF"
+    },
+    "completed": {
+      "title": "Contractul a fost deja returnat",
+      "summary": "Semnat de: {name}",
+      "summaryWithDate": "Semnat de: {name} • {date}",
+      "unknownSigner": "Semnatar necunoscut"
+    },
+    "form": {
+      "signerName": "Numele semnatarului",
+      "email": "E-mail",
+      "signature": "Semnătură",
+      "clear": "Șterge",
+      "submitIdle": "Semnează și trimite înapoi",
+      "submitPending": "Se trimite..."
+    },
+    "contractText": "Textul contractului",
+    "errors": {
+      "invalid": {
+        "title": "Link invalid",
+        "description": "Acest link pentru contract nu este valid."
+      },
+      "expired": {
+        "title": "Link expirat",
+        "description": "Acest link pentru contract a expirat. Te rugăm să ceri unul nou."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Numele semnatarului este obligatoriu.",
+      "signatureRequired": "Semnătura este obligatorie."
+    },
+    "actionErrors": {
+      "invalidContractData": "Date contract invalide.",
+      "invalidLink": "Linkul contractului nu este valid.",
+      "alreadyReturned": "Acest contract a fost deja returnat.",
+      "expiredLink": "Linkul contractului a expirat.",
+      "signer_name_required": "Numele semnatarului este obligatoriu.",
+      "invalid_signature_format": "Format invalid pentru semnătura chiriașului.",
+      "already_signed": "Acest contract a fost deja semnat.",
+      "booking_not_found": "Rezervarea nu a fost găsită.",
+      "finalize_failed": "Finalizarea contractului a eșuat."
+    },
+    "actionSuccess": {
+      "returned": "Contractul a fost semnat și returnat cu succes."
     }
   }
 }

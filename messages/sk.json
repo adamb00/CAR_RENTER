@@ -450,6 +450,11 @@
       "title": "Informácie o súboroch cookie – Zodiacs Rent a Car",
       "description": "Prehľad súborov cookie, ktoré používame, ich účelov a nastavení súhlasu.",
       "ogImageAlt": "Dokument o používaní súborov cookie"
+    },
+    "rentContract": {
+      "title": "Nájomná zmluva – Zodiacs Rent a Car",
+      "description": "Skontrolujte, stiahnite a podpíšte svoju nájomnú zmluvu online.",
+      "ogImageAlt": "Dokument nájomnej zmluvy"
     }
   },
   "AboutSection": {
@@ -1763,18 +1768,18 @@
             "label": "Krajina",
             "placeholder": "Krajina"
           },
-    "street": {
-      "label": "Ulica",
-      "placeholder": "Ulica"
-    },
-    "streetType": {
-      "label": "Typ ulice / priestranstva (voliteľné)",
-      "placeholder": "napr. námestie, alej"
-    },
-    "doorNumber": {
-      "label": "Číslo domu",
-      "placeholder": "Číslo domu"
-    },
+          "street": {
+            "label": "Ulica",
+            "placeholder": "Ulica"
+          },
+          "streetType": {
+            "label": "Typ ulice / priestranstva (voliteľné)",
+            "placeholder": "napr. námestie, alej"
+          },
+          "doorNumber": {
+            "label": "Číslo domu",
+            "placeholder": "Číslo domu"
+          },
           "dateOfBirth": {
             "label": "Dátum narodenia",
             "placeholder": "Vyber dátum"
@@ -2567,8 +2572,7 @@
         "viber": "Viber"
       }
     }
-  }
-  ,
+  },
   "RentManage": {
     "meta": {
       "title": "Spravuj svoju rezerváciu – Zodiacs Rent a Car",
@@ -2628,6 +2632,57 @@
       "notFound": "Rezerváciu s týmto číslom sme nenašli.",
       "mismatch": "E-mailová adresa sa nezhoduje s touto rezerváciou.",
       "generic": "Rezerváciu sa nepodarilo zrušiť. Skús to znova."
+    }
+  },
+  "RentContract": {
+    "title": "Nájomná zmluva",
+    "description": "Skontrolujte zmluvu, stiahnite si kópiu PDF a potom ju podpíšte a odošlite späť.",
+    "bookingId": "ID rezervácie: {id}",
+    "actions": {
+      "downloadPdf": "Stiahnuť PDF"
+    },
+    "completed": {
+      "title": "Zmluva už bola vrátená",
+      "summary": "Podpísal(a): {name}",
+      "summaryWithDate": "Podpísal(a): {name} • {date}",
+      "unknownSigner": "Neznámy podpisujúci"
+    },
+    "form": {
+      "signerName": "Meno podpisujúceho",
+      "email": "E-mail",
+      "signature": "Podpis",
+      "clear": "Vymazať",
+      "submitIdle": "Podpísať a odoslať späť",
+      "submitPending": "Odosiela sa..."
+    },
+    "contractText": "Text zmluvy",
+    "errors": {
+      "invalid": {
+        "title": "Neplatný odkaz",
+        "description": "Tento odkaz na zmluvu nie je platný."
+      },
+      "expired": {
+        "title": "Platnosť odkazu vypršala",
+        "description": "Tento odkaz na zmluvu vypršal. Požiadajte o nový."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Meno podpisujúceho je povinné.",
+      "signatureRequired": "Podpis je povinný."
+    },
+    "actionErrors": {
+      "invalidContractData": "Neplatné údaje zmluvy.",
+      "invalidLink": "Odkaz na zmluvu nie je platný.",
+      "alreadyReturned": "Táto zmluva už bola vrátená.",
+      "expiredLink": "Platnosť odkazu na zmluvu vypršala.",
+      "signer_name_required": "Meno podpisujúceho je povinné.",
+      "invalid_signature_format": "Neplatný formát podpisu nájomcu.",
+      "already_signed": "Táto zmluva už bola podpísaná.",
+      "booking_not_found": "Rezervácia sa nenašla.",
+      "finalize_failed": "Zmluvu sa nepodarilo dokončiť."
+    },
+    "actionSuccess": {
+      "returned": "Zmluva bola úspešne podpísaná a odoslaná späť."
     }
   }
 }

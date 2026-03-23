@@ -450,6 +450,11 @@
       "title": "Sütikezelési tájékoztató – Zodiacs Rent a Car",
       "description": "Áttekintés az általunk használt sütikről, azok céljáról és a hozzájárulási beállításokról.",
       "ogImageAlt": "Sütikre vonatkozó tájékoztató"
+    },
+    "rentContract": {
+      "title": "Bérleti szerződés – Zodiacs Rent a Car",
+      "description": "Tekintsd át, töltsd le és írd alá online a bérleti szerződésedet.",
+      "ogImageAlt": "Bérleti szerződés dokumentum"
     }
   },
   "AboutSection": {
@@ -650,7 +655,13 @@
       {
         "title": "ÁSZF – szerződési feltételek",
         "description": "A hivatalos szerződési feltételek (GTC) Fuerteventurán és Lanzarotén.",
-        "keywords": ["ászf", "gtc", "szerződés", "jogi", "lanzarote"],
+        "keywords": [
+          "ászf",
+          "gtc",
+          "szerződés",
+          "jogi",
+          "lanzarote"
+        ],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -2621,6 +2632,57 @@
       "notFound": "Nem találunk ilyen azonosítójú foglalást.",
       "mismatch": "Az e-mail cím nem egyezik a foglaláshoz tartozóval.",
       "generic": "Nem sikerült lemondani a foglalást. Kérjük, próbáld meg később."
+    }
+  },
+  "RentContract": {
+    "title": "Bérleti szerződés",
+    "description": "Nézd át a szerződést, töltsd le PDF-ben, majd írd alá és küldd vissza.",
+    "bookingId": "Foglalási azonosító: {id}",
+    "actions": {
+      "downloadPdf": "PDF letöltése"
+    },
+    "completed": {
+      "title": "A szerződést már visszaküldték",
+      "summary": "Aláírta: {name}",
+      "summaryWithDate": "Aláírta: {name} • {date}",
+      "unknownSigner": "Ismeretlen aláíró"
+    },
+    "form": {
+      "signerName": "Aláíró neve",
+      "email": "E-mail",
+      "signature": "Aláírás",
+      "clear": "Törlés",
+      "submitIdle": "Aláírás és visszaküldés",
+      "submitPending": "Küldés..."
+    },
+    "contractText": "Szerződés szövege",
+    "errors": {
+      "invalid": {
+        "title": "Érvénytelen link",
+        "description": "Ez a szerződéslink nem érvényes."
+      },
+      "expired": {
+        "title": "Lejárt link",
+        "description": "Ez a szerződéslink lejárt. Kérj újat."
+      }
+    },
+    "validation": {
+      "signerNameRequired": "Az aláíró neve kötelező.",
+      "signatureRequired": "Az aláírás kötelező."
+    },
+    "actionErrors": {
+      "invalidContractData": "Érvénytelen szerződésadatok.",
+      "invalidLink": "A szerződéslink nem érvényes.",
+      "alreadyReturned": "Ezt a szerződést már visszaküldték.",
+      "expiredLink": "A szerződéslink lejárt.",
+      "signer_name_required": "Az aláíró neve kötelező.",
+      "invalid_signature_format": "Érvénytelen aláírásformátum.",
+      "already_signed": "Ezt a szerződést már aláírták.",
+      "booking_not_found": "A foglalás nem található.",
+      "finalize_failed": "Nem sikerült véglegesíteni a szerződést."
+    },
+    "actionSuccess": {
+      "returned": "A szerződést sikeresen aláírtad és visszaküldted."
     }
   }
 }
