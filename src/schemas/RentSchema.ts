@@ -690,6 +690,13 @@ export function createRentSchema(
               path: ['children', idx, 'height'],
             });
           }
+          if (child?.weight === undefined) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: message('errors.deliveryFieldRequired'),
+              path: ['children', idx, 'weight'],
+            });
+          }
         });
       }
     });

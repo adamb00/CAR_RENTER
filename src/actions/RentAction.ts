@@ -52,8 +52,22 @@ const normalizeEmail = (value: unknown): string | null => {
   return normalized ? normalized.toLowerCase() : null;
 };
 
-const hasAnyValue = (values: Array<string | null>): boolean =>
-  values.some((value) => typeof value === 'string' && value.length > 0);
+const normalizeBoolean = (value: unknown): boolean | null => {
+  if (typeof value === 'boolean') return value;
+  if (typeof value !== 'string') return null;
+
+  const normalized = value.trim().toLowerCase();
+  if (normalized === 'true') return true;
+  if (normalized === 'false') return false;
+
+  return null;
+};
+
+const hasAnyValue = (values: Array<string | boolean | null>): boolean =>
+  values.some(
+    (value) =>
+      (typeof value === 'string' && value.length > 0) || value === true,
+  );
 
 type DeliveryAddressInput =
   | NonNullable<RentFormValues['delivery']>['address']
@@ -105,7 +119,9 @@ const FUERTEVENTURA_MARKERS = [
   'tuineje',
 ] as const;
 
-const resolveIslandFromText = (value?: string | null): SupportedIsland | null => {
+const resolveIslandFromText = (
+  value?: string | null,
+): SupportedIsland | null => {
   const normalized = normalizeText(value);
   if (!normalized) return null;
   const searchable = normalizeForSearch(normalized);
@@ -153,7 +169,9 @@ const resolveBookingDeliveryIsland = (
     if (fixedAirport?.id === 'fuerteventura') return 'Fuerteventura';
   }
 
-  const byPostalCode = resolveIslandFromPostalCode(delivery.address?.postalCode);
+  const byPostalCode = resolveIslandFromPostalCode(
+    delivery.address?.postalCode,
+  );
   if (byPostalCode) return byPostalCode;
 
   const byText =
@@ -251,6 +269,7 @@ const syncBookingAuxTables = async (
   try {
     const delivery = formData.delivery;
     const deliveryData = {
+      same: normalizeBoolean(delivery?.same),
       placeType: normalizeText(delivery?.placeType),
       locationName: normalizeText(delivery?.locationName),
       addressLine: formatDeliveryAddressLine(delivery?.address),
@@ -349,7 +368,9 @@ export const RentAction = async (values: RentFormValues) => {
   const pdfBuffer = await buildRentPdf(validatedFields.data);
   const pdfFileName = `berles-${validatedFields.data.rentalPeriod.startDate}-${validatedFields.data.contact.name}.pdf`;
   const contactPhone = validatedFields.data.driver?.[0]?.phoneNumber ?? null;
-  const normalizedContactEmail = normalizeEmail(validatedFields.data.contact.email);
+  const normalizedContactEmail = normalizeEmail(
+    validatedFields.data.contact.email,
+  );
   const rentIdFromPayload = validatedFields.data.rentId ?? null;
   const isModifyRequest = Boolean(rentIdFromPayload);
   let humanId: string | null = null;
@@ -605,8 +626,6 @@ export const RentAction = async (values: RentFormValues) => {
       });
 
       if (validatedFields.data.quoteId) {
-        console.log('val', validatedFields.data);
-
         try {
           await prisma.contactQuote.update({
             where: { id: validatedFields.data.quoteId },
@@ -782,10 +801,7 @@ function summarizeRentChanges(
   next: CoreRentSnapshot,
 ): RentChangeMap {
   const changes: RentChangeMap = {};
-  const allKeys = new Set([
-    ...Object.keys(previous),
-    ...Object.keys(next),
-  ]);
+  const allKeys = new Set([...Object.keys(previous), ...Object.keys(next)]);
 
   for (const key of allKeys) {
     const before = previous[key] ?? null;
@@ -823,7 +839,9 @@ function normalizeDate(value: Date | string | null | undefined): string | null {
   return parsed.toISOString().slice(0, 10);
 }
 
-function toCoreRentSnapshotFromRecord(record: ExistingRentRecord): CoreRentSnapshot {
+function toCoreRentSnapshotFromRecord(
+  record: ExistingRentRecord,
+): CoreRentSnapshot {
   return {
     locale: normalizeValue(record.locale),
     carId: normalizeValue(record.carId),
@@ -844,7 +862,9 @@ function toCoreRentSnapshotFromRecord(record: ExistingRentRecord): CoreRentSnaps
     deliveryDepartureFlight: normalizeValue(
       record.BookingDeliveryDetails?.departureFlight,
     ),
-    deliveryArrivalHour: normalizeValue(record.BookingDeliveryDetails?.arrivalHour),
+    deliveryArrivalHour: normalizeValue(
+      record.BookingDeliveryDetails?.arrivalHour,
+    ),
     deliveryArrivalMinute: normalizeValue(
       record.BookingDeliveryDetails?.arrivalMinute,
     ),

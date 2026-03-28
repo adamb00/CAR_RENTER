@@ -11,7 +11,6 @@ import {
 import { UseFormReturn } from 'react-hook-form';
 import { RentFormValues } from '@/schemas/RentSchema';
 import { Checkbox } from '../ui/checkbox';
-import { cn } from '@/lib/utils';
 import { Input } from '../ui/input';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import { useInvoice } from '@/hooks/useInvoice';
@@ -102,15 +101,8 @@ export default function Invoice({
           </FormItem>
         )}
       />
-      <div
-        className={cn(
-          'grid transition-all duration-300 ease-in-out overflow-hidden',
-          isInvoiceSame
-            ? 'grid-rows-[0fr] opacity-0 pointer-events-none'
-            : 'grid-rows-[1fr] opacity-100'
-        )}
-      >
-        <div className='space-y-4 mx-2'>
+      {!isInvoiceSame ? (
+        <div className='space-y-4 px-2'>
           <div className='grid gap-4 md:grid-cols-2'>
             <FormField
               control={form.control}
@@ -395,7 +387,7 @@ export default function Invoice({
             />
           </div>
         </div>
-      </div>
+      ) : null}
     </SectionCard>
   );
 }

@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils';
 import { RentFormValues } from '@/schemas/RentSchema';
 import { useTranslations } from 'next-intl';
 import { UseFormReturn } from 'react-hook-form';
@@ -45,15 +44,8 @@ export default function Contact({
           </FormItem>
         )}
       />
-      <div
-        className={cn(
-          'grid transition-all duration-300 ease-in-out overflow-hidden ',
-          isContactSame
-            ? 'grid-rows-[0fr] opacity-0 pointer-events-none'
-            : 'grid-rows-[1fr] opacity-100'
-        )}
-      >
-        <div className='grid gap-4 md:grid-cols-2 mb-4 mx-2'>
+      {!isContactSame ? (
+        <div className='grid gap-4 md:grid-cols-2 px-2 pb-4'>
           <FormField
             control={form.control}
             name={'contact.name'}
@@ -105,7 +97,7 @@ export default function Contact({
             }}
           />
         </div>
-      </div>
+      ) : null}
     </SectionCard>
   );
 }
