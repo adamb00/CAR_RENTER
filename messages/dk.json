@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Børn som medrejsende",
-        "description": "Hvis der rejser børn med, angiv deres alder (og eventuelt højde), så vi kan sørge for det rigtige udstyr.",
+        "description": "Hvis der rejser børn med, angiv deres alder (og eventuelt højde og vægt), så vi kan sørge for det rigtige udstyr.",
         "empty": "Der er endnu ikke tilføjet nogen børn.",
         "ageLabel": "Barn #{index} alder (år)",
-        "heightLabel": "Højde (cm) – valgfrit"
+        "heightLabel": "Højde (cm) – valgfrit",
+        "weightLabel": "Vægt (kg) – valgfrit"
       },
       "drivers": {
         "title": "Chaufføroplysninger",
@@ -1911,6 +1912,9 @@
           "placeholder": "F.eks. Hotel Marina eller Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Afleveringsstedet er det samme som afhentningsstedet"
+          },
           "placeType": {
             "label": "Afhentningssted",
             "placeholder": "Vælg afhentningssted",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "Alder kan ikke være negativ",
       "childAgeMax": "Barnets alder må højst være 17 år",
       "childHeightMin": "Højde kan ikke være negativ",
+      "childWeightMin": "Vægt kan ikke være negativ",
       "firstNameRequired": "Fornavn er påkrævet",
       "lastNameRequired": "Efternavn er påkrævet",
       "countryRequired": "Land er påkrævet",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "Højde kan ikke være negativ"
+        },
+        "weight": {
+          "min": "Vægt kan ikke være negativ"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Vælg afhentningssted"
+        "required": "Vælg afhentningssted",
+        "invalid": "Ugyldigt afhentningssted"
         },
         "arrivalFlight": {
           "required": "Angiv ankommende flynummer"

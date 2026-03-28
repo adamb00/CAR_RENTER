@@ -1723,10 +1723,11 @@
       },
       "children": {
         "title": "Děti – cestující",
-        "description": "Pokud s vámi cestují děti, uveďte prosím jejich věk (a volitelně výšku), abychom mohli zajistit vhodné vybavení.",
+        "description": "Pokud s vámi cestují děti, uveďte prosím jejich věk (a volitelně výšku a hmotnost), abychom mohli zajistit vhodné vybavení.",
         "empty": "Momentálně není přidáno žádné dítě.",
         "ageLabel": "Věk dítěte #{index} (roky)",
-        "heightLabel": "Výška (cm) – volitelné"
+        "heightLabel": "Výška (cm) – volitelné",
+        "weightLabel": "Hmotnost (kg) – volitelné"
       },
       "drivers": {
         "title": "Údaje o řidiči",
@@ -1906,6 +1907,9 @@
           "placeholder": "např. Hotel Marina nebo Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Místo vrácení je stejné jako místo převzetí"
+          },
           "placeType": {
             "label": "Místo převzetí",
             "placeholder": "Vyberte místo převzetí",
@@ -1975,6 +1979,7 @@
       "childAgeMin": "Věk nemůže být záporný",
       "childAgeMax": "Věk dítěte může být maximálně 17 let",
       "childHeightMin": "Výška nemůže být záporná",
+      "childWeightMin": "Hmotnost nemůže být záporná",
       "firstNameRequired": "Křestní jméno je povinné",
       "lastNameRequired": "Příjmení je povinné",
       "countryRequired": "Zadání země je povinné",
@@ -2037,6 +2042,9 @@
         },
         "height": {
           "min": "Výška nemůže být záporná"
+        },
+        "weight": {
+          "min": "Hmotnost nemůže být záporná"
         }
       },
       "driver": {
@@ -2144,7 +2152,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Vyberte místo převzetí"
+        "required": "Vyberte místo převzetí",
+        "invalid": "Neplatné místo převzetí"
         },
         "arrivalFlight": {
           "required": "Zadejte číslo příletového letu"

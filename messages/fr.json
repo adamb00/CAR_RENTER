@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Passagers enfants",
-        "description": "Si un enfant voyage avec vous, veuillez indiquer son âge (et éventuellement sa taille) afin que nous puissions fournir l’équipement adapté.",
+        "description": "Si un enfant voyage avec vous, veuillez indiquer son âge (et éventuellement sa taille et son poids) afin que nous puissions fournir l’équipement adapté.",
         "empty": "Aucun enfant ajouté pour le moment.",
         "ageLabel": "Âge de l’enfant #{index} (années)",
-        "heightLabel": "Taille (cm) – optionnel"
+        "heightLabel": "Taille (cm) – optionnel",
+        "weightLabel": "Poids (kg) – optionnel"
       },
       "drivers": {
         "title": "Informations sur le conducteur",
@@ -1911,6 +1912,9 @@
           "placeholder": "Ex. Hotel Marina ou Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Le lieu de retour est le même que le lieu de prise en charge"
+          },
           "placeType": {
             "label": "Lieu de prise en charge",
             "placeholder": "Sélectionnez le lieu de prise en charge",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "L’âge ne peut pas être négatif",
       "childAgeMax": "L’âge de l’enfant ne peut pas dépasser 17 ans",
       "childHeightMin": "La taille ne peut pas être négative",
+      "childWeightMin": "Le poids ne peut pas être négatif",
       "firstNameRequired": "Le prénom est obligatoire",
       "lastNameRequired": "Le nom de famille est obligatoire",
       "countryRequired": "Le pays est obligatoire",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "La taille ne peut pas être négative"
+        },
+        "weight": {
+          "min": "Le poids ne peut pas être négatif"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Veuillez sélectionner le lieu de prise en charge"
+        "required": "Veuillez sélectionner le lieu de prise en charge",
+        "invalid": "Lieu de prise en charge invalide"
         },
         "arrivalFlight": {
           "required": "Veuillez indiquer le numéro du vol d’arrivée"

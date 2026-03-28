@@ -11,6 +11,7 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     childAgeMin: 'Az életkor nem lehet negatív',
     childAgeMax: 'A gyermek életkora legfeljebb 17 év lehet',
     childHeightMin: 'A magasság nem lehet negatív',
+    childWeightMin: 'A súly nem lehet negatív',
     firstNameRequired: 'A keresztnév megadása kötelező',
     lastNameRequired: 'A vezetéknév megadása kötelező',
     countryRequired: 'Az ország megadása kötelező',
@@ -72,6 +73,9 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
       },
       height: {
         min: 'A magasság nem lehet negatív',
+      },
+      weight: {
+        min: 'A súly nem lehet negatív',
       },
     },
     driver: {
@@ -177,6 +181,7 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     delivery: {
       placeType: {
         required: 'Válaszd ki az átvétel helyét',
+        invalid: 'Érvénytelen átvételi hely',
       },
       arrivalFlight: {
         required: 'Add meg az érkező járatszámot',
@@ -357,7 +362,7 @@ export function createRentSchema(
                   .number()
                   .min(0, message('fields.children.age.min'))
                   .max(17, message('fields.children.age.max')),
-                z.literal(''), // üres input engedélyezve
+                z.literal(''),
               ])
               .optional()
               .transform((val) =>
@@ -366,6 +371,10 @@ export function createRentSchema(
             height: z
               .number()
               .min(0, message('fields.children.height.min'))
+              .optional(),
+            weight: z
+              .number()
+              .min(0, message('fields.children.weight.min'))
               .optional(),
           }),
         )
@@ -401,15 +410,11 @@ export function createRentSchema(
           dateOfBirth: z.string().refine((date) => !isNaN(Date.parse(date)), {
             message: message('fields.driver.dateOfBirth.invalid'),
           }),
-          // placeOfBirth: z
-          //   .string()
-          //   .min(1, message('fields.driver.placeOfBirth.required')),
           nameOfMother: z.string().optional(),
           phoneNumber: z
             .string()
             .trim()
             .min(1, message('fields.driver.phoneNumber.required'))
-            // minden whitespace, kötőjel, zárójel eltávolítása
             .transform((value) => value.replace(/[\s\-().]/g, ''))
             .refine((value) => validator.isMobilePhone(value, 'any'), {
               message: message('fields.driver.phoneNumber.invalid'),
@@ -426,9 +431,7 @@ export function createRentSchema(
             number: z
               .string()
               .min(1, message('fields.driver.document.number.required')),
-            // validFrom: z.string().refine((date) => !isNaN(Date.parse(date)), {
-            //   message: message('fields.driver.document.validFrom.invalid'),
-            // }),
+
             validUntil: z.string().refine((date) => !isNaN(Date.parse(date)), {
               message: message('fields.driver.document.validUntil.invalid'),
             }),
@@ -438,13 +441,7 @@ export function createRentSchema(
                 1,
                 message('fields.driver.document.drivingLicenceNumber.required'),
               ),
-            // drivingLicenceValidFrom: z
-            //   .string()
-            //   .refine((date) => !isNaN(Date.parse(date)), {
-            //     message: message(
-            //       'fields.driver.document.drivingLicenceValidFrom.invalid',
-            //     ),
-            //   }),
+
             drivingLicenceValidUntil: z
               .string()
               .refine((date) => !isNaN(Date.parse(date)), {
@@ -522,7 +519,12 @@ export function createRentSchema(
       }),
       delivery: z
         .object({
-          placeType: z.enum(['accommodation', 'airport', 'office']).optional(),
+          same: z.boolean().default(false),
+          placeType: z
+            .enum(['accommodation', 'airport', 'office'], {
+              error: message('fields.delivery.placeType.invalid'),
+            })
+            .optional(),
           locationName: z.string().max(200).optional(),
           arrivalHour: z
             .string()

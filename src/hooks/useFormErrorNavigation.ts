@@ -132,25 +132,53 @@ export function useFormErrorNavigation<TFieldValues extends FieldValues>({
     (name: string) => {
       if (typeof document === 'undefined') return;
       const root: Document | HTMLElement = formRef.current ?? document;
-      const escapeName = cssEscape(name);
+      const pathSegments = name.split('.');
+      const candidatePaths = pathSegments
+        .map((_, index) => pathSegments.slice(0, pathSegments.length - index).join('.'))
+        .filter(Boolean);
 
-      let element = root.querySelector(
-        `[name="${escapeName}"]`
-      ) as HTMLElement | null;
+      let scrollTarget: HTMLElement | null = null;
+      let focusTarget: HTMLElement | null = null;
 
-      if (!element) {
-        const sectionName = name.split('.')[0];
-        const escapedSection = cssEscape(sectionName);
-        element = root.querySelector(`[data-section="${escapedSection}"]`) as
-          | HTMLElement
-          | null;
+      for (const candidate of candidatePaths) {
+        const escapedName = cssEscape(candidate);
+        const fieldContainer = root.querySelector(
+          `[data-field-name="${escapedName}"]`
+        ) as HTMLElement | null;
+        const namedElement = root.querySelector(
+          `[name="${escapedName}"]`
+        ) as HTMLElement | null;
+
+        if (namedElement) {
+          scrollTarget = namedElement;
+          focusTarget = namedElement;
+          break;
+        }
+
+        if (fieldContainer) {
+          scrollTarget = fieldContainer;
+          focusTarget =
+            (fieldContainer.querySelector(
+              '[aria-invalid="true"], [data-slot="select-trigger"], [data-slot="checkbox"], [data-slot="button"], input, button, textarea, select'
+            ) as HTMLElement | null) ?? fieldContainer;
+          break;
+        }
       }
 
-      if (element && typeof window !== 'undefined') {
-        scrollElementIntoView(element, offset);
+      if (!scrollTarget) {
+        const sectionName = name.split('.')[0];
+        const escapedSection = cssEscape(sectionName);
+        scrollTarget = root.querySelector(
+          `[data-section="${escapedSection}"]`
+        ) as HTMLElement | null;
+        focusTarget = scrollTarget;
+      }
+
+      if (scrollTarget && typeof window !== 'undefined') {
+        scrollElementIntoView(scrollTarget, offset);
         window.setTimeout(() => {
           try {
-            element?.focus?.();
+            focusTarget?.focus?.();
           } catch {
             /* ignore focus failures */
           }

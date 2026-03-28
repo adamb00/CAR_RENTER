@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Gyermek utasok",
-        "description": "Ha gyermek is utazik, kérjük add meg az életkorát (és opcionálisan a magasságát), hogy megfelelő felszerelést biztosíthassunk.",
+        "description": "Ha gyermek is utazik, kérjük add meg az életkorát (és opcionálisan a magasságát és súlyát), hogy megfelelő felszerelést biztosíthassunk.",
         "empty": "Jelenleg nincs hozzáadott gyermek.",
         "ageLabel": "Gyermek #{index} életkora (év)",
-        "heightLabel": "Magasság (cm) - opcionális"
+        "heightLabel": "Magasság (cm) - opcionális",
+        "weightLabel": "Súly (kg) - opcionális"
       },
       "drivers": {
         "title": "Sofőr adatai",
@@ -1911,6 +1912,9 @@
           "placeholder": "Pl. Hotel Marina vagy Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "A visszaadás helye egyezik az átvétel helyével"
+          },
           "placeType": {
             "label": "Átvétel helye",
             "placeholder": "Válassz átvételi helyet",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "Az életkor nem lehet negatív",
       "childAgeMax": "A gyermek életkora legfeljebb 17 év lehet",
       "childHeightMin": "A magasság nem lehet negatív",
+      "childWeightMin": "A súly nem lehet negatív",
       "firstNameRequired": "A keresztnév megadása kötelező",
       "lastNameRequired": "A vezetéknév megadása kötelező",
       "countryRequired": "Az ország megadása kötelező",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "A magasság nem lehet negatív"
+        },
+        "weight": {
+          "min": "A súly nem lehet negatív"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Válaszd ki az átvétel helyét"
+        "required": "Válaszd ki az átvétel helyét",
+        "invalid": "Érvénytelen átvételi hely"
         },
         "arrivalFlight": {
           "required": "Add meg az érkező járatszámot"

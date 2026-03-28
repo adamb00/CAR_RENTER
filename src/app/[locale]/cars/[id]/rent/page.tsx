@@ -200,6 +200,7 @@ export default async function RentPage({
               ? rentRecord.rentalDays
               : undefined;
           prefill.delivery = {
+            same: compact?.deliverySame ?? false,
             placeType: toPlaceType(deliveryDetails?.placeType),
             locationName: deliveryDetails?.locationName ?? '',
             arrivalHour: deliveryDetails?.arrivalHour ?? '',

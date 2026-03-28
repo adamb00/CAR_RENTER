@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        'relative h-[95vh] isolate overflow-hidden bg-top bg-cover'
+        'relative h-[95vh] isolate overflow-hidden bg-top bg-cover',
       )}
       style={{
         clipPath: clip,

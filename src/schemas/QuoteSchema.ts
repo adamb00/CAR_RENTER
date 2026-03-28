@@ -65,7 +65,11 @@ export const buildQuoteRequestSchema = ({
       carType: z.string().optional(),
       delivery: z
         .object({
-          placeType: z.enum(['accommodation', 'airport', 'office']).optional(),
+          placeType: z
+            .enum(['accommodation', 'airport', 'office'], {
+              error: tSchema('fields.delivery.placeType.invalid'),
+            })
+            .optional(),
           locationName: z.string().optional(),
           address: z
             .object({

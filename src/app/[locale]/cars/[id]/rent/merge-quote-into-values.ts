@@ -22,6 +22,7 @@ export const mergeQuoteIntoValues = (
   const restDrivers = values.driver?.slice(1) ?? [];
 
   const delivery: NonNullable<RentFormValues['delivery']> = values.delivery ?? {
+    same: false,
     placeType: undefined,
     locationName: '',
     arrivalHour: '',
@@ -75,6 +76,7 @@ export const mergeQuoteIntoValues = (
     },
     delivery: {
       ...delivery,
+      same: delivery.same ?? false,
       placeType: ['accommodation', 'airport', 'office'].includes(
         quote.delivery?.placeType as string
       )

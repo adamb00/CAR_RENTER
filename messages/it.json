@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Passeggeri bambini",
-        "description": "Se viaggiano anche bambini, indica la loro età (e facoltativamente l’altezza), così potremo fornire l’attrezzatura adeguata.",
+        "description": "Se viaggiano anche bambini, indica la loro età (e facoltativamente l’altezza e il peso), così potremo fornire l’attrezzatura adeguata.",
         "empty": "Al momento non è stato aggiunto alcun bambino.",
         "ageLabel": "Età del bambino #{index} (anni)",
-        "heightLabel": "Altezza (cm) – opzionale"
+        "heightLabel": "Altezza (cm) – opzionale",
+        "weightLabel": "Peso (kg) – opzionale"
       },
       "drivers": {
         "title": "Dati dei conducenti",
@@ -1911,6 +1912,9 @@
           "placeholder": "Es. Hotel Marina o Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Il luogo di riconsegna coincide con il luogo di ritiro"
+          },
           "placeType": {
             "label": "Luogo di ritiro",
             "placeholder": "Seleziona il luogo di ritiro",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "L'età non può essere negativa",
       "childAgeMax": "L'età del bambino può essere al massimo di 17 anni",
       "childHeightMin": "L'altezza non può essere negativa",
+      "childWeightMin": "Il peso non può essere negativo",
       "firstNameRequired": "Il nome è obbligatorio",
       "lastNameRequired": "Il cognome è obbligatorio",
       "countryRequired": "Il paese è obbligatorio",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "L'altezza non può essere negativa"
+        },
+        "weight": {
+          "min": "Il peso non può essere negativo"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Seleziona il luogo di ritiro"
+        "required": "Seleziona il luogo di ritiro",
+        "invalid": "Luogo di ritiro non valido"
         },
         "arrivalFlight": {
           "required": "Inserisci il numero del volo di arrivo"

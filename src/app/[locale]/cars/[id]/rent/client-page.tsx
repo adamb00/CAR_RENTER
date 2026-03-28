@@ -92,6 +92,7 @@ export default function RentPageClient({
       RentFormResolvedValues
     >,
     defaultValues,
+    shouldFocusError: false,
   });
 
   const { clearStoredValues, isHydrated } = usePersistRentForm(

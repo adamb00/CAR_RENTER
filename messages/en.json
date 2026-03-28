@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Child passengers",
-        "description": "If a child is travelling with you, please provide their age (and optionally height) so we can provide the right equipment.",
+        "description": "If a child is travelling with you, please provide their age (and optionally height and weight) so we can provide the right equipment.",
         "empty": "No children added yet.",
         "ageLabel": "Child #{index} age (years)",
-        "heightLabel": "Height (cm) – optional"
+        "heightLabel": "Height (cm) – optional",
+        "weightLabel": "Weight (kg) – optional"
       },
       "drivers": {
         "title": "Driver details",
@@ -1911,6 +1912,9 @@
           "placeholder": "e.g. Hotel Marina or Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "The return location is the same as the pickup location"
+          },
           "placeType": {
             "label": "Pickup location",
             "placeholder": "Select pickup location",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "Age cannot be negative",
       "childAgeMax": "A child's age may be at most 17 years",
       "childHeightMin": "Height cannot be negative",
+      "childWeightMin": "Weight cannot be negative",
       "firstNameRequired": "First name is required",
       "lastNameRequired": "Last name is required",
       "countryRequired": "Country is required",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "Height cannot be negative"
+        },
+        "weight": {
+          "min": "Weight cannot be negative"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Please select the pickup location"
+        "required": "Please select the pickup location",
+        "invalid": "Invalid pickup location"
         },
         "arrivalFlight": {
           "required": "Please enter the arrival flight number"

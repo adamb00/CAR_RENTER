@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Pasageri copii",
-        "description": "Dacă vei călători cu copii, te rugăm să indici vârsta lor (și opțional înălțimea), pentru a putea oferi echipamentul potrivit.",
+        "description": "Dacă vei călători cu copii, te rugăm să indici vârsta lor (și opțional înălțimea și greutatea), pentru a putea oferi echipamentul potrivit.",
         "empty": "Momentan nu a fost adăugat niciun copil.",
         "ageLabel": "Vârsta copilului #{index} (ani)",
-        "heightLabel": "Înălțime (cm) – opțional"
+        "heightLabel": "Înălțime (cm) – opțional",
+        "weightLabel": "Greutate (kg) – opțional"
       },
       "drivers": {
         "title": "Datele șoferilor",
@@ -1911,6 +1912,9 @@
           "placeholder": "Ex. Hotel Marina sau Aeroport Budapesta Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Locul returnării este același cu locul preluării"
+          },
           "placeType": {
             "label": "Loc de preluare",
             "placeholder": "Selectează locul de preluare",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "Vârsta nu poate fi negativă",
       "childAgeMax": "Vârsta copilului poate fi de maximum 17 ani",
       "childHeightMin": "Înălțimea nu poate fi negativă",
+      "childWeightMin": "Greutatea nu poate fi negativă",
       "firstNameRequired": "Prenumele este obligatoriu",
       "lastNameRequired": "Numele de familie este obligatoriu",
       "countryRequired": "Țara este obligatorie",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "Înălțimea nu poate fi negativă"
+        },
+        "weight": {
+          "min": "Greutatea nu poate fi negativă"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Selectează locul de preluare"
+        "required": "Selectează locul de preluare",
+        "invalid": "Loc de preluare invalid"
         },
         "arrivalFlight": {
           "required": "Te rugăm să introduci numărul zborului de sosire"

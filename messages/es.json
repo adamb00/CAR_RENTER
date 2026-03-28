@@ -1816,10 +1816,11 @@
       },
       "children": {
         "title": "Pasajeros menores",
-        "description": "Si viaja algún menor, indica su edad (y opcionalmente su altura) para preparar el equipamiento adecuado.",
+        "description": "Si viaja algún menor, indica su edad (y opcionalmente su altura y peso) para preparar el equipamiento adecuado.",
         "empty": "Por ahora no hay menores añadidos.",
         "ageLabel": "Edad del menor #{index} (años)",
-        "heightLabel": "Altura (cm) - opcional"
+        "heightLabel": "Altura (cm) - opcional",
+        "weightLabel": "Peso (kg) - opcional"
       },
       "drivers": {
         "title": "Datos de los conductores",
@@ -1999,6 +2000,9 @@
           "placeholder": "Ej. Hotel Marina o Aeropuerto de Madrid-Barajas"
         },
         "fields": {
+          "same": {
+            "label": "El lugar de devolución es el mismo que el lugar de recogida"
+          },
           "placeType": {
             "label": "Lugar de recogida",
             "placeholder": "Selecciona el lugar de recogida",
@@ -2068,6 +2072,7 @@
       "childAgeMin": "La edad no puede ser negativa",
       "childAgeMax": "La edad del menor no puede superar los 17 años",
       "childHeightMin": "La altura no puede ser negativa",
+      "childWeightMin": "El peso no puede ser negativo",
       "firstNameRequired": "El nombre es obligatorio",
       "lastNameRequired": "El apellido es obligatorio",
       "countryRequired": "El país es obligatorio",
@@ -2130,6 +2135,9 @@
         },
         "height": {
           "min": "La altura no puede ser negativa"
+        },
+        "weight": {
+          "min": "El peso no puede ser negativo"
         }
       },
       "driver": {
@@ -2237,7 +2245,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Selecciona el lugar de recogida"
+        "required": "Selecciona el lugar de recogida",
+        "invalid": "Lugar de recogida no válido"
         },
         "arrivalFlight": {
           "required": "Indica el número de vuelo de llegada"

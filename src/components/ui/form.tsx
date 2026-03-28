@@ -25,9 +25,7 @@ type FormFieldContextValue<
   name: TName
 }
 
-const FormFieldContext = React.createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue
-)
+const FormFieldContext = React.createContext<FormFieldContextValue | null>(null)
 
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
@@ -46,12 +44,13 @@ const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
   const itemContext = React.useContext(FormItemContext)
   const { getFieldState } = useFormContext()
-  const formState = useFormState({ name: fieldContext.name })
-  const fieldState = getFieldState(fieldContext.name, formState)
+  const formState = useFormState({ name: fieldContext?.name })
 
-  if (!fieldContext) {
+  if (!fieldContext?.name) {
     throw new Error("useFormField should be used within <FormField>")
   }
+
+  const fieldState = getFieldState(fieldContext.name, formState)
 
   const { id } = itemContext
 
@@ -75,12 +74,29 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 
 function FormItem({ className, ...props }: React.ComponentProps<"div">) {
   const id = React.useId()
+  const fieldContext = React.useContext(FormFieldContext)
+  const { getFieldState } = useFormContext()
+  const formState = useFormState({ name: fieldContext?.name })
+  const error = fieldContext?.name
+    ? getFieldState(fieldContext.name, formState).error
+    : undefined
 
   return (
     <FormItemContext.Provider value={{ id }}>
       <div
         data-slot="form-item"
-        className={cn("grid gap-2", className)}
+        data-field-name={fieldContext?.name}
+        data-error={error ? "true" : "false"}
+        className={cn(
+          "grid gap-2",
+          "data-[error=true]:[&_[data-slot=select-trigger]]:border-destructive",
+          "data-[error=true]:[&_[data-slot=select-trigger]]:ring-destructive/20",
+          "data-[error=true]:[&_[data-slot=button]]:border-destructive",
+          "data-[error=true]:[&_[data-slot=button]]:ring-destructive/20",
+          "data-[error=true]:[&_[data-slot=checkbox]]:border-destructive",
+          "data-[error=true]:[&_[data-slot=checkbox]]:ring-destructive/20",
+          className
+        )}
         {...props}
       />
     </FormItemContext.Provider>

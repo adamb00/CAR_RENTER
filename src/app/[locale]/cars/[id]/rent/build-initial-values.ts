@@ -63,6 +63,7 @@ export const buildInitialValues = (
       },
     },
     delivery: {
+      same: false,
       placeType: undefined,
       locationName: '',
       arrivalHour: '',

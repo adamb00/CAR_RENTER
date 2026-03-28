@@ -1,9 +1,8 @@
-import React from 'react';
-import SectionCard from '../SectionCard';
-import { useTranslations } from 'next-intl';
-import { Button } from '../ui/button';
-import { useFieldArray, UseFormReturn } from 'react-hook-form';
 import { RentFormValues } from '@/schemas/RentSchema';
+import { useTranslations } from 'next-intl';
+import { useFieldArray, UseFormReturn } from 'react-hook-form';
+import SectionCard from '../SectionCard';
+import { Button } from '../ui/button';
 import {
   FormControl,
   FormField,
@@ -95,6 +94,30 @@ export default function Children({
                 render={({ field }) => (
                   <FormItem className='sm:flex-1'>
                     <FormLabel>{t('sections.children.heightLabel')}</FormLabel>
+                    <FormControl>
+                      <Input
+                        type='number'
+                        min={0}
+                        value={field.value ?? ''}
+                        onChange={(event) =>
+                          field.onChange(
+                            event.target.value === ''
+                              ? undefined
+                              : Number(event.target.value),
+                          )
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name={`children.${index}.weight`}
+                render={({ field }) => (
+                  <FormItem className='sm:flex-1'>
+                    <FormLabel>{t('sections.children.weightLabel')}</FormLabel>
                     <FormControl>
                       <Input
                         type='number'

@@ -124,17 +124,16 @@ export default function BaseDetails({
   );
   const arrivalMinuteOptions = React.useMemo(
     () =>
-      Array.from({ length: 12 }, (_, idx) =>
-        String(idx * 5).padStart(2, '0'),
-      ),
+      Array.from({ length: 12 }, (_, idx) => String(idx * 5).padStart(2, '0')),
     [],
   );
   const isHungarianLocale = locale.toLowerCase().startsWith('hu');
   const arrivalHourLabel = isHungarianLocale
     ? 'Érkezés (óra)'
     : 'Arrival (hour)';
-  const arrivalMinuteLabel =
-    isHungarianLocale ? 'Érkezés (perc)' : 'Arrival (minute)';
+  const arrivalMinuteLabel = isHungarianLocale
+    ? 'Érkezés (perc)'
+    : 'Arrival (minute)';
 
   const dateRangePickerMessages = (
     messages?.RentForm as Record<string, unknown> | null
@@ -171,7 +170,7 @@ export default function BaseDetails({
         </div>
       ) : null}
       <div className='grid gap-6 lg:grid-cols-4'>
-        <div className='lg:col-span-1'>
+        {/* <div className='lg:col-span-1'>
           <FormField
             control={form.control}
             name='extras'
@@ -191,7 +190,7 @@ export default function BaseDetails({
               </FormItem>
             )}
           />
-        </div>
+        </div> */}
         <div className='lg:col-span-1'>
           <FormField
             control={form.control}

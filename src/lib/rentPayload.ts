@@ -13,6 +13,7 @@ export type CompactRentPayload = {
   invoice: RentFormValues['invoice'];
   tax: RentFormValues['tax'];
   consents: RentFormValues['consents'];
+  deliverySame: boolean;
   deliveryAddress: DeliveryAddress | null;
 };
 
@@ -44,5 +45,6 @@ export const buildCompactRentPayload = (
   invoice: values.invoice,
   tax: values.tax,
   consents: values.consents,
+  deliverySame: Boolean(values.delivery?.same),
   deliveryAddress: values.delivery?.address ?? null,
 });

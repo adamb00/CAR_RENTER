@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Dzieci jako pasażerowie",
-        "description": "Jeśli podróżują z Tobą dzieci, podaj ich wiek (oraz opcjonalnie wzrost), abyśmy mogli zapewnić odpowiednie wyposażenie.",
+        "description": "Jeśli podróżują z Tobą dzieci, podaj ich wiek (oraz opcjonalnie wzrost i wagę), abyśmy mogli zapewnić odpowiednie wyposażenie.",
         "empty": "Nie dodano jeszcze żadnych dzieci.",
         "ageLabel": "Wiek dziecka #{index} (lata)",
-        "heightLabel": "Wzrost (cm) – opcjonalnie"
+        "heightLabel": "Wzrost (cm) – opcjonalnie",
+        "weightLabel": "Waga (kg) – opcjonalnie"
       },
       "drivers": {
         "title": "Dane kierowców",
@@ -1911,6 +1912,9 @@
           "placeholder": "Np. Hotel Marina lub Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Miejsce zwrotu jest takie samo jak miejsce odbioru"
+          },
           "placeType": {
             "label": "Miejsce odbioru",
             "placeholder": "Wybierz miejsce odbioru",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "Wiek nie może być ujemny",
       "childAgeMax": "Wiek dziecka nie może przekraczać 17 lat",
       "childHeightMin": "Wzrost nie może być ujemny",
+      "childWeightMin": "Waga nie może być ujemna",
       "firstNameRequired": "Imię jest wymagane",
       "lastNameRequired": "Nazwisko jest wymagane",
       "countryRequired": "Kraj jest wymagany",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "Wzrost nie może być ujemny"
+        },
+        "weight": {
+          "min": "Waga nie może być ujemna"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Wybierz miejsce odbioru"
+        "required": "Wybierz miejsce odbioru",
+        "invalid": "Nieprawidłowe miejsce odbioru"
         },
         "arrivalFlight": {
           "required": "Podaj numer lotu przylotowego"

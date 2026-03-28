@@ -1728,10 +1728,11 @@
       },
       "children": {
         "title": "Kinder als Mitreisende",
-        "description": "Wenn Kinder mitreisen, geben Sie bitte ihr Alter (und optional die Körpergröße) an, damit wir die passende Ausstattung bereitstellen können.",
+        "description": "Wenn Kinder mitreisen, geben Sie bitte ihr Alter (und optional die Körpergröße und das Gewicht) an, damit wir die passende Ausstattung bereitstellen können.",
         "empty": "Derzeit wurde kein Kind hinzugefügt.",
         "ageLabel": "Alter des Kindes #{index} (Jahre)",
-        "heightLabel": "Körpergröße (cm) – optional"
+        "heightLabel": "Körpergröße (cm) – optional",
+        "weightLabel": "Gewicht (kg) – optional"
       },
       "drivers": {
         "title": "Fahrerdaten",
@@ -1911,6 +1912,9 @@
           "placeholder": "z. B. Hotel Marina oder Flughafen Budapest Liszt Ferenc"
         },
         "fields": {
+          "same": {
+            "label": "Der Rückgabeort ist derselbe wie der Abholort"
+          },
           "placeType": {
             "label": "Abholort",
             "placeholder": "Abholort auswählen",
@@ -1980,6 +1984,7 @@
       "childAgeMin": "Das Alter kann nicht negativ sein",
       "childAgeMax": "Das Alter des Kindes darf höchstens 17 Jahre betragen",
       "childHeightMin": "Die Körpergröße kann nicht negativ sein",
+      "childWeightMin": "Das Gewicht kann nicht negativ sein",
       "firstNameRequired": "Der Vorname ist obligatorisch",
       "lastNameRequired": "Der Nachname ist obligatorisch",
       "countryRequired": "Das Land ist obligatorisch",
@@ -2042,6 +2047,9 @@
         },
         "height": {
           "min": "Die Körpergröße kann nicht negativ sein"
+        },
+        "weight": {
+          "min": "Das Gewicht kann nicht negativ sein"
         }
       },
       "driver": {
@@ -2149,7 +2157,8 @@
       },
       "delivery": {
         "placeType": {
-          "required": "Bitte den Abholort auswählen"
+        "required": "Bitte den Abholort auswählen",
+        "invalid": "Ungültiger Abholort"
         },
         "arrivalFlight": {
           "required": "Bitte geben Sie die Flugnummer der Anreise an"

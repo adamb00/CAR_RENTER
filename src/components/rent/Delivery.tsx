@@ -24,6 +24,7 @@ import { useDelivery } from '@/hooks/useDelivery';
 import AccommodationAutocompleteInput from './AccommodationAutocompleteInput';
 import type { AccommodationSuggestion } from '@/lib/accommodations/types';
 import { FIXED_AIRPORT_OPTIONS } from '@/lib/airports/fixed-airports';
+import { Checkbox } from '../ui/checkbox';
 
 export default function Delivery({
   form,
@@ -218,9 +219,6 @@ export default function Delivery({
                             'sections.delivery.fields.placeType.accommodation',
                           )}
                         </SelectItem>
-                        {/* <SelectItem value='office'>
-                          {t('sections.delivery.fields.placeType.office')}
-                        </SelectItem> */}
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -520,6 +518,30 @@ export default function Delivery({
           ) : null}
         </>
       ) : null}
+      <FormField
+        control={form.control}
+        name={'delivery.same'}
+        render={({ field }) => (
+          <FormItem className='flex flex-col gap-2'>
+            <div className='flex items-center gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-sm'>
+              <FormControl>
+                <Checkbox
+                  checked={Boolean(field.value)}
+                  onCheckedChange={(checked) =>
+                    field.onChange(Boolean(checked))
+                  }
+                />
+              </FormControl>
+              <div>
+                <FormLabel className='font-medium leading-snug'>
+                  {t('sections.delivery.fields.same.label')}
+                </FormLabel>
+              </div>
+            </div>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
     </SectionCard>
   );
 }
