@@ -1,3 +1,5 @@
+import type { ResidentCardUpload } from '@/components/contact/quote.types';
+
 export type ContactQuotePayload = {
   locale: string;
   name: string;
@@ -11,6 +13,8 @@ export type ContactQuotePayload = {
   departureFlight?: string | null;
   partySize?: string;
   children?: string;
+  cars?: string;
+  residentCard?: ResidentCardUpload;
   carId?: string;
   extras?: string[];
   delivery?: {

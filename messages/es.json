@@ -762,6 +762,13 @@
       "heart": "¡Reserva online y recoge tu coche directamente en el aeropuerto o en tu alojamiento!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Descuentos especiales disponibles",
+    "title": "Ofrecemos descuento extra para residentes y para reservas de varios coches.",
+    "description": "Con una tarjeta de residente válida podemos aplicar un descuento de residente a tu reserva. También podemos ofrecer un precio especial si alquilas varios coches al mismo tiempo, por ejemplo para viajes en familia, grupos o reservas paralelas.",
+    "primaryLabel": "Ver coches disponibles",
+    "secondaryLabel": "Quizás más tarde"
+  },
   "Inquire": {
     "title": "¡Reserva ahora!",
     "description_1": "¡No lo dejes para el último momento! El equipo de Zodiacs Rent a Car responde en menos de 24 horas para que reserves el coche que mejor se adapte a tu viaje.",
@@ -1703,6 +1710,16 @@
           "label": "Número de niños",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Número de coches",
+          "placeholder": "¿Cuántos coches necesitáis?"
+        },
+        "residentCard": {
+          "label": "Tarjeta de residente (opcional)",
+          "description": "Sube una copia en PDF, JPG o PNG de tu tarjeta de residente. Tamaño máximo del archivo: {maxSizeMb} MB.",
+          "selected": "Archivo seleccionado: {fileName}",
+          "remove": "Quitar archivo"
+        },
         "carType": {
           "label": "Tipo de coche",
           "placeholder": "Selecciona un tipo de coche",
@@ -1738,7 +1755,10 @@
         "rentalEndRequired": "Selecciona la fecha de devolución",
         "rentalDaysRequired": "Selecciona el número de días",
         "arrivalFlightRequired": "Indica el número de vuelo de llegada",
-        "departureFlightRequired": "Indica el número de vuelo de regreso"
+        "departureFlightRequired": "Indica el número de vuelo de regreso",
+        "residentCardInvalidType": "Sube un archivo PDF, JPG o PNG",
+        "residentCardTooLarge": "El archivo de la tarjeta de residente debe ser menor de {maxSizeMb} MB",
+        "residentCardReadFailed": "No se pudo leer el archivo de la tarjeta de residente"
       }
     }
   },
@@ -2245,8 +2265,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Selecciona el lugar de recogida",
-        "invalid": "Lugar de recogida no válido"
+          "required": "Selecciona el lugar de recogida",
+          "invalid": "Lugar de recogida no válido"
         },
         "arrivalFlight": {
           "required": "Indica el número de vuelo de llegada"
@@ -2743,13 +2763,40 @@
         "departureFlight": "Vuelo de regreso",
         "partySize": "Número de viajeros",
         "children": "Número de niños",
-        "car": "Coche seleccionado"
+        "cars": "Coches",
+        "residentCard": "Tarjeta de residente",
+        "car": "Coche seleccionado",
+        "quoteId": "ID de solicitud",
+        "humanId": "ID de referencia",
+        "locale": "Idioma",
+        "extras": "Extras",
+        "delivery": "Recogida",
+        "status": "Estado"
       },
       "channelLabels": {
         "email": "Correo electrónico",
         "phone": "Teléfono",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Solicitud de presupuesto desde contacto",
+        "title": "Nueva solicitud de presupuesto",
+        "intro": "Se ha enviado una nueva solicitud de presupuesto a través del formulario de contacto en {locale}.",
+        "ctaLabel": "Abrir página de alquiler",
+        "notificationTitle": "Nueva solicitud de presupuesto recibida",
+        "statusNew": "Nueva",
+        "submittedOn": "Enviado desde la página de contacto en {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Lugar de recogida",
+          "locationName": "Nombre del lugar",
+          "address": "Dirección"
+        },
+        "pickupTypes": {
+          "airport": "Recogida en el aeropuerto",
+          "accommodation": "Recogida en el alojamiento",
+          "office": "Recogida en la oficina"
+        }
       }
     }
   },

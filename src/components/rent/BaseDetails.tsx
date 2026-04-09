@@ -78,6 +78,7 @@ export default function BaseDetails({
   translateColor?: (color: CarColor) => string;
 }) {
   const t = useTranslations('RentForm');
+  const tContact = useTranslations('Contact');
   const messages = useMessages();
   const dateLocale = DATE_LOCALE_MAP[locale] ?? 'en-US';
   const calendarLocale = CALENDAR_LOCALE_MAP[locale] ?? enUS;
@@ -104,12 +105,6 @@ export default function BaseDetails({
     future.setFullYear(future.getFullYear() + 1);
     return future;
   }, [today]);
-  const tomorrow = React.useMemo(() => {
-    const nextDay = new Date(today);
-    nextDay.setDate(nextDay.getDate() + 1);
-    return nextDay;
-  }, [today]);
-
   const extrasOptions = React.useMemo(
     () =>
       EXTRA_VALUES.map((value) => ({
@@ -169,8 +164,8 @@ export default function BaseDetails({
           </div>
         </div>
       ) : null}
-      <div className='grid gap-6 lg:grid-cols-4'>
-        {/* <div className='lg:col-span-1'>
+      <div className='grid gap-6 lg:grid-cols-5'>
+        <div className='lg:col-span-1'>
           <FormField
             control={form.control}
             name='extras'
@@ -190,7 +185,7 @@ export default function BaseDetails({
               </FormItem>
             )}
           />
-        </div> */}
+        </div>
         <div className='lg:col-span-1'>
           <FormField
             control={form.control}
@@ -205,7 +200,7 @@ export default function BaseDetails({
                     initialDateFrom={parseDateValue(field.value?.startDate)}
                     initialDateTo={parseDateValue(field.value?.endDate)}
                     showCompare={false}
-                    minDate={tomorrow}
+                    minDate={today}
                     maxDate={oneYearAhead}
                     onUpdate={({ range }) => {
                       if (range?.from && range?.to) {
@@ -278,7 +273,44 @@ export default function BaseDetails({
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        {Array.from({ length: car.seats }, (_, i) => i + 1).map(
+                        {Array.from({ length: 150 }, (_, i) => i + 1).map(
+                          (num) => (
+                            <SelectItem key={num} value={String(num)}>
+                              {num}
+                            </SelectItem>
+                          ),
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className='lg:col-span-1'>
+          <FormField
+            control={form.control}
+            name='cars'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='text-sm font-medium'>
+                  {tContact('form.fields.cars.label')}
+                </FormLabel>
+                <FormControl>
+                  <Select
+                    value={field.value ? String(field.value) : undefined}
+                    onValueChange={(value) => field.onChange(value)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue
+                        placeholder={tContact('form.fields.cars.placeholder')}
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {Array.from({ length: 10 }, (_, i) => i + 1).map(
                           (num) => (
                             <SelectItem key={num} value={String(num)}>
                               {num}
@@ -454,13 +486,6 @@ export default function BaseDetails({
           }}
         />
       </div>
-      <p className='text-xs text-muted-foreground leading-relaxed'>
-        {t('extras.packages.base')}
-        <br />
-        {t('extras.packages.energy')}
-        <br />
-        {t('extras.packages.lateArrival')}
-      </p>
     </SectionCard>
   );
 }

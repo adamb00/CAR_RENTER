@@ -704,6 +704,13 @@
       "heart": "Foglalj online, és vedd át bérautódat közvetlenül a reptéren vagy szálláshelyeden!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Kedvezményes ajánlat",
+    "title": "Rezidenseknek és több autó bérlése esetén extra kedvezményt biztosítunk.",
+    "description": "Érvényes rezidens kártyával rezidens kedvezményt biztosítunk a foglalásodra. Emellett több autó egyidejű bérlése esetén is tudunk egyedi, kedvezményes ajánlatot adni, legyen szó családi utazásról, nagyobb társaságról vagy párhuzamos foglalásokról.",
+    "primaryLabel": "Elérhető autók",
+    "secondaryLabel": "Majd később"
+  },
   "Inquire": {
     "title": "Foglald le most!",
     "description_1": "Ne hagyd az utolsó pillanatra az autóbérlést! A Zodiacs Rent a Car csapata 24 órán belül válaszol, és segít lefoglalni azt az autót, amelyik a leginkább illik a nyaralásodhoz.",
@@ -1334,6 +1341,16 @@
           "label": "Gyermekek száma",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Autók száma",
+          "placeholder": "Hány autóra van szükségetek?"
+        },
+        "residentCard": {
+          "label": "Rezidens kártya (opcionális)",
+          "description": "Töltsd fel a rezidens kártyád PDF, JPG vagy PNG másolatát. A maximális fájlméret: {maxSizeMb} MB.",
+          "selected": "Kiválasztott fájl: {fileName}",
+          "remove": "Fájl törlése"
+        },
         "carType": {
           "label": "Autótípus",
           "placeholder": "Válassz autótípust",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Válaszd ki a bérlés befejező napját",
         "rentalDaysRequired": "Kérjük válaszd ki a napok számát",
         "arrivalFlightRequired": "Add meg az érkező járat számát",
-        "departureFlightRequired": "Add meg a visszaút járatszámát"
+        "departureFlightRequired": "Add meg a visszaút járatszámát",
+        "residentCardInvalidType": "PDF, JPG vagy PNG fájlt tölts fel",
+        "residentCardTooLarge": "A rezidens kártya fájlmérete legfeljebb {maxSizeMb} MB lehet",
+        "residentCardReadFailed": "A rezidens kártya fájlt nem sikerült beolvasni"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Válaszd ki az átvétel helyét",
-        "invalid": "Érvénytelen átvételi hely"
+          "required": "Válaszd ki az átvétel helyét",
+          "invalid": "Érvénytelen átvételi hely"
         },
         "arrivalFlight": {
           "required": "Add meg az érkező járatszámot"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Hazautazó járat",
         "partySize": "Utazók száma",
         "children": "Gyermekek száma",
-        "car": "Kiválasztott autó"
+        "cars": "Autók",
+        "residentCard": "Rezidens kártya",
+        "car": "Kiválasztott autó",
+        "quoteId": "Ajánlatkérés azonosító",
+        "humanId": "Human ID",
+        "locale": "Nyelv",
+        "extras": "Extra szolgáltatások",
+        "delivery": "Átvétel",
+        "status": "Státusz"
       },
       "channelLabels": {
         "email": "E-mail",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Kapcsolat oldali ajánlatkérés",
+        "title": "Új ajánlatkérés",
+        "intro": "Új ajánlatkérés érkezett a(z) {locale} nyelvű kapcsolat űrlapról.",
+        "ctaLabel": "Bérlési oldal megnyitása",
+        "notificationTitle": "Új ajánlatkérés érkezett",
+        "statusNew": "Új",
+        "submittedOn": "Beküldve a(z) {locale} nyelvű kapcsolat oldalon.",
+        "deliveryLabels": {
+          "pickupPlace": "Átvétel helye",
+          "locationName": "Helyszín neve",
+          "address": "Cím"
+        },
+        "pickupTypes": {
+          "airport": "Átvétel a reptéren",
+          "accommodation": "Átvétel a szállásnál",
+          "office": "Átvétel az irodánál"
+        }
       }
     }
   },

@@ -704,6 +704,13 @@
       "heart": "Book online and pick up your car directly at the airport or at your accommodation!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Special discounts available",
+    "title": "Residents and multi-car bookings can receive an extra discount.",
+    "description": "If you have a valid resident card, we can offer a resident discount on your booking. We can also provide a custom discounted offer when you rent multiple cars at the same time, whether for family travel, group holidays or parallel reservations.",
+    "primaryLabel": "See available cars",
+    "secondaryLabel": "Maybe later"
+  },
   "Inquire": {
     "title": "Book now!",
     "description_1": "Don’t leave car rental to the last minute! The Zodiacs Rent a Car team will reply within 24 hours and help you book the car that best fits your holiday.",
@@ -1334,6 +1341,16 @@
           "label": "Number of children",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Number of cars",
+          "placeholder": "How many cars do you need?"
+        },
+        "residentCard": {
+          "label": "Resident card (optional)",
+          "description": "Upload a PDF, JPG or PNG copy of your resident card. Maximum file size: {maxSizeMb} MB.",
+          "selected": "Selected file: {fileName}",
+          "remove": "Remove file"
+        },
         "carType": {
           "label": "Car type",
           "placeholder": "Select a car type",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Please select the rental end date",
         "rentalDaysRequired": "Please select the number of days",
         "arrivalFlightRequired": "Please enter your arrival flight number",
-        "departureFlightRequired": "Please enter your return flight number"
+        "departureFlightRequired": "Please enter your return flight number",
+        "residentCardInvalidType": "Please upload a PDF, JPG or PNG file",
+        "residentCardTooLarge": "The resident card file must be smaller than {maxSizeMb} MB",
+        "residentCardReadFailed": "The resident card file could not be read"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Please select the pickup location",
-        "invalid": "Invalid pickup location"
+          "required": "Please select the pickup location",
+          "invalid": "Invalid pickup location"
         },
         "arrivalFlight": {
           "required": "Please enter the arrival flight number"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Return flight",
         "partySize": "Party size",
         "children": "Children",
-        "car": "Selected car"
+        "cars": "Cars",
+        "residentCard": "Resident card",
+        "car": "Selected car",
+        "quoteId": "Quote ID",
+        "humanId": "Human ID",
+        "locale": "Locale",
+        "extras": "Extras",
+        "delivery": "Delivery",
+        "status": "Status"
       },
       "channelLabels": {
         "email": "Email",
         "phone": "Phone",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Contact quote request",
+        "title": "New quote request",
+        "intro": "A new contact quote was submitted via the {locale} contact form.",
+        "ctaLabel": "Open rental page",
+        "notificationTitle": "New quote request received",
+        "statusNew": "New",
+        "submittedOn": "Submitted via the {locale} contact page.",
+        "deliveryLabels": {
+          "pickupPlace": "Pickup location",
+          "locationName": "Location name",
+          "address": "Address"
+        },
+        "pickupTypes": {
+          "airport": "Airport pickup",
+          "accommodation": "Pickup at accommodation",
+          "office": "Office pickup"
+        }
       }
     }
   },

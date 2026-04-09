@@ -704,6 +704,13 @@
       "heart": "Zarezerwuj online i odbierz samochód bezpośrednio na lotnisku lub pod swoim miejscem zakwaterowania!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Dostępne specjalne zniżki",
+    "title": "Dodatkowe zniżki dla rezydentów i przy wynajmie kilku aut.",
+    "description": "Jeśli masz ważną kartę rezydenta, możemy przyznać zniżkę rezydencką na rezerwację. Oferujemy też indywidualną, korzystniejszą wycenę przy jednoczesnym wynajmie kilku samochodów, na przykład dla rodziny, grupy lub przy równoległych rezerwacjach.",
+    "primaryLabel": "Zobacz dostępne auta",
+    "secondaryLabel": "Może później"
+  },
   "Inquire": {
     "title": "Zarezerwuj teraz!",
     "description_1": "Nie zostawiaj wynajmu samochodu na ostatnią chwilę! Zespół Zodiacs Rent a Car odpowie w ciągu 24 godzin i pomoże zarezerwować samochód najlepiej dopasowany do Twojego urlopu.",
@@ -1334,6 +1341,16 @@
           "label": "Liczba dzieci",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Liczba samochodów",
+          "placeholder": "Ile samochodów potrzebujesz?"
+        },
+        "residentCard": {
+          "label": "Karta rezydenta (opcjonalnie)",
+          "description": "Prześlij kopię karty rezydenta w formacie PDF, JPG lub PNG. Maksymalny rozmiar pliku: {maxSizeMb} MB.",
+          "selected": "Wybrany plik: {fileName}",
+          "remove": "Usuń plik"
+        },
         "carType": {
           "label": "Typ auta",
           "placeholder": "Wybierz typ auta",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Wybierz datę zakończenia wynajmu",
         "rentalDaysRequired": "Wybierz liczbę dni",
         "arrivalFlightRequired": "Podaj numer lotu przylotowego",
-        "departureFlightRequired": "Podaj numer lotu powrotnego"
+        "departureFlightRequired": "Podaj numer lotu powrotnego",
+        "residentCardInvalidType": "Prześlij plik PDF, JPG lub PNG",
+        "residentCardTooLarge": "Plik karty rezydenta musi być mniejszy niż {maxSizeMb} MB",
+        "residentCardReadFailed": "Nie udało się odczytać pliku karty rezydenta"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Wybierz miejsce odbioru",
-        "invalid": "Nieprawidłowe miejsce odbioru"
+          "required": "Wybierz miejsce odbioru",
+          "invalid": "Nieprawidłowe miejsce odbioru"
         },
         "arrivalFlight": {
           "required": "Podaj numer lotu przylotowego"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Lot powrotny",
         "partySize": "Liczba podróżnych",
         "children": "Liczba dzieci",
-        "car": "Wybrany samochód"
+        "cars": "Samochody",
+        "residentCard": "Karta rezydenta",
+        "car": "Wybrany samochód",
+        "quoteId": "ID zapytania",
+        "humanId": "ID referencyjne",
+        "locale": "Język",
+        "extras": "Dodatki",
+        "delivery": "Odbiór",
+        "status": "Status"
       },
       "channelLabels": {
         "email": "E-mail",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Zapytanie o wycenę z formularza kontaktowego",
+        "title": "Nowe zapytanie o wycenę",
+        "intro": "Nowe zapytanie o wycenę zostało wysłane przez formularz kontaktowy w języku {locale}.",
+        "ctaLabel": "Otwórz stronę wynajmu",
+        "notificationTitle": "Otrzymano nowe zapytanie o wycenę",
+        "statusNew": "Nowe",
+        "submittedOn": "Wysłano ze strony kontaktowej w języku {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Miejsce odbioru",
+          "locationName": "Nazwa miejsca",
+          "address": "Adres"
+        },
+        "pickupTypes": {
+          "airport": "Odbiór na lotnisku",
+          "accommodation": "Odbiór przy obiekcie noclegowym",
+          "office": "Odbiór w biurze"
+        }
       }
     }
   },

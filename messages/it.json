@@ -704,6 +704,13 @@
       "heart": "Prenota online e ritira la tua auto direttamente in aeroporto o presso il tuo alloggio!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Sconti speciali disponibili",
+    "title": "Offriamo uno sconto extra ai residenti e per il noleggio di più auto.",
+    "description": "Con una carta residente valida possiamo applicare uno sconto residente alla tua prenotazione. Possiamo inoltre proporti un'offerta personalizzata e scontata se noleggi più auto contemporaneamente, ad esempio per viaggi in famiglia, gruppi o prenotazioni parallele.",
+    "primaryLabel": "Vedi auto disponibili",
+    "secondaryLabel": "Magari più tardi"
+  },
   "Inquire": {
     "title": "Prenota adesso!",
     "description_1": "Non lasciare il noleggio auto all'ultimo minuto! Il team di Zodiacs Rent a Car risponde entro 24 ore e ti aiuta a prenotare l'auto che meglio si adatta alla tua vacanza.",
@@ -1334,6 +1341,16 @@
           "label": "Numero di bambini",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Numero di auto",
+          "placeholder": "Di quante auto avete bisogno?"
+        },
+        "residentCard": {
+          "label": "Carta di residente (opzionale)",
+          "description": "Carica una copia PDF, JPG o PNG della tua carta di residente. Dimensione massima del file: {maxSizeMb} MB.",
+          "selected": "File selezionato: {fileName}",
+          "remove": "Rimuovi file"
+        },
         "carType": {
           "label": "Tipo di auto",
           "placeholder": "Seleziona un tipo di auto",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Seleziona la data di fine noleggio",
         "rentalDaysRequired": "Seleziona il numero di giorni",
         "arrivalFlightRequired": "Inserisci il numero del volo di arrivo",
-        "departureFlightRequired": "Inserisci il numero del volo di ritorno"
+        "departureFlightRequired": "Inserisci il numero del volo di ritorno",
+        "residentCardInvalidType": "Carica un file PDF, JPG o PNG",
+        "residentCardTooLarge": "Il file della carta di residente deve essere inferiore a {maxSizeMb} MB",
+        "residentCardReadFailed": "Impossibile leggere il file della carta di residente"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Seleziona il luogo di ritiro",
-        "invalid": "Luogo di ritiro non valido"
+          "required": "Seleziona il luogo di ritiro",
+          "invalid": "Luogo di ritiro non valido"
         },
         "arrivalFlight": {
           "required": "Inserisci il numero del volo di arrivo"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Volo di ritorno",
         "partySize": "Numero di viaggiatori",
         "children": "Numero di bambini",
-        "car": "Auto selezionata"
+        "cars": "Auto",
+        "residentCard": "Carta di residente",
+        "car": "Auto selezionata",
+        "quoteId": "ID preventivo",
+        "humanId": "ID di riferimento",
+        "locale": "Lingua",
+        "extras": "Extra",
+        "delivery": "Ritiro",
+        "status": "Stato"
       },
       "channelLabels": {
         "email": "Email",
         "phone": "Telefono",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Richiesta di preventivo dal contatto",
+        "title": "Nuova richiesta di preventivo",
+        "intro": "È stata inviata una nuova richiesta di preventivo tramite il modulo di contatto in {locale}.",
+        "ctaLabel": "Apri la pagina di noleggio",
+        "notificationTitle": "Nuova richiesta di preventivo ricevuta",
+        "statusNew": "Nuova",
+        "submittedOn": "Inviata dalla pagina contatti in {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Luogo di ritiro",
+          "locationName": "Nome del luogo",
+          "address": "Indirizzo"
+        },
+        "pickupTypes": {
+          "airport": "Ritiro in aeroporto",
+          "accommodation": "Ritiro presso l'alloggio",
+          "office": "Ritiro in ufficio"
+        }
       }
     }
   },

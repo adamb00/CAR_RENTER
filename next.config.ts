@@ -10,6 +10,9 @@ export default withNextIntl({
   },
   experimental: {
     globalNotFound: true,
+    serverActions: {
+      bodySizeLimit: '8mb',
+    },
   },
   serverExternalPackages: ['pdfkit'],
 });

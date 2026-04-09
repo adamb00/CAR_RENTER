@@ -44,6 +44,7 @@ export default async function ContactPage({
     smallLuggage: car.smallLuggage,
     largeLuggage: car.largeLuggage,
   }));
+
   const selectedCar =
     resolvedSearchParams.carId && resolvedSearchParams.carId.trim()
       ? (availableCars.find(

@@ -18,7 +18,7 @@ export default function QuotePartySize({
   const t = useTranslations('Contact');
 
   return (
-    <div className='grid gap-4 sm:grid-cols-2'>
+    <div className='grid gap-4 sm:grid-cols-3'>
       <FormField
         control={form.control}
         name='partySize'
@@ -49,6 +49,24 @@ export default function QuotePartySize({
                 min={0}
                 {...field}
                 placeholder={t('form.fields.children.placeholder')}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name='cars'
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{t('form.fields.cars.label')}</FormLabel>
+            <FormControl>
+              <Input
+                type='number'
+                min={0}
+                {...field}
+                placeholder={t('form.fields.cars.placeholder')}
               />
             </FormControl>
             <FormMessage />

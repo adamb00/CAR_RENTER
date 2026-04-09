@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from '../ui/form';
 import { Input } from '../ui/input';
+import RentResidentCard from './RentResidentCard';
 
 export default function Contact({
   form,
@@ -98,6 +99,11 @@ export default function Contact({
           />
         </div>
       ) : null}
+      <div className='px-2 pb-4'>
+        <div className='grid gap-4 md:grid-cols-2'>
+          <RentResidentCard form={form} />
+        </div>
+      </div>
     </SectionCard>
   );
 }

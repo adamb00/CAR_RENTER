@@ -704,6 +704,13 @@
       "heart": "Rezervă online și preia mașina închiriată direct la aeroport sau la cazare!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Reduceri speciale disponibile",
+    "title": "Oferim reducere suplimentară pentru rezidenți și pentru închirierea mai multor mașini.",
+    "description": "Cu un card de rezident valabil putem aplica o reducere de rezident rezervării tale. De asemenea, îți putem oferi o ofertă personalizată, cu reducere, dacă închiriezi mai multe mașini în același timp, de exemplu pentru călătorii în familie, grupuri sau rezervări paralele.",
+    "primaryLabel": "Vezi mașinile disponibile",
+    "secondaryLabel": "Poate mai târziu"
+  },
   "Inquire": {
     "title": "Rezervă acum!",
     "description_1": "Nu lăsa închirierea mașinii pe ultima sută de metri! Echipa Zodiacs Rent a Car îți răspunde în 24 de ore și te ajută să rezervi mașina care se potrivește cel mai bine vacanței tale.",
@@ -1334,6 +1341,16 @@
           "label": "Numărul de copii",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Număr de mașini",
+          "placeholder": "De câte mașini aveți nevoie?"
+        },
+        "residentCard": {
+          "label": "Card de rezident (opțional)",
+          "description": "Încarcă o copie PDF, JPG sau PNG a cardului tău de rezident. Dimensiunea maximă a fișierului: {maxSizeMb} MB.",
+          "selected": "Fișier selectat: {fileName}",
+          "remove": "Elimină fișierul"
+        },
         "carType": {
           "label": "Tip mașină",
           "placeholder": "Selectează tipul de mașină",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Te rugăm să selectezi data de sfârșit a închirierii",
         "rentalDaysRequired": "Selectează numărul de zile",
         "arrivalFlightRequired": "Te rugăm să introduci numărul zborului de sosire",
-        "departureFlightRequired": "Te rugăm să introduci numărul zborului de plecare"
+        "departureFlightRequired": "Te rugăm să introduci numărul zborului de plecare",
+        "residentCardInvalidType": "Încarcă un fișier PDF, JPG sau PNG",
+        "residentCardTooLarge": "Fișierul cardului de rezident trebuie să fie mai mic de {maxSizeMb} MB",
+        "residentCardReadFailed": "Fișierul cardului de rezident nu a putut fi citit"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Selectează locul de preluare",
-        "invalid": "Loc de preluare invalid"
+          "required": "Selectează locul de preluare",
+          "invalid": "Loc de preluare invalid"
         },
         "arrivalFlight": {
           "required": "Te rugăm să introduci numărul zborului de sosire"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Zbor de plecare",
         "partySize": "Număr de călători",
         "children": "Număr de copii",
-        "car": "Mașină selectată"
+        "cars": "Mașini",
+        "residentCard": "Card de rezident",
+        "car": "Mașină selectată",
+        "quoteId": "ID cerere",
+        "humanId": "ID de referință",
+        "locale": "Limbă",
+        "extras": "Extraopțiuni",
+        "delivery": "Preluare",
+        "status": "Stare"
       },
       "channelLabels": {
         "email": "E-mail",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Cerere de ofertă din formularul de contact",
+        "title": "Cerere nouă de ofertă",
+        "intro": "O nouă cerere de ofertă a fost trimisă prin formularul de contact în limba {locale}.",
+        "ctaLabel": "Deschide pagina de închiriere",
+        "notificationTitle": "A fost primită o nouă cerere de ofertă",
+        "statusNew": "Nouă",
+        "submittedOn": "Trimisă de pe pagina de contact în limba {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Loc de preluare",
+          "locationName": "Numele locației",
+          "address": "Adresă"
+        },
+        "pickupTypes": {
+          "airport": "Preluare de la aeroport",
+          "accommodation": "Preluare de la cazare",
+          "office": "Preluare de la birou"
+        }
       }
     }
   },

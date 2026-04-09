@@ -1,5 +1,6 @@
 'use server';
 
+import type Mail from 'nodemailer/lib/mailer';
 import { getCarById } from '@/lib/cars';
 import { sendMail } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
@@ -9,7 +10,13 @@ import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
 import { CONTACT_STATUS_NEW } from '@/lib/requestStatus';
 import { recordNotification } from '@/lib/notifications';
+import {
+  normalizeResidentCardMimeType,
+  RESIDENT_CARD_MAX_SIZE_BYTES,
+} from '@/components/contact/quote.types';
 import { ContactQuotePayload } from './ContactQuoteAction.type';
+
+type EmailTranslations = Awaited<ReturnType<typeof getTranslations>>;
 
 const parseDateValue = (value?: string | null): Date | null => {
   if (!value) return null;
@@ -24,16 +31,34 @@ const normalizeRentalDays = (value?: number | null): number | null => {
   return Number.isFinite(value) && value > 0 ? value : null;
 };
 
+const formatPickupPlaceType = (
+  tEmail: EmailTranslations,
+  type?: string
+): string => {
+  if (!type) return 'n/a';
+  if (type === 'airport') return tEmail('contactQuote.admin.pickupTypes.airport');
+  if (type === 'accommodation') {
+    return tEmail('contactQuote.admin.pickupTypes.accommodation');
+  }
+  if (type === 'office') return tEmail('contactQuote.admin.pickupTypes.office');
+  return type;
+};
+
 const formatDeliverySummary = (
+  tEmail: EmailTranslations,
   delivery?: ContactQuotePayload['delivery']
 ): string => {
   if (!delivery) return 'n/a';
   const parts: string[] = [];
   if (delivery.placeType) {
-    parts.push(`Pickup location: ${delivery.placeType}`);
+    parts.push(
+      `${tEmail('contactQuote.admin.deliveryLabels.pickupPlace')}: ${formatPickupPlaceType(tEmail, delivery.placeType)}`
+    );
   }
   if (delivery.locationName) {
-    parts.push(`Location: ${delivery.locationName}`);
+    parts.push(
+      `${tEmail('contactQuote.admin.deliveryLabels.locationName')}: ${delivery.locationName}`
+    );
   }
   if (delivery.address) {
     const chunks = [
@@ -46,21 +71,18 @@ const formatDeliverySummary = (
       .filter((value) => typeof value === 'string' && value.trim().length > 0)
       .map((value) => (value as string).trim());
     if (chunks.length > 0) {
-      parts.push(`Address: ${chunks.join(', ')}`);
+      parts.push(
+        `${tEmail('contactQuote.admin.deliveryLabels.address')}: ${chunks.join(', ')}`
+      );
     }
   }
   return parts.length > 0 ? parts.join('<br>') : 'n/a';
 };
 
-const formatPickupPlaceType = (type?: string): string => {
-  if (!type) return 'n/a';
-  if (type === 'airport') return 'Átvétel a reptéren';
-  if (type === 'accommodation') return 'Átvétel a szállodánál';
-  if (type === 'office') return 'Átvétel az irodánál';
-  return type;
-};
-
-const buildDeliveryLines = (payload: ContactQuotePayload): string[] => {
+const buildDeliveryLines = (
+  tEmail: EmailTranslations,
+  payload: ContactQuotePayload
+): string[] => {
   if (!payload.delivery?.placeType) {
     return [];
   }
@@ -80,9 +102,80 @@ const buildDeliveryLines = (payload: ContactQuotePayload): string[] => {
     : '';
 
   return [
-    `Átvétel helye: ${formatPickupPlaceType(payload.delivery.placeType)}`,
-    `Helyszín neve: ${payload.delivery.locationName ?? 'n/a'}`,
-    `Cím: ${addressParts || 'n/a'}`,
+    `${tEmail('contactQuote.admin.deliveryLabels.pickupPlace')}: ${formatPickupPlaceType(tEmail, payload.delivery.placeType)}`,
+    `${tEmail('contactQuote.admin.deliveryLabels.locationName')}: ${payload.delivery.locationName ?? 'n/a'}`,
+    `${tEmail('contactQuote.admin.deliveryLabels.address')}: ${addressParts || 'n/a'}`,
+  ];
+};
+
+const buildResidentCardAttachment = (
+  residentCard?: ContactQuotePayload['residentCard']
+): Mail.Attachment | null => {
+  if (!residentCard) {
+    return null;
+  }
+
+  const normalizedType = normalizeResidentCardMimeType(
+    residentCard.type,
+    residentCard.name
+  );
+  if (!normalizedType) {
+    throw new Error('Invalid resident card type');
+  }
+
+  const content = residentCard.content.trim();
+  if (content.length === 0) {
+    throw new Error('Missing resident card content');
+  }
+
+  const fileBuffer = Buffer.from(content, 'base64');
+  if (fileBuffer.length === 0 || fileBuffer.length > RESIDENT_CARD_MAX_SIZE_BYTES) {
+    throw new Error('Invalid resident card size');
+  }
+
+  const safeFileName =
+    residentCard.name.trim().replace(/[^a-zA-Z0-9._-]/g, '_') ||
+    'resident-card';
+
+  return {
+    filename: safeFileName,
+    content: fileBuffer,
+    contentType: normalizedType,
+  };
+};
+
+const serializeResidentCardForDb = (
+  residentCard?: ContactQuotePayload['residentCard']
+): string[] => {
+  if (!residentCard) {
+    return [];
+  }
+
+  const normalizedType = normalizeResidentCardMimeType(
+    residentCard.type,
+    residentCard.name
+  );
+  if (!normalizedType) {
+    throw new Error('Invalid resident card type');
+  }
+
+  const content = residentCard.content.trim();
+  if (content.length === 0) {
+    throw new Error('Missing resident card content');
+  }
+
+  const fileBuffer = Buffer.from(content, 'base64');
+  if (fileBuffer.length === 0 || fileBuffer.length > RESIDENT_CARD_MAX_SIZE_BYTES) {
+    throw new Error('Invalid resident card size');
+  }
+
+  return [
+    JSON.stringify({
+      name: residentCard.name.trim(),
+      type: normalizedType,
+      size: fileBuffer.length,
+      content,
+    }),
   ];
 };
 
@@ -109,6 +202,11 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     const rentalStartDate = parseDateValue(payload.rentalStart);
     const rentalEndDate = parseDateValue(payload.rentalEnd);
     const rentalDays = normalizeRentalDays(payload.rentalDays);
+    const residentCardAttachment = buildResidentCardAttachment(
+      payload.residentCard
+    );
+    const residenceCard = serializeResidentCardForDb(payload.residentCard);
+    const residentCardFileName = payload.residentCard?.name ?? 'n/a';
 
     const created = await prisma.contactQuote.create({
       data: {
@@ -124,6 +222,8 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         departureFlight: payload.departureFlight ?? null,
         partySize: payload.partySize ?? null,
         children: payload.children ?? null,
+        cars: payload.cars ?? null,
+        residenceCard,
         carId: payload.carId ?? null,
         carName: carInfo
           ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
@@ -141,7 +241,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
 
     quoteId = created.id;
 
-    const deliveryLines = buildDeliveryLines(payload);
+    const deliveryLines = buildDeliveryLines(tEmail, payload);
     const formattedPeriod = `${payload.rentalStart || 'n/a'} → ${
       payload.rentalEnd || 'n/a'
     }`;
@@ -151,26 +251,31 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     const carLineValue = carInfo
       ? `${carInfo.manufacturer} ${carInfo.model} (ID: ${carInfo.id})`
       : carDisplayName;
+    const adminStatus = tEmail('contactQuote.admin.statusNew');
 
     const lines = [
-      `Név: ${payload.name}`,
-      `E-mail: ${payload.email}`,
-      `Telefon: ${payload.phone}`,
-      `Előnyben részesített csatorna: ${preferredChannelLabel}`,
-      `Bérlés: ${formattedPeriod}`,
-      `Napok száma: ${payload.rentalDays || 'n/a'}`,
-      `Érkezési járatszám: ${payload.arrivalFlight || 'n/a'}`,
-      `Hazautazó járatszám: ${payload.departureFlight || 'n/a'}`,
-      `Utazók száma: ${payload.partySize || 'n/a'}`,
-      `Gyermekek száma: ${payload.children || '0'}`,
-      `Extra szolgáltatások: ${extrasLabel}`,
+      `${tEmail('contactQuote.rows.name')}: ${payload.name}`,
+      `${tEmail('contactQuote.rows.email')}: ${payload.email}`,
+      `${tEmail('contactQuote.rows.phone')}: ${payload.phone}`,
+      `${tEmail('contactQuote.rows.preferredChannel')}: ${preferredChannelLabel}`,
+      `${tEmail('contactQuote.rows.period')}: ${formattedPeriod}`,
+      `${tEmail('contactQuote.rows.rentalDays')}: ${payload.rentalDays || 'n/a'}`,
+      `${tEmail('contactQuote.rows.arrivalFlight')}: ${payload.arrivalFlight || 'n/a'}`,
+      `${tEmail('contactQuote.rows.departureFlight')}: ${payload.departureFlight || 'n/a'}`,
+      `${tEmail('contactQuote.rows.partySize')}: ${payload.partySize || 'n/a'}`,
+      `${tEmail('contactQuote.rows.children')}: ${payload.children || '0'}`,
+      `${tEmail('contactQuote.rows.cars')}: ${payload.cars || 'n/a'}`,
+      `${tEmail('contactQuote.rows.residentCard')}: ${residentCardFileName}`,
+      `${tEmail('contactQuote.rows.extras')}: ${extrasLabel}`,
       ...deliveryLines,
-      `Kiválasztott autó: ${carLineValue}`,
-      `Locale: ${payload.locale}`,
-      `Human ID: ${humanId}`,
-      `Quote ID: ${quoteId}`,
-      `Status: ${CONTACT_STATUS_NEW}`,
-      `Beküldve a(z) ${payload.locale.toUpperCase()} nyelvű kapcsolat oldalon.`,
+      `${tEmail('contactQuote.rows.car')}: ${carLineValue}`,
+      `${tEmail('contactQuote.rows.locale')}: ${payload.locale}`,
+      `${tEmail('contactQuote.rows.humanId')}: ${humanId}`,
+      `${tEmail('contactQuote.rows.quoteId')}: ${quoteId}`,
+      `${tEmail('contactQuote.rows.status')}: ${adminStatus}`,
+      tEmail('contactQuote.admin.submittedOn', {
+        locale: payload.locale.toUpperCase(),
+      }),
     ].join('\n');
 
     const rentLink = carInfo
@@ -183,7 +288,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
 
     await recordNotification({
       type: 'contact_quote',
-      title: 'Új ajánlatkérés érkezett',
+      title: tEmail('contactQuote.admin.notificationTitle'),
       description: `${payload.name} (${payload.email}) – ${formattedPeriod}`,
       href: notificationHref,
       tone: 'success',
@@ -198,9 +303,9 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     });
 
     const adminRows = [
-      { label: 'Quote ID', value: quoteId },
-      { label: 'Human ID', value: humanId },
-      { label: 'Locale', value: payload.locale },
+      { label: tEmail('contactQuote.rows.quoteId'), value: quoteId },
+      { label: tEmail('contactQuote.rows.humanId'), value: humanId },
+      { label: tEmail('contactQuote.rows.locale'), value: payload.locale },
       { label: tEmail('contactQuote.rows.name'), value: payload.name },
       { label: tEmail('contactQuote.rows.email'), value: payload.email },
       { label: tEmail('contactQuote.rows.phone'), value: payload.phone },
@@ -229,10 +334,21 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         label: tEmail('contactQuote.rows.children'),
         value: payload.children ?? '0',
       },
+      {
+        label: tEmail('contactQuote.rows.cars'),
+        value: payload.cars ?? 'n/a',
+      },
+      {
+        label: tEmail('contactQuote.rows.residentCard'),
+        value: residentCardFileName,
+      },
       { label: tEmail('contactQuote.rows.car'), value: carDisplayName },
-      { label: 'Extras', value: extrasLabel },
-      { label: 'Delivery', value: formatDeliverySummary(payload.delivery) },
-      { label: 'Status', value: 'new' },
+      { label: tEmail('contactQuote.rows.extras'), value: extrasLabel },
+      {
+        label: tEmail('contactQuote.rows.delivery'),
+        value: formatDeliverySummary(tEmail, payload.delivery),
+      },
+      { label: tEmail('contactQuote.rows.status'), value: adminStatus },
     ] as { label: string; value: string | null }[];
 
     const sanitizedAdminRows: EmailRow[] = adminRows.map((row) => ({
@@ -241,20 +357,23 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     }));
 
     const adminHtml = renderBrandEmail({
-      title: 'New booking request',
-      intro: `New contact quote submitted via the ${payload.locale.toUpperCase()} form.`,
+      title: tEmail('contactQuote.admin.title'),
+      intro: tEmail('contactQuote.admin.intro', {
+        locale: payload.locale.toUpperCase(),
+      }),
       rows: sanitizedAdminRows,
-      cta: { label: 'Open rental page', href: rentLink },
+      cta: { label: tEmail('contactQuote.admin.ctaLabel'), href: rentLink },
       footerNote: tEmail('contactQuote.footerNote'),
       securityNote: tEmail('securityDisclaimer'),
     });
 
     await sendMail({
       to: process.env.MAIL_USER || 'info@zodiacsrentacar.com',
-      subject: `Kapcsolat oldal ajánlatkérés | ${payload.name}`,
+      subject: `${tEmail('contactQuote.admin.subject')} | ${payload.name}`,
       text: lines,
       html: adminHtml,
       replyTo: payload.email,
+      attachments: residentCardAttachment ? [residentCardAttachment] : undefined,
     });
 
     const userRows = (
@@ -303,6 +422,18 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
               value: payload.children,
             }
           : null,
+        payload.cars
+          ? {
+              label: tEmail('contactQuote.rows.cars'),
+              value: payload.cars,
+            }
+          : null,
+        payload.residentCard
+          ? {
+              label: tEmail('contactQuote.rows.residentCard'),
+              value: payload.residentCard.name,
+            }
+          : null,
         carInfo
           ? {
               label: tEmail('contactQuote.rows.car'),
@@ -343,6 +474,12 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           : '',
         payload.children
           ? `${tEmail('contactQuote.rows.children')}: ${payload.children}`
+          : '',
+        payload.cars
+          ? `${tEmail('contactQuote.rows.cars')}: ${payload.cars}`
+          : '',
+        payload.residentCard
+          ? `${tEmail('contactQuote.rows.residentCard')}: ${payload.residentCard.name}`
           : '',
         carInfo
           ? `${tEmail('contactQuote.rows.car')}: ${carInfo.manufacturer} ${

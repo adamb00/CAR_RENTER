@@ -225,6 +225,8 @@ export default async function RentPage({
           prefill.extras = Array.isArray(compact?.extras)
             ? compact.extras
             : prefill.extras;
+          prefill.cars = compact?.cars ?? prefill.cars;
+          prefill.residentCard = compact?.residentCard ?? prefill.residentCard;
           prefill.invoice = compact?.invoice ?? {
             ...prefill.invoice,
             name: prefill.contact.name,

@@ -60,6 +60,15 @@ export const buildQuoteRequestSchema = ({
       departureFlight: z.string().optional(),
       partySize: z.string().optional(),
       children: z.string().optional(),
+      cars: z.string().optional(),
+      residentCard: z
+        .object({
+          name: z.string().min(1),
+          type: z.string().min(1),
+          content: z.string().min(1),
+          size: z.number().int().positive(),
+        })
+        .optional(),
       carId: z.string().optional(),
       extras: z.array(z.string()).default([]),
       carType: z.string().optional(),
@@ -116,7 +125,7 @@ export const buildQuoteRequestSchema = ({
       if (startDate) {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        if (startDate <= today) {
+        if (startDate < today) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
             message: tSchema('fields.rentalPeriod.startDate.past'),

@@ -1,7 +1,7 @@
 import { Car } from '@/lib/cars-shared';
-import { ContactQuoteRecord } from '@/lib/contactQuotes';
+import type { ContactQuoteRecord } from '@/lib/contactQuotes-shared';
 import { RentSchema } from '@/schemas/RentSchema';
-import { FieldValues } from 'react-hook-form';
+import type { FieldValues } from 'react-hook-form';
 import z from 'zod';
 
 export type RentFormValues = z.input<typeof RentSchema> & FieldValues;

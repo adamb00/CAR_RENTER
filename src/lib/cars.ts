@@ -249,6 +249,7 @@ export const fetchCars = async (): Promise<Car[]> => {
     include: CAR_INCLUDE,
     orderBy: [{ manufacturer: 'asc' }, { model: 'asc' }],
   });
+
   return cars.map(mapCar);
 };
 
@@ -265,7 +266,7 @@ export const getCars = cache(
     return fetchCars();
   },
   ['cars'],
-  { tags: ['cars'] },
+  { tags: ['cars'], revalidate: 60 },
 );
 
 export const getCarById = cache(

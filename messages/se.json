@@ -704,6 +704,13 @@
       "heart": "Boka online och hämta din hyrbil direkt på flygplatsen eller vid ditt boende!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Särskilda rabatter tillgängliga",
+    "title": "Vi erbjuder extra rabatt för boende och vid hyrning av flera bilar.",
+    "description": "Med ett giltigt residentkort kan vi ge residentrabatt på din bokning. Vi kan också erbjuda ett skräddarsytt rabatterat erbjudande om du hyr flera bilar samtidigt, till exempel för familjeresor, grupper eller parallella bokningar.",
+    "primaryLabel": "Se tillgängliga bilar",
+    "secondaryLabel": "Kanske senare"
+  },
   "Inquire": {
     "title": "Boka nu!",
     "description_1": "Lämna inte biluthyrningen till sista stund! Zodiacs Rent a Car-teamet svarar inom 24 timmar och hjälper dig att boka den bil som passar din semester bäst.",
@@ -1334,6 +1341,16 @@
           "label": "Antal barn",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Antal bilar",
+          "placeholder": "Hur många bilar behöver ni?"
+        },
+        "residentCard": {
+          "label": "Residentkort (valfritt)",
+          "description": "Ladda upp en PDF-, JPG- eller PNG-kopia av ditt residentkort. Maximal filstorlek: {maxSizeMb} MB.",
+          "selected": "Vald fil: {fileName}",
+          "remove": "Ta bort fil"
+        },
         "carType": {
           "label": "Biltyp",
           "placeholder": "Välj biltyp",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Välj slutdatum för hyran",
         "rentalDaysRequired": "Välj antal dagar",
         "arrivalFlightRequired": "Ange ankommande flygnummer",
-        "departureFlightRequired": "Ange flygnummer för hemresan"
+        "departureFlightRequired": "Ange flygnummer för hemresan",
+        "residentCardInvalidType": "Ladda upp en PDF-, JPG- eller PNG-fil",
+        "residentCardTooLarge": "Residentkortsfilen måste vara mindre än {maxSizeMb} MB",
+        "residentCardReadFailed": "Residentkortsfilen kunde inte läsas"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Välj upphämtningsplats",
-        "invalid": "Ogiltig upphämtningsplats"
+          "required": "Välj upphämtningsplats",
+          "invalid": "Ogiltig upphämtningsplats"
         },
         "arrivalFlight": {
           "required": "Ange ankommende flygnummer"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Returflyg",
         "partySize": "Antal resenärer",
         "children": "Antal barn",
-        "car": "Vald bil"
+        "cars": "Bilar",
+        "residentCard": "Residentkort",
+        "car": "Vald bil",
+        "quoteId": "Förfrågnings-ID",
+        "humanId": "Referens-ID",
+        "locale": "Språk",
+        "extras": "Extra tillval",
+        "delivery": "Upphämtning",
+        "status": "Status"
       },
       "channelLabels": {
         "email": "E-post",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Offertförfrågan från kontaktformuläret",
+        "title": "Ny offertförfrågan",
+        "intro": "En ny offertförfrågan har skickats via kontaktformuläret på {locale}.",
+        "ctaLabel": "Öppna hyrsidan",
+        "notificationTitle": "Ny offertförfrågan mottagen",
+        "statusNew": "Ny",
+        "submittedOn": "Skickad från kontaktsidan på {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Upphämtningsplats",
+          "locationName": "Platsnamn",
+          "address": "Adress"
+        },
+        "pickupTypes": {
+          "airport": "Upphämtning på flygplatsen",
+          "accommodation": "Upphämtning vid boendet",
+          "office": "Upphämtning på kontoret"
+        }
       }
     }
   },

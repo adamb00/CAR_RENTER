@@ -1,7 +1,7 @@
-import { ContactQuoteRecord } from '@/lib/contactQuotes';
+import type { ContactQuoteRecord } from '@/lib/contactQuotes-shared';
 import { PAYMENT_METHOD_VALUES, RentFormValues } from '@/schemas/RentSchema';
 import { useTranslations } from 'next-intl';
-import { UseFormReturn } from 'react-hook-form';
+import type { UseFormReturn } from 'react-hook-form';
 import { Checkbox } from '../ui/checkbox';
 import {
   FormControl,

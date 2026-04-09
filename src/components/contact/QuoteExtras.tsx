@@ -98,11 +98,6 @@ export default function QuoteExtras({
               />
             </FormControl>
             <FormMessage />
-            <div className='mt-2 text-xs text-muted-foreground space-y-1'>
-              <p>{tRent('extras.packages.base')}</p>
-              <p>{tRent('extras.packages.energy')}</p>
-              <p>{tRent('extras.packages.lateArrival')}</p>
-            </div>
           </FormItem>
         )}
       />

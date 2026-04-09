@@ -61,8 +61,19 @@ const ensurePaymentMethodValue = (values: RentFormValues): RentFormValues => {
   return values;
 };
 
+const stripResidentCard = (values: RentFormValues): RentFormValues => {
+  if (!values.residentCard) {
+    return values;
+  }
+
+  return {
+    ...values,
+    residentCard: undefined,
+  };
+};
+
 const sanitizeStoredValues = (values: RentFormValues): RentFormValues =>
-  ensurePaymentMethodValue(ensureAdultsNumber(values));
+  stripResidentCard(ensurePaymentMethodValue(ensureAdultsNumber(values)));
 
 export function usePersistRentForm(
   form: UseFormReturn<RentFormValues>,

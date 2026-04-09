@@ -704,6 +704,13 @@
       "heart": "Réserve en ligne et récupère ta voiture de location directement à l’aéroport ou à ton hébergement !"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Réductions spéciales disponibles",
+    "title": "Nous accordons une remise supplémentaire aux résidents et pour la location de plusieurs voitures.",
+    "description": "Avec une carte de résident valide, nous pouvons appliquer une remise résident à votre réservation. Nous pouvons également proposer une offre personnalisée et avantageuse si vous louez plusieurs voitures en même temps, par exemple pour un voyage en famille, un groupe ou des réservations parallèles.",
+    "primaryLabel": "Voir les voitures disponibles",
+    "secondaryLabel": "Peut-être plus tard"
+  },
   "Inquire": {
     "title": "Réserve maintenant !",
     "description_1": "Ne laisse pas la location de voiture au dernier moment ! L’équipe Zodiacs Rent a Car te répond sous 24 heures et t’aide à réserver la voiture la mieux adaptée à tes vacances.",
@@ -1334,6 +1341,16 @@
           "label": "Nombre d'enfants",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Nombre de voitures",
+          "placeholder": "De combien de voitures avez-vous besoin ?"
+        },
+        "residentCard": {
+          "label": "Carte de résident (optionnel)",
+          "description": "Téléversez une copie PDF, JPG ou PNG de votre carte de résident. Taille maximale du fichier : {maxSizeMb} MB.",
+          "selected": "Fichier sélectionné : {fileName}",
+          "remove": "Supprimer le fichier"
+        },
         "carType": {
           "label": "Type de voiture",
           "placeholder": "Sélectionnez un type de voiture",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Choisis la date de fin de location",
         "rentalDaysRequired": "Veuillez sélectionner le nombre de jours",
         "arrivalFlightRequired": "Merci d’indiquer le numéro de vol d’arrivée",
-        "departureFlightRequired": "Merci d’indiquer le numéro du vol retour"
+        "departureFlightRequired": "Merci d’indiquer le numéro du vol retour",
+        "residentCardInvalidType": "Veuillez téléverser un fichier PDF, JPG ou PNG",
+        "residentCardTooLarge": "Le fichier de la carte de résident doit être inférieur à {maxSizeMb} MB",
+        "residentCardReadFailed": "Le fichier de la carte de résident n'a pas pu être lu"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Veuillez sélectionner le lieu de prise en charge",
-        "invalid": "Lieu de prise en charge invalide"
+          "required": "Veuillez sélectionner le lieu de prise en charge",
+          "invalid": "Lieu de prise en charge invalide"
         },
         "arrivalFlight": {
           "required": "Veuillez indiquer le numéro du vol d’arrivée"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Vol retour",
         "partySize": "Nombre de voyageurs",
         "children": "Nombre d'enfants",
-        "car": "Véhicule choisi"
+        "cars": "Voitures",
+        "residentCard": "Carte de résident",
+        "car": "Véhicule choisi",
+        "quoteId": "ID du devis",
+        "humanId": "ID de référence",
+        "locale": "Langue",
+        "extras": "Options",
+        "delivery": "Retrait",
+        "status": "Statut"
       },
       "channelLabels": {
         "email": "E-mail",
         "phone": "Téléphone",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Demande de devis via le contact",
+        "title": "Nouvelle demande de devis",
+        "intro": "Une nouvelle demande de devis a été envoyée via le formulaire de contact en {locale}.",
+        "ctaLabel": "Ouvrir la page de location",
+        "notificationTitle": "Nouvelle demande de devis reçue",
+        "statusNew": "Nouvelle",
+        "submittedOn": "Envoyée depuis la page de contact en {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Lieu de retrait",
+          "locationName": "Nom du lieu",
+          "address": "Adresse"
+        },
+        "pickupTypes": {
+          "airport": "Retrait à l'aéroport",
+          "accommodation": "Retrait à l'hébergement",
+          "office": "Retrait au bureau"
+        }
       }
     }
   },

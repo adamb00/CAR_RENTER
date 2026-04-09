@@ -1,5 +1,8 @@
-import { ContactQuoteRecord } from '@/lib/contactQuotes';
-import { RentFormValues } from './rent.types';
+import {
+  parseStoredResidentCard,
+  type ContactQuoteRecord,
+} from '@/lib/contactQuotes-shared';
+import type { RentFormValues } from './rent.types';
 import { createEmptyDriver } from '@/hooks/useDrivers';
 import { parsePositiveInt, splitName } from './helpers';
 
@@ -28,6 +31,8 @@ export const buildInitialValues = (
     quoteId: quote?.id,
     rentId: undefined,
     extras: [],
+    cars: quote?.cars ?? '',
+    residentCard: parseStoredResidentCard(quote?.residenceCard),
     adults: adultsFromQuote,
     children: childrenArray,
     rentalPeriod: {

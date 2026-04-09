@@ -15,6 +15,8 @@ export type CompactRentPayload = {
   consents: RentFormValues['consents'];
   deliverySame: boolean;
   deliveryAddress: DeliveryAddress | null;
+  cars: string | null;
+  residentCard: RentFormValues['residentCard'] | null;
 };
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
@@ -47,4 +49,6 @@ export const buildCompactRentPayload = (
   consents: values.consents,
   deliverySame: Boolean(values.delivery?.same),
   deliveryAddress: values.delivery?.address ?? null,
+  cars: values.cars ?? null,
+  residentCard: values.residentCard ?? null,
 });

@@ -1,5 +1,8 @@
-import { ContactQuoteRecord } from '@/lib/contactQuotes';
-import { RentFormValues } from './rent.types';
+import {
+  parseStoredResidentCard,
+  type ContactQuoteRecord,
+} from '@/lib/contactQuotes-shared';
+import type { RentFormValues } from './rent.types';
 import { createEmptyDriver } from '@/hooks/useDrivers';
 import { parsePositiveInt, splitName } from './helpers';
 
@@ -20,6 +23,7 @@ export const mergeQuoteIntoValues = (
   const { firstName, lastName } = splitName(quote.name);
   const firstDriver = values.driver?.[0] ?? createEmptyDriver();
   const restDrivers = values.driver?.slice(1) ?? [];
+  const residentCardFromQuote = parseStoredResidentCard(quote.residenceCard);
 
   const delivery: NonNullable<RentFormValues['delivery']> = values.delivery ?? {
     same: false,
@@ -44,6 +48,11 @@ export const mergeQuoteIntoValues = (
     carId: values.carId ?? quote.carId ?? values.carId,
     quoteId: values.quoteId ?? quote.id ?? values.quoteId,
     rentId: values.rentId,
+    cars:
+      typeof values.cars === 'string' && values.cars.trim().length > 0
+        ? values.cars
+        : (quote.cars ?? ''),
+    residentCard: values.residentCard ?? residentCardFromQuote,
     adults: adultsFromQuote ?? values.adults,
     children: childrenArray,
     extras: quote.extras ?? values.extras,

@@ -1,53 +1,9 @@
-import { prisma } from '@/lib/prisma';
 import { type ContactStatus } from '@/lib/requestStatus';
-
-type BookingRequestRecord = {
-  carId?: string;
-  locale?: string;
-  carName?: string;
-  deposit?: string;
-  adminName?: string;
-  extrasFee?: string;
-  insurance?: string;
-  rentalEnd?: string;
-  rentalFee?: string;
-  bookingLink?: string;
-  contactName?: string;
-  deliveryFee?: string;
-  rentalStart?: string;
-  contactEmail?: string;
-};
-
-export type ContactQuoteRecord = {
-  id: string;
-  locale: string;
-  name: string;
-  email: string;
-  phone: string;
-  preferredChannel: 'email' | 'phone' | 'whatsapp' | 'viber';
-  extras: string[];
-  rentalStart?: string | null;
-  rentalEnd?: string | null;
-  rentalDays?: number | null;
-  arrivalFlight?: string | null;
-  departureFlight?: string | null;
-  partySize?: string | null;
-  children?: string | null;
-  carId?: string | null;
-  delivery?: {
-    placeType?: string;
-    locationName?: string;
-    address?: {
-      country?: string;
-      postalCode?: string;
-      city?: string;
-      street?: string;
-      doorNumber?: string;
-    };
-  };
-  status: ContactStatus;
-  bookingRequestData?: BookingRequestRecord | BookingRequestRecord[];
-};
+import { prisma } from '@/lib/prisma';
+import type {
+  BookingRequestRecord,
+  ContactQuoteRecord,
+} from '@/lib/contactQuotes-shared';
 
 const toIsoString = (
   value: Date | string | null | undefined
@@ -161,13 +117,15 @@ export async function getContactQuoteById(
       preferredChannel: true,
       extras: true,
       status: true,
-    rentalStart: true,
-    rentalEnd: true,
-    rentalDays: true,
+      rentalStart: true,
+      rentalEnd: true,
+      rentalDays: true,
       arrivalFlight: true,
       departureFlight: true,
       partySize: true,
       children: true,
+      cars: true,
+      residenceCard: true,
       carId: true,
       delivery: true,
       bookingRequestData: true,
@@ -194,9 +152,13 @@ export async function getContactQuoteById(
     departureFlight: record.departureFlight ?? null,
     partySize: record.partySize ?? null,
     children: record.children ?? null,
+    cars: record.cars ?? null,
+    residenceCard: record.residenceCard ?? [],
     carId: record.carId ?? null,
     delivery: normalizeDelivery(record.delivery),
     status: record.status as ContactStatus,
     bookingRequestData: normalizeBookingRequestData(record.bookingRequestData),
   };
 }
+
+export type { ContactQuoteRecord } from '@/lib/contactQuotes-shared';

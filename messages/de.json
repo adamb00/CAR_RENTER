@@ -704,6 +704,13 @@
       "heart": "Reserviere online und hole deinen Mietwagen direkt am Flughafen oder an deiner Unterkunft ab!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Sonderrabatte verfügbar",
+    "title": "Für Residenten und bei mehreren Fahrzeugen bieten wir Extra-Rabatte.",
+    "description": "Mit einer gültigen Residentenkarte können wir einen Residentenrabatt auf deine Buchung gewähren. Auch bei gleichzeitiger Anmietung mehrerer Fahrzeuge erstellen wir gern ein individuelles Angebot mit Preisnachlass, etwa für Familienreisen, Gruppenurlaube oder parallele Reservierungen.",
+    "primaryLabel": "Verfügbare Autos",
+    "secondaryLabel": "Vielleicht später"
+  },
   "Inquire": {
     "title": "Jetzt reservieren!",
     "description_1": "Überlass die Mietwagenbuchung nicht dem Zufall! Das Team von Zodiacs Rent a Car meldet sich innerhalb von 24 Stunden bei dir und hilft dir, das zu deinen Ferien passende Auto zu buchen.",
@@ -1334,6 +1341,16 @@
           "label": "Anzahl der Kinder",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Anzahl der Autos",
+          "placeholder": "Wie viele Autos benötigen Sie?"
+        },
+        "residentCard": {
+          "label": "Residentenkarte (optional)",
+          "description": "Laden Sie eine PDF-, JPG- oder PNG-Kopie Ihrer Residentenkarte hoch. Maximale Dateigröße: {maxSizeMb} MB.",
+          "selected": "Ausgewählte Datei: {fileName}",
+          "remove": "Datei entfernen"
+        },
         "carType": {
           "label": "Autotyp",
           "placeholder": "Autotyp auswählen",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Bitte wähle das Enddatum der Miete",
         "rentalDaysRequired": "Bitte wähle die Anzahl der Tage",
         "arrivalFlightRequired": "Bitte gib die Ankunftsflugnummer an",
-        "departureFlightRequired": "Bitte gib die Rückflugnummer an"
+        "departureFlightRequired": "Bitte gib die Rückflugnummer an",
+        "residentCardInvalidType": "Bitte lade eine PDF-, JPG- oder PNG-Datei hoch",
+        "residentCardTooLarge": "Die Datei der Residentenkarte muss kleiner als {maxSizeMb} MB sein",
+        "residentCardReadFailed": "Die Datei der Residentenkarte konnte nicht gelesen werden"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Bitte den Abholort auswählen",
-        "invalid": "Ungültiger Abholort"
+          "required": "Bitte den Abholort auswählen",
+          "invalid": "Ungültiger Abholort"
         },
         "arrivalFlight": {
           "required": "Bitte geben Sie die Flugnummer der Anreise an"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Rückflug",
         "partySize": "Anzahl der Reisenden",
         "children": "Anzahl der Kinder",
-        "car": "Ausgewähltes Auto"
+        "cars": "Autos",
+        "residentCard": "Residentenkarte",
+        "car": "Ausgewähltes Auto",
+        "quoteId": "Angebots-ID",
+        "humanId": "Referenz-ID",
+        "locale": "Sprache",
+        "extras": "Extras",
+        "delivery": "Abholung",
+        "status": "Status"
       },
       "channelLabels": {
         "email": "E-Mail",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Angebotsanfrage über das Kontaktformular",
+        "title": "Neue Angebotsanfrage",
+        "intro": "Eine neue Angebotsanfrage wurde über das Kontaktformular in der Sprache {locale} gesendet.",
+        "ctaLabel": "Mietseite öffnen",
+        "notificationTitle": "Neue Angebotsanfrage eingegangen",
+        "statusNew": "Neu",
+        "submittedOn": "Über die Kontaktseite in der Sprache {locale} gesendet.",
+        "deliveryLabels": {
+          "pickupPlace": "Abholort",
+          "locationName": "Ortsname",
+          "address": "Adresse"
+        },
+        "pickupTypes": {
+          "airport": "Abholung am Flughafen",
+          "accommodation": "Abholung an der Unterkunft",
+          "office": "Abholung im Büro"
+        }
       }
     }
   },

@@ -35,13 +35,7 @@ export const CHANNELS: PreferredChannel[] = [
   'viber',
 ];
 
-export const EXTRA_VALUES = [
-  'szorfo_deszka_rogzito',
-  'gyerekules',
-  'alap_csomag',
-  'energia_csomag',
-  'esti_erkezes_csomag',
-] as const;
+export const EXTRA_VALUES = ['szorfo_deszka_rogzito', 'gyerekules'] as const;
 
 export const RENTAL_DAYS_OPTIONS = Array.from({ length: 365 }, (_, i) => i + 1);
 

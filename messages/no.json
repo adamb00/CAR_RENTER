@@ -704,6 +704,13 @@
       "heart": "Bestill online og hent leiebilen din direkte på flyplassen eller ved overnattingsstedet!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Spesialrabatter tilgjengelige",
+    "title": "Vi tilbyr ekstra rabatt for fastboende og ved leie av flere biler.",
+    "description": "Med gyldig beboerkort kan vi gi fastboenderabatt på bestillingen din. Vi kan også tilby et skreddersydd rabattert tilbud hvis du leier flere biler samtidig, for eksempel for familieferier, grupper eller parallelle bestillinger.",
+    "primaryLabel": "Se tilgjengelige biler",
+    "secondaryLabel": "Kanskje senere"
+  },
   "Inquire": {
     "title": "Bestill nå!",
     "description_1": "Ikke vent til siste liten med å leie bil! Zodiacs Rent a Car-teamet svarer innen 24 timer og hjelper deg å reservere bilen som passer best til ferien din.",
@@ -1334,6 +1341,16 @@
           "label": "Antall barn",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Antall biler",
+          "placeholder": "Hvor mange biler trenger du?"
+        },
+        "residentCard": {
+          "label": "Residentkort (valgfritt)",
+          "description": "Last opp en PDF-, JPG- eller PNG-kopi av residentkortet ditt. Maksimal filstørrelse: {maxSizeMb} MB.",
+          "selected": "Valgt fil: {fileName}",
+          "remove": "Fjern fil"
+        },
         "carType": {
           "label": "Biltype",
           "placeholder": "Velg biltype",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Velg sluttdato for leien",
         "rentalDaysRequired": "Velg antall dager",
         "arrivalFlightRequired": "Oppgi ankommende flynummer",
-        "departureFlightRequired": "Oppgi flynummer for hjemreisen"
+        "departureFlightRequired": "Oppgi flynummer for hjemreisen",
+        "residentCardInvalidType": "Last opp en PDF-, JPG- eller PNG-fil",
+        "residentCardTooLarge": "Residentkortfilen må være mindre enn {maxSizeMb} MB",
+        "residentCardReadFailed": "Residentkortfilen kunne ikke leses"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Velg hentested",
-        "invalid": "Ugyldig hentested"
+          "required": "Velg hentested",
+          "invalid": "Ugyldig hentested"
         },
         "arrivalFlight": {
           "required": "Oppgi ankommende flynummer"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Returfly",
         "partySize": "Antall reisende",
         "children": "Antall barn",
-        "car": "Valgt bil"
+        "cars": "Biler",
+        "residentCard": "Residentkort",
+        "car": "Valgt bil",
+        "quoteId": "Forespørsels-ID",
+        "humanId": "Referanse-ID",
+        "locale": "Språk",
+        "extras": "Ekstrautstyr",
+        "delivery": "Henting",
+        "status": "Status"
       },
       "channelLabels": {
         "email": "E-post",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Tilbudsforespørsel fra kontaktskjema",
+        "title": "Ny tilbudsforespørsel",
+        "intro": "En ny tilbudsforespørsel er sendt via kontaktskjemaet på {locale}.",
+        "ctaLabel": "Åpne leiesiden",
+        "notificationTitle": "Ny tilbudsforespørsel mottatt",
+        "statusNew": "Ny",
+        "submittedOn": "Sendt fra kontaktsiden på {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Hentested",
+          "locationName": "Stedsnavn",
+          "address": "Adresse"
+        },
+        "pickupTypes": {
+          "airport": "Henting på flyplassen",
+          "accommodation": "Henting ved overnattingsstedet",
+          "office": "Henting på kontoret"
+        }
       }
     }
   },

@@ -704,6 +704,13 @@
       "heart": "Rezervuj online a prevezmi si svoje prenajaté auto priamo na letisku alebo pri ubytovaní!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Špeciálne zľavy k dispozícii",
+    "title": "Rezidentom a pri prenájme viacerých áut ponúkame extra zľavu.",
+    "description": "S platnou rezidentskou kartou vám vieme poskytnúť rezidentskú zľavu na rezerváciu. Zvýhodnenú individuálnu ponuku vieme pripraviť aj pri prenájme viacerých áut naraz, napríklad pre rodinné cesty, skupiny alebo súbežné rezervácie.",
+    "primaryLabel": "Zobraziť dostupné autá",
+    "secondaryLabel": "Možno neskôr"
+  },
   "Inquire": {
     "title": "Rezervuj si teraz!",
     "description_1": "Nenechávaj prenájom auta na poslednú chvíľu! Tím Zodiacs Rent a Car ti odpovie do 24 hodín a pomôže ti rezervovať auto, ktoré sa najviac hodí k tvojej dovolenke.",
@@ -1334,6 +1341,16 @@
           "label": "Počet detí",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Počet áut",
+          "placeholder": "Koľko áut potrebujete?"
+        },
+        "residentCard": {
+          "label": "Rezidentská karta (voliteľné)",
+          "description": "Nahraj kópiu svojej rezidentskej karty vo formáte PDF, JPG alebo PNG. Maximálna veľkosť súboru: {maxSizeMb} MB.",
+          "selected": "Vybraný súbor: {fileName}",
+          "remove": "Odstrániť súbor"
+        },
         "carType": {
           "label": "Typ auta",
           "placeholder": "Vyberte typ auta",
@@ -1369,7 +1386,10 @@
         "rentalEndRequired": "Vyber dátum ukončenia prenájmu",
         "rentalDaysRequired": "Vyberte počet dní",
         "arrivalFlightRequired": "Zadaj číslo príletového letu",
-        "departureFlightRequired": "Zadaj číslo odletového letu"
+        "departureFlightRequired": "Zadaj číslo odletového letu",
+        "residentCardInvalidType": "Nahraj súbor PDF, JPG alebo PNG",
+        "residentCardTooLarge": "Súbor rezidentskej karty musí byť menší ako {maxSizeMb} MB",
+        "residentCardReadFailed": "Súbor rezidentskej karty sa nepodarilo načítať"
       }
     }
   },
@@ -2157,8 +2177,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Vyberte miesto prevzatia",
-        "invalid": "Neplatné miesto prevzatia"
+          "required": "Vyberte miesto prevzatia",
+          "invalid": "Neplatné miesto prevzatia"
         },
         "arrivalFlight": {
           "required": "Zadaj číslo príletového letu"
@@ -2572,13 +2592,40 @@
         "departureFlight": "Odlet",
         "partySize": "Počet cestujúcich",
         "children": "Počet detí",
-        "car": "Vybrané auto"
+        "cars": "Autá",
+        "residentCard": "Rezidentská karta",
+        "car": "Vybrané auto",
+        "quoteId": "ID dopytu",
+        "humanId": "Referenčné ID",
+        "locale": "Jazyk",
+        "extras": "Doplnky",
+        "delivery": "Prevzatie",
+        "status": "Stav"
       },
       "channelLabels": {
         "email": "E-mail",
         "phone": "Telefón",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Dopyt z kontaktného formulára",
+        "title": "Nový dopyt",
+        "intro": "Nový dopyt bol odoslaný cez kontaktný formulár v jazyku {locale}.",
+        "ctaLabel": "Otvoriť stránku prenájmu",
+        "notificationTitle": "Bol prijatý nový dopyt",
+        "statusNew": "Nový",
+        "submittedOn": "Odoslané z kontaktnej stránky v jazyku {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Miesto prevzatia",
+          "locationName": "Názov miesta",
+          "address": "Adresa"
+        },
+        "pickupTypes": {
+          "airport": "Prevzatie na letisku",
+          "accommodation": "Prevzatie pri ubytovaní",
+          "office": "Prevzatie v kancelárii"
+        }
       }
     }
   },

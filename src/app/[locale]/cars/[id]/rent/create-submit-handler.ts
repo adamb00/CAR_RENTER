@@ -110,14 +110,13 @@ export function useCreateSubmitHandler({
         if (Number.isInteger(context.offer)) {
           actionPayload.offer = context.offer;
         }
+
         const res = await RentAction({
           ...actionPayload,
           locale: context.locale,
           carId: context.carId,
           quoteId: context.quoteId ?? parsed.quoteId,
         });
-
-        console.log('res', res);
 
         if (res.success) {
           toast.success(context.successMessage);

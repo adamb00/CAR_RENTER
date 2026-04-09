@@ -704,6 +704,13 @@
       "heart": "Rezervuj online a převezmi své půjčené auto přímo na letišti nebo u ubytování!"
     }
   },
+  "HomePopup": {
+    "eyebrow": "Speciální slevy k dispozici",
+    "title": "Rezidentům a při pronájmu více aut nabízíme extra slevu.",
+    "description": "S platnou rezidentskou kartou vám můžeme poskytnout rezidentskou slevu na rezervaci. Individuální zvýhodněnou nabídku umíme připravit i při pronájmu více aut současně, například pro rodinné cesty, skupiny nebo souběžné rezervace.",
+    "primaryLabel": "Zobrazit dostupná auta",
+    "secondaryLabel": "Možná později"
+  },
   "Inquire": {
     "title": "Rezervuj si auto hned!",
     "description_1": "Nenechávej rezervaci auta na poslední chvíli! Tým Zodiacs Rent a Car ti odpoví do 24 hodin a pomůže ti lefoglal auto, které nejlépe odpovídá tvé dovolené.",
@@ -1329,6 +1336,16 @@
           "label": "Počet dětí",
           "placeholder": "0"
         },
+        "cars": {
+          "label": "Počet aut",
+          "placeholder": "Kolik aut potřebujete?"
+        },
+        "residentCard": {
+          "label": "Rezidentská karta (volitelné)",
+          "description": "Nahraj kopii své rezidentské karty ve formátu PDF, JPG nebo PNG. Maximální velikost souboru: {maxSizeMb} MB.",
+          "selected": "Vybraný soubor: {fileName}",
+          "remove": "Odstranit soubor"
+        },
         "carType": {
           "label": "Typ auta",
           "placeholder": "Vyberte typ auta",
@@ -1364,7 +1381,10 @@
         "rentalEndRequired": "Vyber konec pronájmu",
         "rentalDaysRequired": "Vyberte počet dní",
         "arrivalFlightRequired": "Zadej číslo příletového letu",
-        "departureFlightRequired": "Zadej číslo odletového letu"
+        "departureFlightRequired": "Zadej číslo odletového letu",
+        "residentCardInvalidType": "Nahraj soubor PDF, JPG nebo PNG",
+        "residentCardTooLarge": "Soubor rezidentské karty musí být menší než {maxSizeMb} MB",
+        "residentCardReadFailed": "Soubor rezidentské karty se nepodařilo načíst"
       }
     }
   },
@@ -2152,8 +2172,8 @@
       },
       "delivery": {
         "placeType": {
-        "required": "Vyberte místo převzetí",
-        "invalid": "Neplatné místo převzetí"
+          "required": "Vyberte místo převzetí",
+          "invalid": "Neplatné místo převzetí"
         },
         "arrivalFlight": {
           "required": "Zadejte číslo příletového letu"
@@ -2567,13 +2587,40 @@
         "departureFlight": "Odletový let",
         "partySize": "Počet cestujících",
         "children": "Počet dětí",
-        "car": "Vybrané auto"
+        "cars": "Auta",
+        "residentCard": "Rezidentská karta",
+        "car": "Vybrané auto",
+        "quoteId": "ID poptávky",
+        "humanId": "Referenční ID",
+        "locale": "Jazyk",
+        "extras": "Doplňky",
+        "delivery": "Převzetí",
+        "status": "Stav"
       },
       "channelLabels": {
         "email": "E-mail",
         "phone": "Telefon",
         "whatsapp": "WhatsApp",
         "viber": "Viber"
+      },
+      "admin": {
+        "subject": "Poptávka z kontaktního formuláře",
+        "title": "Nová poptávka",
+        "intro": "Nová poptávka byla odeslána přes kontaktní formulář v jazyce {locale}.",
+        "ctaLabel": "Otevřít stránku pronájmu",
+        "notificationTitle": "Byla přijata nová poptávka",
+        "statusNew": "Nová",
+        "submittedOn": "Odesláno z kontaktní stránky v jazyce {locale}.",
+        "deliveryLabels": {
+          "pickupPlace": "Místo převzetí",
+          "locationName": "Název místa",
+          "address": "Adresa"
+        },
+        "pickupTypes": {
+          "airport": "Vyzvednutí na letišti",
+          "accommodation": "Vyzvednutí u ubytování",
+          "office": "Vyzvednutí v kanceláři"
+        }
       }
     }
   },

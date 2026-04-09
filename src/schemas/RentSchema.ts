@@ -336,6 +336,15 @@ export function createRentSchema(
       quoteId: z.string().optional(),
       offer: z.number().optional(),
       extras: z.array(z.string()).optional(),
+      cars: z.string().optional(),
+      residentCard: z
+        .object({
+          name: z.string().min(1),
+          type: z.string().min(1),
+          content: z.string().min(1),
+          size: z.number().int().positive(),
+        })
+        .optional(),
       rentalPeriod: z.object({
         startDate: z.string().refine((date) => !isNaN(Date.parse(date)), {
           message: message('fields.rentalPeriod.startDate.invalid'),
@@ -593,7 +602,7 @@ export function createRentSchema(
       const maxDate = new Date(today);
       maxDate.setFullYear(maxDate.getFullYear() + 1);
 
-      if (start && start <= today) {
+      if (start && start < today) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: message('fields.rentalPeriod.startDate.past'),

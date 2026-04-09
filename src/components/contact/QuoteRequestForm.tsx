@@ -29,6 +29,7 @@ import type {
 } from './quote.types';
 import QuoteRentalStart from './QuoteRentalStart';
 import QuoteRentalDays from './QuoteRentalDays';
+import QuoteResidenteCard from './QuoteResidenteCard';
 
 export type { QuoteRequestValues } from '@/schemas/QuoteSchema';
 
@@ -91,6 +92,8 @@ export function QuoteRequestForm({
       departureFlight: '',
       partySize: '',
       children: '',
+      cars: '',
+      residentCard: undefined,
       carId: selectedCar?.id ?? '',
       carType: selectedCar?.name ?? '',
       extras: [],
@@ -211,6 +214,7 @@ export function QuoteRequestForm({
             <QuoteDelivery form={form} placesReady={placesReady} />
 
             <QuotePartySize form={form} />
+            <QuoteResidenteCard form={form} />
             <LegalConsents
               form={form}
               items={consentItems}
