@@ -576,6 +576,11 @@ export const RentAction = async (values: RentFormValues) => {
   } else {
     humanId = await getNextHumanId('RentRequests');
     try {
+      const quote = await prisma.contactQuote.findFirst({
+        where: { id: validatedFields.data.quoteId },
+        include: { Accommodations: true },
+      });
+
       const renterId = await syncRenterFromRentForm(validatedFields.data);
       const createdRent = await prisma.rentRequest.create({
         data: {
@@ -594,6 +599,7 @@ export const RentAction = async (values: RentFormValues) => {
           status: RENT_STATUS_NEW,
           updated: null,
           payload: buildCompactRentPayload(validatedFields.data),
+          accommodationId: quote?.accommodationId ?? null,
         },
         select: { id: true },
       });
@@ -635,6 +641,12 @@ export const RentAction = async (values: RentFormValues) => {
               updated: 'RentAction',
             },
           });
+          if (quote?.accommodationId) {
+            await prisma.accommodations.update({
+              where: { id: quote.accommodationId },
+              data: { rentCount: { increment: 1 } },
+            });
+          }
         } catch (updateQuoteError) {
           console.error(
             'Failed to mark contact quote as done',

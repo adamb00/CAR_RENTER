@@ -29,6 +29,7 @@ export const buildInitialValues = (
     locale,
     carId,
     quoteId: quote?.id,
+    hasQuoteAccommodation: Boolean(quote?.accommodationId),
     rentId: undefined,
     extras: [],
     cars: quote?.cars ?? '',

@@ -67,6 +67,7 @@ export default function RentPageClient({
   const offer = searchParams.get('offer');
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
+
   const defaultValues = React.useMemo(() => {
     if (rentPrefill) {
       return {
@@ -74,6 +75,9 @@ export default function RentPageClient({
         locale,
         carId: id,
         rentId: rentPrefill.rentId ?? manageRentId,
+        hasQuoteAccommodation:
+          rentPrefill.hasQuoteAccommodation ??
+          Boolean(quotePrefill?.accommodationId),
         consents: {
           ...rentPrefill.consents,
           paymentMethod: normalizePaymentMethodValue(

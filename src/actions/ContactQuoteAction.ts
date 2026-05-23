@@ -10,6 +10,7 @@ import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
 import { CONTACT_STATUS_NEW } from '@/lib/requestStatus';
 import { recordNotification } from '@/lib/notifications';
+import { sendSlackDirectMessage } from '@/lib/slack';
 import {
   normalizeResidentCardMimeType,
   RESIDENT_CARD_MAX_SIZE_BYTES,
@@ -17,6 +18,7 @@ import {
 import { ContactQuotePayload } from './ContactQuoteAction.type';
 
 type EmailTranslations = Awaited<ReturnType<typeof getTranslations>>;
+const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F';
 
 const parseDateValue = (value?: string | null): Date | null => {
   if (!value) return null;
@@ -33,10 +35,11 @@ const normalizeRentalDays = (value?: number | null): number | null => {
 
 const formatPickupPlaceType = (
   tEmail: EmailTranslations,
-  type?: string
+  type?: string,
 ): string => {
   if (!type) return 'n/a';
-  if (type === 'airport') return tEmail('contactQuote.admin.pickupTypes.airport');
+  if (type === 'airport')
+    return tEmail('contactQuote.admin.pickupTypes.airport');
   if (type === 'accommodation') {
     return tEmail('contactQuote.admin.pickupTypes.accommodation');
   }
@@ -46,18 +49,18 @@ const formatPickupPlaceType = (
 
 const formatDeliverySummary = (
   tEmail: EmailTranslations,
-  delivery?: ContactQuotePayload['delivery']
+  delivery?: ContactQuotePayload['delivery'],
 ): string => {
   if (!delivery) return 'n/a';
   const parts: string[] = [];
   if (delivery.placeType) {
     parts.push(
-      `${tEmail('contactQuote.admin.deliveryLabels.pickupPlace')}: ${formatPickupPlaceType(tEmail, delivery.placeType)}`
+      `${tEmail('contactQuote.admin.deliveryLabels.pickupPlace')}: ${formatPickupPlaceType(tEmail, delivery.placeType)}`,
     );
   }
   if (delivery.locationName) {
     parts.push(
-      `${tEmail('contactQuote.admin.deliveryLabels.locationName')}: ${delivery.locationName}`
+      `${tEmail('contactQuote.admin.deliveryLabels.locationName')}: ${delivery.locationName}`,
     );
   }
   if (delivery.address) {
@@ -72,7 +75,7 @@ const formatDeliverySummary = (
       .map((value) => (value as string).trim());
     if (chunks.length > 0) {
       parts.push(
-        `${tEmail('contactQuote.admin.deliveryLabels.address')}: ${chunks.join(', ')}`
+        `${tEmail('contactQuote.admin.deliveryLabels.address')}: ${chunks.join(', ')}`,
       );
     }
   }
@@ -81,7 +84,7 @@ const formatDeliverySummary = (
 
 const buildDeliveryLines = (
   tEmail: EmailTranslations,
-  payload: ContactQuotePayload
+  payload: ContactQuotePayload,
 ): string[] => {
   if (!payload.delivery?.placeType) {
     return [];
@@ -108,8 +111,87 @@ const buildDeliveryLines = (
   ];
 };
 
+const formatSlackValue = (value?: string | null) => {
+  const trimmed = value?.trim();
+  return trimmed && trimmed.length > 0 ? trimmed : 'n/a';
+};
+
+const buildSlackQuoteDetailsText = ({
+  tEmail,
+  payload,
+  quoteId,
+  formattedPeriod,
+  rentalDays,
+  carInfo,
+}: {
+  tEmail: EmailTranslations;
+  payload: ContactQuotePayload;
+  quoteId: string | null;
+  formattedPeriod: string;
+  rentalDays: number | null;
+  carInfo: Awaited<ReturnType<typeof getCarById>>;
+}) => {
+  const contactLines = [
+    `*Név:* ${formatSlackValue(payload.name)}`,
+    `*Email:* ${formatSlackValue(payload.email)}`,
+    `*Telefon:* ${formatSlackValue(payload.phone)}`,
+    `*Preferált csatorna:* ${formatSlackValue(payload.preferredChannel)}`,
+  ];
+
+  const rentalLines = [
+    `*Időszak:* ${formattedPeriod}`,
+    `*Napok száma:* ${rentalDays ?? 'n/a'}`,
+    `*Autók száma:* ${formatSlackValue(payload.cars)}`,
+    `*Autó:* ${
+      carInfo
+        ? `${formatSlackValue(carInfo.manufacturer)} ${formatSlackValue(carInfo.model)}`
+        : formatSlackValue(payload.carId)
+    }`,
+    `*Utasok:* ${formatSlackValue(payload.partySize)}`,
+    `*Gyerekek:* ${formatSlackValue(payload.children)}`,
+  ];
+
+  const deliveryLines = buildDeliveryLines(tEmail, payload);
+  const normalizedDeliveryLines =
+    deliveryLines.length > 0 ? deliveryLines : ['Átvétel: n/a'];
+
+  const flightLines = [
+    `*Érkező járat:* ${formatSlackValue(payload.arrivalFlight)}`,
+    `*Távozó járat:* ${formatSlackValue(payload.departureFlight)}`,
+  ];
+
+  const extraLines = [
+    `*Extrák:* ${
+      Array.isArray(payload.extras) && payload.extras.length > 0
+        ? payload.extras.join(', ')
+        : 'n/a'
+    }`,
+    `*Rezidens kártya:* ${payload.residentCard?.name ?? 'n/a'}`,
+    `*Quote ID:* ${quoteId ?? 'n/a'}`,
+  ];
+
+  return [
+    '*Új ajánlatkérés érkezett*',
+    '',
+    '*Kapcsolat*',
+    ...contactLines,
+    '',
+    '*Bérlés*',
+    ...rentalLines,
+    '',
+    '*Átvétel*',
+    ...normalizedDeliveryLines,
+    '',
+    '*Járatadatok*',
+    ...flightLines,
+    '',
+    '*Egyéb*',
+    ...extraLines,
+  ].join('\n');
+};
+
 const buildResidentCardAttachment = (
-  residentCard?: ContactQuotePayload['residentCard']
+  residentCard?: ContactQuotePayload['residentCard'],
 ): Mail.Attachment | null => {
   if (!residentCard) {
     return null;
@@ -117,7 +199,7 @@ const buildResidentCardAttachment = (
 
   const normalizedType = normalizeResidentCardMimeType(
     residentCard.type,
-    residentCard.name
+    residentCard.name,
   );
   if (!normalizedType) {
     throw new Error('Invalid resident card type');
@@ -129,7 +211,10 @@ const buildResidentCardAttachment = (
   }
 
   const fileBuffer = Buffer.from(content, 'base64');
-  if (fileBuffer.length === 0 || fileBuffer.length > RESIDENT_CARD_MAX_SIZE_BYTES) {
+  if (
+    fileBuffer.length === 0 ||
+    fileBuffer.length > RESIDENT_CARD_MAX_SIZE_BYTES
+  ) {
     throw new Error('Invalid resident card size');
   }
 
@@ -145,7 +230,7 @@ const buildResidentCardAttachment = (
 };
 
 const serializeResidentCardForDb = (
-  residentCard?: ContactQuotePayload['residentCard']
+  residentCard?: ContactQuotePayload['residentCard'],
 ): string[] => {
   if (!residentCard) {
     return [];
@@ -153,7 +238,7 @@ const serializeResidentCardForDb = (
 
   const normalizedType = normalizeResidentCardMimeType(
     residentCard.type,
-    residentCard.name
+    residentCard.name,
   );
   if (!normalizedType) {
     throw new Error('Invalid resident card type');
@@ -165,7 +250,10 @@ const serializeResidentCardForDb = (
   }
 
   const fileBuffer = Buffer.from(content, 'base64');
-  if (fileBuffer.length === 0 || fileBuffer.length > RESIDENT_CARD_MAX_SIZE_BYTES) {
+  if (
+    fileBuffer.length === 0 ||
+    fileBuffer.length > RESIDENT_CARD_MAX_SIZE_BYTES
+  ) {
     throw new Error('Invalid resident card size');
   }
 
@@ -192,7 +280,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     const humanId = await getNextHumanId('ContactQuotes');
 
     const preferredChannelLabel = tEmail(
-      `contactQuote.channelLabels.${payload.preferredChannel}`
+      `contactQuote.channelLabels.${payload.preferredChannel}`,
     );
     const extrasLabel =
       Array.isArray(payload.extras) && payload.extras.length > 0
@@ -203,7 +291,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     const rentalEndDate = parseDateValue(payload.rentalEnd);
     const rentalDays = normalizeRentalDays(payload.rentalDays);
     const residentCardAttachment = buildResidentCardAttachment(
-      payload.residentCard
+      payload.residentCard,
     );
     const residenceCard = serializeResidentCardForDb(payload.residentCard);
     const residentCardFileName = payload.residentCard?.name ?? 'n/a';
@@ -233,11 +321,19 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         status: CONTACT_STATUS_NEW,
         updated: null,
         humanId,
+        accommodationId: payload.accommodationID ?? null,
       },
       select: {
         id: true,
       },
     });
+
+    if (payload.accommodationID) {
+      await prisma.accommodations.update({
+        where: { id: payload.accommodationID },
+        data: { quoteCount: { increment: 1 } },
+      });
+    }
 
     quoteId = created.id;
 
@@ -247,7 +343,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     }`;
     const carDisplayName = carInfo
       ? `${carInfo.manufacturer} ${carInfo.model}`.trim()
-      : payload.carId ?? 'n/a';
+      : (payload.carId ?? 'n/a');
     const carLineValue = carInfo
       ? `${carInfo.manufacturer} ${carInfo.model} (ID: ${carInfo.id})`
       : carDisplayName;
@@ -373,7 +469,9 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       text: lines,
       html: adminHtml,
       replyTo: payload.email,
-      attachments: residentCardAttachment ? [residentCardAttachment] : undefined,
+      attachments: residentCardAttachment
+        ? [residentCardAttachment]
+        : undefined,
     });
 
     const userRows = (
@@ -457,7 +555,7 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           ? `${tEmail('contactQuote.rows.rentalDays')}: ${payload.rentalDays}`
           : '',
         `${tEmail(
-          'contactQuote.rows.preferredChannel'
+          'contactQuote.rows.preferredChannel',
         )}: ${preferredChannelLabel}`,
         payload.arrivalFlight
           ? `${tEmail('contactQuote.rows.arrivalFlight')}: ${
@@ -504,6 +602,70 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       }),
       replyTo: process.env.MAIL_USER || undefined,
     });
+
+    if (payload.quoteComeFromAccommodation) {
+      try {
+        const slackDetailsText = buildSlackQuoteDetailsText({
+          tEmail,
+          payload,
+          quoteId,
+          formattedPeriod,
+          rentalDays,
+          carInfo,
+        });
+
+        const slackBlocks =
+          quoteId && quoteId.trim().length > 0
+            ? [
+                {
+                  type: 'section',
+                  text: {
+                    type: 'mrkdwn',
+                    text: slackDetailsText,
+                  },
+                },
+                {
+                  type: 'actions',
+                  elements: [
+                    {
+                      type: 'button',
+                      action_id: 'quote_send_email_auto_offer',
+                      text: {
+                        type: 'plain_text',
+                        text: 'Ajánlat email küldése',
+                        emoji: true,
+                      },
+                      style: 'primary',
+                      value: `quote_send_email:${quoteId}`,
+                    },
+                  ],
+                },
+              ]
+            : [
+                {
+                  type: 'section',
+                  text: {
+                    type: 'mrkdwn',
+                    text: slackDetailsText,
+                  },
+                },
+              ];
+
+        await sendSlackDirectMessage({
+          slackUserId: ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID,
+          text: `Új ajánlatkérés: ${payload.name} (${payload.email}) | ${formattedPeriod} ${
+            quoteId ?? 'n/a'
+          }`,
+          blocks: slackBlocks,
+        });
+      } catch (slackError) {
+        console.error('Failed to send accommodation quote Slack alert', {
+          quoteId,
+          slackUserId: ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID,
+          error: slackError,
+        });
+      }
+    }
 
     return { success: true };
   } catch (error) {

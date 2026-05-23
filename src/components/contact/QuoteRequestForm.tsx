@@ -38,6 +38,7 @@ export function QuoteRequestForm({
   selectedCar,
   availableCars,
   prefill,
+  accommodation,
 }: QuoteRequestFormProps) {
   const t = useTranslations('Contact');
   const tSchema = useTranslations('RentSchema');
@@ -98,14 +99,14 @@ export function QuoteRequestForm({
       carType: selectedCar?.name ?? '',
       extras: [],
       delivery: {
-        placeType: undefined,
-        locationName: '',
+        placeType: accommodation ? 'accommodation' : undefined,
+        locationName: accommodation ? accommodation.name : '',
         address: {
-          country: '',
-          postalCode: '',
-          city: '',
-          street: '',
-          doorNumber: '',
+          country: accommodation ? accommodation.country : '',
+          postalCode: accommodation ? accommodation.postalCode : '',
+          city: accommodation ? accommodation.city : '',
+          street: accommodation ? accommodation.street : '',
+          doorNumber: accommodation ? accommodation.houseNumber : '',
         },
       } as DeliveryInfo,
       consents: { privacy: false, terms: false },
@@ -136,7 +137,12 @@ export function QuoteRequestForm({
     const { consents: _consents, ...rest } = values;
     void _consents;
     startTransition(async () => {
-      const result = await submitContactQuote({ locale, ...rest });
+      const result = await submitContactQuote({
+        quoteComeFromAccommodation: accommodation ? true : false,
+        accommodationID: accommodation ? accommodation.id : null,
+        locale,
+        ...rest,
+      });
       if (result.success) {
         setStatus('success');
         form.reset(defaultValues);

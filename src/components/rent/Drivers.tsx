@@ -534,8 +534,8 @@ export default function Drivers({
                           mode='single'
                           selected={selectedDate}
                           locale={calendarLocale}
-                          fromYear={1900}
-                          toYear={maxExpiryDate.getFullYear()}
+                          startMonth={new Date('1900-01-01')}
+                          endMonth={maxExpiryDate}
                           onSelect={(date) =>
                             field.onChange(
                               date ? format(date, 'yyyy-MM-dd') : '',
@@ -776,8 +776,8 @@ export default function Drivers({
                           mode='single'
                           selected={selectedDate}
                           locale={calendarLocale}
-                          fromYear={1900}
-                          toYear={maxExpiryDate.getFullYear()}
+                          startMonth={new Date('1900-01-01')}
+                          endMonth={maxExpiryDate}
                           onSelect={(date) =>
                             field.onChange(
                               date ? format(date, 'yyyy-MM-dd') : '',
@@ -997,8 +997,8 @@ export default function Drivers({
                           mode='single'
                           selected={selectedDate}
                           locale={calendarLocale}
-                          fromYear={1900}
-                          toYear={maxExpiryDate.getFullYear()}
+                          startMonth={new Date('1900-01-01')}
+                          endMonth={maxExpiryDate}
                           onSelect={(date) =>
                             field.onChange(
                               date ? format(date, 'yyyy-MM-dd') : '',

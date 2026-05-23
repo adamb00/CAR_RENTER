@@ -334,6 +334,7 @@ export function createRentSchema(
       locale: z.string().optional(),
       carId: z.string().optional(),
       quoteId: z.string().optional(),
+      hasQuoteAccommodation: z.boolean().optional(),
       offer: z.number().optional(),
       extras: z.array(z.string()).optional(),
       cars: z.string().optional(),
@@ -538,29 +539,13 @@ export function createRentSchema(
           arrivalHour: z
             .string()
             .trim()
-            .min(1, message('errors.deliveryFieldRequired'))
-            .refine((value) => /^(?:[01]\d|2[0-3])$/.test(value), {
-              message: message('errors.deliveryFieldRequired'),
-            }),
+            .optional(),
           arrivalMinute: z
             .string()
             .trim()
-            .min(1, message('errors.deliveryFieldRequired'))
-            .refine(
-              (value) =>
-                /^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(value),
-              {
-                message: message('errors.deliveryFieldRequired'),
-              },
-            ),
-          arrivalFlight: z
-            .string()
-            .trim()
-            .min(1, message('fields.delivery.arrivalFlight.required')),
-          departureFlight: z
-            .string()
-            .trim()
-            .min(1, message('fields.delivery.departureFlight.required')),
+            .optional(),
+          arrivalFlight: z.string().trim().optional(),
+          departureFlight: z.string().trim().optional(),
           address: z
             .object({
               country: z.string().optional(),
@@ -592,7 +577,8 @@ export function createRentSchema(
           }),
       }),
     })
-    .superRefine(({ rentalPeriod, delivery, children }, ctx) => {
+    .superRefine(
+      ({ rentalPeriod, delivery, children, hasQuoteAccommodation }, ctx) => {
       const start = parseComparableDate(rentalPeriod.startDate);
       const end = parseComparableDate(rentalPeriod.endDate);
 
@@ -635,8 +621,25 @@ export function createRentSchema(
       }
 
       const placeType = delivery?.placeType;
+      const shouldRequireTravelFields = !Boolean(hasQuoteAccommodation);
       const locationName = delivery?.locationName;
       const address = delivery?.address ?? {};
+      const arrivalHour =
+        typeof delivery?.arrivalHour === 'string'
+          ? delivery.arrivalHour.trim()
+          : '';
+      const arrivalMinute =
+        typeof delivery?.arrivalMinute === 'string'
+          ? delivery.arrivalMinute.trim()
+          : '';
+      const arrivalFlight =
+        typeof delivery?.arrivalFlight === 'string'
+          ? delivery.arrivalFlight.trim()
+          : '';
+      const departureFlight =
+        typeof delivery?.departureFlight === 'string'
+          ? delivery.departureFlight.trim()
+          : '';
 
       if (!placeType) {
         ctx.addIssue({
@@ -657,6 +660,40 @@ export function createRentSchema(
             code: z.ZodIssueCode.custom,
             message: message('errors.deliveryFieldRequired'),
             path: ['delivery', 'locationName'],
+          });
+        }
+      }
+
+      if (shouldRequireTravelFields) {
+        if (!/^(?:[01]\d|2[0-3])$/.test(arrivalHour)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('errors.deliveryFieldRequired'),
+            path: ['delivery', 'arrivalHour'],
+          });
+        }
+
+        if (!/^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(arrivalMinute)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('errors.deliveryFieldRequired'),
+            path: ['delivery', 'arrivalMinute'],
+          });
+        }
+
+        if (arrivalFlight.length === 0) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('fields.delivery.arrivalFlight.required'),
+            path: ['delivery', 'arrivalFlight'],
+          });
+        }
+
+        if (departureFlight.length === 0) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('fields.delivery.departureFlight.required'),
+            path: ['delivery', 'departureFlight'],
           });
         }
       }
@@ -708,7 +745,8 @@ export function createRentSchema(
           }
         });
       }
-    });
+    },
+    );
 }
 
 export const RentSchema = createRentSchema();

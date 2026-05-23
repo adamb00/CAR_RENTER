@@ -593,10 +593,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                   mode='range'
                   selected={range ?? undefined}
                   disabled={disabledDays}
-                  fromMonth={fromMonth}
-                  toMonth={toMonth}
-                  fromYear={fromMonth?.getFullYear()}
-                  toYear={toMonth?.getFullYear()}
+                  startMonth={fromMonth}
+                  endMonth={toMonth}
                   captionLayout='dropdown'
                   locale={calendarLocale}
                   formatters={calendarFormatters}

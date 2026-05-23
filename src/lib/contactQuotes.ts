@@ -6,7 +6,7 @@ import type {
 } from '@/lib/contactQuotes-shared';
 
 const toIsoString = (
-  value: Date | string | null | undefined
+  value: Date | string | null | undefined,
 ): string | null => {
   if (value instanceof Date) {
     return value.toISOString();
@@ -66,14 +66,14 @@ const bookingRequestFields = [
 ] as const;
 
 const normalizeBookingRequestData = (
-  value: unknown
+  value: unknown,
 ): ContactQuoteRecord['bookingRequestData'] => {
   if (!value || typeof value !== 'object') {
     return undefined;
   }
 
   const normalizeRecord = (
-    candidate: Record<string, unknown>
+    candidate: Record<string, unknown>,
   ): BookingRequestRecord | null => {
     const normalized: BookingRequestRecord = {};
     let hasValue = false;
@@ -94,7 +94,7 @@ const normalizeBookingRequestData = (
       .map((entry) =>
         entry && typeof entry === 'object' && !Array.isArray(entry)
           ? normalizeRecord(entry as Record<string, unknown>)
-          : null
+          : null,
       )
       .filter(Boolean) as BookingRequestRecord[];
     return items.length > 0 ? items : undefined;
@@ -104,7 +104,7 @@ const normalizeBookingRequestData = (
 };
 
 export async function getContactQuoteById(
-  quoteId: string
+  quoteId: string,
 ): Promise<ContactQuoteRecord | null> {
   const record = await prisma.contactQuote.findUnique({
     where: { id: quoteId },
@@ -129,6 +129,7 @@ export async function getContactQuoteById(
       carId: true,
       delivery: true,
       bookingRequestData: true,
+      accommodationId: true,
     },
   });
 
@@ -158,6 +159,7 @@ export async function getContactQuoteById(
     delivery: normalizeDelivery(record.delivery),
     status: record.status as ContactStatus,
     bookingRequestData: normalizeBookingRequestData(record.bookingRequestData),
+    accommodationId: record.accommodationId ?? null,
   };
 }
 

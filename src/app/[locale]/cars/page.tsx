@@ -1,9 +1,9 @@
+import CarImageCarousel from '@/components/cars/CarImageCarousel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { fetchCars } from '@/lib/cars';
 import { CAR_COLOR_SWATCH, type CarColor } from '@/lib/cars-shared';
-import { fetchCars, getCars } from '@/lib/cars';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
-import CarImageCarousel from '@/components/cars/CarImageCarousel';
 import { Luggage, User } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';

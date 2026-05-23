@@ -74,6 +74,10 @@ export function useCreateSubmitHandler({
   });
   const shouldAskForFlightNumbers = React.useCallback(
     (values: RentFormResolvedValues) => {
+      if (values.hasQuoteAccommodation) {
+        return false;
+      }
+
       const arrival =
         typeof values.delivery?.arrivalFlight === 'string'
           ? values.delivery.arrivalFlight.trim()

@@ -47,6 +47,8 @@ export const mergeQuoteIntoValues = (
     locale: values.locale ?? quote.locale ?? values.locale,
     carId: values.carId ?? quote.carId ?? values.carId,
     quoteId: values.quoteId ?? quote.id ?? values.quoteId,
+    hasQuoteAccommodation:
+      values.hasQuoteAccommodation ?? Boolean(quote.accommodationId),
     rentId: values.rentId,
     cars:
       typeof values.cars === 'string' && values.cars.trim().length > 0

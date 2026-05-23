@@ -65,7 +65,7 @@ export async function generateStaticParams(): Promise<PageParams[]> {
     cars.map((car) => ({
       locale,
       id: car.id,
-    }))
+    })),
   );
 }
 
@@ -102,7 +102,7 @@ export default async function RentPage({
   }
 
   const pickSingleValue = (
-    value: string | string[] | undefined
+    value: string | string[] | undefined,
   ): string | undefined => (Array.isArray(value) ? value[0] : value);
   const rentIdRaw = pickSingleValue(resolvedSearchParams?.rentId);
   let fallbackAction: string | undefined;
@@ -249,9 +249,7 @@ export default async function RentPage({
       ? (() => {
           const offers = quote.bookingRequestData;
           const safeIndex =
-            Number.isFinite(offerIndex) && offerIndex >= 0
-              ? offerIndex
-              : 0;
+            Number.isFinite(offerIndex) && offerIndex >= 0 ? offerIndex : 0;
           const selected = offers[safeIndex] ?? offers[0] ?? null;
           return {
             ...quote,
@@ -277,6 +275,8 @@ export default async function RentPage({
     }
     return true;
   })();
+
+  console.log(normalizedQuote);
 
   return (
     <NoSSR>

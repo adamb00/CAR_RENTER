@@ -3,9 +3,16 @@ import type { Metadata } from 'next';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
 import { getCars } from '@/lib/cars';
+import { filterCarsByAccommodationPriceList } from '@/lib/default-accommodation-prices';
+import { prisma } from '@/lib/prisma';
 
 type PageParams = { locale: string };
-type SearchParams = { carId?: string; name?: string; email?: string };
+type SearchParams = {
+  carId?: string;
+  name?: string;
+  email?: string;
+  accommodationId?: string;
+};
 
 export async function generateMetadata({
   params,
@@ -29,7 +36,7 @@ export default async function ContactPage({
   params: Promise<PageParams>;
   searchParams?: Promise<SearchParams>;
 }) {
-  const { locale = 'hu' } = await params;
+  const { locale = 'en' } = await params;
   const resolvedSearchParams = (await searchParams) ?? {};
   const resolvedLocale = resolveLocale(locale);
   const t = await getTranslations({
@@ -37,13 +44,35 @@ export default async function ContactPage({
     namespace: 'Contact',
   });
 
-  const availableCars = (await getCars()).map((car) => ({
+  const allCars = (await getCars()).map((car) => ({
     id: car.id,
     name: `${car.manufacturer} ${car.model}`.trim(),
     seats: car.seats,
     smallLuggage: car.smallLuggage,
     largeLuggage: car.largeLuggage,
   }));
+
+  const accommodation = await prisma.accommodations.findFirst({
+    where: { id: resolvedSearchParams.accommodationId },
+    select: {
+      id: true,
+      name: true,
+      city: true,
+      street: true,
+      country: true,
+      houseNumber: true,
+      postalCode: true,
+      island: true,
+    },
+  });
+
+  const hasAccommodationSearchParam =
+    typeof resolvedSearchParams.accommodationId === 'string' &&
+    resolvedSearchParams.accommodationId.trim().length > 0;
+  const availableCars =
+    hasAccommodationSearchParam && accommodation
+      ? filterCarsByAccommodationPriceList(allCars)
+      : allCars;
 
   const selectedCar =
     resolvedSearchParams.carId && resolvedSearchParams.carId.trim()
@@ -79,6 +108,7 @@ export default async function ContactPage({
       </div>
       <QuoteRequestForm
         locale={resolvedLocale}
+        accommodation={accommodation}
         selectedCar={
           selectedCar
             ? { id: selectedCar.id, name: selectedCar.name }

@@ -33,7 +33,7 @@ export type ResidentCardUpload = {
 };
 
 export function inferResidentCardMimeType(
-  fileName: string
+  fileName: string,
 ): ResidentCardMimeType | null {
   const normalizedName = fileName.trim().toLowerCase();
   if (normalizedName.endsWith('.pdf')) return 'application/pdf';
@@ -46,7 +46,7 @@ export function inferResidentCardMimeType(
 
 export function normalizeResidentCardMimeType(
   type: string | undefined,
-  fileName: string
+  fileName: string,
 ): ResidentCardMimeType | null {
   if (
     type &&
@@ -74,4 +74,14 @@ export type QuoteRequestFormProps = {
     name?: string;
     email?: string;
   };
+  accommodation?: {
+    id: string;
+    name?: string;
+    city?: string;
+    country?: string;
+    street?: string;
+    houseNumber?: string;
+    postalCode?: string;
+    island?: string;
+  } | null;
 };

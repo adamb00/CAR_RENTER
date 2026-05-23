@@ -49,10 +49,11 @@ export type ContactQuoteRecord = {
   };
   status: ContactStatus;
   bookingRequestData?: BookingRequestRecord | BookingRequestRecord[];
+  accommodationId?: string | null;
 };
 
 export const parseStoredResidentCard = (
-  value: string[] | null | undefined
+  value: string[] | null | undefined,
 ): ResidentCardUpload | undefined => {
   const storedValue = Array.isArray(value) ? value[0] : undefined;
   if (typeof storedValue !== 'string' || storedValue.trim().length === 0) {

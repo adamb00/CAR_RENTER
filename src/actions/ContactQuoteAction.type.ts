@@ -1,6 +1,8 @@
 import type { ResidentCardUpload } from '@/components/contact/quote.types';
 
 export type ContactQuotePayload = {
+  quoteComeFromAccommodation: boolean;
+  accommodationID: string | null;
   locale: string;
   name: string;
   email: string;

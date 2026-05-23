@@ -7,34 +7,36 @@ datasource db {
 }
 
 model ContactQuote {
-  id                 String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id                 String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   locale             String
   name               String
   email              String
   phone              String
-  preferredChannel   String        @map("preferredchannel")
-  rentalStart        DateTime?     @map("rentalstart") @db.Date
-  rentalEnd          DateTime?     @map("rentalend") @db.Date
-  arrivalFlight      String?       @map("arrivalflight")
-  departureFlight    String?       @map("departureflight")
-  partySize          String?       @map("partysize")
+  preferredChannel   String          @map("preferredchannel")
+  rentalStart        DateTime?       @map("rentalstart") @db.Date
+  rentalEnd          DateTime?       @map("rentalend") @db.Date
+  arrivalFlight      String?         @map("arrivalflight")
+  departureFlight    String?         @map("departureflight")
+  partySize          String?         @map("partysize")
   children           String?
-  carId              String?       @map("carid")
-  carName            String?       @map("carname")
-  status             String        @default("new")
+  carId              String?         @map("carid")
+  carName            String?         @map("carname")
+  status             String          @default("new")
   updated            String?
-  createdAt          DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @map("createdAt") @db.Timestamptz(6)
-  updatedAt          DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
-  humanId            String?       @unique
-  extras             String[]      @map("extras")
+  createdAt          DateTime        @default(dbgenerated("timezone('utc'::text, now())")) @map("createdAt") @db.Timestamptz(6)
+  updatedAt          DateTime        @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updatedAt") @db.Timestamptz(6)
+  humanId            String?         @unique
+  extras             String[]        @map("extras")
   delivery           Json?
   bookingRequestData Json?
-  rentalDays         Int?          @map("rentaldays")
-  offerAccepted      Int?          @map("offerAccepted")
+  rentalDays         Int?            @map("rentaldays")
+  offerAccepted      Int?            @map("offerAccepted")
   signerName         String?
-  offerSent          DateTime?     @db.Date
+  offerSent          DateTime?       @db.Date
   cars               String?
   residenceCard      String[]
+  accommodationId    String?
+  Accommodations     Accommodations? @relation(fields: [accommodationId], references: [id])
   rentRequests       RentRequest[]
 
   @@index([createdAt], map: "idx_contactquotes_created_at")
@@ -64,12 +66,14 @@ model RentRequest {
   assignedFleetVehicleId  String?
   signerName              String?
   renterId                String?                   @db.Uuid
+  accommodationId         String?
   BookingContractInvites  BookingContractInvites[]
   BookingContracts        BookingContracts?
   BookingDeliveryDetails  BookingDeliveryDetails?
   BookingFleetAssignments BookingFleetAssignments[]
   BookingHandoverCosts    BookingHandoverCosts[]
   BookingPricingSnapshots BookingPricingSnapshots?
+  Accommodations          Accommodations?           @relation(fields: [accommodationId], references: [id])
   contactQuote            ContactQuote?             @relation(fields: [quoteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   Renters                 Renters?                  @relation(fields: [renterId], references: [id])
   VehicleHandovers        VehicleHandovers[]
@@ -140,6 +144,7 @@ model Users {
   name          String?    @default("NULL")
   role          Role       @default(ADMIN)
   signatureData String?    @default("NULL")
+  slackUserId   String?    @default("NULL")
   Accounts      Accounts[]
 }
 
@@ -250,14 +255,14 @@ model BookingDeliveryDetails {
 
 model BookingHandoverCosts {
   id                      String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  bookingId               String                   @db.Uuid
+  bookingId               String?                  @db.Uuid
   direction               HandoverDirection?
   costType                HandoverCostType
   amount                  Decimal                  @db.Decimal(12, 2)
   createdAt               DateTime                 @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
   updatedAt               DateTime                 @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
   customCostTypeSlug      String?                  @db.VarChar(64)
-  RentRequests            RentRequest              @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  RentRequests            RentRequest?             @relation(fields: [bookingId], references: [id], onDelete: Cascade)
   HandoverCustomCostTypes HandoverCustomCostTypes? @relation(fields: [customCostTypeSlug], references: [slug], onDelete: Restrict)
 
   @@index([bookingId], map: "idx_booking_handover_cost_booking_id")
@@ -351,6 +356,59 @@ model HandoverCustomCostTypes {
   @@index([category, sortOrder], map: "idx_handover_cost_type_category_sort")
 }
 
+model Tasks {
+  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title             String
+  description       String?
+  dueDate           DateTime?
+  status            TaskStatus          @default(PENDING)
+  createdBy         String?
+  assignedTo        String?
+  createdAt         DateTime            @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
+  updatedAt         DateTime            @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
+  priority          Int                 @default(5)
+  assignedCar       String?
+  TaskNotifications TaskNotifications[]
+}
+
+model TaskNotifications {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  taskId          String    @db.Uuid
+  recipientUserId String
+  title           String
+  description     String
+  href            String
+  tone            String    @default("info")
+  read            Boolean   @default(false)
+  readAt          DateTime? @db.Timestamptz(6)
+  metadata        Json?
+  createdAt       DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
+  updatedAt       DateTime  @db.Timestamptz(6)
+  Tasks           Tasks     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId], map: "idx_task_notifications_task")
+  @@index([recipientUserId, read, createdAt], map: "idx_task_notifications_user_read_created")
+}
+
+model Accommodations {
+  id            String         @id
+  name          String
+  qrCode        String?        @default("NULL")
+  email         String?        @default("NULL")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime
+  island        String
+  city          String
+  country       String
+  houseNumber   String
+  postalCode    String
+  street        String
+  quoteCount    Int            @default(0)
+  rentCount     Int            @default(0)
+  ContactQuotes ContactQuote[]
+  RentRequests  RentRequest[]
+}
+
 enum CarBodyType {
   sedan
   hatchback
@@ -403,4 +461,11 @@ enum Role {
 enum HandoverCostCategory {
   expense
   deduction
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
 }

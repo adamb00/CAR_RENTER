@@ -31,7 +31,6 @@ export default function QuoteDelivery({
   form: UseFormReturn<QuoteRequestValues>;
   placesReady: boolean;
 }) {
-  const t = useTranslations('Contact');
   const locale = useLocale();
   const tRent = useTranslations('RentForm');
   const accommodationNoResultLabel = locale.toLowerCase().startsWith('hu')
@@ -412,7 +411,7 @@ export default function QuoteDelivery({
                         </PlacesAutocomplete>
                       ) : (
                         <Input
-                          placeholder={t(
+                          placeholder={tRent(
                             'sections.drivers.fields.postalCode.placeholder',
                           )}
                           value={postalValue}
