@@ -2,8 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import { QuoteRequestForm } from '@/components/contact/QuoteRequestForm';
-import { getCars } from '@/lib/cars';
-import { filterCarsByAccommodationPriceList } from '@/lib/default-accommodation-prices';
 import { prisma } from '@/lib/prisma';
 
 type PageParams = { locale: string };
@@ -13,6 +11,9 @@ type SearchParams = {
   email?: string;
   accommodationId?: string;
 };
+
+const hasAccommodationDailyPrices = (value: unknown): boolean =>
+  Array.isArray(value) && value.length > 0;
 
 export async function generateMetadata({
   params,
@@ -44,12 +45,26 @@ export default async function ContactPage({
     namespace: 'Contact',
   });
 
-  const allCars = (await getCars()).map((car) => ({
+  const cars = await prisma.car.findMany({
+    orderBy: [{ manufacturer: 'asc' }, { model: 'asc' }],
+    select: {
+      id: true,
+      manufacturer: true,
+      model: true,
+      seats: true,
+      smallLuggage: true,
+      largeLuggage: true,
+      accommodationPrices: true,
+    },
+  });
+
+  const allCars = cars.map((car) => ({
     id: car.id,
     name: `${car.manufacturer} ${car.model}`.trim(),
     seats: car.seats,
     smallLuggage: car.smallLuggage,
     largeLuggage: car.largeLuggage,
+    hasAccommodationPrices: hasAccommodationDailyPrices(car.accommodationPrices),
   }));
 
   const accommodation = await prisma.accommodations.findFirst({
@@ -71,7 +86,7 @@ export default async function ContactPage({
     resolvedSearchParams.accommodationId.trim().length > 0;
   const availableCars =
     hasAccommodationSearchParam && accommodation
-      ? filterCarsByAccommodationPriceList(allCars)
+      ? allCars.filter((car) => car.hasAccommodationPrices)
       : allCars;
 
   const selectedCar =
@@ -114,7 +129,7 @@ export default async function ContactPage({
             ? { id: selectedCar.id, name: selectedCar.name }
             : undefined
         }
-        availableCars={availableCars}
+        availableCars={availableCars.map(({ hasAccommodationPrices, ...car }) => car)}
         prefill={contactPrefill}
       />
     </>
