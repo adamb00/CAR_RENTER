@@ -18,7 +18,7 @@ import {
 import { ContactQuotePayload } from './ContactQuoteAction.type';
 
 type EmailTranslations = Awaited<ReturnType<typeof getTranslations>>;
-const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F';
+const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0AU6QV7Y4W';
 
 const parseDateValue = (value?: string | null): Date | null => {
   if (!value) return null;
