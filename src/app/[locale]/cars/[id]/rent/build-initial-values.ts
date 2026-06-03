@@ -6,6 +6,16 @@ import type { RentFormValues } from './rent.types';
 import { createEmptyDriver } from '@/hooks/useDrivers';
 import { parsePositiveInt, splitName } from './helpers';
 
+const toDeliveryPlaceType = (
+  value?: string | null,
+): 'accommodation' | 'airport' | 'office' | undefined => {
+  if (value === 'accommodation' || value === 'airport' || value === 'office') {
+    return value;
+  }
+
+  return undefined;
+};
+
 export const buildInitialValues = (
   quote: ContactQuoteRecord | null | undefined,
   locale: string,
@@ -24,6 +34,7 @@ export const buildInitialValues = (
       : [];
   const driver = createEmptyDriver();
   const { firstName, lastName } = splitName(quote?.name);
+  const quoteDelivery = quote?.delivery;
 
   return {
     locale,
@@ -70,18 +81,18 @@ export const buildInitialValues = (
     },
     delivery: {
       same: false,
-      placeType: undefined,
-      locationName: '',
+      placeType: toDeliveryPlaceType(quoteDelivery?.placeType),
+      locationName: quoteDelivery?.locationName ?? '',
       arrivalHour: '',
       arrivalMinute: '',
       arrivalFlight: quote?.arrivalFlight ?? '',
       departureFlight: quote?.departureFlight ?? '',
       address: {
-        country: '',
-        postalCode: '',
-        city: '',
-        street: '',
-        doorNumber: '',
+        country: quoteDelivery?.address?.country ?? '',
+        postalCode: quoteDelivery?.address?.postalCode ?? '',
+        city: quoteDelivery?.address?.city ?? '',
+        street: quoteDelivery?.address?.street ?? '',
+        doorNumber: quoteDelivery?.address?.doorNumber ?? '',
       },
     },
     tax: {
