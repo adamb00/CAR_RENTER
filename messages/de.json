@@ -1354,6 +1354,7 @@
         "carType": {
           "label": "Autotyp",
           "placeholder": "Autotyp auswählen",
+          "required": "Bitte wähle einen Autotyp für Unterkunftsanfragen",
           "option": "{carName} • {seats} Sitzplätze • {smallLuggage} kleine Koffer • {largeLuggage} große Koffer"
         }
       },

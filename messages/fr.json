@@ -1354,6 +1354,7 @@
         "carType": {
           "label": "Type de voiture",
           "placeholder": "Sélectionnez un type de voiture",
+          "required": "Veuillez choisir un type de voiture pour les demandes via un hébergement",
           "option": "{carName} • {seats} places • {smallLuggage} petites valises • {largeLuggage} grandes valises"
         }
       },

@@ -1354,6 +1354,7 @@
         "carType": {
           "label": "Autótípus",
           "placeholder": "Válassz autótípust",
+          "required": "Szállásos ajánlatkéréshez válassz autótípust",
           "option": "{carName} • {seats} férőhely • {smallLuggage} kisbőrönd • {largeLuggage} nagybőrönd"
         }
       },

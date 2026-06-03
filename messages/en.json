@@ -1354,6 +1354,7 @@
         "carType": {
           "label": "Car type",
           "placeholder": "Select a car type",
+          "required": "Please select a car type for accommodation quote requests",
           "option": "{carName} • {seats, plural, one {# seat} other {# seats}} • {smallLuggage, plural, one {# small suitcase} other {# small suitcases}} • {largeLuggage, plural, one {# large suitcase} other {# large suitcases}}"
         }
       },

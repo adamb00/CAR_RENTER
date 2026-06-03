@@ -1354,6 +1354,7 @@
         "carType": {
           "label": "Biltype",
           "placeholder": "Velg biltype",
+          "required": "Velg biltype for forespørsler via overnatting",
           "option": "{carName} • {seats} seter • {smallLuggage} små kofferter • {largeLuggage} store kofferter"
         }
       },

@@ -171,6 +171,16 @@ export const buildQuoteRequestSchema = ({
       const requiresAddress = placeType === 'accommodation';
 
       if (requiresAddress) {
+        const selectedCarId =
+          typeof val.carId === 'string' ? val.carId.trim() : '';
+        if (selectedCarId.length === 0) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: t('form.fields.carType.required'),
+            path: ['carType'],
+          });
+        }
+
         const address = val.delivery?.address ?? {};
         (['country', 'postalCode', 'city'] as const).forEach((key) => {
           const raw = address[key];

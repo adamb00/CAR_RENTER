@@ -1354,6 +1354,7 @@
         "carType": {
           "label": "Typ auta",
           "placeholder": "Vyberte typ auta",
+          "required": "Pri dopyte cez ubytovanie vyberte typ auta",
           "option": "{carName} • {seats} miest • {smallLuggage} malé kufre • {largeLuggage} veľké kufre"
         }
       },

@@ -1723,6 +1723,7 @@
         "carType": {
           "label": "Tipo de coche",
           "placeholder": "Selecciona un tipo de coche",
+          "required": "Selecciona un tipo de coche para solicitudes desde alojamiento",
           "option": "{carName} • {seats} plazas • {smallLuggage} maletas pequeñas • {largeLuggage} maletas grandes"
         }
       },

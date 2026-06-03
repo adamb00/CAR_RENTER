@@ -1349,6 +1349,7 @@
         "carType": {
           "label": "Typ auta",
           "placeholder": "Vyberte typ auta",
+          "required": "Pro poptávky přes ubytování vyberte typ auta",
           "option": "{carName} • {seats} míst • {smallLuggage} malé kufry • {largeLuggage} velké kufry"
         }
       },
