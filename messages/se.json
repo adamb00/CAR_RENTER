@@ -2038,6 +2038,7 @@
       "endTooLate": "Slutdatum kan högst vara inom ett år",
       "deliveryPlaceTypeRequired": "Välj upphämtningsplats",
       "deliveryFieldRequired": "Obligatoriskt fält",
+      "sameDayAccommodationPickupLeadTime": "För upphämtning idag måste bokningen skickas minst 2 timmar före upphämtning",
       "invalidAdults": "Minst en vuxen krävs",
       "adultsInvalid": "Ange antalet vuxna passagerare"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "För att boka måste du godkänna de allmänna villkoren"
+        },
+        "insurance": {
+          "required": "Heltäckande försäkring krävs för bokningar via boende"
         },
         "paymentMethod": {
           "required": "Välj betalningsmetod"

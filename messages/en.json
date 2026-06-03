@@ -2038,6 +2038,7 @@
       "endTooLate": "The end date can be at most one year from now",
       "deliveryPlaceTypeRequired": "Please select the pickup location",
       "deliveryFieldRequired": "Required field",
+      "sameDayAccommodationPickupLeadTime": "For pickup today, the booking must be submitted at least 2 hours before pickup",
       "invalidAdults": "At least one adult is required",
       "adultsInvalid": "Please enter the number of adult passengers"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "You must accept the General Terms and Conditions to complete the booking"
+        },
+        "insurance": {
+          "required": "Full coverage insurance is required for accommodation bookings"
         },
         "paymentMethod": {
           "required": "Please select a payment method"

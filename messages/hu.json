@@ -2038,6 +2038,7 @@
       "endTooLate": "A záródátum legfeljebb egy éven belül lehet",
       "deliveryPlaceTypeRequired": "Válaszd ki az átvétel helyét",
       "deliveryFieldRequired": "Kötelező mező",
+      "sameDayAccommodationPickupLeadTime": "Mai átvétel esetén a foglalást legalább 2 órával az átvétel előtt kell leadni",
       "invalidAdults": "Legalább egy felnőtt szükséges",
       "adultsInvalid": "Kérjük add meg a felnőtt utasok számát"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "A foglaláshoz el kell fogadnod az Általános Szerződési Feltételeket"
+        },
+        "insurance": {
+          "required": "Szállásos foglalás esetén a teljes körű biztosítás kötelező"
         },
         "paymentMethod": {
           "required": "A fizetési mód kiválasztása kötelező"

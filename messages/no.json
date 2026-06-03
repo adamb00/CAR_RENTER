@@ -2038,6 +2038,7 @@
       "endTooLate": "Sluttdato kan maksimalt være innen ett år",
       "deliveryPlaceTypeRequired": "Velg hentested",
       "deliveryFieldRequired": "Påkrevd felt",
+      "sameDayAccommodationPickupLeadTime": "Ved henting i dag må bestillingen sendes minst 2 timer før henting",
       "invalidAdults": "Minst én voksen er nødvendig",
       "adultsInvalid": "Oppgi antall voksne passasjerer"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "For å fullføre bestillingen må du godta de generelle vilkårene"
+        },
+        "insurance": {
+          "required": "Full kaskoforsikring er påkrevd for bestillinger via overnatting"
         },
         "paymentMethod": {
           "required": "Velg betalingsmåte"

@@ -2126,6 +2126,7 @@
       "endTooLate": "La fecha de fin debe ser dentro de un año",
       "deliveryPlaceTypeRequired": "Selecciona el lugar de recogida",
       "deliveryFieldRequired": "Campo obligatorio",
+      "sameDayAccommodationPickupLeadTime": "Para recogidas hoy, la reserva debe enviarse al menos 2 horas antes de la recogida",
       "invalidAdults": "Se requiere al menos un adulto",
       "adultsInvalid": "Por favor, indica cuántos adultos viajan"
     },
@@ -2298,6 +2299,9 @@
         },
         "terms": {
           "required": "Debes aceptar los términos y condiciones"
+        },
+        "insurance": {
+          "required": "El seguro a todo riesgo es obligatorio para reservas desde alojamiento"
         },
         "paymentMethod": {
           "required": "Selecciona el método de pago"

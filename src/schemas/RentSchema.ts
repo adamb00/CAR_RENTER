@@ -46,6 +46,8 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     deliveryFieldRequired: 'Kötelező mező',
     arrivalFlightRequired: 'Add meg az érkező járatszámot',
     departureFlightRequired: 'Add meg a visszaút járatszámát',
+    sameDayAccommodationPickupLeadTime:
+      'Mai átvétel esetén a foglalást legalább 2 órával az átvétel előtt kell leadni',
   },
   fields: {
     rentalPeriod: {
@@ -216,6 +218,9 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
         required:
           'A foglalás véglegesítéséhez el kell fogadnod az Általános Szerződési Feltételeket',
       },
+      insurance: {
+        required: 'Szállásos foglalás esetén a teljes körű biztosítás kötelező',
+      },
       paymentMethod: {
         required: 'A fizetési mód kiválasztása kötelező',
       },
@@ -301,6 +306,11 @@ function parseComparableDate(value: string): Date | null {
   fallback.setHours(0, 0, 0, 0);
   return fallback;
 }
+
+const isSameCalendarDay = (left: Date, right: Date): boolean =>
+  left.getFullYear() === right.getFullYear() &&
+  left.getMonth() === right.getMonth() &&
+  left.getDate() === right.getDate();
 
 const defaultTranslate: RentSchemaTranslate = (path) =>
   lookupMessage(DEFAULT_RENT_SCHEMA_MESSAGES, path);
@@ -578,7 +588,10 @@ export function createRentSchema(
       }),
     })
     .superRefine(
-      ({ rentalPeriod, delivery, children, hasQuoteAccommodation }, ctx) => {
+      (
+        { rentalPeriod, delivery, children, hasQuoteAccommodation, consents },
+        ctx,
+      ) => {
       const start = parseComparableDate(rentalPeriod.startDate);
       const end = parseComparableDate(rentalPeriod.endDate);
 
@@ -621,7 +634,8 @@ export function createRentSchema(
       }
 
       const placeType = delivery?.placeType;
-      const shouldRequireTravelFields = !Boolean(hasQuoteAccommodation);
+      const hasAccommodationQuote = Boolean(hasQuoteAccommodation);
+      const shouldRequireTravelFields = !hasAccommodationQuote;
       const locationName = delivery?.locationName;
       const address = delivery?.address ?? {};
       const arrivalHour =
@@ -640,6 +654,14 @@ export function createRentSchema(
         typeof delivery?.departureFlight === 'string'
           ? delivery.departureFlight.trim()
           : '';
+
+      if (hasAccommodationQuote && consents.insurance !== true) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: message('fields.consents.insurance.required'),
+          path: ['consents', 'insurance'],
+        });
+      }
 
       if (!placeType) {
         ctx.addIssue({
@@ -695,6 +717,50 @@ export function createRentSchema(
             message: message('fields.delivery.departureFlight.required'),
             path: ['delivery', 'departureFlight'],
           });
+        }
+      }
+
+      if (hasAccommodationQuote && start && isSameCalendarDay(start, today)) {
+        const hasValidArrivalHour = /^(?:[01]\d|2[0-3])$/.test(arrivalHour);
+        const hasValidArrivalMinute =
+          /^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(
+            arrivalMinute,
+          );
+
+        if (!hasValidArrivalHour) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('errors.deliveryFieldRequired'),
+            path: ['delivery', 'arrivalHour'],
+          });
+        }
+
+        if (!hasValidArrivalMinute) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('errors.deliveryFieldRequired'),
+            path: ['delivery', 'arrivalMinute'],
+          });
+        }
+
+        if (hasValidArrivalHour && hasValidArrivalMinute) {
+          const pickupAt = new Date(start);
+          pickupAt.setHours(Number(arrivalHour), Number(arrivalMinute), 0, 0);
+
+          if (pickupAt.getTime() - Date.now() < 2 * 60 * 60 * 1000) {
+            const issue = {
+              code: z.ZodIssueCode.custom,
+              message: message('errors.sameDayAccommodationPickupLeadTime'),
+            };
+            ctx.addIssue({
+              ...issue,
+              path: ['delivery', 'arrivalHour'],
+            });
+            ctx.addIssue({
+              ...issue,
+              path: ['delivery', 'arrivalMinute'],
+            });
+          }
         }
       }
 

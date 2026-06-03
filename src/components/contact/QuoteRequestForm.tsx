@@ -208,7 +208,11 @@ export function QuoteRequestForm({
             <QuoteContact form={form} />
 
             <div className='grid grid-cols-2 gap-4'>
-              <QuoteRentalStart form={form} locale={locale} />
+              <QuoteRentalStart
+                form={form}
+                locale={locale}
+                allowToday={Boolean(accommodation)}
+              />
 
               <QuoteRentalDays form={form} />
             </div>

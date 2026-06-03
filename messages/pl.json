@@ -2038,6 +2038,7 @@
       "endTooLate": "Data zakończenia może być maksymalnie w ciągu roku",
       "deliveryPlaceTypeRequired": "Wybierz miejsce odbioru",
       "deliveryFieldRequired": "Pole wymagane",
+      "sameDayAccommodationPickupLeadTime": "Przy odbiorze dzisiaj rezerwację trzeba wysłać co najmniej 2 godziny przed odbiorem",
       "invalidAdults": "Wymagana jest co najmniej jedna osoba dorosła",
       "adultsInvalid": "Podaj liczbę dorosłych pasażerów"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "Aby dokonać rezerwacji, musisz zaakceptować Ogólne Warunki"
+        },
+        "insurance": {
+          "required": "Pełne ubezpieczenie jest wymagane przy rezerwacjach przez zakwaterowanie"
         },
         "paymentMethod": {
           "required": "Wybierz metodę płatności"

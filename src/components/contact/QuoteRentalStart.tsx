@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/form';
 import { DateRangePicker } from '../ui/date-range-picker';
 import { formatDateValue, parseDateValue } from '@/lib/format';
-import { oneYearAhead, tomorrow } from '@/lib/constants';
+import { oneYearAhead, today, tomorrow } from '@/lib/constants';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
 import { enUS } from 'date-fns/locale';
@@ -19,9 +19,11 @@ import { enUS } from 'date-fns/locale';
 export default function QuoteRentalStart({
   form,
   locale,
+  allowToday = false,
 }: {
   form: UseFormReturn<QuoteRequestValues>;
   locale: string;
+  allowToday?: boolean;
 }) {
   const t = useTranslations('Contact');
   const rentalStartValue = form.watch('rentalStart');
@@ -51,7 +53,7 @@ export default function QuoteRentalStart({
                 showCompare={false}
                 initialDateFrom={parseDateValue(rentalStartValue)}
                 initialDateTo={parseDateValue(rentalEndValue)}
-                minDate={tomorrow}
+                minDate={allowToday ? today : tomorrow}
                 maxDate={oneYearAhead}
                 locale={dateLocale}
                 calendarLocale={calendarLocale}

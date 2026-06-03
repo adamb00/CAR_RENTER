@@ -2038,6 +2038,7 @@
       "endTooLate": "Data de sfârșit poate fi cel mult peste un an",
       "deliveryPlaceTypeRequired": "Selectează locul de preluare",
       "deliveryFieldRequired": "Câmp obligatoriu",
+      "sameDayAccommodationPickupLeadTime": "Pentru preluarea de astăzi, rezervarea trebuie trimisă cu cel puțin 2 ore înainte de preluare",
       "invalidAdults": "Este necesar cel puțin un adult",
       "adultsInvalid": "Te rugăm să introduci numărul pasagerilor adulți"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "Pentru rezervare trebuie să accepți Termenii și Condițiile Generale"
+        },
+        "insurance": {
+          "required": "Asigurarea completă este obligatorie pentru rezervările prin cazare"
         },
         "paymentMethod": {
           "required": "Selectați metoda de plată"

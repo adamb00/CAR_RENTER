@@ -276,8 +276,6 @@ export default async function RentPage({
     return true;
   })();
 
-  console.log(normalizedQuote);
-
   return (
     <NoSSR>
       <RentPageClient

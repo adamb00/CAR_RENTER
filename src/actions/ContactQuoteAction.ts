@@ -10,7 +10,10 @@ import { getTranslations } from 'next-intl/server';
 import { getNextHumanId } from '@/lib/humanId';
 import { CONTACT_STATUS_NEW } from '@/lib/requestStatus';
 import { recordNotification } from '@/lib/notifications';
-import { sendSlackDirectMessage } from '@/lib/slack';
+import {
+  sendSlackDirectMessage,
+  triggerQuoteSendEmailSlackInteraction,
+} from '@/lib/slack';
 import {
   normalizeResidentCardMimeType,
   RESIDENT_CARD_MAX_SIZE_BYTES,
@@ -605,6 +608,17 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
     });
 
     if (payload.quoteComeFromAccommodation) {
+      if (quoteId) {
+        try {
+          await triggerQuoteSendEmailSlackInteraction({ quoteId });
+        } catch (autoOfferError) {
+          console.error('Failed to trigger automatic accommodation quote', {
+            quoteId,
+            error: autoOfferError,
+          });
+        }
+      }
+
       try {
         const slackDetailsText = buildSlackQuoteDetailsText({
           tEmail,
@@ -615,49 +629,20 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
           carInfo,
         });
 
-        const slackBlocks =
-          quoteId && quoteId.trim().length > 0
-            ? [
-                {
-                  type: 'section',
-                  text: {
-                    type: 'mrkdwn',
-                    text: slackDetailsText,
-                  },
-                },
-                {
-                  type: 'actions',
-                  elements: [
-                    {
-                      type: 'button',
-                      action_id: 'quote_send_email_auto_offer',
-                      text: {
-                        type: 'plain_text',
-                        text: 'Ajánlat email küldése',
-                        emoji: true,
-                      },
-                      style: 'primary',
-                      value: `quote_send_email:${quoteId}`,
-                    },
-                  ],
-                },
-              ]
-            : [
-                {
-                  type: 'section',
-                  text: {
-                    type: 'mrkdwn',
-                    text: slackDetailsText,
-                  },
-                },
-              ];
-
         await sendSlackDirectMessage({
           slackUserId: ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID,
-          text: `Új ajánlatkérés: ${payload.name} (${payload.email}) | ${formattedPeriod} ${
+          text: `Új ajánlatkérés érkezett: ${payload.name} (${payload.email}) | ${formattedPeriod} ${
             quoteId ?? 'n/a'
           }`,
-          blocks: slackBlocks,
+          blocks: [
+            {
+              type: 'section',
+              text: {
+                type: 'mrkdwn',
+                text: slackDetailsText,
+              },
+            },
+          ],
         });
       } catch (slackError) {
         console.error('Failed to send accommodation quote Slack alert', {

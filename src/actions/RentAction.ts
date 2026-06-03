@@ -9,6 +9,7 @@ import { sendMail } from '@/lib/mailer';
 import { recordNotification } from '@/lib/notifications';
 import { prisma } from '@/lib/prisma';
 import { appendRentUpdateLog } from '@/lib/rentUpdateLog';
+import { sendSlackDirectMessage } from '@/lib/slack';
 import {
   CONTACT_STATUS_QUOTE_ACCEPTED,
   RENT_STATUS_NEW,
@@ -41,6 +42,14 @@ const PRICING_FIELDS: (keyof PricingSnapshotInput)[] = [
   'tip',
 ];
 
+// const ACCOMMODATION_RENT_ALERT_SLACK_USER_ID = 'U0AU6QV7Y4W'; // ROBI
+const ACCOMMODATION_RENT_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F'; // ADAM
+
+type DeliveryAddressInput =
+  | NonNullable<RentFormValues['delivery']>['address']
+  | null
+  | undefined;
+
 const normalizeText = (value: unknown): string | null => {
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
@@ -50,6 +59,32 @@ const normalizeText = (value: unknown): string | null => {
 const normalizeEmail = (value: unknown): string | null => {
   const normalized = normalizeText(value);
   return normalized ? normalized.toLowerCase() : null;
+};
+
+const formatSlackValue = (value?: unknown): string => {
+  if (typeof value === 'number') {
+    return Number.isFinite(value) ? String(value) : 'n/a';
+  }
+  if (typeof value !== 'string') return 'n/a';
+
+  const trimmed = value.trim();
+  return trimmed && trimmed.length > 0 ? trimmed : 'n/a';
+};
+
+const formatSlackAddress = (address?: DeliveryAddressInput): string => {
+  const parts = [
+    address?.country,
+    address?.postalCode,
+    address?.city,
+    address?.street,
+    address?.doorNumber,
+  ]
+    .filter(
+      (segment) => typeof segment === 'string' && segment.trim().length > 0,
+    )
+    .map((segment) => (segment as string).trim());
+
+  return parts.length > 0 ? parts.join(', ') : 'n/a';
 };
 
 const normalizeBoolean = (value: unknown): boolean | null => {
@@ -69,10 +104,84 @@ const hasAnyValue = (values: Array<string | boolean | null>): boolean =>
       (typeof value === 'string' && value.length > 0) || value === true,
   );
 
-type DeliveryAddressInput =
-  | NonNullable<RentFormValues['delivery']>['address']
-  | null
-  | undefined;
+const buildAccommodationRentSlackText = ({
+  rentId,
+  humanId,
+  quoteId,
+  accommodationName,
+  formData,
+  period,
+  carName,
+  pricingSnapshot,
+}: {
+  rentId: string;
+  humanId: string | null;
+  quoteId?: string | null;
+  accommodationName?: string | null;
+  formData: RentFormValues;
+  period: string;
+  carName: string;
+  pricingSnapshot: PricingSnapshotInput | null | undefined;
+}) => {
+  const primaryDriver = formData.driver?.[0];
+  const driverName = [
+    primaryDriver?.firstName_1,
+    primaryDriver?.lastName_1,
+  ]
+    .filter((value) => typeof value === 'string' && value.trim().length > 0)
+    .join(' ');
+  const delivery = formData.delivery;
+  const pricingLines = pricingSnapshot
+    ? [
+        `*Bérleti díj:* ${formatSlackValue(pricingSnapshot.rentalFee)}`,
+        `*Biztosítás:* ${formatSlackValue(pricingSnapshot.insurance)}`,
+        `*Kaució:* ${formatSlackValue(pricingSnapshot.deposit)}`,
+        `*Kiszállítás díja:* ${formatSlackValue(pricingSnapshot.deliveryFee)}`,
+        `*Extrák díja:* ${formatSlackValue(pricingSnapshot.extrasFee)}`,
+      ]
+    : ['*Árazás:* n/a'];
+
+  return [
+    '*Új szállásos foglalás érkezett*',
+    '',
+    '*Azonosítók*',
+    `*Foglalás ID:* ${rentId}`,
+    `*Human ID:* ${humanId ?? 'n/a'}`,
+    `*Quote ID:* ${formatSlackValue(quoteId)}`,
+    '',
+    '*Szállás*',
+    `*Szállás:* ${formatSlackValue(accommodationName)}`,
+    '',
+    '*Kapcsolat*',
+    `*Kapcsolattartó:* ${formatSlackValue(formData.contact?.name)}`,
+    `*Email:* ${formatSlackValue(formData.contact?.email)}`,
+    `*Telefon:* ${formatSlackValue(primaryDriver?.phoneNumber)}`,
+    `*Sofőr:* ${formatSlackValue(driverName)}`,
+    '',
+    '*Bérlés*',
+    `*Időszak:* ${period}`,
+    `*Napok száma:* ${formatSlackValue(formData.rentalDays)}`,
+    `*Autók száma:* ${formatSlackValue(formData.cars)}`,
+    `*Autó:* ${formatSlackValue(carName)}`,
+    `*Felnőttek:* ${formatSlackValue(formData.adults)}`,
+    `*Gyerekek:* ${formData.children?.length ?? 0}`,
+    `*Extrák:* ${
+      formData.extras && formData.extras.length > 0
+        ? formData.extras.join(', ')
+        : 'n/a'
+    }`,
+    '',
+    '*Átvétel*',
+    `*Hely típusa:* ${formatSlackValue(delivery?.placeType)}`,
+    `*Helyszín:* ${formatSlackValue(delivery?.locationName)}`,
+    `*Cím:* ${formatSlackAddress(delivery?.address)}`,
+    `*Érkező járat:* ${formatSlackValue(delivery?.arrivalFlight)}`,
+    `*Távozó járat:* ${formatSlackValue(delivery?.departureFlight)}`,
+    '',
+    '*Ajánlati árak*',
+    ...pricingLines,
+  ].join('\n');
+};
 
 const formatDeliveryAddressLine = (
   address?: DeliveryAddressInput,
@@ -652,6 +761,49 @@ export const RentAction = async (values: RentFormValues) => {
             'Failed to mark contact quote as done',
             updateQuoteError,
           );
+        }
+      }
+
+      if (quote?.accommodationId) {
+        try {
+          const slackText = buildAccommodationRentSlackText({
+            rentId: createdRent.id,
+            humanId,
+            quoteId: validatedFields.data.quoteId ?? null,
+            accommodationName:
+              quote.Accommodations?.name ??
+              validatedFields.data.delivery?.locationName ??
+              quote.accommodationId,
+            formData: validatedFields.data,
+            period: requestedPeriod,
+            carName:
+              quote.carName ??
+              quote.carId ??
+              validatedFields.data.carId ??
+              'n/a',
+            pricingSnapshot,
+          });
+
+          await sendSlackDirectMessage({
+            slackUserId: ACCOMMODATION_RENT_ALERT_SLACK_USER_ID,
+            text: `Új szállásos foglalás: ${validatedFields.data.contact.name} | ${requestedPeriod}`,
+            blocks: [
+              {
+                type: 'section',
+                text: {
+                  type: 'mrkdwn',
+                  text: slackText,
+                },
+              },
+            ],
+          });
+        } catch (slackError) {
+          console.error('Failed to send accommodation rent Slack alert', {
+            rentId: createdRent.id,
+            quoteId: validatedFields.data.quoteId ?? null,
+            accommodationId: quote.accommodationId,
+            error: slackError,
+          });
         }
       }
     } catch (error) {

@@ -12,6 +12,16 @@ const SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN;
 const SLACK_SIGNING_SECRET = process.env.SLACK_SIGNING_SECRET;
 const SLACK_CHAT_POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage';
 const SLACK_ACTION_VALUE_PREFIX = 'task_status:';
+const QUOTE_SEND_EMAIL_PREFIX = 'quote_send_email:';
+const DEFAULT_DEV_ADMIN_SLACK_INTERACTIONS_URL =
+  'http://localhost:3000/api/slack/interactions';
+const ADMIN_SLACK_INTERACTIONS_URL =
+  process.env.CAR_RENTER_ADMIN_SLACK_INTERACTIONS_URL ??
+  (process.env.NODE_ENV !== 'production'
+    ? DEFAULT_DEV_ADMIN_SLACK_INTERACTIONS_URL
+    : process.env.CAR_RENTER_ADMIN_URL
+      ? `${process.env.CAR_RENTER_ADMIN_URL.replace(/\/$/, '')}/api/slack/interactions`
+      : undefined);
 
 export const hasSlackConfig = () => Boolean(SLACK_BOT_TOKEN?.trim());
 export const hasSlackSigningSecret = () =>
@@ -194,4 +204,83 @@ export const sendSlackDirectMessage = async ({
       }`,
     );
   }
+};
+
+export const triggerQuoteSendEmailSlackInteraction = async ({
+  quoteId,
+}: {
+  quoteId: string;
+}) => {
+  const interactionsUrl = ADMIN_SLACK_INTERACTIONS_URL?.trim();
+  const signingSecret = SLACK_SIGNING_SECRET?.trim();
+  const normalizedQuoteId = quoteId.trim();
+
+  if (!interactionsUrl) {
+    throw new Error('Missing admin Slack interactions URL');
+  }
+
+  if (!signingSecret) {
+    throw new Error('Missing Slack signing secret');
+  }
+
+  if (!normalizedQuoteId) {
+    throw new Error('Missing quote ID');
+  }
+
+  const payload = {
+    type: 'block_actions',
+    user: {},
+    actions: [
+      {
+        action_id: 'quote_send_email_auto_offer',
+        value: `${QUOTE_SEND_EMAIL_PREFIX}${normalizedQuoteId}`,
+      },
+    ],
+  };
+  const rawBody = new URLSearchParams({
+    payload: JSON.stringify(payload),
+  }).toString();
+  const timestamp = String(Math.floor(Date.now() / 1000));
+  const signature = `v0=${createHmac('sha256', signingSecret)
+    .update(`v0:${timestamp}:${rawBody}`)
+    .digest('hex')}`;
+
+  const response = await fetch(interactionsUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'X-Slack-Request-Timestamp': timestamp,
+      'X-Slack-Signature': signature,
+    },
+    body: rawBody,
+  });
+
+  const text = await response.text();
+  let data: { error?: string; text?: string } | null = null;
+  try {
+    data = text
+      ? (JSON.parse(text) as { error?: string; text?: string })
+      : null;
+  } catch {
+    data = null;
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      data?.error ??
+        data?.text ??
+        `Admin Slack interactions HTTP error: ${response.status}`,
+    );
+  }
+
+  const responseText = data?.text?.trim();
+  if (
+    responseText &&
+    !responseText.toLowerCase().includes('sent') &&
+    !responseText.toLowerCase().includes('elküldve')
+  ) {
+    throw new Error(responseText);
+  }
+
+  return data;
 };

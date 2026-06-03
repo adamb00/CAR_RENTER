@@ -64,6 +64,65 @@ const formatDateValue = (date: Date): string => {
   return `${year}-${month}-${day}`;
 };
 
+const isSameCalendarDay = (left: Date, right: Date): boolean =>
+  left.getFullYear() === right.getFullYear() &&
+  left.getMonth() === right.getMonth() &&
+  left.getDate() === right.getDate();
+
+const buildPickupDateTime = (
+  date: Date,
+  hour: string,
+  minute: string,
+): Date | null => {
+  if (!/^(?:[01]\d|2[0-3])$/.test(hour)) return null;
+  if (!/^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(minute)) {
+    return null;
+  }
+
+  const pickupAt = new Date(date);
+  pickupAt.setHours(Number(hour), Number(minute), 0, 0);
+  return pickupAt;
+};
+
+const TIME_LABELS: Record<
+  string,
+  { arrival: string; pickup: string; hour: string; minute: string }
+> = {
+  hu: { arrival: 'Érkezés', pickup: 'Átvétel', hour: 'óra', minute: 'perc' },
+  en: { arrival: 'Arrival', pickup: 'Pickup', hour: 'hour', minute: 'minute' },
+  de: {
+    arrival: 'Ankunft',
+    pickup: 'Abholung',
+    hour: 'Stunde',
+    minute: 'Minute',
+  },
+  ro: { arrival: 'Sosire', pickup: 'Preluare', hour: 'oră', minute: 'minut' },
+  fr: { arrival: 'Arrivée', pickup: 'Retrait', hour: 'heure', minute: 'minute' },
+  es: { arrival: 'Llegada', pickup: 'Recogida', hour: 'hora', minute: 'minuto' },
+  it: { arrival: 'Arrivo', pickup: 'Ritiro', hour: 'ora', minute: 'minuto' },
+  sk: {
+    arrival: 'Príchod',
+    pickup: 'Prevzatie',
+    hour: 'hodina',
+    minute: 'minúta',
+  },
+  cz: {
+    arrival: 'Příjezd',
+    pickup: 'Převzetí',
+    hour: 'hodina',
+    minute: 'minuta',
+  },
+  se: {
+    arrival: 'Ankomst',
+    pickup: 'Upphämtning',
+    hour: 'timme',
+    minute: 'minut',
+  },
+  no: { arrival: 'Ankomst', pickup: 'Henting', hour: 'time', minute: 'minutt' },
+  dk: { arrival: 'Ankomst', pickup: 'Afhentning', hour: 'time', minute: 'minut' },
+  pl: { arrival: 'Przyjazd', pickup: 'Odbiór', hour: 'godzina', minute: 'minuta' },
+};
+
 export default function BaseDetails({
   locale,
   form,
@@ -122,13 +181,100 @@ export default function BaseDetails({
       Array.from({ length: 12 }, (_, idx) => String(idx * 5).padStart(2, '0')),
     [],
   );
-  const isHungarianLocale = locale.toLowerCase().startsWith('hu');
-  const arrivalHourLabel = isHungarianLocale
-    ? 'Érkezés (óra)'
-    : 'Arrival (hour)';
-  const arrivalMinuteLabel = isHungarianLocale
-    ? 'Érkezés (perc)'
-    : 'Arrival (minute)';
+  const hasQuoteAccommodation = Boolean(form.watch('hasQuoteAccommodation'));
+  const rentalStartDateValue = form.watch('rentalPeriod.startDate');
+  const selectedArrivalHour = form.watch('delivery.arrivalHour');
+  const timeLabels = TIME_LABELS[locale.toLowerCase()] ?? TIME_LABELS.en;
+  const timeLabelPrefix = hasQuoteAccommodation
+    ? timeLabels.pickup
+    : timeLabels.arrival;
+  const arrivalHourLabel = `${timeLabelPrefix} (${timeLabels.hour})`;
+  const arrivalMinuteLabel = `${timeLabelPrefix} (${timeLabels.minute})`;
+  const minPickupAt = React.useMemo(() => {
+    if (!hasQuoteAccommodation) return null;
+
+    const rentalStartDate =
+      typeof rentalStartDateValue === 'string'
+        ? parseDateValue(rentalStartDateValue)
+        : undefined;
+    if (!rentalStartDate) return null;
+
+    const now = new Date();
+    if (!isSameCalendarDay(rentalStartDate, now)) return null;
+
+    return new Date(now.getTime() + 2 * 60 * 60 * 1000);
+  }, [hasQuoteAccommodation, rentalStartDateValue]);
+
+  const isPickupTimeAllowed = React.useCallback(
+    (hour: string, minute: string) => {
+      if (!minPickupAt) return true;
+
+      const pickupDate =
+        typeof rentalStartDateValue === 'string'
+          ? parseDateValue(rentalStartDateValue)
+          : undefined;
+      if (!pickupDate) return true;
+
+      const pickupAt = buildPickupDateTime(pickupDate, hour, minute);
+      return pickupAt ? pickupAt.getTime() >= minPickupAt.getTime() : false;
+    },
+    [minPickupAt, rentalStartDateValue],
+  );
+
+  const selectableArrivalHourOptions = React.useMemo(
+    () =>
+      arrivalHourOptions.filter((hour) =>
+        arrivalMinuteOptions.some((minute) =>
+          isPickupTimeAllowed(hour, minute),
+        ),
+      ),
+    [arrivalHourOptions, arrivalMinuteOptions, isPickupTimeAllowed],
+  );
+
+  const selectableArrivalMinuteOptions = React.useMemo(() => {
+    const selectedHour =
+      typeof selectedArrivalHour === 'string' ? selectedArrivalHour : '';
+    if (!selectedHour) return arrivalMinuteOptions;
+
+    return arrivalMinuteOptions.filter((minute) =>
+      isPickupTimeAllowed(selectedHour, minute),
+    );
+  }, [arrivalMinuteOptions, isPickupTimeAllowed, selectedArrivalHour]);
+
+  React.useEffect(() => {
+    const currentHour = form.getValues('delivery.arrivalHour');
+    if (
+      typeof currentHour === 'string' &&
+      currentHour.length > 0 &&
+      !selectableArrivalHourOptions.includes(currentHour)
+    ) {
+      form.setValue('delivery.arrivalHour', '', {
+        shouldDirty: true,
+        shouldValidate: true,
+      });
+      form.setValue('delivery.arrivalMinute', '', {
+        shouldDirty: true,
+        shouldValidate: true,
+      });
+      return;
+    }
+
+    const currentMinute = form.getValues('delivery.arrivalMinute');
+    if (
+      typeof currentMinute === 'string' &&
+      currentMinute.length > 0 &&
+      !selectableArrivalMinuteOptions.includes(currentMinute)
+    ) {
+      form.setValue('delivery.arrivalMinute', '', {
+        shouldDirty: true,
+        shouldValidate: true,
+      });
+    }
+  }, [
+    form,
+    selectableArrivalHourOptions,
+    selectableArrivalMinuteOptions,
+  ]);
 
   const dateRangePickerMessages = (
     messages?.RentForm as Record<string, unknown> | null
@@ -328,54 +474,64 @@ export default function BaseDetails({
         </div>
       </div>
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-5'>
-        <FormField
-          control={form.control}
-          name={'delivery.arrivalFlight'}
-          render={({ field }) => {
-            const value = typeof field.value === 'string' ? field.value : '';
-            return (
-              <FormItem>
-                <FormLabel>
-                  {t('sections.delivery.fields.arrivalFlight.label')}
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t(
-                      'sections.delivery.fields.arrivalFlight.placeholder',
-                    )}
-                    value={value}
-                    onChange={(event) => field.onChange(event.target.value)}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
-        <FormField
-          control={form.control}
-          name={'delivery.departureFlight'}
-          render={({ field }) => {
-            const value = typeof field.value === 'string' ? field.value : '';
-            return (
-              <FormItem>
-                <FormLabel>
-                  {t('sections.delivery.fields.departureFlight.label')}
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t(
-                      'sections.delivery.fields.departureFlight.placeholder',
-                    )}
-                    value={value}
-                    onChange={(event) => field.onChange(event.target.value)}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
+        {hasQuoteAccommodation ? null : (
+          <>
+            <FormField
+              control={form.control}
+              name={'delivery.arrivalFlight'}
+              render={({ field }) => {
+                const value =
+                  typeof field.value === 'string' ? field.value : '';
+                return (
+                  <FormItem>
+                    <FormLabel>
+                      {t('sections.delivery.fields.arrivalFlight.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t(
+                          'sections.delivery.fields.arrivalFlight.placeholder',
+                        )}
+                        value={value}
+                        onChange={(event) =>
+                          field.onChange(event.target.value)
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+            <FormField
+              control={form.control}
+              name={'delivery.departureFlight'}
+              render={({ field }) => {
+                const value =
+                  typeof field.value === 'string' ? field.value : '';
+                return (
+                  <FormItem>
+                    <FormLabel>
+                      {t('sections.delivery.fields.departureFlight.label')}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t(
+                          'sections.delivery.fields.departureFlight.placeholder',
+                        )}
+                        value={value}
+                        onChange={(event) =>
+                          field.onChange(event.target.value)
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </>
+        )}
         <FormField
           control={form.control}
           name={'delivery.arrivalHour'}
@@ -396,7 +552,7 @@ export default function BaseDetails({
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        {arrivalHourOptions.map((hour) => (
+                        {selectableArrivalHourOptions.map((hour) => (
                           <SelectItem key={hour} value={hour}>
                             {hour}
                           </SelectItem>
@@ -430,7 +586,7 @@ export default function BaseDetails({
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        {arrivalMinuteOptions.map((minute) => (
+                        {selectableArrivalMinuteOptions.map((minute) => (
                           <SelectItem key={minute} value={minute}>
                             {minute}
                           </SelectItem>

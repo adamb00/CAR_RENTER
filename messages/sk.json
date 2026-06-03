@@ -2038,6 +2038,7 @@
       "endTooLate": "Dátum ukončenia môže byť najviac o jeden rok dopredu",
       "deliveryPlaceTypeRequired": "Vyberte miesto prevzatia",
       "deliveryFieldRequired": "Povinné pole",
+      "sameDayAccommodationPickupLeadTime": "Pri dnešnom prevzatí musí byť rezervácia odoslaná aspoň 2 hodiny pred prevzatím",
       "invalidAdults": "Je potrebný aspoň jeden dospelý",
       "adultsInvalid": "Zadaj počet dospelých cestujúcich"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "Na rezerváciu musíš prijať Všeobecné zmluvné podmienky"
+        },
+        "insurance": {
+          "required": "Pri rezerváciách cez ubytovanie je plné poistenie povinné"
         },
         "paymentMethod": {
           "required": "Vyberte spôsob platby"

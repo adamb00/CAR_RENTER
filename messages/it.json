@@ -2038,6 +2038,7 @@
       "endTooLate": "La data di fine può essere al massimo entro un anno",
       "deliveryPlaceTypeRequired": "Seleziona il luogo di ritiro",
       "deliveryFieldRequired": "Campo obbligatorio",
+      "sameDayAccommodationPickupLeadTime": "Per il ritiro oggi, la prenotazione deve essere inviata almeno 2 ore prima del ritiro",
       "invalidAdults": "È richiesto almeno un adulto",
       "adultsInvalid": "Per favore indica il numero di passeggeri adulti"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "Per completare la prenotazione devi accettare le Condizioni Generali di Contratto"
+        },
+        "insurance": {
+          "required": "L'assicurazione completa è obbligatoria per le prenotazioni tramite alloggio"
         },
         "paymentMethod": {
           "required": "Seleziona il metodo di pagamento"

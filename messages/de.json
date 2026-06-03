@@ -2038,6 +2038,7 @@
       "endTooLate": "Das Enddatum darf höchstens ein Jahr in der Zukunft liegen",
       "deliveryPlaceTypeRequired": "Bitte den Abholort auswählen",
       "deliveryFieldRequired": "Pflichtfeld",
+      "sameDayAccommodationPickupLeadTime": "Bei Abholung heute muss die Buchung mindestens 2 Stunden vor der Abholung abgeschickt werden",
       "invalidAdults": "Mindestens ein Erwachsener ist erforderlich",
       "adultsInvalid": "Bitte geben Sie die Anzahl der erwachsenen Mitreisenden an"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "Für die Buchung müssen Sie die Allgemeinen Geschäftsbedingungen akzeptieren"
+        },
+        "insurance": {
+          "required": "Für Buchungen über eine Unterkunft ist die Vollkaskoversicherung verpflichtend"
         },
         "paymentMethod": {
           "required": "Bitte eine Zahlungsart auswählen"

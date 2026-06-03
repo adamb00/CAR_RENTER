@@ -2038,6 +2038,7 @@
       "endTooLate": "La date de fin doit être dans l’année à venir",
       "deliveryPlaceTypeRequired": "Veuillez sélectionner le lieu de prise en charge",
       "deliveryFieldRequired": "Champ obligatoire",
+      "sameDayAccommodationPickupLeadTime": "Pour un retrait aujourd'hui, la réservation doit être envoyée au moins 2 heures avant le retrait",
       "invalidAdults": "Au moins un adulte est requis",
       "adultsInvalid": "Veuillez indiquer le nombre d’adultes"
     },
@@ -2210,6 +2211,9 @@
         },
         "terms": {
           "required": "Vous devez accepter les Conditions générales pour finaliser la réservation"
+        },
+        "insurance": {
+          "required": "L'assurance tous risques est obligatoire pour les réservations via un hébergement"
         },
         "paymentMethod": {
           "required": "Sélectionnez un mode de paiement"
