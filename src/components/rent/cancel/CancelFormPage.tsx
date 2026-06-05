@@ -1,9 +1,8 @@
 import { cancelRentRequestAction } from '@/actions/CancelRequestAction';
 import { getTranslations } from 'next-intl/server';
-import React from 'react';
+import { Button } from '../../ui/button';
 import { Input } from '../../ui/input';
 import { Textarea } from '../../ui/textarea';
-import { Button } from '../../ui/button';
 
 export default function CancelForm({
   locale,

@@ -76,6 +76,10 @@ export async function cancelRentRequestAction(formData: FormData) {
         updated: updatedMarker,
       },
     });
+    await prisma.accommodationBookingCommissions.update({
+      where: { bookingId: canonicalRentId },
+      data: { status: 'cancelled' },
+    });
   } catch (error) {
     console.error('Failed to cancel rent request', error);
     return redirectWith('error');

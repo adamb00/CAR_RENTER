@@ -124,10 +124,7 @@ const buildAccommodationRentSlackText = ({
   pricingSnapshot: PricingSnapshotInput | null | undefined;
 }) => {
   const primaryDriver = formData.driver?.[0];
-  const driverName = [
-    primaryDriver?.firstName_1,
-    primaryDriver?.lastName_1,
-  ]
+  const driverName = [primaryDriver?.firstName_1, primaryDriver?.lastName_1]
     .filter((value) => typeof value === 'string' && value.trim().length > 0)
     .join(' ');
   const delivery = formData.delivery;
@@ -710,6 +707,7 @@ export const RentAction = async (values: RentFormValues) => {
           payload: buildCompactRentPayload(validatedFields.data),
           accommodationId: quote?.accommodationId ?? null,
         },
+
         select: { id: true },
       });
       rentRecordId = createdRent.id;
@@ -766,6 +764,17 @@ export const RentAction = async (values: RentFormValues) => {
 
       if (quote?.accommodationId) {
         try {
+          await prisma.accommodationBookingCommissions.create({
+            data: {
+              bookingId: createdRent.id,
+              accommodationId: quote.accommodationId,
+              status: 'pending',
+              amount: pricingSnapshot?.rentalFee
+                ? Math.round(parseFloat(pricingSnapshot.rentalFee) * 0.1)
+                : null,
+              updatedAt: new Date(),
+            },
+          });
           const slackText = buildAccommodationRentSlackText({
             rentId: createdRent.id,
             humanId,
