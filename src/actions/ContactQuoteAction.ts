@@ -22,7 +22,8 @@ import { ContactQuotePayload } from './ContactQuoteAction.type';
 
 type EmailTranslations = Awaited<ReturnType<typeof getTranslations>>;
 // const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0AU6QV7Y4W'; // ROBI
-const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F'; // ADAM
+const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0AUFGSTY3X'; // GABI
+// const ACCOMMODATION_QUOTE_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F'; // ADAM
 
 const parseDateValue = (value?: string | null): Date | null => {
   if (!value) return null;
