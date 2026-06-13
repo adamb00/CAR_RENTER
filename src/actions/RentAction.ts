@@ -43,7 +43,8 @@ const PRICING_FIELDS: (keyof PricingSnapshotInput)[] = [
 ];
 
 // const ACCOMMODATION_RENT_ALERT_SLACK_USER_ID = 'U0AU6QV7Y4W'; // ROBI
-const ACCOMMODATION_RENT_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F'; // ADAM
+// const ACCOMMODATION_RENT_ALERT_SLACK_USER_ID = 'U0ATX4QLC3F'; // ADAM
+const ACCOMMODATION_RENT_ALERT_SLACK_USER_ID = 'U0AUFGSTY3X'; // GABI
 
 type DeliveryAddressInput =
   | NonNullable<RentFormValues['delivery']>['address']
