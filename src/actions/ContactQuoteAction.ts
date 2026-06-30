@@ -38,6 +38,41 @@ const normalizeRentalDays = (value?: number | null): number | null => {
   return Number.isFinite(value) && value > 0 ? value : null;
 };
 
+const normalizeAccommodationValue = (value?: string | null): string =>
+  value?.normalize('NFKC').trim().toLowerCase().replace(/\s+/g, ' ') ?? '';
+
+const matchesRegisteredAccommodation = (
+  payload: ContactQuotePayload,
+  accommodation: {
+    name: string;
+    country: string;
+    postalCode: string;
+    city: string;
+    street: string;
+    houseNumber: string;
+  } | null,
+): boolean => {
+  if (!accommodation || payload.delivery?.placeType !== 'accommodation') {
+    return false;
+  }
+
+  const address = payload.delivery.address;
+  return (
+    normalizeAccommodationValue(payload.delivery.locationName) ===
+      normalizeAccommodationValue(accommodation.name) &&
+    normalizeAccommodationValue(address?.country) ===
+      normalizeAccommodationValue(accommodation.country) &&
+    normalizeAccommodationValue(address?.postalCode) ===
+      normalizeAccommodationValue(accommodation.postalCode) &&
+    normalizeAccommodationValue(address?.city) ===
+      normalizeAccommodationValue(accommodation.city) &&
+    normalizeAccommodationValue(address?.street) ===
+      normalizeAccommodationValue(accommodation.street) &&
+    normalizeAccommodationValue(address?.doorNumber) ===
+      normalizeAccommodationValue(accommodation.houseNumber)
+  );
+};
+
 const formatPickupPlaceType = (
   tEmail: EmailTranslations,
   type?: string,
@@ -274,7 +309,30 @@ const serializeResidentCardForDb = (
 
 export async function submitContactQuote(payload: ContactQuotePayload) {
   try {
-    const carInfo = payload.carId ? await getCarById(payload.carId) : null;
+    const requestedAccommodationId = payload.accommodationID?.trim() || null;
+    const [carInfo, accommodation] = await Promise.all([
+      payload.carId ? getCarById(payload.carId) : null,
+      requestedAccommodationId
+        ? prisma.accommodations.findUnique({
+            where: { id: requestedAccommodationId },
+            select: {
+              id: true,
+              name: true,
+              country: true,
+              postalCode: true,
+              city: true,
+              street: true,
+              houseNumber: true,
+            },
+          })
+        : null,
+    ]);
+    const verifiedAccommodation = matchesRegisteredAccommodation(
+      payload,
+      accommodation,
+    )
+      ? accommodation
+      : null;
     const siteUrl = getSiteUrl();
     const resolvedLocale = resolveLocale(payload.locale);
     const tEmail = await getTranslations({
@@ -326,16 +384,16 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
         status: CONTACT_STATUS_NEW,
         updated: null,
         humanId,
-        accommodationId: payload.accommodationID ?? null,
+        accommodationId: verifiedAccommodation?.id ?? null,
       },
       select: {
         id: true,
       },
     });
 
-    if (payload.accommodationID) {
+    if (verifiedAccommodation) {
       await prisma.accommodations.update({
-        where: { id: payload.accommodationID },
+        where: { id: verifiedAccommodation.id },
         data: { quoteCount: { increment: 1 } },
       });
     }
@@ -608,7 +666,9 @@ export async function submitContactQuote(payload: ContactQuotePayload) {
       replyTo: process.env.MAIL_USER || undefined,
     });
 
-    if (payload.quoteComeFromAccommodation) {
+    console.log('payload', payload);
+
+    if (verifiedAccommodation) {
       if (quoteId) {
         try {
           await triggerQuoteSendEmailSlackInteraction({ quoteId });

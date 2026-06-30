@@ -67,23 +67,27 @@ export default async function ContactPage({
     hasAccommodationPrices: hasAccommodationDailyPrices(car.accommodationPrices),
   }));
 
-  const accommodation = await prisma.accommodations.findFirst({
-    where: { id: resolvedSearchParams.accommodationId },
-    select: {
-      id: true,
-      name: true,
-      city: true,
-      street: true,
-      country: true,
-      houseNumber: true,
-      postalCode: true,
-      island: true,
-    },
-  });
+  const requestedAccommodationId =
+    typeof resolvedSearchParams.accommodationId === 'string'
+      ? resolvedSearchParams.accommodationId.trim()
+      : '';
+  const accommodation = requestedAccommodationId
+    ? await prisma.accommodations.findUnique({
+        where: { id: requestedAccommodationId },
+        select: {
+          id: true,
+          name: true,
+          city: true,
+          street: true,
+          country: true,
+          houseNumber: true,
+          postalCode: true,
+          island: true,
+        },
+      })
+    : null;
 
-  const hasAccommodationSearchParam =
-    typeof resolvedSearchParams.accommodationId === 'string' &&
-    resolvedSearchParams.accommodationId.trim().length > 0;
+  const hasAccommodationSearchParam = Boolean(requestedAccommodationId);
   const availableCars =
     hasAccommodationSearchParam && accommodation
       ? allCars.filter((car) => car.hasAccommodationPrices)

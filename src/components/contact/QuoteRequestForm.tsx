@@ -138,7 +138,6 @@ export function QuoteRequestForm({
     void _consents;
     startTransition(async () => {
       const result = await submitContactQuote({
-        quoteComeFromAccommodation: accommodation ? true : false,
         accommodationID: accommodation ? accommodation.id : null,
         locale,
         ...rest,

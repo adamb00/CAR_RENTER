@@ -148,7 +148,11 @@ export default function QuoteDelivery({
         selectedAirport.postalCode,
         options,
       );
-      form.setValue(deliveryLocationPath('city'), selectedAirport.city, options);
+      form.setValue(
+        deliveryLocationPath('city'),
+        selectedAirport.city,
+        options,
+      );
     },
     [clearDeliverySelectionFields, deliveryLocationPath, form],
   );
@@ -220,9 +224,6 @@ export default function QuoteDelivery({
                         'sections.delivery.fields.placeType.accommodation',
                       )}
                     </SelectItem>
-                    {/* <SelectItem value='office'>
-                      {tRent('sections.delivery.fields.placeType.office')}
-                    </SelectItem> */}
                   </SelectContent>
                 </Select>
               </FormControl>
