@@ -1,11 +1,9 @@
 import { unstable_cache as cache } from 'next/cache';
 
-import type { Prisma } from '@prisma/client';
-import { prisma } from '@/lib/prisma';
 import {
-  CAR_COLORS,
   CAR_BODY_TYPES,
   CAR_COLOR_SWATCH,
+  CAR_COLORS,
   CAR_FUELS,
   CAR_TRANSMISSIONS,
   type Car,
@@ -14,6 +12,9 @@ import {
   type CarFuel,
   type CarTransmission,
 } from '@/lib/cars-shared';
+import { prisma } from '@/lib/prisma';
+import { RENT_STATUS_CANCELLED } from '@/lib/requestStatus';
+import type { Prisma } from '@prisma/client';
 
 const FALLBACK_IMAGE = '/cars.webp';
 const STORAGE_BUCKET =
@@ -27,9 +28,9 @@ const SUPABASE_STORAGE_URL = (process.env.SUPABASE_URL ?? '').replace(
 );
 
 export {
-  CAR_COLORS,
   CAR_BODY_TYPES,
   CAR_COLOR_SWATCH,
+  CAR_COLORS,
   CAR_FUELS,
   CAR_TRANSMISSIONS,
 };
@@ -41,11 +42,42 @@ type PrismaCarWithColors = Prisma.CarGetPayload<{
   };
 }>;
 
+type CarAvailability = {
+  availableCount?: number;
+};
+
+export type CarActionPromotion = {
+  id: string;
+  island: string;
+  carId: string;
+  carName: string;
+  date: string;
+  endDate: string;
+  price: number;
+  image: string;
+  seats: number;
+  smallLuggage: number;
+  largeLuggage: number;
+};
+
 const ensureArray = <T>(value: T[] | null | undefined): T[] => {
   if (!value || !Array.isArray(value)) {
     return [];
   }
   return value;
+};
+
+const normalizeDailyMultipliers = (value: unknown): Record<string, number> => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return {};
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).filter(
+      (entry): entry is [string, number] =>
+        typeof entry[1] === 'number' && Number.isFinite(entry[1]),
+    ),
+  );
 };
 
 const isAbsoluteUrl = (value: string) => /^https?:\/\//i.test(value);
@@ -76,6 +108,24 @@ const normalizeImages = (values: string[] | null): string[] => {
 
   return Array.from(new Set(images));
 };
+
+const formatDateParam = (date: Date): string => date.toISOString().slice(0, 10);
+
+const addDays = (date: Date, days: number): Date => {
+  const nextDate = new Date(date);
+  nextDate.setDate(nextDate.getDate() + days);
+  return nextDate;
+};
+
+const DAY_MS = 1000 * 60 * 60 * 24;
+
+const parseDateParam = (date: string): Date =>
+  new Date(`${date}T00:00:00.000Z`);
+
+const isNextDate = (previousDate: string, nextDate: string): boolean =>
+  parseDateParam(nextDate).getTime() -
+    parseDateParam(previousDate).getTime() ===
+  DAY_MS;
 
 const COLOR_ALIASES: Record<string, CarColor> = {
   silver_metallic: 'silver_metal',
@@ -199,7 +249,10 @@ const normalizePrices = (value: unknown): number[] => {
   return prices;
 };
 
-const mapCar = (car: PrismaCarWithColors): Car => {
+const mapCar = (
+  car: PrismaCarWithColors,
+  availability: CarAvailability = {},
+): Car => {
   const images = normalizeImages(car.images ?? []);
   const relationColors = car.Colors?.map((color) => color.name ?? null) ?? [];
   const colors = normalizeColors(relationColors);
@@ -235,8 +288,10 @@ const mapCar = (car: PrismaCarWithColors): Car => {
     image,
     images,
     prices,
+    dailyMultiplier: normalizeDailyMultipliers(car.dailyMultiplier),
     createdAt: isoString(car.createdAt),
     updatedAt: isoString(car.updatedAt),
+    availableCount: availability.availableCount,
   };
 };
 
@@ -244,13 +299,68 @@ const CAR_INCLUDE = {
   Colors: true,
 } as const;
 
-export const fetchCars = async (): Promise<Car[]> => {
+export const fetchCars = async (
+  startDate?: string,
+  endDate?: string,
+): Promise<Car[]> => {
+  const hasDateRange = Boolean(startDate && endDate);
+  const requestedStart = hasDateRange ? new Date(startDate as string) : null;
+  const requestedEnd = hasDateRange ? new Date(endDate as string) : null;
+
   const cars = await prisma.car.findMany({
-    include: CAR_INCLUDE,
+    include: {
+      ...CAR_INCLUDE,
+      FleetVehicles: true,
+    },
     orderBy: [{ manufacturer: 'asc' }, { model: 'asc' }],
   });
 
-  return cars.map(mapCar);
+  if (
+    !requestedStart ||
+    !requestedEnd ||
+    Number.isNaN(requestedStart.getTime()) ||
+    Number.isNaN(requestedEnd.getTime()) ||
+    requestedStart > requestedEnd
+  ) {
+    return cars.map((car) => mapCar(car));
+  }
+
+  const fleetVehicleIds = cars.flatMap((car) =>
+    car.FleetVehicles.filter((vehicle) => vehicle.status !== 'maintenance').map(
+      (vehicle) => vehicle.id,
+    ),
+  );
+
+  const rentalsInRange =
+    fleetVehicleIds.length > 0
+      ? await prisma.rentRequest.findMany({
+          where: {
+            archivedAt: null,
+            status: { not: RENT_STATUS_CANCELLED },
+            assignedFleetVehicleId: { in: fleetVehicleIds },
+            rentalStart: { lte: requestedEnd },
+            rentalEnd: { gte: requestedStart },
+          },
+          select: {
+            assignedFleetVehicleId: true,
+          },
+        })
+      : [];
+
+  const blockedVehicleIds = new Set(
+    rentalsInRange
+      .map((rental) => rental.assignedFleetVehicleId)
+      .filter((vehicleId): vehicleId is string => Boolean(vehicleId)),
+  );
+
+  return cars.map((car) => {
+    const availableCount = car.FleetVehicles.filter(
+      (vehicle) =>
+        vehicle.status !== 'maintenance' && !blockedVehicleIds.has(vehicle.id),
+    ).length;
+
+    return mapCar(car, { availableCount });
+  });
 };
 
 const fetchCarById = async (id: string): Promise<Car | null> => {
@@ -277,3 +387,74 @@ export const getCarById = cache(
   ['car-by-id'],
   { tags: ['cars'] },
 );
+
+export const getCarPrice = async (
+  island?: string,
+  startDate?: string,
+  endDate?: string,
+) => {
+  if (!startDate || !island || !endDate) {
+    return [];
+  }
+
+  return await prisma.carPrices.findMany({
+    where: {
+      island: island,
+      date: { gte: new Date(startDate), lte: new Date(endDate) },
+    },
+    orderBy: { date: 'asc' },
+  });
+};
+
+export const getCarActions = async (): Promise<CarActionPromotion[]> => {
+  const actions = await prisma.carPrices.findMany({
+    where: { action: true, date: { gte: new Date() } },
+    include: { Cars: true },
+    orderBy: [
+      { island: 'asc' },
+      { carId: 'asc' },
+      { price: 'asc' },
+      { date: 'asc' },
+    ],
+  });
+
+  const promotions = actions.reduce<CarActionPromotion[]>((items, action) => {
+    const images = normalizeImages(action.Cars.images ?? []);
+    const startDate = formatDateParam(action.date);
+    const previousPromotion = items.at(-1);
+
+    if (
+      previousPromotion &&
+      previousPromotion.island === action.island &&
+      previousPromotion.carId === action.carId &&
+      previousPromotion.price === action.price &&
+      isNextDate(previousPromotion.endDate, startDate)
+    ) {
+      previousPromotion.endDate = startDate;
+      return items;
+    }
+
+    items.push({
+      id: action.id,
+      island: action.island,
+      carId: action.carId,
+      carName: `${action.Cars.manufacturer} ${action.Cars.model}`,
+      date: startDate,
+      endDate: startDate,
+      price: action.price,
+      image: images[0] ?? FALLBACK_IMAGE,
+      seats: action.Cars.seats,
+      smallLuggage: action.Cars.smallLuggage,
+      largeLuggage: action.Cars.largeLuggage,
+    });
+
+    return items;
+  }, []);
+
+  return promotions
+    .map((promotion) => ({
+      ...promotion,
+      endDate: formatDateParam(addDays(parseDateParam(promotion.endDate), 1)),
+    }))
+    .sort((first, second) => first.date.localeCompare(second.date));
+};

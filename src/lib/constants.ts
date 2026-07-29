@@ -57,3 +57,9 @@ export const oneYearAhead = (() => {
   future.setFullYear(future.getFullYear() + 1);
   return future;
 })();
+
+export const sixMonthsAhead = (() => {
+  const future = new Date(today);
+  future.setMonth(future.getMonth() + 6);
+  return future;
+})();

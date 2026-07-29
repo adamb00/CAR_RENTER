@@ -39,12 +39,70 @@ import {
 } from './rent.types';
 import { useSearchParams } from 'next/navigation';
 
+const DAY_MS = 1000 * 60 * 60 * 24;
+
+const parseDateParam = (value?: string): Date | null => {
+  if (!value) return null;
+  const parsed = new Date(`${value}T00:00:00.000Z`);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+};
+
+const calculateRentalDays = (
+  startDate?: string,
+  endDate?: string,
+): number | undefined => {
+  const start = parseDateParam(startDate);
+  const end = parseDateParam(endDate);
+
+  if (!start || !end || start >= end) {
+    return undefined;
+  }
+
+  return Math.ceil((end.getTime() - start.getTime()) / DAY_MS);
+};
+
+const parseRentalDays = (
+  value: RentPageClientProps['days'],
+  rentalPeriodPrefill: RentPageClientProps['rentalPeriodPrefill'],
+): number | undefined => {
+  const rawValue = Array.isArray(value) ? value[0] : value;
+  const parsed =
+    typeof rawValue === 'string' && rawValue.trim().length > 0
+      ? Number(rawValue)
+      : undefined;
+
+  if (typeof parsed === 'number' && Number.isFinite(parsed) && parsed > 0) {
+    return parsed;
+  }
+
+  return calculateRentalDays(
+    rentalPeriodPrefill?.startDate,
+    rentalPeriodPrefill?.endDate,
+  );
+};
+
+const normalizePriceParam = (value?: string): string | undefined => {
+  if (!value) return undefined;
+  const normalized = value.trim();
+  if (!normalized) return undefined;
+
+  const numericValue = Number(normalized.replace(',', '.'));
+  return Number.isFinite(numericValue) && numericValue >= 0
+    ? normalized
+    : undefined;
+};
+
 export default function RentPageClient({
   locale,
   car,
   quotePrefill,
+  islandPrefill,
+  rentalPeriodPrefill,
   manageContext,
   rentPrefill,
+  rentalFee,
+  insurance,
+  days,
 }: RentPageClientProps) {
   const t = useTranslations('RentForm');
   const tManage = useTranslations('RentManage');
@@ -67,6 +125,22 @@ export default function RentPageClient({
   const offer = searchParams.get('offer');
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
+  const rentalDaysPrefill = React.useMemo(
+    () => parseRentalDays(days, rentalPeriodPrefill),
+    [
+      days,
+      rentalPeriodPrefill?.endDate,
+      rentalPeriodPrefill?.startDate,
+    ],
+  );
+  const rentalFeeSnapshot = React.useMemo(
+    () => normalizePriceParam(rentalFee),
+    [rentalFee],
+  );
+  const insuranceSnapshot = React.useMemo(
+    () => normalizePriceParam(insurance),
+    [insurance],
+  );
 
   const defaultValues = React.useMemo(() => {
     if (rentPrefill) {
@@ -75,6 +149,12 @@ export default function RentPageClient({
         locale,
         carId: id,
         rentId: rentPrefill.rentId ?? manageRentId,
+        rentalDays: rentalDaysPrefill ?? rentPrefill.rentalDays,
+        delivery: {
+          ...rentPrefill.delivery,
+          island: rentPrefill.delivery?.island ?? islandPrefill,
+        },
+
         hasQuoteAccommodation:
           rentPrefill.hasQuoteAccommodation ??
           Boolean(quotePrefill?.accommodationId),
@@ -86,8 +166,49 @@ export default function RentPageClient({
         },
       };
     }
-    return buildInitialValues(quotePrefill, locale, id);
-  }, [id, locale, manageRentId, quotePrefill, rentPrefill]);
+    const initialValues = buildInitialValues(quotePrefill, locale, id);
+    initialValues.delivery = {
+      ...initialValues.delivery,
+      island: islandPrefill ?? initialValues.delivery?.island,
+    };
+
+    if (
+      !rentalDaysPrefill &&
+      !rentalPeriodPrefill?.startDate &&
+      !rentalPeriodPrefill?.endDate
+    ) {
+      return initialValues;
+    }
+
+    return {
+      ...initialValues,
+      rentalDays: rentalDaysPrefill ?? initialValues.rentalDays,
+      rentalPeriod: {
+        startDate:
+          rentalPeriodPrefill?.startDate ??
+          initialValues.rentalPeriod?.startDate ??
+          '',
+        endDate:
+          rentalPeriodPrefill?.endDate ??
+          initialValues.rentalPeriod?.endDate ??
+          '',
+      },
+      delivery: {
+        ...initialValues.delivery,
+        island: islandPrefill ?? initialValues.delivery?.island,
+      },
+    };
+  }, [
+    id,
+    islandPrefill,
+    locale,
+    manageRentId,
+    quotePrefill,
+    rentalPeriodPrefill?.endDate,
+    rentalPeriodPrefill?.startDate,
+    rentalDaysPrefill,
+    rentPrefill,
+  ]);
 
   const form = useForm<RentFormValues>({
     resolver: zodResolver(rentSchema) as Resolver<
@@ -116,6 +237,57 @@ export default function RentPageClient({
 
   useWindowWithGoogle(setPlacesReady);
 
+  React.useEffect(() => {
+    if (
+      rentPrefill ||
+      !isHydrated ||
+      (!rentalPeriodPrefill?.startDate && !rentalPeriodPrefill?.endDate)
+    ) {
+      return;
+    }
+
+    const currentRentalPeriod = form.getValues('rentalPeriod');
+    form.setValue(
+      'rentalPeriod',
+      {
+        startDate:
+          rentalPeriodPrefill.startDate ?? currentRentalPeriod?.startDate ?? '',
+        endDate:
+          rentalPeriodPrefill.endDate ?? currentRentalPeriod?.endDate ?? '',
+      },
+      {
+        shouldDirty: false,
+        shouldTouch: false,
+        shouldValidate: false,
+      },
+    );
+
+    if (rentalDaysPrefill) {
+      form.setValue('rentalDays', rentalDaysPrefill, {
+        shouldDirty: false,
+        shouldTouch: false,
+        shouldValidate: false,
+      });
+    }
+  }, [
+    form,
+    isHydrated,
+    rentalPeriodPrefill?.endDate,
+    rentalPeriodPrefill?.startDate,
+    rentalDaysPrefill,
+    rentPrefill,
+  ]);
+
+  React.useEffect(() => {
+    if (rentPrefill || !isHydrated || !islandPrefill) return;
+
+    form.setValue('delivery.island', islandPrefill, {
+      shouldDirty: false,
+      shouldTouch: false,
+      shouldValidate: false,
+    });
+  }, [form, islandPrefill, isHydrated, rentPrefill]);
+
   useSetContact(form, { enabled: isHydrated });
 
   useSetInvoice(form, { enabled: isHydrated });
@@ -133,8 +305,36 @@ export default function RentPageClient({
     }
     hasAppliedQuotePrefill.current = true;
     const mergedValues = mergeQuoteIntoValues(form.getValues(), quotePrefill);
+    if (rentalPeriodPrefill?.startDate || rentalPeriodPrefill?.endDate) {
+      mergedValues.rentalPeriod = {
+        startDate:
+          rentalPeriodPrefill.startDate ??
+          mergedValues.rentalPeriod?.startDate ??
+          '',
+        endDate:
+          rentalPeriodPrefill.endDate ??
+          mergedValues.rentalPeriod?.endDate ??
+          '',
+      };
+    }
+    if (rentalDaysPrefill) {
+      mergedValues.rentalDays = rentalDaysPrefill;
+    }
+    mergedValues.delivery = {
+      ...mergedValues.delivery,
+      island: mergedValues.delivery?.island ?? islandPrefill,
+    };
     form.reset(mergedValues);
-  }, [form, isHydrated, quotePrefill, rentPrefill]);
+  }, [
+    form,
+    isHydrated,
+    islandPrefill,
+    quotePrefill,
+    rentalPeriodPrefill?.endDate,
+    rentalPeriodPrefill?.startDate,
+    rentalDaysPrefill,
+    rentPrefill,
+  ]);
 
   const consentItems = useMemo<LegalConsentItem<RentFormValues>[]>(
     () => buildConsentItems({ locale, t }),
@@ -156,6 +356,8 @@ export default function RentPageClient({
       manageRentId,
       quoteId: quotePrefill?.id ?? null,
       offer: offer ? Number(offer) : 0,
+      rentalFee: rentalFeeSnapshot,
+      insurance: insuranceSnapshot,
       successMessage: t('toast.success'),
       errorMessage: t('toast.error'),
     },
@@ -221,7 +423,11 @@ export default function RentPageClient({
             tabIndex={-1}
             className='scroll-mt-28 space-y-6'
           >
-            <Consents form={form} quotePrefill={quotePrefill} />
+            <Consents
+              form={form}
+              quotePrefill={quotePrefill}
+              insurance={insurance}
+            />
 
             <LegalConsents
               form={form}

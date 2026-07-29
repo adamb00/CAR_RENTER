@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Reduceri speciale disponibile",
-    "title": "Oferim reducere suplimentară pentru rezidenți și pentru închirierea mai multor mașini.",
-    "description": "Cu un card de rezident valabil putem aplica o reducere de rezident rezervării tale. De asemenea, îți putem oferi o ofertă personalizată, cu reducere, dacă închiriezi mai multe mașini în același timp, de exemplu pentru călătorii în familie, grupuri sau rezervări paralele.",
-    "primaryLabel": "Vezi mașinile disponibile",
-    "secondaryLabel": "Poate mai târziu"
+    "eyebrow": "Săptămâni promoționale",
+    "title": "Oferte săptămânale selectate cu mașini disponibile.",
+    "description": "Am găsit {count} mașini promoționale active în Fuerteventura și Lanzarote. Alege o săptămână și verifică mașinile disponibile.",
+    "dateRangeLabel": "Promoție: de la {startDate} până la {endDate}",
+    "priceLabel": "{price} / săptămână",
+    "seatsLabel": "{count} locuri",
+    "imageAlt": "{carName} într-o ofertă promoțională",
+    "primaryLabel": "Vezi oferta",
+    "secondaryLabel": "Poate mai târziu",
+    "footerNote": "Disponibilitatea promoțiilor se poate schimba pe măsură ce rezervările sunt confirmate."
   },
   "Inquire": {
     "title": "Rezervă acum!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Descoperă acum tarifele și opțiunile de închiriere!",
+    "pickupLocation": "Locul preluării",
+    "islandPlaceholder": "Selectează o insulă",
+    "pickupDate": "Selectează perioada de închiriere",
+    "apply": "Actualizează",
+    "cancel": "Anulează",
+    "showPrices": "Afișează tarifele",
+    "validation": {
+      "island": "Selectează o insulă!",
+      "startDate": "Selectează o dată de început!",
+      "endDate": "Selectează o dată de sfârșit!",
+      "age": "Vârsta șoferului trebuie să fie între 18 și 100 de ani."
+    },
+    "age": "Vârsta șoferului",
+    "requestQuote": "Solicită o ofertă pentru perioada selectată"
+  },
   "Cars": {
     "title": "Descoperă Fuerteventura și Lanzarote în libertate totală cu mașinile noastre!",
     "p1": "La noi închirierea mașinii este simplă și rapidă: alegi vehiculul potrivit pentru tine, iar noi ți-l livrăm la aeroport sau direct la hotel. Datorită opțiunilor noastre flexibile de închiriere <strong>te poți bucura de vacanță fără griji</strong>, indiferent dacă ai nevoie de mașină pentru câteva zile sau pentru o perioadă mai lungă.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ zi",
       "from_price": "de la €{price}",
       "weekly_price": "{price} / săptămână",
-      "available_from_week": "Disponibil de la {price} / săptămână"
+      "available_from_week": "Disponibil de la {price} / săptămână",
+      "custom_quote": "Solicită o ofertă personalizată pentru mașina selectată!",
+      "rental_fee": "Tarif de închiriere: {price} / {days} zile",
+      "available_count": "{count} disponibile pentru această perioadă",
+      "low_available_count": "Mai puțin de {count} mașini disponibile pentru această perioadă",
+      "unavailable": "Indisponibil pentru această perioadă",
+      "insurance_fee": "Taxă pentru asigurare completă: {price} / {days} zile",
+      "promotional_price": "Preț redus"
     },
     "bodyTypes": {
       "sedan": "Sedan",
@@ -1933,6 +1962,14 @@
           "placeholder": "Ex. Hotel Marina sau Aeroport Budapesta Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Insulă",
+            "placeholder": "Selectează insula",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "Locul returnării este același cu locul preluării"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Aeroportul Lanzarote",
             "fuerteventura": "Aeroportul Fuerteventura"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Locul returnării",
+          "description": "Completează această secțiune dacă locul returnării diferă de locul preluării.",
+          "placeType": {
+            "label": "Locul returnării",
+            "placeholder": "Selectează locul returnării",
+            "airport": "Returnare la aeroport",
+            "accommodation": "Returnare la cazare",
+            "office": "Returnare la birou"
+          },
+          "locationName": {
+            "label": "Numele locului de returnare",
+            "placeholder": "Selectează sau introdu locul returnării"
+          }
+        },
+        "time": {
+          "arrival": "Sosire",
+          "pickup": "Preluare",
+          "return": "Returnare",
+          "hour": "oră",
+          "minute": "minut",
+          "tooltip": "Poate fi precizat ulterior; este suficientă o oră aproximativă."
+        },
+        "accommodationNoResult": "Nu s-a găsit nicio cazare potrivită în lista oficială"
       },
       "consents": {
         "title": "Declarații legale",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Selectează insula",
+          "invalid": "Insulă nevalidă"
+        },
         "placeType": {
           "required": "Selectează locul de preluare",
           "invalid": "Loc de preluare invalid"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Cost extraopțiuni",
         "deliveryFee": "Taxă livrare",
         "bookingLink": "Link rezervare",
-        "adminName": "Agent responsabil"
+        "adminName": "Agent responsabil",
+        "returnDeliveryType": "Tip returnare",
+        "returnDeliveryLocation": "Locul returnării",
+        "returnDeliveryAddress": "Adresa returnării"
       }
     },
     "contactQuote": {

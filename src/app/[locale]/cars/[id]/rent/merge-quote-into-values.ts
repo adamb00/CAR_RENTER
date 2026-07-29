@@ -26,11 +26,13 @@ export const mergeQuoteIntoValues = (
   const residentCardFromQuote = parseStoredResidentCard(quote.residenceCard);
 
   const delivery: NonNullable<RentFormValues['delivery']> = values.delivery ?? {
-    same: false,
+    same: true,
     placeType: undefined,
     locationName: '',
     arrivalHour: '',
     arrivalMinute: '',
+    returnHour: '',
+    returnMinute: '',
     arrivalFlight: '',
     departureFlight: '',
     address: {
@@ -39,6 +41,17 @@ export const mergeQuoteIntoValues = (
       city: '',
       street: '',
       doorNumber: '',
+    },
+    returnLocation: {
+      placeType: undefined,
+      locationName: '',
+      address: {
+        country: '',
+        postalCode: '',
+        city: '',
+        street: '',
+        doorNumber: '',
+      },
     },
   };
 
@@ -87,7 +100,7 @@ export const mergeQuoteIntoValues = (
     },
     delivery: {
       ...delivery,
-      same: delivery.same ?? false,
+      same: delivery.same ?? true,
       placeType: ['accommodation', 'airport', 'office'].includes(
         quote.delivery?.placeType as string
       )
@@ -103,6 +116,8 @@ export const mergeQuoteIntoValues = (
       locationName: quote.delivery?.locationName ?? delivery.locationName ?? '',
       arrivalHour: delivery.arrivalHour ?? '',
       arrivalMinute: delivery.arrivalMinute ?? '',
+      returnHour: delivery.returnHour ?? '',
+      returnMinute: delivery.returnMinute ?? '',
       address: {
         country:
           quote.delivery?.address?.country ?? delivery.address?.country ?? '',
@@ -120,6 +135,17 @@ export const mergeQuoteIntoValues = (
       },
       arrivalFlight: quote.arrivalFlight ?? delivery.arrivalFlight ?? '',
       departureFlight: quote.departureFlight ?? delivery.departureFlight ?? '',
+      returnLocation: delivery.returnLocation ?? {
+        placeType: undefined,
+        locationName: '',
+        address: {
+          country: '',
+          postalCode: '',
+          city: '',
+          street: '',
+          doorNumber: '',
+        },
+      },
     },
   };
 };

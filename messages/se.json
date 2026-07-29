@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Särskilda rabatter tillgängliga",
-    "title": "Vi erbjuder extra rabatt för boende och vid hyrning av flera bilar.",
-    "description": "Med ett giltigt residentkort kan vi ge residentrabatt på din bokning. Vi kan också erbjuda ett skräddarsytt rabatterat erbjudande om du hyr flera bilar samtidigt, till exempel för familjeresor, grupper eller parallella bokningar.",
-    "primaryLabel": "Se tillgängliga bilar",
-    "secondaryLabel": "Kanske senare"
+    "eyebrow": "Kampanjveckor",
+    "title": "Utvalda veckoerbjudanden med tillgängliga bilar.",
+    "description": "Vi hittade {count} aktuella kampanjbilar på Fuerteventura och Lanzarote. Välj en vecka och se tillgängliga bilar.",
+    "dateRangeLabel": "Kampanj: från {startDate} till {endDate}",
+    "priceLabel": "{price} / vecka",
+    "seatsLabel": "{count} platser",
+    "imageAlt": "{carName} i ett kampanjerbjudande",
+    "primaryLabel": "Visa erbjudande",
+    "secondaryLabel": "Kanske senare",
+    "footerNote": "Kampanjernas tillgänglighet kan ändras när bokningar bekräftas."
   },
   "Inquire": {
     "title": "Boka nu!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Se priser och uthyrningsalternativ redan nu!",
+    "pickupLocation": "Upphämtningsplats",
+    "islandPlaceholder": "Välj en ö",
+    "pickupDate": "Välj hyresperiod",
+    "apply": "Uppdatera",
+    "cancel": "Avbryt",
+    "showPrices": "Visa priser",
+    "validation": {
+      "island": "Välj en ö!",
+      "startDate": "Välj ett startdatum!",
+      "endDate": "Välj ett slutdatum!",
+      "age": "Förarens ålder måste vara mellan 18 och 100 år."
+    },
+    "age": "Förarens ålder",
+    "requestQuote": "Begär offert för valda datum"
+  },
   "Cars": {
     "title": "Upptäck Fuerteventura och Lanzarote i full frihet med våra bilar!",
     "p1": "Hos oss är biluthyrning enkelt och snabbt: du väljer det fordon som passar dig, och vi levererar det till flygplatsen eller direkt till ditt hotell. Tack vare våra flexibla hyrbilsalternativ kan du <strong>njuta av din semester utan bekymmer</strong>, oavsett om du behöver bil för en kortare eller längre vistelse.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ dag",
       "from_price": "från €{price}",
       "weekly_price": "{price} / vecka",
-      "available_from_week": "Tillgänglig från {price} / vecka"
+      "available_from_week": "Tillgänglig från {price} / vecka",
+      "custom_quote": "Begär en personlig offert för den valda bilen!",
+      "rental_fee": "Hyrespris: {price} / {days} dagar",
+      "available_count": "{count} tillgängliga för denna period",
+      "low_available_count": "Färre än {count} bilar tillgängliga för denna period",
+      "unavailable": "Inte tillgänglig för denna period",
+      "insurance_fee": "Avgift för heltäckande försäkring: {price} / {days} dagar",
+      "promotional_price": "Rabatterat pris"
     },
     "bodyTypes": {
       "sedan": "Sedan",
@@ -1933,6 +1962,14 @@
           "placeholder": "T.ex. Hotel Marina eller Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Ö",
+            "placeholder": "Välj ö",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "Återlämningsplatsen är densamma som upphämtningsplatsen"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Lanzarote flygplats",
             "fuerteventura": "Fuerteventura flygplats"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Återlämningsplats",
+          "description": "Fyll i detta om återlämningsplatsen skiljer sig från upphämtningsplatsen.",
+          "placeType": {
+            "label": "Återlämningsplats",
+            "placeholder": "Välj återlämningsplats",
+            "airport": "Återlämning på flygplatsen",
+            "accommodation": "Återlämning vid boendet",
+            "office": "Återlämning på kontoret"
+          },
+          "locationName": {
+            "label": "Namn på återlämningsplats",
+            "placeholder": "Välj eller ange återlämningsplats"
+          }
+        },
+        "time": {
+          "arrival": "Ankomst",
+          "pickup": "Upphämtning",
+          "return": "Återlämning",
+          "hour": "timme",
+          "minute": "minut",
+          "tooltip": "Det kan preciseras senare; en ungefärlig tid räcker."
+        },
+        "accommodationNoResult": "Inget matchande boende hittades i den officiella listan"
       },
       "consents": {
         "title": "Juridiska medgivanden",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Välj ö",
+          "invalid": "Ogiltig ö"
+        },
         "placeType": {
           "required": "Välj upphämtningsplats",
           "invalid": "Ogiltig upphämtningsplats"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Kostnad för tillval",
         "deliveryFee": "Leveransavgift",
         "bookingLink": "Bokningslänk",
-        "adminName": "Ansvarig kontaktperson"
+        "adminName": "Ansvarig kontaktperson",
+        "returnDeliveryType": "Återlämningstyp",
+        "returnDeliveryLocation": "Återlämningsplats",
+        "returnDeliveryAddress": "Återlämningsadress"
       }
     },
     "contactQuote": {

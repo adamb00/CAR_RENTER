@@ -29,6 +29,7 @@ import {
   SelectValue,
 } from '../ui/select';
 import { EXTRA_VALUES, RENTAL_DAYS_OPTIONS } from '@/lib/constants';
+import TimeFieldLabel from './TimeFieldLabel';
 
 const parseDateValue = (value?: string): Date | undefined => {
   if (!value) return undefined;
@@ -82,45 +83,6 @@ const buildPickupDateTime = (
   const pickupAt = new Date(date);
   pickupAt.setHours(Number(hour), Number(minute), 0, 0);
   return pickupAt;
-};
-
-const TIME_LABELS: Record<
-  string,
-  { arrival: string; pickup: string; hour: string; minute: string }
-> = {
-  hu: { arrival: 'Érkezés', pickup: 'Átvétel', hour: 'óra', minute: 'perc' },
-  en: { arrival: 'Arrival', pickup: 'Pickup', hour: 'hour', minute: 'minute' },
-  de: {
-    arrival: 'Ankunft',
-    pickup: 'Abholung',
-    hour: 'Stunde',
-    minute: 'Minute',
-  },
-  ro: { arrival: 'Sosire', pickup: 'Preluare', hour: 'oră', minute: 'minut' },
-  fr: { arrival: 'Arrivée', pickup: 'Retrait', hour: 'heure', minute: 'minute' },
-  es: { arrival: 'Llegada', pickup: 'Recogida', hour: 'hora', minute: 'minuto' },
-  it: { arrival: 'Arrivo', pickup: 'Ritiro', hour: 'ora', minute: 'minuto' },
-  sk: {
-    arrival: 'Príchod',
-    pickup: 'Prevzatie',
-    hour: 'hodina',
-    minute: 'minúta',
-  },
-  cz: {
-    arrival: 'Příjezd',
-    pickup: 'Převzetí',
-    hour: 'hodina',
-    minute: 'minuta',
-  },
-  se: {
-    arrival: 'Ankomst',
-    pickup: 'Upphämtning',
-    hour: 'timme',
-    minute: 'minut',
-  },
-  no: { arrival: 'Ankomst', pickup: 'Henting', hour: 'time', minute: 'minutt' },
-  dk: { arrival: 'Ankomst', pickup: 'Afhentning', hour: 'time', minute: 'minut' },
-  pl: { arrival: 'Przyjazd', pickup: 'Odbiór', hour: 'godzina', minute: 'minuta' },
 };
 
 export default function BaseDetails({
@@ -184,12 +146,16 @@ export default function BaseDetails({
   const hasQuoteAccommodation = Boolean(form.watch('hasQuoteAccommodation'));
   const rentalStartDateValue = form.watch('rentalPeriod.startDate');
   const selectedArrivalHour = form.watch('delivery.arrivalHour');
-  const timeLabels = TIME_LABELS[locale.toLowerCase()] ?? TIME_LABELS.en;
   const timeLabelPrefix = hasQuoteAccommodation
-    ? timeLabels.pickup
-    : timeLabels.arrival;
-  const arrivalHourLabel = `${timeLabelPrefix} (${timeLabels.hour})`;
-  const arrivalMinuteLabel = `${timeLabelPrefix} (${timeLabels.minute})`;
+    ? t('sections.delivery.time.pickup')
+    : t('sections.delivery.time.arrival');
+  const arrivalHourLabel = `${timeLabelPrefix} (${t(
+    'sections.delivery.time.hour',
+  )})`;
+  const arrivalMinuteLabel = `${timeLabelPrefix} (${t(
+    'sections.delivery.time.minute',
+  )})`;
+  const timeTooltip = t('sections.delivery.time.tooltip');
   const minPickupAt = React.useMemo(() => {
     if (!hasQuoteAccommodation) return null;
 
@@ -270,11 +236,7 @@ export default function BaseDetails({
         shouldValidate: true,
       });
     }
-  }, [
-    form,
-    selectableArrivalHourOptions,
-    selectableArrivalMinuteOptions,
-  ]);
+  }, [form, selectableArrivalHourOptions, selectableArrivalMinuteOptions]);
 
   const dateRangePickerMessages = (
     messages?.RentForm as Record<string, unknown> | null
@@ -367,12 +329,12 @@ export default function BaseDetails({
             )}
           />
         </div>
-        <div className='lg:col-span-1'>
+        <div className='lg:col-span-1 z-3500'>
           <FormField
             control={form.control}
             name='rentalDays'
             render={({ field }) => (
-              <FormItem>
+              <FormItem className='z-3500'>
                 <FormLabel className='text-sm font-medium'>
                   {t('rentalDays.label')}
                 </FormLabel>
@@ -493,9 +455,7 @@ export default function BaseDetails({
                           'sections.delivery.fields.arrivalFlight.placeholder',
                         )}
                         value={value}
-                        onChange={(event) =>
-                          field.onChange(event.target.value)
-                        }
+                        onChange={(event) => field.onChange(event.target.value)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -520,9 +480,7 @@ export default function BaseDetails({
                           'sections.delivery.fields.departureFlight.placeholder',
                         )}
                         value={value}
-                        onChange={(event) =>
-                          field.onChange(event.target.value)
-                        }
+                        onChange={(event) => field.onChange(event.target.value)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -539,7 +497,7 @@ export default function BaseDetails({
             const value = typeof field.value === 'string' ? field.value : '';
             return (
               <FormItem>
-                <FormLabel>{arrivalHourLabel}</FormLabel>
+                <TimeFieldLabel label={arrivalHourLabel} tooltip={timeTooltip} />
                 <FormControl>
                   <Select
                     value={value || undefined}
@@ -573,7 +531,10 @@ export default function BaseDetails({
             const value = typeof field.value === 'string' ? field.value : '';
             return (
               <FormItem>
-                <FormLabel>{arrivalMinuteLabel}</FormLabel>
+                <TimeFieldLabel
+                  label={arrivalMinuteLabel}
+                  tooltip={timeTooltip}
+                />
                 <FormControl>
                   <Select
                     value={value || undefined}

@@ -10,6 +10,9 @@ type SearchParams = {
   name?: string;
   email?: string;
   accommodationId?: string;
+  island?: string;
+  startDate?: string;
+  endDate?: string;
 };
 
 const hasAccommodationDailyPrices = (value: unknown): boolean =>
@@ -64,7 +67,9 @@ export default async function ContactPage({
     seats: car.seats,
     smallLuggage: car.smallLuggage,
     largeLuggage: car.largeLuggage,
-    hasAccommodationPrices: hasAccommodationDailyPrices(car.accommodationPrices),
+    hasAccommodationPrices: hasAccommodationDailyPrices(
+      car.accommodationPrices,
+    ),
   }));
 
   const requestedAccommodationId =
@@ -133,8 +138,12 @@ export default async function ContactPage({
             ? { id: selectedCar.id, name: selectedCar.name }
             : undefined
         }
-        availableCars={availableCars.map(({ hasAccommodationPrices, ...car }) => car)}
+        availableCars={availableCars.map(
+          ({ hasAccommodationPrices, ...car }) => car,
+        )}
         prefill={contactPrefill}
+        endDate={resolvedSearchParams.endDate}
+        startDate={resolvedSearchParams.startDate}
       />
     </>
   );

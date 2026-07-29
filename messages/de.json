@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Sonderrabatte verfügbar",
-    "title": "Für Residenten und bei mehreren Fahrzeugen bieten wir Extra-Rabatte.",
-    "description": "Mit einer gültigen Residentenkarte können wir einen Residentenrabatt auf deine Buchung gewähren. Auch bei gleichzeitiger Anmietung mehrerer Fahrzeuge erstellen wir gern ein individuelles Angebot mit Preisnachlass, etwa für Familienreisen, Gruppenurlaube oder parallele Reservierungen.",
-    "primaryLabel": "Verfügbare Autos",
-    "secondaryLabel": "Vielleicht später"
+    "eyebrow": "Aktionswochen",
+    "title": "Ausgewählte Wochenangebote mit verfügbaren Autos.",
+    "description": "Wir haben {count} aktuelle Aktionsautos auf Fuerteventura und Lanzarote gefunden. Wähle eine Woche und prüfe die verfügbaren Autos.",
+    "dateRangeLabel": "Aktion: {startDate} bis {endDate}",
+    "priceLabel": "{price} / Woche",
+    "seatsLabel": "{count} Sitzplätze",
+    "imageAlt": "{carName} in einem Aktionsangebot",
+    "primaryLabel": "Angebot ansehen",
+    "secondaryLabel": "Vielleicht später",
+    "footerNote": "Die Verfügbarkeit der Aktionen kann sich mit bestätigten Buchungen ändern."
   },
   "Inquire": {
     "title": "Jetzt reservieren!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Entdecke jetzt unsere Preise und Mietmöglichkeiten!",
+    "pickupLocation": "Abholort",
+    "islandPlaceholder": "Wähle eine Insel",
+    "pickupDate": "Mietzeitraum auswählen",
+    "apply": "Aktualisieren",
+    "cancel": "Abbrechen",
+    "showPrices": "Preise anzeigen",
+    "validation": {
+      "island": "Bitte wähle eine Insel aus!",
+      "startDate": "Bitte wähle ein Startdatum aus!",
+      "endDate": "Bitte wähle ein Enddatum aus!",
+      "age": "Das Alter des Fahrers muss zwischen 18 und 100 Jahren liegen."
+    },
+    "age": "Alter des Fahrers",
+    "requestQuote": "Angebot für den gewählten Zeitraum anfordern"
+  },
   "Cars": {
     "title": "Entdecke Fuerteventura und Lanzarote ganz frei mit unseren Mietwagen!",
     "p1": "Bei uns ist die Autovermietung einfach und schnell: Du wählst das passende Fahrzeug aus, und wir liefern es zum Flughafen oder direkt zu deiner Unterkunft. Dank unserer flexiblen Mietoptionen kannst du deinen Urlaub <strong>ganz entspannt genießen</strong> – egal ob du das Auto nur für ein paar Tage oder für einen längeren Aufenthalt brauchst.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ Tag",
       "from_price": "ab €{price}",
       "weekly_price": "{price} / Woche",
-      "available_from_week": "Erhältlich ab {price} / Woche"
+      "available_from_week": "Erhältlich ab {price} / Woche",
+      "custom_quote": "Fordere ein individuelles Angebot für das ausgewählte Auto an!",
+      "rental_fee": "Mietpreis: {price} / {days} Tage",
+      "available_count": "{count} für diesen Zeitraum verfügbar",
+      "low_available_count": "Weniger als {count} Autos für diesen Zeitraum verfügbar",
+      "unavailable": "Für diesen Zeitraum nicht verfügbar",
+      "insurance_fee": "Gebühr für Vollkaskoversicherung: {price} / {days} Tage",
+      "promotional_price": "Rabattpreis"
     },
     "bodyTypes": {
       "sedan": "Limousine",
@@ -1933,6 +1962,14 @@
           "placeholder": "z. B. Hotel Marina oder Flughafen Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Insel",
+            "placeholder": "Insel auswählen",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "Der Rückgabeort ist derselbe wie der Abholort"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Flughafen Lanzarote",
             "fuerteventura": "Flughafen Fuerteventura"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Rückgabeort",
+          "description": "Bitte ausfüllen, wenn der Rückgabeort vom Abholort abweicht.",
+          "placeType": {
+            "label": "Rückgabeort",
+            "placeholder": "Rückgabeort auswählen",
+            "airport": "Rückgabe am Flughafen",
+            "accommodation": "Rückgabe an der Unterkunft",
+            "office": "Rückgabe im Büro"
+          },
+          "locationName": {
+            "label": "Name des Rückgabeorts",
+            "placeholder": "Rückgabeort auswählen oder eingeben"
+          }
+        },
+        "time": {
+          "arrival": "Ankunft",
+          "pickup": "Abholung",
+          "return": "Rückgabe",
+          "hour": "Stunde",
+          "minute": "Minute",
+          "tooltip": "Kann später noch präzisiert werden; eine ungefähre Uhrzeit reicht."
+        },
+        "accommodationNoResult": "Keine passende Unterkunft in der offiziellen Unterkunftsliste gefunden"
       },
       "consents": {
         "title": "Rechtliche Erklärungen",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Bitte wähle die Insel aus",
+          "invalid": "Ungültige Insel"
+        },
         "placeType": {
           "required": "Bitte den Abholort auswählen",
           "invalid": "Ungültiger Abholort"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Gebühr für Extras",
         "deliveryFee": "Liefergebühr",
         "bookingLink": "Buchungslink",
-        "adminName": "Zuständiger Ansprechpartner"
+        "adminName": "Zuständiger Ansprechpartner",
+        "returnDeliveryType": "Rückgabeart",
+        "returnDeliveryLocation": "Rückgabeort",
+        "returnDeliveryAddress": "Rückgabeadresse"
       }
     },
     "contactQuote": {

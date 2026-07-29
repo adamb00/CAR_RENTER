@@ -38,6 +38,19 @@ const toPlaceType = (
   return undefined;
 };
 
+const toDeliveryIsland = (
+  value: string | null | undefined,
+): 'Lanzarote' | 'Fuerteventura' | undefined => {
+  const normalized = value?.trim().toLowerCase();
+  if (normalized === 'lanzarote') return 'Lanzarote';
+  if (normalized === 'fuerteventura') return 'Fuerteventura';
+  return undefined;
+};
+
+const pickSingleValue = (
+  value: string | string[] | undefined,
+): string | undefined => (Array.isArray(value) ? value[0] : value);
+
 export async function generateMetadata({
   params,
 }: {
@@ -80,6 +93,22 @@ export default async function RentPage({
     params,
     searchParams,
   ]);
+
+  const startDate = toDateInputValue(
+    pickSingleValue(resolvedSearchParams.startDate),
+  );
+  const endDate = toDateInputValue(
+    pickSingleValue(resolvedSearchParams.endDate),
+  );
+  const islandPrefill = toDeliveryIsland(
+    pickSingleValue(resolvedSearchParams.island),
+  );
+
+  const insurance = pickSingleValue(resolvedSearchParams.insurance);
+  const rentalFee = pickSingleValue(resolvedSearchParams.quotePrice);
+
+  const days = resolvedSearchParams.days;
+
   const resolvedLocale = resolveLocale(locale);
   const quoteIdRaw = resolvedSearchParams?.quoteId;
   const quoteId = Array.isArray(quoteIdRaw) ? quoteIdRaw[0] : quoteIdRaw;
@@ -101,9 +130,6 @@ export default async function RentPage({
     notFound();
   }
 
-  const pickSingleValue = (
-    value: string | string[] | undefined,
-  ): string | undefined => (Array.isArray(value) ? value[0] : value);
   const rentIdRaw = pickSingleValue(resolvedSearchParams?.rentId);
   let fallbackAction: string | undefined;
   let rentIdCandidate = rentIdRaw;
@@ -162,6 +188,12 @@ export default async function RentPage({
               departureFlight: true,
               arrivalHour: true,
               arrivalMinute: true,
+              returnHour: true,
+              returnMinute: true,
+              returnPlaceType: true,
+              returnLocationName: true,
+              returnAddressLine: true,
+              island: true,
             },
           },
         },
@@ -192,19 +224,22 @@ export default async function RentPage({
           prefill.driver[0].email =
             rentRecord.contactEmail ?? prefill.driver[0].email ?? '';
           prefill.rentalPeriod = {
-            startDate: toDateInputValue(rentRecord.rentalStart),
-            endDate: toDateInputValue(rentRecord.rentalEnd),
+            startDate: startDate || toDateInputValue(rentRecord.rentalStart),
+            endDate: endDate || toDateInputValue(rentRecord.rentalEnd),
           };
           prefill.rentalDays =
             typeof rentRecord.rentalDays === 'number'
               ? rentRecord.rentalDays
               : undefined;
           prefill.delivery = {
-            same: compact?.deliverySame ?? false,
+            same: compact?.deliverySame ?? true,
+            island: toDeliveryIsland(deliveryDetails?.island),
             placeType: toPlaceType(deliveryDetails?.placeType),
             locationName: deliveryDetails?.locationName ?? '',
             arrivalHour: deliveryDetails?.arrivalHour ?? '',
             arrivalMinute: deliveryDetails?.arrivalMinute ?? '',
+            returnHour: deliveryDetails?.returnHour ?? '',
+            returnMinute: deliveryDetails?.returnMinute ?? '',
             arrivalFlight: deliveryDetails?.arrivalFlight ?? '',
             departureFlight: deliveryDetails?.departureFlight ?? '',
             address: {
@@ -213,6 +248,17 @@ export default async function RentPage({
               city: compact?.deliveryAddress?.city ?? '',
               street: compact?.deliveryAddress?.street ?? '',
               doorNumber: compact?.deliveryAddress?.doorNumber ?? '',
+            },
+            returnLocation: compact?.deliveryReturnLocation ?? {
+              placeType: toPlaceType(deliveryDetails?.returnPlaceType),
+              locationName: deliveryDetails?.returnLocationName ?? '',
+              address: {
+                country: '',
+                postalCode: '',
+                city: '',
+                street: deliveryDetails?.returnAddressLine ?? '',
+                doorNumber: '',
+              },
             },
           };
           prefill.adults =
@@ -282,6 +328,10 @@ export default async function RentPage({
         locale={resolvedLocale}
         car={{ id: car.id, seats: car.seats, colors: car.colors }}
         quotePrefill={canUseQuotePrefill ? normalizedQuote : null}
+        islandPrefill={islandPrefill}
+        rentalPeriodPrefill={
+          startDate || endDate ? { startDate, endDate } : undefined
+        }
         manageContext={
           rentId
             ? {
@@ -292,6 +342,9 @@ export default async function RentPage({
             : undefined
         }
         rentPrefill={rentPrefill ?? undefined}
+        rentalFee={rentalFee}
+        insurance={insurance}
+        days={days}
       />
     </NoSSR>
   );

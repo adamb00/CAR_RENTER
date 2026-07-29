@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Spesialrabatter tilgjengelige",
-    "title": "Vi tilbyr ekstra rabatt for fastboende og ved leie av flere biler.",
-    "description": "Med gyldig beboerkort kan vi gi fastboenderabatt på bestillingen din. Vi kan også tilby et skreddersydd rabattert tilbud hvis du leier flere biler samtidig, for eksempel for familieferier, grupper eller parallelle bestillinger.",
-    "primaryLabel": "Se tilgjengelige biler",
-    "secondaryLabel": "Kanskje senere"
+    "eyebrow": "Kampanjeuker",
+    "title": "Utvalgte uketilbud med tilgjengelige biler.",
+    "description": "Vi fant {count} aktuelle kampanjebiler på Fuerteventura og Lanzarote. Velg en uke og sjekk tilgjengelige biler.",
+    "dateRangeLabel": "Kampanje: fra {startDate} til {endDate}",
+    "priceLabel": "{price} / uke",
+    "seatsLabel": "{count} seter",
+    "imageAlt": "{carName} i et kampanjetilbud",
+    "primaryLabel": "Se tilbud",
+    "secondaryLabel": "Kanskje senere",
+    "footerNote": "Kampanjetilgjengelighet kan endre seg når bookinger bekreftes."
   },
   "Inquire": {
     "title": "Bestill nå!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Se priser og leiemuligheter nå!",
+    "pickupLocation": "Hentested",
+    "islandPlaceholder": "Velg en øy",
+    "pickupDate": "Velg leieperiode",
+    "apply": "Oppdater",
+    "cancel": "Avbryt",
+    "showPrices": "Vis priser",
+    "validation": {
+      "island": "Velg en øy!",
+      "startDate": "Velg en startdato!",
+      "endDate": "Velg en sluttdato!",
+      "age": "Førerens alder må være mellom 18 og 100 år."
+    },
+    "age": "Førerens alder",
+    "requestQuote": "Be om tilbud for de valgte datoene"
+  },
   "Cars": {
     "title": "Oppdag Fuerteventura og Lanzarote i full frihet med våre biler!",
     "p1": "Hos oss er bilutleie enkelt og raskt: du velger bilen som passer for deg, og vi leverer den til flyplassen eller direkte til hotellet ditt. Med våre fleksible leieløsninger kan du <strong>nyte ferien uten bekymringer</strong>, enten du trenger bil for kort eller lengre tid.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ dag",
       "from_price": "fra €{price}",
       "weekly_price": "{price} / uke",
-      "available_from_week": "Tilgjengelig fra {price} / uke"
+      "available_from_week": "Tilgjengelig fra {price} / uke",
+      "custom_quote": "Be om et skreddersydd tilbud på den valgte bilen!",
+      "rental_fee": "Leiepris: {price} / {days} dager",
+      "available_count": "{count} tilgjengelige i denne perioden",
+      "low_available_count": "Færre enn {count} biler tilgjengelige i denne perioden",
+      "unavailable": "Ikke tilgjengelig i denne perioden",
+      "insurance_fee": "Gebyr for full forsikring: {price} / {days} dager",
+      "promotional_price": "Rabattpris"
     },
     "bodyTypes": {
       "sedan": "Sedan",
@@ -1933,6 +1962,14 @@
           "placeholder": "F.eks. Hotel Marina eller Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Øy",
+            "placeholder": "Velg øy",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "Returstedet er det samme som hentestedet"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Lanzarote lufthavn",
             "fuerteventura": "Fuerteventura lufthavn"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Retursted",
+          "description": "Fyll ut dette hvis returstedet er forskjellig fra hentestedet.",
+          "placeType": {
+            "label": "Retursted",
+            "placeholder": "Velg retursted",
+            "airport": "Retur på flyplassen",
+            "accommodation": "Retur ved overnattingsstedet",
+            "office": "Retur på kontoret"
+          },
+          "locationName": {
+            "label": "Navn på retursted",
+            "placeholder": "Velg eller skriv inn retursted"
+          }
+        },
+        "time": {
+          "arrival": "Ankomst",
+          "pickup": "Henting",
+          "return": "Retur",
+          "hour": "time",
+          "minute": "minutt",
+          "tooltip": "Dette kan presiseres senere; et omtrentlig tidspunkt er nok."
+        },
+        "accommodationNoResult": "Fant ingen matchende innkvartering i den offisielle listen"
       },
       "consents": {
         "title": "Juridiske samtykker",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Velg øy",
+          "invalid": "Ugyldig øy"
+        },
         "placeType": {
           "required": "Velg hentested",
           "invalid": "Ugyldig hentested"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Pris for ekstrautstyr",
         "deliveryFee": "Leveringsgebyr",
         "bookingLink": "Bestillingslenke",
-        "adminName": "Ansvarlig kontaktperson"
+        "adminName": "Ansvarlig kontaktperson",
+        "returnDeliveryType": "Returtype",
+        "returnDeliveryLocation": "Retursted",
+        "returnDeliveryAddress": "Returadresse"
       }
     },
     "contactQuote": {

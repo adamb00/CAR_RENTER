@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Speciální slevy k dispozici",
-    "title": "Rezidentům a při pronájmu více aut nabízíme extra slevu.",
-    "description": "S platnou rezidentskou kartou vám můžeme poskytnout rezidentskou slevu na rezervaci. Individuální zvýhodněnou nabídku umíme připravit i při pronájmu více aut současně, například pro rodinné cesty, skupiny nebo souběžné rezervace.",
-    "primaryLabel": "Zobrazit dostupná auta",
-    "secondaryLabel": "Možná později"
+    "eyebrow": "Akční týdny",
+    "title": "Vybrané týdenní nabídky s dostupnými vozy.",
+    "description": "Našli jsme {count} aktuálních akčních vozů na Fuerteventuře a Lanzarote. Vyberte si týden a zkontrolujte dostupná auta.",
+    "dateRangeLabel": "Akce: od {startDate} do {endDate}",
+    "priceLabel": "{price} / týden",
+    "seatsLabel": "{count} míst",
+    "imageAlt": "{carName} v akční nabídce",
+    "primaryLabel": "Zobrazit nabídku",
+    "secondaryLabel": "Možná později",
+    "footerNote": "Dostupnost akcí se může měnit podle potvrzených rezervací."
   },
   "Inquire": {
     "title": "Rezervuj si auto hned!",
@@ -1389,6 +1394,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Zjistěte ceny a možnosti pronájmu ještě dnes!",
+    "pickupLocation": "Místo vyzvednutí",
+    "islandPlaceholder": "Vyberte ostrov",
+    "pickupDate": "Vyberte období pronájmu",
+    "apply": "Aktualizovat",
+    "cancel": "Zrušit",
+    "showPrices": "Zobrazit ceny",
+    "validation": {
+      "island": "Vyberte ostrov!",
+      "startDate": "Vyberte datum začátku!",
+      "endDate": "Vyberte datum ukončení!",
+      "age": "Věk řidiče musí být mezi 18 a 100 lety."
+    },
+    "age": "Věk řidiče",
+    "requestQuote": "Požádejte o nabídku pro vybraný termín"
+  },
   "Cars": {
     "title": "Objev Fuerteventuru a Lanzarote v naprosté svobodě s našimi vozy!",
     "p1": "U nás je půjčení auta jednoduché a rychlé: vybereš si vůz, který ti vyhovuje, a my ho doručíme na letiště nebo přímo k tvému hotelu. Díky našim flexibilním možnostem pronájmu můžeš <strong>bez starostí užívat dovolenou</strong>, ať potřebuješ auto na kratší nebo delší pobyt.",
@@ -1400,7 +1422,14 @@
       "per_day": "/ den",
       "from_price": "od €{price}",
       "weekly_price": "{price} / týden",
-      "available_from_week": "K dispozici už od {price} / týden"
+      "available_from_week": "K dispozici už od {price} / týden",
+      "custom_quote": "Požádejte o individuální nabídku na vybrané auto!",
+      "rental_fee": "Cena pronájmu: {price} / {days} dní",
+      "available_count": "{count} k dispozici pro toto období",
+      "low_available_count": "Méně než {count} aut k dispozici pro toto období",
+      "unavailable": "Není k dispozici pro toto období",
+      "insurance_fee": "Poplatek za plné pojištění: {price} / {days} dní",
+      "promotional_price": "Zvýhodněná cena"
     },
     "bodyTypes": {
       "sedan": "Sedan",
@@ -1928,6 +1957,14 @@
           "placeholder": "např. Hotel Marina nebo Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Ostrov",
+            "placeholder": "Vyberte ostrov",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "Místo vrácení je stejné jako místo převzetí"
           },
@@ -1974,7 +2011,31 @@
             "lanzarote": "Letiště Lanzarote",
             "fuerteventura": "Letiště Fuerteventura"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Místo vrácení",
+          "description": "Vyplňte, pokud se místo vrácení liší od místa převzetí.",
+          "placeType": {
+            "label": "Místo vrácení",
+            "placeholder": "Vyberte místo vrácení",
+            "airport": "Vrácení na letišti",
+            "accommodation": "Vrácení u ubytování",
+            "office": "Vrácení v kanceláři"
+          },
+          "locationName": {
+            "label": "Název místa vrácení",
+            "placeholder": "Vyberte nebo zadejte místo vrácení"
+          }
+        },
+        "time": {
+          "arrival": "Příjezd",
+          "pickup": "Převzetí",
+          "return": "Vrácení",
+          "hour": "hodina",
+          "minute": "minuta",
+          "tooltip": "Lze upřesnit později; stačí přibližný čas."
+        },
+        "accommodationNoResult": "V oficiálním seznamu ubytování nebyla nalezena shoda"
       },
       "consents": {
         "title": "Právní prohlášení",
@@ -2173,6 +2234,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Vyberte ostrov",
+          "invalid": "Neplatný ostrov"
+        },
         "placeType": {
           "required": "Vyberte místo převzetí",
           "invalid": "Neplatné místo převzetí"
@@ -2572,7 +2637,10 @@
         "extrasFee": "Cena doplňků",
         "deliveryFee": "Poplatek za doručení",
         "bookingLink": "Odkaz na rezervaci",
-        "adminName": "Zodpovědná osoba"
+        "adminName": "Zodpovědná osoba",
+        "returnDeliveryType": "Typ místa vrácení",
+        "returnDeliveryLocation": "Místo vrácení",
+        "returnDeliveryAddress": "Adresa vrácení"
       }
     },
     "contactQuote": {

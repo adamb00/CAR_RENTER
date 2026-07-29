@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Særlige rabatter tilgængelige",
-    "title": "Vi tilbyder ekstra rabat til fastboende og ved leje af flere biler.",
-    "description": "Med et gyldigt beboerkort kan vi give fastboenderabat på din booking. Vi kan også tilbyde et skræddersyet rabattilbud, hvis du lejer flere biler samtidig, for eksempel til familierejser, grupper eller parallelle bookinger.",
-    "primaryLabel": "Se ledige biler",
-    "secondaryLabel": "Måske senere"
+    "eyebrow": "Kampagneuger",
+    "title": "Udvalgte ugetilbud med ledige biler.",
+    "description": "Vi fandt {count} aktuelle kampagnebiler på Fuerteventura og Lanzarote. Vælg en uge og se de ledige biler.",
+    "dateRangeLabel": "Kampagne: fra {startDate} til {endDate}",
+    "priceLabel": "{price} / uge",
+    "seatsLabel": "{count} sæder",
+    "imageAlt": "{carName} i et kampagnetilbud",
+    "primaryLabel": "Se tilbud",
+    "secondaryLabel": "Måske senere",
+    "footerNote": "Kampagnernes tilgængelighed kan ændre sig, når bookinger bekræftes."
   },
   "Inquire": {
     "title": "Book nu!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Se priser og lejemuligheder nu!",
+    "pickupLocation": "Afhentningssted",
+    "islandPlaceholder": "Vælg en ø",
+    "pickupDate": "Vælg lejeperiode",
+    "apply": "Opdater",
+    "cancel": "Annuller",
+    "showPrices": "Vis priser",
+    "validation": {
+      "island": "Vælg venligst en ø!",
+      "startDate": "Vælg venligst en startdato!",
+      "endDate": "Vælg venligst en slutdato!",
+      "age": "Førerens alder skal være mellem 18 og 100 år."
+    },
+    "age": "Førerens alder",
+    "requestQuote": "Anmod om tilbud for de valgte datoer"
+  },
   "Cars": {
     "title": "Oplev Fuerteventura og Lanzarote i fuld frihed med vores biler!",
     "p1": "Hos os er billeje enkelt og hurtigt: du vælger den bil, der passer til dig, og vi leverer den til lufthavnen eller direkte til dit hotel. Med vores fleksible lejebetingelser kan du <strong>nyde ferien uden bekymringer</strong> – uanset om du har brug for bil i kortere eller længere tid.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ dag",
       "from_price": "fra €{price}",
       "weekly_price": "{price} / uge",
-      "available_from_week": "Tilgængelig fra {price} / uge"
+      "available_from_week": "Tilgængelig fra {price} / uge",
+      "custom_quote": "Bed om et skræddersyet tilbud på den valgte bil!",
+      "rental_fee": "Lejepris: {price} / {days} dage",
+      "available_count": "{count} ledige i denne periode",
+      "low_available_count": "Færre end {count} biler ledige i denne periode",
+      "unavailable": "Ikke ledig i denne periode",
+      "insurance_fee": "Gebyr for fuld forsikring: {price} / {days} dage",
+      "promotional_price": "Rabatpris"
     },
     "bodyTypes": {
       "sedan": "Sedan",
@@ -1933,6 +1962,14 @@
           "placeholder": "F.eks. Hotel Marina eller Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Ø",
+            "placeholder": "Vælg ø",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "Afleveringsstedet er det samme som afhentningsstedet"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Lanzarote lufthavn",
             "fuerteventura": "Fuerteventura lufthavn"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Afleveringssted",
+          "description": "Udfyld dette, hvis afleveringsstedet ikke er det samme som afhentningsstedet.",
+          "placeType": {
+            "label": "Afleveringssted",
+            "placeholder": "Vælg afleveringssted",
+            "airport": "Aflevering i lufthavnen",
+            "accommodation": "Aflevering ved overnatningsstedet",
+            "office": "Aflevering på kontoret"
+          },
+          "locationName": {
+            "label": "Navn på afleveringssted",
+            "placeholder": "Vælg eller indtast afleveringssted"
+          }
+        },
+        "time": {
+          "arrival": "Ankomst",
+          "pickup": "Afhentning",
+          "return": "Aflevering",
+          "hour": "time",
+          "minute": "minut",
+          "tooltip": "Det kan præciseres senere; et omtrentligt tidspunkt er nok."
+        },
+        "accommodationNoResult": "Ingen matchende indkvartering fundet i den officielle liste"
       },
       "consents": {
         "title": "Juridiske erklæringer",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Vælg ø",
+          "invalid": "Ugyldig ø"
+        },
         "placeType": {
           "required": "Vælg afhentningssted",
           "invalid": "Ugyldigt afhentningssted"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Ekstraudgift",
         "deliveryFee": "Leveringsgebyr",
         "bookingLink": "Bookinglink",
-        "adminName": "Ansvarlig kontaktperson"
+        "adminName": "Ansvarlig kontaktperson",
+        "returnDeliveryType": "Afleveringstype",
+        "returnDeliveryLocation": "Afleveringssted",
+        "returnDeliveryAddress": "Afleveringsadresse"
       }
     },
     "contactQuote": {

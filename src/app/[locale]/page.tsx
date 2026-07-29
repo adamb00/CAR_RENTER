@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { buildPageMetadata, resolveLocale } from '@/lib/seo/seo';
 import HomeClient from './HomeClient';
+import { getCarActions } from '@/lib/cars';
 
 type PageParams = { locale: string };
 
@@ -19,6 +20,25 @@ export async function generateMetadata({
   });
 }
 
-export default function HomePage() {
-  return <HomeClient />;
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<PageParams>;
+}) {
+  const { locale } = await params;
+  const actions = await getCarActions();
+
+  const lanzaroteActions = actions.filter(
+    (action) => action.island === 'lanzarote',
+  );
+  const fuerteventuraActions = actions.filter(
+    (action) => action.island === 'fuerteventura',
+  );
+
+  return (
+    <HomeClient
+      locale={locale}
+      actions={[fuerteventuraActions, lanzaroteActions]}
+    />
+  );
 }

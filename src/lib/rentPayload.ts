@@ -3,6 +3,9 @@ import { RentFormValues } from '@/schemas/RentSchema';
 type DeliveryAddress = NonNullable<
   NonNullable<RentFormValues['delivery']>['address']
 >;
+type DeliveryReturnLocation = NonNullable<
+  NonNullable<RentFormValues['delivery']>['returnLocation']
+>;
 
 export type CompactRentPayload = {
   v: 2;
@@ -15,6 +18,7 @@ export type CompactRentPayload = {
   consents: RentFormValues['consents'];
   deliverySame: boolean;
   deliveryAddress: DeliveryAddress | null;
+  deliveryReturnLocation?: DeliveryReturnLocation | null;
   cars: string | null;
   residentCard: RentFormValues['residentCard'] | null;
 };
@@ -38,17 +42,35 @@ export const parseCompactRentPayload = (
 
 export const buildCompactRentPayload = (
   values: RentFormValues,
-): CompactRentPayload => ({
-  v: 2,
-  adults: typeof values.adults === 'number' ? values.adults : null,
-  children: Array.isArray(values.children) ? values.children : [],
-  extras: Array.isArray(values.extras) ? values.extras : [],
-  driver: Array.isArray(values.driver) ? values.driver : [],
-  invoice: values.invoice,
-  tax: values.tax,
-  consents: values.consents,
-  deliverySame: Boolean(values.delivery?.same),
-  deliveryAddress: values.delivery?.address ?? null,
-  cars: values.cars ?? null,
-  residentCard: values.residentCard ?? null,
-});
+): CompactRentPayload => {
+  const delivery = values.delivery;
+  const deliveryReturnLocation = delivery?.same
+    ? {
+        placeType: delivery.placeType,
+        locationName: delivery.locationName ?? '',
+        address: {
+          country: delivery.address?.country ?? '',
+          postalCode: delivery.address?.postalCode ?? '',
+          city: delivery.address?.city ?? '',
+          street: delivery.address?.street ?? '',
+          doorNumber: delivery.address?.doorNumber ?? '',
+        },
+      }
+    : (delivery?.returnLocation ?? null);
+
+  return {
+    v: 2,
+    adults: typeof values.adults === 'number' ? values.adults : null,
+    children: Array.isArray(values.children) ? values.children : [],
+    extras: Array.isArray(values.extras) ? values.extras : [],
+    driver: Array.isArray(values.driver) ? values.driver : [],
+    invoice: values.invoice,
+    tax: values.tax,
+    consents: values.consents,
+    deliverySame: Boolean(delivery?.same),
+    deliveryAddress: delivery?.address ?? null,
+    deliveryReturnLocation,
+    cars: values.cars ?? null,
+    residentCard: values.residentCard ?? null,
+  };
+};

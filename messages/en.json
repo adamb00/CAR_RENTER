@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Special discounts available",
-    "title": "Residents and multi-car bookings can receive an extra discount.",
-    "description": "If you have a valid resident card, we can offer a resident discount on your booking. We can also provide a custom discounted offer when you rent multiple cars at the same time, whether for family travel, group holidays or parallel reservations.",
-    "primaryLabel": "See available cars",
-    "secondaryLabel": "Maybe later"
+    "eyebrow": "Promotion weeks",
+    "title": "Featured weekly deals with available cars.",
+    "description": "We found {count} current promotional cars in Fuerteventura and Lanzarote. Choose a week and check the available cars.",
+    "dateRangeLabel": "Promotion: {startDate} to {endDate}",
+    "priceLabel": "{price} / week",
+    "seatsLabel": "{count} seats",
+    "imageAlt": "{carName} in a promotional offer",
+    "primaryLabel": "View deal",
+    "secondaryLabel": "Maybe later",
+    "footerNote": "Promotion availability may change as bookings are confirmed."
   },
   "Inquire": {
     "title": "Book now!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Check our prices and rental options now!",
+    "pickupLocation": "Pickup location",
+    "islandPlaceholder": "Select an island",
+    "pickupDate": "Select rental period",
+    "apply": "Update",
+    "cancel": "Cancel",
+    "showPrices": "Show prices",
+    "validation": {
+      "island": "Please select an island!",
+      "startDate": "Please select a start date!",
+      "endDate": "Please select an end date!",
+      "age": "Driver age must be between 18 and 100."
+    },
+    "age": "Driver age",
+    "requestQuote": "Request a quote for the selected dates"
+  },
   "Cars": {
     "title": "Discover Fuerteventura and Lanzarote in total freedom with our cars!",
     "p1": "With us, car rental is simple and fast: choose the vehicle that suits you best and we deliver it to the airport or directly to your hotel. Thanks to our flexible car rental options you can <strong>enjoy your holiday without worries</strong>, whether you need a car for a short trip or a longer stay.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ day",
       "from_price": "from €{price}",
       "weekly_price": "{price} / week",
-      "available_from_week": "Available from {price} / week"
+      "available_from_week": "Available from {price} / week",
+      "custom_quote": "Request a custom quote for the selected car!",
+      "rental_fee": "Rental fee: {price} / {days} days",
+      "available_count": "{count} available for this period",
+      "low_available_count": "Fewer than {count} cars available for this period",
+      "unavailable": "Not available for this period",
+      "insurance_fee": "Full coverage insurance fee: {price} / {days} days",
+      "promotional_price": "Discounted price"
     },
     "bodyTypes": {
       "sedan": "Sedan",
@@ -1933,6 +1962,14 @@
           "placeholder": "e.g. Hotel Marina or Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Island",
+            "placeholder": "Select island",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "The return location is the same as the pickup location"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Lanzarote Airport",
             "fuerteventura": "Fuerteventura Airport"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Return location",
+          "description": "Fill this in if the return location is different from the pickup location.",
+          "placeType": {
+            "label": "Return location",
+            "placeholder": "Select a return location",
+            "airport": "Return at the airport",
+            "accommodation": "Return at the accommodation",
+            "office": "Return at the office"
+          },
+          "locationName": {
+            "label": "Return location name",
+            "placeholder": "Select or enter the return location"
+          }
+        },
+        "time": {
+          "arrival": "Arrival",
+          "pickup": "Pickup",
+          "return": "Return",
+          "hour": "hour",
+          "minute": "minute",
+          "tooltip": "This can be updated later; an approximate time is enough."
+        },
+        "accommodationNoResult": "No matching accommodation found in the official accommodation list"
       },
       "consents": {
         "title": "Legal declarations",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Please select the island",
+          "invalid": "Invalid island"
+        },
         "placeType": {
           "required": "Please select the pickup location",
           "invalid": "Invalid pickup location"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Extras fee",
         "deliveryFee": "Delivery fee",
         "bookingLink": "Booking link",
-        "adminName": "Assigned agent"
+        "adminName": "Assigned agent",
+        "returnDeliveryType": "Return type",
+        "returnDeliveryLocation": "Return location",
+        "returnDeliveryAddress": "Return address"
       }
     },
     "contactQuote": {

@@ -39,6 +39,8 @@ export function QuoteRequestForm({
   availableCars,
   prefill,
   accommodation,
+  startDate,
+  endDate,
 }: QuoteRequestFormProps) {
   const t = useTranslations('Contact');
   const tSchema = useTranslations('RentSchema');
@@ -86,8 +88,8 @@ export function QuoteRequestForm({
       phone: '',
       email: sanitizedPrefillEmail,
       preferredChannel: 'email' as PreferredChannel,
-      rentalStart: '',
-      rentalEnd: '',
+      rentalStart: startDate || '',
+      rentalEnd: endDate || '',
       rentalDays: undefined,
       arrivalFlight: '',
       departureFlight: '',

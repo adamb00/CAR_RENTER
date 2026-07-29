@@ -84,4 +84,6 @@ export type QuoteRequestFormProps = {
     postalCode?: string;
     island?: string;
   } | null;
+  startDate?: string;
+  endDate?: string;
 };

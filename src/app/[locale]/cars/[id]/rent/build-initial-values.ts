@@ -80,11 +80,14 @@ export const buildInitialValues = (
       },
     },
     delivery: {
-      same: false,
+      same: true,
+      island: undefined,
       placeType: toDeliveryPlaceType(quoteDelivery?.placeType),
       locationName: quoteDelivery?.locationName ?? '',
       arrivalHour: '',
       arrivalMinute: '',
+      returnHour: '',
+      returnMinute: '',
       arrivalFlight: quote?.arrivalFlight ?? '',
       departureFlight: quote?.departureFlight ?? '',
       address: {
@@ -93,6 +96,17 @@ export const buildInitialValues = (
         city: quoteDelivery?.address?.city ?? '',
         street: quoteDelivery?.address?.street ?? '',
         doorNumber: quoteDelivery?.address?.doorNumber ?? '',
+      },
+      returnLocation: {
+        placeType: undefined,
+        locationName: '',
+        address: {
+          country: '',
+          postalCode: '',
+          city: '',
+          street: '',
+          doorNumber: '',
+        },
       },
     },
     tax: {

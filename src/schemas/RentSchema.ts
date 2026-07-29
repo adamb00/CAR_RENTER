@@ -44,8 +44,8 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
     endTooLate: 'A záródátum legfeljebb egy éven belül lehet',
     deliveryPlaceTypeRequired: 'Válaszd ki az átvétel helyét',
     deliveryFieldRequired: 'Kötelező mező',
-    arrivalFlightRequired: 'Add meg az érkező járatszámot',
-    departureFlightRequired: 'Add meg a visszaút járatszámát',
+    // arrivalFlightRequired: 'Add meg az érkező járatszámot',
+    // departureFlightRequired: 'Add meg a visszaút járatszámát',
     sameDayAccommodationPickupLeadTime:
       'Mai átvétel esetén a foglalást legalább 2 órával az átvétel előtt kell leadni',
   },
@@ -181,16 +181,20 @@ const DEFAULT_RENT_SCHEMA_MESSAGES = {
       },
     },
     delivery: {
+      island: {
+        required: 'Válaszd ki a szigetet',
+        invalid: 'Érvénytelen sziget',
+      },
       placeType: {
         required: 'Válaszd ki az átvétel helyét',
         invalid: 'Érvénytelen átvételi hely',
       },
-      arrivalFlight: {
-        required: 'Add meg az érkező járatszámot',
-      },
-      departureFlight: {
-        required: 'Add meg a visszaút járatszámát',
-      },
+      // arrivalFlight: {
+      //   required: 'Add meg az érkező járatszámot',
+      // },
+      // departureFlight: {
+      //   required: 'Add meg a visszaút járatszámát',
+      // },
       address: {
         country: {
           required: 'Kötelező mező',
@@ -346,6 +350,16 @@ export function createRentSchema(
       quoteId: z.string().optional(),
       hasQuoteAccommodation: z.boolean().optional(),
       offer: z.number().optional(),
+      pricingSnapshot: z
+        .object({
+          rentalFee: z.string().trim().optional().nullable(),
+          insurance: z.string().trim().optional().nullable(),
+          deposit: z.string().trim().optional().nullable(),
+          deliveryFee: z.string().trim().optional().nullable(),
+          extrasFee: z.string().trim().optional().nullable(),
+          tip: z.string().trim().optional().nullable(),
+        })
+        .optional(),
       extras: z.array(z.string()).optional(),
       cars: z.string().optional(),
       residentCard: z
@@ -539,21 +553,22 @@ export function createRentSchema(
       }),
       delivery: z
         .object({
-          same: z.boolean().default(false),
+          same: z.boolean().default(true),
+          island: z
+            .enum(['Lanzarote', 'Fuerteventura'], {
+              error: message('fields.delivery.island.invalid'),
+            })
+            .optional(),
           placeType: z
             .enum(['accommodation', 'airport', 'office'], {
               error: message('fields.delivery.placeType.invalid'),
             })
             .optional(),
           locationName: z.string().max(200).optional(),
-          arrivalHour: z
-            .string()
-            .trim()
-            .optional(),
-          arrivalMinute: z
-            .string()
-            .trim()
-            .optional(),
+          arrivalHour: z.string().trim().optional(),
+          arrivalMinute: z.string().trim().optional(),
+          returnHour: z.string().trim().optional(),
+          returnMinute: z.string().trim().optional(),
           arrivalFlight: z.string().trim().optional(),
           departureFlight: z.string().trim().optional(),
           address: z
@@ -563,6 +578,25 @@ export function createRentSchema(
               city: z.string().optional(),
               street: z.string().optional(),
               doorNumber: z.string().optional(),
+            })
+            .optional(),
+          returnLocation: z
+            .object({
+              placeType: z
+                .enum(['accommodation', 'airport', 'office'], {
+                  error: message('fields.delivery.placeType.invalid'),
+                })
+                .optional(),
+              locationName: z.string().max(200).optional(),
+              address: z
+                .object({
+                  country: z.string().optional(),
+                  postalCode: z.string().optional(),
+                  city: z.string().optional(),
+                  street: z.string().optional(),
+                  doorNumber: z.string().optional(),
+                })
+                .optional(),
             })
             .optional(),
         })
@@ -592,226 +626,308 @@ export function createRentSchema(
         { rentalPeriod, delivery, children, hasQuoteAccommodation, consents },
         ctx,
       ) => {
-      const start = parseComparableDate(rentalPeriod.startDate);
-      const end = parseComparableDate(rentalPeriod.endDate);
+        const start = parseComparableDate(rentalPeriod.startDate);
+        const end = parseComparableDate(rentalPeriod.endDate);
 
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
-      const maxDate = new Date(today);
-      maxDate.setFullYear(maxDate.getFullYear() + 1);
+        const maxDate = new Date(today);
+        maxDate.setFullYear(maxDate.getFullYear() + 1);
 
-      if (start && start < today) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.rentalPeriod.startDate.past'),
-          path: ['rentalPeriod', 'startDate'],
-        });
-      }
-
-      if (start && start > maxDate) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.rentalPeriod.startDate.tooLate'),
-          path: ['rentalPeriod', 'startDate'],
-        });
-      }
-
-      if (start && end && end < start) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.rentalPeriod.endDate.beforeStart'),
-          path: ['rentalPeriod', 'endDate'],
-        });
-      }
-
-      if (end && end > maxDate) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.rentalPeriod.endDate.tooLate'),
-          path: ['rentalPeriod', 'endDate'],
-        });
-      }
-
-      const placeType = delivery?.placeType;
-      const hasAccommodationQuote = Boolean(hasQuoteAccommodation);
-      const shouldRequireTravelFields = !hasAccommodationQuote;
-      const locationName = delivery?.locationName;
-      const address = delivery?.address ?? {};
-      const arrivalHour =
-        typeof delivery?.arrivalHour === 'string'
-          ? delivery.arrivalHour.trim()
-          : '';
-      const arrivalMinute =
-        typeof delivery?.arrivalMinute === 'string'
-          ? delivery.arrivalMinute.trim()
-          : '';
-      const arrivalFlight =
-        typeof delivery?.arrivalFlight === 'string'
-          ? delivery.arrivalFlight.trim()
-          : '';
-      const departureFlight =
-        typeof delivery?.departureFlight === 'string'
-          ? delivery.departureFlight.trim()
-          : '';
-
-      if (hasAccommodationQuote && consents.insurance !== true) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.consents.insurance.required'),
-          path: ['consents', 'insurance'],
-        });
-      }
-
-      if (!placeType) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: message('fields.delivery.placeType.required'),
-          path: ['delivery', 'placeType'],
-        });
-      }
-
-      if (placeType === 'airport') {
-        const normalizedLocationName =
-          typeof locationName === 'string' ? locationName.trim() : '';
-        if (
-          normalizedLocationName.length === 0 ||
-          !isFixedAirportLocationName(normalizedLocationName)
-        ) {
+        if (start && start < today) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: message('errors.deliveryFieldRequired'),
-            path: ['delivery', 'locationName'],
-          });
-        }
-      }
-
-      if (shouldRequireTravelFields) {
-        if (!/^(?:[01]\d|2[0-3])$/.test(arrivalHour)) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: message('errors.deliveryFieldRequired'),
-            path: ['delivery', 'arrivalHour'],
+            message: message('fields.rentalPeriod.startDate.past'),
+            path: ['rentalPeriod', 'startDate'],
           });
         }
 
-        if (!/^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(arrivalMinute)) {
+        if (start && start > maxDate) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: message('errors.deliveryFieldRequired'),
-            path: ['delivery', 'arrivalMinute'],
+            message: message('fields.rentalPeriod.startDate.tooLate'),
+            path: ['rentalPeriod', 'startDate'],
           });
         }
 
-        if (arrivalFlight.length === 0) {
+        if (start && end && end < start) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: message('fields.delivery.arrivalFlight.required'),
-            path: ['delivery', 'arrivalFlight'],
+            message: message('fields.rentalPeriod.endDate.beforeStart'),
+            path: ['rentalPeriod', 'endDate'],
           });
         }
 
-        if (departureFlight.length === 0) {
+        if (end && end > maxDate) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: message('fields.delivery.departureFlight.required'),
-            path: ['delivery', 'departureFlight'],
-          });
-        }
-      }
-
-      if (hasAccommodationQuote && start && isSameCalendarDay(start, today)) {
-        const hasValidArrivalHour = /^(?:[01]\d|2[0-3])$/.test(arrivalHour);
-        const hasValidArrivalMinute =
-          /^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(
-            arrivalMinute,
-          );
-
-        if (!hasValidArrivalHour) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: message('errors.deliveryFieldRequired'),
-            path: ['delivery', 'arrivalHour'],
+            message: message('fields.rentalPeriod.endDate.tooLate'),
+            path: ['rentalPeriod', 'endDate'],
           });
         }
 
-        if (!hasValidArrivalMinute) {
+        const placeType = delivery?.placeType;
+        const deliveryIsland = delivery?.island;
+        const returnLocation = delivery?.returnLocation;
+        const hasAccommodationQuote = Boolean(hasQuoteAccommodation);
+        const shouldRequireTravelFields = !hasAccommodationQuote;
+        const locationName = delivery?.locationName;
+        const address = delivery?.address ?? {};
+        const shouldRequireReturnLocation = delivery?.same === false;
+        const returnPlaceType = returnLocation?.placeType;
+        const returnLocationName =
+          typeof returnLocation?.locationName === 'string'
+            ? returnLocation.locationName.trim()
+            : '';
+        const returnAddress = returnLocation?.address ?? {};
+        const arrivalHour =
+          typeof delivery?.arrivalHour === 'string'
+            ? delivery.arrivalHour.trim()
+            : '';
+        const arrivalMinute =
+          typeof delivery?.arrivalMinute === 'string'
+            ? delivery.arrivalMinute.trim()
+            : '';
+        const returnHour =
+          typeof delivery?.returnHour === 'string'
+            ? delivery.returnHour.trim()
+            : '';
+        const returnMinute =
+          typeof delivery?.returnMinute === 'string'
+            ? delivery.returnMinute.trim()
+            : '';
+        const arrivalFlight =
+          typeof delivery?.arrivalFlight === 'string'
+            ? delivery.arrivalFlight.trim()
+            : '';
+        const departureFlight =
+          typeof delivery?.departureFlight === 'string'
+            ? delivery.departureFlight.trim()
+            : '';
+
+        if (hasAccommodationQuote && consents.insurance !== true) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: message('errors.deliveryFieldRequired'),
-            path: ['delivery', 'arrivalMinute'],
+            message: message('fields.consents.insurance.required'),
+            path: ['consents', 'insurance'],
           });
         }
 
-        if (hasValidArrivalHour && hasValidArrivalMinute) {
-          const pickupAt = new Date(start);
-          pickupAt.setHours(Number(arrivalHour), Number(arrivalMinute), 0, 0);
+        if (!placeType) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('fields.delivery.placeType.required'),
+            path: ['delivery', 'placeType'],
+          });
+        }
 
-          if (pickupAt.getTime() - Date.now() < 2 * 60 * 60 * 1000) {
-            const issue = {
-              code: z.ZodIssueCode.custom,
-              message: message('errors.sameDayAccommodationPickupLeadTime'),
-            };
+        if (!deliveryIsland) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: message('fields.delivery.island.required'),
+            path: ['delivery', 'island'],
+          });
+        }
+
+        if (placeType === 'airport') {
+          const normalizedLocationName =
+            typeof locationName === 'string' ? locationName.trim() : '';
+          if (
+            normalizedLocationName.length === 0 ||
+            !isFixedAirportLocationName(normalizedLocationName)
+          ) {
             ctx.addIssue({
-              ...issue,
+              code: z.ZodIssueCode.custom,
+              message: message('errors.deliveryFieldRequired'),
+              path: ['delivery', 'locationName'],
+            });
+          }
+        }
+
+        // if (shouldRequireTravelFields) {
+        //   if (!/^(?:[01]\d|2[0-3])$/.test(arrivalHour)) {
+        //     ctx.addIssue({
+        //       code: z.ZodIssueCode.custom,
+        //       message: message('errors.deliveryFieldRequired'),
+        //       path: ['delivery', 'arrivalHour'],
+        //     });
+        //   }
+
+        //   if (
+        //     !/^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(arrivalMinute)
+        //   ) {
+        //     ctx.addIssue({
+        //       code: z.ZodIssueCode.custom,
+        //       message: message('errors.deliveryFieldRequired'),
+        //       path: ['delivery', 'arrivalMinute'],
+        //     });
+        //   }
+
+        //   if (arrivalFlight.length === 0) {
+        //     ctx.addIssue({
+        //       code: z.ZodIssueCode.custom,
+        //       message: message('fields.delivery.arrivalFlight.required'),
+        //       path: ['delivery', 'arrivalFlight'],
+        //     });
+        //   }
+
+        //   if (departureFlight.length === 0) {
+        //     ctx.addIssue({
+        //       code: z.ZodIssueCode.custom,
+        //       message: message('fields.delivery.departureFlight.required'),
+        //       path: ['delivery', 'departureFlight'],
+        //     });
+        //   }
+        // }
+
+        // if (!/^(?:[01]\d|2[0-3])$/.test(returnHour)) {
+        //   ctx.addIssue({
+        //     code: z.ZodIssueCode.custom,
+        //     message: message('errors.deliveryFieldRequired'),
+        //     path: ['delivery', 'returnHour'],
+        //   });
+        // }
+
+        // if (!/^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(returnMinute)) {
+        //   ctx.addIssue({
+        //     code: z.ZodIssueCode.custom,
+        //     message: message('errors.deliveryFieldRequired'),
+        //     path: ['delivery', 'returnMinute'],
+        //   });
+        // }
+
+        if (hasAccommodationQuote && start && isSameCalendarDay(start, today)) {
+          const hasValidArrivalHour = /^(?:[01]\d|2[0-3])$/.test(arrivalHour);
+          const hasValidArrivalMinute =
+            /^(?:00|05|10|15|20|25|30|35|40|45|50|55)$/.test(arrivalMinute);
+
+          if (!hasValidArrivalHour) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: message('errors.deliveryFieldRequired'),
               path: ['delivery', 'arrivalHour'],
             });
+          }
+
+          if (!hasValidArrivalMinute) {
             ctx.addIssue({
-              ...issue,
+              code: z.ZodIssueCode.custom,
+              message: message('errors.deliveryFieldRequired'),
               path: ['delivery', 'arrivalMinute'],
             });
           }
+
+          if (hasValidArrivalHour && hasValidArrivalMinute) {
+            const pickupAt = new Date(start);
+            pickupAt.setHours(Number(arrivalHour), Number(arrivalMinute), 0, 0);
+
+            if (pickupAt.getTime() - Date.now() < 2 * 60 * 60 * 1000) {
+              const issue = {
+                code: z.ZodIssueCode.custom,
+                message: message('errors.sameDayAccommodationPickupLeadTime'),
+              };
+              ctx.addIssue({
+                ...issue,
+                path: ['delivery', 'arrivalHour'],
+              });
+              ctx.addIssue({
+                ...issue,
+                path: ['delivery', 'arrivalMinute'],
+              });
+            }
+          }
         }
-      }
 
-      const requiresAddress = placeType === 'accommodation';
+        const requiresAddress = placeType === 'accommodation';
 
-      if (requiresAddress) {
-        // Csak a kötelező címmezők (street és doorNumber opcionális marad)
-        const requiredAddressKeys: DeliveryAddressKey[] = [
-          'country',
-          'postalCode',
-          'city',
-        ];
-        requiredAddressKeys.forEach((key) => {
-          const value = address[key];
-          if (typeof value !== 'string' || value.trim().length === 0) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: message(deliveryAddressMessages[key]),
-              path: ['delivery', 'address', key],
-            });
-          }
-        });
-      }
+        if (requiresAddress) {
+          // Csak a kötelező címmezők (street és doorNumber opcionális marad)
+          const requiredAddressKeys: DeliveryAddressKey[] = [
+            'country',
+            'postalCode',
+            'city',
+          ];
+          requiredAddressKeys.forEach((key) => {
+            const value = address[key];
+            if (typeof value !== 'string' || value.trim().length === 0) {
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: message(deliveryAddressMessages[key]),
+                path: ['delivery', 'address', key],
+              });
+            }
+          });
+        }
 
-      const childList = Array.isArray(children) ? children : [];
-      if (childList.length > 0) {
-        childList.forEach((child, idx) => {
-          if (child?.age === undefined) {
+        if (shouldRequireReturnLocation) {
+          if (!returnPlaceType) {
             ctx.addIssue({
               code: z.ZodIssueCode.custom,
               message: message('errors.deliveryFieldRequired'),
-              path: ['children', idx, 'age'],
+              path: ['delivery', 'returnLocation', 'placeType'],
             });
           }
-          if (child?.height === undefined) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: message('errors.deliveryFieldRequired'),
-              path: ['children', idx, 'height'],
+
+          if (returnPlaceType === 'airport') {
+            if (
+              returnLocationName.length === 0 ||
+              !isFixedAirportLocationName(returnLocationName)
+            ) {
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: message('errors.deliveryFieldRequired'),
+                path: ['delivery', 'returnLocation', 'locationName'],
+              });
+            }
+          }
+
+          if (returnPlaceType === 'accommodation') {
+            const requiredReturnAddressKeys: DeliveryAddressKey[] = [
+              'country',
+              'postalCode',
+              'city',
+            ];
+            requiredReturnAddressKeys.forEach((key) => {
+              const value = returnAddress[key];
+              if (typeof value !== 'string' || value.trim().length === 0) {
+                ctx.addIssue({
+                  code: z.ZodIssueCode.custom,
+                  message: message(deliveryAddressMessages[key]),
+                  path: ['delivery', 'returnLocation', 'address', key],
+                });
+              }
             });
           }
-          if (child?.weight === undefined) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: message('errors.deliveryFieldRequired'),
-              path: ['children', idx, 'weight'],
-            });
-          }
-        });
-      }
-    },
+        }
+
+        const childList = Array.isArray(children) ? children : [];
+        if (childList.length > 0) {
+          childList.forEach((child, idx) => {
+            if (child?.age === undefined) {
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: message('errors.deliveryFieldRequired'),
+                path: ['children', idx, 'age'],
+              });
+            }
+            if (child?.height === undefined) {
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: message('errors.deliveryFieldRequired'),
+                path: ['children', idx, 'height'],
+              });
+            }
+            if (child?.weight === undefined) {
+              ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: message('errors.deliveryFieldRequired'),
+                path: ['children', idx, 'weight'],
+              });
+            }
+          });
+        }
+      },
     );
 }
 

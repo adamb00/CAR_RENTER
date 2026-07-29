@@ -27,6 +27,8 @@ type SubmitContext = {
   successMessage: string;
   errorMessage: string;
   offer?: number;
+  rentalFee?: string;
+  insurance?: string;
 };
 
 type CreateSubmitHandlerParams = {
@@ -51,7 +53,6 @@ export function useCreateSubmitHandler({
   form,
   rentSchema,
   formRef,
-  openMissingFlightsDialog,
   closeMissingFlightsDialog,
   startTransition,
   context,
@@ -72,24 +73,6 @@ export function useCreateSubmitHandler({
     section: manageContext?.section,
     scrollToSection,
   });
-  const shouldAskForFlightNumbers = React.useCallback(
-    (values: RentFormResolvedValues) => {
-      if (values.hasQuoteAccommodation) {
-        return false;
-      }
-
-      const arrival =
-        typeof values.delivery?.arrivalFlight === 'string'
-          ? values.delivery.arrivalFlight.trim()
-          : '';
-      const departure =
-        typeof values.delivery?.departureFlight === 'string'
-          ? values.delivery.departureFlight.trim()
-          : '';
-      return arrival.length === 0 || departure.length === 0;
-    },
-    [],
-  );
 
   const submitRentRequest = React.useCallback(
     (parsed: RentFormResolvedValues) => {
@@ -113,6 +96,12 @@ export function useCreateSubmitHandler({
         actionPayload.rentId = rentIdPayload;
         if (Number.isInteger(context.offer)) {
           actionPayload.offer = context.offer;
+        }
+        if (context.rentalFee || context.insurance) {
+          actionPayload.pricingSnapshot = {
+            rentalFee: context.rentalFee ?? null,
+            insurance: context.insurance ?? null,
+          };
         }
 
         const res = await RentAction({
@@ -162,6 +151,8 @@ export function useCreateSubmitHandler({
       context.locale,
       context.manageRentId,
       context.quoteId,
+      context.rentalFee,
+      context.insurance,
       context.successMessage,
       routerPush,
       startTransition,
@@ -169,15 +160,9 @@ export function useCreateSubmitHandler({
   );
 
   return React.useCallback(
-    (options?: SubmitOptions) =>
+    (_options?: SubmitOptions) =>
       form.handleSubmit((values) => {
         const parsed = rentSchema.parse(values);
-        const shouldPrompt = shouldAskForFlightNumbers(parsed);
-
-        if (shouldPrompt && !options?.bypassFlightCheck) {
-          openMissingFlightsDialog();
-          return;
-        }
 
         closeMissingFlightsDialog();
         submitRentRequest(parsed);
@@ -186,9 +171,7 @@ export function useCreateSubmitHandler({
       closeMissingFlightsDialog,
       form,
       onInvalid,
-      openMissingFlightsDialog,
       rentSchema,
-      shouldAskForFlightNumbers,
       submitRentRequest,
     ],
   );

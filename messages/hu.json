@@ -705,11 +705,16 @@
     }
   },
   "HomePopup": {
-    "eyebrow": "Kedvezményes ajánlat",
-    "title": "Rezidenseknek és több autó bérlése esetén extra kedvezményt biztosítunk.",
-    "description": "Érvényes rezidens kártyával rezidens kedvezményt biztosítunk a foglalásodra. Emellett több autó egyidejű bérlése esetén is tudunk egyedi, kedvezményes ajánlatot adni, legyen szó családi utazásról, nagyobb társaságról vagy párhuzamos foglalásokról.",
-    "primaryLabel": "Elérhető autók",
-    "secondaryLabel": "Majd később"
+    "eyebrow": "Akciós időszakok",
+    "title": "Kiemelt ajánlatok elérhető autókkal.",
+    "description": "{count} aktuális akciós autót találtunk Fuerteventurán és Lanzarotén. Válaszd ki az időszakot, és nézd meg az elérhető autókat.",
+    "dateRangeLabel": "Akció: {startDate}-tól {endDate}-ig",
+    "priceLabel": "{price} / hét",
+    "seatsLabel": "{count} ülés",
+    "imageAlt": "{carName} akciós ajánlatban",
+    "primaryLabel": "Megnézem",
+    "secondaryLabel": "Majd később",
+    "footerNote": "Az akciók elérhetősége a foglalások függvényében változhat. Több akció összevonására nincs lehetőség."
   },
   "Inquire": {
     "title": "Foglald le most!",
@@ -1394,6 +1399,23 @@
       }
     }
   },
+  "RentSection": {
+    "title": "Tudd meg az árakat és a bérlési lehetőségeket most!",
+    "pickupLocation": "Felvétel helye",
+    "islandPlaceholder": "Válassz egy szigetet",
+    "pickupDate": "Bérleti időszak kiválasztása",
+    "apply": "Frissítés",
+    "cancel": "Mégse",
+    "showPrices": "Mutasd az árakat",
+    "validation": {
+      "island": "Kérlek válassz egy szigetet!",
+      "startDate": "Kérlek válassz egy kezdő dátumot!",
+      "endDate": "Kérlek válassz egy befejező dátumot!",
+      "age": "A vezető életkorának 18 és 100 év között kell lennie."
+    },
+    "age": "Vezető életkora",
+    "requestQuote": "Kérj ajánlatot a kiválasztott időpontra"
+  },
   "Cars": {
     "title": "Fedezd fel Fuerteventurát és Lanzarotét teljes szabadságban autóinkkal!",
     "p1": "Nálunk az autóbérlés egyszerű és gyors: kiválasztod a számodra megfelelő járművet, és mi kiszállítjuk a reptérre vagy közvetlenül a szállodádhoz. Rugalmas autókölcsönzési lehetőségeinknek köszönhetően <strong>gondtalanul élvezheted nyaralásod</strong>, akár rövid, akár hosszabb tartózkodásra van szükséged autóra.",
@@ -1405,7 +1427,14 @@
       "per_day": "/ nap",
       "from_price": "€{price}-tól",
       "weekly_price": "{price} / hét",
-      "available_from_week": "Elérhető már akár {price} / hét"
+      "available_from_week": "Elérhető már akár {price} / hét",
+      "custom_quote": "Kérjen egyedi árajánlatot a kiválasztott autóra!",
+      "rental_fee": "Bérleti díj: {price} / {days} nap",
+      "available_count": "{count} elérhető erre az időszakra",
+      "low_available_count": "Kevesebb, mint {count} autó elérhető erre az időszakra",
+      "unavailable": "Nem elérhető erre az időszakra",
+      "insurance_fee": "Teljes körű biztosítás díja: {price} / {days} nap",
+      "promotional_price": "Kedvezményes ár"
     },
     "bodyTypes": {
       "sedan": "Szedán",
@@ -1933,6 +1962,14 @@
           "placeholder": "Pl. Hotel Marina vagy Budapest Liszt Ferenc"
         },
         "fields": {
+          "island": {
+            "label": "Sziget",
+            "placeholder": "Válassz szigetet",
+            "options": {
+              "Lanzarote": "Lanzarote",
+              "Fuerteventura": "Fuerteventura"
+            }
+          },
           "same": {
             "label": "A visszaadás helye egyezik az átvétel helyével"
           },
@@ -1979,7 +2016,31 @@
             "lanzarote": "Lanzarote repülőtér",
             "fuerteventura": "Fuerteventura repülőtér"
           }
-        }
+        },
+        "returnLocation": {
+          "title": "Visszaadás helye",
+          "description": "Töltsd ki, ha a visszaadás helye eltér az átadás helyétől.",
+          "placeType": {
+            "label": "Visszaadás helye",
+            "placeholder": "Válassz visszaadási helyet",
+            "airport": "Visszaadás a reptéren",
+            "accommodation": "Visszaadás a szállásnál",
+            "office": "Visszaadás az irodánál"
+          },
+          "locationName": {
+            "label": "Visszaadás helyének neve",
+            "placeholder": "Válaszd ki vagy add meg a visszaadás helyét"
+          }
+        },
+        "time": {
+          "arrival": "Érkezés",
+          "pickup": "Átvétel",
+          "return": "Visszaadás",
+          "hour": "óra",
+          "minute": "perc",
+          "tooltip": "Később is pontosítható, körülbelüli időpont szükséges."
+        },
+        "accommodationNoResult": "Nincs találat a hivatalos szálláslistában"
       },
       "consents": {
         "title": "Jogi nyilatkozatok",
@@ -2178,6 +2239,10 @@
         }
       },
       "delivery": {
+        "island": {
+          "required": "Válaszd ki a szigetet",
+          "invalid": "Érvénytelen sziget"
+        },
         "placeType": {
           "required": "Válaszd ki az átvétel helyét",
           "invalid": "Érvénytelen átvételi hely"
@@ -2577,7 +2642,10 @@
         "extrasFee": "Extrák díja",
         "deliveryFee": "Kiszállítás díja",
         "bookingLink": "Foglalási link",
-        "adminName": "Ügyintéző"
+        "adminName": "Ügyintéző",
+        "returnDeliveryType": "Visszaadás típusa",
+        "returnDeliveryLocation": "Visszaadás helye",
+        "returnDeliveryAddress": "Visszaadás címe"
       }
     },
     "contactQuote": {

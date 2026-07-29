@@ -11,10 +11,18 @@ export type RentPageClientProps = {
   locale: string;
   car: Pick<Car, 'id' | 'seats' | 'colors'>;
   quotePrefill?: ContactQuoteRecord | null;
+  islandPrefill?: 'Lanzarote' | 'Fuerteventura';
+  rentalPeriodPrefill?: {
+    startDate?: string;
+    endDate?: string;
+  };
   manageContext?: {
     rentId: string;
     section?: 'contact' | 'travel' | 'invoice';
     mode?: 'modify';
   };
   rentPrefill?: RentFormValues | null;
+  rentalFee?: string | undefined;
+  insurance?: string | undefined;
+  days?: string | string[] | undefined;
 };

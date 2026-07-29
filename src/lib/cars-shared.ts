@@ -49,4 +49,6 @@ export type Car = {
   prices: number[];
   createdAt: string;
   updatedAt: string;
+  dailyMultiplier: Record<string, number>;
+  availableCount?: number;
 };

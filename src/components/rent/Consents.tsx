@@ -1,5 +1,5 @@
 import type { ContactQuoteRecord } from '@/lib/contactQuotes-shared';
-import { PAYMENT_METHOD_VALUES, RentFormValues } from '@/schemas/RentSchema';
+import { RentFormValues } from '@/schemas/RentSchema';
 import { useTranslations } from 'next-intl';
 import type { UseFormReturn } from 'react-hook-form';
 import { Checkbox } from '../ui/checkbox';
@@ -10,27 +10,21 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '../ui/select';
 
 export default function Consents({
   form,
   quotePrefill,
+  insurance,
 }: {
   form: UseFormReturn<RentFormValues>;
   quotePrefill?: ContactQuoteRecord | null;
+  insurance?: string;
 }) {
   const t = useTranslations('RentForm');
   const bookingData = Array.isArray(quotePrefill?.bookingRequestData)
     ? quotePrefill?.bookingRequestData[0]
     : quotePrefill?.bookingRequestData;
-  const insurancePriceRaw = bookingData?.insurance;
+  const insurancePriceRaw = bookingData?.insurance || insurance;
 
   const insurancePriceText =
     typeof insurancePriceRaw === 'string' ? insurancePriceRaw.trim() : '';

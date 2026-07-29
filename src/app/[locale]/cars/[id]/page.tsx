@@ -18,6 +18,15 @@ type CarPageParams = {
   id: string;
 };
 
+type CarPageSearchParams = {
+  island?: string;
+  startDate?: string;
+  endDate?: string;
+  quotePrice?: string;
+  insurance?: number;
+  days?: number;
+};
+
 const formatLabel = (value: string) =>
   value
     .split('_')
@@ -32,6 +41,7 @@ export async function generateMetadata({
   params: Promise<CarPageParams>;
 }): Promise<Metadata> {
   const { locale, id } = await params;
+
   const resolvedLocale = resolveLocale(locale);
   const car = await getCarById(id);
 
@@ -58,10 +68,21 @@ export async function generateStaticParams(): Promise<CarPageParams[]> {
 
 export default async function CarPage({
   params,
+  searchParams,
 }: {
   params: Promise<CarPageParams>;
+  searchParams: Promise<CarPageSearchParams>;
 }) {
   const { locale, id } = await params;
+  const {
+    startDate,
+    endDate,
+    quotePrice: quotePriceParam,
+    insurance,
+    days,
+    island,
+  } = await searchParams;
+  const quotePrice = Number(quotePriceParam);
   const resolvedLocale = resolveLocale(locale);
   const car = await getCarById(id);
 
@@ -114,23 +135,31 @@ export default async function CarPage({
     return { backgroundColor: hex, color: textColor, borderColor: hex };
   };
 
-  const monthIndex = new Date().getMonth();
-  const formatWeeklyPrice = (price: number) =>
-    new Intl.NumberFormat(resolvedLocale, {
-      style: 'currency',
-      currency: 'EUR',
-      maximumFractionDigits: 0,
-    }).format(price);
+  // const monthIndex = new Date().getMonth();
+  // const formatWeeklyPrice = (price: number) =>
+  //   new Intl.NumberFormat(resolvedLocale, {
+  //     style: 'currency',
+  //     currency: 'EUR',
+  //     maximumFractionDigits: 0,
+  //   }).format(price);
 
-  const getWeeklyPrice = (prices: number[]): number | null => {
-    if (!Array.isArray(prices) || prices.length === 0) return null;
-    const direct = prices[monthIndex];
-    if (Number.isFinite(direct)) return direct as number;
-    const fallback = prices.find((p) => Number.isFinite(p));
-    if (Number.isFinite(fallback)) return fallback as number;
-    const first = prices[0];
-    return Number.isFinite(first) ? first : null;
-  };
+  // const getWeeklyPrice = (prices: number[]): number | null => {
+  //   if (!Array.isArray(prices) || prices.length === 0) return null;
+  //   const direct = prices[monthIndex];
+  //   if (Number.isFinite(direct)) return direct as number;
+  //   const fallback = prices.find((p) => Number.isFinite(p));
+  //   if (Number.isFinite(fallback)) return fallback as number;
+  //   const first = prices[0];
+  //   return Number.isFinite(first) ? first : null;
+  // };
+
+  // const days =
+  //   startDate && endDate
+  //     ? Math.ceil(
+  //         (new Date(endDate).getTime() - new Date(startDate).getTime()) /
+  //           (1000 * 60 * 60 * 24),
+  //       )
+  //     : null;
 
   const detailItems = [
     {
@@ -172,16 +201,42 @@ export default async function CarPage({
               {car.name}
             </h1>
             {(() => {
-              const weeklyPrice = getWeeklyPrice(car.prices);
-              if (!Number.isFinite(weeklyPrice ?? NaN)) return null;
-              const formatted = formatWeeklyPrice(weeklyPrice as number);
+              if (!quotePrice || quotePrice <= 0)
+                return (
+                  <p className='mt-2 text-sm font-semibold text-amber-dark leading-snug'>
+                    {t('labels.custom_quote')}
+                  </p>
+                );
+              // const weeklyPrice = getWeeklyPrice(car.prices);
+              // if (!Number.isFinite(weeklyPrice ?? NaN)) return null;
+              // const formatted = formatWeeklyPrice(weeklyPrice as number);
               return (
-                <p className='mt-2 text-base font-semibold text-amber-dark leading-snug'>
-                  {t('labels.available_from_week', { price: formatted })}
+                // <p className='mt-2 text-base font-semibold text-amber-dark leading-snug'>
+                //   {t('labels.available_from_week', { price: +quotePrice })}
+                // </p>
+                <p className='mt-2 text-sm font-semibold text-amber-dark leading-snug'>
+                  {/* {t('labels.available_from_week', { price })} */}
+                  {t('labels.rental_fee', {
+                    price: quotePrice.toLocaleString(resolvedLocale, {
+                      style: 'currency',
+                      currency: 'EUR',
+                    }),
+                    days: days ?? 0,
+                  })}
                 </p>
               );
             })()}
-
+            {insurance ? (
+              <p className='mt-2 text-sm font-semibold text-navy-light leading-snug'>
+                {t('labels.insurance_fee', {
+                  price: Number(insurance).toLocaleString(resolvedLocale, {
+                    style: 'currency',
+                    currency: 'EUR',
+                  }),
+                  days: days ?? 0,
+                })}
+              </p>
+            ) : null}
             <div className='mt-3 flex flex-wrap gap-2'>
               <Badge variant='outline'>{translatedBodyType}</Badge>
               <Badge variant='outline'>{translatedFuel}</Badge>
@@ -232,15 +287,19 @@ export default async function CarPage({
 
           <div className='mt-2 flex flex-col gap-3 sm:flex-row'>
             <Button asChild className='w-full sm:w-auto'>
-              <Link href={`/${resolvedLocale}/cars/${car.id}/rent`}>
+              <Link
+                href={`/${resolvedLocale}/cars/${car.id}/rent?startDate=${startDate ?? ''}&endDate=${endDate ?? ''}&quotePrice=${quotePriceParam ?? ''}&insurance=${insurance ?? ''}&days=${days ?? ''}&island=${island}`}
+              >
                 {t('buttons.interested')}
               </Link>
             </Button>
-            <Button asChild variant='outline' className='w-full sm:w-auto'>
-              <Link href={`/${resolvedLocale}/contact?carId=${car.id}`}>
-                {t('buttons.request_quote')}
-              </Link>
-            </Button>
+            {!quotePrice || quotePrice <= 0 ? (
+              <Button asChild variant='outline' className='w-full sm:w-auto'>
+                <Link href={`/${resolvedLocale}/contact?carId=${car.id}`}>
+                  {t('buttons.request_quote')}
+                </Link>
+              </Button>
+            ) : null}
           </div>
         </div>
       </div>

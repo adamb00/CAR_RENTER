@@ -197,6 +197,14 @@ const formatDeliveryAddressLine = (
 
 type SupportedIsland = 'Lanzarote' | 'Fuerteventura';
 
+const normalizeSupportedIsland = (value: unknown): SupportedIsland | null => {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  if (normalized === 'lanzarote') return 'Lanzarote';
+  if (normalized === 'fuerteventura') return 'Fuerteventura';
+  return null;
+};
+
 const normalizeForSearch = (value: string): string =>
   value
     .normalize('NFD')
@@ -267,6 +275,9 @@ const resolveBookingDeliveryIsland = (
 ): SupportedIsland | null => {
   if (!delivery) return null;
 
+  const explicitIsland = normalizeSupportedIsland(delivery.island);
+  if (explicitIsland) return explicitIsland;
+
   const locationName = normalizeText(delivery.locationName);
   const placeType = normalizeText(delivery.placeType);
 
@@ -289,6 +300,45 @@ const resolveBookingDeliveryIsland = (
 
   return byText;
 };
+
+const buildSameReturnLocation = (
+  delivery?: RentFormValues['delivery'],
+): NonNullable<RentFormValues['delivery']>['returnLocation'] | undefined => {
+  if (!delivery) return undefined;
+
+  return {
+    placeType: delivery.placeType,
+    locationName: delivery.locationName ?? '',
+    address: {
+      country: delivery.address?.country ?? '',
+      postalCode: delivery.address?.postalCode ?? '',
+      city: delivery.address?.city ?? '',
+      street: delivery.address?.street ?? '',
+      doorNumber: delivery.address?.doorNumber ?? '',
+    },
+  };
+};
+
+const getEffectiveReturnLocation = (
+  delivery?: RentFormValues['delivery'],
+): NonNullable<RentFormValues['delivery']>['returnLocation'] | undefined =>
+  delivery?.same
+    ? buildSameReturnLocation(delivery)
+    : delivery?.returnLocation;
+
+const resolveReturnDeliveryIsland = (
+  returnLocation?: NonNullable<RentFormValues['delivery']>['returnLocation'],
+): SupportedIsland | null =>
+  resolveBookingDeliveryIsland(
+    returnLocation
+      ? {
+          same: false,
+          placeType: returnLocation.placeType,
+          locationName: returnLocation.locationName,
+          address: returnLocation.address,
+        }
+      : undefined,
+  );
 
 const selectBookingRequestRecord = (
   raw: unknown,
@@ -355,6 +405,55 @@ const loadPricingSnapshot = async (
   }
 };
 
+const normalizeSubmittedPricingSnapshot = (
+  snapshot: RentFormValues['pricingSnapshot'],
+): PricingSnapshotInput | null => {
+  if (!snapshot) return null;
+
+  const normalized = PRICING_FIELDS.reduce<PricingSnapshotInput>(
+    (acc, key) => {
+      acc[key] = normalizeText(snapshot[key]);
+      return acc;
+    },
+    {
+      rentalFee: null,
+      insurance: null,
+      deposit: null,
+      deliveryFee: null,
+      extrasFee: null,
+      tip: null,
+    },
+  );
+
+  return hasAnyValue(Object.values(normalized)) ? normalized : null;
+};
+
+const mergePricingSnapshots = (
+  quoteSnapshot: PricingSnapshotInput | null | undefined,
+  submittedSnapshot: PricingSnapshotInput | null,
+): PricingSnapshotInput | null | undefined => {
+  if (quoteSnapshot === undefined && !submittedSnapshot) {
+    return undefined;
+  }
+
+  if (!quoteSnapshot) {
+    return submittedSnapshot;
+  }
+
+  if (!submittedSnapshot) {
+    return quoteSnapshot;
+  }
+
+  const merged = { ...quoteSnapshot };
+  PRICING_FIELDS.forEach((key) => {
+    if (submittedSnapshot[key]) {
+      merged[key] = submittedSnapshot[key];
+    }
+  });
+
+  return hasAnyValue(Object.values(merged)) ? merged : null;
+};
+
 const syncBookingAuxTables = async (
   bookingId: string,
   formData: RentFormValues,
@@ -375,6 +474,7 @@ const syncBookingAuxTables = async (
 
   try {
     const delivery = formData.delivery;
+    const returnLocation = getEffectiveReturnLocation(delivery);
     const deliveryData = {
       same: normalizeBoolean(delivery?.same),
       placeType: normalizeText(delivery?.placeType),
@@ -385,6 +485,12 @@ const syncBookingAuxTables = async (
       arrivalHour: normalizeText(delivery?.arrivalHour),
       arrivalMinute: normalizeText(delivery?.arrivalMinute),
       island: resolveBookingDeliveryIsland(delivery),
+      returnPlaceType: normalizeText(returnLocation?.placeType),
+      returnLocationName: normalizeText(returnLocation?.locationName),
+      returnAddressLine: formatDeliveryAddressLine(returnLocation?.address),
+      returnHour: normalizeText(delivery?.returnHour),
+      returnMinute: normalizeText(delivery?.returnMinute),
+      returnIsland: resolveReturnDeliveryIsland(returnLocation),
     };
     const hasDeliveryData = hasAnyValue(Object.values(deliveryData));
 
@@ -481,9 +587,16 @@ export const RentAction = async (values: RentFormValues) => {
   const rentIdFromPayload = validatedFields.data.rentId ?? null;
   const isModifyRequest = Boolean(rentIdFromPayload);
   let humanId: string | null = null;
-  const pricingSnapshot = await loadPricingSnapshot(
+  const quotePricingSnapshot = await loadPricingSnapshot(
     validatedFields.data.quoteId,
     validatedFields.data.offer,
+  );
+  const submittedPricingSnapshot = normalizeSubmittedPricingSnapshot(
+    validatedFields.data.pricingSnapshot,
+  );
+  const pricingSnapshot = mergePricingSnapshots(
+    quotePricingSnapshot,
+    submittedPricingSnapshot,
   );
 
   type DeliveryAddress =
@@ -612,6 +725,10 @@ export const RentAction = async (values: RentFormValues) => {
               departureFlight: true,
               arrivalHour: true,
               arrivalMinute: true,
+              returnPlaceType: true,
+              returnLocationName: true,
+              returnHour: true,
+              returnMinute: true,
             },
           },
           updated: true,
@@ -855,6 +972,16 @@ export const RentAction = async (values: RentFormValues) => {
   const deliveryPlaceType = formatDeliveryType(delivery?.placeType);
   const deliveryLocationName = delivery?.locationName ?? 'n/a';
   const deliveryAddress = formatAddress(delivery?.address ?? null);
+  const returnLocation = delivery?.returnLocation;
+  const returnDeliveryPlaceType = delivery?.same
+    ? 'n/a'
+    : formatDeliveryType(returnLocation?.placeType);
+  const returnDeliveryLocationName = delivery?.same
+    ? 'n/a'
+    : (returnLocation?.locationName ?? 'n/a');
+  const returnDeliveryAddress = delivery?.same
+    ? 'n/a'
+    : formatAddress(returnLocation?.address ?? null);
   const invoice = formData.invoice;
   const invoiceAddress = formatAddress(invoice?.location ?? null);
   const invoiceName = invoice?.name ?? formData.contact.name ?? 'n/a';
@@ -896,6 +1023,9 @@ export const RentAction = async (values: RentFormValues) => {
     { key: 'deliveryType', value: deliveryPlaceType },
     { key: 'deliveryLocation', value: deliveryLocationName },
     { key: 'deliveryAddress', value: deliveryAddress },
+    { key: 'returnDeliveryType', value: returnDeliveryPlaceType },
+    { key: 'returnDeliveryLocation', value: returnDeliveryLocationName },
+    { key: 'returnDeliveryAddress', value: returnDeliveryAddress },
     { key: 'arrivalFlight', value: arrivalFlight },
     { key: 'departureFlight', value: departureFlight },
     { key: 'invoiceName', value: invoiceName },
@@ -967,6 +1097,10 @@ type ExistingRentRecord = {
     departureFlight: string | null;
     arrivalHour: string | null;
     arrivalMinute: string | null;
+    returnPlaceType: string | null;
+    returnLocationName: string | null;
+    returnHour: string | null;
+    returnMinute: string | null;
   } | null;
 };
 
@@ -1042,6 +1176,16 @@ function toCoreRentSnapshotFromRecord(
     deliveryArrivalMinute: normalizeValue(
       record.BookingDeliveryDetails?.arrivalMinute,
     ),
+    returnDeliveryPlaceType: normalizeValue(
+      record.BookingDeliveryDetails?.returnPlaceType,
+    ),
+    returnDeliveryLocationName: normalizeValue(
+      record.BookingDeliveryDetails?.returnLocationName,
+    ),
+    returnDeliveryHour: normalizeValue(record.BookingDeliveryDetails?.returnHour),
+    returnDeliveryMinute: normalizeValue(
+      record.BookingDeliveryDetails?.returnMinute,
+    ),
   };
 }
 
@@ -1050,6 +1194,7 @@ function toCoreRentSnapshotFromForm(
   locale: string,
 ): CoreRentSnapshot {
   const delivery = values.delivery;
+  const returnLocation = getEffectiveReturnLocation(delivery);
   return {
     locale: normalizeValue(locale),
     carId: normalizeValue(values.carId),
@@ -1066,5 +1211,9 @@ function toCoreRentSnapshotFromForm(
     deliveryDepartureFlight: normalizeValue(delivery?.departureFlight),
     deliveryArrivalHour: normalizeValue(delivery?.arrivalHour),
     deliveryArrivalMinute: normalizeValue(delivery?.arrivalMinute),
+    returnDeliveryPlaceType: normalizeValue(returnLocation?.placeType),
+    returnDeliveryLocationName: normalizeValue(returnLocation?.locationName),
+    returnDeliveryHour: normalizeValue(delivery?.returnHour),
+    returnDeliveryMinute: normalizeValue(delivery?.returnMinute),
   };
 }

@@ -3,6 +3,7 @@
 import { Locale } from '@/i18n/config';
 import { getSiteUrl } from '@/lib/seo/seo';
 import { getTranslations } from 'next-intl/server';
+import Script from 'next/script';
 
 const CONTACT_EMAIL = 'info@zodiacsrentacar.com';
 const CONTACT_PHONE = '+34 683 192 422';
@@ -145,7 +146,8 @@ export async function StructuredData({ locale }: StructuredDataProps) {
     .replace(/&/g, '\\u0026');
 
   return (
-    <script
+    <Script
+      id={`structured-data-${locale}`}
       type='application/ld+json'
       dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
