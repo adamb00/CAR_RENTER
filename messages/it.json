@@ -1420,6 +1420,7 @@
     "title": "Scopri Fuerteventura e Lanzarote in totale libertà con le nostre auto!",
     "p1": "Da noi il noleggio auto è semplice e veloce: scegli il veicolo più adatto a te e noi te lo consegniamo in aeroporto o direttamente presso il tuo alloggio. Grazie alle nostre soluzioni flessibili di autonoleggio potrai <strong>goderti la vacanza senza pensieri</strong>, sia per soggiorni brevi che per periodi più lunghi.",
     "p2": "<strong>Ti consigliamo di prenotare l’auto scelta in anticipo</strong>, così sarà sicuramente disponibile al tuo arrivo. Sfoglia le auto qui sotto, clicca sui dettagli e prenota comodamente online!",
+    "p3": "Possiamo garantire i prezzi indicati nell’offerta se la prenotazione viene <strong>confermata entro 48 ore</strong>.",
     "labels": {
       "seats": "persone",
       "manual": "Manuale",
@@ -1434,6 +1435,7 @@
       "low_available_count": "Meno di {count} auto disponibili per questo periodo",
       "unavailable": "Non disponibile per questo periodo",
       "insurance_fee": "Costo assicurazione completa: {price} / {days} giorni",
+      "extra_insurance_fee": "Supplemento assicurativo legato all’età: {price} / {days} giorni",
       "promotional_price": "Prezzo scontato"
     },
     "bodyTypes": {
@@ -1760,7 +1762,7 @@
       "booking": {
         "title": "Dati della prenotazione",
         "description": "Seleziona i servizi extra desiderati, indica la durata del noleggio e il numero di passeggeri adulti.",
-        "insuranceCheckbox": "Desidero aggiungere l'assicurazione completa (nessun deposito richiesto)",
+        "insuranceCheckbox": "Desidero aggiungere l'assicurazione completa",
         "insuranceDepositNotice": "Con l'assicurazione completa non è richiesto alcun deposito.",
         "insurancePriceLabel": "Prezzo dell'assicurazione: {price}",
         "insurancePricePending": "Ti informeremo via e-mail sul prezzo dell'assicurazione.",

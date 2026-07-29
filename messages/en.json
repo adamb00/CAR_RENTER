@@ -603,13 +603,7 @@
       {
         "title": "Insurance",
         "description": "Details of insurance packages, coverage and excess.",
-        "keywords": [
-          "insurance",
-          "coverage",
-          "excess",
-          "claims",
-          "lanzarote"
-        ],
+        "keywords": ["insurance", "coverage", "excess", "claims", "lanzarote"],
         "path": "/{locale}/insurance",
         "id": "insurance"
       },
@@ -1420,6 +1414,7 @@
     "title": "Discover Fuerteventura and Lanzarote in total freedom with our cars!",
     "p1": "With us, car rental is simple and fast: choose the vehicle that suits you best and we deliver it to the airport or directly to your hotel. Thanks to our flexible car rental options you can <strong>enjoy your holiday without worries</strong>, whether you need a car for a short trip or a longer stay.",
     "p2": "<strong>It’s worth booking your chosen car in advance</strong> so it’s guaranteed to be available when you arrive. Browse our cars below, click for details and book online comfortably!",
+    "p3": "We can guarantee the prices shown in the quote if the booking is <strong>confirmed within 48 hours</strong>.",
     "labels": {
       "seats": "seats",
       "manual": "Manual",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Fewer than {count} cars available for this period",
       "unavailable": "Not available for this period",
       "insurance_fee": "Full coverage insurance fee: {price} / {days} days",
+      "extra_insurance_fee": "Age-related insurance surcharge: {price} / {days} days",
       "promotional_price": "Discounted price"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Booking details",
         "description": "Select the desired extra services, set the rental period and the number of adult passengers.",
-        "insuranceCheckbox": "I would like to add full coverage insurance (no deposit required)",
+        "insuranceCheckbox": "I would like to add full coverage insurance",
         "insuranceDepositNotice": "With full coverage insurance, no deposit is required.",
         "insurancePriceLabel": "Insurance price: {price}",
         "insurancePricePending": "We'll inform you about the insurance price via email.",

@@ -58,7 +58,7 @@ export default async function ManageRentCancelPage({
         <p className='text-xs uppercase tracking-[0.6em] text-slate-500 dark:text-slate-300'>
           {tManage('meta.kicker')}
         </p>
-        <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
+        <h1 className='text-3xl pb-4 md:text-4xl lg:text-5xl font-semibold tracking-wide bg-linear-to-r from-sky-dark/90 to-amber-dark/80 bg-clip-text text-transparent'>
           {tManage('title')}
         </h1>
         <p className='text-base md:text-lg text-grey-dark-3 dark:text-grey-dark-2'>

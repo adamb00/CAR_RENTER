@@ -655,13 +655,7 @@
       {
         "title": "ÁSZF – szerződési feltételek",
         "description": "A hivatalos szerződési feltételek (GTC) Fuerteventurán és Lanzarotén.",
-        "keywords": [
-          "ászf",
-          "gtc",
-          "szerződés",
-          "jogi",
-          "lanzarote"
-        ],
+        "keywords": ["ászf", "gtc", "szerződés", "jogi", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1420,6 +1414,7 @@
     "title": "Fedezd fel Fuerteventurát és Lanzarotét teljes szabadságban autóinkkal!",
     "p1": "Nálunk az autóbérlés egyszerű és gyors: kiválasztod a számodra megfelelő járművet, és mi kiszállítjuk a reptérre vagy közvetlenül a szállodádhoz. Rugalmas autókölcsönzési lehetőségeinknek köszönhetően <strong>gondtalanul élvezheted nyaralásod</strong>, akár rövid, akár hosszabb tartózkodásra van szükséged autóra.",
     "p2": "<strong>Érdemes előre lefoglalni a kiválasztott autót</strong>, így biztosan rendelkezésedre áll az érkezésedkor. Válogass az alábbi autóink közül, kattints a részletekért és foglald le online kényelmesen!",
+    "p3": "Az ajánlatban szereplő árakat a foglalás <strong>48 órán belüli visszaigazolása esetén</strong> tudjuk garantálni.",
     "labels": {
       "seats": "személy",
       "manual": "Manuális",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Kevesebb, mint {count} autó elérhető erre az időszakra",
       "unavailable": "Nem elérhető erre az időszakra",
       "insurance_fee": "Teljes körű biztosítás díja: {price} / {days} nap",
+      "extra_insurance_fee": "Életkorhoz kötött biztosítási felár: {price} / {days} nap",
       "promotional_price": "Kedvezményes ár"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Foglalási adatok",
         "description": "Válaszd ki a kívánt extra szolgáltatásokat, határozd meg a bérlés időtartamát és a felnőtt utasok számát.",
-        "insuranceCheckbox": "Szeretném igénybe venni a teljes körű biztosítást (nem szükséges kaució)",
+        "insuranceCheckbox": "Szeretném igénybe venni a teljes körű biztosítást",
         "insuranceDepositNotice": "Teljes körű biztosítás választása esetén nem kérünk kauciót.",
         "insurancePriceLabel": "A biztosítás díja: {price}",
         "insurancePricePending": "A biztosítás díjáról e-mailben tájékoztatunk.",

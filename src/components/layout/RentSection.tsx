@@ -94,7 +94,7 @@ export default function RentSection({ locale }: { locale: string }) {
       className='section-about mb-22 2xl:mb-32  p-10 rounded-2xl'
     >
       <div className='u-center-text u-margin-bottom-big text-center mb-10'>
-        <h2 className='block text-2xl md:text-4xl font-semibold uppercase leading-10 lg:leading-6 tracking-wide md:tracking-wider text-sky-dark dark:text-sky-light md:mb-24'>
+        <h2 className='block text-2xl md:text-4xl font-semibold uppercase leading-10 lg:leading-10 tracking-wide md:tracking-wider text-sky-dark dark:text-sky-light md:mb-24'>
           {t('title')}
         </h2>
       </div>
@@ -198,9 +198,7 @@ export default function RentSection({ locale }: { locale: string }) {
             disabled={isPending}
             className='max-w-2xs sm:w-auto bg-sky-dark text-white hover:bg-sky-dark/90 cursor-pointer'
           >
-            {days && days > 30
-              ? t('requestQuote')
-              : t('showPrices')}
+            {days && days > 30 ? t('requestQuote') : t('showPrices')}
           </Button>
         </form>
       </Form>

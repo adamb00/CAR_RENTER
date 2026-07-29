@@ -45,7 +45,10 @@ const getDailyInsurancePrice = (
 export const getInsurancePrice = async (
   age: number | undefined,
   days: number,
-): Promise<number | null> => {
+): Promise<{
+  baseInsurance: number | null;
+  extraInsurance: number | null;
+} | null> => {
   const insurance = await prisma.insurance.findFirst();
 
   if (!insurance) return null;
@@ -60,22 +63,17 @@ export const getInsurancePrice = async (
   } = insurance;
 
   const insurancePrice = getDailyInsurancePrice(dailyInsurancePrices, days);
+  if (insurancePrice === null) return null;
 
-  let multiplier = 1;
-
-  let baseInsurance = 0;
+  let extraInsurance: number | null = null;
 
   if (typeof age === 'number' && Number.isFinite(age)) {
     if (age <= underAgeLimit) {
-      multiplier = underAgeMultiplier;
-      if (insurancePrice) baseInsurance = insurancePrice;
+      extraInsurance = insurancePrice * underAgeMultiplier;
     } else if (age >= overAgeLimit) {
-      multiplier = overAgeMultiplier;
-      if (insurancePrice) baseInsurance = insurancePrice;
+      extraInsurance = insurancePrice * overAgeMultiplier;
     }
   }
 
-  if (insurancePrice === null) return null;
-
-  return baseInsurance + insurancePrice * multiplier;
+  return { baseInsurance: insurancePrice, extraInsurance };
 };

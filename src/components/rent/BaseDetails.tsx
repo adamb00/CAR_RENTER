@@ -272,167 +272,176 @@ export default function BaseDetails({
           </div>
         </div>
       ) : null}
-      <div className='grid gap-6 lg:grid-cols-5'>
-        <div className='lg:col-span-1'>
-          <FormField
-            control={form.control}
-            name='extras'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='text-sm font-medium'>
-                  {t('extras.label')}
-                </FormLabel>
-                <FormControl>
-                  <MultiSelect
-                    options={extrasOptions}
-                    defaultValue={field.value ?? []}
-                    onValueChange={field.onChange}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+
+      <div className='space-y-6'>
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-6'>
+          <div className='lg:col-span-1'>
+            <FormField
+              control={form.control}
+              name='extras'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-sm font-medium'>
+                    {t('extras.label')}
+                  </FormLabel>
+                  <FormControl>
+                    <MultiSelect
+                      options={extrasOptions}
+                      defaultValue={field.value ?? []}
+                      onValueChange={field.onChange}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className='lg:col-span-1'>
+            <FormField
+              control={form.control}
+              name='rentalPeriod'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-sm font-medium'>
+                    {t('rentalPeriod.label')}
+                  </FormLabel>
+                  <FormControl>
+                    <DateRangePicker
+                      initialDateFrom={parseDateValue(field.value?.startDate)}
+                      initialDateTo={parseDateValue(field.value?.endDate)}
+                      showCompare={false}
+                      minDate={today}
+                      maxDate={oneYearAhead}
+                      onUpdate={({ range }) => {
+                        if (range?.from && range?.to) {
+                          field.onChange({
+                            startDate: formatDateValue(range.from),
+                            endDate: formatDateValue(range.to),
+                          });
+                        }
+                      }}
+                      locale={dateLocale}
+                      calendarLocale={calendarLocale}
+                      applyLabel={dateRangePickerMessages?.apply}
+                      cancelLabel={dateRangePickerMessages?.cancel}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
-        <div className='lg:col-span-1'>
-          <FormField
-            control={form.control}
-            name='rentalPeriod'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='text-sm font-medium'>
-                  {t('rentalPeriod.label')}
-                </FormLabel>
-                <FormControl>
-                  <DateRangePicker
-                    initialDateFrom={parseDateValue(field.value?.startDate)}
-                    initialDateTo={parseDateValue(field.value?.endDate)}
-                    showCompare={false}
-                    minDate={today}
-                    maxDate={oneYearAhead}
-                    onUpdate={({ range }) => {
-                      if (range?.from && range?.to) {
-                        field.onChange({
-                          startDate: formatDateValue(range.from),
-                          endDate: formatDateValue(range.to),
-                        });
-                      }
-                    }}
-                    locale={dateLocale}
-                    calendarLocale={calendarLocale}
-                    applyLabel={dateRangePickerMessages?.apply}
-                    cancelLabel={dateRangePickerMessages?.cancel}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-        <div className='lg:col-span-1 z-3500'>
-          <FormField
-            control={form.control}
-            name='rentalDays'
-            render={({ field }) => (
-              <FormItem className='z-3500'>
-                <FormLabel className='text-sm font-medium'>
-                  {t('rentalDays.label')}
-                </FormLabel>
-                <FormControl>
-                  <Select
-                    value={field.value ? String(field.value) : undefined}
-                    onValueChange={(value) => field.onChange(Number(value))}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder={t('rentalDays.placeholder')} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {RENTAL_DAYS_OPTIONS.map((day) => (
-                          <SelectItem key={day} value={String(day)}>
-                            {day}
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-        <div className='lg:col-span-1'>
-          <FormField
-            control={form.control}
-            name='adults'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='text-sm font-medium'>
-                  {t('adults.label')}
-                </FormLabel>
-                <FormControl>
-                  <Select
-                    value={field.value ? String(field.value) : undefined}
-                    onValueChange={(value) => field.onChange(Number(value))}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder={t('adults.placeholder')} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {Array.from({ length: 150 }, (_, i) => i + 1).map(
-                          (num) => (
-                            <SelectItem key={num} value={String(num)}>
-                              {num}
+
+        <div className='grid gap-6 grid-cols-1 md:grid-cols-3'>
+          <div className='lg:col-span-1 z-3500'>
+            <FormField
+              control={form.control}
+              name='rentalDays'
+              render={({ field }) => (
+                <FormItem className='z-3500'>
+                  <FormLabel className='text-sm font-medium'>
+                    {t('rentalDays.label')}
+                  </FormLabel>
+                  <FormControl>
+                    <Select
+                      value={field.value ? String(field.value) : undefined}
+                      onValueChange={(value) => field.onChange(Number(value))}
+                    >
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={t('rentalDays.placeholder')}
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          {RENTAL_DAYS_OPTIONS.map((day) => (
+                            <SelectItem key={day} value={String(day)}>
+                              {day}
                             </SelectItem>
-                          ),
-                        )}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-        <div className='lg:col-span-1'>
-          <FormField
-            control={form.control}
-            name='cars'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='text-sm font-medium'>
-                  {tContact('form.fields.cars.label')}
-                </FormLabel>
-                <FormControl>
-                  <Select
-                    value={field.value ? String(field.value) : undefined}
-                    onValueChange={(value) => field.onChange(value)}
-                  >
-                    <SelectTrigger>
-                      <SelectValue
-                        placeholder={tContact('form.fields.cars.placeholder')}
-                      />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {Array.from({ length: 10 }, (_, i) => i + 1).map(
-                          (num) => (
-                            <SelectItem key={num} value={String(num)}>
-                              {num}
-                            </SelectItem>
-                          ),
-                        )}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                          ))}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className='lg:col-span-1'>
+            <FormField
+              control={form.control}
+              name='adults'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-sm font-medium'>
+                    {t('adults.label')}
+                  </FormLabel>
+                  <FormControl>
+                    <Select
+                      value={field.value ? String(field.value) : undefined}
+                      onValueChange={(value) => field.onChange(Number(value))}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder={t('adults.placeholder')} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          {Array.from({ length: 150 }, (_, i) => i + 1).map(
+                            (num) => (
+                              <SelectItem key={num} value={String(num)}>
+                                {num}
+                              </SelectItem>
+                            ),
+                          )}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className='lg:col-span-1'>
+            <FormField
+              control={form.control}
+              name='cars'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-sm font-medium'>
+                    {tContact('form.fields.cars.label')}
+                  </FormLabel>
+                  <FormControl>
+                    <Select
+                      value={field.value ? String(field.value) : undefined}
+                      onValueChange={(value) => field.onChange(value)}
+                    >
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={tContact('form.fields.cars.placeholder')}
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          {Array.from({ length: 10 }, (_, i) => i + 1).map(
+                            (num) => (
+                              <SelectItem key={num} value={String(num)}>
+                                {num}
+                              </SelectItem>
+                            ),
+                          )}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
       </div>
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-5'>
@@ -497,7 +506,10 @@ export default function BaseDetails({
             const value = typeof field.value === 'string' ? field.value : '';
             return (
               <FormItem>
-                <TimeFieldLabel label={arrivalHourLabel} tooltip={timeTooltip} />
+                <TimeFieldLabel
+                  label={arrivalHourLabel}
+                  tooltip={timeTooltip}
+                />
                 <FormControl>
                   <Select
                     value={value || undefined}

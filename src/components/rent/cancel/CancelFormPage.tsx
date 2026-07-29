@@ -4,6 +4,8 @@ import { Button } from '../../ui/button';
 import { Input } from '../../ui/input';
 import { Textarea } from '../../ui/textarea';
 
+// TODO: SAVE DESCRIPTION AND SHOW ADMIN,
+
 export default function CancelForm({
   locale,
   tManage,
@@ -52,11 +54,11 @@ export default function CancelForm({
           id='cancel-reason'
           name='reason'
           placeholder={tManage('cancel.reasonPlaceholder')}
-          className='min-h-[140px] resize-none'
+          className='min-h-35 resize-none'
         />
-        <p className='text-xs text-grey-dark-3 dark:text-grey-dark-2'>
+        {/* <p className='text-xs text-grey-dark-3 dark:text-grey-dark-2'>
           {tManage('cancel.helper')}
-        </p>
+        </p> */}
       </div>
       <Button
         type='submit'

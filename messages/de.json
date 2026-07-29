@@ -655,13 +655,7 @@
       {
         "title": "AGB – Allgemeine Geschäftsbedingungen",
         "description": "Offizielle Vertragsbedingungen (GTC) auf Fuerteventura und Lanzarote.",
-        "keywords": [
-          "agb",
-          "gtc",
-          "vertrag",
-          "rechtlich",
-          "lanzarote"
-        ],
+        "keywords": ["agb", "gtc", "vertrag", "rechtlich", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1420,6 +1414,7 @@
     "title": "Entdecke Fuerteventura und Lanzarote ganz frei mit unseren Mietwagen!",
     "p1": "Bei uns ist die Autovermietung einfach und schnell: Du wählst das passende Fahrzeug aus, und wir liefern es zum Flughafen oder direkt zu deiner Unterkunft. Dank unserer flexiblen Mietoptionen kannst du deinen Urlaub <strong>ganz entspannt genießen</strong> – egal ob du das Auto nur für ein paar Tage oder für einen längeren Aufenthalt brauchst.",
     "p2": "<strong>Es lohnt sich, dein Wunschfahrzeug im Voraus zu reservieren</strong>, damit es bei deiner Ankunft sicher für dich bereitsteht. Stöbere durch unsere Flotte, klicke auf ein Auto für Details und reserviere bequem online!",
+    "p3": "Die im Angebot angegebenen Preise können wir garantieren, wenn die Buchung <strong>innerhalb von 48 Stunden bestätigt wird</strong>.",
     "labels": {
       "seats": "Personen",
       "manual": "Schaltgetriebe",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Weniger als {count} Autos für diesen Zeitraum verfügbar",
       "unavailable": "Für diesen Zeitraum nicht verfügbar",
       "insurance_fee": "Gebühr für Vollkaskoversicherung: {price} / {days} Tage",
+      "extra_insurance_fee": "Altersabhängiger Versicherungszuschlag: {price} / {days} Tage",
       "promotional_price": "Rabattpreis"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Buchungsdaten",
         "description": "Wählen Sie die gewünschten Zusatzleistungen, legen Sie die Mietdauer fest und geben Sie die Anzahl der erwachsenen Mitreisenden an.",
-        "insuranceCheckbox": "Ich möchte die Vollkaskoversicherung hinzufügen (keine Kaution erforderlich)",
+        "insuranceCheckbox": "Ich möchte die Vollkaskoversicherung hinzufügen",
         "insuranceDepositNotice": "Mit der Vollkaskoversicherung entfällt die Kaution.",
         "insurancePriceLabel": "Versicherungspreis: {price}",
         "insurancePricePending": "Wir informieren Sie per E-Mail über den Versicherungspreis.",

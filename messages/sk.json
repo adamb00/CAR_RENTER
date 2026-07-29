@@ -655,13 +655,7 @@
       {
         "title": "VOP – zmluvné podmienky",
         "description": "Oficiálne zmluvné podmienky (GTC) na Fuerteventure a Lanzarote.",
-        "keywords": [
-          "vop",
-          "gtc",
-          "zmluva",
-          "právne",
-          "lanzarote"
-        ],
+        "keywords": ["vop", "gtc", "zmluva", "právne", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1420,6 +1414,7 @@
     "title": "Objav Fuerteventuru a Lanzarote v úplnej slobode s našimi autami!",
     "p1": "U nás je prenájom auta jednoduchý a rýchly: vyberieš si vozidlo, ktoré ti najviac vyhovuje, a my ti ho doručíme na letisko alebo priamo k tvojmu hotelu. Vďaka našim flexibilným možnostiam prenájmu <strong>si môžeš dovolenku užívať bez starostí</strong>, či potrebuješ auto na pár dní alebo na dlhší pobyt.",
     "p2": "<strong>Oplatí sa rezervovať auto vopred</strong>, aby ťa pri príchode určite čakalo. Prezri si naše autá nižšie, klikni na detaily a rezervuj si ich online pohodlne z domu!",
+    "p3": "Ceny uvedené v ponuke vieme garantovať, ak bude rezervácia <strong>potvrdená do 48 hodín</strong>.",
     "labels": {
       "seats": "osôb",
       "manual": "Manuál",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Menej ako {count} áut dostupných na toto obdobie",
       "unavailable": "Nedostupné na toto obdobie",
       "insurance_fee": "Poplatok za plné poistenie: {price} / {days} dní",
+      "extra_insurance_fee": "Príplatok k poisteniu podľa veku: {price} / {days} dní",
       "promotional_price": "Zvýhodnená cena"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Údaje o rezervácii",
         "description": "Vyber požadované doplnkové služby, nastav trvanie prenájmu a počet dospelých cestujúcich.",
-        "insuranceCheckbox": "Chcem si pridať plné poistenie (bez kaucie)",
+        "insuranceCheckbox": "Chcem si pridať plné poistenie",
         "insuranceDepositNotice": "Pri plnom poistení sa kaucia nevyžaduje.",
         "insurancePriceLabel": "Cena poistenia: {price}",
         "insurancePricePending": "O cene poistenia vás budeme informovať e-mailom.",

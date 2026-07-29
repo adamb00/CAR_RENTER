@@ -655,13 +655,7 @@
       {
         "title": "Ogólne warunki umowy (GTC)",
         "description": "Oficjalne ogólne warunki umowy (GTC) na Fuerteventurze i Lanzarote.",
-        "keywords": [
-          "gtc",
-          "ogólne warunki",
-          "umowa",
-          "prawne",
-          "lanzarote"
-        ],
+        "keywords": ["gtc", "ogólne warunki", "umowa", "prawne", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1420,6 +1414,7 @@
     "title": "Odkryj Fuerteventurę i Lanzarote w pełnej swobodzie z naszymi samochodami!",
     "p1": "U nas wynajem samochodu jest prosty i szybki: wybierasz pojazd odpowiedni dla siebie, a my dostarczamy go na lotnisko lub bezpośrednio pod Twój hotel. Dzięki naszym elastycznym opcjom wynajmu <strong>możesz cieszyć się urlopem bez zmartwień</strong>, niezależnie od tego, czy potrzebujesz auta na krótki, czy dłuższy pobyt.",
     "p2": "<strong>Warto zarezerwować wybrany samochód z wyprzedzeniem</strong>, aby mieć pewność, że będzie dostępny w dniu przyjazdu. Przejrzyj nasze samochody poniżej, kliknij, aby zobaczyć szczegóły, i zarezerwuj wygodnie online!",
+    "p3": "Ceny podane w ofercie możemy zagwarantować, jeśli rezerwacja zostanie <strong>potwierdzona w ciągu 48 godzin</strong>.",
     "labels": {
       "seats": "osób",
       "manual": "Manualna",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Mniej niż {count} samochodów dostępnych w tym terminie",
       "unavailable": "Niedostępne w tym terminie",
       "insurance_fee": "Opłata za pełne ubezpieczenie: {price} / {days} dni",
+      "extra_insurance_fee": "Dopłata do ubezpieczenia zależna od wieku: {price} / {days} dni",
       "promotional_price": "Cena z rabatem"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Dane rezerwacji",
         "description": "Wybierz dodatkowe usługi, określ czas trwania najmu oraz liczbę dorosłych pasażerów.",
-        "insuranceCheckbox": "Chcę dodać pełne ubezpieczenie (bez wymaganego depozytu)",
+        "insuranceCheckbox": "Chcę dodać pełne ubezpieczenie ",
         "insuranceDepositNotice": "Przy pełnym ubezpieczeniu kaucja nie jest wymagana.",
         "insurancePriceLabel": "Cena ubezpieczenia: {price}",
         "insurancePricePending": "O cenie ubezpieczenia poinformujemy Cię e-mailem.",

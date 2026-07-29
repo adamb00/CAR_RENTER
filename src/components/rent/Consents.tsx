@@ -66,12 +66,6 @@ export default function Consents({
           </FormItem>
         )}
       />
-
-      {Boolean(insuranceOptIn) ? (
-        <div className='rounded-2xl border border-amber-500/40 bg-amber-50/90 px-4 py-3 text-sm text-amber-900 shadow-sm dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-100'>
-          {t('sections.booking.insuranceDepositNotice')}
-        </div>
-      ) : null}
     </div>
   );
 }

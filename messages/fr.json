@@ -655,13 +655,7 @@
       {
         "title": "CGV – conditions générales de vente",
         "description": "Conditions contractuelles officielles (GTC) à Fuerteventura et Lanzarote.",
-        "keywords": [
-          "cgv",
-          "gtc",
-          "contrat",
-          "juridique",
-          "lanzarote"
-        ],
+        "keywords": ["cgv", "gtc", "contrat", "juridique", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1420,6 +1414,7 @@
     "title": "Découvre Fuerteventura et Lanzarote en toute liberté avec nos voitures !",
     "p1": "Chez nous, la location de voiture est simple et rapide : tu choisis le véhicule qui te convient le mieux et nous te le livrons à l’aéroport ou directement à ton hôtel. Grâce à nos options flexibles, tu peux <strong>profiter de tes vacances sans souci</strong>, que tu aies besoin d’une voiture pour quelques jours ou pour un séjour plus long.",
     "p2": "<strong>Il est conseillé de réserver ta voiture à l’avance</strong> afin d’être sûr qu’elle soit disponible à ton arrivée. Parcours les modèles ci-dessous, clique pour voir les détails et réserve en ligne facilement.",
+    "p3": "Nous pouvons garantir les prix indiqués dans l’offre si la réservation est <strong>confirmée dans les 48 heures</strong>.",
     "labels": {
       "seats": "personnes",
       "manual": "Manuelle",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Moins de {count} voitures disponibles pour cette période",
       "unavailable": "Non disponible pour cette période",
       "insurance_fee": "Frais d’assurance complète : {price} / {days} jours",
+      "extra_insurance_fee": "Supplément d’assurance lié à l’âge : {price} / {days} jours",
       "promotional_price": "Prix réduit"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Informations de réservation",
         "description": "Sélectionnez les services supplémentaires souhaités, définissez la durée de location ainsi que le nombre de passagers adultes.",
-        "insuranceCheckbox": "Je souhaite ajouter l'assurance tous risques (aucune caution requise)",
+        "insuranceCheckbox": "Je souhaite ajouter l'assurance tous risques",
         "insuranceDepositNotice": "Avec l'assurance tous risques, aucune caution n'est demandée.",
         "insurancePriceLabel": "Prix de l'assurance : {price}",
         "insurancePricePending": "Nous vous communiquerons le prix de l'assurance par e-mail.",

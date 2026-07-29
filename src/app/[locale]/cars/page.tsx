@@ -203,7 +203,11 @@ export default async function CarsPage({
     return { backgroundColor: hex, color: textColor, borderColor: hex };
   };
 
-  const insurance = await getInsurancePrice(Number(age), Number(days));
+  const insurancePrices = await getInsurancePrice(Number(age), Number(days));
+  const baseInsurance = insurancePrices?.baseInsurance ?? null;
+  const extraInsurance = insurancePrices?.extraInsurance ?? null;
+  const totalInsurance = (baseInsurance ?? 0) + (extraInsurance ?? 0);
+  const insuranceParam = totalInsurance > 0 ? totalInsurance : '';
 
   return (
     <div className='relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 sm:pt-18 md:pt-22 lg:pt-28'>
@@ -216,6 +220,9 @@ export default async function CarsPage({
         </p>
         <p className='mb-6'>
           {t.rich('p2', { strong: (c) => <strong>{c}</strong> })}
+        </p>
+        <p className='mb-6'>
+          {t.rich('p3', { strong: (c) => <strong>{c}</strong> })}
         </p>
       </div>
 
@@ -286,12 +293,9 @@ export default async function CarsPage({
                           {t('labels.custom_quote')}
                         </p>
                       );
-                    // const weeklyPrice = getWeeklyPrice(car.prices);
-                    // if (!Number.isFinite(weeklyPrice ?? NaN)) return null;
-                    // const formatted = formatWeeklyPrice(weeklyPrice as number);
+
                     return (
                       <p className='mt-2 text-sm font-semibold text-amber-dark leading-snug'>
-                        {/* {t('labels.available_from_week', { price })} */}
                         {t('labels.rental_fee', {
                           price: price.toLocaleString(resolvedLocale, {
                             style: 'currency',
@@ -302,10 +306,10 @@ export default async function CarsPage({
                       </p>
                     );
                   })()}
-                  {insurance && typeof insurance === 'number' ? (
+                  {typeof baseInsurance === 'number' && baseInsurance > 0 ? (
                     <p className='mt-2 text-sm font-semibold text-navy-light leading-snug'>
                       {t('labels.insurance_fee', {
-                        price: insurance.toLocaleString(resolvedLocale, {
+                        price: baseInsurance.toLocaleString(resolvedLocale, {
                           style: 'currency',
                           currency: 'EUR',
                         }),
@@ -313,6 +317,18 @@ export default async function CarsPage({
                       })}
                     </p>
                   ) : null}
+                  {typeof extraInsurance === 'number' && extraInsurance > 0 ? (
+                    <p className='mt-2 text-sm font-semibold text-navy-light leading-snug'>
+                      {t('labels.extra_insurance_fee', {
+                        price: extraInsurance.toLocaleString(resolvedLocale, {
+                          style: 'currency',
+                          currency: 'EUR',
+                        }),
+                        days: days ?? 0,
+                      })}
+                    </p>
+                  ) : null}
+
                   {typeof car.availableCount === 'number' ? (
                     <p
                       className={`mt-2 text-sm font-semibold leading-snug ${
@@ -389,7 +405,7 @@ export default async function CarsPage({
                         className='w-full sm:w-auto bg-sky-light uppercase text-grey-dark-3 transition-all duration-300 hover:bg-sky-dark lg:pointer-events-none lg:opacity-0 lg:group-hover:pointer-events-auto lg:group-hover:opacity-100 lg:group-hover:cursor-pointer'
                       >
                         <Link
-                          href={`/${resolvedLocale}/cars/${car.id}?island=${island}&startDate=${startDate}&endDate=${endDate}&quotePrice=${price}&insurance=${insurance}&days=${days}`}
+                          href={`/${resolvedLocale}/cars/${car.id}?island=${island}&startDate=${startDate}&endDate=${endDate}&quotePrice=${price}&insurance=${insuranceParam}&days=${days}`}
                         >
                           {t('buttons.interested')}
                         </Link>

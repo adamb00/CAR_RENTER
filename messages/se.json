@@ -590,13 +590,7 @@
       {
         "title": "Cookiepolicy",
         "description": "Vilka cookies vi använder och hur du kan hantera ditt samtycke.",
-        "keywords": [
-          "cookie",
-          "kakor",
-          "samtycke",
-          "dataskydd",
-          "lanzarote"
-        ],
+        "keywords": ["cookie", "kakor", "samtycke", "dataskydd", "lanzarote"],
         "path": "/{locale}/cookie-policy",
         "id": "cookie-policy"
       },
@@ -1420,6 +1414,7 @@
     "title": "Upptäck Fuerteventura och Lanzarote i full frihet med våra bilar!",
     "p1": "Hos oss är biluthyrning enkelt och snabbt: du väljer det fordon som passar dig, och vi levererar det till flygplatsen eller direkt till ditt hotell. Tack vare våra flexibla hyrbilsalternativ kan du <strong>njuta av din semester utan bekymmer</strong>, oavsett om du behöver bil för en kortare eller längre vistelse.",
     "p2": "<strong>Det lönar sig att boka din valda bil i förväg</strong>, så är du säker på att den finns tillgänglig vid ankomst. Välj bland bilarna nedan, klicka för detaljer och boka enkelt online!",
+    "p3": "Vi kan garantera priserna i offerten om bokningen <strong>bekräftas inom 48 timmar</strong>.",
     "labels": {
       "seats": "personer",
       "manual": "Manuell",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Färre än {count} bilar tillgängliga för denna period",
       "unavailable": "Inte tillgänglig för denna period",
       "insurance_fee": "Avgift för heltäckande försäkring: {price} / {days} dagar",
+      "extra_insurance_fee": "Åldersbaserat försäkringstillägg: {price} / {days} dagar",
       "promotional_price": "Rabatterat pris"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Bokningsuppgifter",
         "description": "Välj önskade extra tjänster, ange hyresperioden och antalet vuxna resenärer.",
-        "insuranceCheckbox": "Jag vill lägga till heltäckande försäkring (ingen deposition krävs)",
+        "insuranceCheckbox": "Jag vill lägga till heltäckande försäkring ",
         "insuranceDepositNotice": "Med heltäckande försäkring krävs ingen deposition.",
         "insurancePriceLabel": "Försäkringspris: {price}",
         "insurancePricePending": "Vi meddelar försäkringspriset via e-post.",

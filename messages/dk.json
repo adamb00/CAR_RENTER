@@ -1420,6 +1420,7 @@
     "title": "Oplev Fuerteventura og Lanzarote i fuld frihed med vores biler!",
     "p1": "Hos os er billeje enkelt og hurtigt: du vælger den bil, der passer til dig, og vi leverer den til lufthavnen eller direkte til dit hotel. Med vores fleksible lejebetingelser kan du <strong>nyde ferien uden bekymringer</strong> – uanset om du har brug for bil i kortere eller længere tid.",
     "p2": "<strong>Det kan betale sig at reservere den ønskede bil på forhånd</strong>, så er du sikker på, at den står klar ved ankomst. Gennemse bilerne herunder, klik for detaljer og book nemt online!",
+    "p3": "Vi kan garantere priserne i tilbuddet, hvis bookingen <strong>bekræftes inden for 48 timer</strong>.",
     "labels": {
       "seats": "personer",
       "manual": "Manuel",
@@ -1434,6 +1435,7 @@
       "low_available_count": "Færre end {count} biler ledige i denne periode",
       "unavailable": "Ikke ledig i denne periode",
       "insurance_fee": "Gebyr for fuld forsikring: {price} / {days} dage",
+      "extra_insurance_fee": "Aldersbetinget forsikringstillæg: {price} / {days} dage",
       "promotional_price": "Rabatpris"
     },
     "bodyTypes": {
@@ -1760,7 +1762,7 @@
       "booking": {
         "title": "Bookingoplysninger",
         "description": "Vælg de ønskede ekstra services, angiv lejeperioden og antallet af voksne passagerer.",
-        "insuranceCheckbox": "Jeg vil gerne tilføje fuld kaskoforsikring (intet depositum kræves)",
+        "insuranceCheckbox": "Jeg vil gerne tilføje fuld kaskoforsikring ",
         "insuranceDepositNotice": "Med fuld kaskoforsikring kræves der ikke depositum.",
         "insurancePriceLabel": "Forsikringspris: {price}",
         "insurancePricePending": "Vi informerer dig om forsikringsprisen via e-mail.",

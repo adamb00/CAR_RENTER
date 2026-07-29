@@ -8,6 +8,8 @@ import { getTranslations } from 'next-intl/server';
 import { sendMail } from '@/lib/mailer';
 import { recordNotification } from '@/lib/notifications';
 
+// TODO : MORE VALIDATION
+
 export async function cancelRentRequestAction(formData: FormData) {
   'use server';
 
@@ -69,17 +71,19 @@ export async function cancelRentRequestAction(formData: FormData) {
       providedId: rentInput,
       reason: reason || null,
     });
-    await prisma.rentRequest.update({
-      where: { id: canonicalRentId },
-      data: {
-        status: RENT_STATUS_CANCELLED,
-        updated: updatedMarker,
-      },
-    });
-    await prisma.accommodationBookingCommissions.update({
-      where: { bookingId: canonicalRentId },
-      data: { status: 'cancelled' },
-    });
+    await prisma.$transaction([
+      prisma.rentRequest.update({
+        where: { id: canonicalRentId },
+        data: {
+          status: RENT_STATUS_CANCELLED,
+          updated: updatedMarker,
+        },
+      }),
+      prisma.accommodationBookingCommissions.updateMany({
+        where: { bookingId: canonicalRentId },
+        data: { status: 'cancelled' },
+      }),
+    ]);
   } catch (error) {
     console.error('Failed to cancel rent request', error);
     return redirectWith('error');

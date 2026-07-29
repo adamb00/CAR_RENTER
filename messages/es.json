@@ -636,25 +636,14 @@
       {
         "title": "Política de privacidad (GDPR)",
         "description": "Información sobre cómo tratamos tus datos y qué derechos tienes.",
-        "keywords": [
-          "gdpr",
-          "privacidad",
-          "datos",
-          "protección",
-          "lanzarote"
-        ],
+        "keywords": ["gdpr", "privacidad", "datos", "protección", "lanzarote"],
         "path": "/{locale}/gdpr",
         "id": "gdpr"
       },
       {
         "title": "Política de cookies",
         "description": "Detalle de las cookies que usamos y cómo puedes gestionarlas.",
-        "keywords": [
-          "cookies",
-          "consentimiento",
-          "privacidad",
-          "lanzarote"
-        ],
+        "keywords": ["cookies", "consentimiento", "privacidad", "lanzarote"],
         "path": "/{locale}/cookie-policy",
         "id": "cookie-policy"
       },
@@ -713,13 +702,7 @@
       {
         "title": "Condiciones generales del contrato (GTC)",
         "description": "El contrato completo del servicio de alquiler en Fuerteventura y Lanzarote.",
-        "keywords": [
-          "gtc",
-          "contrato",
-          "legal",
-          "condiciones",
-          "lanzarote"
-        ],
+        "keywords": ["gtc", "contrato", "legal", "condiciones", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1333,6 +1316,7 @@
     "title": "Descubre Fuerteventura y Lanzarote con total libertad con nuestros coches",
     "p1": "Alquila fácil y rápido: elige el vehículo que mejor se adapte a ti y te lo entregamos en el aeropuerto o directamente en tu alojamiento. Con nuestras opciones flexibles de alquiler podrás disfrutar sin preocupaciones, tanto para escapadas cortas como para estancias más largas.",
     "p2": "Te recomendamos reservar con antelación para asegurarte de que el coche elegido esté disponible a tu llegada. Explora nuestra flota, descubre los detalles de cada modelo y reserva online cómodamente.",
+    "p3": "Podemos garantizar los precios indicados en la oferta si la reserva se <strong>confirma en un plazo de 48 horas</strong>.",
     "labels": {
       "seats": "plazas",
       "manual": "Manual",
@@ -1347,6 +1331,7 @@
       "low_available_count": "Menos de {count} coches disponibles para este periodo",
       "unavailable": "No disponible para este periodo",
       "insurance_fee": "Cargo del seguro completo: {price} / {days} días",
+      "extra_insurance_fee": "Recargo de seguro por edad: {price} / {days} días",
       "promotional_price": "Precio con descuento"
     },
     "bodyTypes": {
@@ -1848,7 +1833,7 @@
       "booking": {
         "title": "Datos de la reserva",
         "description": "Elige los extras, define la duración del alquiler y cuántos adultos viajarán.",
-        "insuranceCheckbox": "Quiero añadir el seguro a todo riesgo (sin depósito)",
+        "insuranceCheckbox": "Quiero añadir el seguro a todo riesgo",
         "insuranceDepositNotice": "Con el seguro a todo riesgo no se requiere depósito.",
         "insurancePriceLabel": "Precio del seguro: {price}",
         "insurancePricePending": "Te informaremos del precio del seguro por correo electrónico.",

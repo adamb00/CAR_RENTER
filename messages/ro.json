@@ -655,13 +655,7 @@
       {
         "title": "CGC – condiții generale de contract",
         "description": "Condiții generale de contract (GTC) oficiale pentru Fuerteventura și Lanzarote.",
-        "keywords": [
-          "cgc",
-          "gtc",
-          "contract",
-          "juridic",
-          "lanzarote"
-        ],
+        "keywords": ["cgc", "gtc", "contract", "juridic", "lanzarote"],
         "path": "/{locale}/gtc",
         "id": "gtc"
       }
@@ -1420,6 +1414,7 @@
     "title": "Descoperă Fuerteventura și Lanzarote în libertate totală cu mașinile noastre!",
     "p1": "La noi închirierea mașinii este simplă și rapidă: alegi vehiculul potrivit pentru tine, iar noi ți-l livrăm la aeroport sau direct la hotel. Datorită opțiunilor noastre flexibile de închiriere <strong>te poți bucura de vacanță fără griji</strong>, indiferent dacă ai nevoie de mașină pentru câteva zile sau pentru o perioadă mai lungă.",
     "p2": "<strong>Merită să rezervi din timp mașina dorită</strong>, ca să fii sigur că este disponibilă la sosire. Răsfoiește mașinile de mai jos, apasă pe detalii și rezervă online ușor și comod!",
+    "p3": "Putem garanta prețurile din ofertă dacă rezervarea este <strong>confirmată în termen de 48 de ore</strong>.",
     "labels": {
       "seats": "persoane",
       "manual": "Manuală",
@@ -1434,6 +1429,7 @@
       "low_available_count": "Mai puțin de {count} mașini disponibile pentru această perioadă",
       "unavailable": "Indisponibil pentru această perioadă",
       "insurance_fee": "Taxă pentru asigurare completă: {price} / {days} zile",
+      "extra_insurance_fee": "Supliment de asigurare în funcție de vârstă: {price} / {days} zile",
       "promotional_price": "Preț redus"
     },
     "bodyTypes": {
@@ -1760,7 +1756,7 @@
       "booking": {
         "title": "Detalii rezervare",
         "description": "Alege serviciile extra dorite, stabilește perioada de închiriere și numărul pasagerilor adulți.",
-        "insuranceCheckbox": "Doresc să adaug asigurarea completă (fără garanție)",
+        "insuranceCheckbox": "Doresc să adaug asigurarea completă ",
         "insuranceDepositNotice": "Cu asigurarea completă nu este necesară garanția.",
         "insurancePriceLabel": "Prețul asigurării: {price}",
         "insurancePricePending": "Îți vom comunica prețul asigurării prin e-mail.",
