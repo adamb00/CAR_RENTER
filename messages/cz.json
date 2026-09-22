@@ -1946,6 +1946,19 @@
       "delivery": {
         "title": "Přesná adresa doručení",
         "description": "Zadejte prosím přesnou adresu ubytování nebo letiště pro doručení vozu.",
+        "addressSearch": {
+          "label": "Vyhledat adresu",
+          "placeholder": "Začni psát přesnou adresu",
+          "noResult": "Žádné výsledky adresy"
+        },
+        "priceEstimate": {
+          "title": "Odhadovaný poplatek za doručení",
+          "loading": "Počítá se poplatek...",
+          "matchedCity": "Nejbližší doručovací zóna: {city}",
+          "noCity": "Poplatek se zobrazí po zadání města.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Název ubytování / letiště (volitelné)",
           "placeholder": "např. Hotel Marina nebo Budapest Liszt Ferenc"

@@ -73,6 +73,7 @@ export type QuoteRequestFormProps = {
   prefill?: {
     name?: string;
     email?: string;
+    phone?: string;
   };
   accommodation?: {
     id: string;

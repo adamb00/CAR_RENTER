@@ -22,13 +22,14 @@ const extractComponent = (components: AddressComponent[], ...types: string[]) =>
     types.every((type) => component.types.includes(type))
   )?.long_name ?? '';
 
-export const resolvePostalSelection = async (
+const resolveAddressComponents = async (
   address: string,
   placeId: string | undefined,
-  fallbackCountry: string
+  fallbackCountry: string,
+  fallbackPostalCode: string
 ): Promise<ResolvedAddress> => {
   const defaultResult: ResolvedAddress = {
-    postalCode: address,
+    postalCode: fallbackPostalCode,
     city: '',
     country: fallbackCountry,
     street: '',
@@ -93,3 +94,17 @@ export const resolvePostalSelection = async (
     return defaultResult;
   }
 };
+
+export const resolvePostalSelection = async (
+  address: string,
+  placeId: string | undefined,
+  fallbackCountry: string
+): Promise<ResolvedAddress> =>
+  resolveAddressComponents(address, placeId, fallbackCountry, address);
+
+export const resolveAddressSelection = async (
+  address: string,
+  placeId: string | undefined,
+  fallbackCountry: string
+): Promise<ResolvedAddress> =>
+  resolveAddressComponents(address, placeId, fallbackCountry, '');

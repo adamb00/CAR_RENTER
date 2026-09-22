@@ -19,6 +19,7 @@ import { resolveLocale } from '@/lib/seo/seo';
 import { RentFormValues, RentSchema } from '@/schemas/RentSchema';
 import { getFixedAirportByLocationName } from '@/lib/airports/fixed-airports';
 import { getTranslations } from 'next-intl/server';
+import type { RentSchemaValues } from '@/components/layout/RentSection';
 
 type PricingSnapshotInput = {
   rentalFee: string | null;
@@ -322,9 +323,7 @@ const buildSameReturnLocation = (
 const getEffectiveReturnLocation = (
   delivery?: RentFormValues['delivery'],
 ): NonNullable<RentFormValues['delivery']>['returnLocation'] | undefined =>
-  delivery?.same
-    ? buildSameReturnLocation(delivery)
-    : delivery?.returnLocation;
+  delivery?.same ? buildSameReturnLocation(delivery) : delivery?.returnLocation;
 
 const resolveReturnDeliveryIsland = (
   returnLocation?: NonNullable<RentFormValues['delivery']>['returnLocation'],
@@ -568,6 +567,31 @@ const syncRenterFromRentForm = async (
   return renter.id;
 };
 
+const markCheckedForPricesAsRentByEmail = async (email: unknown) => {
+  const normalizedEmail = normalizeEmail(email);
+  if (!normalizedEmail) return;
+
+  try {
+    await prisma.checkedForPrices.updateMany({
+      where: {
+        becameRent: false,
+        email: {
+          equals: normalizedEmail,
+          mode: 'insensitive',
+        },
+      },
+      data: {
+        becameRent: true,
+      },
+    });
+  } catch (error) {
+    console.error('Failed to mark checked-for-price entries as rent', {
+      email: normalizedEmail,
+      error,
+    });
+  }
+};
+
 export const RentAction = async (values: RentFormValues) => {
   const validatedFields = await RentSchema.safeParseAsync(values);
 
@@ -787,6 +811,7 @@ export const RentAction = async (values: RentFormValues) => {
           carId: validatedFields.data.carId ?? null,
           rentalStart: validatedFields.data.rentalPeriod.startDate,
           rentalEnd: validatedFields.data.rentalPeriod.endDate,
+          pricingSnapshot: pricingSnapshot ?? null,
           action: 'modify',
           changes: rentChanges,
         },
@@ -834,6 +859,9 @@ export const RentAction = async (values: RentFormValues) => {
         validatedFields.data,
         pricingSnapshot,
       );
+      await markCheckedForPricesAsRentByEmail(
+        normalizedContactEmail ?? validatedFields.data.contact.email,
+      );
 
       const rentNotificationHref = rentRecordId ? `/${rentRecordId}` : '/';
 
@@ -852,6 +880,7 @@ export const RentAction = async (values: RentFormValues) => {
           carId: validatedFields.data.carId ?? null,
           rentalStart: validatedFields.data.rentalPeriod.startDate,
           rentalEnd: validatedFields.data.rentalPeriod.endDate,
+          pricingSnapshot: pricingSnapshot ?? null,
           action: 'create',
         },
       });
@@ -996,19 +1025,6 @@ export const RentAction = async (values: RentFormValues) => {
     ? `${selectedCar.manufacturer} ${selectedCar.model}`
     : (formData.carId ?? 'n/a');
 
-  await sendMail({
-    to: process.env.MAIL_USER || 'info@zodiacsrentacar.com',
-    subject: `Új foglalás | ${validatedFields.data.contact.name} részére`,
-    text: 'A csatolt PDF tartalmazza a foglalás részleteit.',
-    replyTo: validatedFields.data.contact.email,
-    attachments: [
-      {
-        filename: pdfFileName.replace(/\s+/g, '_'),
-        content: pdfBuffer,
-      },
-    ],
-  });
-
   const emailRowData = [
     { key: 'period', value: period },
     { key: 'rentalDays', value: rentalDaysValue },
@@ -1034,6 +1050,11 @@ export const RentAction = async (values: RentFormValues) => {
     { key: 'invoiceAddress', value: invoiceAddress },
     { key: 'carModel', value: carNameValue },
     { key: 'quoteId', value: quoteIdValue },
+    { key: 'rentalFee', value: pricingSnapshot?.rentalFee },
+    { key: 'insurance', value: pricingSnapshot?.insurance },
+    { key: 'deposit', value: pricingSnapshot?.deposit },
+    { key: 'deliveryFee', value: pricingSnapshot?.deliveryFee },
+    { key: 'extrasFee', value: pricingSnapshot?.extrasFee },
   ] as const;
 
   const localizedRows = emailRowData.map(({ key, value }) => ({
@@ -1046,6 +1067,23 @@ export const RentAction = async (values: RentFormValues) => {
     '',
     ...localizedRows.map(({ label, value }) => `${label}: ${value}`),
   ];
+
+  await sendMail({
+    to: process.env.MAIL_USER || 'info@zodiacsrentacar.com',
+    subject: `Új foglalás | ${validatedFields.data.contact.name} részére`,
+    text: [
+      'A csatolt PDF tartalmazza a foglalás részleteit.',
+      '',
+      ...localizedRows.map(({ label, value }) => `${label}: ${value}`),
+    ].join('\n'),
+    replyTo: validatedFields.data.contact.email,
+    attachments: [
+      {
+        filename: pdfFileName.replace(/\s+/g, '_'),
+        content: pdfBuffer,
+      },
+    ],
+  });
 
   await sendMail({
     to:
@@ -1182,7 +1220,9 @@ function toCoreRentSnapshotFromRecord(
     returnDeliveryLocationName: normalizeValue(
       record.BookingDeliveryDetails?.returnLocationName,
     ),
-    returnDeliveryHour: normalizeValue(record.BookingDeliveryDetails?.returnHour),
+    returnDeliveryHour: normalizeValue(
+      record.BookingDeliveryDetails?.returnHour,
+    ),
     returnDeliveryMinute: normalizeValue(
       record.BookingDeliveryDetails?.returnMinute,
     ),
@@ -1217,3 +1257,18 @@ function toCoreRentSnapshotFromForm(
     returnDeliveryMinute: normalizeValue(delivery?.returnMinute),
   };
 }
+
+export const CreateNewCheckedForPriceAction = async (d: RentSchemaValues) => {
+  if (!d) return;
+  await prisma.checkedForPrices.create({
+    data: {
+      name: d.name,
+      age: Number(d.age),
+      email: normalizeEmail(d.email) ?? d.email,
+      phoneNumber: d.phoneNumber,
+      island: d.island,
+      startDate: new Date(d.startDate),
+      endDate: new Date(d.endDate),
+    },
+  });
+};

@@ -14,9 +14,30 @@ import { sendMail } from '@/lib/mailer';
 import { parseCompactRentPayload } from '@/lib/rentPayload';
 import { getTranslations } from 'next-intl/server';
 
+type BookingDataRows = Partial<
+  Record<(typeof BOOKING_DATA_FIELDS)[number], string>
+>;
+
 const toDateString = (value: Date | null): string | undefined => {
   if (!value) return undefined;
   return value.toISOString().slice(0, 10);
+};
+
+const normalizePricingSnapshotRows = (
+  snapshot: RentCompletionRecord['BookingPricingSnapshots'],
+): BookingDataRows => {
+  if (!snapshot) return {};
+
+  return BOOKING_DATA_FIELDS.reduce<BookingDataRows>((acc, key) => {
+    if (!(key in snapshot)) return acc;
+
+    const value = snapshot[key as keyof typeof snapshot];
+    if (typeof value === 'string' && value.trim().length > 0) {
+      acc[key] = value.trim();
+    }
+
+    return acc;
+  }, {});
 };
 
 export async function sendRentCompletionEmail(
@@ -83,9 +104,10 @@ export async function sendRentCompletionEmail(
   );
   const arrivalFlight = delivery?.arrivalFlight ?? 'n/a';
   const departureFlight = delivery?.departureFlight ?? 'n/a';
-  const bookingData = parseBookingData(
-    rentRequest.contactQuote?.bookingRequestData,
-  );
+  const bookingData: BookingDataRows = {
+    ...parseBookingData(rentRequest.contactQuote?.bookingRequestData),
+    ...normalizePricingSnapshotRows(rentRequest.BookingPricingSnapshots),
+  };
 
   const rows: EmailRow[] = [
     {

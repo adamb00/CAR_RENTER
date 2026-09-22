@@ -2030,6 +2030,19 @@
       "delivery": {
         "title": "Dirección exacta de la entrega",
         "description": "Indica la dirección completa del alojamiento o del aeropuerto para la entrega.",
+        "addressSearch": {
+          "label": "Buscar dirección",
+          "placeholder": "Empieza a escribir la dirección exacta",
+          "noResult": "No hay resultados de dirección"
+        },
+        "priceEstimate": {
+          "title": "Tarifa de entrega estimada",
+          "loading": "Calculando tarifa...",
+          "matchedCity": "Zona de entrega más cercana: {city}",
+          "noCity": "La tarifa aparece después de introducir la ciudad.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Nombre del alojamiento / aeropuerto (opcional)",
           "placeholder": "Ej. Hotel Marina o Aeropuerto de Madrid-Barajas"

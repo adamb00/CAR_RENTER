@@ -1953,6 +1953,19 @@
       "delivery": {
         "title": "Genaue Lieferadresse",
         "description": "Bitte geben Sie die genaue Adresse der Unterkunft oder des Flughafens für die Zustellung an.",
+        "addressSearch": {
+          "label": "Adresse suchen",
+          "placeholder": "Gib die genaue Adresse ein",
+          "noResult": "Keine Adresse gefunden"
+        },
+        "priceEstimate": {
+          "title": "Geschätzte Liefergebühr",
+          "loading": "Gebühr wird berechnet...",
+          "matchedCity": "Nächste Lieferzone: {city}",
+          "noCity": "Die Gebühr erscheint nach Eingabe der Stadt.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Name der Unterkunft / des Flughafens (optional)",
           "placeholder": "z. B. Hotel Marina oder Flughafen Budapest Liszt Ferenc"

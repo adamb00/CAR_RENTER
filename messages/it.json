@@ -1959,6 +1959,19 @@
       "delivery": {
         "title": "Indirizzo esatto per la consegna",
         "description": "Inserisci l’indirizzo dettagliato dell’alloggio o dell’aeroporto per la consegna dell’auto.",
+        "addressSearch": {
+          "label": "Cerca indirizzo",
+          "placeholder": "Inizia a digitare l'indirizzo esatto",
+          "noResult": "Nessun indirizzo trovato"
+        },
+        "priceEstimate": {
+          "title": "Costo di consegna stimato",
+          "loading": "Calcolo del costo...",
+          "matchedCity": "Zona di consegna più vicina: {city}",
+          "noCity": "Il costo appare dopo aver inserito la città.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Nome dell’alloggio / aeroporto (opzionale)",
           "placeholder": "Es. Hotel Marina o Budapest Liszt Ferenc"

@@ -24,6 +24,14 @@ export type RentCompletionRecord = {
     arrivalHour: string | null;
     arrivalMinute: string | null;
   } | null;
+  BookingPricingSnapshots: {
+    rentalFee: string | null;
+    insurance: string | null;
+    deposit: string | null;
+    deliveryFee: string | null;
+    extrasFee: string | null;
+    tip: string | null;
+  } | null;
   contactQuote: {
     bookingRequestData: Prisma.JsonValue | null;
   } | null;

@@ -1953,6 +1953,19 @@
       "delivery": {
         "title": "Adresă exactă pentru livrare",
         "description": "Te rugăm să indici adresa completă a cazării sau a aeroportului pentru livrarea mașinii.",
+        "addressSearch": {
+          "label": "Caută adresa",
+          "placeholder": "Începe să introduci adresa exactă",
+          "noResult": "Nu există rezultate pentru adresă"
+        },
+        "priceEstimate": {
+          "title": "Taxă de livrare estimată",
+          "loading": "Se calculează taxa...",
+          "matchedCity": "Cea mai apropiată zonă de livrare: {city}",
+          "noCity": "Taxa apare după introducerea orașului.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Numele cazării / aeroportului (opțional)",
           "placeholder": "Ex. Hotel Marina sau Aeroport Budapesta Liszt Ferenc"

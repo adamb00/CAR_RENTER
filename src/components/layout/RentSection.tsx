@@ -28,6 +28,7 @@ import { useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Input } from '../ui/input';
+import { CreateNewCheckedForPriceAction } from '@/actions/RentAction';
 
 type ValidationKey =
   | 'validation.island'
@@ -35,19 +36,39 @@ type ValidationKey =
   | 'validation.endDate'
   | 'validation.age';
 
-const createSchema = (t: (key: ValidationKey) => string) =>
+type ContactValidationKey =
+  | 'form.errors.nameRequired'
+  | 'form.errors.phoneRequired'
+  | 'form.errors.emailRequired'
+  | 'form.errors.emailInvalid';
+
+const createSchema = (
+  t: (key: ValidationKey) => string,
+  tContact: (key: ContactValidationKey) => string,
+) =>
   z.object({
     island: z.string().min(1, t('validation.island')),
     startDate: z.string().min(1, t('validation.startDate')),
     endDate: z.string().min(1, t('validation.endDate')),
     age: z.number().min(18, t('validation.age')).max(100, t('validation.age')),
+    email: z
+      .string()
+      .trim()
+      .min(1, tContact('form.errors.emailRequired'))
+      .email(tContact('form.errors.emailInvalid')),
+    phoneNumber: z
+      .string()
+      .trim()
+      .min(1, tContact('form.errors.phoneRequired')),
+    name: z.string().trim().min(1, tContact('form.errors.nameRequired')),
   });
 
-type RentSchemaValues = z.infer<ReturnType<typeof createSchema>>;
+export type RentSchemaValues = z.infer<ReturnType<typeof createSchema>>;
 
 export default function RentSection({ locale }: { locale: string }) {
   const t = useTranslations('RentSection');
-  const schema = createSchema(t);
+  const tContact = useTranslations('Contact');
+  const schema = createSchema(t, tContact);
   const [isPending, startTransition] = useTransition();
   const dateLocale = DATE_LOCALE_MAP[locale] ?? 'en-US';
   const calendarLocale = CALENDAR_LOCALE_MAP[locale] ?? enUS;
@@ -60,6 +81,9 @@ export default function RentSection({ locale }: { locale: string }) {
       startDate: '',
       endDate: '',
       age: 0,
+      email: '',
+      phoneNumber: '',
+      name: '',
     },
   });
 
@@ -76,15 +100,23 @@ export default function RentSection({ locale }: { locale: string }) {
       : null;
 
   const onSubmit = (data: RentSchemaValues) => {
-    startTransition(() => {
+    startTransition(async () => {
+      await CreateNewCheckedForPriceAction(data);
+      const params = new URLSearchParams({
+        island: data.island,
+        startDate: data.startDate,
+        endDate: data.endDate,
+        age: String(data.age),
+        days: days ? String(days) : '',
+        name: data.name,
+        email: data.email,
+        phone: data.phoneNumber,
+      });
+
       if (days && days > 30) {
-        router.push(
-          `/${locale}/contact?island=${data.island}&startDate=${data.startDate}&endDate=${data.endDate}&age=${data.age}&days=${days}`,
-        );
+        router.push(`/${locale}/contact?${params.toString()}`);
       } else {
-        router.push(
-          `/${locale}/cars?island=${data.island}&startDate=${data.startDate}&endDate=${data.endDate}&age=${data.age}&days=${days}`,
-        );
+        router.push(`/${locale}/cars?${params.toString()}`);
       }
     });
   };
@@ -104,6 +136,68 @@ export default function RentSection({ locale }: { locale: string }) {
           onSubmit={form.handleSubmit(onSubmit)}
           className='grid  grid-cols-1 md:grid-cols-3 gap-4 md:gap-6'
         >
+          <FormField
+            control={form.control}
+            name='email'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{tContact('form.fields.email.label')}</FormLabel>
+                <FormControl>
+                  <Input
+                    type='email'
+                    value={field.value || ''}
+                    onChange={(event) => field.onChange(event.target.value)}
+                    placeholder={tContact('form.fields.email.placeholder')}
+                    onBlur={field.onBlur}
+                    name={field.name}
+                    ref={field.ref}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='phoneNumber'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{tContact('form.fields.phone.label')}</FormLabel>
+                <FormControl>
+                  <Input
+                    type='tel'
+                    value={field.value || ''}
+                    onChange={(event) => field.onChange(event.target.value)}
+                    placeholder={tContact('form.fields.phone.placeholder')}
+                    onBlur={field.onBlur}
+                    name={field.name}
+                    ref={field.ref}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='name'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{tContact('form.fields.name.label')}</FormLabel>
+                <FormControl>
+                  <Input
+                    value={field.value || ''}
+                    onChange={(event) => field.onChange(event.target.value)}
+                    placeholder={tContact('form.fields.name.placeholder')}
+                    onBlur={field.onBlur}
+                    name={field.name}
+                    ref={field.ref}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name='age'

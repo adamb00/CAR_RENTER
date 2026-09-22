@@ -1953,6 +1953,19 @@
       "delivery": {
         "title": "Exakt leveransadress",
         "description": "Ange den fullständiga adressen till boendet eller flygplatsen för leverans.",
+        "addressSearch": {
+          "label": "Sök adress",
+          "placeholder": "Börja skriva den exakta adressen",
+          "noResult": "Inga adresser hittades"
+        },
+        "priceEstimate": {
+          "title": "Beräknad leveransavgift",
+          "loading": "Beräknar avgift...",
+          "matchedCity": "Närmaste leveranszon: {city}",
+          "noCity": "Avgiften visas efter att orten har angetts.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Boendets/flygplatsens namn (valfritt)",
           "placeholder": "T.ex. Hotel Marina eller Budapest Liszt Ferenc"

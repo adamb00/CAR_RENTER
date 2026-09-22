@@ -81,11 +81,13 @@ export function QuoteRequestForm({
     typeof prefill?.name === 'string' ? prefill.name.trim() : '';
   const sanitizedPrefillEmail =
     typeof prefill?.email === 'string' ? prefill.email.trim() : '';
+  const sanitizedPrefillPhone =
+    typeof prefill?.phone === 'string' ? prefill.phone.trim() : '';
 
   const defaultValues = useMemo(
     () => ({
       name: sanitizedPrefillName,
-      phone: '',
+      phone: sanitizedPrefillPhone,
       email: sanitizedPrefillEmail,
       preferredChannel: 'email' as PreferredChannel,
       rentalStart: startDate || '',
@@ -116,6 +118,7 @@ export function QuoteRequestForm({
     [
       sanitizedPrefillEmail,
       sanitizedPrefillName,
+      sanitizedPrefillPhone,
       selectedCar?.id,
       selectedCar?.name,
     ],

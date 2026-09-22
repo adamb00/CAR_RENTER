@@ -1953,6 +1953,19 @@
       "delivery": {
         "title": "Dokładny adres dostawy",
         "description": "Podaj dokładny adres miejsca zakwaterowania lub lotniska do dostarczenia samochodu.",
+        "addressSearch": {
+          "label": "Szukaj adresu",
+          "placeholder": "Zacznij wpisywać dokładny adres",
+          "noResult": "Brak wyników adresu"
+        },
+        "priceEstimate": {
+          "title": "Szacowana opłata za dostawę",
+          "loading": "Obliczanie opłaty...",
+          "matchedCity": "Najbliższa strefa dostawy: {city}",
+          "noCity": "Opłata pojawi się po wpisaniu miasta.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Nazwa obiektu / lotniska (opcjonalnie)",
           "placeholder": "Np. Hotel Marina lub Budapest Liszt Ferenc"

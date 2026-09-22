@@ -1959,6 +1959,19 @@
       "delivery": {
         "title": "Nøyaktig leveringsadresse",
         "description": "Oppgi full adresse til overnattingssted eller flyplass for levering.",
+        "addressSearch": {
+          "label": "Søk adresse",
+          "placeholder": "Begynn å skrive den nøyaktige adressen",
+          "noResult": "Ingen adresser funnet"
+        },
+        "priceEstimate": {
+          "title": "Forventet leveringsgebyr",
+          "loading": "Beregner gebyr...",
+          "matchedCity": "Nærmeste leveringssone: {city}",
+          "noCity": "Gebyret vises etter at byen er fylt ut.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Navn på overnattingssted / flyplass (valgfritt)",
           "placeholder": "F.eks. Hotel Marina eller Budapest Liszt Ferenc"

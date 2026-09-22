@@ -21,6 +21,9 @@ type PageSearchParams = {
   endDate?: string;
   age?: string;
   days?: number;
+  name?: string;
+  email?: string;
+  phone?: string;
 };
 
 const LOW_AVAILABILITY_LIMIT = 5;
@@ -179,7 +182,8 @@ export default async function CarsPage({
   searchParams: Promise<PageSearchParams>;
 }) {
   const { locale = 'hu' } = await params;
-  const { island, startDate, endDate, age, days } = await searchParams;
+  const { island, startDate, endDate, age, days, name, email, phone } =
+    await searchParams;
   const resolvedLocale = resolveLocale(locale);
   const cars = await fetchCars(startDate, endDate);
 
@@ -405,7 +409,19 @@ export default async function CarsPage({
                         className='w-full sm:w-auto bg-sky-light uppercase text-grey-dark-3 transition-all duration-300 hover:bg-sky-dark lg:pointer-events-none lg:opacity-0 lg:group-hover:pointer-events-auto lg:group-hover:opacity-100 lg:group-hover:cursor-pointer'
                       >
                         <Link
-                          href={`/${resolvedLocale}/cars/${car.id}?island=${island}&startDate=${startDate}&endDate=${endDate}&quotePrice=${price}&insurance=${insuranceParam}&days=${days}`}
+                          href={`/${resolvedLocale}/cars/${car.id}?${new URLSearchParams(
+                            {
+                              island: island ?? '',
+                              startDate: startDate ?? '',
+                              endDate: endDate ?? '',
+                              quotePrice: String(price),
+                              insurance: String(insuranceParam),
+                              days: days != null ? String(days) : '',
+                              name: name ?? '',
+                              email: email ?? '',
+                              phone: phone ?? '',
+                            },
+                          ).toString()}`}
                         >
                           {t('buttons.interested')}
                         </Link>

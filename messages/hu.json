@@ -1953,6 +1953,19 @@
       "delivery": {
         "title": "Kiszállítás pontos címe",
         "description": "Kérjük add meg a szállás vagy repülőtér részletes címét a kiszállításhoz.",
+        "addressSearch": {
+          "label": "Cím keresése",
+          "placeholder": "Kezdd el gépelni a pontos címet",
+          "noResult": "Nincs cím találat"
+        },
+        "priceEstimate": {
+          "title": "Várható kiszállítási díj",
+          "loading": "Díj számítása...",
+          "matchedCity": "A legközelebbi díjzóna: {city}",
+          "noCity": "A díj a település megadása után jelenik meg.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Szállás / repülőtér neve (opcionális)",
           "placeholder": "Pl. Hotel Marina vagy Budapest Liszt Ferenc"

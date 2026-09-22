@@ -99,6 +99,7 @@ export function useCreateSubmitHandler({
         }
         if (context.rentalFee || context.insurance) {
           actionPayload.pricingSnapshot = {
+            ...actionPayload.pricingSnapshot,
             rentalFee: context.rentalFee ?? null,
             insurance: context.insurance ?? null,
           };

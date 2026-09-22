@@ -31,6 +31,7 @@ import {
 import { buildInitialValues } from './build-initial-values';
 import { buildConsentItems } from './consent-items';
 import { useCreateSubmitHandler } from './create-submit-handler';
+import { splitName } from './helpers';
 import { mergeQuoteIntoValues } from './merge-quote-into-values';
 import {
   RentFormResolvedValues,
@@ -123,6 +124,17 @@ export default function RentPageClient({
   const searchParams = useSearchParams();
 
   const offer = searchParams.get('offer');
+  const contactPrefill = React.useMemo(
+    () => ({
+      name: searchParams.get('name')?.trim() ?? '',
+      email: searchParams.get('email')?.trim() ?? '',
+      phone:
+        searchParams.get('phone')?.trim() ??
+        searchParams.get('phoneNumber')?.trim() ??
+        '',
+    }),
+    [searchParams],
+  );
 
   const rentSchema = React.useMemo(() => createRentSchema(tSchema), [tSchema]);
   const rentalDaysPrefill = React.useMemo(
@@ -167,6 +179,29 @@ export default function RentPageClient({
       };
     }
     const initialValues = buildInitialValues(quotePrefill, locale, id);
+    const primaryDriver = initialValues.driver?.[0];
+    if (contactPrefill.name) {
+      const { firstName, lastName } = splitName(contactPrefill.name);
+      initialValues.contact.name = contactPrefill.name;
+      initialValues.invoice.name = contactPrefill.name;
+      if (primaryDriver) {
+        primaryDriver.firstName_1 = firstName ?? primaryDriver.firstName_1;
+        primaryDriver.lastName_1 = lastName ?? primaryDriver.lastName_1;
+      }
+    }
+    if (contactPrefill.email) {
+      initialValues.contact.email = contactPrefill.email;
+      initialValues.invoice.email = contactPrefill.email;
+      if (primaryDriver) {
+        primaryDriver.email = contactPrefill.email;
+      }
+    }
+    if (contactPrefill.phone) {
+      initialValues.invoice.phoneNumber = contactPrefill.phone;
+      if (primaryDriver) {
+        primaryDriver.phoneNumber = contactPrefill.phone;
+      }
+    }
     initialValues.delivery = {
       ...initialValues.delivery,
       island: islandPrefill ?? initialValues.delivery?.island,
@@ -200,6 +235,9 @@ export default function RentPageClient({
     };
   }, [
     id,
+    contactPrefill.email,
+    contactPrefill.name,
+    contactPrefill.phone,
     islandPrefill,
     locale,
     manageRentId,
@@ -236,6 +274,52 @@ export default function RentPageClient({
   const { extrasSelected } = useWatchForm(form);
 
   useWindowWithGoogle(setPlacesReady);
+
+  const hasAppliedContactSearchPrefill = React.useRef(false);
+
+  React.useEffect(() => {
+    if (rentPrefill || !isHydrated || hasAppliedContactSearchPrefill.current) {
+      return;
+    }
+    if (!contactPrefill.name && !contactPrefill.email && !contactPrefill.phone) {
+      return;
+    }
+
+    hasAppliedContactSearchPrefill.current = true;
+    const { firstName, lastName } = splitName(contactPrefill.name);
+    const options = {
+      shouldDirty: false,
+      shouldTouch: false,
+      shouldValidate: false,
+    } as const;
+
+    if (contactPrefill.name) {
+      form.setValue('contact.name', contactPrefill.name, options);
+      form.setValue('invoice.name', contactPrefill.name, options);
+      if (firstName) {
+        form.setValue('driver.0.firstName_1', firstName, options);
+      }
+      if (lastName) {
+        form.setValue('driver.0.lastName_1', lastName, options);
+      }
+    }
+    if (contactPrefill.email) {
+      form.setValue('contact.email', contactPrefill.email, options);
+      form.setValue('invoice.email', contactPrefill.email, options);
+      form.setValue('driver.0.email', contactPrefill.email, options);
+    }
+    if (contactPrefill.phone) {
+      form.setValue('invoice.phoneNumber', contactPrefill.phone, options);
+      form.setValue('driver.0.phoneNumber', contactPrefill.phone, options);
+    }
+  }, [
+    contactPrefill.email,
+    contactPrefill.name,
+    contactPrefill.phone,
+    form,
+    isHydrated,
+    rentPrefill,
+  ]);
 
   React.useEffect(() => {
     if (

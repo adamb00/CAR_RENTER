@@ -19,13 +19,14 @@ import {
   SelectValue,
 } from '../ui/select';
 import { Input } from '../ui/input';
-import PlacesAutocomplete from 'react-places-autocomplete';
 import { useDelivery } from '@/hooks/useDelivery';
 import AccommodationAutocompleteInput from './AccommodationAutocompleteInput';
 import type { AccommodationSuggestion } from '@/lib/accommodations/types';
 import { FIXED_AIRPORT_OPTIONS } from '@/lib/airports/fixed-airports';
 import { Checkbox } from '../ui/checkbox';
 import TimeFieldLabel from './TimeFieldLabel';
+import DeliveryAddressAutocompleteInput from './DeliveryAddressAutocompleteInput';
+import { resolveAddressSelection } from '@/hooks/useResolvePostalSelection';
 
 type DeliveryAddressKey =
   | 'country'
@@ -44,6 +45,19 @@ const DELIVERY_ADDRESS_KEYS: readonly DeliveryAddressKey[] = [
 
 const DELIVERY_ISLAND_OPTIONS = ['Lanzarote', 'Fuerteventura'] as const;
 
+type DeliveryAddressValues = Record<DeliveryAddressKey, string>;
+
+type DeliveryPriceEstimate = {
+  city: string;
+  price: number;
+  distanceKm?: number;
+};
+
+type DeliveryPriceLookupState = {
+  estimate: DeliveryPriceEstimate | null;
+  isLoading: boolean;
+};
+
 const toDeliveryIsland = (
   value?: string | null,
 ): (typeof DELIVERY_ISLAND_OPTIONS)[number] | undefined => {
@@ -51,6 +65,99 @@ const toDeliveryIsland = (
   if (normalized === 'lanzarote') return 'Lanzarote';
   if (normalized === 'fuerteventura') return 'Fuerteventura';
   return undefined;
+};
+
+const formatPrice = (price: number): string =>
+  new Intl.NumberFormat('en-US', {
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+  }).format(price);
+
+const formatDistance = (distanceKm: number): string =>
+  new Intl.NumberFormat('en-US', {
+    maximumFractionDigits: 1,
+    minimumFractionDigits: 0,
+  }).format(distanceKm);
+
+const fetchDeliveryPriceEstimate = async (
+  input: {
+    address?: string;
+    city?: string;
+    island?: string;
+  },
+  signal: AbortSignal,
+): Promise<DeliveryPriceEstimate | null> => {
+  const trimmedAddress = input.address?.trim() ?? '';
+  const trimmedCity = input.city?.trim() ?? '';
+  const trimmedIsland = input.island?.trim() ?? '';
+
+  if (!trimmedAddress && !trimmedCity) return null;
+
+  const params = new URLSearchParams();
+  if (trimmedAddress) params.set('address', trimmedAddress);
+  if (trimmedCity) params.set('city', trimmedCity);
+  if (trimmedIsland) params.set('island', trimmedIsland);
+
+  const response = await fetch(`/api/delivery-prices?${params.toString()}`, {
+    signal,
+  });
+
+  if (!response.ok) return null;
+
+  const payload = (await response.json()) as {
+    estimate?: DeliveryPriceEstimate | null;
+  };
+
+  return payload.estimate ?? null;
+};
+
+const formatMatchedDeliveryCities = (
+  estimates: Array<DeliveryPriceEstimate | null>,
+): string => {
+  const seen = new Set<string>();
+
+  return estimates
+    .filter((estimate): estimate is DeliveryPriceEstimate => {
+      if (!estimate) return false;
+
+      const key = `${estimate.city}:${estimate.price}:${
+        estimate.distanceKm?.toFixed(1) ?? ''
+      }`;
+      if (seen.has(key)) return false;
+
+      seen.add(key);
+      return true;
+    })
+    .map((estimate) =>
+      typeof estimate.distanceKm === 'number'
+        ? `${estimate.city} (${formatDistance(estimate.distanceKm)} km)`
+        : estimate.city,
+    )
+    .join(', ');
+};
+
+const buildAddressQuery = ({
+  selectedAddress,
+  country,
+  postalCode,
+  city,
+  street,
+  doorNumber,
+}: {
+  selectedAddress: string;
+  country?: string;
+  postalCode?: string;
+  city?: string;
+  street?: string;
+  doorNumber?: string;
+}): string => {
+  const selected = selectedAddress.trim();
+  if (selected) return selected;
+
+  return [street, doorNumber, postalCode, city, country]
+    .map((part) => part?.trim() ?? '')
+    .filter(Boolean)
+    .join(', ');
 };
 
 export default function Delivery({
@@ -62,8 +169,7 @@ export default function Delivery({
 }) {
   const t = useTranslations('RentForm');
 
-  const { deliveryLocationPath, handleDeliveryPostalSelect } =
-    useDelivery(form);
+  const { deliveryLocationPath } = useDelivery(form);
   const placeTypeValue = form.watch('delivery.placeType');
   const deliveryIslandValue = form.watch('delivery.island');
   const returnSameValue = form.watch('delivery.same');
@@ -74,6 +180,19 @@ export default function Delivery({
   const deliveryCity = form.watch('delivery.address.city');
   const deliveryStreet = form.watch('delivery.address.street');
   const deliveryDoorNumber = form.watch('delivery.address.doorNumber');
+  const returnDeliveryCountry = form.watch(
+    'delivery.returnLocation.address.country',
+  );
+  const returnDeliveryPostalCode = form.watch(
+    'delivery.returnLocation.address.postalCode',
+  );
+  const returnDeliveryCity = form.watch('delivery.returnLocation.address.city');
+  const returnDeliveryStreet = form.watch(
+    'delivery.returnLocation.address.street',
+  );
+  const returnDeliveryDoorNumber = form.watch(
+    'delivery.returnLocation.address.doorNumber',
+  );
   const returnHourOptions = React.useMemo(
     () => Array.from({ length: 24 }, (_, idx) => String(idx).padStart(2, '0')),
     [],
@@ -109,16 +228,210 @@ export default function Delivery({
   }, [deliveryIslandValue]);
   const shouldShowReturnLocationForm = returnSameValue === false;
   const shouldShowReturnLocationField =
-    returnPlaceTypeValue === 'accommodation' ||
-    returnPlaceTypeValue === 'airport';
+    shouldShowReturnLocationForm &&
+    (returnPlaceTypeValue === 'accommodation' ||
+      returnPlaceTypeValue === 'airport');
   const shouldShowReturnAddressFields =
-    returnPlaceTypeValue === 'accommodation';
-  const shouldUseReturnAirportSelect = returnPlaceTypeValue === 'airport';
+    shouldShowReturnLocationForm && returnPlaceTypeValue === 'accommodation';
+  const shouldUseReturnAirportSelect =
+    shouldShowReturnLocationForm && returnPlaceTypeValue === 'airport';
   const returnLocationPath = React.useCallback(
     (key: DeliveryAddressKey): FieldPath<RentFormValues> =>
       `delivery.returnLocation.address.${key}` as FieldPath<RentFormValues>,
     [],
   );
+  const [deliveryAddressQuery, setDeliveryAddressQuery] = React.useState('');
+  const [returnAddressQuery, setReturnAddressQuery] = React.useState('');
+  const [deliveryPriceLookup, setDeliveryPriceLookup] =
+    React.useState<DeliveryPriceLookupState>({
+      estimate: null,
+      isLoading: false,
+    });
+  const [returnDeliveryPriceLookup, setReturnDeliveryPriceLookup] =
+    React.useState<DeliveryPriceLookupState>({
+      estimate: null,
+      isLoading: false,
+    });
+
+  const deliveryPriceEstimate = deliveryPriceLookup.estimate;
+  const returnDeliveryPriceEstimate = shouldShowReturnAddressFields
+    ? returnDeliveryPriceLookup.estimate
+    : null;
+  const hasAirportDelivery =
+    placeTypeValue === 'airport' ||
+    (shouldShowReturnLocationForm && returnPlaceTypeValue === 'airport');
+  const needsAccommodationPrice =
+    shouldShowAddressFields || shouldShowReturnAddressFields;
+  const totalDeliveryPrice =
+    (deliveryPriceEstimate?.price ?? 0) +
+    (returnDeliveryPriceEstimate?.price ?? 0);
+  const hasDeliveryPriceEstimate =
+    Boolean(deliveryPriceEstimate) || Boolean(returnDeliveryPriceEstimate);
+  const hasResolvedDeliveryPrice =
+    hasDeliveryPriceEstimate || (hasAirportDelivery && !needsAccommodationPrice);
+  const isDeliveryPriceLoading =
+    deliveryPriceLookup.isLoading || returnDeliveryPriceLookup.isLoading;
+
+  const setDeliveryAddressFields = React.useCallback(
+    (
+      pathBuilder: (key: DeliveryAddressKey) => FieldPath<RentFormValues>,
+      values: DeliveryAddressValues,
+    ) => {
+      const options = {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      } as const;
+
+      DELIVERY_ADDRESS_KEYS.forEach((key) => {
+        form.setValue(pathBuilder(key), values[key], options);
+      });
+    },
+    [form],
+  );
+
+  const handleAddressSelect = React.useCallback(
+    async (
+      address: string,
+      placeId: string | undefined,
+      pathBuilder: (key: DeliveryAddressKey) => FieldPath<RentFormValues>,
+      fallbackCountry: string,
+      setQuery: (value: string) => void,
+    ) => {
+      setQuery(address);
+      const resolved = await resolveAddressSelection(
+        address,
+        placeId,
+        fallbackCountry,
+      );
+
+      setDeliveryAddressFields(pathBuilder, {
+        country: resolved.country,
+        postalCode: resolved.postalCode,
+        city: resolved.city,
+        street: resolved.street,
+        doorNumber: resolved.doorNumber,
+      });
+    },
+    [setDeliveryAddressFields],
+  );
+
+  React.useEffect(() => {
+    const city = typeof deliveryCity === 'string' ? deliveryCity : '';
+    const address = buildAddressQuery({
+      selectedAddress: deliveryAddressQuery,
+      country: typeof deliveryCountry === 'string' ? deliveryCountry : '',
+      postalCode:
+        typeof deliveryPostalCode === 'string' ? deliveryPostalCode : '',
+      city,
+      street: typeof deliveryStreet === 'string' ? deliveryStreet : '',
+      doorNumber:
+        typeof deliveryDoorNumber === 'string' ? deliveryDoorNumber : '',
+    });
+    const island =
+      typeof deliveryIslandValue === 'string' ? deliveryIslandValue : '';
+    const controller = new AbortController();
+
+    if ((!city.trim() && !address.trim()) || !shouldShowAddressFields) {
+      setDeliveryPriceLookup({ estimate: null, isLoading: false });
+      return () => controller.abort();
+    }
+
+    setDeliveryPriceLookup((current) => ({
+      estimate: current.estimate,
+      isLoading: true,
+    }));
+
+    fetchDeliveryPriceEstimate({ address, city, island }, controller.signal)
+      .then((estimate) => {
+        setDeliveryPriceLookup({ estimate, isLoading: false });
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          return;
+        }
+        setDeliveryPriceLookup({ estimate: null, isLoading: false });
+      });
+
+    return () => controller.abort();
+  }, [
+    deliveryAddressQuery,
+    deliveryCity,
+    deliveryCountry,
+    deliveryDoorNumber,
+    deliveryIslandValue,
+    deliveryPostalCode,
+    deliveryStreet,
+    shouldShowAddressFields,
+  ]);
+
+  React.useEffect(() => {
+    const city =
+      typeof returnDeliveryCity === 'string' ? returnDeliveryCity : '';
+    const address = buildAddressQuery({
+      selectedAddress: returnAddressQuery,
+      country:
+        typeof returnDeliveryCountry === 'string' ? returnDeliveryCountry : '',
+      postalCode:
+        typeof returnDeliveryPostalCode === 'string'
+          ? returnDeliveryPostalCode
+          : '',
+      city,
+      street:
+        typeof returnDeliveryStreet === 'string' ? returnDeliveryStreet : '',
+      doorNumber:
+        typeof returnDeliveryDoorNumber === 'string'
+          ? returnDeliveryDoorNumber
+          : '',
+    });
+    const island =
+      typeof deliveryIslandValue === 'string' ? deliveryIslandValue : '';
+    const controller = new AbortController();
+
+    if ((!city.trim() && !address.trim()) || !shouldShowReturnAddressFields) {
+      setReturnDeliveryPriceLookup({ estimate: null, isLoading: false });
+      return () => controller.abort();
+    }
+
+    setReturnDeliveryPriceLookup((current) => ({
+      estimate: current.estimate,
+      isLoading: true,
+    }));
+
+    fetchDeliveryPriceEstimate({ address, city, island }, controller.signal)
+      .then((estimate) => {
+        setReturnDeliveryPriceLookup({ estimate, isLoading: false });
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          return;
+        }
+        setReturnDeliveryPriceLookup({ estimate: null, isLoading: false });
+      });
+
+    return () => controller.abort();
+  }, [
+    deliveryIslandValue,
+    returnAddressQuery,
+    returnDeliveryCity,
+    returnDeliveryCountry,
+    returnDeliveryDoorNumber,
+    returnDeliveryPostalCode,
+    returnDeliveryStreet,
+    shouldShowReturnAddressFields,
+  ]);
+
+  React.useEffect(() => {
+    form.setValue(
+      'pricingSnapshot.deliveryFee',
+      hasResolvedDeliveryPrice ? String(totalDeliveryPrice) : null,
+      {
+        shouldDirty: false,
+        shouldTouch: false,
+        shouldValidate: false,
+      },
+    );
+  }, [form, hasResolvedDeliveryPrice, totalDeliveryPrice]);
 
   const clearReturnLocationFields = React.useCallback(
     (markDirty = true) => {
@@ -129,6 +442,7 @@ export default function Delivery({
       } as const;
 
       form.setValue('delivery.returnLocation.locationName', '', resetOptions);
+      setReturnAddressQuery('');
       DELIVERY_ADDRESS_KEYS.forEach((key) => {
         form.setValue(returnLocationPath(key), '', resetOptions);
       });
@@ -153,6 +467,7 @@ export default function Delivery({
     } as const;
 
     form.setValue('delivery.locationName', '', resetOptions);
+    setDeliveryAddressQuery('');
     (
       ['country', 'postalCode', 'city', 'street', 'doorNumber'] as const
     ).forEach((key) => {
@@ -296,6 +611,7 @@ export default function Delivery({
       shouldTouch: false,
       shouldValidate: false,
     });
+    setDeliveryAddressQuery('');
 
     (
       ['country', 'postalCode', 'city', 'street', 'doorNumber'] as const
@@ -379,6 +695,7 @@ export default function Delivery({
       shouldTouch: false,
       shouldValidate: false,
     });
+    setReturnAddressQuery('');
     DELIVERY_ADDRESS_KEYS.forEach((key) => {
       form.setValue(returnLocationPath(key), '', {
         shouldDirty: false,
@@ -569,6 +886,30 @@ export default function Delivery({
 
           {shouldShowAddressFields ? (
             <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+              <div className='grid gap-2 md:col-span-2 lg:col-span-3'>
+                <label className='text-sm font-medium leading-none'>
+                  {t('sections.delivery.addressSearch.label')}
+                </label>
+                <DeliveryAddressAutocompleteInput
+                  disabled={!placesReady}
+                  value={deliveryAddressQuery}
+                  placeholder={t('sections.delivery.addressSearch.placeholder')}
+                  searchingLabel={t('searching')}
+                  noResultLabel={t('sections.delivery.addressSearch.noResult')}
+                  onChange={setDeliveryAddressQuery}
+                  onSelect={(address, placeId) =>
+                    handleAddressSelect(
+                      address,
+                      placeId,
+                      deliveryLocationPath,
+                      typeof deliveryCountry === 'string'
+                        ? deliveryCountry
+                        : '',
+                      setDeliveryAddressQuery,
+                    )
+                  }
+                />
+              </div>
               <FormField
                 control={form.control}
                 name={deliveryLocationPath('country')}
@@ -608,88 +949,16 @@ export default function Delivery({
                         {t('sections.delivery.fields.postalCode.label')}
                       </FormLabel>
                       <FormControl>
-                        {placesReady ? (
-                          <PlacesAutocomplete
-                            value={postalValue}
-                            onChange={(value) => {
-                              field.onChange(value);
-                            }}
-                            onSelect={async (address, placeId) => {
-                              const resolved = await handleDeliveryPostalSelect(
-                                address,
-                                placeId,
-                              );
-                              if (resolved) {
-                                field.onChange(resolved);
-                              }
-                            }}
-                            searchOptions={{ types: ['geocode'] }}
-                            debounce={200}
-                            highlightFirstSuggestion
-                          >
-                            {({
-                              getInputProps,
-                              suggestions,
-                              getSuggestionItemProps,
-                              loading,
-                            }) => (
-                              <div className='relative'>
-                                <Input
-                                  {...getInputProps({
-                                    placeholder: t(
-                                      'sections.delivery.fields.postalCode.placeholder',
-                                    ),
-                                    onBlur: field.onBlur,
-                                  })}
-                                />
-                                {(loading || suggestions.length > 0) && (
-                                  <div className='absolute z-50 mt-1 w-full overflow-hidden rounded-md border border-border/60 bg-background shadow-lg'>
-                                    {loading && (
-                                      <div className='px-3 py-2 text-sm text-muted-foreground'>
-                                        {t('searching')}
-                                      </div>
-                                    )}
-                                    {suggestions.map((suggestion) => {
-                                      const itemProps = getSuggestionItemProps(
-                                        suggestion,
-                                        {
-                                          className:
-                                            'cursor-pointer px-3 py-2 text-sm hover:bg-accent',
-                                        },
-                                      );
-                                      const { key, ...restProps } =
-                                        itemProps as {
-                                          key?: React.Key;
-                                          [prop: string]: unknown;
-                                        };
-                                      const normalizedKey =
-                                        key != null
-                                          ? String(key)
-                                          : (suggestion.placeId ??
-                                            suggestion.description);
-                                      return (
-                                        <div key={normalizedKey} {...restProps}>
-                                          {suggestion.description}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                )}
-                              </div>
-                            )}
-                          </PlacesAutocomplete>
-                        ) : (
-                          <Input
-                            placeholder={t(
-                              'sections.delivery.fields.postalCode.placeholder',
-                            )}
-                            value={postalValue}
-                            onChange={(event) => {
-                              field.onChange(event.target.value);
-                            }}
-                            onBlur={field.onBlur}
-                          />
-                        )}
+                        <Input
+                          placeholder={t(
+                            'sections.delivery.fields.postalCode.placeholder',
+                          )}
+                          value={postalValue}
+                          onChange={(event) => {
+                            field.onChange(event.target.value);
+                          }}
+                          onBlur={field.onBlur}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -840,10 +1109,7 @@ export default function Delivery({
           name={'delivery.returnMinute'}
           render={({ field }) => (
             <FormItem>
-              <TimeFieldLabel
-                label={returnMinuteLabel}
-                tooltip={timeTooltip}
-              />
+              <TimeFieldLabel label={returnMinuteLabel} tooltip={timeTooltip} />
               <FormControl>
                 <Select
                   value={typeof field.value === 'string' ? field.value : ''}
@@ -989,6 +1255,28 @@ export default function Delivery({
           ) : null}
           {shouldShowReturnAddressFields ? (
             <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+              <div className='grid gap-2 md:col-span-2 lg:col-span-3'>
+                <label className='text-sm font-medium leading-none'>
+                  {t('sections.delivery.addressSearch.label')}
+                </label>
+                <DeliveryAddressAutocompleteInput
+                  disabled={!placesReady}
+                  value={returnAddressQuery}
+                  placeholder={t('sections.delivery.addressSearch.placeholder')}
+                  searchingLabel={t('searching')}
+                  noResultLabel={t('sections.delivery.addressSearch.noResult')}
+                  onChange={setReturnAddressQuery}
+                  onSelect={(address, placeId) =>
+                    handleAddressSelect(
+                      address,
+                      placeId,
+                      returnLocationPath,
+                      '',
+                      setReturnAddressQuery,
+                    )
+                  }
+                />
+              </div>
               {DELIVERY_ADDRESS_KEYS.map((key) => (
                 <FormField
                   key={key}
@@ -1030,6 +1318,40 @@ export default function Delivery({
           ) : null}
         </div>
       ) : null}
+      <div className='rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-sm'>
+        <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
+          <div>
+            <p className='font-medium'>
+              {t('sections.delivery.priceEstimate.title')}
+            </p>
+            <p className='text-muted-foreground'>
+              {isDeliveryPriceLoading
+                ? t('sections.delivery.priceEstimate.loading')
+                : hasDeliveryPriceEstimate
+                  ? t('sections.delivery.priceEstimate.matchedCity', {
+                      city: formatMatchedDeliveryCities([
+                        deliveryPriceEstimate,
+                        returnDeliveryPriceEstimate,
+                      ]),
+                    })
+                  : hasResolvedDeliveryPrice
+                    ? t('sections.delivery.priceEstimate.matchedCity', {
+                        city: t(
+                          'sections.delivery.airportSelect.label',
+                        ),
+                      })
+                  : t('sections.delivery.priceEstimate.noCity')}
+            </p>
+          </div>
+          <p className='text-lg font-semibold text-sky-dark dark:text-sky-light'>
+            {hasResolvedDeliveryPrice
+              ? t('sections.delivery.priceEstimate.amount', {
+                  amount: formatPrice(totalDeliveryPrice),
+                })
+              : t('sections.delivery.priceEstimate.pending')}
+          </p>
+        </div>
+      </div>
     </SectionCard>
   );
 }

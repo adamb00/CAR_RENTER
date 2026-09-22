@@ -1953,6 +1953,19 @@
       "delivery": {
         "title": "Adresse précise de livraison",
         "description": "Veuillez indiquer l’adresse détaillée de l’hébergement ou de l’aéroport pour la livraison.",
+        "addressSearch": {
+          "label": "Rechercher une adresse",
+          "placeholder": "Commencez à saisir l’adresse exacte",
+          "noResult": "Aucune adresse trouvée"
+        },
+        "priceEstimate": {
+          "title": "Frais de livraison estimés",
+          "loading": "Calcul des frais...",
+          "matchedCity": "Zone de livraison la plus proche : {city}",
+          "noCity": "Les frais s’affichent après la saisie de la ville.",
+          "amount": "{amount} EUR",
+          "pending": "-"
+        },
         "locationName": {
           "label": "Nom de l’hébergement / aéroport (optionnel)",
           "placeholder": "Ex. Hotel Marina ou Budapest Liszt Ferenc"

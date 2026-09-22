@@ -9,6 +9,8 @@ type SearchParams = {
   carId?: string;
   name?: string;
   email?: string;
+  phone?: string;
+  phoneNumber?: string;
   accommodationId?: string;
   island?: string;
   startDate?: string;
@@ -113,6 +115,12 @@ export default async function ContactPage({
       typeof resolvedSearchParams.email === 'string'
         ? resolvedSearchParams.email
         : '',
+    phone:
+      typeof resolvedSearchParams.phone === 'string'
+        ? resolvedSearchParams.phone
+        : typeof resolvedSearchParams.phoneNumber === 'string'
+          ? resolvedSearchParams.phoneNumber
+          : '',
   };
 
   return (

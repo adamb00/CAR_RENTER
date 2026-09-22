@@ -70,6 +70,16 @@ export default async function RentThankYouPage({
               arrivalMinute: true,
             },
           },
+          BookingPricingSnapshots: {
+            select: {
+              rentalFee: true,
+              insurance: true,
+              deposit: true,
+              deliveryFee: true,
+              extrasFee: true,
+              tip: true,
+            },
+          },
           contactQuote: {
             select: { bookingRequestData: true },
           },

@@ -23,8 +23,11 @@ type CarPageSearchParams = {
   startDate?: string;
   endDate?: string;
   quotePrice?: string;
-  insurance?: number;
-  days?: number;
+  insurance?: string;
+  days?: string;
+  name?: string;
+  email?: string;
+  phone?: string;
 };
 
 const formatLabel = (value: string) =>
@@ -81,6 +84,9 @@ export default async function CarPage({
     insurance,
     days,
     island,
+    name,
+    email,
+    phone,
   } = await searchParams;
   const quotePrice = Number(quotePriceParam);
   const resolvedLocale = resolveLocale(locale);
@@ -288,14 +294,36 @@ export default async function CarPage({
           <div className='mt-2 flex flex-col gap-3 sm:flex-row'>
             <Button asChild className='w-full sm:w-auto'>
               <Link
-                href={`/${resolvedLocale}/cars/${car.id}/rent?startDate=${startDate ?? ''}&endDate=${endDate ?? ''}&quotePrice=${quotePriceParam ?? ''}&insurance=${insurance ?? ''}&days=${days ?? ''}&island=${island}`}
+                href={`/${resolvedLocale}/cars/${car.id}/rent?${new URLSearchParams(
+                  {
+                    startDate: startDate ?? '',
+                    endDate: endDate ?? '',
+                    quotePrice: quotePriceParam ?? '',
+                    insurance: insurance ?? '',
+                    days: days ?? '',
+                    island: island ?? '',
+                    name: name ?? '',
+                    email: email ?? '',
+                    phone: phone ?? '',
+                  },
+                ).toString()}`}
               >
                 {t('buttons.interested')}
               </Link>
             </Button>
             {!quotePrice || quotePrice <= 0 ? (
               <Button asChild variant='outline' className='w-full sm:w-auto'>
-                <Link href={`/${resolvedLocale}/contact?carId=${car.id}`}>
+                <Link
+                  href={`/${resolvedLocale}/contact?${new URLSearchParams({
+                    carId: car.id,
+                    startDate: startDate ?? '',
+                    endDate: endDate ?? '',
+                    island: island ?? '',
+                    name: name ?? '',
+                    email: email ?? '',
+                    phone: phone ?? '',
+                  }).toString()}`}
+                >
                   {t('buttons.request_quote')}
                 </Link>
               </Button>
