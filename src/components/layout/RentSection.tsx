@@ -20,7 +20,7 @@ import {
 import { DateRangePicker } from '../ui/date-range-picker';
 import { formatDateValue, parseDateValue } from '@/lib/format';
 import { DATE_LOCALE_MAP } from '@/lib/date_locale_map';
-import { sixMonthsAhead } from '@/lib/constants';
+import { oneYearAhead, sixMonthsAhead } from '@/lib/constants';
 import { CALENDAR_LOCALE_MAP } from '@/lib/calendar_locale_map';
 import { enUS } from 'date-fns/locale';
 import { Button } from '../ui/button';
@@ -260,7 +260,7 @@ export default function RentSection({ locale }: { locale: string }) {
                     showCompare={false}
                     initialDateFrom={parseDateValue(rentalStartValue)}
                     initialDateTo={parseDateValue(rentalEndValue)}
-                    maxDate={sixMonthsAhead}
+                    maxDate={oneYearAhead}
                     minDate={new Date()}
                     locale={dateLocale}
                     calendarLocale={calendarLocale}
